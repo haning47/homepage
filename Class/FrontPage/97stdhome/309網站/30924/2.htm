@@ -1,0 +1,337 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/1.gif" onclick="dynOutline()">
+<script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+
+<p align="center"><a name="TOP"></a><img border="0" src="images/title2.gif" width="562" height="74"></p>
+
+<p align="center">　
+
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> </p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="50%"></td>
+    <td width="50%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD10263_.GIF" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%">光纖通訊
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <li><a href="#光纖通訊的優點">光纖通訊的優點</a></li>
+            <li><a href="#光纖通訊的類別">光纖通訊的類別</a></li>
+            <li><a href="#光纖通訊的應用">光纖通訊的應用</a></li>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+
+<table border="1" width="93%" height="1962">
+  <tr>
+    <td width="50%" height="19">
+      <p align="center"><a name="光纖通訊的優點">光纖通訊的優點</a></td>
+    <td width="50%" height="19">　</td>
+  </tr>
+  <tr>
+    <td width="50%" height="688"><font size="2">三、光纖通訊的優點<br>
+      (一)	長距離通信，減低成本：<br>    
+      1.譬如1.3微米波長之光纖用於傳輸時，每公里約有0.4～0.5dB的損失；而1.5微米之光纖每公里約有0.2～0.25dB之低傳輸損失。<br>
+      2.和傳統的銅線電纜傳輸系統比較，光纖通信使傳輸的中繼距離增長至<br>
+  數十公里，並可大幅度地減少中繼器之數目，降低通信系統的成本。<br>
+      <br>
+      (二)	光纖質細、輕並富可繞性，容易集結成束，故光纖集結成光纜埋設時，<br>    
+      可節省管道空間。有效提高管道使用率，配置空間的經濟性高。<br>
+      (三)	光纖具有極大的通信頻寬，頻寬可達1～2GHz以上。一般普通同軸電纜的頻寬約330MHz～550MHz，相較之下，光纖有著極高之載訊容量。<br>    
+      (四)	光纖材料一般皆為石英玻璃，其具有不腐蝕、耐火、耐水及壽命長之特性，加上光纖有極佳的柔軟性及應變性，良好的保護外被及抗張物質，<br>    
+ 使光纖傳輸可節省經營成本。<br>
+      (五)	由於光纖介質作成如石英玻璃，即為良好絕緣體，不會受到電磁波等之干擾，適用於容易受雷擊或高電場區，可大大提高通信的傳真度。<br>    
+      (六)	保密性高 光信號不會從光纖中幅射出去，適用於軍事，銀行連線及電腦網路。<br>    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      各國皆看好光纖通信之前景，並已投入大量財力、人力來研究開發。隨著資訊時代的來臨，容量大、低損失、可靠度佳的通信網路是不可或缺的，而光纖通信系統是最佳的選擇。因此，可預期在不久的將來，大部份的銅線電纜將會被光纖取而代之。</font><br>
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="50%" height="688">
+      <p align="center"><img border="0" src="htmphoto/1.jpg" width="259" height="168"></td>
+  </tr>
+  <tr>
+    <td width="50%" height="20">
+      <p align="center"><a name="光纖通訊的類別">光纖通訊的類別</a></td>
+    <td width="50%" height="20">　</td>
+  </tr>
+  <tr>
+    <td width="50%" height="667"><font size="2">四、光纖通訊系統的類別<br>
+      整體光纖通訊產業包括的範圍相當廣，從局端設備、傳輸設備、傳輸設備中的零組件、及用戶端的網路設備…等都有光纖通訊的專有產品，雖然產品相當繁雜，不過以目前已可商業化量產的產品來分類，其零組件大致可粗分為三大類：光纖及用光纖做成的光纜、光主動元件、及光被動元件等。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 所謂光纖，目前仍是以石英玻璃所製成的細微纖維為最主要產品，最近也出現以塑膠為材料的塑膠光纖；數蕊光纖外加包覆材料合併成的纜線則稱為光纜；而光主動元件則包括提供光源的光發送器、接收光源的光接收器、及光放大器…等；在光被動元件方面所包含的產品更是繁多，例如最常見的光纖連接器、光調變器、光隔絕器、光纖耦合器、光衰減器…等。（詳見表一）<br>  
+      &nbsp;&nbsp;&nbsp; 表一：光纖通訊系統的類別<br>  
+      &nbsp;&nbsp;&nbsp; 類別　	說明<br>   
+      光纖	可分為3層：核心層（core）、包覆層（clad）、保護層（光纜）。<br>   
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 依材質可粗分為： 玻璃光纖（SiO2）與塑膠光纖（PC、PS、mCOC、PMMA、Sol-Gel）。&nbsp;<br>  
+      光纜	包括單模光纜（48﹪）、多模光纜（9﹪）、海底光纜（43﹪）。<br>   
+      &nbsp;&nbsp;&nbsp;&nbsp; 依材質可粗分為：室內（PE）、室外（PVC）。&nbsp;<br>  
+      光主動元件	涉及光電之間能量的轉換，包括：光發送器、光接收器、光收發器、光放大器、面射型雷射（VCSEL）、光開關、可調式雷射、L Band放大器。<br>   
+      光被動元件	光連接器（比重最大）、光耦合器、光衰減器、光訊號調變器、光偏振器、光隔絕器、濾波器、光源分歧器、光波分歧器。<br>   
+      其他	DWDM系統<br>   
+      光通訊材料<br>
+      光纖區域網路設備&nbsp;<br>
+      電信光傳輸設備<br>
+      有線電視光傳輸設備<br>
+      光纖通訊量測設備&nbsp;</font>
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="50%" height="667">
+      <p align="center"><img border="0" src="htmphoto/003.jpg" width="346" height="269"></td>
+  </tr>
+  <tr>
+    <td width="50%" height="20">
+      <p align="center"><a name="光纖通訊的應用">光纖通訊的應用</a></td>
+    <td width="50%" height="20"></td>
+  </tr>
+  <tr>
+    <td width="50%" height="512"><font size="2">應用<br>
+      光纖常被電話公司用於傳遞電話、網際網路，或是有線電視的訊號，有時候利用一條光纖就可以同時傳遞上述的所有訊號。與傳統的銅線相比，光纖的訊號衰減（attenuation）與遭受干擾[來源請求]（interference）的情形都改善很多，特別是長距離以及大量傳輸的使用場合中，光纖的優勢更為明顯。然而，在城市之間利用光纖的通訊基礎建設（infrastructure）通常施工難度以及材料成本難以控制，完工後的系統維運複雜度與成本也居高不下。因此，早期光纖通訊系統多半應用在長途的通訊需求中，這樣才能讓光纖的優勢徹底發揮，並且抑制住不斷增加的成本。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 從2000年光通訊（optical communication）市場崩潰後，光纖通訊的成本也不斷下探，目前已經和銅纜為骨幹的通訊系統不相上下[1]。<br>   
+      &nbsp;&nbsp;&nbsp;&nbsp; 對於光纖通訊產業而言，1990年光放大器（optical amplifier）正式進入商業市場的應用後，很多超長距離的光纖通訊才得以真正實現，例如越洋的海底電纜。到了2002年時，越洋海底電纜的總長已經超過250000公里，每秒能攜帶的資料量超過2.56Tb，而且根據電信業者的統計，這些數據從2002年後仍然不斷的大幅成長中。</font> 
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="50%" height="512">　</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back2.jpg" bgcolor="#00FFFF">
+
+<p align="center"><img border="0" src="images/title2.gif" width="465" height="54"></p>
+
+<p align="center">　 
+<script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> </p>
+
+<table border="1" width="100%" height="162">
+  <tr>
+    <td width="100%" height="26" colspan="2" bgcolor="#00FFFF">
+      <p align="center">得獎紀錄</td>
+  </tr>
+  <tr>
+    <td width="63%" height="20">2001年 -- 第二十一屆亞洲棒球錦標賽獲得最佳三壘手獎。&nbsp;<br>
+   2004年 -- 全國成棒甲組春季聯賽打擊獎第一名。&nbsp;<br>
+   2004年 -- 職棒十五年九月份打擊MVP。&nbsp;<br>
+   2006年 -- 7月21日，在新莊球場舉辦中華職棒紅白明星對抗賽之全壘打大賽，在決賽當中奪得亞軍。&nbsp;<br>
+   2006年 -- 職棒十七年游擊手最佳十人獎。&nbsp;<br>
+   2007年 -- 職棒十八年游擊手最佳十人獎與金手套獎雙料得主。&nbsp;<br>
+   2008年 -- 職棒十九年游擊手最佳十人獎。&nbsp;</td>
+    <td width="37%" height="20"><img border="0" src="htmphoto/擊掌.jpg" width="323" height="194"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="20" colspan="2" bgcolor="#99FF99">
+      <p align="center">球技表現</td>
+  </tr>
+  <tr>
+    <td width="63%" height="20">2004年 -- 6月3日於澄清湖球場對戰興農牛隊，職棒初登場即擔任四棒中心打者。&nbsp;<br>
+   2004年 -- 6月8日於嘉義市球場對戰中信鯨隊邏逤R.M擊出陽春全壘打，為生涯首轟。&nbsp;<br>
+   2004年 -- 職棒十五年締造新人連續23場安打（07月23日至10月01日），打破鄭幸生所保持的舊紀錄。&nbsp;<br>
+   2006年 -- 3月31日於新竹球場對戰中信鯨隊柳裕展擊出生涯第一支滿貫全壘打。&nbsp;<br>
+   2006年 -- 杜哈亞運以再見安打為中華隊以八比七逆轉日本隊獲勝，拿下亞運史上第一面棒球金牌。&nbsp;<br>
+   2007年 -- 11月12日在第三十七屆世界盃棒球錦標賽中，再以再見安打結束比賽，中華隊以一比零氣走義大利隊。&nbsp;<br>
+   2008年 -- 9月8日達成自新人球季，連續5年都有10發以上全壘打紀錄，為中職第一人。</td> 
+    <td width="37%" height="20"><img border="0" src="htmphoto/中華隊揮棒.jpg" width="321" height="463"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="20" colspan="2" bgcolor="#66CCFF">
+      <p align="center">其他</td>
+  </tr>
+  <tr>
+    <td width="63%" height="20">2004年 -- 季後進行清除右手骨刺手術，由於傷口術後感染，先後又進行兩次清除手術。&nbsp;<br>
+   2005年 -- 與隊友石志偉拍攝過La New登山鞋廣告。&nbsp;<br>
+   2005年 -- 12月10日與高雄相戀5年的女友結婚，還說「老婆很會照顧，讓我可以專心在球場上打拚。」&nbsp;<br>
+   2006年 -- 隨中華隊前往澳洲移訓期間，鬧出夜間違規外出風波。&nbsp;<br>
+   2007年 -- 9月4日在台中球場對戰興農牛隊，六局下為了接陳志偉一記中間方向強襲滾地球，飛撲接球時造成左肩及背部嚴重拉傷，隔日進入傷兵名單下二軍休養。&nbsp;<br>
+   2007年 -- 10月15日登上韓國《Sports 2.0》雜誌第七十三期封面。&nbsp;<br>
+   2008年 -- 擔任La new熊隊隊長，並與La New熊隊簽下3年1116萬新台幣的複數年合約。&nbsp;<br>
+   2008年 -- 04月04日發生熊隊攻擊裁判事件，遭聯盟懲處禁賽15場、罰款18萬元，為中職史上最嚴重處罰。&nbsp;<br>
+   2008年 -- 與好友石志偉上過電視節目「百萬大歌星」挑戰歌唱獎金。</td> 
+    <td width="37%" height="20"><img border="0" src="htmphoto/1277635121.jpg" width="320" height="480"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

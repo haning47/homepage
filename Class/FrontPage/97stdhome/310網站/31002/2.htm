@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<STYLE>
+.spanstyle{font-size: 9pt; position: absolute; top: -50px; visibility: visible}
+</STYLE>
+</head>
+
+<body background="images/back.gif" onload="javascript:pageonload();" >
+
+<script language="JavaScript">
+var message="Hello! 歡 迎 光 臨";
+var x,y;
+var step=12;
+var flag=0;
+
+message=message.split("");
+var xpos=new Array();
+for (i=0;i<=message.length-1;i++) {
+xpos[i]=-50;
+}
+
+var ypos=new Array();
+for (i=0;i<=message.length-1;i++) {
+ypos[i]=-50;
+}
+
+function handlerMM(e) {
+x = (document.layers) ? e.pageX : document.body.scrollLeft+event.clientX+20;
+y = (document.layers) ? e.pageY : document.body.scrollTop+event.clientY;
+flag=1;
+}
+
+function makesnake() {
+if (flag==1 && document.all) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<=message.length-1; i++) {
+var thisspan = eval("span"+(i)+".style");
+thisspan.posLeft=xpos[i];
+thisspan.posTop=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+else if (flag==1 && document.layers) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<message.length-1; i++) {
+var thisspan = eval("document.span"+i);
+thisspan.left=xpos[i];
+thisspan.top=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+}
+
+
+for (i=0;i<=message.length-1;i++) {
+document.write("<span id='span"+i+"' class='spanstyle'>");
+document.write(message[i]);
+document.write("</span>");
+}
+
+if (document.layers) {
+document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+
+function pageonload() {
+makesnake();
+window.setTimeout("pageonload();", 2);
+}
+</script> <p align="center"><img border="0" src="images/title2.gif" width="528" height="120"></p>
+
+<table border="1" width="100%" height="938">
+  <tr>
+    <td width="50%" height="341">&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="photo/太陽能汽車.jpg" width="395" height="328"></td>
+    <td width="50%" height="341"><b><font face="標楷體" color="#00CC66" size="4">太陽能汽車</font></b>
+      <p><span><font face="標楷體">現在的汽車一般是利用汽油或天然氣存儲的化學能通過汽車引擎轉換為機械能驅動汽車運動。這種汽車需要消耗大量地球上的有限能源，同時排放大量廢氣，對環境造成污染。</font></span></p>
+      <p><span><font face="標楷體">太陽能汽車是利用太陽能電池將太陽能直接轉化為電能，再利用電動機驅動汽車的一種新型汽車，目前正處在實驗階段。實驗車的形狀都比較特別，車身幾乎全部佈滿太陽能電池板，還有流線型的外形。今後隨著太陽能電池板效率的提高和輕型而高強度的車體材料出現，實用型的太陽能汽車必將會出現在我們的生活中。</font></span></p>
+      <p align="left">　</td>
+  </tr>
+  <tr>
+    <td width="50%" height="303">&nbsp; <img border="0" src="photo/太陽能電池.jpg" width="421" height="243"></td>
+    <td width="50%" height="303"></td>
+  </tr>
+  <tr>
+    <td width="50%" height="276">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="photo/太陽能板.jpg" width="336" height="263"></td>
+    <td width="50%" height="276"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

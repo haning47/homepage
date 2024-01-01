@@ -1,0 +1,340 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+<script language="JavaScript">
+<!--
+var scroller_msg='Oh my God~ 就連作者我也不是很懂ㄋㄟ!'
+
+var dismissafter=0
+
+var initialvisible=0
+if (document.all)
+document.write('<marquee id="curscroll" style="position:absolute;width:200px;border:2px double ff00ff ;font-size:19px;background-color:ffffff;visibility:hidden">'+scroller_msg+'</marquee>')
+
+function followcursor(){
+//move cursor function for IE
+
+if (initialvisible==0){
+curscroll.style.visibility="visible"
+initialvisible=1
+}
+
+curscroll.style.left=document.body.scrollLeft+event.clientX+10
+curscroll.style.top=document.body.scrollTop+event.clientY+10
+}
+
+function dismissmessage(){
+curscroll.style.visibility="hidden"
+}
+
+
+if (document.all){
+document.onmousemove=followcursor
+document.ondblclick=dismissmessage
+if (dismissafter!=0)
+setTimeout("dismissmessage()",dismissafter*1000)
+}
+
+//-->
+</script> 
+<body background="image/back1.gif">
+
+<p align="center"><img border="0" src="image/title2.gif" width="541" height="60"></p>
+
+<p align="center">&nbsp;
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+</p>
+<script language="JavaScript">
+<!--
+function god()
+{
+alert("雖然你有心改過...但還是要接受上帝的處罰...")
+var x = Math.round(Math.random()*100)
+for(i=x; i>0; i--){
+alert("上帝處罰你要再按 " + i + " 次滑鼠才能結束")}
+alert("上帝的處罰結束")
+alert("下次不要亂按按鈕，知道嗎？")
+}
+function evil()
+{
+i=3
+do
+{
+alert("哈哈～白痴～");alert("白痴～白痴～");
+}while(i=3);
+}
+function right(e)
+{
+if(navigator.appName == 'Microsoft Internet Explorer' && 
+(event.button == 2|| event.button ==3))
+{
+alert("你想幹麻？");
+alert("偷源碼嗎？");
+alert("看我殺死妳！");
+alert("歡迎光臨18層地獄，請選擇接受上帝的唾棄或惡魔召喚");
+alert("我解釋一下吧");
+alert("上帝的唾棄是把你丟給上帝");
+alert("由祂決定你的下場");
+alert("惡魔的召喚是到惡魔身邊作奴隸");
+alert("但通常下場不是按滑鼠按到手指斷掉");
+alert("就是把電腦操爆");
+if(confirm("請按確定接受惡魔的召喚...按取消接受上帝的唾棄"))
+{
+alert("我是惡魔");
+alert("歡迎光臨十八層地獄");
+alert("你是偷原碼專家吧");
+alert("很好...我正需要你.....");
+alert("但你要通過我的測驗");
+alert("否則後果自負");
+alert("啥...還抱怨");
+alert("看我的厲害");
+alert("我要讓你狂按滑鼠");
+alert("讓你玩到手抽筋");
+alert("讓你玩到脫臼");
+alert("玩到截肢");
+alert("哈哈哈.......");
+//為避免範例出人命....先將彈出無限對話框的語法註解起來...請自行拿掉下面那行開頭的/*
+/*evil()*/
+//為避免範例出人命....先將彈出無限對話框的語法註解起來...請自行拿掉上面那行結尾的*/
+}
+else
+{
+alert("你這大膽刁民");
+alert("竟敢偷原始碼");
+alert("知道錯了吧？");
+alert("留你一條生路");
+god()
+return false;
+}
+} 
+}
+document.onmousedown=right; if (document.layers) 
+window.captureEvents(Event.MOUSEDOWN); 
+window.onmousedown=right; 
+-->
+</script> 
+<table border="1" width="100%">
+  <tr>
+    <td width="27%">
+      <p align="center"><font size="5" face="華康勘亭流(P)">學說</font></td>
+    <td width="73%">
+      <p align="center"><font face="華康勘亭流(P)" size="5">內容</font></td>
+  </tr>
+  <tr>
+    <td width="27%">
+      <p align="center"><strong><font face="華康勘亭流(P)" size="4"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; color: black; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">矩陣力學</span></font></strong></td>
+    <td width="73%"><span lang="EN-US" style="font-size:11.0pt;color:black">925</span><span style="font-size:11.0pt;color:black">年，沃納</span><span style="font-size:11.0pt;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black">‧</span><span style="font-size:11.0pt;color:black">海森堡提出了一個新的物理學說，一個在基本概念上與經典牛頓學說有著根本不同的學說。這個新學說<span lang="EN-US">——</span>在海森堡的繼承人做了某些修正後<span lang="EN-US">——</span>取得了光輝的成果，今天被公認為可以應用於所有的物理體系，而不管其類型如何或規模大小。</span><span lang="EN-US" style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>
+      </o:p>
+      </span>
+      <p><span style="font-size:11.0pt;font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">用數學能演證出：在只涉及宏觀體系的情況下，量子力學的預測不同於經典力學的預測，不過由於兩者在量上差別太小而無法度量出來（由於這種原因，經典力學</span><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:black;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">——</span><span style="font-size:11.0pt;
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:black;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
+mso-bidi-language:AR-SA">在數學上比量子力學簡單得多</span><span lang="EN-US" style="font-size:
+11.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:新細明體;color:black;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
+mso-bidi-language:AR-SA">——</span><span style="font-size:11.0pt;font-family:
+新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">仍可用于大多數的科學運算）。但是在涉及原子量綱體系的情況下，量子力學的預測與經典力學的預測迥然各異；實驗表明在這樣的情況下，量子力學的預測是正確的。</span></td>
+  </tr>
+  <tr>
+    <td width="27%">
+      <p align="center"><strong><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; color: black; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><font face="華康勘亭流(P)" size="4">測不准原理</font></span></strong></td>
+    <td width="73%"><span style="font-size:11.0pt;color:black">這條原理由他在<span lang="EN-US">1927</span>親自提出，被一般認為是科學中所有道理最深奧、意義最深遠的原理之一。測不准原理所起的作用就在於它說明了我們的科學度量的能力在理論上存在的某些局限性，具有巨大的意義。如果一個科學家用物理學基本定律甚至在最理想的情況下也不能獲得有關他正在研究的體系的準確知識，那麼就顯然表明該體系的將來行為是不能完全預測出來的。根據測不准原理，不管對測量儀器做出何種改進都不可能會使我們克服這個困難！</span><span lang="EN-US" style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>
+      </o:p>
+      </span>
+      <p><span style="font-size:11.0pt;color:black">測不准原理表明從本質上來講物理學不能做出超越統計學範圍的預測（例如，一位研究放射的科學家可能會預測出在三兆個原子中將會有兩百萬個在翌日放射</span><span style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;color:black">Υ</span><span style="font-size:11.0pt;color:black">射線，但是他卻無法預測出任何一個具體的鐳原子將會是如此）。在許多實際情況中，這並不構成一種嚴重的限制。在牽涉到巨大數目的情況下，統計方法經常可以為行動提供十分可靠的依據；但是在牽涉到小數目的情況下，統計預測就確實靠不住了。事實上在微觀體系裡，測不准原理迫使我們不得不拋棄我們的嚴格的物質因果觀念。這就表明了科學基本觀發生了非常深刻的變化；的確是非常深刻的變化以致於象愛因斯坦這樣的一位偉大的科學家都不願意接受。愛因斯坦曾經說過：</span><span style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;color:black">“</span><span style="font-size:11.0pt;color:black">我不相信上帝在和宇宙投骰子。</span><span style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;color:black">”</span><span style="font-size:11.0pt;color:black">然而這卻基本上是大多數現代物理學家感到必須得採納的觀點。</span><span lang="EN-US" style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>
+      </o:p>
+      </span></td>
+  </tr>
+  <tr>
+    <td width="27%">
+      <p align="center"><font face="華康勘亭流(P)" size="4">影響</font></td>
+    <td width="73%"><span style="font-size:11.0pt;color:black">顯而易見，從某種理論觀點來看，量子學說改變了我們對物質世界的基本觀念，其改變的程度也許甚至比相對論還要大。然而量子學說帶來的結果並不僅僅是人生觀的變化。</span><span lang="EN-US" style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>
+      </o:p>
+      </span>
+      <p><span style="font-size:11.0pt;color:black">在量子學說的實際應用的行列之中，有諸如電子顯微鏡、雷射器和半導體等現代儀器。它在核物理學和原子能領域裡也有著許許多多的應用；它構成了我們的光譜學知識的基礎，廣泛地用于天文學和化學領域；它還用于對各種不同論題的理論研究，諸如液態氦的特性、星體的內部構造、鐵磁性和放射性等等。</span><span lang="EN-US" style="font-size:11.0pt;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>
+      </o:p>
+      </span></td>
+  </tr>
+</table>
+</body>
+
+</html>

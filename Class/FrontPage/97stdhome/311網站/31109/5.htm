@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>我的心得</title>
+<script language=javaScript>
+function clockon() {
+thistime= new Date()
+var hours=thistime.getHours()
+var minutes=thistime.getMinutes()
+var seconds=thistime.getSeconds()
+if (eval(hours) <10) {hours="0"+hours}
+if (eval(minutes) < 10) {minutes="0"+minutes}
+if (seconds < 10) {seconds="0"+seconds}
+thistime = hours+":"+minutes+":"+seconds
+if(document.all) {
+bgclocknoshade.innerHTML=thistime
+bgclockshade.innerHTML=thistime
+}
+if(document.layers) {
+document.bgclockshade.document.write('<div id="bgclockshade" style="position:absolute;visibility:visible;font-family:Verdana;color:FFAAAAA;font-size:120px;top:10px;left:152px">'+thistime+'</div>')
+document.bgclocknoshade.document.write('<div id="bgclocknoshade" style="position:absolute;visibility:visible;font-family:Verdana;color:DDDDDD;font-size:120px;top:10px;left:150px">'+thistime+'</div>')
+document.close()
+}
+var timer=setTimeout("clockon()",200)
+}
+//-->
+</script>
+<link rel="stylesheet" href="../style.css"> 
+</head>
+
+<body background="images/back1.gif" onLoad="clockon()" >
+
+<p align="center"><img border="0" src="images/title5.gif"></p>
+<p align="center">　</p>
+<p align="center">　</p>
+<p align="center">　</p>
+<div id="bgclockshade" style="position:absolute;visibility:visible;font-family:Arial;color:#000000;font-size:120px;top:102px;left:152px"></div>
+<div id="bgclocknoshade" style="position:absolute;visibility:visible;font-family:Arial;color:66CCFF;font-size:120px;top:100px;left:150px"></div>
+<div id="mainbody" style="position:absolute; visibility:visible">
+</div> 
+<p>　</p>
+<p>
+　　這次學FrontPage學到很多以前都不知道的技巧，非常感謝老師耐心不厭其煩的指導！記得第一次寫HTML是在小五的時候。當時懵懵懂懂，什麼都一知半解的，弄了只有「一個網頁」的「網站（？）」。現在學會了超連結、電子相簿、摺疊式大綱…等操作方法，著實獲益良多：）</p>
+<p>
+　　另外，很佩服老師知道&#65282;ＤＯＢ網站建置百寶箱&#65282;這個HTML天堂，它讓我們的網頁不再單調，顯得有朝氣多了！！在畢業後，我會繼續研究程式語言，希望這方面的功力能跟上時代，更上一層樓^ 
+^</p>
+</body>
+
+</html>

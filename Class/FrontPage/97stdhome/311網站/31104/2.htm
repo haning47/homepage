@@ -1,0 +1,272 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+
+</head>
+
+<body background="images/back2.jpg" bgproperties="fixed"  onLoad="startclock(); timerONE=window.setTimeout" >
+
+<p align="center"><img border="0" src="images/title%202.gif" width="470" height="70"><a name="001"></a></p>
+
+
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+
+
+
+<table border="1" width="100%" height="3464">
+  <tr>
+    <td width="50%" height="30"><font face="華康流隸體(P)" color="#FFCC00" size="5"><img border="0" src="images/item1.gif" width="22" height="21">作家介紹</font></td>
+    <td width="50%" height="30"><font face="華康流隸體(P)" color="#FFCC00" size="5">圖片介紹</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="650"><font face="華康流隸體(P)" color="#FFCC00" size="5"><img border="0" src="images/item2.gif" width="29" height="28"></font><font face="華康流隸體(P)" color="#FF0066" size="4">普普教父      
+      安迪·沃荷</font>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      擅長繪畫、印刷、攝影之間的複合使用,不斷利用媒材來複製媒材,他大膽嘗試凸版印刷、橡皮或木料拓印、金箔技術、照片投影等各種複製技法。      
+      他對新媒介的關注，為其設計找到一個切入點並逐漸轉化為與多元媒體設計的完美結合。<br>
+      <br>
+      　　安迪·沃荷超越了永恆與偉大的界限；打破了手工藝品與批量生產、達達藝術和極少藝術、繪畫與攝影、畫布與膠捲的界限。      
+      他摧毀了【藝術】形象的等級制度，取消了規定藝術的專橫界限，溝通了陽春白雪和下里巴人兩種藝術。<br>
+      <br>
+      安迪·沃荷是自我製造、繁衍的產品。他的傳播是其自我特徵，包含了他所有活動和生命本身；作為複雜的興趣和荒誕的行為的綜合體，他實踐著時代的熱情、慾望、野心、野心和幻想；他創造了一個廣泛感知世界、實驗性世界、平民化世界、非傳統經驗世界、反精英反貴族的世界。<br>
+      <br>
+      安迪·沃荷的最大價值是用一生的實踐完成了對傳統的藝術價值和社會秩序的反設和不屑，用虛幻的表象戰勝他不情願的、殘酷無情的、沒有人性的真實世界。<br>
+      <br>
+      　</font><font face="華康流隸體(P)" color="#FF0066">　== 安迪·沃荷=普普同義詞      
+      ==</font><font face="華康流隸體(P)" color="#000066"><br>
+      <br>
+      安迪·沃荷：[我認為每個人都應該是一部機器，每個人都應該和另一個人一模一樣。      
+      ]<br>
+      </font>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></td>
+    <td width="50%" height="650">
+      <p align="center"><img border="0" src="htmphoto/andy%20warhol.jpg" width="332" height="500">　</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="426"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" face="華康流隸體(P)" size="4">塗鴉風格戰</font>
+      <p><font face="華康流隸體(P)" color="#000066">1.     
+      早期塗鴉喜好以單一色彩，並用非雙關性引用語，如「煙縷的符號」及哈囉等。<br>
+      2.     
+      接著，將文字形式箭矢化變成王冠，讓它戴在人物頭頂上以示莊嚴。<br>
+      3.     
+      後來，以耀眼、醒目、突出為目標，開始以高彩度噴漆再地鐵或大街道上大寫自己的魂名並以對比色或黑色將其圈圍，甚至又以鑲條、斜紋、星形、西洋棋盤或圓點花樣等裝飾，希望將名字突顯出來。<br>
+      4. 70年代中期，以改變自我的象徵形式出現，內容大多為卡通影片的英雄人物，這些人物大多以被攻擊的姿勢出現。<br>    
+      5.     
+      塗鴉背景愈來愈複雜，噴漆因為裝置的改良而使功能發揮到極致，燃燒的太陽、星星、子彈劃風而過，風景畫、自畫像、抽象符號等，組合並重生出另一個有趣的畫面。</font><br>
+      </p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="426">
+      <p align="center"><img border="0" src="htmphoto/art.jpg" width="349" height="426"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="749"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" size="4" face="華康流隸體(P)">凱斯哈林</font>
+      <p><font color="#FF0066" face="華康流隸體(P)" size="3">（Keith     
+      Haring，1958年5月4號－1990年2月16日）</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">是1980年代，美國街頭繪畫藝術家和社會運動者。他出生在&#23486;夕法尼&#20122;州雷丁（Reading,     
+      PA），並且在附近的庫茲鎮（Kutztown）長大，是家中四個孩子中的長兄也是唯一的男孩子。</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+      凱斯曾於紐約視覺藝術學院就學，作品帶有濃厚的普普藝術風格，他最早期的作品是在1980年創作的，當時他在紐約地鐵的車站中，尋找黑色的海報待貼處，使用白色粉筆塗鴉，多為粗輪廓線，單色、空心的抽象人、動物等圖案，他的作品經常猶如某種複雜花紋，各種圖案充滿了整個構圖，往往沒有透視，也沒有肌理，但具有許多象徵性的感情，如吠叫的狗，跪趴著的小人等。很快的，凱斯哈林的作品就在紐約藝術界傳開名聲，1983年美國哥倫比亞電視台採訪他在地鐵站塗鴉，以及被逮補的現場狀況，使得他一夕間家喻戶曉，隨後在不斷的展覽與創作下，以塗鴨畫家之姿進入了博物館，作品價錢水漲船高，根據美國新聞週刊的報導，在1984年，凱斯哈林的一張畫「戴鱷魚面具的狗」可喊價到美金兩萬元，除此之外，他還受邀進行許多博物館的行動繪畫創作。1985年，法國國立當代美術館及荷蘭國立美術館為他舉辦了專題展。     
+      1986年，他在紐約市蘇活區開了一家販賣自己作品的雜貨店。就叫做「Pop     
+      Shop」。</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;     
+      1988年，他發現自己罹患愛滋病，1989年，凱斯哈林基金會成立，主要目地在於促進兒童福利規劃。1990年，他以31歲的年紀死於愛滋病，他的畫作在20世紀變成了醒目的視覺語言之一。</font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="749">
+      <p align="center"><img border="0" src="htmphoto/巴斯奇亞.jpg" width="293" height="400"></p>
+      <p align="center"><img border="0" src="htmphoto/英國牆上塗鴉.jpg" width="399" height="309"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="400"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)" size="4" color="#FF0066">塗鴉者與塗鴉藝術家的差異</font>
+      <p><font face="華康流隸體(P)" color="#000066">1. 塗鴉者沒有傳統的包袱，可以自由創作，直接傳達其情緒；受過學校訓練的塗鴉藝術家則以美學的態度來調和社會現況。</font></p>    
+      <p><font face="華康流隸體(P)" color="#000066"><br>
+      2. 塗鴉者以一種無特殊記號的簽名方式，出現製造突出群眾的風格；塗鴉藝術家則以一種去除個人化的風格融入群眾中，其作品風格如廣告或政治宣言，以標準的印刷字體簽名。</font></p>    
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="400">
+      <p align="center"><img border="0" src="htmphoto/門上2.jpg" width="300" height="400"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="380"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)"><font color="#FF0066" size="4" face="華康流隸體(P)">塗鴉之意</font><br>
+      　　<font color="#000066">塗鴉（Graffito）意大利文之意是「亂寫」，而塗鴉（Graffiti）（複數形態）則指在牆壁上亂塗寫出的圖像或畫。</font></font>
+      <p><font color="#000066" face="華康流隸體(P)">基本上，Graffiti是一種近於書寫的行為，文字佔相當多數，形象的符號或圖形、標誌等也是常見的內容，但多半的形象是以類似書寫的方式，扼要地表明意圖，不刻意去細緻描繪。</font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="380">
+      <p align="center"><img border="0" src="htmphoto/樹上.jpg" width="296" height="380"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="761"><img border="0" src="images/item2.gif" width="29" height="28"><font size="4" color="#FF0066" face="華康流隸體(P)">塗鴉藝術的形成與發展：</font><font color="#000066" face="華康流隸體(P)"><br>
+      　　 1970年代初期，當罐裝噴漆隨處可購得後，從地下鐵的火車車箱到月台上、到街道的牆面，一直到廁所裡的壁面，到處可見各式各樣色彩鮮艷的塗鴉。早期的塗鴉創作以文字為主，那些塗鴉畫的創作者稱自己為「寫手」（writer）而非「畫家」（painter），而且通常是匿名的，他們流行用街道號碼取假名，比如TAKI    
+      183、JULIO 204、FRANK 207，畫地盤的意味十分濃厚。</font>   
+      <p><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      大部分的塗鴉創作者既不是專業藝術家也不是藝術系的學生，而是來自於布朗克斯、布魯克林與哈林區的街頭少年。</font></p>
+      <p><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      塗鴉的行為本身是一種對於權威的反叛，而塗鴉的本身是一種表達的形式，藉由這樣的行為，或許從藝術的角度來說：行為藝術，很快地引起社會、政治界、媒體以及主流藝壇的注意，於是塗鴉文字逐漸減少，轉變成大型精緻的卡通圖像。學院派藝術家也跟進，於是專業塗鴉人開始出現，類似像聯盟的團體也紛紛出現了，之後塗鴉繪畫開始進駐藝廊，供人「欣賞」、「收藏」、「買賣」、「投資」。世界各國便興起了一股塗鴉熱潮。</font></p>
+      <p align="center"><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      塗鴉藝術的命運，跟同時期崛起的搖滾樂十分類似。一開始人們藉這種創作型態反抗體制、表達不滿、發洩情緒、控訴社會，結果卻被整個資本體系收編，由原先的反文化成為藝術的主流。<br>
+      </font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="761">
+      <p align="center"><img border="0" src="htmphoto/門上.jpg" width="384" height="373"></p>
+      <p align="center"><img border="0" src="htmphoto/牆壁上.jpg" width="278" height="368"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="20"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)" color="#FF0066" size="4">美學觀與社會學的探討：</font><font face="華康流隸體(P)" color="#000066"><br>
+      　　談到塗鴉，它通常給予人兩極化的看法；大多數的人都將它視為一種破壞、污損、瘋狂、侵犯、恐嚇；但有一些人則認為塗鴉是一種真正的美學性產物，是被壓制者或沒有發言權者個人性的表白，例如，卡吉（John Cage）就認為我們應該珍惜每一個塗鴉記號；1974年作家諾曼o梅勒（Norman Mailer）在她出版的「塗鴉的信仰」這本書中，把塗鴉的現象看做是對罪惡的工商文明之種族性反叛，並將它浪漫地解釋為社會自由的無秩序顯示；藝評如蘇勒o加布立克（Suzi Gablik）則認為那些街頭少年被渴求新鮮的藝術市場所發掘。</font>    
+      <p>　</p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    </td>
+    <td width="50%" height="20">
+      <p align="center"><img border="0" src="htmphoto/鬼.jpg" width="300" height="400"></p>
+    </td>
+  </tr>
+</table>
+
+
+
+</body>
+
+
+</html>

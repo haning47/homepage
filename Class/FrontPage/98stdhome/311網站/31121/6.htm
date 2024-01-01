@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<STYLE>
+A	{text-decoration: none;}
+</STYLE>
+
+
+
+
+
+
+<script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style><!--body {cursor:url(music.ani);}--></style> 
+<style><!--a:hover{cursor:url(music.ani);}--></style>
+
+
+
+
+
+
+</head>
+
+<body bgcolor="#000000">
+
+<p align="left">　</p>
+<p align="center"><font color="#FFFFFF" face="華康行書體(P)"><img border="0" src="images/title6.png" width="469" height="55"></font></p>
+<p align="left"><font color="#FFFFFF" face="華康行書體(P)">　　透過製作此網頁，我對爵士樂也更佳的熟悉，在興趣之外，又多了一份知識性存在，對於現在多元玄席方面，有很棒的效果。蒐集資料時的大量審閱，去蕪存菁的過程，也訓練了我有關資料搜尋、統整以及報告製作、系統化管理的能力，就學習而言，這個網頁的製作幫這了不少。</font></p>
+<p align="left"><font color="#FFFFFF" face="華康行書體(P)">　　而就爵士越方面，我最喜愛的分支為Fusion統稱融合樂,他不但大量使用電子曲風的數位化樂器(例如電子吹管、電貝士及電吉他)，且在曲風上也活潑不少，不在侷限於搖滾樂的死板風格，多了發揮空間，創意有更多選擇，這是我喜歡此分之的原因！　　(最愛的團是T-Square、Casiopea)</font></p>
+
+
+
+
+
+
+</body>
+
+</html>

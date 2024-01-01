@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt>&nbsp;</FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>"); 
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue  += ((hours > 12) ? hours - 12 : hours)
+timeValue  += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue  += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> </head>
+
+<body background="images/back2.gif" onLoad="startclock(); timerONE=window.setTimeout" >
+
+<p align="center"><img border="0" src="images/title2.gif"></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><a name="何謂太陽能"><font size="5"><b>太陽能電池</b></font></a></td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <p align="center">　</p>
+      <p align="left">太陽能晶片又稱太陽能電池或光電池，是一種利用太陽光直接發電的光電半導體薄片。它只要一照到光，瞬間就可輸出電壓及電流。</p>
+      <p align="left">太陽能電池可簡稱為太陽電池,太陽電池發電是一種可再生的環保發電方式，發電過程中不會產生二氧化碳等有害氣體，不會對環境造成污染。</p>
+      <p align="left">按照製作材料分為矽基半導體電池、染料敏電池、有機材料電池等。對於太陽電池來說最重要的參數是轉換效率，目前在實驗室所研發的矽基太陽能電池中，單晶矽電池的最高轉換效率為29%，多晶矽電池為24%，非晶矽為17%。實際量產時的轉換效率會較低。<br>
+      </p>
+      <p align="center"><a href="#top">top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/太陽能手機.jpg" width="136" height="135"></p>
+      <p align="center">太陽能手機</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><font size="5"><b>太陽能應用</b></font></td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/太陽能空氣淨化器.jpg" width="167" height="123"></p>
+      <p align="center">太陽能空氣淨化機</p>
+      <p align="center"><a href="#top">top</a></td>
+    <td width="50%">
+      <p align="center">　</p>
+      <p align="center"><img border="0" src="htmphoto/太陽能車.jpg" width="341" height="219"></p>
+      <p align="center">太陽能車</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">　</td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <p align="center">
+      <p align="center"><img border="0" src="htmphoto/太陽能房.jpg" width="280" height="210"></p>
+      <p align="center"><a href="#top">top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/高雄應用科技大學太陽能車正面.jpg" width="241" height="185">　</p>
+      <p align="center">高雄應用科技大學太陽能車</p>
+    </td>
+  </tr>
+</table>
+
+</body>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+</html>

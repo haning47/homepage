@@ -1,0 +1,359 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back1.jpg" onclick="dynOutline()">
+
+<p align="center"><a name="top"></a><img border="0" src="images/title2.gif" width="455" height="61"></p>
+
+<p align="center">　 
+
+<script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+</p>
+
+<p align="center">進站時間　  
+<SCRIPT language="JavaScript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some="11";
+else
+some="1911";
+today=new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var t = " " + (h) + "<BLINK>:</BLINK>" + (m) + "分";
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i]  }
+var d=new initArray("星期日", "星期一","星期二", "星期三","星期四", "星期五", "星期六");
+document.write("民國",today.getYear()-some,"年",today.getMonth()+1,"月",today.getDate(),"日",d[today.getDay()+1]," ",t, ""); 
+</SCRIPT>  
+</p>
+
+<p align="center">　  
+</p>
+<table border="0" width="100%">
+  <tr>
+    <td width="26%"></td>
+    <td width="74%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%">溫室效應
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <li><a href="#溫室效應氣體">溫室效應氣體</a></li>
+            <li><a href="#溫室效應的影響">溫室效應的影響</a></li>
+            <li><a href="#溫室效應減緩方法">溫室效應減緩方法</a></li>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="441">
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#FFFF99"><a name="溫室效應氣體">溫室效應氣體</a></td>
+  </tr>
+  <tr>
+    <td width="69%" height="119">（01）二氧化碳（CO2）：由於大量使用煤、石油、天然氣等石化燃料，全球的二氧化碳正以每年約六十億噸的量增加中，是造成溫室效應的主要氣體。<br>
+      （02）氟氯碳化物（CFCs）：目前以 CFC-11、CFC-12、CFC-113為主。使用於冷氣機、電冰箱的冷媒、電子零件清潔劑、發泡劑，是造成溫室效應的氣體。<br>    
+      （03）甲烷（CH4）：有機體發酵與化及物質不完全燃燒的過程會產生甲烷，主要來自牲畜、水田、掩埋場及汽機車的排放。<br>
+      （04）氧化亞氮（N2O）：是由燃燒石化燃料、微生物及化學肥料分解所排放。<br>
+      （05）臭氧（O3）：來自汽機車等所排放的氮氧化物及碳氫化合物，經光化學作用而產生的氣體。<br>
+      （06）水蒸氣：水蒸氣也具有部份的增溫效應。
+      <p><a href="#top">top</a></td>
+    <td width="31%" height="119">
+      <p align="center"><img border="0" src="htmphoto/溫室氣體比例.jpg" width="318" height="301"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="29" bgcolor="#CCCCFF"><a name="溫室效應的影響">溫室效應的影響</a></td>
+  </tr>
+  <tr>
+    <td width="69%" height="109">溫室效應的直接影響
+      <p>（01）全球暖化主要將表現於高緯度地帶，也因此，高緯度的生物將首當其衝，受到最大的衝擊，寒帶森林將因溫度升高而減少。換句話說，目前熱帶森林的破壞而動植物大量絕滅，將來全球暖化又將對溫帶的生物多樣性嚴重打擊。<br>
+      全球暖化亦將衝擊熱帶地區，主要表現於乾旱及半乾旱地區，降雨模式的變化可能造成沙漠化的擴大。<br>
+      （02）北半球冬季將縮短，並更冷更濕，而夏季則變長且更乾更熱，亞熱帶地區則將更乾，而熱帶地區則更濕。<br>
+      （03）由於氣溫增高水汽蒸發加速。全球雨量每年將減少，各地區降水型態將會改變。<br>
+      （04）溫室效應所聯想到的一定會是海水面上升，但目前也有許多學者認為溫室效應並非海水面上升的元兇，但是仍然有爭議，所以還是一個不確定的影響。<br>
+      </p>
+      <p>溫室效應的<font color="#000000">間接</font>影響：</p>
+      <p><br>
+      （01）氣溫上升也會傷害人體的抗病能力、若再加上全球氣候變遷引發動物大遷徙，屆時極有可能促使腦炎、狂犬病、登革熱、黃熱病的大規模蔓延，後果相當可怕。<br>
+      （02）改變植物、農作物之分佈及生長力，並減緩生長速度，造成土壤貧瘠，作物生長終將受限制，且間接破壞生態環境，改變生態平衡。<br>
+      （03）改變地區資源分佈，導致糧食、水源、漁獲量等的供應不平衡，引發國際間之經濟、社會問題。</p>
+      <p><a href="#top">top</a></td>
+    <td width="31%" height="109">
+      <p align="center"><img border="0" src="htmphoto/海洋淹沒.jpg" width="345" height="238"></p>
+      <p align="center"><img border="0" src="htmphoto/風暴.jpg" width="336" height="281"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#99FFCC"><a name="溫室效應減緩方法">溫室效應減緩方法</a></td>
+  </tr>
+  <tr>
+    <td width="69%" height="108">生活在地球上的每一分子，不僅是污染物製造(排放)者，亦是溫室效應氣體產生的貢獻者(人之呼吸作用)。每一地區每一國家皆產生不同程度之溫室效應氣體，主要取決於能源使用狀況。我國為配合全球削減溫室效應氣體的行動，可採行的策略及措施如下：&nbsp;<br>
+      I.調整能源及電源結構&nbsp;<br>
+      II.調整產業結構&nbsp;<br>
+      III.積極發展大眾運輸系統，以達節約能源及減輕空氣污染。&nbsp;<br>
+      IV.擴大綠化，優先植(造)林，以增加吸收CO2。&nbsp;<br>
+      V.配合蒙特婁議定書之規定，按管制期程，削減CFCs及其衍生物，並減少其他溫室效應氣體，如：CH4等之排放。&nbsp;<br>
+      VI.加強有關全球溫升效應之研究 ，及溫室效應氣體排放削減技術之開發。&nbsp;<br>   
+      （01）儘速修正台灣地區能源發展方案，穩定電源的成長，並將燃油、燃煤電廠轉為擴大使用天然氣，以改善區域空氣品質，並減少二氧化碳之排放。&nbsp;<br>
+      （02）加強開發替代能源，例如地熱、水力、風能、核能、太陽能、天然氣之取得及使用。&nbsp;<br>
+      （03）積極引用複循環機組發電，以提升發電效率。&nbsp;<br>
+      （04）加強電力負載管理，減少尖峰用電需求。&nbsp;<br>
+      （05）加強推動全國節約能源計畫。&nbsp;<br>
+      （06）鼓勵業者發展低耗能、低污染之產業，加強改善或淘汰高耗能、高污染之產業，加強產業升級。&nbsp;<br>
+      （07）調整能源價格，以價差推動產業加強提升能源使用效率。&nbsp;<br>
+      （08）引進相關技術，優先進行高耗能、高污染產業的二氧化碳排放削減。&nbsp;<br>
+      （09）增強法規及經濟誘因，鼓勵產業界發展省能源、高效率設備及器具，以提升能源使用效率，並減少廢熱之排放。 
+      <b><br>
+      </b>
+      <p><a href="#top">top</a></td>
+    <td width="31%" height="108">
+      <p align="center"><img border="0" src="htmphoto/溫室效應.gif" width="351" height="307"></p>
+      <p align="center"><img border="0" src="htmphoto/暖化.jpg" width="349" height="342"></p>
+      <p align="center">　</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

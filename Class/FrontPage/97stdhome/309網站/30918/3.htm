@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<style>
+body,td,div  {font:12px 新細明體}
+label        {height:19px;padding:3px 0px 0px 4px}
+.link_box    {text-align:left;cursor:default}
+.link_head   {width:100%;height:23;border:2px inset}
+.link_text   {background:#fff;padding-left:2px}
+.link_arrow0 {font:14px marlett;text-align:center;width:22;height:100%;border:2px outset;background:buttonface}
+.link_arrow1 {font:14px marlett;text-align:center;width:22;height:100%;border:1px solid buttonshadow;padding:2px 0px 0px 2px;background:buttonface}
+.link_value  {position:absolute;visibility:hidden;border:1px solid;overflow:auto;overflow-x:hidden;filter:alpha(opacity:0)}
+.link_record0{width:100%;height:20;border-top:1px solid #eee;background:#fff;color:#000;padding-left:2px}
+.link_record1{width:100%;height:20;border-top:1px solid #047;background:#058;color:#fe0;padding-left:2px}
+</style>
+<script>
+var dropShow=false
+var currentID
+function dropdown(el){
+if(dropShow){
+dropFadeOut()
+}else{
+currentID=el
+el.style.visibility="visible"
+dropFadeIn()
+}
+}
+function dropFadeIn(){//選單淡入的效果
+if(currentID.filters.alpha.opacity<100){
+currentID.filters.alpha.opacity+=20
+fadeTimer=setTimeout("dropFadeIn()",50)
+}else{
+dropShow=true
+clearTimeout(fadeTimer)
+}
+}
+function dropFadeOut(){//選單淡出的效果
+if(currentID.filters.alpha.opacity>0){
+clearTimeout(fadeTimer)
+currentID.filters.alpha.opacity-=20
+fadeTimer=setTimeout("dropFadeOut()",50)
+}else{
+dropShow=false
+currentID.style.visibility="hidden"
+}
+}
+function dropdownHide(){
+if(dropShow){
+dropFadeOut()
+dropShow=false
+}
+}
+function hiLight(el){//高亮度顯示指標位置
+if(dropShow){
+for(i=0;i<el.parentElement.childNodes.length;i++){
+el.parentElement.childNodes(i).className="link_record0"
+}
+el.className="link_record1"
+}
+}
+function CheckMe(el){//替換顯示內容
+el.parentElement.parentElement.childNodes(0).childNodes(0).childNodes(0).childNodes(0).childNodes(0).childNodes(0).innerHTML=el.innerHTML
+}
+document.onclick=dropdownHide
+</script>
+<style type="text/css">
+<!-- 
+.time{
+	font-family : Comic Sans Ms;
+	font-size : 18pt;
+	font-weight : bold;
+	color: #000000;
+}
+-->
+</style>
+<style type="text/css">
+<!-- 
+.time{
+	font-family : Comic Sans Ms;
+	font-size : 18pt;
+	font-weight : bold;
+	color: #000000;
+}
+-->
+</style> 
+</head>
+
+<body background="images/back3.jpg" onLoad="init()" >
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="images/title3.gif"></p> 
+<p align="center">　</p>
+<table cellpadding=4 cellspacing=2 bgcolor=#a0a0a0><tr>
+<td bgcolor=#ddeeff width=330>
+<p align="center"><font face="華康雅宋體" size="5">參考資料</font></td></tr>
+<tr><td bgcolor=#e0e0e0 align=center height="60">
+
+<div class=link_box style="width:150px" onselectStart="return false">
+<div class=link_head onclick="dropdown(value2)">
+<table width=100% height=100% border=0 cellpadding=0 cellspacing=0><tr>
+<td><div class=link_text>
+	<p align="center"><label>您想要前往？</label></div></td>
+<td width=22 align=right><div class=link_arrow0 onmousedown="this.className='link_arrow1'" onmouseup="this.className='link_arrow0'" onmouseout="this.className='link_arrow0'">6</div></td>
+</tr></table>
+</div>
+<div id=value2 class=link_value style="width:100%;height:82px">
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://general.chemistry.pu.edu.tw/superconductor3/superconuctor.htm')" >
+	<p style="text-align: center"><label>靜宜大學      </label></div>
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://www.shs.edu.tw/works/essay/2008/03/2008032420143420.pdf')"  >
+	<p style="text-align: center"><label>超導體之初探      </label></div>
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://www.shs.edu.tw/works/essay/2006/03/2006033113095153.pdf')"   >
+	<p style="text-align: center"><label>生活中的超導體    </label></div> 
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://residence.educities.edu.tw/atom/taco/p-2.htm')">
+	<p style="text-align: center"><label>超導體</label></div>
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://zh.wikipedia.org/w/index.php?title=%E8%B6%85%E5%AF%BC%E6%9D%90%E6%96%99&variant=zh-hant')">
+	<p style="text-align: center"><label>維基百科</label></div>
+<div class=link_record0 onmouseover="hiLight(this)" onclick="CheckMe(this);window.open('http://www.chjhs.tyc.edu.tw/jim5631/reading/superconductivity.doc')">
+	<p style="text-align: center"><label>零電阻的超導體</label></div>
+</div>
+</div>
+</td>
+	</tr>
+</table>
+<p align="center">　</p>
+<script Language="JavaScript">
+<!-- Hiding
+var ctimer;
+
+function init(){
+if (document.all){
+tim2.style.left=tim1.style.posLeft;
+tim2.style.top=tim1.style.posTop+tim1.offsetHeight-6;
+settimes();
+}
+}
+
+function settimes(){
+var time= new Date();
+hours= time.getHours();
+mins= time.getMinutes();
+secs= time.getSeconds();
+if (hours<10)
+hours="0"+hours;
+if(mins<10)
+mins="0"+mins;
+if (secs<10)
+secs="0"+secs;
+tim1.innerHTML=hours+":"+mins+":"+secs
+tim2.innerHTML=hours+":"+mins+":"+secs
+ctimer=setTimeout('settimes()',960);
+}
+// -->
+</script> 
+<div Id="tim1" Style="position:absolute; width:10; height:10; top:10; left:50"
+class="time"></div><div Id="tim2"
+Style="position:absolute; filter:flipv() alpha(opacity=20); font-style:italic"
+class="time"></div>
+<p>　</p>
+<p><font size="3">[1]靜宜大學應化系善化實驗-超導體製作實驗</font></p>
+<p><a href="http://general.chemistry.pu.edu.tw/superconductor3/superconuctor.htm"><font size="3">http://general.chemistry.pu.edu.tw/superconductor3/superconuctor.htm<br>
+</font>
+</a></p>
+<p><font size="3">[2]超導體之初探&nbsp;</font></p>
+<p><a href="http://www.shs.edu.tw/works/essay/2008/03/2008032420143420.pdf"><font size="3">http://www.shs.edu.tw/works/essay/2008/03/2008032420143420.pdf<br>
+</font>
+</a></p>
+<p><font size="3">[3]生活中的超導體介紹及應用</font></p>
+<p><a href="http://www.shs.edu.tw/works/essay/2006/03/2006033113095153.pdf"><font size="3">http://www.shs.edu.tw/works/essay/2006/03/2006033113095153.pdf<br>
+</font>
+</a></p>
+<p><font size="3">[4]超導體</font></p>
+<p><a href="http://residence.educities.edu.tw/atom/taco/p-2.htm"><font size="3">http://residence.educities.edu.tw/atom/taco/p-2.htm<br>
+</font>
+</a></p>
+<p><font size="3">[5]超導材料  維基百科，自由的百科全書</font></p>  
+<p><a href="http://zh.wikipedia.org/w/index.php?title=%E8%B6%85%E5%AF%BC%E6%9D%90%E6%96%99&amp;variant=zh-hant"><font size="3">http://zh.wikipedia.org/w/index.php?title=%E8%B6%85%E5%AF%BC%E6%9D%90%E6%96%99&amp;variant=zh-hant<br>
+</font>
+</a></p>
+<p><font size="3">[6]零電阻的超導體</font></p>
+<p><a href="http://www.chjhs.tyc.edu.tw/jim5631/reading/superconductivity.doc"><font size="3">http://www.chjhs.tyc.edu.tw/jim5631/reading/superconductivity.doc</font></a></p>
+<p>　</p>
+</body>
+<script Language="JavaScript">
+<!-- Hiding
+var ctimer;
+
+function init(){
+if (document.all){
+tim2.style.left=tim1.style.posLeft;
+tim2.style.top=tim1.style.posTop+tim1.offsetHeight-6;
+settimes();
+}
+}
+
+function settimes(){
+var time= new Date();
+hours= time.getHours();
+mins= time.getMinutes();
+secs= time.getSeconds();
+if (hours<10)
+hours="0"+hours;
+if(mins<10)
+mins="0"+mins;
+if (secs<10)
+secs="0"+secs;
+tim1.innerHTML=hours+":"+mins+":"+secs
+tim2.innerHTML=hours+":"+mins+":"+secs
+ctimer=setTimeout('settimes()',960);
+}
+// -->
+</script> 
+
+</html>

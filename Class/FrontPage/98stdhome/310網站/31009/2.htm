@@ -1,0 +1,207 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+<STYLE>
+.spanstyle{font-size: 9pt; position: absolute; top: -50px; visibility: visible}
+</STYLE>
+</head>
+
+<body onload="javascript:pageonload();" background="images/back1.GIF" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="images/title2.gif" width="381" height="60"><script language="JavaScript"> 
+var message="Hey! 一　起　愛　地　球　吧 ^^";
+var x,y;
+var step=12;
+var flag=0;
+
+message=message.split("");
+var xpos=new Array();
+for (i=0;i<=message.length-1;i++) {
+xpos[i]=-50;
+}
+
+var ypos=new Array();
+for (i=0;i<=message.length-1;i++) {
+ypos[i]=-50;
+}
+
+function handlerMM(e) {
+x = (document.layers) ? e.pageX : document.body.scrollLeft+event.clientX+20;
+y = (document.layers) ? e.pageY : document.body.scrollTop+event.clientY;
+flag=1;
+}
+
+function makesnake() {
+if (flag==1 && document.all) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<=message.length-1; i++) {
+var thisspan = eval("span"+(i)+".style");
+thisspan.posLeft=xpos[i];
+thisspan.posTop=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+else if (flag==1 && document.layers) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<message.length-1; i++) {
+var thisspan = eval("document.span"+i);
+thisspan.left=xpos[i];
+thisspan.top=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+}
+
+
+for (i=0;i<=message.length-1;i++) {
+document.write("<span id='span"+i+"' class='spanstyle'>");
+document.write(message[i]);
+document.write("</span>");
+}
+
+if (document.layers) {
+document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+
+function pageonload() {
+makesnake();
+window.setTimeout("pageonload();", 2);
+}
+</script><a name="top"></a>   </p>
+
+<p align="center">　   </p> 
+<table border="0" width="100%">
+  <tr>
+    <td width="67%" align="center">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon1.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%">
+            <p align="left"><font face="華康少女文字W3(P)" size="4"><b>氣候現象</b></font>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%">
+                  <p align="left"><a href="#原始大氣">梅雨</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%">
+                  <p align="left"><a href="#轉變過程">季風</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%">
+                  <p align="left"><a href="#現今大氣">颱風</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%">
+                  <p align="left"><a href="#聖嬰現象">聖嬰現象</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%">
+                  <p align="left"><a href="#反聖嬰現象">反聖嬰現象</a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="2" width="100%" height="1443" bordercolor="#800080">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#66FFFF" height="20">
+      <p align="center"><a name="原始大氣"></a>梅雨</td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      梅雨，又稱黃梅天，指中國長江中下游地區、台灣、日本中南部、韓國南部等地，每年6月中下旬至7月上半月之間持續天陰有雨的自然氣候現象。由於梅雨發生的時段，正是江南梅子的成熟期，故中國人稱這種氣候現象為「梅雨」，這段時間也被稱為「梅雨季節」。梅雨季節裏，空氣溼度大、氣溫高，衣物等容易發霉，所以也有人把梅雨稱為同音的「霉雨」。梅雨季節過後，華中、華南、台灣等地的天氣開始由太平洋副熱帶高壓主導，正式進入炎熱的夏季。
+      <p><a href="#top">回頂端</a></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#33CCFF" height="20">
+      <p align="center"><a name="轉變過程"></a>季風</td>
+  </tr>
+  <tr>
+    <td width="50%" height="293"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      大陸與海洋對熱的吸收與輻射，均不相同。在冬季大陸較海洋寒冷，空氣密度較大，氣壓較高，於是地面附近的空氣，常自大陸吹向海洋。例如亞洲大陸在冬季的高氣壓中心，位於我國蒙古及西伯利亞一帶，其吹向太平洋的風，非常強烈。至夏季陸地溫度增高，氣流上升而氣壓較低，同時太平洋西部形成高氣壓區，於是風自東南海上吹向陸地，挾帶大量溼氣，造成豐沛的雨量。以上隨季節改變方向的風，統稱為季風。</font>
+      <p><a href="#top">回頂端</a></td>
+    <td width="50%" height="293"><img border="0" src="photo/季風.gif" width="500" height="260"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#0099FF" height="20">
+      <p align="center"><a name="現今大氣"></a>颱風</td>
+  </tr>
+  <tr>
+    <td width="50%" height="488">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在熱帶海洋上，接近海面的空氣因為受太陽照射而溫度較高，使海水蒸發的水汽也增多。因為大量水汽散布在空氣中，所以熱帶海洋上的空氣溫度高、濕度大。這種溫濕空氣因為溫度高而膨脹，因為膨脹而密度減小，加以赤道附近風力微弱，所以很容易產生上升現象，同時四周之較冷空氣流入補充空出來的空間，然後再受熱上升，如此循環不已，就是所謂對流作用，終必使整個氣柱成為重量較輕、密度較小之空氣，這就形成了一個所謂熱帶性低氣壓。在夏季，因為太陽直射於赤道以北地區，來自南半球之東南信風侵入北半球而轉成西南季風，和北半球的東北信風相遇，更迫使輻合帶空氣上升，增加對流作用。再因西南季風和東北信風方向不同，秉性不同，相遇時造成擾動產生旋渦。這種西南季風和東北信風相遇所造成的擾動，和對流作用相輔相成，使已形成為低氣壓之旋渦繼續加深，也就是使四周空氣流動更快，風速加大，於是颱風初步形成。  
+      <p><a href="#top">回頂端</a></td>
+    <td width="50%" height="488">
+      <p align="center"><img border="0" src="photo/颱風.jpg" width="256" height="178"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#0066FF" height="20">
+      <p align="center"><a name="聖嬰現象"></a>聖嬰現象</td>
+  </tr>
+  <tr>
+    <td width="50%" height="293">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 海溫增高對氣候變化之影響，恰如爐火加熱盛於鍋內的水，海溫有如：爐火，大氣有如鍋內的水。在「聖嬰」年，當熱帶東太平洋海溫異常<br>  
+             增高時，洋面上方之大氣，伴隨著海洋來之水氣，受熱上升，經由對流成雲後降雨。為了均衡東太平洋區空氣之上升，海溫降低之熱帶西太平洋上空之空氣遂下沉，造成地表壓力增加並抑制降雨。因此，「聖嬰」年之一般氣候變化概況為：熱帶東太平洋區，海溫增高，空氣受熱上升，地表壓力降低，降雨增加，發生水災之機會增高；熱帶西太平洋區之氣候變化則與東太平洋區相反，在印尼、菲律賓、澳洲北部較易導致乾旱。
+      <p><a href="#top">回頂端</a></td>
+    <td width="50%" height="293">
+      <p align="center"><img border="0" src="photo/聖嬰.jpg" width="411" height="275"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#0066CC" height="20">
+      <p align="center"><a name="反聖嬰現象"></a>反聖嬰現象</td>
+  </tr>
+  <tr>
+    <td width="50%" height="333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      聖嬰係為聖嬰之相對詞。兩者均是指在赤道東太平洋區域，海溫及洋流之異常變化現象。若以赤道南北緯  
+      5°西經90°至150°間為觀測範圍 (即 Nino 3 區域)，並使用5個月海面溫度之移動平均值作計算，若高於氣候標準平均值  
+      0.5 C 時視為聖嬰現象，若低於氣候標準平均值 0.5°C  
+      時則視為反聖嬰現象 。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      一般正常氣候下，熱帶太平洋東部之氣壓場高於西部，此一東西壓力差異，產生熱帶東風帶，並帶動東太平洋之洋流西行，在反聖嬰現象時期則是特別強化其海溫之對比。使得以上現象益為強烈，因為海水溫度之變化是影響大氣氣候變動之重要因素之一，是以在聖嬰時期之異常氣候情況可能呈現反常之涼夏或暖冬，但在反聖嬰時期則可能變為加強四季之特性，即是熱夏與寒冬。
+      <p><a href="#top">回頂端</a></td>
+    <td width="50%" height="333">
+      <p align="center"><img border="0" src="photo/反聖應.jpg" width="361" height="213"></td>
+  </tr>
+</table>
+
+<p align="center">　</p>
+<p align="center">　</p>
+
+</body>
+
+</html>

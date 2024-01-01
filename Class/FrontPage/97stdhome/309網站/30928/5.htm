@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>5</title>
+<script language="JavaScript1.2">
+<!--
+if (document.all&&!window.print){
+leftright.style.width=document.body.clientWidth-2
+topdown.style.height=document.body.clientHeight-2
+}
+else if (document.layers){
+document.leftright.clip.width=window.innerWidth
+document.leftright.clip.height=1
+document.topdown.clip.width=1
+document.topdown.clip.height=window.innerHeight
+}
+function followmouse1(){
+//move cross engine for IE 4+
+leftright.style.pixelTop=document.body.scrollTop+event.clientY+1
+topdown.style.pixelTop=document.body.scrollTop
+if (event.clientX<document.body.clientWidth-2)
+topdown.style.pixelLeft=document.body.scrollLeft+event.clientX+1
+else
+topdown.style.pixelLeft=document.body.clientWidth-2
+}
+function followmouse2(e){
+//move cross engine for NS 4+
+document.leftright.top=e.y+1
+document.topdown.top=pageYOffset
+document.topdown.left=e.x+1
+}
+if (document.all)
+document.onmousemove=followmouse1
+else if (document.layers){
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=followmouse2
+}
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+setTimeout("window.onresize=regenerate",400)
+}
+if ((document.all&&!window.print)||document.layers)
+//if the user is using IE 4 or NS 4, both NOT IE 5+
+window.onload=regenerate2
+//-->
+</script>
+<style>
+<!--
+#leftright, #topdown{
+position:absolute;
+left:0;
+top:0;
+width:1px;
+height:1px;
+layer-background-color:#B0D0F8;
+background-color:#00eeff;
+z-index:100;
+font-size:1px;
+}
+-->
+</style> 
+</head>
+
+<body background="image/back5.GIF" onload="snow();" >
+<script type="text/javascript">
+// 程式作者：風痕影（hit1205@m70.url.com.tw）
+// 作者網站：風痕水影（http://hit1205.blogdns.org/）
+// 製作日期：2004年11月15-17日
+// 更新日期：v1.1 2004年12月25日
+n=6; // 雪花數目
+wind=0; // 風力
+re=60; // 更新
+vy=4; // 雪花速度
+vx=4; // 搖晃程度
+img="http://dob.tnc.edu.tw/authorHD/1/snow.gif"; // 圖檔
+img_h=30; // 雪花高
+h=250; // 效果範圍高
+w=300; // 效果範圍寬
+for(i=0;i<n;i++){document.write("<div id=\"snow"+i+"\" style=\"position:absolute;top:-"+(Math.random()*h+img_h)+"px;left:"+Math.random()*(w-img_h)+"px;\"><img src=\""+img+"\" border=\"0\"></div>");} 
+function snow(){
+	for(i=0;i<n;i++){
+		dgs=document.getElementById("snow"+i).style;
+		if((parseInt(dgs.top)<h)&&(parseInt(dgs.left)<w)&&(parseInt(dgs.left)>-img_h)){
+			if(Math.round(Math.random())==1){o=1;}else{o=-1;}
+			dgs.top=parseInt(dgs.top)+vy+"px";
+			dgs.left=parseInt(dgs.left)+Math.random()*vx*o+wind+"px";
+			}
+		else{
+			dgs.top=-(Math.random()*h+img_h)+"px";
+			dgs.left=Math.random()*(w-img_h)+"px";
+			}
+	}
+	setTimeout("snow();",re);
+}
+</script> 
+<div id="leftright" style="width:expression(document.body.clientWidth-2)">
+</div>
+<div id="topdown" style="height:expression(document.body.clientHeight-2)">
+</div> 
+
+<p align="center"><img border="0" src="image/title5.gif"></p>
+
+<p><b><font size="4" color="#FF0000" face="華康魏碑體(P)">經過這一次的網頁製作後，雖然感覺上很像是老師全部主導的。但是，原則上對於簡單的網頁製作應該已有一定的認識了，所以，我仍然相當感謝老師的諄諄教誨。不過，若要和專業的網頁大師匹敵，那就說不過去了；仍需努力自守，細心學習資訊工程的各種技巧，方能學以致用。何況在這個科技日新月異的今日，如何與人類不斷破壞性的發明又迅速棄置一方的生活協調，實為眾人皆該適應的重要課題吧！</font></b> 
+</p>
+
+<p><b><font size="4" color="#FF0000" face="華康魏碑體(P)">時至今日，不啻化學、物理、地球科學以及生命科學可說是眾家大鎔爐的時代，因此，秉持著學貴專精的基本精神下，將自己所一生專攻的學問與眾人共享共研討，是再重要不過的了。我們是二類組的理工人才〈雖然有時功夫甚不到家，連基本功都學不好〉，於是，可想而知的是，伴隨著全球性的大環境變化，我們生活的工作想必要有國際性水準的交流，所以，扎根於台灣的我們，更須精益求精，以其在未來能與世界各地的人才一同去不只是一較高下，更是戮力同心地屏除種種宗教、種族及政治的因素，建立一個共生共榮的人類新文明。&nbsp;</font></b> 
+</p>
+
+<p><b><font size="4" color="#FF0000" face="華康魏碑體(P)">另外，由於我對化學部分極有興趣，再經歷過這一次的製作後，我對於時下最流行的奈米產業已有一定的認識了，我了解到奈米科技中眾多人才能合力達成的科技結晶以及許多光觸煤的基本反應&nbsp;。相信在不久的將來，希冀將有一顆閃耀的化學新星在眾興燦爛中放出一股與眾不同的嶄新力量。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b> 
+</p>
+
+</body>
+
+</html>

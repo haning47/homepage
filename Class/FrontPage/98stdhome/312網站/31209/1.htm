@@ -1,0 +1,272 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back1.JPG" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="images/title1.gif" width="448" height="56"></p>
+
+<p align="center">　
+
+<!-- BEGIN Eric's Mouse-Clock CODE -->
+<SCRIPT language=JavaScript>
+dCol='FF0000';//date colour.
+fCol='FF0000';//face colour.
+sCol='FF0000';//seconds colour.
+mCol='FF0000';//minutes colour.
+hCol='FF0000';//hours colour.
+ClockHeight=40;
+ClockWidth=40;
+ClockFromMouseY=0;
+ClockFromMouseX=100;
+
+//Alter nothing below! Alignments will be lost!
+
+d=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+m=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+TodaysDate=year+"年 "+m[date.getMonth()]+" "+day+"日 "+d[date.getDay()]+" ";
+D=TodaysDate.split('');
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+speed=0.5;
+ns=(document.layers);
+ie=(document.all);
+Face=Face.split(' ');
+n=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/n;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+step=0.02;
+currStep=0;
+y=new Array();x=new Array();Y=new Array();X=new Array();
+for (i=0; i < n; i++){y[i]=0;x[i]=0;Y[i]=0;X[i]=0}
+Dy=new Array();Dx=new Array();DY=new Array();DX=new Array();
+for (i=0; i < D.length; i++){Dy[i]=0;Dx[i]=0;DY[i]=0;DX[i]=0}
+if (ns){
+for (i=0; i < D.length; i++)
+document.write('<layer name="nsDate'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[i]+'</font></center></layer>');
+for (i=0; i < n; i++)
+document.write('<layer name="nsFace'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[i]+'</font></center></layer>');
+for (i=0; i < S.length; i++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[i]+'</b></center></font></layer>');
+for (i=0; i < M.length; i++)
+document.write('<layer name=nsMinutes'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[i]+'</b></center></font></layer>');
+for (i=0; i < H.length; i++)
+document.write('<layer name=nsHours'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+H[i]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < D.length; i++)
+document.write('<div id="ieDate" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < n; i++)
+document.write('<div id="ieFace" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++)
+document.write('<div id="ieHours" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+H[i]+'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++)
+document.write('<div id="ieMinutes" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[i]+'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++)
+document.write('<div id="ieSeconds" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[i]+'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (ns)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (ns)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+Od.style.top=window.document.body.scrollTop;
+Of.style.top=window.document.body.scrollTop;
+Oh.style.top=window.document.body.scrollTop;
+Om.style.top=window.document.body.scrollTop;
+Os.style.top=window.document.body.scrollTop;
+}
+for (i=0; i < n; i++){
+ var F=(ns)?document.layers['nsFace'+i]:ieFace[i].style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=(ns)?document.layers['nsHours'+i]:ieHours[i].style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=(ns)?document.layers['nsMinutes'+i]:ieMinutes[i].style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=(ns)?document.layers['nsSeconds'+i]:ieSeconds[i].style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=(ns)?document.layers['nsDate'+i]:ieDate[i].style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout('Delay()',20);
+}
+if (ns||ie)window.onload=Delay;
+</SCRIPT>
+<!-- END Mouse-Clock CODE the Code 
+was design by Eric Chen!!!--> </p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="22%"></td>
+    <td width="78%">
+      <ul dynamicoutline initcollapsed msimagelist imagesrc="images/icon1.GIF">
+        <li>關於室內設計
+          <ul msimagelist imagesrc="images/icon2.GIF">
+            <li><a href="#a">何謂室內設計</a></li>
+            <li><a href="#b">室內設計的目標</a></li>
+            <li><a href="#c">室內設計的基礎</a></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%" height="1204">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFF00" height="22">
+      <p align="center"><a name="a"></a>何謂室內設計</td>
+  </tr>
+  <tr>
+    <td width="53%" height="470">
+      <p>&nbsp;&nbsp;&nbsp; 室內設計是一種「以科學（理性）為機能基礎，以藝術（感性）為形式表現，為了塑造一個物質與精神並重的室內環境所採取的一連串創造性活動」。進一步的解釋，所謂「建築物的內部環境」，主要可分為兩大類型：<br>  
+      <br>
+      1.住宅（私人）建築的內部環境。<br>
+      2.非住宅（公共）建築的內部環境。<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; 其實，每個人的生活範圍，總是不外乎「個人方面」、「家庭方面」、「社交方面」及「工作方面」等四種，而住宅正是提供個人、家庭、社交等三方面生活需要的地方。另外，公共性建築主要是在提供工作的場所，間接地也可以滿足個人、家庭、和社交方面的需要。前者如辦公大樓，後者如餐廳、旅館、娛樂場所、百貨商店，甚至車站機場等。<br>  
+      <br>
+      &nbsp;&nbsp;&nbsp; 所謂「實質」環境，包括構成建築物本身的元素，如：天花板、樑、柱、室內外牆面、樓地板、門窗等；以及室內一切固定或活動的傢俱擺設，如：桌椅、床舖、地毯、衣櫥、廚房設備、浴廁設備，甚至</td>  
+    <td width="47%" height="470">
+      <p align="center"><img border="0" src="htmphoto/圖5.JPG" width="371" height="275"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="160" colspan="2">檯燈、掛畫等，都可說是室內設計中的實質環境元素。而「非實質」環境，則是指有關室內通風、採光、遮陽處理、照明氣氛及可以促進視覺美感的事項等。無論實質或非實質環境，都不外乎著重在理性及<br>
+      感性的需要上。理性強調的是實用性、安全性及效率；感性則比較著重在性靈感上的滿足，強調對於視覺美感以及抽象境界素質之提昇。　
+      <p><a href="#top">回頂端</a>
+      <p>　</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#008000" height="22">
+      <p align="center"><a name="b"></a>室內設計的目標</td>
+  </tr>
+  <tr>
+    <td width="53%" height="660">
+      <p>&nbsp;&nbsp;&nbsp; 室內環境的設計，主要有兩個目標：<br>  
+      <br>
+      &nbsp;&nbsp;&nbsp; 1.&nbsp; 先決目標：改善室內環境的實質條件，以提高物質生活的水準。是絕對的、客觀的、理性的。<br>  
+      &nbsp;&nbsp;&nbsp; 2.&nbsp; 終極目標：增進室內環境的精神品質，以發揮性靈生活的價值。是相對的、主觀的、感性的。<br>  
+      <br>
+      &nbsp;&nbsp;&nbsp; 室內環境的設計，要能運用科學的法則，加強空間機能的作用，以「實用」和「經濟」為原則，滿足生活上的多重需要。諸如空間計劃、傢俱陳設，乃至於通風、採光，及管路線路的裝配等，都要完善地配合生活機能，有效地利用人力、物力及財力，使有限的物質條件發揮最大的機效，以提高物質生活的水準。<br>  
+      這是室內設計的先決目標。<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; 室內空間的造形、色彩、光線和質感，都要能在美學的規範下，取悅感官並鼓舞情緒，表現自己的格調與內涵，發揮性靈方面的生活價值，才是室內設計的終極目標。<br>  
+      <br>
+      物質建設的原則：<br>
+      &nbsp;&nbsp;&nbsp; 實用性（Use）：要能用、要好用、要耐用。<br>  
+      &nbsp;&nbsp;&nbsp; 經濟性（Economy）：要價廉物美、要彈性利用。<br>  
+      <br>
+      精神建設的原則：<br>
+      &nbsp;&nbsp;&nbsp; 唯美性（Beauty）：要能看、要好看、要耐看。<br>  
+      &nbsp;&nbsp;&nbsp; 個別性（Individuality）：要至情至性、要瀟灑脫　俗。<br>
+      　</p>
+      <p><a href="#top">回頂端</a></td>
+    <td width="47%" height="660">
+      <p align="center"><img border="0" src="htmphoto/圖三.JPG" width="332" height="239"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FF0000" height="22">
+      <p align="center"><a name="c"></a>室內設計的基礎</td>
+  </tr>
+  <tr>
+    <td width="53%" height="459">&nbsp;&nbsp;&nbsp;&nbsp;
+      <p>&nbsp;&nbsp;&nbsp; 室內設計本是環境設計的一環，而人類的環境一般可以分為「自然環境」及「人為環境」。自然環境提供了我們生存的要素：「空氣」、「日光」、「土地」和「水源」；若一直想以冷氣機取代自然通風，以空調機取代新鮮空氣，是很難達到理想的生活環境的。唯有站在「回歸自然」或「維護生態平衡運行」的生活觀上，珍惜彌足寶貴的自然資源，追求環境設計中「天人合一」的最高境界，才能創造出真正有人性的居住環境。</p>
+      <p>&nbsp;&nbsp;&nbsp; 室內空間要儘量配合建築物的方位和開窗，充分擷取陽光、空氣及綠景等自然資源。室內空間要借助設計手法及形式，儘量向自然延伸，使實際行為和視覺感受能與自然環境相結合。室內環境要儘量採用自然材料或擺設，使其更真實，更具人性。要了解自然是無法以人為形式來偽裝，更不能永遠以機械產品來取代的，我們只有將自然的意念和情趣帶入生活中，才是真正具有「真」、「善」、「美」的居住環境 。<br> 
+      </p>
+      <p><a href="#top">回頂端</a></td>
+    <td width="47%" height="459">
+      <p align="center"><img border="0" src="htmphoto/圖三.JPG" width="332" height="239"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

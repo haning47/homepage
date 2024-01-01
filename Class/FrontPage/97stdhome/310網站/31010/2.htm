@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back2.gif">
+
+<p align="center"><img border="0" src="images/title2.gif" width="468" height="63"></p>
+
+<p align="center">　 
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+</p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFCC">
+      <p align="center">智能化機器人</td>
+  </tr>
+  <tr>
+    <td width="50%">智能化機器人是一種多功能的多軸全自動或半自動機械裝置，可透過程式化動作執行各項生產活動與結合人工智慧與感測技術的應用，提供人類生活、健康、安全、娛樂等方面的服務。 智能化機器人產業是結合機械、自動化、電機、光學、電子、資訊軟體、通訊、安全系統及創意內容等相關技術，為一高度技術整合、高關聯性且高附加價值的明星產業，對於國家經濟與工業整體發展具有關鍵性指標的地位。 智能化機器人應用非常廣泛，未來將成為人類忠實且值得信賴的夥伴，同時將為人類的生活、健康醫療、社會福利與安全作出前所未有的貢獻，隨著人類文明發展與個性化生活型態的改變， 智能化機器人勢必在人們的生活領域中不斷普及並持續成長。<br>  
+      <br>
+      智能化機器人依照功用可分類成工業型、服務型等二種型態。日本、美國、與歐洲等國因為汽車工業需求帶動工業機器人蓬勃發展。服務型機器人至目前先進各國都列為發展的重點項目之一，服務型機器人未來將用在居家看護、保全、環境清潔、互動學習、醫療服務、大樓火災救助與防治、製造業搬運、警用或軍事偵查與農業等用途。&nbsp;<br>
+      近年內，有關 智能化 機器人的理論、技術與應用已日趨熱絡。基本上，服務型 智能化 機器人目前的用途大概分兩種情況：其一為取代骯亂、危險環境或重複無趣的人力勞務，如製造、檢測、火災滅火、救難、警用偵查、危險爆裂物拆除、軍事防衛、建築結構物 (地下水道…等)檢查、環境清潔維護、公共場所的廣告、辦公室及醫院的文件與物品傳遞、重複無趣的清掃整潔等應用。其二是執行、幫助與輔助人類行為以減低因功能喪失所導致的行為不便性，增加生活環境舒適，如傷病患者看護、導盲、玩具、輪椅、餐飲服務、老年與殘障協助等。 智能化機器人的技研發項目涵蓋機械驅動技術、環境感知技術、 智能化 控制軟體與嵌入式系統等關鍵性技術項目等單項關鍵性技術<br>  
+    </td>
+    <td width="50%">
+      <p align="center"><img border="0" src="4/Images/鋁合金雙足機器人.jpg" width="156" height="210"></p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center"><img border="0" src="4/Images/思克立智慧型自走車.gif" width="245" height="186"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFCC">
+      <p align="center">智能化機器人未來發展趨勢</td>
+  </tr>
+  <tr>
+    <td width="50%">由於智能化機器人產業是結合機械、光電、電子、智慧化控制軟體、通訊、安全系統及創意內容等相關技術，為一高度技術整合、高關聯性且高附加價值的產業，對於國家經濟與工業整體發展具有關鍵性指標的地位。 未來將隨機電整合與通訊網路技術發展而更加普及化。&nbsp;<br> 
+      技術發展之相關策略&nbsp;<br>
+      為建立智能化機器人產業體系以及發展策略，應積極建構智能化機器人產業發展環境，提供完整的產業發展及營運、研發、行銷、自創品牌等支援措施，協助技術創新、共同開發、利基市場、檢視並修訂相關法規。現行法令與人有關，修訂與機器人有關之法規，人與機器之間互動相關法令，導引異業合作與國際接軌、協助產業引進技術、國際合作及國際交流等產業合作或投入、人才培育、擴大產業所需之領域人才養成、透過北中南區域產業教學資源中心、培訓產業所需人才與高級人力、技術應用整合、擬定智能化機器人發展重點項目。配置產、學、研之研發資源，強化核心理論的創新與人工智慧基礎技術之研究，培育創意與實作能力，整合各業相關技術，協助業界快速開發產品、產品發展與應用。優先鼓勵投入居家服務及休閒娛樂機器人、醫療及特殊用途機器人的開發，結合相關產業，研發關鍵零組件，開發通路與行銷管道<br>
+      目前先進國家已經著手開發智慧型機器人相關的科技產業，根據韓國資訊通信部(Korea Ministry of Information and Communication)調查研究報告顯示，2012年全球智慧型機器人產值將高達2,500億美元。依據國際機器人協會(IFR)與聯合國歐洲經濟委員會(UNECE)所作預測，在智慧型服務用機器人項目於2003至2006年累計將達到220萬台，4年之間將增加2.5倍，且將會有超過30000種的服務用機器人應用產品出現，遠遠超過產業用機器人的總數87萬5千台。<br> 
+      　　而依據日本機器人協會(JARA)的機器人需求統計，日本國內智慧型機器人市場需求預計將由2005年110億美元成長至2010年249億美元。據英國半導體行業研究機構(VLSI Research)調查預估，至2010年全球智慧型機器人(包括家用機器人及休閒娛樂機器人等等)市場將達593億美元，而智慧型機器人所需各種零組件相關市場商機也達數10億美元以上。依據格瑞特市場研究及分析機構(Researcher Gartner Inc.)預測，智慧型機器人的機光電控制整合軟體市場將會以年平均9.25%成長率遞增，2007年將達到1,384億美元。目前智慧型機器人產值全球約50億美元，其中以產業型機器人占大多數。未來世界各國瞄準的不再是產業型機器人的未來，而是服務及娛樂型機器人的前景。<br>  
+      　　 在先進國家人口老化過程所引發的社會福利、醫療照護及各種公共服務需求已經漸漸浮現，從科技面來看，透過智慧型機器人的輔助，使高齡化人士能健康、舒適及安全地生活，是各國重視的課題。而美國政府在智慧型機器人大學研究投資也從2000至2003年上升48%；2003年的大學研究投資高達2,480萬美元。另外，韓國政府於2003年至2012年投資在智慧型機器人，合計也將超過4億美元；在二十一世紀，智慧型機器人產業也將是世界各國列為前瞻優先發展的新科技產業。未來的社會將漸漸接受智慧型機器人產品所提供的服務，我國發展智慧型機器人產業，將符合未來高科技產業的發展趨勢與達到另一波的高度經濟成長目標。&nbsp;<br> 
+      　　 從美國投入智慧型機器人產業方面來看，自1980年起陸續鼓勵工業界發展和應用機器人，並增加機器人領域的研究經費，把機器人看成美國再次工業化的特徵。另外，也宣佈一項運用機器人探索太空開拓太陽系計畫，預計在2010年完成可在太空作戰的機器人，協助人類太空人各項太空中任務，並在2020年前完成機器人登陸月球行動，作為飛向火星和其他星球的跳板。目前美國在這個技術領域上處於領先地位，主要產品有太空探測用途機器人、國防用途機器人、教育用途機器人、醫療用途機器人、人工智慧軟體系統、遠距遙控機器人等。<br>  
+      日本將智慧型機器人涵蓋在其新產業創造戰略七大領域中，根據日本機器人協會(JARA)調查，日本國內智慧型機器人需求統計，預計將由2005年110億美元成長至2010年249億美元，日本政府於2001年正式宣布執行「Robot Challenge計畫」，計畫中包括要修改法律，允許機器人合法地在醫院等地工作，主要產品包含產業用途機器人、家庭用途機器人、休閒娛樂用途機器人、人型機器人、特殊用途機器人等。<br>  
+      　　 韓國政府緊跟在後，在2003年也將智慧型機器人產業列為十大新世代成長動力產業，預計2012年前其智慧型機器人產業佔全球市場之佔有率要達10%，成為世界第三大智慧型機器人製造國，創造國內2萬個新的就業機會，整個出口值達100億美元，主要產品為家庭用途機器人、休閒娛樂用途機器人、產業用途機器人及教育用途機器人等。<br>  
+    </td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/人形1.jpg" width="203" height="287"></p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center"><img border="0" src="htmphoto/人形2.jpg" width="202" height="268"></p>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

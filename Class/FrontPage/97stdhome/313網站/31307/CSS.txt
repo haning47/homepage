@@ -1,0 +1,9 @@
+<style type="text/css">
+<!--
+a:hover {
+	left: 1px;
+	top: 1px;
+	position: relative;
+}
+-->
+</style>

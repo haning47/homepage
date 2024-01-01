@@ -1,0 +1,545 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back1.gif">
+
+<p align="center"><img border="0" src="images/title2.gif" width="468" height="59"></p>
+<p align="left">　
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+</p>
+
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="mainboard"><font color="#ffffff" size="4">主機板</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　</font><font face="細明體">　</font><font color="#ff0080" size="3">主機板是一塊電路板，英文稱做MainBoard或MotherBoard（簡稱MB），是電腦最主要的部份。電路板上焊滿大大小小的電子零件，包括中央處理器(CPU)、晶片組、記憶體及各種介面卡的擴充槽，並以外殼保護，透過電源供應器，將外部電力供應運轉。</font>
+          <p><font face="新細明體" size="3">　　<img src="photo/mb.gif" width="500" height="350"></font></p>
+          <p><font color="#ff0080" size="3">　　穩定的主機板可以使軟體執行得很平穩，而好的晶片組可以與CPU配合良好，以充分發揮電腦系統的最大功能。</font><font color="#ff0080" size="2"><br>
+          </font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="cpu"><font color="#ffffff" size="4">CPU</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　</font><font face="細明體">　</font><font face="細明體" color="#ff0080">CPU（Central 
+          Process Unit，CPU）中文稱之為中央處理器，又稱為微處理器(micro 
+          processor)。在基本架構上，它包含了電腦五大部門的「算術邏輯運算部門」及「控制部門」兩個重要的部門，所以我們稱它為電腦的心臟。它雖然是高度精密技術的結晶，但執行的動作卻很單純(如兩數的加減、數據的處理)，但速度奇快，且絲毫不出差錯。在外形上，CPU是一顆大而呈方形的晶片，下方圍繞金屬所製的連接腳座，是一塊小的矽晶片。</font><font color="#ff0080"> 
+          </font><font face="華康中楷體,????" color="#ff0080" size="3">　</font><font color="#ff0080" size="2"><br>
+          </font></td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="ram"><font color="#ffffff" size="4">記憶體</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font color="#ff0080">　　主記憶體依照其特性可分為唯讀記憶體（Read 
+          Only Memory，簡稱為ROM）和隨機存取記憶體（Random Access 
+          Memory，簡稱為RAM）。</font>
+          <p><font color="#ffffff" size="3">唯讀記憶體（ROM）</font></p>
+          <p><font face="新細明體">　　</font><font color="#ff0080">這種記憶體在出廠時，就已經將資料寫入（燒錄），電腦在運作時僅能從中讀取資料，而無法寫入新的資料。例如：BIOS（基本輸入及輸出系統）記憶體，是一套程式，在出廠時就已經燒錄在裡面，不會隨著電源的關閉而消失，就是最典型的ROM。</font></p>
+          <p align="left"><font color="#ffffff" size="3">隨機存取記憶體（RAM）</font></p>
+          <p><font face="新細明體">　　</font><font color="#ff0080">在CPU的快速運作過程中，需要這種記憶體作為暫時存放程式、指令或資料的地方，以提昇電腦整體的效能。依照RAM的用途和材質，又可分為動態記憶體（DRAM）和靜態記憶體（SRAM）。</font></p>
+          <p><font color="#8000ff">DRAM：</font><font color="#ff0080">存取速度較慢，但價格較便宜，一般使用者所指的電腦主記憶體就是DRAM。<br>
+          　　　　DRAM又可細分為FPM DRAM、EDO DRAM、SDRAM等。目前的主流記憶體是SDRAM，它有 
+          168 支接腳，速度最快。　　　</font></p>
+          <p><font color="#8000ff">SRAM：</font><font color="#ff0080">存取速度較快，但由於價格較昂貴，通常被採用來作為快取記憶體（Cache 
+          Memory）。</font></p>
+          <p><font color="#ff0080">　　主記憶體的容量越大，電腦處理資料的暫存空間就越大，而電腦運作的效能也越高。</font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="fdd"><font color="#ffffff" size="4">軟式磁碟機</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　</font><font face="細明體">　</font><font color="#ff0080">軟式磁碟機，是用於讓電腦與磁碟片溝通的橋樑。裝在主機正前方，一般有5.25吋與3.5吋兩種規格，目前電腦大都僅裝一台3.5吋磁碟機。軟磁碟機上有一個讀寫指示燈，讀寫時指示燈會亮，表示磁碟機正在執行讀寫中。 
+          當磁碟機的讀寫頭在磁碟片上進行資料寫入（或讀取）的動作時，它實際會是發出（或接受電波），造成磁碟片表曾磁性的改變，因而完成記錄及儲存。硬碟機的資料取存速度遠高於軟磁碟，儲存空間也遠非軟碟可比，但軟磁碟機卻有可隨時取換和移動的優點，加上成本低廉，所以兩者各有千秋，都是個人電腦不可或缺的資料儲存裝置。而軟式磁碟機所扮演的重要功能如下：<br>
+          1.隨時可以載入開機，以備不時之需。<br>
+          2.可將軟體安裝或將資料存入硬碟的管道。<br>
+          3.可做磁片的拷貝。<br>
+          4.可備份硬碟中重要的資料。</font>
+          <p><font color="#ff0080">常見的規格有：</font></p>
+          <p><font color="#8000ff">1. 5.25吋軟碟機：</font><font color="#ff0080">可讀寫2HD(1.2MB)和2D(360KB)兩種不同密度的磁片。</font></p>
+          <p><font color="#8000ff">2. 3.5吋軟碟機：</font><font color="#ff0080">可讀寫2HD(1.44MB)和2DD(720KB)兩種不同密度的磁片。</font></p>
+          <p><font color="#ff0080">　　現在 5.25吋磁碟機已經很少人使用了，因為它使用的磁碟片是軟式的，容易折損。反倒是 
+          3.5吋磁碟機因為其磁碟片是以硬殼包裝，所以目前被大量使用。</font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="hdd"><font color="#ffffff" size="4">硬式磁碟機</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td>
+          <p align="left"><font face="華康中楷體,????" size="3"><img hspace="0" src="photo/hdd.jpg" align="right" width="136" height="200">　　</font><font color="#ff0080">硬式碟機(HDD)儲存容量大且精密，是一種固定的儲存裝置。硬碟片的質料為金屬，純度高且運作存取速度快，因此製造時大都密封在硬碟機內，又稱為固定磁碟機(Fixed 
+          Disk)。硬式磁碟機是電腦的工作磁碟，用來開機啟動系統，以及存取主要資料及程式。雖然磁片有攜帶方便的優點，但軟碟的存取速度太慢，而硬式磁碟機就是為了改善速度、容量而發展出來的磁碟機。隨著科技的普及，硬碟的價格、體積、容量、穩定性、相容性等，都有大幅度的改變，從早期10MB、20MB，到250MB、340MB、500MB，以及目前主流的硬式磁碟大都是10GB以上的容量。<br>
+          </font></p>
+          <p><font color="#ff0080">目前的硬碟有下列兩種：</font></p>
+          <p><font color="#8000ff">1. 固定式：</font><font color="#ff0080">固定在PC機殼內，當容量不足時，可再擴充另一台硬碟。</font></p>
+          <p><font color="#8000ff">2. 抽取式：</font><font color="#ff0080">如同軟碟一樣，是以磁片的方式處理，只是它的速度遠超過軟碟，適合做備份資料時使用。</font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="cd-rom"><font color="#ffffff" size="4">光碟機</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　　</font><font color="#ff0080">光碟機的機械裝置和軟碟機很類似，其中共有三個馬達，分別控制不同的功能。光碟機的上面有一個用來旋轉光碟片的馬達，和一個驅動雷射針頭讀取資料的馬達，還有第三個馬達，專門負責驅動光碟片的插入和退出裝置。</font>
+          <p><font color="#ff0080">大多數的光碟機再外觀上會有三個裝置，分別為：</font></p>
+          <ol>
+            <li><font color="#ff0080">光碟退出鈕</font>
+            <li><font color="#ff0080">音量控制鈕</font>
+            <li><font color="#ff0080">耳機插座</font></li>
+          </ol>
+          <p><font face="細明體" color="#ff0080">　</font><font color="#ff0080">　按下光碟退出鈕，會從光碟機中推出一個像抽屜一樣的保護鋏(Caddy)，這個保護鋏就是要放置光碟片的地方。將光碟片沒有圖案的光滑面朝下，放入保護鋏中，再按一下光碟退出鈕，或輕推一下保護鋏，保護鋏就會退入光碟機中，並開始讀取光碟內容。</font></p>
+          <p><font color="#ff0080">　　光碟機上的音量控制鈕可以直接調整光碟的播放音量，而不需要透過軟體來調整音量。</font></p>
+          <p><font color="#ff0080">　　耳機插座只要直接接上耳機，就可以安靜地享受光碟中美妙的聲音，不需要將耳機接到電腦後面的音效卡上，十分方便。</font></p>
+          <p><font color="#ff0080">　　光碟又稱做CD-ROM，是近幾年來普及最快的產品。雖然同樣可以輸入軟體，但是和磁片最大的不同是：光碟是由原版母光碟壓出來的，而不像磁片是一片一片轉錄出來的，所以不容易拷貝，軟體遭盜版的風險就小得多了，在容量上來說，光碟的容量也比磁片大了許多，所以因為這些優點，使光碟的盛行成為必然的趨勢。</font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="soundcard"><font color="#ffffff" size="4">音效卡</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td>　　<font color="#ff0080">現在的多媒體電腦，都一定有音效卡的配備。因為如果想要播放高品質的聲音，音效卡是一定不可缺少的。</font>
+          <p><font color="#ff0080">　　音效卡的位置是插在主機板的插槽中，所有軟體的聲音，都要經過音效卡的處理，才能透過喇叭播放出來，所以音效卡的品質優劣也就會間接的影響多媒體電腦聲音播放的品質。</font></p>
+          <p><font color="#ff0080">　　音效卡通常有四個可以連接的插座，分別連接不同的硬體接線，而有不同的功能：</font></p>
+          <div align="center">
+            <table cellSpacing="1" width="80%" bgColor="#ffffb5" border="1">
+              <tbody>
+                <tr>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">名稱</font></td>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">功能說明</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">Line 
+                    in</font></td>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#ff0080">將音響設備的聲音，透過接線輸入到電腦。</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">Mic 
+                    in</font></td>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#ff0080">連接麥克風的接線，可以透過麥克風輸入聲音到電腦中，在錄製聲音的時候必須使用。</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">Line 
+                    out</font></td>
+                  <td bgColor="#f1f5bc"><font color="#ff0080">將電腦的聲音透過接線，由音響設備輸出。</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#8000ff">Spk 
+                    out</font></td>
+                  <td align="middle" bgColor="#f1f5bc"><font color="#ff0080">將電腦的聲音透過接線，由喇叭輸出。　</font></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="speaker"><font color="#ffffff" size="4">喇叭</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font color="#ff0080"><img hspace="0" src="photo/speaker.jpg" align="right" width="200" height="250"></font><font face="華康中楷體,????" size="3">　　</font><font color="#ff0080">喇叭是電腦中聲音的輸出裝置，除了電腦中系統內訂的聲音，是由電腦主機中所附設的小喇叭所發出的以外，其他所有軟體的聲音都必須經過音效卡的處理，由喇叭來輸出。</font>
+          <p><font color="#ff0080">　　喇叭的輸出功率也關係了聲音的大小和品質，一個品質較好的喇叭可以讓聲音的品質較為純淨，也較沒有雜音。使用功率較小的喇叭時，如果音量調得過大，就會有破掉的雜音出現，讓人有很不舒服的感覺。</font></p>
+          <p><font color="#ff0080">　　較為精密的喇叭除了附有調整大小聲的調整鈕以外，還讓使用者擁有更多種聲音品質的選擇，常見的調整鈕如下：</font></p>
+          <div align="center">
+            <table cellSpacing="1" width="80%" bgColor="#ffff80" border="1">
+              <tbody>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">名稱</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">功能</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">POWER</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#ff0080">喇叭的開關，可以打開喇叭及關掉喇叭。</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">VOLUME</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#ff0080">調整整體音量大小</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">BALANCE</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#ff0080">調整聲音中高音和低音的平衡</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">TREBLE</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#ff0080">調整音色中的高音部分，越大高音就會越明顯，越小則高音越不明顯。</font></td>
+                </tr>
+                <tr>
+                  <td align="middle" bgColor="#ffffb7"><font color="#8000ff">S-BASS</font></td>
+                  <td align="middle" bgColor="#ffffb7"><font color="#ff0080">調整音色中的低音部分，越大低音會越重越明顯，越小就越不明顯。</font></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="keyboard"><font face="細明體" color="#ffffff" size="4">鍵盤</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　　</font><font face="細明體" color="#ff0080">鍵盤是個人電腦中不可或缺的一項硬體設備，早期大都使用 
+          84 個按鍵的鍵盤，而目前則全都是 101/102 
+          個按鍵的鍵盤。</font><font color="#ff0080"><br>
+          </font><font face="細明體" color="#ff0080">　　在鍵盤上的按鍵您會看到除了英文字外還有一些中文字，那是供我們中國人使用的倉頡主字根代碼，所以我們稱之為「中/英文鍵盤」。　</font></td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="mouse"><font color="#ffffff" size="4">滑鼠</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　　</font><font color="#ff0080">在目前的中文視窗操作環境下，最方便的輸入裝置就是滑鼠了。一般常見的滑鼠有二鍵式、三鍵式兩種。一般使用兩鍵的滑鼠, 
+          如果使用三鍵的滑鼠, 則中鍵不用 。<br>
+          </font>
+          <p><font color="#ffffff" size="3">滑鼠的操作方式</font></p>
+          <p><font color="#8000ff">1. 移動：</font><font color="#ff0080">有如鍵盤的方向鍵一般, 
+          不過滑鼠可比鍵盤靈活太多了</font></p>
+          <p><font color="#8000ff">2. 按左鍵一下：</font><font color="#ff0080">(如:最大化)、或按右鍵一下(如:標示地雷)</font></p>
+          <p><font color="#8000ff">3. 連按左鍵兩下：</font><font color="#ff0080">這是初學者覺得比較難的動作，要訣是：連按左鍵時，要輕要快，食指不要離開滑鼠的塑膠片。(如:打開圖示)</font></p>
+          <p><font color="#8000ff">4. 拖曳(drag): </font><font color="#ff0080">將滑鼠移到目標位置， 
+          按住左鍵不放， 移動滑鼠到新目標位置， 
+          放開左鍵即可(如:接龍中的移牌)。</font></p>
+          <p><font color="#ffffff" size="3">滑鼠的保養</font></p>
+          <p><font color="#ff0080">　　將滑鼠翻到背面, 取出滾球, 
+          將滾球及滑鼠內部的垂直、水平座標控制軸的灰塵擦拭乾淨, 
+          再將滾球放回去即可 。</font></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378" colSpan="2"><font color="#ffffff" size="4">顯示器(</font><a name="monitor"><font color="#ffffff" size="4">螢幕)</font></a></td>
+      </tr>
+      <tr>
+        <td vAlign="top"><font face="華康中楷體,????" size="3">　</font><font color="#ff0080" size="3">螢幕是電腦的主要輸出之一。螢幕上有調整水平、垂直、寬度、高度、亮度和對比的旋鈕，利用這些旋鈕可以調整螢幕的顯像效果。而新一代的螢幕則具有隨插即用(Plug 
+          &amp; Play)的功能，電腦偵測後自動校正。</font></td>
+        <td><img src="photo/monitor.jpg" width="200" height="207"></td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378" colSpan="2"><a name="printer"><font color="#ffffff" size="4">印表機</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td colSpan="2"><font face="華康中楷體,????" size="3">　　</font><font color="#ff0080" size="3">印表機是電腦的輸出設備，依照印表機的製造技術，可分為點矩陣、噴墨和雷射三種印表機。不同種類的印表機除了列印方式不同外，列印的效果也不一樣。<br>
+          </font></td>
+      </tr>
+      <tr>
+        <td><font color="#ffffff" size="3">點矩陣印表機<br>
+          </font><font color="#000000" size="3">　　</font><font color="#ff0080" size="3">利用印表頭內的撞針，撞擊在色帶及紙上產生列印效果。點矩陣印表機有 
+          8 、 9 、 24 
+          針等三種不同型式的針頭，撞針越多的印表機，其列印品質越佳。這種印表機列印時會產生較大的聲音，但好處是可以列印連續報表紙和複寫紙。<br>
+          </font></td>
+        <td><img src="photo/printer_dot.jpg" width="200" height="124"></td>
+      </tr>
+      <tr>
+        <td><font color="#ffffff" size="3">噴墨印表機<br>
+          <br>
+          </font><font color="#ff0080" size="3">　　利用壓力將墨水匣中的墨水噴灑在紙上產生列印效果。噴墨印表機可分為單色和彩色兩種，列印品質較點矩陣佳，而且列印時聲音較小，列印速度也較快，但缺點是必須注意紙張的選擇，以免墨水遇紙顏色暈開。<br>
+          </font></td>
+        <td>　</td>
+      </tr>
+      <tr>
+        <td vAlign="top"><font color="#ffffff" size="3">雷射印表機<br>
+          <br>
+          </font><font color="#ff0080" size="3">　　利用電子照相技術在紙上產生列印效果，在列印品質及速度上都是最好的選擇，而且列印時聲音較小。<br>
+          </font></td>
+        <td><img src="photo/printer_laser.jpg" width="200" height="176"></td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<div align="center">
+  <center>
+  <table width="600" border="0">
+    <tbody>
+      <tr>
+        <td bgColor="#fab378"><a name="modem"><font color="#ffffff" size="4">數據機</font></a><font face="標楷體" color="#ff0080" size="4"><strong>　</strong></font></td>
+      </tr>
+      <tr>
+        <td><font face="華康中楷體,????" size="3">　</font><font face="細明體">　</font><font color="#ff0080">數據機是連上Internet最重要的通訊設備，理論上來說，數據機的速度越快，連線時傳輸資料的速度也越快。<br>
+          　　數據機俗稱為「魔電」，因為它的英文字縮寫是MODEM，所以網路族就直呼數據機為魔電，它是個人電腦連接Internet很重要的設備。</font>
+          <p align="center"><font color="#8000ff">數據機的外觀</font></p>
+          <div align="center">
+            <table width="300" bgColor="#ffffff" border="1">
+              <tbody>
+                <tr>
+                  <td width="50%"><font face="華康中明體" size="3"><img height="121" src="photo/image46.gif" width="188"></font></td>
+                  <td width="50%"><font face="華康中明體" size="3"><img height="133" src="photo/image47.gif" width="161"></font></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

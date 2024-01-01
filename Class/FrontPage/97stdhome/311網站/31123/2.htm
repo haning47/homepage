@@ -1,0 +1,284 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back2.gif">
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p><a name="公路車"><span style="position: absolute; left: 252; top: 16"><img border="0" src="images/title2.gif" width="467" height="58"></span></a></p>
+            <p align="center">　<script language="JavaScript">
+var Selected_Month;
+var Selected_Year;
+var Current_Date = new Date();
+var Current_Month = Current_Date.getMonth();
+
+var Days_in_Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+var Month_Label = new Array('一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月');
+
+var Current_Year = Current_Date.getYear();
+
+var Today = Current_Date.getDate();
+
+function Header(Year, Month) {
+
+if (Month == 1) {
+if ((Year % 400 == 0) || ((Year % 4 == 0) && (Year % 100 != 0))) {
+Days_in_Month[1] = 29;
+}
+}
+var Header_String = Month_Label[Month] + ' ' + Year;
+return Header_String;
+}
+
+
+
+function Make_Calendar(Year, Month) {
+var First_Date = new Date(Year, Month, 1);
+var Heading = Header(Year, Month);
+var First_Day = First_Date.getDay() + 1;
+if (((Days_in_Month[Month] == 31) && (First_Day >= 6)) ||
+((Days_in_Month[Month] == 30) && (First_Day == 7))) {
+var Rows = 6;
+}
+else if ((Days_in_Month[Month] == 28) && (First_Day == 1)) {
+var Rows = 4;
+}
+else {
+var Rows = 5;
+}
+
+var HTML_String = '<table><tr><td valign="top"><table BORDER=4 CELLSPACING=1 cellpadding=4 FRAME="box" BGCOLOR="yellow" BORDERCOLORLIGHT="orange">';
+
+HTML_String += '<tr><th colspan=7 BGCOLOR="FF00FF" BORDERCOLOR="000000">' + Heading + '</font></th></tr>';
+
+HTML_String += '<tr><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期日</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期一</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期二</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期三</th>';
+
+HTML_String += '<th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期四</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期五</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">星期六</th></tr>';
+
+var Day_Counter = 1;
+var Loop_Counter = 1;
+for (var j = 1; j <= Rows; j++) {
+HTML_String += '<tr ALIGN="center" VALIGN="top">';
+for (var i = 1; i < 8; i++) {
+if ((Loop_Counter >= First_Day) && (Day_Counter <= Days_in_Month[Month])) {
+if ((Day_Counter == Today) && (Year == Current_Year) && (Month == Current_Month)) {
+HTML_String += '<td BGCOLOR="808000" BORDERCOLOR="000000"><strong><font color="red">' + Day_Counter + '</font></strong></td>';
+}
+else {
+HTML_String += '<td BGCOLOR="CCFFFF" BORDERCOLOR="000000">' + Day_Counter + '</td>';
+}
+Day_Counter++; 
+}
+else {
+HTML_String += '<td BORDERCOLOR="C0C0C0">&nbsp;</td>';
+}
+Loop_Counter++;
+}
+HTML_String += '</tr>';
+}
+HTML_String += '</table></td></tr></table>';
+document.all.Calendar.innerHTML = HTML_String;
+}
+
+
+function Check_Nums() {
+if ((event.keyCode < 48) || (event.keyCode > 57)) {
+return false;
+}
+}
+
+
+
+function On_Year() {
+var Year = document.when.year.value;
+if (Year.length == 4) {
+Selected_Month = document.when.month.selectedIndex;
+Selected_Year = Year;
+Make_Calendar(Selected_Year, Selected_Month);
+}
+}
+
+function On_Month() {
+var Year = document.when.year.value;
+if (Year.length == 4) {
+Selected_Month = document.when.month.selectedIndex;
+Selected_Year = Year;
+Make_Calendar(Selected_Year, Selected_Month);
+}
+else {
+alert('Please enter a valid year.');
+document.when.year.focus();
+}
+}
+
+
+function Defaults() {
+if (!document.all)
+return
+var Mid_Screen = Math.round(document.body.clientWidth / 2);
+document.when.month.selectedIndex = Current_Month;
+document.when.year.value = Current_Year;
+Selected_Month = Current_Month;
+Selected_Year = Current_Year;
+Make_Calendar(Current_Year, Current_Month);
+}
+
+
+function Skip(Direction) {
+if (Direction == '+') {
+if (Selected_Month == 11) {
+Selected_Month = 0;
+Selected_Year++;
+}
+else {
+Selected_Month++;
+}
+}
+else {
+if (Selected_Month == 0) {
+Selected_Month = 11;
+Selected_Year--;
+}
+else {
+Selected_Month--;
+}
+}
+Make_Calendar(Selected_Year, Selected_Month);
+document.when.month.selectedIndex = Selected_Month;
+document.when.year.value = Selected_Year;
+}
+
+
+</script>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<div id="NavBar" style="position:relative;width:286px;left:110; top:5px;" align="center">
+<form name="when">
+<p>萬年曆查詢</p>
+<table>
+<tr>
+<td>
+<p align="center"><input type="button" value="上個月" onClick="Skip('-')"></p>
+</td>
+<td></td>
+<td><select name="month" onChange="On_Month()">
+<script language="JavaScript1.2">
+if (document.all){
+for (j=0;j<Month_Label.length;j++) {
+document.writeln('<option value=' + j + '>' + Month_Label[j]);
+}
+}
+</script>
+</select></td> 
+<td><input type="text" name="year" size="4" maxlength="4" onKeyPress="return Check_Nums()" onKeyUp="On_Year()"></td>
+<td></td>
+<td><input type="button" value="下個月" onClick="Skip('+')"></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="Calendar" style="position:relative;width:238px;left:110; top:-2px;" align="center">
+</div> 
+<table border="1" width="100%" height="76">
+  <tr>
+    <td width="36%" height="70">　</td>
+    <td width="64%" height="70">
+      <ul>
+        <li>公路車
+          <ul>
+            <li><a href="#公路單車（Road Bike）:">公路單車（Road Bike）</a></li>     
+            <li><a href="#環法">環法</a></li>
+            <li><a href="#賽段選址:">賽段選址</a></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="36">
+  <tr>
+    <td width="100%" height="1" colspan="2" bgcolor="#FF6666">
+      <p align="center"><a name="公路單車（Road Bike）:">公路單車（Road Bike）:</a>    
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="1">
+      <p>   1. 輪胎比普通單車窄，並且胎壓可以達到100psi（pounds per square inch）以上，所以在行駛過程中的摩擦力和山地車相比低不少。<br>     
+   2. 飛輪與牙盤的齒比（即齒數比值）很大，一般的公路單車齒比可達到53:11甚至更高。<br>     
+   3. 現在的公路單車廣泛採用了新型材料，比如鈦合金，碳纖維，高級鋁合金材料等等，所以公路單車的重量很輕，一般約為8kg~9.5kg。<br>     
+   4. 普遍採用了很硬的材料，易於運動員發力。這一點和山地車是很不相同的。因為公路單車都是在路況比較好的公路上面騎行，所以不需要像後者那樣，過於考慮吸收震動的問題。<br>     
+      <br>
+      由於上述的特點，公路單車的騎行速度要比普通單車快很多。普通的愛好者稍加訓練以後，一般都可以達到一小時騎35公里平路的水準。而一個優秀的公路單車運動員在路況良好的平地路段上長距離騎行時的平均時度可以保持在40至50公里每小時。<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+      <a href="#公路車">top</a>
+      <p>　</td>
+    <td width="50%" height="1"><img border="0" src="htmlphoto/TCR%20ADV%20SL%20TM.jpg" width="426" height="277"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" colspan="2" bgcolor="#6666FF">
+      <p align="center"><a name="環法">環法</a>:</td>
+  </tr>
+  <tr>
+    <td width="50%" height="59">　
+      <p><br>
+      環法自行車賽（法語：le Tour de France）是公路單車運動中規模最大、影響最廣的國際自行車大賽。每年7月舉行，每次賽期23天，總數21段，平均賽程超過3500公里（約2200英里）。整個賽程每年不一，但都是環繞法國一周，經常也出入周邊的國家。全程分成許多段，從一個城鎮到下一個，每一段分別計時排名。所有段成績累計起來決定每一位賽手的總成績。冠軍為各段時間累計最少者。<br>    
+      <br>
+      環法單車賽，以及環意單車賽和環西（班牙）單車賽（Vuelta a Espa&ntilde;a）,是3個最主要的分段公路自單車賽。其餘兩個賽事雖然在歐洲很著名，但只有環法單車賽是真正世界級的體育大賽，名聲甚至超過公路單車世界錦標賽。<br>    
+      <br>
+      像其他公路大賽一樣，選手們組織參賽。每一隊由9名選手組成，共有20-22個小隊。傳統上，只有一流的專業賽車隊才能收到參賽邀請。近年來，大賽組織者採用世界單車聯盟聯盟（Union Cycliste Internationale）的計分系統來決定參賽隊伍，另留下2-4個名額予大牌或落選的法國車隊。每個車隊由其最大贊助商命名，穿著其隊服。比賽時，隊友們互相幫助，還有一輛車隊的汽車帶著配件等備急。<br>    
+      <br>
+      常見戰術:<br>
+      <br>
+      像許多其他公路大賽一樣，環法單車賽是一個以團隊為基礎的優秀選手之間的較量。一個車隊的經理或指導在選拔隊員的時候，就明確個人的分工：每個隊往往有一個有可能拿成績的領騎（leader），剩下的是勤務（domestique）兼護航。勤務一般是沒有可能拿重要賽段或全賽程名次的，而主要是為領騎服務，比如從服務車取水或食物。大部分時間，他們為領騎開路。<br>
+      <br>
+      公路單車賽中，賽手們在巡航時往往彼此貼得很近，形成一個主車團（peloton）， 以期利用前面賽手形成的風拽（drafting，又譯彈弓效應）來減少阻力及保持體力。大家自覺地交替領隊。有望奪魁的車隊們往往通過領隊來控制車團的速度，從而淘汰弱隊。而領隊的車隊中打頭的又都是勤務。<br>    
+      <br>
+      有時，有些車隊或賽手決定出擊（attack）：突然加速，一下子拉開和車團的距離（breakaway）。如果他們的勁敵不想被拉開，那麼會派一兩個勤務或加速帶動整個車團跟上（chase），或單隊帶著領騎貼上出擊者。到了一程最後，所有勤務可能都已經筋疲力竭，這時領騎才衝出陣營做最後的衝刺。這種團隊配合，在山地賽段中效果最為顯著。<br>
+      <br>
+      比賽中，賽手通過別在身上的微型步話機和坐在服務車中的車隊指導協調聯繫。服務車中還有電腦和定位系統等，提供一系列實時的比賽信息。<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+      <a href="#公路車">top</a></td>
+    <td width="50%" height="59"><img border="0" src="htmlphoto/比賽1.jpg" width="423" height="318"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="1" colspan="2" bgcolor="#6666FF">
+      <p align="center"><a name="賽段選址:">賽段選址:</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" height="20">
+      因為環法單車賽的名氣，沿途的城鎮都願意成為賽段的起始站。而大賽的前奏賽（一般是第一個計時賽，不是每年都有）和第一賽段又是特別風光，因為兩場比賽一般都從同一個城鎮出發。大賽的前數個賽段常常穿過周圍的其他國家。2007年環法單車賽總指導Christian Prudhomme說到，「總得來說，每五年裡，我們安排大賽有兩年從法國出發，三年從法國以外出發。」<br>    
+      <br>
+      成為一個賽段的起始站會給當地帶來遊客和生意，為此，入選的城鎮要向大賽的主辦單位繳付有關費用。據報導，2008年，有些賽段起始城市要付41,000美元，終止城市73,000美元。[1]<br>
+      <br>
+      吸引力:<br>
+      <br>
+      體能挑戰 僅憑能量消耗而言，公路自行車賽遠遠高於大多數體育項目，包括通常所謂的「激烈運動」，如足球，籃球等。能和公路賽車相比的，只有馬拉松，皮划艇和越野滑雪等少數耐力型競技。但即使是這些項目，大多是單天的比賽。公路自行車賽像環法等，則是持續多天，而且還有連續的山地路段。<br>    
+      <br>
+      據統計，一般人騎車時身體產生的功率是150-200瓦，而自行車賽手比賽時的功率是400瓦。一個環法賽手平均每天要消耗8,000到9,000 卡路里 (一場足球比賽的消耗量在1,000-2,000卡路里之間)。如果說馬拉松比賽是對腿和膝部的考驗的話，環法自行車賽則是賽手們心肺功能的較量[1]。<br>    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+      <a href="#公路車">top</a></td>
+    <td width="50%" height="20"><img border="0" src="htmlphoto/環法2.jpg" width="434" height="283"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

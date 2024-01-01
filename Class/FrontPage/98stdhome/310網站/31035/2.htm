@@ -1,0 +1,206 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>延伸資料</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+</head>
+
+<body background="Images/back1.GIF"  onLoad="startclock(); timerONE=window.setTimeout">
+
+
+
+<p align="center"><img border="0" src="Images/title2.gif" width="470" height="63"></p>
+
+
+
+<table border="0" width="100%">
+  <tr>
+    <td width="200%">
+      <p align="center"><font face="標楷體" size="4">時事報導<br>
+      </font></p>
+    </td>
+ 
+</table>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="200%" colspan="2" align="center"><font face="標楷體">愛滋病毒基因組 美國科學家破解</font></td>  
+  </tr>
+  <tr>
+    <td width="138%"><font SIZE="2"><font face="標楷體">（法新社巴黎6日電）   
+      根據今天公佈的一項研究，美國科學家已經破解人類愛滋病毒（HIV）基因組的全部結構。</font>
+      <p><font face="標楷體">研究人員表示，這項突破應會有助科學家想出新對策，透過研發新型抗病毒藥物，打擊病毒。</font></p>
+      <p><font face="標楷體">研究主要負責人、北卡羅萊納大學教堂山分校（University   
+      of North Carolina at Chapel Hill）教授威克斯（Kevin Weeks）說：「我們開始瞭解這個基因組使用何種技倆，幫助病毒逃過人類宿主的偵測。」</font></p>  
+      <p><font face="標楷體">HIV如同流感病毒和C型肝炎病毒，把基因資料藏在單股核糖核酸RNA內，而非雙股脫氧核糖核酸DNA內。雙股DNA在所有的活有機體和某些病毒內都可見到。</font></p>
+      <p><font face="標楷體">這種結構造成破解難度更高，因為RNA不像DNA，RNA可以把自己摺起來，變成錯綜複雜的3D結構。</font></p>
+      <p><font face="標楷體">先前的研究成功模製出HIV基因組的小結構。HIV基因組由兩股組成，每股含有將近1萬個核甘酸，核甘酸是構成DNA和RNA組塊的基本分子。</font></p>
+      <p><font face="標楷體">威克斯與同僚使用一種新技術製作出影像，雖然解析度低，但可涵蓋較大範圍。</font></p>
+      <p><font face="標楷體">這項研究刊登在英國「自然」（Nature）期刊上，可望幫助科學家發現RNA基因組決定HIV病毒生命週期的方式。（譯者：中央社蔣天清）</font>
+      <p></font></td>
+    <td width="62%">
+      <p align="center"><font face="標楷體"><img border="0" src="htmphoto/Hiv%20Photo.jpg" width="244" height="298"></font></td>
+  </tr>
+  <tr>
+    <td width="200%" colspan="2">
+      <p align="center"><p align="center"><font face="標楷體" size="3">人類幹細胞  
+      能殺死愛滋病毒</font></td>
+  </tr>
+  <tr>
+    <td width="200%" colspan="2"><font SIZE="2"><font face="標楷體">加州大學洛杉磯分校（UCLA）研究人員首次證明，人類血液幹細胞具有殺死愛滋病病毒能力，對於其他慢性病毒疾病也有一定的成效。</font>
+      <p><font face="標楷體">這份公布在今天的「公共科學圖書館期刊」（PLoSONE）的研究顯示，人類幹細胞可以設計成相等的基因疫苗。</font></p>
+      <p><font face="標楷體">研究小組領導人吉欽（ScottG.Kitchen）表示，研究人員成功證明可以利用人類的免疫系統，特別是T細胞反應，設計成專門用來對抗愛滋病毒（HIV）的細胞。</font></p>
+      <p><font face="標楷體">他表示，這項研究也為針對損害恢復，或是會引起慢性疾病的缺陷免疫細胞病毒，甚至不同類型腫瘤，設計成不同細胞類型的可能性，奠下良好基礎。</font></p>
+      <p><font face="標楷體">研究人員利用被稱為「殺手T細胞」的CD8毒性T淋巴細胞，辨識並殺死愛滋病毒，以及遭到HIV感染的細胞。但由於人體並不存在足夠的T細胞，因此研究人員透過基因工程與血液幹細胞複製這些T細胞，並以成功在老鼠身上實驗，取得成果。共同作者查克（JeromeA.Zack）指出，小組下一步的目標在進行人體實驗，並擴大這項實驗的運用範圍，從目前的對抗愛滋病外，希望能用來治療慢性病毒性疾病</font></font></td>
+  </tr>
+  <tr>
+    <td width="200%" colspan="2">　
+      <p align="center"><font face="標楷體" size="3">愛滋疫苗大突破 
+      效果達3成</font></td>
+  </tr>
+  <tr>
+    <td width="200%" colspan="2"><font SIZE="2"><font face="標楷體">中國時報 
+      2009-09-25 【黃文正／綜合報導】</font>
+      <p><font face="標楷體">　愛滋病疫苗研發獲得突破進展！美國軍方與泰國衛生官員廿四日在曼谷宣布，研究人員耗時七年，在泰國進行全球最大規模、共有一萬六千名志願者參與的愛滋疫苗人體臨床試驗之後，證實可降低「人類免疫缺乏病毒」（ＨＩＶ，即愛滋病毒）感染機率達三一．二％。這是第一次有證據顯示，愛滋病疫苗有預防功效。</font></p>
+      <p><font face="標楷體">　這項臨床試驗係由美國軍方贊助、泰國公共衛生部負責執行，而接種疫苗其實是將兩種舊疫苗混合而成，一種是由法國賽諾菲藥廠（Sanofi-Pasteur）研發的「ＡＬＶＡＣ」，另一種是由洛杉磯VaxGen公司研發的「ＡＩＤＳＶＡＸ」。採用疫苗組合係著眼於「先發─增強」（prime-boost）策略。第一種疫苗啟動免疫系統攻擊病毒，第二種疫苗則加強免疫反應。</font></p>
+      <p><font face="標楷體">　二○○三年起，研究人員在泰國愛滋病感染率最高的省份，挑選一萬六千名年齡介於十八至卅歲的男女志願者，這些人愛滋檢測都呈陰性反應。研究人員將他們平分成兩組，一組接種疫苗（實驗組），另一組則施打安慰劑（對照組）。三年之後，實驗組有五十一人感染愛滋病毒，對照組則有七十四人感染。</font></p>
+      <p><font face="標楷體">　換言之，該疫苗可成功降低愛滋病毒感染機率三一．二％。研究人員對結果大感意外，認為成效遠超出預期，並表示雖然防疫效果還不夠好，但仍是一項重大突破，證明研發更安全有效的愛滋疫苗是可行的。</font></p>
+      <p><font face="標楷體">　英國醫學期刊《刺胳針》（Lancet）總編輯赫頓博士說：「這項結果令人振奮，儘管臨床試驗人數規模太小，差異性也可能與機率有關，但此一發現仍是愛滋病疫苗研發近十年來第一個好消息。我們必須謹慎小心，但也要抱持希望，此一發現須要立刻進行重複試驗和研究調查。」</font></p>
+      <p><font face="標楷體">　泰國公衛部表示，這次試驗係針對泰國常見的愛滋病毒株，對美國、非洲或其他地方的愛滋病毒是否有效，仍須進一步研究。據統計，目前全球約有三千三百萬人感染愛滋病。</font></font></td>
+  </tr>
+</table>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+</body>
+
+</html>

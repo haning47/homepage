@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back0.jpg">
+
+<p align="center"><img border="0" src="images/title6.gif" width="460" height="64"></p>
+<p align="left">　</p>
+<p align="left">　</p>
+<p align="left"><font size="4"><b>這次選的主題是關於溫室效應，因為最近這幾年這個議題常成為人類所擔心的事，也</b></font></p>
+<p align="left"><font size="4"><b>想借次機會更深入了解這個問題，雖然這次沒有要申推，不過我想能學習到這些知識</b></font></p>
+<p align="left"><font size="4"><b>比較重要。</b></font></p>
+<p align="left"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp; </b></font><font size="4"><b>做網頁讓我學到以前很多沒有學過的功能，像是下拉式按鍵、ＪＡＶＡ的應用以</b></font></p>
+<p align="left"><font size="4"><b>及電子相簿等等。從複雜的程式碼中體會電腦語言的神奇雖然是初次接觸，但感覺還</b></font></p>
+<p align="left"><font size="4"><b>滿有趣的。也讓我對網路上的網頁至作業更加了解。</b></font></p>
+<p align="left">&nbsp;</p>
+<script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+
+</body>
+
+</html>

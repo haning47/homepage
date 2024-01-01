@@ -1,0 +1,277 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back2.gif" onLoad="startclock(); timerONE=window.setTimeout" onclick="dynOutline()" >
+
+<p align="center"><img border="0" src="images/title2.gif" width="480" height="73"><a name="TOP"></a></p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="30%"></td>
+    <td width="70%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/bt7.gif" width="50" height="48"></td>
+          <td valign="top" width="100%">八大種類
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/bt8.gif" width="28" height="31" hspace="7"></td>
+                <td valign="top" width="100%"><a href="#坊織">紡織＆礦治</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/bt8.gif" width="28" height="31" hspace="7"></td>
+                <td valign="top" width="100%"><a href="#化學">化學＆化工</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/bt8.gif" width="28" height="31" hspace="7"></td>
+                <td valign="top" width="100%"><a href="#機械工程">機械工程＆輕工</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/bt8.gif" width="28" height="31" hspace="7"></td>
+                <td valign="top" width="100%"><a href="#美術">美術＆經濟學</a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+
+<p align="left">　</p>
+
+<p align="right">&nbsp;   
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+</p>
+
+<p align="right">　</p>
+<p align="right">　</p>
+<p align="right">　</p>
+<p align="center">　</p>
+<p align="right">　</p>
+<p align="right">　</p>
+<p align="right">　</p>
+<table border="1" width="100%" height="306">
+  <tr>
+    <td width="59%" height="222">
+      <p align="center"><img border="0" src="htmphoto/古代生活郵票圖.jpg" width="255" height="333"></p>
+      <p align="center"><img border="0" src="htmphoto/燒硫磺.gif" width="245" height="310"></td>
+    <td width="141%" height="222">
+      <p align="center"><font size="6"><a name="坊織">坊織</a></font><a name="坊織"><br>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 全面論述中國明末以前農﹑副業和手工業生產技術的百科全書式著作。書中記述的許多生產技術﹐一直沿用到近代。其中“乃服”和“彰施”兩篇全面介紹了當時的紡織和染整技術。就紡織﹑染整來說﹐《天工開物》並未大量轉引前人著作﹐而是直接描述當時的生產﹐而且具體記錄了工藝參數和尺寸。例如在整經工序中﹐列出“邊維”(織物邊紗的穿法)﹐“經數”(經紗總根數)﹔在“織機”一段中增列了“腰機”﹔而對花樓織機“花機”的附圖也比前人著作更為細緻﹐註明了各部件的名稱﹐文字說明也極詳細。</p>  
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 此外﹐如“花本”(織大花紋時提起經紗的程序存貯器)﹑“穿經”(穿綜和插筘)﹑“分名”(對羅﹑紗﹑縐紗﹑羅地﹑絹地﹑綾地﹑緞﹑秋羅等分別下了定義)﹐在同時代的《農政全書》中也未見載。“熟絲”一節論述了用豬胰(生物)脫膠的方法。在棉紡織方面﹐《天工開物》的記載也有特點﹕如“趕棉圖”中軋車(軋棉機)下面用炭盆火烘﹔“彈棉”圖中畫出了懸弓的使用法。書中對棉布後整理介紹甚詳﹐關於軋光整理還記載了軋布用的碾石所應具備的性質。“褐氈”一節專門論述了毛紡生產。其中特別提到絨線生產和山羊絨的利用。還記錄了當時的重型毛織機有 8片綜﹑4踏輪﹐梭子長1.2尺。書中說明毛紡織技術是由西北地區少數民族中發展起來的。“彰施”篇中﹐對20餘種顏色從配料到染法的介紹頗為具體。另有“藍靛”﹑“紅花”﹑“造紅花餅法”﹑“燕脂”﹑“槐花”等專節﹐對植物染料製法記錄甚詳。書中介紹的毛青布的染法﹐近代農村中仍在沿用。&nbsp;</p>  
+      <p>　</p>
+      <p align="center"><font size="6">礦治</font></p>
+      <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 書中有“治鑄”﹑“錘鍛”和“五金”三類專門論述礦冶技術﹔“作咸”﹑“陶埏”﹑“燔石”﹑“丹青”和“珠玉”五類﹐則全部或部分論述非金屬礦產的開採和加工技術。明代手工業生產技術先進﹐金屬冶煉和加工工業的生產規模﹑產量和技術都居於世界前列。《天工開物》用了約佔全書四分之一的篇幅﹐比較系統和全面地反映了這方面的成就。特別是在“五金”中比較詳細而系統地介紹了中國明代晚期金﹑銀﹑銅﹑鐵﹑錫﹑鉛﹑鋅等七種金屬礦的開採﹑洗選﹑冶煉﹑加工的方法﹐其中記錄了關於生鐵熔煉和炒煉(即炒鋼)的生產過程以及木風箱﹑用焦炭冶煉﹑鑄鍋﹑鑄千鈞鐘﹑鍛千鈞錨﹑煉鋅等中國勞動人民在冶煉技術上獨特的發明創造。<br>  
+      </p>
+      <p align="right"><a href="#TOP">TOP</a></td>
+  </tr>
+  <tr>
+    <td width="59%" height="20">
+      <p align="center"><img border="0" src="htmphoto/水利.jpg" width="262" height="199"></p>
+      <p align="center"><img border="0" src="htmphoto/小花樓.jpg" width="278" height="217"></td>
+    <td width="141%" height="20">
+      <p align="center"><font size="6"><a name="化學">化學</a></font></p>
+      <p align="left"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+      《天工開物》為明代科學家宋應星於崇禎十年(1637)所著。全書分18卷﹕一﹑乃粒(五穀)﹔二﹑乃服(紡織)﹔三﹑彰施(染色)﹔四﹑粹精(糧食加工)﹔五﹑作鹹(製鹽)﹔六﹑甘嗜(製糖)﹕七﹑陶埏(陶瓷)﹔八﹑冶鑄(鑄造)﹔九﹑舟車(車船)﹔十﹑錘鍛(鍛造)﹔十一﹑燔石(焙燒礦石)﹔十二﹑膏液(油脂)﹔十三﹑殺青(造紙)﹔十四﹑五金(冶金)﹔十五﹑佳兵(兵器)﹔十六﹑丹青(硃墨)﹔十七﹑曲蘗(製曲)﹔十八﹑珠玉(珠玉寶石)﹔插圖122幅。圖文並茂﹐比較全面地記述了中國古代農業和手工業生產技術﹐堪稱中國17世紀的生產技術百科全書﹐已譯成日﹑英﹑法﹑德等文字。所記述的化學知識豐富多彩﹑引人入勝﹐在一定程度上反映了中國明代對化學變化過程的認識水平。&nbsp;<br>
+      </p>
+      <p align="left">&nbsp;&nbsp;&nbsp;&nbsp; 在化學理論方面﹐基本上沿用陰陽五行說來解釋化學變化﹐如火藥燃爆﹐是由於“硝性至陰﹐硫性至陽﹐陰陽兩神物相遇於無隙可容之中”。又如描述顏料製備:“夫亦依坎附離﹐而共呈五行變態。”所述銀硃製備﹐用水銀一斤和過量的硫(石亭脂)二斤進行反應﹐得到上硃十四兩﹑次硃三兩五錢﹐共得硃(硫化汞)十七兩五錢。產物銀硃比反應物水銀多出一兩五錢﹐宋應星的解釋是:“出數藉硫質而生”(《丹青‧硃》)﹐其中孕育著化合概念和質量守恆定律的思想胚芽。&nbsp;<br>  
+   在化學工藝方面﹐記述了冶金﹑分金﹑鉛丹﹑鉛白﹑銀硃﹑煤炭﹑石灰﹑礬﹑炭黑﹑染料﹑顏料﹑陶瓷﹑製麴﹑釀酒等化工過程和技術。其中最突出的﹐是在世界上第一次記述了由爐甘石(碳酸鋅)還原成鋅的火法煉鋅技術﹐並第一次對煤進行分類。其次﹐書中所記述的銀硃﹑鉛白等製備方法﹐至今歐洲仍稱讚為“中國方法”。&nbsp;</p>
+      <p align="left"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在化學反應類型方面﹐書中蘊含著﹕中和反應﹐如加石灰於蔗汁中﹐以達到非糖分凝聚的最佳pH值﹔分解反應﹐如燒石灰﹔置換反應﹐如濕法冶銅﹔氧化還原反應﹐如火藥燃爆﹔絡合反應﹐如媒染﹔聚合反應﹐如桐油熟煉﹔催化反應﹐如釀酒﹑利用豬胰消化絲膠﹑利用自然發酵除去木質素等等。&nbsp;</p>  
+      <p align="center"><font size="6">化工</font></p>
+      <p align="left"><br>
+      　　在化學工藝方面以金屬冶煉和燒製陶瓷最受重視﹐記述了金﹑銀﹑銅﹑錫﹑鋅﹑鉛等多種有色金屬的化學性質和冶煉方法﹐鐵(及鋼)的冶煉和加工技術。陶瓷和硅酸鹽方面論述精練。此外﹐本書還記載了煤炭﹑石灰﹑硫磺﹑白礬的開採和煉製﹐硃砂顏料和釀酒﹑造紙等古代化學工藝的重要成就。</p>
+      <p align="right"><a href="#TOP">TOP</a></td>
+  </tr>
+  <tr>
+    <td width="59%" height="20">
+      <p align="center"><img border="0" src="htmphoto/動力齒輪.jpg" width="238" height="344"></p>
+      <p align="center"><img border="0" src="htmphoto/水利設施.gif" width="228" height="352"></td>
+    <td width="141%" height="20">
+      <p align="center"><font size="6"><a name="機械工程">機械工程</a></font></p>
+      <p align="left"><br>
+      　　中國明末手工業已很發達。著者還參考了已有的技術文獻﹐如《考工記》﹑《梓人遺制》﹑《夢溪筆談》﹑《便民圖纂》以及《耕織圖譜》﹑《遠西奇器圖說》等。他對全國各地以至朝鮮﹑南洋的生產方法﹐以及當時輸入不久的西洋文化都有所描述和比較。&nbsp;<br>
+         書中詳細地記述了有關機械技術的內容。在結構和傳動方面﹐介紹了筒車﹑踏車﹑牛車﹑拔車﹑桔槔﹑轆轤等。這些機械基本上是採用簡單的木製零件如齒輪﹑八字齒輪﹑鏈條﹑滑輪﹑槓桿等製成的傳動機構﹐利用人力﹑畜力或水力為原動力﹐使投入較小的力﹐獲得較大的功。在農業上﹐記述了水碓和水磨﹐是用水輪作原動輪﹐經過齒輪和軸的傳動﹐在另一端磨面或加工稻穀。在風力方面﹐書中提到的揚郡風車﹐也一直流傳到現在。又如壓甘蔗的壓榨機﹐結構原理和現代壓榨機基本一致。&nbsp;</p>
+      <p align="left"><br>
+      　　在冶鑄方面﹐書中重點介紹了鼎﹑鐘﹑釜(鍋)﹑像﹑炮﹑鏡﹑錢7種器物的鑄造方法﹐並介紹了造型材料﹑金屬材料的配製成分和熔煉爐製造方法。還特別介紹了用小爐子熔煉﹑鑄造大型鑄件的生產組織。《天工開物》記述的造型方法主要是泥型的(即古代的陶範)製作方法。如鑄件要求有花紋時﹐就在外型的內側雕刻花紋。失蠟鑄造法是用80％的牛油和20％的黃蠟作蠟模﹔無模鑄造法是在造外型時﹐使尺寸比內型稍大﹐中間的空隙即鑄件的本體。書中還記述了用實物作模樣﹐製造鑄型﹐如鑄錢。熔煉銅和鐵的爐子均用耐火泥製造﹐爐後聯接可以連續鼓風的活塞式木風箱。書中還記載了用多熔爐連續澆注鑄造大型鐘﹑鼎的方法。&nbsp;</p>
+      <p align="left"><br>
+      　　在鍛造和金屬熱處理方面﹐《天工開物》記述了大到重數千斤鐵錨和小到微細繡花針的製造工藝過程﹐以及拉絲模製造﹐並介紹了金屬材料的淬火和退火工藝方法。書中還介紹了製造鋸﹑刨﹑鎈﹑鑿等的用料以及淬火的辦法。此外還提到鍛接﹑焊接的工藝。&nbsp;</p>
+      <p align="center"><font size="6">輕工</font></p>
+      <p align="left"><br>
+      　　全面系統地總結和記述了中國古代尤其是明代農業和手工業的生產技術和經驗﹐是一部傑出的農藝學和工藝學文獻。描繪了130多項生產技術和工具的名稱﹑形狀﹑工序。書中對與輕工有關的食品加工﹑製鹽﹑陶瓷器製造﹑造紙﹑珠玉琢製等均有詳細記述。</p>
+      <p align="left"><br>
+      　　卷一“乃粒”中﹐記述了稻﹑麥﹑粱﹑粟(小米)﹑胡麻(芝麻)和菽(豆類)等穀物糧食的種植技術﹐農具及灌溉機械的使用方法。卷四“粹精”中﹐記述了取得穀物中的純粹﹑精華部分的穀物加工方法。卷六“甘嗜”中﹐介紹了種蔗和製糖技術﹐養蜂和採蜜技術﹐以及用穀物製造糖漿的技術。卷十二“膏液”中﹐記述了豆油﹑芝麻油﹑菜籽油等食用油的榨油技術。卷十七“麴蘗”中﹐記述了用稻麥製麴和釀酒的技術。卷五“作鹹”中﹐記述了海鹽﹑池鹽﹑末鹽(用地鹼煎的鹽)和崖鹽(岩鹽)的生產技術。介紹了鹽的產地和功用﹐以及鑿井﹑汲鹵和引水曬鹽﹑場灶煮鹽﹑利用天然氣煎鹽的方法。</p>
+      <p align="left">　　從中可以得知﹐當時中國的海鹽已佔鹽總產量的80％。卷七“陶埏”中﹐記述了磚瓦﹑缸瓮和其他陶瓷器的燒造技術。指出陶瓷器須“過手七十二﹐方能成器”﹐道出了分工之細。卷十三“殺青”中﹐記述了各種紙張的製造技術。其中造竹紙工藝中用石灰漿處理竹欀﹑用柴灰處理紙漿﹑在紙漿中加入紙藥水汁等3項關鍵性的化學工藝﹐比舊的造紙方法大大前進了一步。卷十八“珠玉”中﹐記述了珍珠﹑玉石﹑瑪瑙﹑水晶等的採取和琢製加工技術。&nbsp;</p>
+      <p align="right"><a href="#TOP">TOP</a></td>
+  </tr>
+  <tr>
+    <td width="59%" height="20">
+      <p align="center"><img border="0" src="htmphoto/挖鹽井.gif" width="311" height="234"></p>
+      <p align="center"><img border="0" src="htmphoto/天工開物之封面２.jpg" width="279" height="278"></p>
+      <p align="center">　</td>
+    <td width="141%" height="20">
+      <p align="center"><font size="6"><a name="美術">美術</a></font></p>
+      <p><br>
+      　　中國明代工藝技術的著作。除《天工開物》外﹐他還著有《野議》﹑《論氣》﹑《說天》﹑《畫音歸正》(已佚)等。《天工開物》一書內容繁縟﹐涉及了當時幾乎所有手工技藝﹐對各種手工業從原料到製成品的全部生產過程和工序都有較詳細的說明和記錄﹐其中有關農業﹑水利設備﹑紡織﹑火器等的製造﹐反映了當時科技的新水平。此書除文字外﹐還附有許多精美細緻的插圖﹐對瞭解明代的版畫插圖﹐亦有一定參考價值。&nbsp;</p>
+      <p align="center"><font size="6">經濟學</font></p>
+      <p><br>
+      　　重視發展社會生產力 《天工開物》這部專述生產技術的著作本身﹐就表明了它是為發展社會生產力而寫作的。尤其應該特別指出的是﹐此書不是古代科技文獻的摘錄﹐而是對於各種生產方法﹑規程和經驗詳細觀察和分析的記載﹐並繪圖表明各種生產操作。《卷序》中寫道:“隨其孤陋見聞﹐藏諸方寸而寫之”﹐這種記載是有重要意義的。中國古代沒有採礦學專著﹐《天工開物》中則有關於金﹑銀﹑銅﹑鐵﹑錫﹑鉛﹑鋅﹑汞以及煤炭﹑硫磺等礦產的採掘和冶煉方法的記錄。類此者全書皆是。《卷序》中說:“世有聰明博物者﹐稠人推焉”﹐就是說﹐懂得這些普通事物的製造方法﹐能對萬物的生產有所貢獻的人﹐會受到世人的推崇。相反﹐“釜鬵之範鮮經﹐而侈談莒鼎”﹐就是說連鑄造鍋子的模型都沒見到過﹐而侈談古代的“莒鼎”﹐是沒有什麼可稱道的。《五金》卷所記當時煉鐵已採用煉鐵爐與炒鐵塘串連使用﹐直接把生鐵炒成熟鐵﹐這種生產方法在當時世界上是先進的。《乃服》卷還提到“腰機”織葛苧棉布﹐產品整齊堅澤﹐“惜今傳之猶未廣也”。當時由於田賦徵銀﹐普遍感到白銀不足﹐而作者則指出:“今天下何嘗少白銀哉﹖”在《五金》卷中又說﹐“大地生五金﹐以利用天下與後世”﹐指出有許多地方能生產金﹑銀等。從這些論述也可以知道這部著作對於發展社會生產的旨意了。&nbsp;</p> 
+      <p align="left"><br>
+      　　重視採掘﹑加工和製造 本書卷一為《乃粒》﹐卷十八為《珠寶》。《卷序》有“卷分前後﹐乃‘貴五穀而賤金玉’之義”一語。此語易使人認為此書是傳統的“重本抑末”之書。其實﹐這裡所說的“賤珠玉”﹐並非漢代人賤工商貨幣財富之意﹐而是賤玩妝飾品﹐珠玉在明代已與貨幣毫無聯繫。書中真正講農業生產的只有《乃粒》一卷﹐其他十七卷俱講採掘﹑加工﹑製造等。書中有一卷名《粹精》﹐專講糧食加工﹐這也表明此書對於加工製造的重視。本書之注重加工製造與作者對財富的觀點完全一致。宋應星曾說﹐“夫財者﹐天生地宜而人功運旋而出者也”。“財之為言﹐乃通指百貨﹐非專言阿堵也”。事實上﹐《天工開物》所言者是百貨﹐是“天生地宜而人功運旋”的生產品﹐這“人功運旋”可以說是本書的中心內容和特點﹐通過人工製造﹐天地間“物數號萬﹐而事亦因之曲成而不遺”。在此書以前﹐有《農政全書》﹑《齊民要術》乃至《考工記》等生產技術著作﹐但以加工製造及敘述製造過程作為主要內容的則首推此書。這也是中國社會經濟到晚明時代有了大的發展的反映。  
+      <br>
+      </p>
+      <p align="right"><a href="#TOP">TOP</a></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

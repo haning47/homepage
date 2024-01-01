@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>31331financial crisis</title>
+
+<script type="text/javascript">
+// 程式作者：風痕影（hit1205@m70.url.com.tw）
+// 作者網站：風痕水影（http://hit1205.blogdns.org/）
+// 製作日期：2002年04月08日
+// 更新日期：v1.1 2005年01月01日
+function SwatchTime(){
+	var now = new Date(); 
+	h = now.getUTCHours(); 
+	m = now.getMinutes(); 
+	s = now.getSeconds();
+	b = Math.floor((h*3600+m*60+s)/86.4+41+2/3)
+	document.getElementById("clock").innerHTML="國際網路時 (BMT) @ " + (((b < 10)||((b >= 1000)&&(b-1000 < 10))) ? "00" : (((b < 100)||((b >= 1000)&&(b-1000 < 100))) ? "0" : "")) + ((b >= 1000) ? b-1000 : b) +" Swatch.beats";
+	setTimeout("SwatchTime()",1000); //時間更新間隔，1000為1秒
+}
+</script> 
+
+
+
+</head>
+
+<body bgcolor="#000000">
+
+<p align="center"><a href="31331.htm"><img border="0" src="31331home.jpg" width="750" height="550"></a></p>
+
+
+
+onload="snow();"  
+
+<script type="text/javascript">
+// 程式作者：風痕影（hit1205@m70.url.com.tw）
+// 作者網站：風痕水影（http://hit1205.blogdns.org/）
+// 製作日期：2004年11月15-17日
+// 更新日期：v1.1 2004年12月25日
+n=6; // 雪花數目
+wind=0; // 風力
+re=60; // 更新
+vy=4; // 雪花速度
+vx=4; // 搖晃程度
+img="http://dob.tnc.edu.tw/authorHD/1/snow.gif"; // 圖檔
+img_h=30; // 雪花高
+h=250; // 效果範圍高
+w=300; // 效果範圍寬
+for(i=0;i<n;i++){document.write("<div id=\"snow"+i+"\" style=\"position:absolute;top:-"+(Math.random()*h+img_h)+"px;left:"+Math.random()*(w-img_h)+"px;\"><img src=\""+img+"\" border=\"0\"></div>");} 
+function snow(){
+	for(i=0;i<n;i++){
+		dgs=document.getElementById("snow"+i).style;
+		if((parseInt(dgs.top)<h)&&(parseInt(dgs.left)<w)&&(parseInt(dgs.left)>-img_h)){
+			if(Math.round(Math.random())==1){o=1;}else{o=-1;}
+			dgs.top=parseInt(dgs.top)+vy+"px";
+			dgs.left=parseInt(dgs.left)+Math.random()*vx*o+wind+"px";
+			}
+		else{
+			dgs.top=-(Math.random()*h+img_h)+"px";
+			dgs.left=Math.random()*(w-img_h)+"px";
+			}
+	}
+	setTimeout("snow();",re);
+}
+</script> 
+
+
+
+</body>  
+
+
+
+</html>
+

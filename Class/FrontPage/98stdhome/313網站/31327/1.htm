@@ -1,0 +1,277 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>31327大眾運輸的定義</title>
+<base target="_self">
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="image/back1.GIF" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="image/title-1.gif" width="448" height="56"><a name="top"></a></p>
+
+<p align="center">　
+<!-- BEGIN Eric's Mouse-Clock CODE -->
+<SCRIPT language=JavaScript>
+dCol='FF0000';//date colour.
+fCol='FF0000';//face colour.
+sCol='FF0000';//seconds colour.
+mCol='FF0000';//minutes colour.
+hCol='FF0000';//hours colour.
+ClockHeight=40;
+ClockWidth=40;
+ClockFromMouseY=0;
+ClockFromMouseX=100;
+
+//Alter nothing below! Alignments will be lost!
+
+d=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+m=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+TodaysDate=year+"年 "+m[date.getMonth()]+" "+day+"日 "+d[date.getDay()]+" ";
+D=TodaysDate.split('');
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+speed=0.5;
+ns=(document.layers);
+ie=(document.all);
+Face=Face.split(' ');
+n=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/n;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+step=0.02;
+currStep=0;
+y=new Array();x=new Array();Y=new Array();X=new Array();
+for (i=0; i < n; i++){y[i]=0;x[i]=0;Y[i]=0;X[i]=0}
+Dy=new Array();Dx=new Array();DY=new Array();DX=new Array();
+for (i=0; i < D.length; i++){Dy[i]=0;Dx[i]=0;DY[i]=0;DX[i]=0}
+if (ns){
+for (i=0; i < D.length; i++)
+document.write('<layer name="nsDate'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[i]+'</font></center></layer>');
+for (i=0; i < n; i++)
+document.write('<layer name="nsFace'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[i]+'</font></center></layer>');
+for (i=0; i < S.length; i++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[i]+'</b></center></font></layer>');
+for (i=0; i < M.length; i++)
+document.write('<layer name=nsMinutes'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[i]+'</b></center></font></layer>');
+for (i=0; i < H.length; i++)
+document.write('<layer name=nsHours'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+H[i]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < D.length; i++)
+document.write('<div id="ieDate" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < n; i++)
+document.write('<div id="ieFace" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++)
+document.write('<div id="ieHours" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+H[i]+'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++)
+document.write('<div id="ieMinutes" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[i]+'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++)
+document.write('<div id="ieSeconds" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[i]+'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (ns)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (ns)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+Od.style.top=window.document.body.scrollTop;
+Of.style.top=window.document.body.scrollTop;
+Oh.style.top=window.document.body.scrollTop;
+Om.style.top=window.document.body.scrollTop;
+Os.style.top=window.document.body.scrollTop;
+}
+for (i=0; i < n; i++){
+ var F=(ns)?document.layers['nsFace'+i]:ieFace[i].style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=(ns)?document.layers['nsHours'+i]:ieHours[i].style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=(ns)?document.layers['nsMinutes'+i]:ieMinutes[i].style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=(ns)?document.layers['nsSeconds'+i]:ieSeconds[i].style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=(ns)?document.layers['nsDate'+i]:ieDate[i].style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout('Delay()',20);
+}
+if (ns||ie)window.onload=Delay;
+</SCRIPT>
+<!-- END Mouse-Clock CODE the Code 
+was design by Eric Chen!!!--> 
+</p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="29%">　</td>
+    <td width="71%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="image/icon1.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%">何謂大眾運輸
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#1">1.何為大眾運輸</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#2">2交通建設</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="icon2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#3">3.捷運工程</a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%" height="420">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#99CCFF" height="22">
+      <p align="center"><a name="1"></a>1.何為大眾運輸</td>
+  </tr>
+  <tr>
+    <td width="70%" height="200">　&nbsp;&nbsp; 大眾運輸工具：係指領有合法營業執照，在以大眾運輸為目的下定時營運(含加班班次)於兩地間之特定路線，且對大眾開放之交通運輸工具。     
+      <p>　</p>
+      <p><a href="#top">回頂端</a></td>
+    <td width="30%" height="200"><img border="0" src="htmphoto/未來的車車.jpg" width="267" height="198"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#99FF99" height="22">
+      <p align="center"><a name="2"></a>2.交通建設</td>
+  </tr>
+  <tr>
+    <td width="100%" height="216" colspan="2"> 交通建設依其動機可大別分為兩大類，其一係為了解決現有設施運能之不足（可簡稱為解決擁擠），其二係為了促進地區的發展，試依此分別說明之。&nbsp;
+      <p>國外先進國家的經驗顯示，以投資來解決擁擠問題，如果未能掌握擁擠問題的真正原因，不僅會導致投資的浪費，甚至會衍生更嚴重的擁擠問題。世界各國無論都市或城際交通問題日益嚴重的根本原因有二，甚一為人口之都市化，其二則為汽車之普及化。以都市為例，人口都市化後人口數之增加可達五倍以上，而使用小汽車每一個旅次（trip）所佔用的道路面積約為大眾運輸的六倍以上，二者相乘成為三十倍以上，都市之道路面積欲增加三十倍以上幾乎是不可能的事；城際交通的情況大致亦相似。&nbsp;</p>
+      <p>　</td>
+  </tr>
+  <tr>
+    <td width="70%" height="293">　&nbsp; 因此，解決交通問題之基本策略為人口分佈的合理化，及大眾運輸的發展。歐洲國家交通問題相對而言較不嚴重，即因其人口分佈未呈現過度的集中，而大眾運輸系統則較為健全。以日本之高人口密度，能維持其都市及城際交通的運轉，亦係仰仗大眾運輸之發達。美國地廣人稀，過去係採取汽車導向的發展策略，多年來亦逐漸由經驗中學會了發展大眾運輸的重要性，近年來開始大力推動高鐵、捷運及輕軌之投資。</td>    
+    <td width="30%" height="293"><img border="0" src="htmphoto/有環保鐵道的輕軌.jpg" width="244" height="184"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="165" colspan="2">
+      <p>台灣之人口分佈並沒有太嚴重的過度集中問題，但大眾運輸的發展則太過不足。無論都市或城際，大眾運輸的市場佔有率均出奇的低。舉例來說，歐洲的都市大眾運輸的市場佔有率大多在30%、40%附近，日本的都市大多在50%、60%附近，香港、新加坡更高，而台灣之高雄僅約9%，台南僅約3%而已。&nbsp;</p>
+      <p>西部走廊在大眾運輸方面目前有高速鐵路、北高兩市的捷運在建設中，而中正機場捷運線亦即將動工。欲使這些軌道系統建設產生應有的效益，須使之整合成為網狀結構，所亟缺者為都會區之軌道系統的建構，並使之與高鐵、台鐵充分整合。以高雄為例來說明，高雄目前有紅、橘兩線之捷運在興建中，完成之後欲吸引目前市場佔用率高達63%之使用機車的旅次改用捷運非常困難，因其路網密度太低；起、迄兩端之接駁會使之不願意放棄其低成本、高便利性之機車的使用。因此高雄都會區除了紅、橘兩線之捷運外，還需要增加軌道系統的建設。</p>
+      <p>　</p>
+      <p><a href="#top">回頂端</a>
+      <p>　</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FF99FF" height="22">
+      <p align="center"><a name="3"></a>3.捷運工程</td>
+  </tr>
+  <tr>
+    <td width="70%" height="194">　捷運工程，一般區分為三種工程標：
+      <p>1.土建標：土木營建工程，也就是高架橋樑、隧道、站體等主體結構物。</p>
+      <p>2.軌道標：高架橋樑、隧道內所有的軌道設施。</p>
+      <p>3.機電標：站體、軌道所有電力設施系統。</p>
+      <p>上述我所回答的部分皆為土建標工程中的過程簡述。</p>
+      <p>通常規劃多久？這個問題因國情而異，在國內只要土地徵收沒有問題，通常規劃時間大約 5 年結束( 路線規劃至設計規劃 )，之後才實施工程發包；如果是統包工程( 也就是得標廠商依據工程單位所訂定標準自行設計兼施工 )，則時程可以縮短，因為是設計與施工並行。</p>      
+      <p>　</p>  
+    </td>
+    <td width="30%" height="194"><img border="0" src="htmphoto/磁浮電車.jpg" width="268" height="204"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="399" colspan="2">  
+      <p>但其實在國內，往往許多的重大建設工程，都有著政治力的介入，政治官員、候選人開出他的政見支票，什麼工程要在幾年內完工，卻使得工程難度增加，規劃時間縮短，使得許多調查與規劃不夠完整詳盡，導致在施工時問題頻生，往往使得工期延長。</p>
+      <p>國外許多著名的重大工程，都是規劃時間相當長，規劃的相當完整再施工，而真正的施工時間卻不長( 相對於規劃時間 )。</p>      
+      <p>例如日本的明石大橋，從規劃到施工結束通車( 1998/04/06 )，耗時十年，但其施工時間只佔了全部時間的 1 / 5。中國大陸的青藏鐵路，從 1956 年開始正式由中國鐵道部規劃，而它的施工時間與整體時間相比，也約為 1 / 5。</p>      
+      <p>而國內大多重大工程都是顛倒的，規劃設計時程短，施工時期長，因為面臨許多的工程問題，除了台灣本身的地質狀況複雜導致工程施工時變數增加之外，就是來自於官員或是候選人所開出的支票影響，我們仍是期望著，工程不要有政治力介入，回歸專業，才能減少工程負擔，降低社會成本。</p>
+      <p>　</p>
+      <p><a href="#top">回頂端</a>
+      <p>　</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

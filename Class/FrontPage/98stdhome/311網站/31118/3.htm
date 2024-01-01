@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<STYLE>
+.spanstyle{font-size: 9pt; position: absolute; top: -50px; visibility: visible}
+</STYLE>
+<base target="_blank">
+</head>
+
+<body background="images/WB00474_.jpg" onload="javascript:pageonload();" >
+
+<p align="center"><img border="0" src="images/title3.gif"></p>
+<script language="JavaScript">
+var message="Hello! 歡 迎 光 臨";
+var x,y;
+var step=12;
+var flag=0;
+
+message=message.split("");
+var xpos=new Array();
+for (i=0;i<=message.length-1;i++) {
+xpos[i]=-50;
+}
+
+var ypos=new Array();
+for (i=0;i<=message.length-1;i++) {
+ypos[i]=-50;
+}
+
+function handlerMM(e) {
+x = (document.layers) ? e.pageX : document.body.scrollLeft+event.clientX+20;
+y = (document.layers) ? e.pageY : document.body.scrollTop+event.clientY;
+flag=1;
+}
+
+function makesnake() {
+if (flag==1 && document.all) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<=message.length-1; i++) {
+var thisspan = eval("span"+(i)+".style");
+thisspan.posLeft=xpos[i];
+thisspan.posTop=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+else if (flag==1 && document.layers) {
+for (i=message.length-1; i>=1; i--) {
+xpos[i]=xpos[i-1]+step;
+ypos[i]=ypos[i-1];
+}
+xpos[0]=x+step;
+ypos[0]=y;
+
+for (i=0; i<message.length-1; i++) {
+var thisspan = eval("document.span"+i);
+thisspan.left=xpos[i];
+thisspan.top=ypos[i];
+thisspan.color=Math.random() * 255 * 255 * 255 + Math.random() * 255 * 255 + Math.random() * 255;
+}
+}
+}
+
+
+for (i=0;i<=message.length-1;i++) {
+document.write("<span id='span"+i+"' class='spanstyle'>");
+document.write(message[i]);
+document.write("</span>");
+}
+
+if (document.layers) {
+document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+
+function pageonload() {
+makesnake();
+window.setTimeout("pageonload();", 2);
+}
+</script> 
+<p>　</p>
+<p>台灣設計波酷網&nbsp; <a href="http://www.boco.com.tw">http://www.boco.com.tw</a>&nbsp; 
+</p>
+<p>商標設計公司&nbsp; <a href="http://www.thinkbetter.com.tw/logodesign.htm">http://www.thinkbetter.com.tw/logodesign.htm</a></p>
+<p>台灣創意設計公司&nbsp; <a href="http://www.tdc.org.tw/">http://www.tdc.org.tw/</a></p>
+<p>創意設計&nbsp; <a href="http://creativedesign.funp.tw/">http://creativedesign.funp.tw/</a></p>
+<p>雅虎奇摩知識家&nbsp; <a href="http://tw.knowledge.yahoo.com/">http://tw.knowledge.yahoo.com/</a></p>
+<p>設計魔力<a href="http://twdesign.net/">http://twdesign.net/</a></p>
+</body>
+
+</html>

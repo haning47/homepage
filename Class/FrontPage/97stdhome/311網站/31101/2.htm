@@ -1,0 +1,234 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁2</title>
+<script language="JavaScript1.2">
+<!--
+if (document.all&&!window.print){
+leftright.style.width=document.body.clientWidth-2
+topdown.style.height=document.body.clientHeight-2
+}
+else if (document.layers){
+document.leftright.clip.width=window.innerWidth
+document.leftright.clip.height=1
+document.topdown.clip.width=1
+document.topdown.clip.height=window.innerHeight
+}
+function followmouse1(){
+//move cross engine for IE 4+
+leftright.style.pixelTop=document.body.scrollTop+event.clientY+1
+topdown.style.pixelTop=document.body.scrollTop
+if (event.clientX<document.body.clientWidth-2)
+topdown.style.pixelLeft=document.body.scrollLeft+event.clientX+1
+else
+topdown.style.pixelLeft=document.body.clientWidth-2
+}
+function followmouse2(e){
+//move cross engine for NS 4+
+document.leftright.top=e.y+1
+document.topdown.top=pageYOffset
+document.topdown.left=e.x+1
+}
+if (document.all)
+document.onmousemove=followmouse1
+else if (document.layers){
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=followmouse2
+}
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+setTimeout("window.onresize=regenerate",400)
+}
+if ((document.all&&!window.print)||document.layers)
+//if the user is using IE 4 or NS 4, both NOT IE 5+
+window.onload=regenerate2
+//-->
+</script>
+<style>
+<!--
+#leftright, #topdown{
+position:absolute;
+left:0;
+top:0;
+width:1px;
+height:1px;
+layer-background-color:#B0D0F8;
+background-color:#ff6900;
+z-index:100;
+font-size:1px;
+}
+-->
+</style> 
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+</head>
+
+<body background="images/back2.gif" onLoad="startclock(); timerONE=window.setTimeout" >
+<div id="leftright" style="width:expression(document.body.clientWidth-2)">
+</div>
+<div id="topdown" style="height:expression(document.body.clientHeight-2)">
+</div> 
+<p align="center"><img border="0" src="images/title2.gif" width="468" height="62"></p>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+<p align="center">　</p>
+
+<p align="left"><b><font color="#990000" size="5">莫內﹝<font face="Times New Roman, Times, serif">Claude 
+Monet</font>﹞﹝<font face="Times New Roman, Times, serif">1840 ~ 1926</font>﹞</font></b><br>
+<img border="0" src="photo/莫內.jpg" width="180" height="220"></p>
+<p class="type2">莫內是法國畫家， 
+是印象主義的創立者之一，而且只有他一人終其一生都堅持印象主義的原則和目標，也是唯一在生前贏得大眾認可的印象主義畫家。他少年時代所畫的諷刺漫畫就已具備了驚人的形似能力，直到他早期的印象主義繪畫還保留著這項特質，使他和十九世紀中葉風景畫家的朦朧概括迥然不同。他的風景畫完全以主題的視覺經驗感知為首要的考慮，忽視傳統的概念﹝構圖、題材、潤飾等﹞。</p>
+<p class="type2">　　莫內曾說：「試著忘卻你眼前的一切，不論它是一株樹，或是一片田野；只要想像這兒是一個小方塊的藍，這兒是長方形的粉紅，這兒是長條紋的黃色，並照你認為的去畫便是…。」他在 
+1870 
+年代的作品便是以這種不加琢磨的手法來呈現視覺經驗中片段的紊亂素材：雜陳的彩色筆觸同時襲向眼睛，因視覺的混合作用而成為炫目的幻影。</p>
+<p class="type2">　　莫內晚期的作品側重於同一主題在不同光線和空氣下變幻無窮的外觀。因而油彩記錄下來的，不是所見物體的本身，而是觀看的過程。</p>
+<p class="type2">　</p>
+<p class="type2"><b><font color="#990000" size="5">梵谷﹝<font face="Times New Roman, Times, serif">Vincent 
+van Gogh</font>﹞﹝<font face="Times New Roman, Times, serif">1853 ~ 1890</font>﹞</font></b></p>
+<p class="type2"><img border="0" src="photo/梵谷.jpg" width="164" height="220"></p>
+<p class="type2">梵谷是荷蘭牧師之子，曾住過布魯塞爾、艾登、海牙、德倫特、魯恩和安特衛普等地。</p>
+<p class="type2">　　梵谷在荷蘭時期所表現的繪畫特色是：用色陰暗，造型滯重，描繪主題主要為農民及其農務。其弟西奧﹝Theo﹞勸他用當時一般印象派畫家所用的明快的色調，他不予理會；但在安特衛普的短期停留期間，他開始對日本的浮士繪和魯本斯﹝Rubens﹞的作品發生興趣。</p>
+<p class="type2">　　1886 
+年，梵谷回到巴黎和西奧一起工作，由於西奧當時主持的畫廊全力支持新派畫，因此他認識了土魯茲-羅特列克﹝Toulouse-Lautrec﹞、畢沙羅﹝Pissarro﹞、竇加﹝Degas﹞和高更﹝Gauguin﹞，同時也接觸到許多印象派畫家作品。因此這時期，他繪畫的題材和用色有了全然的變化；他採用印象派畫家的技法，曾一度傾向秀拉﹝Seurat﹞的點描法，題材則轉向花卉、巴黎景物、人像畫及自畫像，這種轉變使他嘗試到新的觀念。</p>
+<p class="type2">　　1888 年，梵谷前往阿耳﹝Arles﹞，他畫了很多色彩明亮、生動、充滿情感及對光的表現的風景畫和人像。不久高更也前去同住，使他的作品明顯受到綜合主義﹝Synthetism﹞的影響，其特色是造型簡化，少用混色。1888 
+年 12 
+月，梵谷精神變得錯亂，一直到他去世之前，不斷遭受間歇性精神病的折磨。在聖雷米﹝St 
+Remy﹞和奧文斯﹝Auvers﹞，梵谷完成的作品中使用鮮活的色彩、陰鬱而如火焰般的筆法，充分顯露出他深受折磨的精神狀態。1890 
+年 7 月，梵谷於奧文斯持槍自殺。</p>
+<p class="type2">　　西奧是梵谷精神與經濟的長期支持者，他冗長、傾訴的信大多是寫給西奧的。在他自殺的六個月後，西奧也跟著去世。</p>
+<p class="type2">　</p>
+<p class="type2">　</p>
+
+</body>
+
+</html>

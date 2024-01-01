@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+if (document.all) {
+//Things you can alter
+yourLogo = "就是愛薩克斯風";  
+logoFont = "標楷體";
+logoColor = "FF8500";
+//Nothing needs altering below!
+yourLogo = yourLogo.split('');
+L = yourLogo.length; 
+TrigSplit = 360 / L;
+Sz = new Array()
+logoWidth = 100;
+logoHeight = -30;
+ypos = 0;
+xpos = 0;
+step = 0.03;
+currStep = 0;
+document.write('<div id="outer" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < L; i++) {
+document.write('<div id="ie" style="position:absolute;top:0px;left:0px;'
++'width:10px;height:10px;font-family:'+logoFont+';font-size:12px;'
++'color:'+logoColor+';text-align:center">'+yourLogo[i]+'</div>');
+}
+document.write('</div></div>');
+function Mouse() {
+ypos = event.y;
+xpos = event.x - 5;
+}
+document.onmousemove=Mouse;
+function animateLogo() {
+outer.style.pixelTop = document.body.scrollTop; 
+for (i = 0; i < L; i++) {
+ie[i].style.top = ypos + logoHeight * Math.sin(currStep + i * TrigSplit * Math.PI / 180);
+ie[i].style.left = xpos + logoWidth * Math.cos(currStep + i * TrigSplit * Math.PI / 180);
+Sz[i] = ie[i].style.pixelTop - ypos;
+if (Sz[i] < 5) Sz[i] = 5;
+ie[i].style.fontSize = Sz[i] / 1.7;
+}
+currStep -= step;
+setTimeout('animateLogo()', 20);
+}
+window.onload = animateLogo;
+}
+//  End -->
+</script> 
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back1.GIF">
+
+<p align="center"><img border="0" src="images/title2.gif" width="466" height="59"></p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="78%">最常見的四種薩克斯風有：<br>
+      <br>
+      Soprano-Sax<br>
+      高音薩克斯風 Bb調，在薩克斯風家族中他的音色最為細膩。外型上大致上有直立型和彎管型兩種。直立型的還有直頸與彎頸、一體成型與接管型的分別，Kenny G用的那種是一體成型的直頸高音薩克斯風。而彎管型的像一隻游水的天鵝，造型很可愛。但大多都是以直立型的為主流，聲音也比較好。<br>
+    </td>
+    <td width="22%">
+      <p align="center"><img border="0" src="htmphoto/soprano實.jpg" width="46" height="224"></td>
+  </tr>
+  <tr>
+    <td width="78%">Alto-Sax<br>
+      中音薩克斯風 Eb調，在薩克斯風家族中以他的音色最為優美、激昂，高培華用的就是這種，也是最多人學習的種類。也有廠家做直的Alto-Sax，外型很像阿爾卑斯號，聲音很棒，惟長度過長，演奏不便而不受重視。&nbsp;</td>
+    <td width="22%">
+      <p align="center"><img border="0" src="htmphoto/alto實.jpg" width="157" height="207"></td>
+  </tr>
+  <tr>
+    <td width="78%">Tenor-Sax<br>
+      次中音薩克斯風 Bb調，在薩克斯風家族中他的音色最為溫柔、豪邁，Stan Getz用的就是這一種。不過因為低音吹奏稍難，所以嘗試的人較少。&nbsp;</td>
+    <td width="22%">
+      <p align="center"><img border="0" src="htmphoto/tenor實.jpg" width="154" height="208"></td>
+  </tr>
+  <tr>
+    <td width="78%">Baritone-Sax<br>
+      上低音薩克斯風 Eb調，俗稱『茶壺』（要台語發音），Gerry 
+      Mulligan是少數幾位吹奏這種Sax而出名的大師。因為音域很低，較少做為主奏樂器，但是他是非常優美的低音樂器，在大樂隊中很重要。&nbsp;<br>
+    </td>
+    <td width="22%">
+      <p align="center"><img border="0" src="htmphoto/bar實.jpg" width="151" height="248"></td>
+  </tr>
+</table>
+<table border="0" width="100%">
+  <tr>
+    <td width="45%"><b><font size="6">全部的薩克斯風種類:</font></b><br>
+      <br>
+      Sopranino Saxophone<br> 
+      超高音薩克斯風（Eb調）<br>
+      <br>
+      C Soprano Saxophone<br> 
+      C調高音薩克斯風（C調）<br>
+      <br>
+      Soprano Saxophone<br> 
+      高音薩克斯風（Bb調）<br>
+      <br>
+      Mezzo-soprano Saxophone<br> 
+      次高音薩克斯風（F調）<br>
+      <br>
+      Alto Saxophone<br> 
+      中音薩克斯風（Eb調）<br>
+      <br>
+      C Melody Saxophone&nbsp;<br>
+      C調薩克斯風（C調）<br>
+      <br>
+      Tenor Saxophone<br> 
+      次中音薩克斯風（Bb調）<br>
+      <br>
+      Baritone Saxophone<br> 
+      上低音薩克斯風（Eb調）<br>
+      <br>
+      Bass Saxophone<br> 
+      低音薩克斯風（Bb調）<br>
+      <br>
+      Contrabass Saxophone<br> 
+      超低音薩克斯風（Eb調）<br>
+    </td>
+    <td width="56%">
+      <p align="center"><img border="0" src="htmphoto/SaxFamily.jpg" width="479" height="655"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

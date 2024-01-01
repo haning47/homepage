@@ -1,0 +1,453 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>31107控制</title>
+<base target="_self">
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back.bmp" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="images/title1.gif" width="469" height="60"></p>
+
+<p align="center"><script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> 
+</p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="28%"></td>
+    <td width="72%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="item3.GIF" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><a name="歷史">歷史</a>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item4.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#內容"><font color="#008000">內容</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item4.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#時間列表"><font color="#008000">時間列表</font></a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="1075">
+  <tr>
+    <td width="82%" height="13"><font color="#800080"><a name="內容">內容</a></font></td>
+    <td width="18%" height="13"></td>
+  </tr>
+  <tr>
+    <td width="82%" height="830"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> 
+      自動控制有著一段引人入勝的歷史。  
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+      最初的控制器在公元前300年的古希臘就被發明了出來。來自埃及的古希臘工程師科泰西比奧斯的水鍾就是通過浮子控制的。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　比贊茲在公元前250年發明了油燈，通過浮子來控制油麵的高度。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　第一個帶有反饋的控制系統來自於水面高度控制。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　第一個帶有反饋的溫度控制器是荷蘭人德雷貝爾發明的。來自法國的帕潘在1681年第一個發明了蒸汽鍋爐的壓力調節裝置。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　第一個在工業領域使用的帶有反饋的調節裝置當屬瓦特發明的離心力控制器，這是他在1769年為紐卡門的蒸汽機量身定做的。與此同時，俄羅斯人波爾祖諾夫發明了帶有反饋的水面高度控制器，也屬世界首創。水面高度的信息傳遞到浮子上，然後再反作用於蒸汽閥門上。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　從1868年起，自動控制被許多新的發明推動著不斷前進。但是，人們如果想要提高控制的精準性，就必鬚髮展出自動控制領域一套完整的理論。這方面最早的數學理論是由麥克斯韋提出的，他為離心力控制器用微分方程構造了一個模型。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　直到二戰，自動控制系統的理論和實踐在美國，西歐和在俄國，東歐沿著不同的方向發展。在西方，系統一般都在頻域描述，問題都用伯德，尼奎斯特和布萊克的方法解決，而前蘇聯的數學家和工程師們一般在時域用微分方程解決問題。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　自動控制技術的重大突破發生在二戰時期，因為製造武器裝備，必須處理複雜的系統。雷達，無人駕駛和自動瞄準系統只是幾個帶有反饋系統的例子。對新的控制系統的需求導致了新的數學方法的改善，從而控制技術有了自己的一套準則。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>　　1980年代，由於電子技術的出現，控制技術有了新的動因。工程師們可以更快更好地進行計算，高度複雜和精準的控制系統成為可能。</p>
+      <p>　</p>
+      <p><a href="#歷史">top</a></p>
+    </td>
+    <td width="18%" height="830">　</td>
+  </tr>
+  <tr>
+    <td width="82%" height="16"><font color="#800080"><a name="時間列表">時間列表</a></font></td>
+    <td width="18%" height="16"></td>
+  </tr>
+  <tr>
+    <td width="82%" height="88"><span lang="EN-US" style="font-family:CMR12">1784  
+      </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">離</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">心</span><span style="mso-ascii-font-family:CWTEX-M19;mso-hansi-font-family:CWTEX-M19">錘</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">調速</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">器</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span>
+      <p><span lang="EN-US" style="font-family:CMR12">1788 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">蒸</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">氣機</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1848 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">調速</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">器</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1860 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M10;mso-hansi-font-family:CWTEX-M10">魚</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">雷</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">系</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">統</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1900 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">電</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">壓</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">調節</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">器</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1910 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">大</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">砲</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">仰俯</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">角</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">器</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1920 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">飛</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">機</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">穩</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">定器</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1930 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">燃燒</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span lang="EN-US" style="font-family:CMR12">;  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">石</span><span style="mso-ascii-font-family:
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">油</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">廠</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1940 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動導</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">航</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">系</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">統</span><span lang="EN-US" style="font-family:CMR12">;  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">武</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">器</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:
+CWTEX-M7;mso-hansi-font-family:CWTEX-M7">系</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">統</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:
+CMSY10;mso-fareast-language:JA">→</span><span lang="JA" style="font-family:CMSY10;
+mso-fareast-language:JA"> </span><span style="mso-ascii-font-family:CWTEX-M1;
+mso-hansi-font-family:CWTEX-M1">數</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">位</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">計算</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">機理</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">建</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">立</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1950</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">回</span><span style="mso-ascii-font-family:CWTEX-M21;mso-hansi-font-family:CWTEX-M21">饋</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">建</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">立</span><span lang="EN-US"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1960 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span lang="EN-US" style="font-family:CMR12">NC + </span><span style="mso-ascii-font-family:
+CWTEX-M9;mso-hansi-font-family:CWTEX-M9">飛</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">機</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">、</span><span style="mso-ascii-font-family:
+CWTEX-M9;mso-hansi-font-family:CWTEX-M9">飛</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">彈</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">、</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">東</span><span style="mso-ascii-font-family:
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">床</span><span lang="EN-US" style="font-family:CWTEX-M4"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:
+CMSY10;mso-fareast-language:JA">→</span><span lang="JA" style="font-family:CMSY10;
+mso-fareast-language:JA"> </span><span style="mso-ascii-font-family:CWTEX-M3;
+mso-hansi-font-family:CWTEX-M3">估</span><span style="mso-ascii-font-family:
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">測</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">、</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">最</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">大原</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1970</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">最</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">佳</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制、</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">最</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">適</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+      </o:p>
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMR12">1980</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
+JA">年→</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span lang="EN-US" style="font-family:CMMI12">H</span><span style="font-size:7.5pt;
+mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">∞</span><span style="font-size:7.5pt;font-family:CMSY8"> 
+      </span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">- 
+      </span><span lang="EN-US" style="font-family:CMR12">control</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">、</span><span lang="EN-US" style="font-family:CMR12">adaptive<o:p>
+      </o:p> 
+      </span></p>
+      <p><span lang="EN-US" style="font-family:CMMI12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      H</span><span style="font-size:7.5pt;mso-ascii-font-family:CMSY8;mso-hansi-font-family:
+CMSY8">∞</span><span style="font-size:7.5pt;font-family:CMSY8"> </span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">- 
+      </span><span lang="EN-US" style="font-family:CMR12">control<o:p>
+      </o:p>
+      </span></p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">所</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">以</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">由</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">以上</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">我</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">們可以</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">發現</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">這門</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">學問</span><span style="mso-ascii-font-family:
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">它</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">是由</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動化</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">而</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">推</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">進至自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">且</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">由</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">簡</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">單</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">的</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制再</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">發展成</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">複</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">雜</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">的</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">自</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">動</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">系</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">統</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">最</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+      </o:p>
+      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">後</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">再</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">形成</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">一</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">套</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">一</span><span style="mso-ascii-font-family:
+CWTEX-M8;mso-hansi-font-family:CWTEX-M8">般</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">來</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">說</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">在</span><span lang="EN-US" style="font-family:CMR12">1930</span><span style="mso-ascii-font-family:CWTEX-M1;
+mso-hansi-font-family:CWTEX-M1">年</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">至</span><span lang="EN-US" style="font-family:CMR12">1960</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">年</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">它</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">是屬於</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">一</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">個</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">經驗</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">的時</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span lang="EN-US" style="font-family:CMR12">,<o:p>
+      </o:p> 
+      </span></p>
+      <p><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      且在</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">嘗</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">試</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">錯</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">誤</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">中</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">求</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">進</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">步的年</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span lang="EN-US" style="font-family:CMR12">;  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">而</span><span lang="EN-US" style="font-family:CMR12">1960  
+      </span><span style="mso-ascii-font-family:CWTEX-M2;
+mso-hansi-font-family:CWTEX-M2">至</span><span lang="EN-US" style="font-family:
+CWTEX-M2"><o:p>
+      </o:p>
+      </span><span lang="EN-US" style="font-family:CMR12">1980</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">年</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">是屬於現</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">的時</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">這</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">個</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">年</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">的所有</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">系</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">統</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">皆是建</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">立</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">在</span><span lang="EN-US" style="font-family:CMMI12">H</span><span lang="EN-US" style="font-size:7.5pt;font-family:CMR8">2</span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      - </span><span lang="EN-US" style="font-family:CMR12">control </span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+      </o:p>
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">上。</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">從</span><span lang="EN-US" style="font-family:CMR12">1980  
+      </span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">年</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">之</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">後</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:CWTEX-M5;
+mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">這門</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">學問就完全</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">建</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">立</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">在</span><span lang="EN-US" style="font-family:CMMI12">H</span><span style="font-size:7.5pt;
+mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">∞</span><span style="font-family: CMSY10; mso-fareast-language: JA" lang="EN-US"> 
+      - </span><span lang="EN-US" style="font-family:CMR12">control </span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">上了</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:CWTEX-M2;
+mso-hansi-font-family:CWTEX-M2">而這</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">時期我</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">們</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">稱</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">之</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">為後現</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">代</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">控</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">制</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">理</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">論</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">時期</span><span lang="EN-US" style="font-family:CMR12">(Post  
+      mod-ern control)</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">。</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p> 
+      </o:p>
+      </span></p>
+      <p>　</p>
+      <p><a href="#歷史">top</a></p>
+    </td>
+    <td width="18%" height="88"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

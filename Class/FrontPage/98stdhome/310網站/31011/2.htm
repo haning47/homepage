@@ -1,0 +1,460 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>太陽系的成員</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" background="BD14604_.GIF" onclick="dynOutline()">
+
+<p align="center"><a name="top"></a><img border="0" src="image/title2.gif" width="468" height="59"></p>
+
+<p align="center"><script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> </p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="29%"></td>
+    <td width="71%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="BD14721_.GIF" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><font face="華康流隸體">太陽系的成員</font>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#a"><font face="華康流隸體">太陽</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#b"><font face="華康流隸體">水星</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#c"><font face="華康流隸體">金星</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#d"><font face="華康流隸體">地球</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#e">火星</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#f">木星</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#g">土星</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#h">天王星</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#i">海王星</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="BD14656_.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康流隸體"><a href="#j">冥王星</a></font><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="a"></a>太陽</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與地球的平 均距離 1 AU  150,000,000 km&nbsp;<br>     
+      直徑(km) 1,392,530&nbsp;<br>     
+      質量(M/M地球) 330,000&nbsp;<br>     
+      密度(g/cm3) 1.41&nbsp;<br>     
+      表面溫度(K) 5,800&nbsp;<br>     
+      自轉週期 赤道為25天而兩極為35天&nbsp;<br>     
+      <br>
+      太陽為一平凡的黃色主序星，太陽的質量、大小、表面溫度與化學組成，在繁多的恆星中，皆屬於中庸型。 太陽為離我們最近的恆星，不過陽光仍需發8.3分鐘才能到達地球，地球與太陽的距離約為一億五千公里，如以每小時一百五十公里的平均時速開車，須費時114年才能到達太陽。      
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%">
+      <p align="center"><img border="0" src="htmphoto/sun_big.jpg" width="411" height="407"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="b"></a>水星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平均距離 0.39 AU<br>      
+      57,900,000 km&nbsp;<br>     
+      直徑(km) 4,880&nbsp;<br>     
+      質量(M/M地球) 0.06&nbsp;<br>     
+      密度(g/cm3) 5.4&nbsp;<br>     
+      表面溫度(℃) -173 到430&nbsp;<br>     
+      公轉週期 87.97 days&nbsp;<br>     
+      自轉週期 58.6 days&nbsp;<br>     
+      <br>
+      水星是最靠近太陽的行星，在天空和太陽之間的夾角永遠小於28度，因此常受陽光的影響觀測不易。水星的表面與月球非常類似，滿佈隕石坑，其中最著名的是Caloris Basin。水星沒有衛星，它的軌道在九大行星中也是較特殊的，水星的軌道離心率為0.206，而公轉軌道和黃道面的夾角也高達7度。&nbsp;<br>     
+      <br>
+      水星的大氣非常稀薄，主要的成份有極微量的氦、鈉、氫和氧。 水星的大氣成份，來自受太陽風吹襲與撞擊出的表面物質。由於水星表面的高溫，大氣分子很容易脫離水星，所以水星並沒有穩定的大氣，需要靠太陽風不斷的補給。由於水星的大氣稀薄， 無法保持穩定的表面溫度，水星的日夜溫差非常極端，白天溫度可高達攝氏430度， 足以融化鋅，而夜間的溫度降至攝氏零下173度，可以讓鈍氣氪凝結。&nbsp;<br>     
+      <br>
+      水星的密度高達5.4公克/公分3，所以天文學家相信， 水星有相當大的鐵核。以體積計算，水星的 鐵質核心約佔全部體積的42%。相較 之下，地球核心只佔總體積的16%，火星的核心更只佔總體積的9%。&nbsp;<br>     
+      <br>
+      受太陽所引起的潮汐力的影響，水星的自轉周期長達59個地球日， 而它的公轉周期約是88個地球日，水星的自轉與公轉的時間比幾近2:3。水星是本太陽系裡， 自轉/公轉產生共振的比率不是1:1的天體。&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/水星.jpg" width="450" height="307"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="c"></a>金星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平均 距離 0.72 AU<br>      
+      108,200,000 km&nbsp;<br>     
+      直徑(km) 12,100 km&nbsp;<br>     
+      質量(M/M地球) 0.95&nbsp;<br>     
+      密度(g/cm3) 5.2&nbsp;<br>     
+      表面溫度(℃) 450&nbsp;<br>     
+      公 轉週期 226 days&nbsp;<br>     
+      自轉週期 243 days&nbsp;<br>     
+      <br>
+      金星的公轉週期，半徑、質量與密度，皆與地球相近 ，故天文學家常稱金星為地球的姐妹星。但金星的大氣組成和地球迥然不同，95%為二氧化碳，氮約佔2～4%，氧氣的含量不到0.003%。金星的大氣壓力，約為地球大氣壓力的90倍，表面溫度高達攝氏450度，足可熔鉛。金星的表面雲霧彌漫，靠可見光無法透視金星的大氣，而微波則可穿透其大氣層，得以分辨金星的表面。&nbsp;<br>     
+      <br>
+      現在多數的研究者認為金星發生了失控的溫室效應，金星大氣中過量的二氧化碳，容許來自太陽的可見光與紫外線通過，但阻礙熱以紅外線的方式重新輻射到金星之外，表面溫度不斷上昇，造成今日所見的狀態。&nbsp;
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/venus.jpg" width="413" height="357"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="d"></a>地球</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與 太陽的平均距離 1 AU&nbsp;<br>     
+      150,000,000 km&nbsp;<br>     
+      直徑(km) 12,760&nbsp;<br>     
+      質量(M地球) 5.976*1024 kg&nbsp;<br>     
+      密度(g/cm3) 5.497&nbsp;<br>     
+      表面溫度(℃) -50 至50&nbsp;<br>     
+      公轉週期 365.26 days&nbsp;<br>     
+      自轉週期 24 hours&nbsp;<br>     
+      <br>
+      由外太空看地球，地球為一藍色的行星，70%的表面佈有 「 生命之泉」的液態水。地球是現知的本太陽系中，唯一有生命存在的星體。&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%">
+      <p align="center"><img border="0" src="htmphoto/地球.jpg" width="413" height="424"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="e"></a>火星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平均距離 1.52 AU&nbsp;<br>     
+      228,000,000 kmm&nbsp;<br>     
+      直徑(km) 6,800&nbsp;<br>     
+      質 量(M/M地球) 0.53&nbsp;<br>     
+      密 度(g/cm3) 3.9&nbsp;<br>     
+      表面 溫度(℃) 22 至-169&nbsp;<br>     
+      公轉週 期 686 days&nbsp;<br>     
+      自轉週期 24 hours, 37 minutes&nbsp;<br>     
+      <br>
+      火星為一紅色色澤的行星，其色澤是源自氧化鐵，可以說火星是一顆鏽朽的行星。火星有兩顆衛星：Phobos(火 衛一) 與Deimos(火衛一)，火衛一難逃於數百萬年後撞擊火星的宿命。火星表面曾有河川水流，極冠現在仍有冰存在 ，稀薄的大氣含有微量的氧，海盜一號與海盜二號探測船雖未找到火星生命的證據，但科學家仍未完全絕望。&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/火星.jpg" width="416" height="419"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="f"></a>木星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平 均距離 5.20 AU&nbsp;<br>     
+      778,400,000 km&nbsp;<br>     
+      直徑(km) 143,800&nbsp;<br>     
+      質 量(M/M地球) 317.89&nbsp;<br>     
+      密度(g/cm3) 1.3&nbsp;<br>     
+      表面溫度(C) -110&nbsp;<br>     
+      公轉週期 11 year 321 days&nbsp;<br>     
+      自轉週期 9 hours, 56 minutes&nbsp;<br>     
+      <br>
+      小行星帶外之行星，其性質與組成和內行星有很大的差異，它們大多有厚重的大氣，大氣的主成份為氫、氦 、甲烷與氨，外行星的典型代表為木星，故外行星常通 稱為「類木行星」。&nbsp;<br>     
+      <br>
+      木星為太陽系最大的行星，它的組成較不像行星，而與恆星類似，天文學家常稱木星為「未成形的恆星」。木星至少有十六個衛星，其中有四個與月亮大小相當(木衛 一～四)，為伽利略在1610 年用新發明的望遠鏡所發現，故又合稱為伽利略衛星。伽利略的發現是哥白尼日心學說的第一個實測證據。&nbsp;<br>     
+      <br>
+      木星的自轉週期相當短，大約為10小時，赤道的自轉較快，而兩極稍慢。木星最顯著的特徵為明暗交替的帶 狀條紋與斑點，咸信帶狀條紋係源自快速的自轉，而斑 點為差速自轉所引起的氣旋與風暴。&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/木星.jpg" width="419" height="411"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="g"></a>土星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平 均距離 9.54 AU&nbsp;<br>     
+      1,425,600,000 km&nbsp;<br>     
+      直徑(km) 120,000&nbsp;<br>     
+      質 量(M/M地球) 95.15&nbsp;<br>     
+      密度(g/cm3) 0.7&nbsp;<br>     
+      表面溫度(C) -180&nbsp;<br>     
+      公轉週期 29 years, 168 days&nbsp;<br>     
+      自轉週期 10 hours, 14 minutes&nbsp;<br>     
+      <br>
+      要求任何人去辨識一疊未標示的天文圖片，土星也許是最易被正確辨識的天體。長期以來，土星的美麗的光環系即吸引觀星者的目光，光環的主要組成物質為小冰塊、塵埃與小石塊，土星光環至少由五道同心環所組成      
+      ，比較明顯的部分總寬度達六萬公里，而厚度則少於數公里。&nbsp;<br>
+      <br>
+      土星是目前己知衛星最多的大行星，總數多達23顆， 其中17顆有詳細的觀測數據。&nbsp;&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/土星.jpg" width="418" height="373"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="h"></a>天王星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平 均距離 19.2 AU&nbsp;<br>     
+      2,867,000,000 km&nbsp;<br>     
+      直徑(km) 52,300&nbsp;<br>     
+      質 量(M/M地球) 14.54&nbsp;<br>     
+      密度(g/cm3) 1.2&nbsp;<br>     
+      表面溫度(C) -220&nbsp;<br>     
+      公轉週期 84.01 years&nbsp;<br>     
+      自轉週期 約17 hours, 14 minutes&nbsp;<br>     
+      <br>
+      天王星的自轉軸與其公轉面近乎平行，換言之，天王星是躺在軌道面上自轉，因此它的自轉週期一直很難準確測量，航行者2號飛越時，才測出其上大氣層的白轉週期為17.24小時。&nbsp;<br>
+      <br>
+      天王星上大氣層的溫度只有攝氏-213度，水和氨皆凍結成冰晶難以探測。天王星接受的太陽輻射很少，又缺乏內部能源，所以大氣層裡很平靜。天王星有15 顆衛星， 並有光環系統。&nbsp;<br>     
+      <br>
+      有研究者認為，天王星在形成的初期，曾受地球大小的天體撞擊，導致自轉方向發生變化，而撞下來的許多碎片也在赤道面上空散開，然後才逐漸形成衛星與環系。&nbsp;
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/天王星.jpg" width="416" height="417"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="i"></a>海王星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平 均距離 30.06 AU&nbsp;<br>     
+      4,497,000,000 km&nbsp;<br>     
+      直徑(km) 49,500&nbsp;<br>     
+      質 量(M/M地球) 17.23&nbsp;<br>     
+      密度(g/cm3) 1.7&nbsp;<br>     
+      表面溫度(C) -216&nbsp;<br>     
+      公轉週期 164.79 years&nbsp;<br>     
+      自轉週期 16 hours, 30 minutes&nbsp;<br>     
+      <br>
+      海王星為太陽系的第八顆行星，1979年1月與1999年3月間為太陽系最外圍的行星。海王星與天王星的大小、組成與密度很相近。&nbsp;<br>
+      <br>
+      由於海王星極為遙遠，直到航行者二號飛越前，我們幾乎對海王星一無所知。現知海王星有6顆衛星，並有五道光環。&nbsp;
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/海王星.jpg" width="417" height="414"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#B0FFFF">
+      <p align="center"><font face="華康相撲體(P)"><a name="j"></a>冥王星</font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="52%">與太陽的平 均距離 39.5AU<br>      
+      5,890,000,000 km&nbsp;<br>     
+      直徑(km) 2,300&nbsp;<br>     
+      質 量(M/M地球) 0.0022&nbsp;<br>     
+      密度(g/cm3) 2.03&nbsp;<br>     
+      表面溫度(C) -230&nbsp;<br>     
+      公轉週期 247.7 years&nbsp;<br>     
+      自轉週期 6.37 days&nbsp;&nbsp;<br>     
+      <br>
+      天文學家認為冥王星的行為很像彗星，在近日點時，表面受熱，行星物質被蒸發，離開行星散逸到太空。但冥王星的質量又太大，無法歸類成彗星。&nbsp;<br>
+      <br>
+      冥王星與海衛一，有能是原始太陽系失去的族類─冰矮星(ice dwarfs)。冥王星和海衛一是近親，而其他冰矮星，可能在柯伊伯帶之內，或甚至在歐特雲之中。 這種假說是現在相當風行的觀點，但其正確仍有待未來觀測的證實。&nbsp;<br>     
+      <br>
+      太陽系初形成時，內太陽系可能有相當數量的冰矮星。在類木行星的重力作用 下，離太陽50AU的範圍內，只有冥王星和海衛一，找到安身的穩定軌道， 其餘的冰矮星皆被驅離。海衛一為海王星所捕獲，冥王星沿著與海王星所 形成的共振軌道(resonance orbit) 繞太陽運行。海王星公轉兩圈的時間，恰好 和冥王星公轉三圈的時間相同，或者說它們之間形成2:3 的共振軌道。冥衛一 可能是冥王星，和其他冰矮星正面碰撞，或擦撞的結果。碰撞後的許多碎片， 繞冥王星運行，後來逐漸結合成冥衛一。&nbsp;     
+      <p><a href="#top">ｔｏｐ</a></td>
+    <td width="48%"><img border="0" src="htmphoto/冥王星.jpg" width="416" height="413"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

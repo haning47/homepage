@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+<!-- BEGIN Eric's Mouse-Clock CODE -->
+
+<SCRIPT language=JavaScript>
+dCol='8A78FF';//date colour.
+fCol='8A78FF';//face colour.
+sCol='8A78FF';//seconds colour.
+mCol='8A78FF';//minutes colour.
+hCol='8A78FF';//hours colour.
+ClockHeight=40;
+ClockWidth=40;
+ClockFromMouseY=0;
+ClockFromMouseX=100;
+
+//Alter nothing below! Alignments will be lost!
+
+d=new Array("SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY");
+m=new Array("JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+TodaysDate=" "+d[date.getDay()]+" "+day+" "+m[date.getMonth()]+" "+year;
+D=TodaysDate.split('');
+H='...';
+H=H.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+speed=0.5;
+ns=(document.layers);
+ie=(document.all);
+Face=Face.split(' ');
+n=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/n;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+step=0.02;
+currStep=0;
+y=new Array();x=new Array();Y=new Array();X=new Array();
+for (i=0; i < n; i++){y[i]=0;x[i]=0;Y[i]=0;X[i]=0}
+Dy=new Array();Dx=new Array();DY=new Array();DX=new Array();
+for (i=0; i < D.length; i++){Dy[i]=0;Dx[i]=0;DY[i]=0;DX[i]=0}
+if (ns){
+for (i=0; i < D.length; i++)
+document.write('<layer name="nsDate'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[i]+'</font></center></layer>');
+for (i=0; i < n; i++)
+document.write('<layer name="nsFace'+i+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[i]+'</font></center></layer>');
+for (i=0; i < S.length; i++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[i]+'</b></center></font></layer>');
+for (i=0; i < M.length; i++)
+document.write('<layer name=nsMinutes'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[i]+'</b></center></font></layer>');
+for (i=0; i < H.length; i++)
+document.write('<layer name=nsHours'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+H[i]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < D.length; i++)
+document.write('<div id="ieDate" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < n; i++)
+document.write('<div id="ieFace" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[i]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < H.length; i++)
+document.write('<div id="ieHours" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+H[i]+'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < M.length; i++)
+document.write('<div id="ieMinutes" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[i]+'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < S.length; i++)
+document.write('<div id="ieSeconds" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[i]+'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (ns)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (ns)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+Od.style.top=window.document.body.scrollTop;
+Of.style.top=window.document.body.scrollTop;
+Oh.style.top=window.document.body.scrollTop;
+Om.style.top=window.document.body.scrollTop;
+Os.style.top=window.document.body.scrollTop;
+}
+for (i=0; i < n; i++){
+ var F=(ns)?document.layers['nsFace'+i]:ieFace[i].style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=(ns)?document.layers['nsHours'+i]:ieHours[i].style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=(ns)?document.layers['nsMinutes'+i]:ieMinutes[i].style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=(ns)?document.layers['nsSeconds'+i]:ieSeconds[i].style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=(ns)?document.layers['nsDate'+i]:ieDate[i].style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout('Delay()',20);
+}
+if (ns||ie)window.onload=Delay;
+</SCRIPT>
+
+<!-- END Mouse-Clock CODE the Code 
+was design by Eric Chen!!!--> 
+
+<body background="images/BD14604_1.GIF">
+
+<p align="center"><img border="0" src="images/title02.gif" width="438" height="46"></p>
+
+<p><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">「</span><span lang="EN-US">Windows</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">」這個詞用於一系列不同的產品</span></p>
+
+<p><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">它們可以劃分為一些四個類別：</span></p>
+<table border="1" width="92%">
+  <tr>
+    <td width="100%" colspan="2">
+      <p align="center">16點陣圖形使用者介面</td>
+  </tr>
+  <tr>
+    <td width="68%">
+      <p style="line-height: 150%">早期版本的Windows通常僅僅被看作是一個圖形使用者介面，不是作業系統，主要因為它們在MS-DOS上執行並且被用作檔案系統服務。不過，即使最早的16位版本的Windows也已經具有了許多典型的作業系統的功能，包括擁有自己的可執行文件格式以及為應用程式提供自己的裝置驅動程式（計時器、圖形、印表機、滑鼠; 、鍵盤以及音效卡）。與MS-DOS不同，Windows透過協作式多工允許使用者在同一時刻執行多個圖形應用程式。最後，Windows還實作了一個設計精良的、基於段的軟體虛擬記憶體方案，使其能夠執行大於物理記憶體的應用程式。程式碼段和資源在記憶體不足的時候進行交換，並且當一個應用程式釋放處理器控制時，特別是等待使用者輸入的時候，資料段會被移入記憶體。16位版本的Windows包括Windows 1.0（1985），Windows 2.0（1987）及其近親Windows／286。</td>    
+    <td width="32%">
+      <p align="center"><img border="0" src="htmlphoto/windows%201.0.png" width="321" height="204"></p>
+      <p align="center"><img border="0" src="htmlphoto/win210d.gif" width="320" height="211"></p>
+      <p>　</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <p align="center">混合的16/32位作業系統</td>
+  </tr>
+  <tr>
+    <td width="68%">
+      <p style="line-height: 150%">這個系列的16位元的 Windows 的升級版本，仍然需要依賴16位 DOS 基層程式才能執行，不算是真正意義上的32位作業系統，由於使用DOS程式碼，架構也與16位DOS一樣，核心屬於單核心。它可視為微軟將 MS-DOS作業系統和早期Windows圖形使用者介面整合出售，或本身也晉陞為作業系統，因此使用者就不用再單獨購買 MS-DOS 以執行「Windows圖形使用者介面」了。這個系列包括 Windows 95（第一版發行於1995年，後來的改進版本發行於1996年和1997年），以及三個版本的 Windows 98（1998年、1999年和2000年）。這三個版本最終發展成為 Windows ME。雖然它是 Windows 98 的家族之一，但從來沒有在廣告出現過。</td>    
+    <td width="32%">
+      <p align="center"><img border="0" src="htmlphoto/windows98se.jpg" width="294" height="293"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <p align="center">32位作業系統</td>
+  </tr>
+  <tr>
+    <td width="68%">
+      <p style="line-height: 150%">這個系列是Windows NT架構作業系統，是真正的純32位作業系統。Windows NT架構作業系統是完整獨立的操作系統，不同於依然需要DOS基層程式的混合16/32位Windows 9x。這個作業系統是為更高效能需求的商業市場而編寫的32位作業系統。這個系列都是Windows NT架構，核心採用混合式核心即改良式微核心。它們包括 Windows NT 3.1（1992年）、NT 3.5、NT 3.51、NT 4.0、Windows 2000、Windows XP 和32位Windows Vista（Windows Vista同時有32位的x86版本與64位的x64版本）。</td>   
+    <td width="32%">
+      <p align="center"><img border="0" src="htmlphoto/windows%20NT%204.0.gif" width="319" height="239"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <p align="center">64位作業系統</td>
+  </tr>
+  <tr>
+    <td width="68%">
+      <p style="line-height: 150%">這是64位元Windows NT架構作業系統，同樣是採用改良式微核心。分為純64位的IA-64架構與x86-64架構版本。現時最新的Windows版本開始採用64位作業系統環境。這個系列的產品包括 Windows XP 64位版、Windows Server 2003 64位版、 Windows Vista 64位版。IA-64 是 Intel 的處理器中使用的純64位 EPIC 指令集，它在32位相容模式下效能較差，而且大多數不相容現有的 x86 軟體，故和現有桌面平台所謂的64位元指令集是完全不同的概念，Microsoft僅僅有Windows 2000 Advanced Server Limited Edition這個限量版的基於IA-64指令集的系統和一個非常罕見的Windows Server 2003 for IA-64版本和Windows XP 64bit 。但由於現時64位元作業系統還在萌芽時期，許多軟體或硬體均未開始支援使用64位元的作業系統，所以極多數32位元的程式亦未能64位元下運作。</td>   
+    <td width="32%">
+      <p align="center"><img border="0" src="htmlphoto/Windows-7-XP-mode.jpg" width="320" height="218"></p>
+      <p align="center"><img border="0" src="htmlphoto/windows7%20Ultimate.jpg" width="316" height="259"></td>
+  </tr>
+</table>
+</body>
+
+</html>

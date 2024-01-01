@@ -1,0 +1,248 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="IMAGES/back2.jpg">
+
+<p align="center"><img border="0" src="IMAGES/title2.gif" width="468" height="60"></p>
+
+<p align="center">　 <script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+</p>
+
+<table border="1" width="100%" height="1216">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FF00" height="20">
+      <p align="center"><font color="#FF0000">硫酸</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="780">A.硫酸的性質：硫酸是化學工業中最重要的酸。純硫酸為無色、無臭、呈油狀、侵蝕性很大的液體，密度為1.85 g/cm3。<br>  
+ 硫酸可完全溶於水而成硫酸溶液，濃硫酸溶於水時會放出大量的熱，故稀釋濃硫酸時，一定要以硫酸緩緩加入大量水中，同時以玻璃棒攪 拌水溶液，使熱分散。<br>  
+ 因硫酸密度大於水，會下沈，溶解產生的熱較易散開，溫度上升較緩。若水加人硫酸，溫度上發生爆炸式濺射，而有危險性。<br>
+ 具強烈腐蝕性；會使蔗糖等碳水化合物因而失去水，形成黑色的炭，具強烈脫水性。<br>
+ 例一：蔗糖為碳水化合物，加人濃硫酸則脫水而成焦黑色的碳。<br>
+ 例二：以玻棒沾濃硫酸在白紙上寫字也會將紙中的水脫去而成黑。<br>
+ 例三：藍色硫酸銅晶體為含水化合物，遇濃硫酸則脫水而成白色粉末。<br>
+ 可和大多數金屬（除金、鉑等少數以外）作用生成金屬離子。<br>
+ 例一：濃硫酸和金屬銅反應並放出二氧化硫氣體(Cu＋2 H2SO4（濃）→CuSO4＋2 H2O＋SO2↑）。<br>  
+ 例二：稀硫酸和活性比氫大的金屬作用則放出氫氣(Zn＋H2SO4（稀）→CuSO4＋H2↑）&nbsp;<br>
+ B.硫酸的用途：<br>
+ 一個國家化學工業的規模大小可用它的硫酸消耗量來衡量，故硫酸稱為化學工業之母。<br>
+ 製造沸點較硫酸低的鹽酸及硝酸。製造肥料硫酸銨【（NH4）2SO4】，俗名硫酸亞。<br>
+ 製造造紙所用的硫酸鈉。製造蓄電池中的電解液。在很多反應（例如酯化或尿素甲醛樹脂的製造）中當作催化劑。&nbsp;<br>
+ C.硫酸的製造：<br>
+ 以硫為原料先經燃燒成二氧化硫。（S＋O2→SO2）<br>
+ 再與氧反應變成三氧化硫（加人催什劑V2O5（五氧化二釩）)（2SO2＋O2→2SO3）然後與水化合成硫酸。（SO3＋H2O→H2SO4）&nbsp;</td>
+    <td width="50%" height="780">
+      <p align="center"><img border="0" src="htmphoto/硫酸.jpg" width="354" height="324"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FF00" height="20">
+      <p align="center"><font color="#FF0000">鹽酸</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="320">A.鹽酸的製造：<br>
+ 濃硫酸和食鹽（NaCl）作用生成氯化氫，在溶於水而成。(NaCl＋H2SO4(濃) →HCl+NaHSO4）&nbsp;<br>
+ B.鹽酸的性質：<br>
+ 鹽酸是氣態的氯化氫（HCl）溶於水而成的水溶液，學名為氫氯酸。鹽酸為具刺鼻的無色溶液，工業用的鹽酸不純，因含微量Fe3＋，故成微黃色。<br>
+ 最濃的鹽酸含有38%的氯化氫。是一強酸，能使藍色石蕊試紙變紅色，可與活性大的金屬作用而生成氯化物及氫氣。<br>
+ 氯化氫氣體遇氨可生成白煙狀固體氯化銨微粒，（反應為：NH3＋HCl→NH4Cl）此亦為檢驗氯化氫的方法之一。<br>
+ C.鹽酸的用途：用於清洗廁所。工業上可用於清洗金屬表面或製造聚氯乙烯(PVC)塑膠的原料。</td>
+    <td width="50%" height="320"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FF00" height="20">
+      <p align="center"><font color="#FF0000">硝酸</font></td>
+  </tr>
+  <tr>
+    <td width="50%" height="20">A.酸的製造：<br>
+ 實驗室製法硝酸鈉(NaNO3)與濃硫酸共熱產生硝酸，經蒸餾再收集而成。<br>
+ 硝酸的製備，工業上硝酸的製法有兩種：<br>
+     1、分解法：用硝酸鈉與濃硫酸共熱則得硝酸蒸氣。<br>
+            2NaNO3＋H2SO4→Ha2SO4＋2HNO2↑<br>
+           然後導入接受器中，將其凝縮成液體。<br>
+    2、合成法：此法以氨為原料，使與空氣相混合，氨被氧化成一氧化氮NO<br>
+      再繼續氧化為二氧化氮NO2，最後與水作用而成硝酸。反應式如下：<br>
+            4NH3＋5O2→4NO＋6H2O<br>
+            2NO＋O2→2NO2<br>
+            3NO2＋H2O→2HNO3＋NO&nbsp;<br>
+ B.硝酸的性質：硝酸為無色液體，會腐蝕皮膚，通常自己分解出二氧化氮（NO2），<br>
+   並溶解於其中而帶黃色。（一般的濃硝酸是含68%的硝酸水溶液。）<br>
+   硝酸照到陽光會產生紅棕色有毒的二氧化氮（NO2）氣體，因此必須以棕色的玻離瓶盛裝。<br>
+   濃硝酸可與大多數的金屬作用。例如：銅浸泡在硝酸中發生腐蝕，(Cu＋4HNO3（濃）→Cu（NO3）2＋H2O＋2NO2↑）<br>
+   用於製造精密電路，但會產生有毒的氣體（NO2），故宜保持通風。硝酸則和銅作用生成無色的一氧化氮氣體。<br>
+  （3Cu＋8HNO （稀）→3Cu（NO3）2＋4H2O＋2NO）一分子硝酸和三分子鹽酸的混合液稱為王水，是一種強酸，可溶解一般<br> 
+   酸無法溶解的黃金和鉑。工業上濃硝酸可製造黃色炸藥三硝基甲苯(TNT)。製硝酸鉀(KNO3，)以作為黑火藥。<br>
+   可製鉀肥料及肉類防腐劑的原料。 </td>
+    <td width="50%" height="20"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

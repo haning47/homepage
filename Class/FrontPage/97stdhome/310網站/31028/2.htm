@@ -1,0 +1,292 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="image/back1.2.3.5.JPG">
+
+<p align="center"><img border="0" src="image/title2.gif" width="434" height="99"></p>
+<p align="center">　<script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script>   
+</p>
+
+<p align="center"><font color="#0000ff" size="6"><strong><font color="#cc3399">師大夜市</font></strong></font> 
+</p>
+
+<p align="center"><strong><font color="#993300" size="5">夜市歷史發展</font></strong></p>
+<font color="#993300" size="5">
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
+在過去，師大夜市的範圍擴及整條師大路和師大路及和平東路交叉口，在黃大洲市長時期的</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>時候，攤販相當多，人潮十分熱絡，是個非常熱鬧的夜市，然而現今只剩下龍泉街一帶還有些</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>許賣衣服與小飾品的攤販，其餘的多轉型為店面型式。</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
+雖然稱為師大夜市，但商家普遍認為不是夜市，由於消費族群大都固定（師大學生、附近學</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>校的學生、附近居民、上班族以及外國人等等），不像其他的觀光夜市較有人口的流動，加上</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>東西豐富多元，且具有異國的風情，因此比較像是個吃喝玩樂的小寶山。</strong></font></span></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">&nbsp;&nbsp;&nbsp; 
+近幾年的師大夜市甚至有個「師大咖啡街」的稱號，當年夜市還是一片榮景的的時候，由於</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">攤販遭到嚴格的取締，於是攤販從那時起逐漸減少，甚至消聲匿跡，所以讓咖啡店在這些小巷</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">子有了生存空間，延續整個台北地區這種以人文氣息為特色的咖啡店，全盛時期聽說達到一百</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">多家之譜，其他類型的商家也漸漸出現，將師大路帶入另一個繁榮的時期，包括服飾店、精品</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">店、複合式餐飲等等，到了今天由熱絡的人潮，小攤販又重新復甦，加上後起之秀的各式店家</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: ">，兩者組合已經形成不同以往的商圈型態了。</span></font></strong></p>
+<p><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp;&nbsp; 
+因此，師大夜市之所以會發展成今天的型態，有很大一個部分是因為隨著咖啡館文化的發展</strong></font></span></p>
+<p><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>而興起的精品店、服飾店以及各種特殊商品類型的店家，還有原本老字號的滷味、麵食等等，</strong></font></span></p>
+<p><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>加上附近的地理環境與交通條件，使得師大夜市具有其特殊優勢。好吃、好玩、便宜又方便，</strong></font></span></p>
+<p><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font color="#000000" size="3"><strong>這也是為什麼附近學生與居民的忠誠度會這麼高的原因了。</strong></font></span></p>
+</font>
+<p align="center"><font color="#cc3399" size="6"><b>公館夜市</b></font></p>
+<font color="#993300" size="5">
+<p align="center"><strong>夜市歷史發展</strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
+公館位於羅斯福路四段一帶，此地因清乾隆時期有大批泉州府安溪移民團入墾，墾首乃於此</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">築公館以徵收佃戶租榖，故名公館。公館是台北市南區最大的夜市，然而它與其他的夜市最大</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">的不同點在於，公館不僅以小吃為主，還包括許多的服飾店、小藝品店、餐廳、咖啡廳、茶館</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">、書店</span><span lang="EN-US" style="FONT-FAMILY: Arial">…</span><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">等等，另外還有一家為人所知的「東南亞戲院」，可說形成了一個小型商業區。</span><span lang="EN-US" style="FONT-FAMILY: Arial"><br>
+</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
+在公館地區的羅斯福路及汀州路上，兩側的店家大多是服飾店、書店、唱片行及藝品店，因</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">鄰近台灣大學及台灣科技大學，且是通往景美、木柵及中永和等地區的公車轉乘站及捷運站，</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">來往此地的人群也就相對增多。由於來往此地大都為學生，當地的消費額也盡量符合學生的能</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">力。</span><span lang="EN-US" style="FONT-FAMILY: Arial">&nbsp;</span></strong></font></p>
+<span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3">
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><br>
+</font></span></font><span lang="EN-US" style="FONT-FAMILY: Arial"><span style="font-family: Arial" lang="EN-US"><font color="#000000" size="3">&nbsp;&nbsp;&nbsp;&nbsp; 
+</font></span><font color="#000000" size="3"><strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">汀州路三段</span>237<span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">號，以其入口即化、爽口透心涼的招牌</span></strong><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>豆花出名；一家位於汀州路三段不知</strong></span></font>
+</span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>名的「車輪餅」小店，常常看到大排長龍排隊人潮，在等待那些紅豆及奶油口味的車輪餅；「</strong></span></font>
+</span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>鳳城燒臘」位於台大新生南路側門斜對面，各種客飯如招牌飯、三寶飯、叉燒雞、油雞飯、排</strong></span></font>
+</span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>骨飯，都有其獨特味道。此外，汀州路亦有「東南亞街」的美名，主要是這條街及附近巷子聚</strong></span></font>
+</span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>集許多東南亞風味餐廳，如泰國、馬來西亞、印尼、緬甸等，如「曼德勒」的緬甸菜、「椰島</strong></span></font>
+</span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: 新細明體; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>」的印尼菜、「泰國小館」的辛辣口味，令人回味無窮。</strong></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><font color="#cc3399" size="6"><b>士林夜市</b></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><strong><font color="#993300" size="5">夜市歷史發展</font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">士林夜市是台北夜市中最具規模的一個，每當七、八點鐘時，文林路、大東路、大</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">南路、小西街的四周就陸陸續續湧入大量人潮，讓這四條路被擠得水洩不通，寸步</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">難行，四周充滿了此起彼落的叫賣聲，這就是士林夜市的最佳寫照。</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
+清末，此地緊臨基隆河的大南路路口是一渡船頭。除了士林、社子所產的農產</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">品，甚至遠自陽金公路挑來賣的新鮮魚貨，都以這個地點為交易中心外，運至艋舺</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">、大稻埕的貨物亦在此裝載，久而久之，大南路周邊便形成市集，攤販林立。這些</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">小販白天賣菜，晚上收攤後兼賣小吃或雜貨賺錢，於是越來越多的小販跟進，夜市</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">範圍便越擴越大，終於形成今日的局面。</font></span></b><font size="4"><b style="mso-bidi-font-weight: normal"><span lang="EN-US" style="FONT-SIZE: 14pt; COLOR: black">&nbsp;</span></b></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
+現在的士林夜市共可分為二大部分，一是慈諴宮對面的市場小吃，另一就是以陽</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">明戲院為中心，包括安平街、大東路、文林路圍成的弧形，但兩處由於規模擴大，</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">已經合而為一。而此處的小吃則以大餅包小餅、廣東粥、天婦羅、鐵板燒、蚵仔麵</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">線等最為著名。由於士林夜市的消費對象多以學生為主，包括臨近學校如東吳大學</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4">、銘傳大學、文化大學、淡江大學、淡水工商、北士商等校，學生眾多，因此</font></span></b></font></strong><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4"><strong>消費</strong></font></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: 新細明體; mso-ascii-font-family: "><font size="4"><strong>額趨向經濟實惠。</strong></font></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">　</p>
+</span>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b><font color="#993300"><strong><span style="font-family: Arial; color: black" lang="EN-US">參考資料 
+台北夜市追追追 http://blog.xuite.net/zhonggodc/nightmarket/4448100</span></strong></font></b></p>
+<span lang="EN-US" style="FONT-FAMILY: Arial">
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="left">　</p>
+</span><font color="#993300" size="5">
+<p align="center">　</p>
+</font>
+
+<p align="center">　 
+</p>
+
+</body>
+
+</html>

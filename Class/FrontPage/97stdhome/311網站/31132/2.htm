@@ -1,0 +1,300 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/back1.gif">
+
+<p align="center"><img border="0" src="images/title2.gif" width="468" height="60"></p>
+
+<p align="center">　
+
+<script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> 
+
+
+
+
+</p>
+
+<div align="center">
+  <center>
+  <table border="0" width="757" height="522">
+    <tr>
+      <td width="747" height="480"><font face="標楷體">　儘管嚼口香糖常被視為對人體有害，但英國神經科學專家十三日指出，<b><font color="#FF9900">實驗證明嚼口香糖有助於思考或記憶等認知活動，亦即可讓人變得更聰明。</font><br>
+        </b><br>
+        　這項研究是由英國諾桑比亞大學和瑞丁大學認知研究中心共同完成，諾大人類認知精神科學中心的史寇利博士表示，實驗證明嚼口香糖能有效刺激記憶，「在工作記憶實驗中，人們可想起更多單字，表現得更好」。<br>
+        <br>
+        　 嚼哪一種口香糖才會讓人變得更聰明並非重點，關鍵在於重複咀嚼的動作。史寇利在「英國心理學會」年度研討會上提出研究成果，表示心跳加快和刺激胰島素分泌可能是一連串記憶力實驗出現明顯改善的主因。<br> 
+        <br>
+        　 參加實驗的七十五人分為不嚼口香糖者、嚼口香糖者與「偽裝」嚼口香糖者三組。在進行二十五分鐘的實驗前，真假嚼口香糖者各自先以實際或想像方式咀嚼三分鐘。<br> 
+        <br>
+        　 史寇利說，實驗包括短期記憶相關問題，如記憶單字和圖片等，以及所謂的工作記憶，如記憶某人電話號碼的能力等。經過實驗，實際嚼口香糖者的心率每分鐘要比不嚼口香糖者快三下，比偽裝嚼口香糖者快一．五下。他認為，心率加快可能有助於向大腦輸送氧氣和葡萄糖，進而改善認知機能。此外，嚼口香糖也能刺激胰島素加速分泌，而腦部接收胰島素的區域正好對學習和記憶極為重要。&nbsp;</font><br>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+  <table border="0" width="752">
+    <tr>
+      <td width="742"><font color="#0000FF">優點：（１）口香糖可以讓口氣清新，有利於社交活動。</font></td>
+    </tr>
+    <tr>
+      <td width="742"><font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （２）嚼口香糖可增加唾液分泌，也有助於咬合的訓練。</font></td>
+    </tr>
+    <tr>
+      <td width="742"><font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （３）可以增加記憶力。嚼口香糖能使心率加快，有助於向大腦輸送氧氣和葡</font></td>
+    </tr>
+    <tr>
+      <td width="742"><font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        萄糖，進而改善認知機能。</font>
+        <p>　</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+  <table border="0" width="754" height="664">
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">缺點：（１）容易造成齲齒。由於大部分口香糖是以蔗糖為甜味劑，咀嚼時，糖分</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        會長時間在口腔內停留，口腔中產生酸性物質，對牙齒產生腐蝕、脫</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        鈣，從而誘發齲齒。並非像廣告中可以預防蛀牙。</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （２）大腦、中樞神經和腎臟造成危害。瑞士一項研究發現，常嚼口香糖會</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        損壞補牙的物質，使其中的汞釋放出來，造成血液、尿液中的汞過量</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        ，從而對大腦、中樞神經和腎臟造成危害。</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （３）一般口香糖的主要成分為乳膠，可能誘發過敏。</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （４）嚼口香糖別超過15分鐘，有胃病的人更不宜長時間嚼口香糖，以免反射</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        性分泌大量胃酸；特別是空腹時，不僅會出現噁心、食欲不振等症狀，</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        長期還可能導致胃潰瘍和胃炎等疾病。</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="14"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        （５）容易形成國字臉。約一成五港人屬國字臉，當中有九成是因咀嚼肌肥厚</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        發達，除了先天因素，經常咀嚼硬物、口香糖 
+        、魷魚絲等會令咀嚼肌</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20"><font color="#FF0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        變厚，成為國字臉一族。</font></td>
+    </tr>
+    <tr>
+      <td width="744" height="20">　
+        <p>　</td>
+    </tr>
+    <tr>
+      <td width="744" height="326">　　<font face="標楷體"><font color="#008000"><b>如果不小心吞下口香糖</b></font>，也就是所謂的口膠，會擔心會不會黏到腸子，一般而言，口香糖是不應該會黏到腸子的，如果黏到腸子，民眾是可以控告口香糖公司，因為口香糖本來就時常有機會被消費者不小吞下去，製造廠商在製造時原本就應該選用不會黏到腸子的原料，這一點在歐美各國規定很嚴格，所以如果口香糖的廠牌是由世界性的大公司製造，不小心吞下去是不用擔心的；但是如果是由小工廠製造的，仍然要小心觀察以後有沒有肚子痛、嘔吐的現象，怕真的會在肚子裡發生粘黏造成腸阻塞。<br>
+        　　雖然有些產品是大公司製造的，品質沒有問題，也不會黏到腸子，但是仍然有機會造成慢性的腸阻塞。因為有些吞下去的口香糖，沒有被順利的向下經由腸子、肛門排出，而是在胃裡不斷的混合著食物攪動，一些不太容易消化的食物黏在這塊口香糖上愈黏愈多，終於形成一大團的球狀物，在醫學上把這一大團東西稱之為 BEZOAR，也會慢慢造成腸阻塞，出現肚子痛，嘔吐的現家。走在路上，隨時可發現有人隨口嚼著口香糖；調查顯示，人們認為口香糖可以讓口氣清新，有利於社交活動。 
+        </font><br>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+
+</body>
+
+</html>

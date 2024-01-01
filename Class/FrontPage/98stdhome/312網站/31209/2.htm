@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Big5">
+<title>漸變色特效</title>
+<SCRIPT language=javaScript>
+<!--
+var thissize=20
+var textfont="arial"
+var textcolor= new Array()
+textcolor[0]="lime"
+textcolor[1]="#FF9900"
+textcolor[2]="aqua"
+textcolor[3]="red"
+textcolor[4]="#FF8040"
+textcolor[5]="#FFD1BB"
+textcolor[6]="#CCCCFF"
+textcolor[7]="#CCCC33"
+textcolor[8]="#ff8040"
+textcolor[9]="yellow"
+textcolor[10]="lime"
+textcolor[11]="#FF9900"
+
+var message = new Array()
+message[0]="哈摟你好嗎"
+message[1]="衷心感謝"
+message[2]="珍重再見"
+message[3]="期待再相逢"
+
+var i_blurstrength=15
+var i_message=0
+var i_textcolor=0
+
+function blurtext() {		
+	if(document.all) {
+		if (i_blurstrength >=-2) {
+			if (i_textcolor >=textcolor.length-1) {i_textcolor=textcolor.length-1}
+			blurthis.innerHTML="<span id='blurpit1' style='position:absolute;visibility:visible;width:600px; top:100px;left:5px;filter:blur(add=0,strength="+i_blurstrength+",direction=90);font-family:"+textfont+";font-size:"+thissize+"pt;color:"+textcolor[i_textcolor]+"'>"+message[i_message]+"</span>";
+		document.close()
+		i_blurstrength=i_blurstrength-2
+		i_textcolor++
+		var timer=setTimeout("blurtext()",50)
+		}
+		
+		else {
+			if (i_textcolor >=textcolor.length-1) {i_textcolor=textcolor.length-1}
+			blurthis.innerHTML="<span id='blurit1' style='position:absolute;visibility:visible;width:600px; top:100px;left:5px;filter:blendTrans(duration=4.2);font-family:"+textfont+";font-size:"+thissize+"pt;color:FF0000'>"+message[i_message]+"</span>";
+			i_message++
+			if (i_message>=message.length){i_message=0}
+			
+			i_blurstrength=20
+			i_textcolor=0
+			clearTimeout(timer)
+			var timer=setTimeout("blurtext()",2000)
+		}
+	}	
+}
+
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#ffffff" text="#999999" link="#33FF33" vlink="#33FF33" alink="#33FF33" onload=blurtext();>
+<DIV id=blurthis 
+style="Z-INDEX: 1; LEFT: 61px; VISIBILITY: visible; WIDTH: 40px; POSITION: absolute; TOP: 16px; HEIGHT: 19px; background-color: #FFFFFF; layer-background-color: #FFFFFF; border: 1px none #000000" 
+align=left></DIV>
+<p>
+<p>&nbsp;</p> 
+
+<p align="center"><img border="0" src="images/title2.gif" width="448" height="56"></p>
+
+<p align="center">　</p>
+
+<p align="left">季鐵男<br>
+Chi, Ti-Nan</p>
+<p align="left"><font color="#0000FF">個人簡介</font></p>
+<p align="left">1957 <font face="新細明體">生於台北<br>
+</font>1981 <font face="新細明體">東海大學建築系畢業<br>
+</font>1986 <font face="新細明體">美國耶魯大學建築碩士</font></p>
+<p align="left"><font face="新細明體" color="#0000FF">重要個展</font></p>
+<font face="新細明體">
+<p>1990 環境藝術創作展 台灣台北市陽明山<br>
+1991 「台灣空間寫實十論」季鐵男建築展 台灣台北<font color="#000000">「伊通公園」<br>
+</font>1998 「可有可無 季鐵男的建築世界」 台北伊通公園</p>
+<p><font color="#0000FF">重要著作</font></p>
+<p>1992 《建築現象學導論》﹝編﹞桂冠圖書<br>
+1993 《思考的建築》 時報文化<br>
+1994 《新東方經驗》﹝編﹞晶華文化<br>
+1998 《可有可無 ─ 季鐵男的建築世界》田園城市文化事業<br>
+1998 《設計》 田園城市文化事業﹝預定﹞<br>
+1998 《建築現象學美學引論》﹝編﹞桂冠圖書﹝預定﹞<br>
+1998 《現代建築藝術原論》﹝編﹞桂冠圖書﹝預定﹞<br>
+1998 《建築預言》 田園城市﹝預定﹞</p>
+<p><font color="#0000FF">創作觀點</font></p>
+<p align="justify">可有可無</p>
+<p align="justify">建築如果不再以堂皇的圖騰出場，將顯露建築的瞬間面貌，在有與無之間選擇各式各樣的衍生，並且未必能夠得到人們的注視。從此，建築不再被列入視覺藝術的類型，換句話說，視覺藝術將以非塑形的理論，建造不明確的形狀與質感；終究建築不必然存在於瞳孔之可辨識範疇內，因為我們早已無暇去分辨有無的差異，可有可無是為了積極的投入生活世界與我們生存其中的都市。</p>
+<p>可有可無不像是一個既定的立場或任何建造的理論，相關的建造技術也在可有可無的狀態中拆解，亦難以依照篇章羅列敘述。二十世紀現代建築的基本困境，對我而言，起因於急切地擠入專業化與系統化的巷弄，而不期然地被鎖入偉大形式的牢籠，逐漸忽略了事物存在的脆弱體質；目前全球化變遷之中出現許多跡象帶有世紀末的恐慌與憂慮，建立在二十世紀的知識體系與生活習性正受到嚴苛的考驗與衝擊，建築家的想像已超越想像的領域，而需要作為一位寓言家∞預言家，撥弄弦外之音之餘，並在他的水晶球中召喚，人們或許不願意接受無條件的啟示，但也無法脫離那些誘人的魔咒。建築家同時是一個徬徨的靈魂，穿越在世紀交接的流向，某種神秘的賦予將是建築的必要特徵，神秘不必然無法接近，也許是在極度平淡與空泛之中，以一種虛無的狀態包含人造的功能，也就是似有似無、可有可無、亦有亦無的終境。</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+</font>
+<p align="left">　</p>
+<p align="center">　</p>
+<p align="center">　</p>
+
+</body>
+
+</html>

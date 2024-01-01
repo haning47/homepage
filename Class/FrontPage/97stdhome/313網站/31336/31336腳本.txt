@@ -1,0 +1,35 @@
+參考資料
+圖片google:http://files.mainone.com/TemplateImage/2008_02/27101114377.jpg
+       http://www.fea-optimization.com/consultancy/civil01.jpg
+       http://upload.wikimedia.org/wikipedia/zh/thumb/4/44/CEDD.png/200px-
+       http://www.bentley.com.tw/images/story/building/A02.jpg(建築結構是3D 的維倫第爾式空間樑架)
+       http://www.bentley.com.tw/images/bi/StructuralDesign.jpg(建築結構設計. 1. 繪圖及結構學理運用)
+       http://qkzz.net/magazine/1008-0422/2007/03/zwjz20070326-2-l.jpg(雜高層建築結構)
+       http://ntust.eipm.com.tw/upload/products/20070908104451-0.jpg(鋼骨樑柱接頭結構)
+       http://blog.1-apple.com.tw/dami/Image/PBig_44903.jpg(鋼骨結構的屋頂.像孔雀開屏)
+       http://mag.udn.com/magimages/4/PROJ_ARTICLE/13_1219/f_127676_3.jpg(鋼骨結構最耐震)
+       http://mag.udn.com/magimages/4/PROJ_ARTICLE/13_1219/f_127676_2.jpg(鋼骨結構最耐震)
+       http://60.190.218.59/attachment/Mon_0708/136_306589_4f8706edf0bee36.jpg(鋼筋的捆綁)
+       http://cn.yimg.com/sp/slideshow/news/a20051121i113401w0-a.jpg(中國八大現代建築)
+       http://img5.epochtimes.com/i6/808041712521667.jpg(鳥巢)
+       http://www.littleoslo.com/img/trivial/200705607.jpg(古怪建築)
+       http://static.flickr.com/82/242339059_3c2ef202df.jpg(大橋)
+       http://static.flickr.com/229/446803743_7a8cddcaf9.jpg(重陽大橋)
+       http://farm2.static.flickr.com/1173/1050609873_a3687917ab.jpg(101)
+       http://farm4.static.flickr.com/3076/2791635375_0d7b3ba8f4.jpg(摩天輪)
+1.土木工程介紹
+(1)定義:引自—http://www.evta.gov.tw/employee/emp/001/004/a075/11.htm
+      所謂土木工程業，即凡是依工程圖樣從事房屋、道路、橋樑、機場、堤壩等土木工程的興建、改建、修繕等行業均屬於它的範疇；包括一般土木工程業、房屋建築業、景觀工程業、環境工程業（指從事各種污染防制工程廢棄物處理工程環境衛生工程等行業本文在此不多作介紹）、電路及管道工程業、油漆、粉刷、裱蓆業（從事像壁紙張貼、壁飾工業、製作並裝設草蓆、榻榻米等行業）及其他營造業，一般俗稱營造業。
+土木工程業是人類文明形成及社會進化過程中所必需的民生工業，也是國家建設的基礎工業，其產值為單一工業中份量最重者，故各國政府常以土木工程業的榮衰作為擬定經建計畫的依據。先進國家的做法，莫不以培植國家建設力量，提昇工程建設品質為要務，而土木工程業的水準也可做為衡量國家開發程度的指標。 
+         現代社會中，人類的日常生活無不與各式各樣的營造工程發生密切的關係。從住屋、高樓、公路、管道、堤壩、碼頭、機場、運河、橋樑、到鐵路等，都為人類提供各種生活的必需品與服務。無論居住工作交通休閒生產教育等等，只要人存在於地球上一日，就需要土木工程業提供各結構物來使用。可見土木工程業與社會的脈動息息相關，其生產過程或產品都會影響人類的生活。換言之，土木工程業是各項經濟建設的基礎工業，社會中各種經濟活動或多或少都受到它的影響。
+(2)結構分類介紹
+樑柱及構架系統http://rcs.ncree.org.tw/rcs-ch/rcs_intro.htm
+格子樑及版系統
+膜及薄殼系統http://tw.knowledge.yahoo.com/question/question?qid=1206032304518
+高層結構系統
+隔震消能系統 http://www.homerarchi.com/dialogue_earthquake.htm
+(3)牽涉領域
+2.土木工程範疇
+(1)橋http://zh.wikipedia.org/w/index.php?title=%E6%A9%8B&variant=zh-tw
+(2)大樓:維基百科
+(3)水庫

@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>5</title>
+<script language=javaScript>
+function clockon() {
+thistime= new Date()
+var hours=thistime.getHours()
+var minutes=thistime.getMinutes()
+var seconds=thistime.getSeconds()
+if (eval(hours) <10) {hours="0"+hours}
+if (eval(minutes) < 10) {minutes="0"+minutes}
+if (seconds < 10) {seconds="0"+seconds}
+thistime = hours+":"+minutes+":"+seconds
+if(document.all) {
+bgclocknoshade.innerHTML=thistime
+bgclockshade.innerHTML=thistime
+}
+if(document.layers) {
+document.bgclockshade.document.write('<div id="bgclockshade" style="position:absolute;visibility:visible;font-family:Verdana;color:FFAAAAA;font-size:120px;top:10px;left:152px">'+thistime+'</div>')
+document.bgclocknoshade.document.write('<div id="bgclocknoshade" style="position:absolute;visibility:visible;font-family:Verdana;color:DDDDDD;font-size:120px;top:10px;left:150px">'+thistime+'</div>')
+document.close()
+}
+var timer=setTimeout("clockon()",200)
+}
+//-->
+</script>
+<link rel="stylesheet" href="../style.css"> 
+</head>
+
+<body onLoad="clockon()" 　bgcolor="#FFFF99">
+
+<p align="center"><img border="0" src="image/title5.gif" width="468" height="60"></p>
+
+<p align="center">　<div id="bgclockshade" style="position:absolute;visibility:visible;font-family:Arial;color:#000000;font-size:120px;top:102px;left:152px"></div>
+<div id="bgclocknoshade" style="position:absolute;visibility:visible;font-family:Arial;color:66CCFF;font-size:120px;top:100px;left:150px"></div>
+<div id="mainbody" style="position:absolute; visibility:visible">
+</div> 
+<p align="center">　</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="center">&nbsp; </p>
+<table border="0" width="90%">
+  <tr>
+    <td width="11%" align="center">
+      <p align="left">　　</p>
+      <p align="center">　</td>
+    <td width="89%" align="center">
+      <p align="left">　　我喜歡逛家具店，不管是大眾化的IKEA或是別具特色的印度家具，總是令我的心雀躍不已。藉由這次的作業，我更深入的了解家具以及家具的發展史。對於古中國沒有凳子、人們只是席地而坐這件事，令我非常驚訝：原來在百家爭鳴的戰國時代，人們是坐在席子上講課、吃飯。而在瀏覽各種古希臘時代的「古早座椅」的圖像時，對於古人已經有類似人體工學的概念，我覺得就像是參觀世界遺產般，不經佩服古人的智慧。畢竟，他們的手邊沒有電腦儀器的協助，得靠工匠的經驗以及長時間的摸索，才能坐出讓人坐的舒服的椅子啊！</p>
+      <p align="left">　　座椅的存在總是被人們視為理所當然，但在一張椅子誕生的過程中，包括了設計師茶飯不思、日以繼夜的腦力激盪、工廠作業員的汗水，以及運輸業為了不讓成品受而損煞費苦心，才讓一張座椅呈現在消費者面前。一想到這裡，我的不禁對家具製造業感到敬畏。希望在未來，我也可以成為這個行業的一份子。</p>
+      <p>　</td>
+  </tr>
+</table>
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+</body>
+
+</html>

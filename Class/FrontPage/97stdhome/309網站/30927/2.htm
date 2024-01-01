@@ -1,0 +1,249 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">  
+</head>
+
+<body background="image/back2.gif" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="image/title2.gif" width="576" height="86"></p>
+
+<p align="center">　<script language="JavaScript">
+var Selected_Month;
+var Selected_Year;
+var Current_Date = new Date();
+var Current_Month = Current_Date.getMonth();
+
+var Days_in_Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+var Month_Label = new Array('一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月');
+
+var Current_Year = Current_Date.getYear();
+
+var Today = Current_Date.getDate();
+
+function Header(Year, Month) {
+
+if (Month == 1) {
+if ((Year % 400 == 0) || ((Year % 4 == 0) && (Year % 100 != 0))) {
+Days_in_Month[1] = 29;
+}
+}
+var Header_String = Month_Label[Month] + ' ' + Year;
+return Header_String;
+}
+
+
+
+function Make_Calendar(Year, Month) {
+var First_Date = new Date(Year, Month, 1);
+var Heading = Header(Year, Month);
+var First_Day = First_Date.getDay() + 1;
+if (((Days_in_Month[Month] == 31) && (First_Day >= 6)) ||
+((Days_in_Month[Month] == 30) && (First_Day == 7))) {
+var Rows = 6;
+}
+else if ((Days_in_Month[Month] == 28) && (First_Day == 1)) {
+var Rows = 4;
+}
+else {
+var Rows = 5;
+}
+
+var HTML_String = '<table><tr><td valign="top"><table BORDER=4 CELLSPACING=1 cellpadding=4 FRAME="box" BGCOLOR="yellow" BORDERCOLORLIGHT="orange">';
+
+HTML_String += '<tr><th colspan=7 BGCOLOR="FF00FF" BORDERCOLOR="000000">' + Heading + '</font></th></tr>';
+
+HTML_String += '<tr><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Sun</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Mon</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Tue</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Wed</th>';
+
+HTML_String += '<th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Thu</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Fri</th><th ALIGN="CENTER" BGCOLOR="00FFFF" BORDERCOLOR="000000">Sat</th></tr>';
+
+var Day_Counter = 1;
+var Loop_Counter = 1;
+for (var j = 1; j <= Rows; j++) {
+HTML_String += '<tr ALIGN="center" VALIGN="top">';
+for (var i = 1; i < 8; i++) {
+if ((Loop_Counter >= First_Day) && (Day_Counter <= Days_in_Month[Month])) {
+if ((Day_Counter == Today) && (Year == Current_Year) && (Month == Current_Month)) {
+HTML_String += '<td BGCOLOR="808000" BORDERCOLOR="000000"><strong><font color="red">' + Day_Counter + '</font></strong></td>';
+}
+else {
+HTML_String += '<td BGCOLOR="CCFFFF" BORDERCOLOR="000000">' + Day_Counter + '</td>';
+}
+Day_Counter++; 
+}
+else {
+HTML_String += '<td BORDERCOLOR="C0C0C0">&nbsp;</td>';
+}
+Loop_Counter++;
+}
+HTML_String += '</tr>';
+}
+HTML_String += '</table></td></tr></table>';
+document.all.Calendar.innerHTML = HTML_String;
+}
+
+
+function Check_Nums() {
+if ((event.keyCode < 48) || (event.keyCode > 57)) {
+return false;
+}
+}
+
+
+
+function On_Year() {
+var Year = document.when.year.value;
+if (Year.length == 4) {
+Selected_Month = document.when.month.selectedIndex;
+Selected_Year = Year;
+Make_Calendar(Selected_Year, Selected_Month);
+}
+}
+
+function On_Month() {
+var Year = document.when.year.value;
+if (Year.length == 4) {
+Selected_Month = document.when.month.selectedIndex;
+Selected_Year = Year;
+Make_Calendar(Selected_Year, Selected_Month);
+}
+else {
+alert('Please enter a valid year.');
+document.when.year.focus();
+}
+}
+
+
+function Defaults() {
+if (!document.all)
+return
+var Mid_Screen = Math.round(document.body.clientWidth / 2);
+document.when.month.selectedIndex = Current_Month;
+document.when.year.value = Current_Year;
+Selected_Month = Current_Month;
+Selected_Year = Current_Year;
+Make_Calendar(Current_Year, Current_Month);
+}
+
+
+function Skip(Direction) {
+if (Direction == '+') {
+if (Selected_Month == 11) {
+Selected_Month = 0;
+Selected_Year++;
+}
+else {
+Selected_Month++;
+}
+}
+else {
+if (Selected_Month == 0) {
+Selected_Month = 11;
+Selected_Year--;
+}
+else {
+Selected_Month--;
+}
+}
+Make_Calendar(Selected_Year, Selected_Month);
+document.when.month.selectedIndex = Selected_Month;
+document.when.year.value = Selected_Year;
+}
+
+
+</script>
+
+<div id="NavBar" style="position:relative;width:286px;left:110; top:5px;" align="center">
+<form name="when">
+<p>請輸入西元年如：2000</p>
+<table>
+<tr>
+<td>
+<p><input type="button" value="上個月" onClick="Skip('-')"></p>
+</td>
+<td></td>
+<td><select name="month" onChange="On_Month()">
+<script language="JavaScript1.2">
+if (document.all){
+for (j=0;j<Month_Label.length;j++) {
+document.writeln('<option value=' + j + '>' + Month_Label[j]);
+}
+}
+</script>
+</select></td> 
+<td><input type="text" name="year" size="4" maxlength="4" onKeyPress="return Check_Nums()" onKeyUp="On_Year()"></td>
+<td></td>
+<td><input type="button" value="下個月" onClick="Skip('+')"></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="Calendar" style="position:relative;width:238px;left:110; top:-2px;" align="center">
+</div> 
+<table border="0" width="100%" height="162">
+  <tr>
+    <td width="31%" height="158"></td>
+    <td width="69%" height="158">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="file:///C:/Documents%20and%20Settings/C5User/桌面/30927/image/item1.gif" width="20" height="20" hspace="11"></td>
+          <td valign="top" width="100%"><a name="有關土木">土木與建築</a>
+            <!--msimagelist--><table dynamicoutline border="0" cellpadding="0" cellspacing="0" width="100%">
+            <li><a href="#土木概論">互通之處</a></li>
+            <li><a href="#土木涵蓋範圍">差異之處</a></li>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="239">
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#00FFFF">
+      <p align="center"><a name="土木概論">互通之處</a></td>
+  </tr>
+  <tr>
+    <td width="59%" height="103" bgcolor="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+      建築主要是針對建物的設計方面作業，而土木主要是針對建物的施工作業。所以說其相關性，可說是由建築師設計圖說，由土木業者來進行施作。<br>
+      但現在社會來說，實務上讀土木或讀建築的出來沒考上土木技師、建築師、結構技師或大地技師出來其實都是一樣，一般工程工地你會發現工程師問他甚麼系畢業的，大都土木或建築，因為政府單位工程案子，可由土木技師或建築師都可簽證。所以有無互通之處我只能說建築偏繪圖設計，土木偏結構施工。但學的都互相沾毛邊。<br>
+      <p align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#TOP">&lt;TOP&gt;</a></td>  
+    <td width="41%" height="103"><img border="0" src="photo/施工.jpg" width="336" height="233"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#00FFFF">
+      <p align="center"><a name="土木涵蓋範圍">差異之處</a></td>
+  </tr>
+  <tr>
+    <td width="59%" height="20" bgcolor="#FFCC99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+      土木學泛指工程.範圍為上天下地.天上飛機要的機場跑道.地上車輛要走的車道.水中船艇要用的碼頭漁港.以及相關工程.如整地.大地.結構.....幾乎都將土木學作為基礎工程學.<br>
+      <br>
+      簡單敘述可知一為工程之基本及廣泛學科.一為專業之學科.<br>
+      <br>
+      建築學是一個範圍廣大含括建築美學、空間、比例、色彩、質感、量體、尺度、結構、機電、空調、氣體設備、室內裝修，甚至於都市環境、實虛空間比例、環境心理學、城鄉特色營造、實質環境及空間產生的心理歷程等。<br>
+      <p align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TOP">&nbsp;   
+      &lt;TOP&gt;</a></td>
+    <td width="41%" height="20"><img border="0" src="photo/施工1.jpg" width="345" height="244"></td>
+  </tr>
+</table>
+<p>　</p>
+
+</body>
+
+</html>

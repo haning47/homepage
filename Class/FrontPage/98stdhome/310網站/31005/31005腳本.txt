@@ -1,0 +1,115 @@
+1.主要功能
+(1).新增功能：
+Windows 7提高了螢幕觸控支援和手寫辨識，將Windows 7 安裝在有觸控式螢幕的電腦上，只要使用手指就可以瀏覽線上報紙、翻閱相簿及移動檔案和資料夾。 
+
+Windows 多年前就具備有限的單指觸控功能。但是 Windows 7 是第一個全面納入多點觸控技術的系統。需要將某些東西放大嗎？將兩隻手指放在具備多點觸控功能電腦的螢幕上，然後張開手指即可。若要對某個檔案按一下滑鼠右鍵，只需一隻手指在螢幕上點一下即可。 
+
+Windows 觸控在家用進階版、專業版和旗艦版的 Windows 7 中提供，好學易用。[開始] 功能表和工作列現在都採用了加大顯示、易於手指觸摸的圖示。您喜愛的所有 Windows 7 程式都可以透過觸控操作。甚至可以在小畫家中用手指畫圖！ 
+，改善多核心處理器的運作效率，開機速度和核心改進。增加的功能大致上包括：支援多個顯示卡、新版本的Windows Media Center（12）[31]、一個供Windows Media Center使用的桌面小工具、增強的音訊功能、內建的XPS和Windows PowerShell以及一個包含了新模式且支援單位轉換的新版小算盤。另外，其控制台也增加了不少新項目：ClearType文字調整工具、顯示器色彩校正精靈、桌面小工具、系統還原、疑難排解、工作空間中心（Workspaces Center）、認證管理員、系統圖示和顯示。舊有的Windows 資訊安全中心被更名為「Windows 行動作業中心」，它有保護電腦資訊安全的功能。
+
+工作列在外觀上有較大的改變，在 Windows 7 中，您可以將最喜愛的程式固定在工作列中的任一位置以方便存取。還有許多預覽視窗的新方式。指向工作列圖示就可以查看已開啟檔案或程式的縮圖預覽。然後，將滑鼠移到縮圖上方，即能以全螢幕方式預覽該視窗。您甚至可以從縮圖預覽關閉視窗，大大節省了時間。原有的「快速啟動」功能已被「釘」在工作列上的縮小程式圖示取代。這個功能不僅具有了快速啟動原有的功能，也同時具有顯示目前正在執行的程式圖示的功能（這相當於Windows XP和Windows Vista工作列上原有的橫條狀程式顯示，只是改為圖示）。這些在工作列上的按鈕不但可以協助使用者執行開啟、縮到最小、放到最大以及關閉等基本程式操作，同時在程式支援的前提之下也能顯示一些該程式進階的功能或選項（例如：點選「記事本」不但可以開啟程式，同時也能顯示最近打開的文件）。在工作列最右端（系統時鐘的右邊）有一個小的長方形按鈕，這個按鈕提供快速「顯示桌面」的功能（舊版Windows需要在工作列上按右鍵後選取「顯示桌面」）。這個按鈕是Windows 7新的「Aero Peek」功能的其中一項，使用者只要將滑鼠游標停在其上方，就可使所有的表單變透明，僅顯示框線，如此便可以快速瀏覽桌面上的內容。[33]另外，因為這個按鈕在右下方的角落，故在觸控式螢幕中，這個按鈕的設計會相對的較大，以方便使用者能夠點選。點選這個按鈕時，所有的視窗都將縮小化，而再點一次時，所有的視窗就會恢復至原先的大小。除此之外，有一項新功能「Aero Snap」，它能夠在使用者將視窗移至螢幕上／左／右的邊緣時自動將其最大化這個功能有利於同時比較多個檔案之間的差異（當移動兩個或以上的視窗至邊緣時，視窗會依大小平均分配至整個桌面）。該功能也可以使用鍵盤快捷鍵執行。另外，在Aero的改進部份，當一個視窗被最大化時，該視窗的邊緣以及最下方的工作列仍將保持透明（不同於Windows Vista）。
+
+對開發者來說，Windows 7提供了一套全新的網路API。這些API支援使用機器語言建立基於SOAP的網路服務（而非基於.NET的WCF網路服務）。[36]此外，新的作業系統縮短了應用程式安裝所需的時間，對UAC進行了改進，使用者可以自己調節UAC，以減少了UAC（User Account Control，使用者帳戶控制）提示的出現次數，簡化了安裝包的安裝過程[37]，並對API增加了不同語言的支援。[38]
+
+在2008年的Windows硬體工程研討會上，微軟宣布Windows 7的色彩品質將支援30位元以及48位元。在Windows 7中，64 位元電腦比 32 位元電腦可處理更多的資訊。由於可以使用更多 RAM (4 GB 或更多)，當一次執行許多程式時，64 位元電腦的反應會更快。
+
+不管您選擇哪種系統，Windows 7 都可以使用。除了家用入門版外的所有 Windows 7 封裝零售版本都包含 32 位元和 64 位元軟體。另外，微軟也對SSD（Solid State Drive，固態硬碟）提供了更好的支援，Windows 7將能夠唯一地辨認出一個SSD。
+
+網際網路西式拱豬、網際網路西洋骰子棋以及網際網路西洋棋等三個在Windows Vista中被取消的遊戲在Windows 7中又重新出現了。Windows 7將會內建Internet Explorer 8和Windows Media Player 12。
+
+在Windows 7 Professional、Enterprise和Ultimate三個版本中會含有一個類似虛擬微機「Windows Virtual PC」的功能。[43]這種虛擬微機能讓使用者在Windows 7執行的同時執行不同的Windows環境，包括「Windows XP模式」（前提是需要具有Intel VT-x或AMD-V）。Windows XP模式可讓使用者在一台虛擬機器上執行Windows XP，並將其正在執行的程式顯示於Windows 7的桌面上。[44]Windows 7允許使用者安裝一個虛擬硬碟作為一般的資料儲存介質，並可利用Windows 7內建的引導裝置從虛擬硬碟中讀取並執行Windows系統。[45]Windows 7的遠端桌面控制功能也有改善，它支援執行3D遊戲、視訊播放等多媒體程式，同時DirectX 10也可以在遠端桌面環境使用。[46]另外，原本的Windows Vista Starter限制使用者只能同時執行三個程式，但在Windows 7 Starter中，這個限制已經取消。
+
+(2).移除功能：
+Windows 7刪除了Windows Vista中的許多功能和一些程式，如傳統開始功能表樣式、Windows Ultimate Extras、筆跡球和Windows 行事曆。Windows 7去除了Windows Vista中捆綁的三個軟體—Windows Photo Gallery、Windows Movie Maker和Windows Mail，以名為Windows Live Essentials的可選軟體包方式單獨提供。
+
+部份功能本是為Vista而設，如Windows PowerShell和WinFS，雖也是Windows 7的基本部份，但可能會在完成之後才單獨發佈。現時Windows PowerShell己單獨發佈出來。
+
+Windows 7還有「Sandbox」（沙盒）功能，其功能接近於在開發Longhorn系統時的「Alpha/White Box」，所有非管理代碼將會在沙盒系統中執行，這樣接入「外界」將被操作系統控制。對底層的訪問將被從沙盒內部禁止，同樣還有對文件系統、硬體抽象層（HAL）以及完全內存網址的直接訪問。所有對外部應用程式、文件和協議的請求都將被操作系統管理，任何惡意行為都將被立刻中止。如果這一方法成功，它預示著極強的安全和保障，如果惡意軟體能被有效地鎖在一個玻璃盒中的話，那麼它事實上不可能對系統造成任何傷害。
+
+另一個有趣的功能就是一種通用語言可以解讀使用者的指令。這包含了「自動完成全句指示」的功能，在現時主流搜尋引擎中已具備這項功能（例如：微軟自家的Bing、Yahoo及Google），它功能是可以輸入錯誤的語法亦能讓電腦正常執行該條指令
+
+2.系列比較
+(1).相容性
+Microsoft  Microsoft Office 2007 Enterprise Suite 
+ 
+Microsoft  Microsoft Office 2007 - Visio Professional  
+ 
+Microsoft  Microsoft Office Access 2007 
+ 
+Microsoft  Microsoft Office Excel 2007 
+ 
+Microsoft  Microsoft Office Groove 2007 
+ 
+Microsoft  Microsoft Office InfoPath 2007 
+ 
+Microsoft  Microsoft Office OneNote 2007 
+ 
+Microsoft  Microsoft Office Outlook 2007   　 
+ 
+Microsoft  Microsoft Office Publisher 2007 
+ 
+Microsoft  Microsoft Office Word 2007 
+ 
+Microsoft  Microsoft Office PowerPoint 2007 
+ 
+Microsoft  Microsoft Office 2003 Professional Edition  　 
+ 
+Microsoft  Microsoft Office Outlook 2003 Professional 　 
+ 
+Microsoft  Microsoft Office Communicator 2007  　 
+ 
+Microsoft  Microsoft Office Access 2003 Professional 
+ 
+Microsoft  Microsoft Office Excel 2003 Professional  　 
+ 
+Microsoft  Microsoft Office PowerPoint 2003 Professional 
+ 
+Microsoft  Microsoft Office Publisher 2003 Professional 
+ 
+Microsoft  Microsoft Office Word 2003 Professional  
+
+(2).硬體需求
+如果您想在電腦上執行 Windows 7，以下是一些系統需求： 
+
+
+1 GHz 或更快的 32 位元 (x86) 或 64 位元 (x64)處理器 
+
+1 GB RAM (32 位元) 或 2 GB RAM (64 位元) 
+
+16 GB 可用硬碟空間 (32 位元) 或 20 GB (64 位元) 
+
+使用 WDDM 1.0 或更高版本驅動程式的 DirectX 9 繪圖裝置 
+
+還是擔心電腦無法升級至Windows 7? 試試 Windows 7 Upgrade Advisor 吧。 
+
+使用特定功能必備的額外需求： 
+
+網際網路存取 (可能需付費) 
+
+視解析度而定，播放影片可能需要額外的記憶體和進階圖形硬體 
+
+某些遊戲和程式可能需要與 DirectX 10 或更高版本 相容的顯示卡，才能有最佳的效能。 
+
+對於某些 Windows Media Center 功能，可能需要 TV 訊號接收器和額外硬體 
+
+Windows 觸控和 Tablet PC 需要特定硬體 
+
+家用群組需要網路和執行的 Windows 7 電腦
+
+DVD/CD 製作需要相容的光碟機 
+
+BitLocker 磁碟加密需要信賴平台模組 (TPM) 1.2 
+
+BitLocker To Go需要 USB 快閃磁碟機 
+
+Windows XP 模式需要額外 1 GB 的 RAM，額外 15 GB 的可用硬碟空間，以及可進行硬體虛擬化且開啟 Intel VT 或 AMD-V 的處理器 
+
+音樂和聲音需要音訊輸出 
+
+產品功能和圖形可能因您的系統組態而不同。某些功能可能需要進階或額外硬體。
+
+3.參考資料:
+[1]microsoft官網:http://www.microsoft.com/taiwan/windows/windows-7/default.aspx
+[2]維基百科http://zh.wikipedia.org/wiki/Windows_7
+[3]http://www.mobile01.com/topicdetail.php?f=300&t=894214
+cc

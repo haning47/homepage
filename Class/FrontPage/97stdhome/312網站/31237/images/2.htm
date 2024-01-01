@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="back2.gif">
+
+<p align="center"><img border="0" src="title2.gif" width="469" height="61"></p>
+
+<p align="center">　
+<script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> 
+</p>
+
+<p align="center">Sigmund Freud<br> 
+<br>
+( 1856～1939 )維也納出生，家中排行老大，下有兩個弟弟五個妹妹，父親十分權威，這也是維也納家庭的特色。家庭背景對Freud的理論發轉啟了相當大的作用，故有加以瞭解的必要。<br> 
+<br>
+    經濟上的限制，他們一家十口只能住進狹窄的公寓，為其各方面突出的才華仍受到父母的培植，但身為猶太人，在職業的受限下，他最後選擇學醫。二十六歲從維也納大學畢業四年後是該校十分有才氣的一位講師。<br>
+<br>
+    從此之後，他大部分的時間都化在建構其精神分析理論。有趣的是，當他面臨嚴重情緒問題時，卻正是創造力達顛峰的時候。四十歲左右時，他不論是身體或心智方面都存在著不協調的現象，對死亡與其他事物有莫名的恐懼感。於是，他致力於分析自己，並從探索夢境的蘊含意義，得到人格動態發展的啟發。首先，他檢查童年的回憶與各種經驗，發現自己敵視父親，並因認為母親具有和藹可親及保護別人的特質而對母親有性方面的情感。後來，Freud藉著透視分析就診者的問題而構築其臨床理論。為了控制心理分析運動的方向，他無法容忍別人不同的聲音，例如：容格（Carl Jung）和阿德勒（Alfred Adler）都曾是其門徒，卻因意見不和而自創治療學派。<br> 
+<br>
+    Freud學識豐富創造力高，一天當中工作十八個小時是家常便飯，即使到了晚年罹患口腔癌時也依然是勤耕不輟。晚年經歷三十三次手術，一直與病魔鬥爭最後於一九三九年病逝於倫敦。<br>
+-----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p align="center">Carl Jung<br> 
+<br>
+　<br>
+<br>
+  ( 1875～1961 )是Freud早期的學生，和Adler一樣，在二十世紀初與Freud分手。Jung稱自己的學說為『分析心理學』(analytic psychology)。Jung相信未達中年的人不易得到成功的分析，他認為精神分析最適合於三十五歲以上的人，不過近年來，這個年齡已被縮減了。Jung的病人在尚未發展個人宗教感以滿足他的情緒和智性之前，往往不被認為是治癒了。<br> 
+<br>
+    Jung首先指出童年生活對病人的影響非常重要。幼時環境的氣氛會引導孩童走向成熟或心理症，他還說：病人所受的影響決定他患的心理症的種類。這個理論以及其他一些他所提出的理論，已經成為普遍被接受的主要精神分析知識的一部分了。Jung的著作裡提到個人有比本身經驗更多的記憶。每個人的內在身處都攜帶著來自遠古祖先的記憶。他稱這過去的遺物為集體潛意識(collective unconscious)。它的存在可由以下這件事實得到證明：分散在廣闊世界各地的人們有同樣的神話、象徵和儀式。多數的分析家贊同Jung這項觀點，但其他學派的分析家並不像他那麼在治療過程中強調它。Jung派的分析特別重視分析家本身的意志，比如：分析家對病人的關係幾乎等於老師和學生一樣。反對Jung觀點的人相信這樣的關係，會減少病人發展自己的意志力和自我決定能力的機會。<br> 
+-----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p align="center">Leon Festinger<br> 
+<br>
+　<br>
+<br>
+  （199~1989）社會心理學家，是Kurt Lewin的學生，曾經和他的學生隱身在一群信眾之中，研究他們的認知失調，這些信眾相信在某一日會有大洪水到來，他們的守護者會駕著飛船來解救他們，帶他們到一個安全的地方，對此Festinger和他的學生提出一個假設：<br> 
+<br>
+假設有某人十分相信一件事，並假設他受到信仰的約束，因而採取不可挽回的行動。如此一來，假如在最後他有無法否認的證據顯示自己信仰之錯誤，那麼這個人不會消沈下去，反而會產生更堅定不遺的信念。<br>
+<br>
+    而Festinger他們的觀察結果也正如之前假設一般，當預言會有大洪水的日期到來了，沒有飛船也沒有洪水，一些堅定不移的信眾（可能辭了工作、變賣家產），反而更相信這樣的信仰，以此來彌補信仰與現實之間的差異。<br>
+<br>
+    之後又和Merril Carlsmith進行一項認知失調的實驗，他們要求受試者做一件無趣的工作，結束後告訴他們實驗的目的在於「對於工作有趣與否的預期，是否會影響之後的工作效率？」而這些人士屬於「無預期組」，並請他們告知下一位受試者這個實驗很有趣，以形成他們的預期。在這些受試者中有些被給予1美元，有些給予20美元，並被問到這件工作是否有趣？這個研究想要瞭解的是：事後所給予的酬金，會不會減少認知失調（一件無趣的工作，卻被要求告訴別人這是有趣的工作）的衝突，而認為這件事是有趣的。<br> 
+<br>
+    研究結果出人意料，得到1美元的人之中，較多人認為工作是有趣的，根據解釋：在那些得到20美元的人之中，他們會認為是因為20美元，而有合理的藉口說謊；而得到1美元的人，只能改變自己的想法，告訴自己這個工作是有趣的，以減少認知失調的情形。<br>
+<br>
+也曾和Elaine Walster進行一項研究，顯示道聽途說的消息容易讓人信以為真，而假如聽話的人知道講話者意識到自己在場，對於他所說的內容信任程度會降低。<br> 
+-----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<p align="center"><br>
+Hermann Ebbinghaus<br> 
+<br>
+　<br>
+<br>
+  （1850~1909）在1885年開始記憶的相關實驗，並獲得結果—其限制為七個項目。Ebbinghaus發明了一個調查記憶活動的方法，這個方法排除了個人主觀和以前經驗的影響，他發明了兩千三百個沒有意義的音節—由一個字母間隔開的兩個輔音組成的無意義組合，譬如bap、tox、muk、rif等，並用這些詞進行一系列的記憶實驗，譬如：他讀出一組音節，然後盡量記憶其中的音節。通過一些調整，如增加長度、閱讀速度、閱讀次數，他熱中於探索這些課題：遺忘、學習、複習三者之間的時間間隔有什麼關係，重複及複習對學習與遺忘會產生什麼影響。如圖中的遺忘曲線（forgetting curve）：遺忘是時間的函數，首先他重複13個音節一直到能夠成功的回憶兩次，而無任何錯誤。爾後，在20分鐘到31天的時間間距中，他測試他自己需要多久的時間重新學習，才能達到原來的記憶水準；當他遺忘的越少，重新學習的次數就越少。<br> 
+-----------------------------------------------------------------------------------------------------------------------------------------------------<br>
+<br>
+Solomon Asch<br> 
+<br>
+　<br>
+<br>
+  社會心理學家，他著名的研究是群體中的從眾(conformity)行為。在Asch的標準過程中，受試者是坐在一張有七到九個人的桌子旁，而這些人都是實驗者的共謀。這些人首先會讓他們看一張卡片，卡片上有一條直線，之後再看第二張卡片，卡片上有三條不同長度的直線，其中有一條很明顯的是和第一張卡片上的直線長度相同，而這群人被要求輪流回答第二張卡片上哪一條直線的長度是和第一張卡片的長度相等，此時這名受試者是坐在倒數第二個位子。這個答案是很明顯的，而在大部分的試驗中每個人會給予相同的答案，但在某一些操弄的試驗中，這些實驗者的共謀被指示要給予一個錯誤的答案，而Asch則在觀察這樣的情況會引發受試者怎樣的從眾行為。結果令人震驚，即使答案很明顯，但在三分之一的情況中，受試者會遵從團體的不正確答案，而百分之七十五的受試者會至少遵從一次，而團體不夠大也會有如此的從眾行為，當團體成員有2到16個人，只要有3到4個實驗者的共謀在其中，就會如同在更大的團體之中一般，有效地產生從眾行為。<br>
+</p>
+
+</body>
+
+</html>

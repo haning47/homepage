@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body onLoad="startclock(); timerONE=window.setTimeout"  background="images/back3.jpg" onclick="dynOutline()">
+
+<p align="center"><img border="0" src="images/title2.gif" width="468" height="60"></p>
+
+<p align="center"><script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> </p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="23%"></td>
+    <td width="77%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14754_.GIF" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%">如何選購貴賓狗
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14753_.GIF" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><a href="#關於健康問題">健康問題</a><a href="#玩具貴賓狗">&nbsp;</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14753_.GIF" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><a href="#玩具型貴賓狗狗的歷史">狗的歷史</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14753_.GIF" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><a href="#如何選購貴賓狗">如何選購</a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="273">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFCC" height="20">
+      <p align="center"><a name="關於健康問題">關於健康問題</a></td>
+  </tr>
+  <tr>
+    <td width="50%" height="137">
+      <p align="left">　　</p>
+      <p align="left"><font color="#993300">　　貴賓犬種的健康最常發生的問題有皮膚（皮脂漏）及耳朵的感染，然而這兩種問題是較簡單醫治的病狀，另此狗種較會發生的健康問題包括：骨頭斷裂、脫臼、白內障、視網膜萎縮、血糖過低、上鄂或下顎突出，就因為他們體型屬於較纖細新陳代謝的速度很快，飼主要適時的為他們補充能量，便免有些狗狗會出現血糖過低而休克的現象。&nbsp;</font></p>
+      <p align="right"><font color="#993300"><a href="#top">Top</a></font></td>
+    <td width="50%" height="137">
+      <p align="center"><img border="0" src="htmphoto/紅貴賓2.jpg" width="301" height="229"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFCC" height="20">
+      <p align="center"><a name="玩具型貴賓狗狗的歷史">玩具型貴賓狗狗的歷史</a></td>
+  </tr>
+  <tr>
+    <td width="50%" height="20">　<font color="#993300"><br>
+      　　此尺寸的貴賓狗種被知道約在近五百年的時間，在17、18世紀時貴賓狗狗受到歐洲貴族們的喜愛專為飼養跟隨貴族外出打獵用的獵鴨犬，因此貴族們希望能有比迷你體型還小的貴賓狗狗出現，而慢慢繁殖基因改進在距離目前500年的時間就有發現玩具貴賓狗種在貴族們的飼養記錄裡邊被記載。</font>
+      <p align="right"><font color="#993300"><a href="#top">Top</a></font></td>
+    <td width="50%" height="20">
+      <p align="center"><img border="0" src="htmphoto/紅貴賓5.jpg" width="284" height="195"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFCC" height="20">
+      <p align="center"><a name="如何選購貴賓狗">如何選購貴賓狗</a></td>
+  </tr>
+  <tr>
+    <td width="50%" height="20"><font color="#993300">　　</font>
+      <p><font color="#993300">　　泰迪熊玩具貴賓狗在 市面上可以說是~最受歡迎的犬種，所以造成一股搶購的熱潮雖然在目前一片不景氣聲中,泰迪貴賓的價格始終保持一枝獨秀,就是因為他多變化的體型及毛色。他可隨著飼主的心情喜好，變化造型。一般來說，目前市面上最受歡迎的顏色是深棕紅、棕紅色、楓葉紅...等。<br>     
+      <br>
+      　　至於顏色方面目前我們犬舍有,白色、紅色、巧克力色、黑色、灰色、多種顏色可以選擇。世界上有那一种狗可以使我們人類生活?得便豊富有趣,我想應該是最近流行的貴賓狗，因�U貴賓狗他可分�U大型貴賓、迷你貴賓、玩具貴賓、顏色有、黑色、紅色、巧克力色、白色、灰色其他任何的、單一色系。光是在体型、顏色就有很多种可以選擇，還有貴賓狗在美容的造型上有多?的造形，可以隨心所欲，只要你喜歡就可以做任何的造型聰明不掉毛喜歡與人接近是貴賓狗最大的特色，所以貴賓狗非常的好訓練與飼養 。</font></p>     
+      <p align="right"><font color="#993300"><a href="#top">Top</a></font></td>
+    <td width="50%" height="20">
+      <p align="center"><img border="0" src="htmphoto/紅貴賓.jpg" width="351" height="343"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

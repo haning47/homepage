@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="images/BD14604_.GIF">
+
+<p align="center"><img border="0" src="images/title5.gif"></p>
+<script language="JavaScript">
+<!-- 
+//Choose colours and size of effect !!
+var a_Colour='fff000';
+var b_Colour='00ff00';
+var c_Colour='ff00ff';
+var Size=120;
+//Alter nothing below !!
+
+var YDummy=new Array(),XDummy=new Array(),xpos=0,ypos=0,ThisStep=0;step=0.6;
+if (document.layers){
+window.captureEvents(Event.MOUSEMOVE);
+function nsMouse(evnt){
+xpos = window.pageYOffset+evnt.pageX+6;
+ypos = window.pageYOffset+evnt.pageY+16;
+}
+window.onMouseMove = nsMouse;
+}
+else if (document.all)
+{
+function ieMouse(){
+xpos = document.body.scrollLeft+event.x+6;
+ypos = document.body.scrollTop+event.y+16;
+}
+document.onmousemove = ieMouse;
+}
+
+function swirl(){
+for (i = 0; i < 3; i++)
+ { 
+ YDummy[i]=ypos+Size*Math.sin((1*Math.sin((ThisStep)/10))+i*2)*Math.sin((ThisStep)/4);
+ XDummy[i]=xpos+Size*Math.cos((1*Math.sin((ThisStep)/10))+i*2)*Math.sin((ThisStep)/4);
+ }
+ThisStep+=step;
+setTimeout('swirl()',10);
+}
+
+var amount=10;
+if (document.layers){
+for (i = 0; i < amount; i++)
+{
+document.write('<layer name=nsa'+i+' top=0 left=0 width='+i/2+' height='+i/2+' bgcolor='+a_Colour+'></layer>');
+document.write('<layer name=nsb'+i+' top=0 left=0 width='+i/2+' height='+i/2+' bgcolor='+b_Colour+'></layer>');
+document.write('<layer name=nsc'+i+' top=0 left=0 width='+i/2+' height='+i/2+' bgcolor='+c_Colour+'></layer>');
+}
+}
+else if (document.all){
+document.write('<div id="ODiv" style="position:absolute;top:0px;left:0px">'
++'<div id="IDiv" style="position:relative">');
+for (i = 0; i < amount; i++)
+{
+document.write('<div id=x style="position:absolute;top:0px;left:0px;width:'+i/2+';height:'+i/2+';background:'+a_Colour+';font-size:'+i/2+'"></div>');
+document.write('<div id=y style="position:absolute;top:0px;left:0px;width:'+i/2+';height:'+i/2+';background:'+b_Colour+';font-size:'+i/2+'"></div>');
+document.write('<div id=z style="position:absolute;top:0px;left:0px;width:'+i/2+';height:'+i/2+';background:'+c_Colour+';font-size:'+i/2+'"></div>');
+}
+document.write('</div></div>');
+}
+function prepos(){
+var ntscp=document.layers;
+var msie=document.all;
+if (document.layers){
+for (i = 0; i < amount; i++)
+{
+ if (i < amount-1) 
+ {
+ ntscp['nsa'+i].top=ntscp['nsa'+(i+1)].top;ntscp['nsa'+i].left=ntscp['nsa'+(i+1)].left;
+ ntscp['nsb'+i].top=ntscp['nsb'+(i+1)].top;ntscp['nsb'+i].left=ntscp['nsb'+(i+1)].left;
+ ntscp['nsc'+i].top=ntscp['nsc'+(i+1)].top;ntscp['nsc'+i].left=ntscp['nsc'+(i+1)].left;
+ } 
+else  
+ {
+ ntscp['nsa'+i].top=YDummy[0];ntscp['nsa'+i].left=XDummy[0];
+ ntscp['nsb'+i].top=YDummy[1];ntscp['nsb'+i].left=XDummy[1];
+ ntscp['nsc'+i].top=YDummy[2];ntscp['nsc'+i].left=XDummy[2];
+ }
+}
+}
+else if (document.all){
+for (i = 0; i <  amount; i++)
+{
+ if (i < amount-1) 
+ {
+ msie.x[i].style.top=msie.x[i+1].style.top;msie.x[i].style.left=msie.x[i+1].style.left;
+ msie.y[i].style.top=msie.y[i+1].style.top;msie.y[i].style.left=msie.y[i+1].style.left;
+ msie.z[i].style.top=msie.z[i+1].style.top;msie.z[i].style.left=msie.z[i+1].style.left;
+ } 
+else 
+ {
+ msie.x[i].style.top=YDummy[0];msie.x[i].style.left=XDummy[0];
+ msie.y[i].style.top=YDummy[1];msie.y[i].style.left=XDummy[1];
+ msie.z[i].style.top=YDummy[2];msie.z[i].style.left=XDummy[2];
+ }
+}
+}
+setTimeout("prepos()",10);
+}
+function Start(){
+swirl(),prepos()
+}
+window.onload=Start;
+// -->
+</script> 
+<div align="center">
+  <center>
+  <table border="0" width="80%">
+    <tr>
+      <td width="80%">「學海無涯」這句話道盡了學習的重要與深遠，不管是各行各業都需要不斷學習，甚至要有「活到老，學到老」的心理準備。尤其對設計師而言，設計這份工作充滿著挑戰和創新，一成不變，頑固拘泥無法讓自己在這全球國際同步競爭的屋簷下生存，反而讓自己身處在充滿危機和失業的環境當中。當然，如果要因應這些競爭，想當設計師的我們唯有不斷地努力學習和充實自己，才能提升自身能力以及獲得精神上與實質上的滿足，用無限的想像力讓世界不斷往前推進，成就生活一切的更美好，一個充實的創意人生得要我們用心去踏實。</td>
+    </tr>
+  </table>
+  </center>
+</div>
+</body>
+
+</html>

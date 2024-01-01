@@ -1,0 +1,386 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back2.GIF" onclick="dynOutline()">
+
+<p align="center"><a name="top"></a><img border="0" src="images/title2.gif" width="468" height="60"></p>
+
+<p align="center">　
+
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> </p>
+
+<table border="0" width="100%" height="52">
+  <tr>
+    <td width="25%" height="48"></td>
+    <td width="75%" height="48">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font color="#FFFFFF">Windows 演進史</font>  
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#3.x">3.x</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#95">95</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#98">98</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#ME">ME</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#2000">2000</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#XP">XP</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#Vista">Vista</a></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font color="#FFFFFF"><a href="#7">7</a></font><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+
+<table border="1" width="150%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="3.x">3.x</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows 3.x家族發行於1990年到1994年間。其中的3.0版是第一個在世界上獲得成功的版本。使得微軟的作業系統可以和蘋果電腦公司的麥金塔電腦以及在圖形化界面的Commodore的Amiga競爭。Windows 3.x基於MS-DOS作業系統。<br>   
+      <br>
+      3.0版發行於1990年5月22日，這個系統既包含了對用戶界面的重要改善也包含了對80286和80386對內存管理技術的改進。為命令行式作業系統編寫的MS-DOS下的程序可以在窗口中運行，使得程序可以在多任務基礎上可以使用使用，雖然這個版本只是為家庭用戶設計的，很多遊戲和娛樂程序仍然要求DOS存取。<br>
+      <br>
+      MS-DOS的文件管理程序被基於圖標的程序管理程序（icon-based program Manager）以及基於列表的文件管理程序（list-based File Manager，Winfile）取代，由此簡化了程序的啟動。控制面板作為系統設置的中心，包括了諸如界面顏色主題的有限控制功能。一些捆綁的應用程序也包括在Windows內，例如「寫字板」、「計算器」等。<br>   
+      <br>
+      Windows 3.1發行於1992年3月18日，添加了對聲音輸入輸出的基本多媒體的支持和一個CD音頻播放器，以及對桌面出版很有用的TrueType字體。TrueType取代了曾在Windows 3.0版非常流行的Adobe Type Manager (ATM) 的市場地位。<br>   
+      <br>
+      Windows 3.11于不久後發布，作了一些小更新。<br>   
+      <br>
+      1993年微軟發行了在Windows 3.1x的基礎上支持一些網路功能的Windows for Workgroup的3.1和3.11版。除Windows for Workgroups系列外，在Windows 3.x中，網路功能TCP/IP依靠于第三方軟體，例如Trumpet Winsock。<br>   
+      <br>
+      微軟還對Windows 3.x開發了一個叫Win32s的附加組件，對Win32 API提供有限的支持。</font> 
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>  
+    <td width="49%"><img border="0" src="photo/windows3.1big.jpg" width="450" height="350"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="95">95</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows 95是美國微軟公司1995年推出的作業系統。<br>   
+      <br>
+      Windows 95是一個混合的16位元／32位元Windows系統，其版本號為4.0，開發代號為Chicago。由微軟公司於1995年8月24日發行。[2]Windows 95是微軟之前獨立的作業系統MS-DOS和視窗產品的直接後續版本。第一次拋棄了對前一代16位元x86的支援，因此它要求英特爾公司的80386處理機或者在保護模式下執行于一個相容的速度更快的處理機。它以對GUI的重要的改進和底層工作（underlying workings）為特徵。同時也是第一個特別捆綁了一個版本的DOS的視窗版本（Microsoft DOS 7.0）。這樣，微軟就可以保持由視窗3.x建立起來的GUI市場的統治地位，同時使得沒有非微軟的產品可以提供對系統的底層操作服務。也就是說，視窗 95具有雙重的角色。它帶來了更強大的、更穩定、更實用的桌面圖形使用者介面，同時也結束了桌面作業系統間的競爭。（技術上說，Windows圖形使用者介面可以在DR-DOS上執行，也可能可以在PC-DOS上執行——這個情況直到幾年後在法庭上被揭示，這時其它一些主要的DOS市場的商家已經結束市場了。）在市場上，視窗95絕對是成功的，在它發行的一兩年內，它成為有史以來最成功的作業系統。<br>   
+      <br>
+      Windows 95以強大的攻勢進行發布，包括了商業性質的Rolling Stones的歌曲「Start Me Up」。很多沒有電腦的顧客受到宣傳的影響而排隊購買軟體，但他們甚至根本不知道Windows 95是什麼。<br>   
+      <br>
+      Windows 95標明了一個「開始」按鈕的介紹以及桌面個人電腦桌面上的工具條，這一直保留到現在視窗後來所有的產品中。<br>   
+      <br>
+      後來的Windows 95版本附帶了Internet Explorer 3，然後是Internet Explorer 4。當Internet Explorer 4被整合到作業系統後，它將給系統帶來一些新特徵。Internet Explorer被用來給系統的桌面提供HTML支援。這個也是在微軟的反托拉斯案中的焦點，因為整合Internet Explorer排擠了微軟的競爭對手網景的產品。   
+      </font>
+      <p align="right"><font color="#FFFFFF"><br>  
+      <a href="#top">TOP</a>  
+      </font></p>
+    </td>
+    <td width="49%"><img border="0" src="photo/win95.jpg" width="426" height="320"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="98">98</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">這個新的系統是基於Windows 95上編寫的，它改良了硬體標準的支援，例如MMX和AGP。其它特性包括對FAT32檔案系統的支援、多顯示器、Web TV的支援和整合到Windows圖形使用者介面的Internet Explorer，稱為活動桌面（Active Desktop）。<br>   
+      <br>
+      此外並在記憶管理中，改進了Windows 95將16 位元程式碼與32位元程式碼，在同一記憶體區段混合存放，易導致一個程式發生錯誤就會連帶造成整個系統當機的問題。從Windows98開始，記憶體管理上有革新的進步，即是將16位元與32位元程式碼放在不同記憶體區段執行，一旦某一應用程式錯誤，可以單獨關閉該程式，但不影響整個系統持續正常的運作。<br>   
+      <br>
+      從Windows 98開始的多行程作業系統，也與Windows 95的先佔性多工有著完全不同的改善。它可以由使用者決定是平均分配系統資源進行多工，或是將某一個較不急於達成、或完成時間較長的程式設為背景（後台）執行，高度的增加多工作業的實用性。</font> 
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>  
+    <td width="49%"><img border="0" src="photo/98.jpg" width="400" height="400"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="ME">ME</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows Me（Windows Millennium Edition）是一個16位元／32位元混合的Windows系統，于2000年9月14日由微軟公司發行。Windows Me是最後一個基於DOS的混合16位元／32位元的Windows 9X系列的Windows，其版本號為4.9，原開發代號為Millennium。其名字有兩個意思，一是紀念公元2000年，Me是千禧年特別版（Millennium Edition）的意思，另外是指個人運用版，「Me」在英文中有「自己」的意思。<br>   
+      <br>
+      這個系統是在Windows 95和Windows 98的基礎上開發的。它包括相關的小改善，例如Internet Explorer 5.5。其中最主要的改善是用於與流行的媒體播放軟體RealPlayer競爭的Windows Media Player 7。但是Internet Explorer 5.5和Windows Media Player 7都可以在網上免費下載。Windows Movie Maker是這個系統中的一個新零件。這個程式提供了基本的視訊編輯與設計功能，對家庭使用者來說是簡單易學的，但這個程式仍屬於入門級的視頻修改程式。如果用戶需要更強大的功能，就要依靠其它程式進行工作。<br>   
+      <br>
+      Windows Me最重要的修改是系統不再包括真實模式的MS-DOS。這就意味著，與Windows 95和98不同，微軟在載入Windows圖形介面前隱藏了載入DOS的過程，使得啟動時間有所減少。它仍然提供DOS模式，可以執行在視窗中，但是一些應用程式（如較早的磁碟工具）需要實模式，而不能執行在DOS視窗中。微軟摒棄了Windows Me的DOS真實模式，這有助於系統的速度提升，減少了對系統資源的使用。然而這對基於DOS的Windows Me造成了不利影響，系統比Windows 98更不穩定，而且造成Windows Me運行比Windows 98更慢。甚至在使用Windows Me一段期間後，系統就有明顯變慢，不停出現藍白畫面、當機等異常現象，問題比Windows 98更加嚴重。<br>   
+      <br>
+      另外Windows Me引進了「系統還原」日誌和還原系統，這意味著簡化了故障排查和問題解決工作。理論上，這是一個大的改進：使用者不再需要難學難懂的DOS行命令的知識就可以維護和修復系統。可實際上，失去DOS功能對維護來說是一個障礙，而系統還原功能也帶來一些新麻煩：性能顯著的降低；實際證明系統還原並不能有效勝任一些常見的錯誤修復任務，例如程式會在系統還原後無法執行、系統死機的情況也更嚴重。由於系統每次都自動創建一個先前系統狀態的備份，使得非專業人員很難完成一些急需的修改，甚至包括刪除一個不想要的程式或病毒，所以很多防毒軟體在消除病毒及一般使用下不建議開啟系統還原功能。<br>   
+      <br>
+      Windows Me的系統還原存在的一個更嚴重的問題是，在還原到2001年9月8日之後創建的檢查點時，會報告「還原失敗」。這是系統還原程式中的一個錯誤，微軟已進行了說明並給出了解決方案。[2]<br>   
+      <br>
+      傳言此版本是因為Windows 2000 Professional不能取代Windows 98的地位而推出的，但有人抱怨這個系統只是Windows 98的升級版本，不應該獨自成為一個新產品。也有人批評Windows Me是一個較為失敗的產品，不穩定的過渡產品。<br>   
+      <br>
+      但不可否認Windows me是整個Windows系列中迄今為止開機和關機速度最快的，這是難得的可取之處。</font> 
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>  
+    <td width="49%"><img border="0" src="photo/Windows%20ME.jpg" width="540" height="400"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="2000">2000</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows 2000（也可簡稱Win2K）是一個獨占式、可中斷執行、具有圖形使用者介面（GUI）和商業導向的作業系統。Windows 2000可以運作在單處理器系統或者多處理系統上（SMP）上，是屬於微軟Windows NT產品線的一部分，發佈的時間是2000年2月17日[5]，此外Windows 2000也是Windows XP（2001年10月上市）和Windows 2003（2003年4月上市）的前身[6]。Windows 2000的核心模式採用了混合式核心（Hybrid kernel）[7]，Windows NT的產品線也都使用這種核心模式。相較於之前僅管理 OSI 第二層的模式，Windows 2000的網路管理方面可以管理到 OSI 第三層。<br>   
+      <br>
+      Windows 2000釋出了四種版本：專業版（Professional）、伺服器版（Server）、進階伺服器版（Advanced Server）、資料中心伺服器版（Datacenter Server）[8]。另外微軟也販賣64位元處理器 Itanium 專用的Windows 2000 Advanced Server Limited Edition 和 Windows 2000 Datacenter Server Limited Edition[9]，不過功能上有些限制。雖然每個版本有不同的市場目標，但是所有版本都使用相同的核心功能，像是電腦管理主控台（Microsoft Management Console）和系統管理程式。Windows 2000也有針對殘障人士的使用介面做改進，透過新的輔助科技，Windows 2000比起前一個版本Windows NT 4.0更容易讓殘障人士使用[10]，另外支援的語言也增加[11]，並且增加更多的地區設定（locale）[12]，讓更多國家和地區的使用者可以更容易使用。<br>   
+      <br>
+      所有的版本都支援 Windows NT 的檔案系統：NTFS 3.0[13]，包含了檔案系統加密、動態邏輯磁碟管理[14]。伺服器版本則有更多的附加功能[15]，像是活動目錄（Active Directory）、分散式檔案系統和 fault-redundant storage volumes。<br>   
+      <br>
+      微軟宣稱Windows 2000是他們發佈過的Windows作業系統中最安全的[16]，不過Windows 2000也成為許多高危險電腦病毒的攻擊目標，像是知名的"紅色警戒"（Code Red）和Nimda病毒[17]。到今天距離Windows 2000發佈超過9年的時間，微軟還是持續釋出修正安全漏洞的更新檔。</font> 
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>  
+    <td width="49%"><img border="0" src="photo/Windows%202000.jpg" width="436" height="305"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="XP">XP</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows XP，是微軟公司的一款視窗操作系統，可供個人電腦使用，包括商用及家用的桌上型電腦、筆記型電腦、媒體中心等。RTM（Release to Manufacturing）於2001年8月24日正式發佈；[3]它的零售版於2001年10月25日上市。[4]原開放代號為「Whistler」，XP 表示英文中的「體驗」（experience）。[5]Windows XP的外部版本是2002，內部版本是5.1（即Windows NT 5.1），正式版的Build是5.1.2600。直至2008年6月，Windows XP的市場佔有率仍比Windows Vista高。[6] Windows XP OEM及零售版本已經在2008年6月30日停止直接的銷售，但用戶仍可在購買Windows Vista 旗艦版（Ultimate） 或 商用入門版（Business）之後降級到Windows XP。[7][8]<br>   
+      <br>
+      微軟最初發行了兩個版本：專業版（Windows XP Professional）和家用版（Windows XP Home Edition），後來又發行了媒體中心版（Windows XP Media Center Edition 2005）、平板電腦版（Windows XP Tablet PC Editon）、嵌入版（Windows XP Embedded）、6</font>4   
+      <font color="#FFFFFF"> 位元作業系統版（Windows XP x64）及瘦客戶端版（Windows Fundamentals for Legacy PCs）等多個版本。   
+      </font>
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a><br>  
+      </font></p>
+    </td>
+    <td width="49%"><img border="0" src="photo/windows%20xp.jpg" width="372" height="284"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="Vista">Vista</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows Vista是微軟Windows作業系統的最新版本，於2005年7月22日微軟正式公布了這一名字。原代號為Longhorn。[2]Windows Vista的內部版本是6.0（即Windows NT 6.0），正式版的Build是6.0.6000。在2006年11月8日，Windows Vista開發完成並正式進入量產。之後的兩個月僅對MSDN用戶、電腦軟硬體製造商和企業客戶釋出。在2007年1月30日，Windows Vista正式對一般大眾販售[3]，同時也可以從微軟的網站下載。[4]Windows Vista距離上一版本Windows XP已有超過五年的時間，這是Windows版本歷史上間隔時間最久的一次發佈。<br>   
+      <br>
+      根據微軟表示[5]，Windows Vista包含了上百種新功能；其中較特別的是新版的圖形使用者界面和稱為「Windows Aero」的全新視覺風格、加強後的搜尋功能（Windows indexing service）、新的多媒體創作工具（例如Windows DVD 製作程式），以及重新設計的網路、音訊、輸出（列印）和顯示次系統。Vista也使用點對點技術（peer-to-peer）提升了電腦系統在家庭網路中的示通訊能力，將讓在不同電腦或裝置之間分享檔案與數位媒體內容變得更簡單。針對開發者方面，Vista使用.NET Framework 3.0版本，比起傳統的Windows API更能讓開發者能簡單寫出高品質的程式。<br>   
+      <br>
+      微軟也在Vista的安全性方面進行改良。[6]Windows XP最受到批評的一點是系統經常出現安全漏洞，並且容易受到惡意軟體、電腦病毒或緩衝區溢位等問題的影響。為了改善這些情形，微軟主席比爾·蓋茲在2002上半年宣佈在全公司實行「信賴運算的電腦行動」（Trustworthy Computing initiative），這個活動目的是讓全公司各方面的軟體開發部門一起合作，共同解決安全性的問題。微軟宣稱由於希望優先增進Windows XP和Windows Server 2003的安全性，因此延誤了Vista的開發。[7]<br>   
+      <br>
+      在開發期間，有許多團體發表了關於Vista的各種負面預測。包括延遲的開發時間、限制更嚴格的授權方式、限制拷貝受保護的數位媒體而加入的數項新數位著作權管理技術，以及新功能的實用性（例如使用者帳戶控制）。</font>
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>
+    <td width="49%"><img border="0" src="photo/windows-vistac.jpg" width="473" height="354"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#FFFFFF">
+      <p align="center"><a name="7">7</a></td>
+  </tr>
+  <tr>
+    <td width="90%"><font color="#FFFFFF">Windows 7為微軟對Windows下個版本的正式名稱，同時也是開發代號，預定計劃在2009年發佈[1]。於Windows Vista推出前，此版本Windows開發代號為「Blackcomb」，其後更改為「Windows Vienna」；但是，Windows 7其系統版本編號為NT 6.1，並非如其名稱為NT 7.0。而「7」在西方文化中帶有幸運的意思，所以被採用成作業系統名稱；同時，下一版本的Windows便攜裝置作業系統（Windows Mobile）也被命名為「Windows Mobile 7」。</font> 
+      <p>　</p>
+      <p align="right"><font color="#FFFFFF"><a href="#top">TOP</a></font></p>
+    </td>  
+    <td width="49%"><img border="0" src="photo/windows-7.jpg" width="600" height="375"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

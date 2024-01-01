@@ -1,0 +1,184 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>2</title>
+<script lanuage="JavaScript">
+<!--
+var count = -1;
+var counter;
+var nchar
+var speedtogo = 200
+var a = new Array();
+a[1] = "~the history of semiconductor~";
+a[2] = "~THE HISTORY OF SEMICONDUCTOR~";
+function capswitch() {
+count++
+if(count == 0){
+document.wow.display.value = a[1]
+}
+if(count == 1){
+document.wow.display.value = a[2].substring(0, 1) +
+a[1].substring(22, 1)
+}
+if(count > 1){
+a[3] = a[1].substring(0, count - 1) + a[2].substring(count - 1,
+count) + a[1].substring(22, count)
+document.wow.display.value = a[3]
+}
+if(count == a[1].length){
+count = -1
+}
+counter = setTimeout("capswitch()",speedtogo);
+}
+//-->
+</script>
+
+<FORM NAME="wow">
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<Body onLoad="capswitch()" background="images/back1.jpg" onclick="dynOutline()" language="Javascript1.2"> 
+<INPUT TYPE="TEXT" NAME="display" SIZE="30">
+</FORM>    
+
+
+<!--步驟二：加入 onLoad="capswitch()" 到 BODY-->    
+
+<p align="center"><a name="top"></a><img border="0" src="images/title2.gif" width="469" height="66"></p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="39%"></td>
+    <td width="61%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon3.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%">半導體的歷史
+            <!--msimagelist--><table dynamicoutline border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#a">電晶體時代</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#b">積體電路時代(IC)</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#c">超大型積體電路時代</a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#d">IC時代應用</a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+
+<table border="0" width="100%" height="416">
+  <tr>
+    <td width="100%" height="22" colspan="2" bgcolor="#FFFF66">
+      <p align="center"><b><a name="a"></a>電晶體時代</b></td>
+  </tr>
+  <tr>
+    <td width="100%" height="154" colspan="2">包含：點接觸型電晶體、接合型電晶體、平面型電晶體、電場效應電晶體<br>
+      <br>
+    早在1930與1940年代，使用半導體製作固態放大器的想法就持續不絕。第一個有實驗結果的放大器是1938年，由波歐(Robert Pohl， 1884~1976)與赫希(Rudolf     
+      Hilsch)所做的，使用溴化鉀晶體與鎢絲做成的閘極，儘管其操作頻率只有一赫茲，並無實際用途，卻證明了類似真空管的固態三端子元件的實用性。
+      <p><br>  
+    由於使用場效應(field effect)來改變電導的許多實驗都失敗了，巴丁(John Bardeen，1908~1991)推定是因為半導體具有<font color="#0000FF">表面態(surface state)</font>的關係，為避開表面態的問題，1947年11月17日，巴丁與布萊登(Walter Brattain 1902~1987)在矽表面滴上水滴，用塗了蠟的鎢絲與矽接觸，再加上一伏特的電壓，發現流經接點的電流增加了！</p>    
+      <p><br>  
+    12月16日，布萊登用一塊三角形塑膠，在塑膠角上貼上金箔，然後用刀片切開一條細縫，形成了兩個距離很近的電極，其中，<font color="#0000FF">加正電壓的稱為射極 (emitter)，負電壓的稱為集極 (collector)，塑膠下方接觸的鍺晶體就是基極 (base)</font>，構成第一個點接觸電晶體 (point contact transistor)。1<font color="#0000FF">947年12月23日，他們更進一步使用點接觸電晶體製作出一個語音放大器，該日因而成為電晶體正式發明的重大日子。</font><br>    
+      <br>
+    另一方面，就在點接觸電晶體發明整整一個月後，蕭克萊想到使用<font color="#0000FF">p-n接面來製作接面電晶體 (junction transistor) 
+      </font>的方法，在蕭克萊的構想中，<font color="#0000FF">使用半導體兩邊的n型層來取代點接觸電晶體的金屬針，藉由調節中間p型層的電壓，就能調控電子或電洞的流動</font>，這是一種進步很多的電晶體，也稱為<font color="#0000FF">雙極型電晶體 (bipolar transistor)</font>，但以當時的技術，還無法實際製作出來。</p> 
+      <p><br>  
+    電晶體的確是由於科學發明而創造出來的一個新元件，但是工業界在1950年代為了生產電晶體，卻碰到許多困難。1951年，西方電器公司（Western Electric）開始生產商用的鍺接點電晶體，1952年4月，西方電器、雷神(Raytheon)、美國無線電(RCA) 與奇異(GE)等公司，則生產出商用的雙極型電晶體。在1957年底，各界已製造出六百種以上不同形式的電晶體，使用於包括<font color="#0000FF">無線電、收音機、電子計算機</font>甚至<font color="#0000FF">助聽器</font>等等電子產品。<br>    
+      <br>
+    早期製造出來的電晶體均屬於高台式的結構。1958年，快捷半導體公司 (Fairchild Semiconductor)發展出平面工藝技術(planar technology)，藉著氧化、黃光微影、蝕刻、金屬蒸鍍等技巧，可以很容易地在矽晶片的同一面製作半導體元件。1960年，磊晶(epitaxy)技術也由貝爾實驗室發展出來了。至此，半導體工業獲得了可以批次(batch)生產的能力，終於站穩腳步，開始快速成長。</p>     
+      <p align="right"><a href="#top">回頂端</a></p>
+    </td>  
+  </tr>
+  <tr>
+    <td width="100%" height="22" colspan="2" bgcolor="#00FFFF">
+      <p align="center"><b><a name="b"></a>積體電路時代(IC)</b></td>
+  </tr>
+  <tr>
+    <td width="43%" height="340"><img border="0" src="photo/IC晶片連線打著程序.jpg" width="367" height="241"></td>
+    <td width="57%" height="340">積體電路就是把許多分立元件製作在同一個半導體晶片上所形成的電路。
+      <p>1958年9月12日，德州儀器公司(Texas Instruments)的基爾比 (Jack Kilby， 1923~    )，細心地切了一塊鍺作為電阻，再用一塊<font color="#0000FF">pn接面做為電容</font>，製造出一個<font color="#0000FF">震盪器的電路</font>，並在1964年獲得專利，首度證明了可以在同一塊半導體晶片上能包含不同的元件。1964年，快捷半導體(Fairchild Semiconductor)的諾宜斯(Robert Noyce，1927~1990)，則使用平面工藝方法，即藉著<font color="#0000FF">蒸鍍金屬、微影、蝕刻</font>等方式，解決了積體電路中，不同元件間導線連結的問題。<br>   
+      <br>
+      積體電路的第一個商品是助聽器，當時用的仍是雙極型電晶體。</p>
+      <p>1970年，通用微電子(General Microelectronics)與通用儀器公司 (General Instruments)，解決了<font color="#0000FF">矽與二氧化矽界面間大量表面態的問題，開發出金氧半電晶體 (metal-oxide-semiconductor， MOS)</font>；因為金氧半電晶體比起雙極型電晶體，<font color="#0000FF">功率較低、集積度高，製程也比較簡單，因而成為後來大型積體電路的基本元件。</font></p>  
+    </td> 
+  </tr>
+  <tr>
+    <td width="100%" height="121" colspan="2">60年代發展出來的平面工藝，可以把越來越多的金氧半元件放在一塊矽晶片上，從1960年的不到十個元件，倍數成長到1980年的十萬個，以及1990年約一千萬個，這個每年加倍的現象稱為<font color="#FF0000">莫爾定律</font>  
+      (Moore’s law)，是莫爾(Gordon Moore)在1964年的一次演講中提出的，後來竟成了事實。 
+      <p align="right"><a href="#top">回頂端</a></p>
+    </td>  
+  </tr>
+  <tr>
+    <td width="100%" height="32" colspan="2" bgcolor="#FFCC66">
+      <p align="center"><b><a name="c"></a>超大型積體電路時代</b></td>
+  </tr>
+  <tr>
+    <td width="43%" height="247"><img border="0" src="photo/半導體廠2.jpg" width="386" height="248"></td>
+    <td width="57%" height="247">在1970年代，決定半導體工業發展方向的，有兩個最重要的因素，那就是<font color="#FF0000">半導體記憶體 (semiconductor memory)</font> 
+      與<font color="#FF0000">微處理機 (micro processor)</font>。  
+      <p>1.微處理機</p>
+      <p>1971年11月15日，世界上第一個微處理器4004誕生了，它包括一個四位元的平行加法器、十六個四位元的暫存器、一個儲存器 (accumulator) 與一個下推堆疊 (push-down stack)，共計約二千三百個電晶體；4004與其他唯讀記憶體、移位暫存器與隨機存取記憶體，結合成MCS-4微電腦系統；從此之後，各種集積度更高、功能更強的微處理器開始快速發展，對電子業產生巨大影響。</p>  
+      <p>三十年後的今天，英代爾的Pentium III已經包含了一千萬個以上的電晶體。&nbsp;</td>  
+  </tr>
+  <tr>
+    <td width="100%" height="247" colspan="2">2.半導體記憶體
+      <p>毫無疑問的，記憶體晶片與微處理器同等的重要。</p>
+      <p>記憶體發展過程中最重要的一步，就是1969年，IBM的迪納 (R. H. Dennard)   
+      發明了只需一個電晶體和一個電容器，就可以儲存一個位元的記憶單元；由於結構簡單，密度又高，<font color="#0000FF">現今半導體製程的發展常以動態隨機存取記憶體的容量為指標。</font>大致而言，1970年就有1K的產品；1974年進步到4K (閘極線寬十微米)；1976年16K （五微米）；1979年64K (三微米)；1983年256K （一點五微米）；1986年1M （一點二微米）；1989年4M (零點八微米)；1992年16M (零點五微米)；1995年64M (零點三五微米)；1998年到256M (零點二五微米)，<font color="#0000FF">大約每三年進步一個世代，2001年就邁入十億位元大關。&nbsp;</font><br>  
+      <br>
+    根據國際半導體科技進程 (International Technology Roadmap for Semiconductor) 的推估，西元2014年，最小線寬可達0.035微米，記憶體容量更高達兩億五千六百萬位元，儘管新製程、新技術的開發越形困難，但半導體業在未來十五年內，相信仍會迅速的發展下去。 
+      <p align="right"><a href="#top">回頂端</a></td>  
+  </tr>
+  <tr>
+    <td width="100%" height="33" colspan="2" align="center" bgcolor="#FF6699"><b><a name="d"></a>IC時代的應用</b></td> 
+  </tr>
+  <tr>
+    <td width="100%" height="247" colspan="2">*何謂IC(積體電路)&nbsp;<br>
+   把千萬個電晶體集中在小小的晶片上，體積小，密度高，是電子資訊最重要的零組件<br>
+      <br>
+      *IC的應用:&nbsp;<br>
+      <br>
+      1〉電子計算機&nbsp;<br>
+      2〉電腦指示駕駛&nbsp;<br>
+      3〉能聽話的機器耳多&nbsp;<br>
+      4〉會講話的打字機&nbsp;<br>
+      5〉自動翻譯機&nbsp;<br>
+      6〉用電腦來種菜&nbsp;<br>
+      7〉汽車的電達&nbsp;<br>
+      8〉電視多重傳播
+      <p align="right"><a href="#top">回頂端</a></p>
+ </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

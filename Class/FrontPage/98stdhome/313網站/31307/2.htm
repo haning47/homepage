@@ -1,0 +1,184 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<TITLE>你是禮拜幾出生的？</TITLE>
+</head>
+
+<!--程式碼開始-->
+<script language="JavaScript">
+function MakeArray(n) {
+   this.length = n;
+   for (var i = 1; i <=n; i++) {
+     this[i] = 0;
+   }
+}
+
+days = new MakeArray(7);
+days[0] = "星期六"
+days[1] = "星期日"
+days[2] = "星期一"
+days[3] = "星期二"
+days[4] = "星期三"
+days[5] = "星期四"
+days[6] = "星期五"
+
+months = new MakeArray(12);
+months[1] = "一" 
+months[2] = "二" 
+months[3] = "三" 
+months[4] = "四" 
+months[5] = "五" 
+months[6] = "六" 
+months[7] = "七" 
+months[8] = "八"
+months[9] = "九" 
+months[10] = "十"
+months[11] = "十一"
+months[12] = "十二"
+
+function compute(form) {
+   var val1 = parseInt(form.day.value, 10);
+   if ((val1 < 0) || (val1 > 31)) {
+      alert("好像沒這個日期耶！");
+   }
+   var val2 = parseInt(form.month.value, 10);
+   if ((val2 < 0) || (val2 > 12)) {
+      alert("好像沒這個月份喔！");
+   }  
+   var val2x = parseInt(form.month.value, 10);
+   var val3 = parseInt(form.year.value, 10)+1911;
+   if (val3 < 1900) {
+      alert("你真老耶！這位大伯！");
+   }
+   if (val2 == 1) {
+      val2x = 13;
+      val3 = val3-1;
+   }
+   if (val2 == 2) {
+      val2x = 14;
+      val3 = val3-1;
+   }
+   var val4 = parseInt(((val2x+1)*3)/5, 10);
+   var val5 = parseInt(val3/4, 10);
+   var val6 = parseInt(val3/100, 10);
+   var val7 = parseInt(val3/400, 10);
+   var val8 = val1+(val2x*2)+val4+val3+val5-val6+val7+2;
+   var val9 = parseInt(val8/7, 10);
+   var val0 = val8-(val9*7);
+   form.result1.value = "民國"+form.year.value+"年 "+months[val2]+"月 "+form.day.value +"日";
+   form.result2.value = days[val0];
+}   
+</script>
+<!--程式碼到此結束-->
+
+<!--在Body中不要忘了加入這段指令-->
+
+<body background="images/背景3.gif">
+
+<p align="center"><img border="0" src="images/title2.gif" width="489" height="78"></p>
+
+<table border="1" width="100%" height="507">
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#0099FF">
+      <p align="center">比斯杜拜塔</td>
+  </tr>
+  <tr>
+    <td width="50%" height="201"><font face="標楷體"><b>比斯杜拜塔是一項大型市區地產項目的一部分，由杜拜一家地產發展商計劃，目的是要建設一個龐大的新發展區，除了興建全球最高的建築外，還包括其他優質住宅、商業、娛樂、交通、人工湖和相關配套項目。<br>
+      <font color="#0000FF">2003年，比斯杜拜塔的設計首次曝光</font>，設計外觀使用與疑建560米高的墨爾本Grollo塔相同。然而，2003年5月，現在最新的方案首次發表。<br>
+      2004年11月，有關報道比斯杜拜塔的最終建成高度將仍會變動，最終可能會調高至900米。<br>
+      <font color="#0000FF">
+      2004年12月，南韓三星公司贏得該項計劃價值8.75億美元合約。</font><br>
+      據新華社報道，項目將包括設有休閒、住宅及購物三合一的全球最高摩天大樓。大樓將高達807.7米，162層，將於2004年1月動工，2008年完成。<br>
+      該大樓未來可能是全球最大購物商場，可同時容納5萬人，並擁有樓高3層的水族館及符合奧運標準的溜冰場。</b></font></td>
+    <td width="50%" height="201">
+      <p align="center"><img border="0" src="杜拜-1.jpg" width="276" height="223"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#0099FF">
+      <p align="center">杜拜塔更名</td>
+  </tr>
+  <tr>
+    <td width="50%" height="220"><font face="標楷體"><b>新的世界第一高樓、杜拜塔，4日晚上舉行盛大開幕儀式，<font color="#0000FF">宣佈落成啟用並改名為哈里發塔</font>，整棟<font color="#0000FF">樓高828公尺，比台北101還多出300多公尺</font>。耗時5年、耗資15億美元的杜拜塔，正式更名為哈里發塔、落成啟用，雖然由穆罕默德親王，在任職杜拜邦長4周年這天主持開幕，但光環給了阿布達比邦長，同時也是阿聯元首的哈里發，以感念250億美元的救命金援。<br>
+      水舞，加上不斷竄升、變化多端的煙火秀，看著底下的群眾驚呼聲不斷。<br>
+      <br>
+      <font color="#0000FF">
+      高828公尺的哈里發塔，比原先預估的818還多出10公尺</font>，這讓它比前世界第一高樓，台北101高上<font color="#0000FF">320公尺</font>，一棟做成兩棟紐約帝國大廈還有剩，從地面到塔頂，<font color="#0000FF">溫差達攝氏10度</font>，是名副其實的超級摩天樓。</b></font>
+      <p><font face="標楷體"><b>這個新世界第一高樓擁有好幾個世界第一，包括位於76樓的第一高游泳池，還有158樓的第一高清真寺，因為住商混合，擁有1044戶豪華公寓、49層辦公室、4座游泳池、1座圖書館還有六星級亞曼尼飯店，號稱是垂直城市。<br>
+      <br>
+      不過金碧輝煌的哈里發塔，被英國媒體爆爆料徒有金玉其外，內部多處亂糟糟，尚未竣工卻急著開用，與杜拜欠債達上千億美元不無關係，雖然阿布達比12月緊急紓困，暫時解除危機，但當局為了重建投資信心，亟需哈里發塔來沖喜，而這最高地標能否發揮實際吸金威力、帶領杜拜逆轉勝，恐怕仍是未定之天。</b></font></p>
+    </td>
+    <td width="50%" height="220">
+      <p align="center"><img border="0" src="杜拜塔.jpg" width="168" height="248"></p>
+      <p align="center"><img border="0" src="杜拜塔3.jpg" width="166" height="256"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#0099FF">
+      <p align="center">棕櫚島</td>
+  </tr>
+  <tr>
+    <td width="50%" height="210"><font face="標楷體"><b>從高空俯瞰阿拉伯聯合大公國的杜拜，依稀可見兩棵巨大的棕櫚樹漂浮在蔚藍色的海面上。仔細辨認，棕櫚樹竟是由一些錯落有致、大大小小的島嶼組成。除棕櫚樹外，還能看到由300個島嶼勾勒的一幅世界地圖。縮小的法國、美國佛羅里達州、俄亥俄州都包括在內，甚至原本冰雪覆蓋的南極洲也處在當地的炎炎烈日之下。<br>
+      然而，這一派奇特景象並非大自然的鬼斧神工，<font color="#0000FF">它是杜拜雄心勃勃的人工島計劃——棕櫚島工程的一部分。這項計劃耗資140億美元，預計將於2009年完工。</font>屆時，世界上最大的人工島將完全浮出海面.........<br>
+      <br>
+      棕櫚島工程由朱邁拉(Jumeirah)棕櫚島、阿里山(Jebel Ali)棕櫚島、代拉(Deira)棕櫚島和<br>
+      世界島(the world)等4個島嶼群以及後期的濱水灘(waterfront)項目組成，計劃建造1.2萬棟私人住宅和1萬多所公寓，還包括100多個豪華酒店以及 
+      港口、水主題公園、餐館、購物中心和潛水場所等設施。此外，一個水下酒店、一棟世界上最高的摩天大樓，一處室內滑雪場、一個與杜拜城市大小相當的主體公 
+      園，也在計劃之內。&nbsp;</b></font></td>
+    <td width="50%" height="210">
+      <p align="center"><img border="0" src="杜拜-棕櫚島.jpg" width="425" height="318"></p>
+      <p align="center">　</td>
+  </tr>
+  <tr>
+    <td width="100%" height="119" colspan="2"><font face="標楷體"><b><font color="#0000FF">棕櫚島計劃完成後，杜拜的海岸線將增加720公里。</font>也許，到那個時候，世界地圖上的杜拜版圖要作一番改動了。來自日本和美國加利福尼亞的著名建築隊已經完成了棕櫚島一部分的主體。島的主體是砂粒堆砌而成，高出海面達３米。按說當地陸地上的砂粒多得用不完，但那種 砂子較粗，不能很好地結合在一起，而海底的砂粒較細，符合這一要求。因此，整個主體工程主要是疏浚船來完成的。迄今為止，建設消耗的沙土已經達到5000 萬立方米，超過了預估總量的一半。</b></font></td> 
+  </tr>
+  <tr>
+    <td width="50%" height="210"><font face="標楷體"><b>堆積的沙灘很不穩定，假如遇到地震，整個島就會消失。就像我們在臉盆裡堆一個小沙堆，再慢慢倒一些水，靜止的時候小沙堆還在，但搖晃臉盆後，臉盆裡就只剩下一盆砂漿了。然而，若干年後沙灘會結實起來，但工程等不了那長時間。<font color="#0000FF">工程師們就打鑽到主體的底部，進行震顫，使砂粒下陷，再填補砂粒，直到砂粒停止下陷，主體就“壓實”了。</font></b></font>
+      <p><font face="標楷體"><b>目前，朱邁拉棕櫚島的填築工程已經完成。朱邁拉棕櫚島長寬均為5.5公里，是4個人工島中最小的一個，島上4000棟公寓與別墅將於明年初完工。<br>
+      除人們搶購房屋外，一些世界知名企業也紛紛將資金投向這個充滿誘惑的領域。<font color="#0000FF">美國建築業巨頭帕森斯和希爾國際參與朱邁拉棕櫚島的設計與實施，中國鐵道工程公司也將參與島嶼的建設工作。</font>朱邁拉棕櫚島有一個突出的邊緣地帶，那裡計劃建造23棟大酒店。知名酒店管理集團希爾頓、萬豪、喜來登等已經準備聯手開設分店。</b></font></td>
+    <td width="50%" height="210">
+      <p align="center"><img border="0" src="杜拜-棕櫚島2.jpg" width="427" height="319"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="81" colspan="2"><font face="標楷體"><b>面積較大的代拉棕櫚島（80平方公里）也已初步露出海面，雖然要到2009年才能完工，但島上7000棟房屋也已售出4500棟。據穆斯塔法介紹，房產購買者包括英國著名球星貝克漢姆與歐文，還有“演員、歌手和政治家”，但他拒絕透露這些客戶的姓名，只表示三分之二的買家為外國人</b></font></td>
+  </tr>
+</table>
+
+<p>
+　
+<p>
+<Center>
+<font size="4" color="#008000">小遊戲=)你是禮拜幾出生的？</font>
+<p>
+<br>
+
+<table>
+
+<td>
+
+
+<!--效果在網頁呈現的開始-->
+<div align="center"><center><table border="1" width="421" height="175">
+    <tr>
+        <td valign="top" height="169" width="411"><form>
+<p>誰會記得你星期幾出生的呀，算算看吧！</p>
+<p>您的生日是：民國<input type="text" size="5" name="year">年
+<input type="text" size="5" name="month">月
+<input type="text" size="5" name="day">日
+
+<p>
+<input type="button" value=" 算 看 看 " onclick="compute(this.form)">
+<input type="reset" value=" 清 除 "> </p>
+<p>你的生日是：<input type="text" size="18" name="result1"> </p>
+<p>你是<input type="text" size="18" name="result2">出生 </p>
+</form></td>
+</tr></table></center></div>
+<!--效果在網頁呈現的結束-->
+
+
+<br><br>
+<hr width=60%>
+
+</BODY> 

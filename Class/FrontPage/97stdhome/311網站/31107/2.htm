@@ -1,0 +1,161 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back.bmp" onclick="dynOutline()">
+
+<p align="center"><a name="top"></a><img border="0" src="images/title2.gif" width="469" height="60"></p>
+
+<table border="0" width="100%" height="172">
+  <tr>
+    <td width="31%" height="168"></td>
+    <td width="69%" height="168">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="item1.gif" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><font color="#000000">機制</font>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#線性模型的形式"><font color="#008000">線性模型的形式</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#模型構造"><font color="#008000">模型構造</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#控制器的確定"><font color="#008000">控制器的確定</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="item2.gif" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#控制理論數學基礎"><font color="#008000">控制理論數學基礎</font></a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%" height="203">
+  <tr>
+    <td width="100%" height="18" colspan="2"><a name="線性模型的形式"><font color="#800080">線性模型的形式</font></a></td>
+  </tr>
+  <tr>
+    <td width="75%" height="20">
+      <p>　</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 線性常微分方程是時域內的基礎的連續模型。通過引入一些變數，我們可以得到狀態空間模型（只含有一階求導），狀態空間模型描述了系統的所有動力學特性，包括其內部無法測得，而且也不是輸出值的量。<br>  
+      對開始的常微分方程和狀態空間模型進行拉普拉斯變換，我們可以得到傳遞函數。這是一個頻域內的表述，只給出了輸出和輸入的關係，但沒有描述系統內部的量。通過拉普拉斯變換，我們有了處理系統的一般方法，這比解微分方程要容易。在自動控制中傳遞函數通常用    
+      G(s)表示。在多值系統中它是一個矩陣。<br>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 開環系統的傳遞函數有所有器件的傳遞函數組成（區間G(s)，控制器K(s)。(如右圖1)</p>   
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 導向傳遞函數Gw(s)來自於輸出通過測量器(Gm(s)) 對控制器的反饋。  
+      (如右圖2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 若我們考察小頻率時的Gw(s)，這時存在控制差。如果Gw(s = 0) = 1 ，則控制差e為零。伯德圖可使傳遞函數顯而易見。<br>    
+      </p>
+      <p><a href="#top">top</a></p>
+    </td>
+    <td width="25%" height="20">　
+      <p>　</p>
+      <p>　</p>
+      <p>　</p>
+      <p><img border="0" src="photo/函數-1.png" width="168" height="20">
+      </p>
+      <p><img border="0" src="photo/函數-2.png" width="227" height="47"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="17" colspan="2"><a name="模型構造"><font color="#800080">模型構造</font></a></td>
+  </tr>
+  <tr>
+    <td width="75%" height="20">　
+      <p>穩定性<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 控制環路的穩定性是系統的一項重要特性，因為非穩定性常常導致系統的損傷（比如飛機的墜毀和鍋爐的爆炸）。穩定性理論方面的重要貢獻者有麥克斯韋，胡爾維茨等。<br>   
+      有很多概念和分析方法來評判控制環路的穩定性，這些構成了穩定性理論的基礎。<br>
+      </p>
+      <p>  標稱值<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 可以通過傳遞函數來檢驗。當頻率為零時，放大值應該為一。</p>   
+      <p><a href="#top">top</a></td>
+    <td width="25%" height="20"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="20" colspan="2"><a name="控制器的確定"><font color="#800080">控制器的確定</font></a></td>
+  </tr>
+  <tr>
+    <td width="75%" height="20">　
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+      以下的內容是介紹一些可以實現上面控制要求的控制器。控制器的結構可以是多種多樣的。下面只提供一個總覽。<br>
+      </p>
+      <p>  調節的粗略原則<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在這個概念下面，我們可以把各種控制的方式納入其中。我們優先使用不依賴與具體數學模型的方式。一些可以通過實驗確定的參數必須是給定的。<br>   
+      </p>
+      <p>  線性控制設計<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 所謂的設計方法，一個重要的特性是對於可達到的質量的保證（在LTI系統中）。這些在實踐中只是局部有效的，因為線性系統只是一種抽象和簡化，實際的系統與之多少有些偏差。在擾動模型當中，模型和實際系統的特性頗為一致，前提是偏差離工作點不太大。</p>   
+      <p><a href="#top">top</a></td>
+    <td width="25%" height="20"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="20" colspan="2"><a name="控制理論數學基礎"><font color="#800080">控制理論數學基礎</font></a></td>
+  </tr>
+  <tr>
+    <td width="75%" height="20">
+      <p><font color="#FFFFFF">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+      </font>對所線性統控制特性而言，可將系統分為三大部分，即輸入r(t)、系統g(t)、輸出c(t)三部份，其關係如右圖一所示：&nbsp;</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其關係式為c(t)是r(t)與g(t)之摺積（ convolution ）：(右圖二)<br>   
+      <br>
+      　　</p>
+      <p>　　為化簡此一控制系統之積分式，可利用拉式轉換（ Laplace Transform ）使其在時間上的積分式轉換為在頻域s上的代數式。拉式轉換定義為：(右圖三)<br>   
+      <br>
+      </p>
+      <p>　　</p>
+      <p>　　反之，則為反拉式轉換，即右圖四<br>
+      <br>
+      　　因此對上述控制系統之輸出c(t)取拉式轉換，則可表示為(右圖五)<br>
+      <br>
+      　　　</p>
+      <p>　</p>
+      <p>　　　令&nbsp;(右圖六)<br>
+      　　　</p>
+      <p>　</p>
+      <p>　　　所以(右圖七)<br>
+      <br>
+      　　因此對於分析控制系統之輸入R(s)、系統G(s)、輸出C(s)三者之關係可簡單地表示為代數式之相乘積。<br>
+      </p>
+      <p>　</p>
+      <p><a href="#top">top</a></td>
+    <td width="25%" height="20"><img border="0" src="photo/控制理論數學基礎-1.jpg" width="226" height="36">
+      <p><img border="0" src="photo/控制理論數學基礎-2.jpg" width="152" height="95"></p>
+      <p>　</p>
+      <p><img border="0" src="photo/控制理論數學基礎-3.jpg" width="192" height="32"></p>
+      <p>　</p>
+      <p><img border="0" src="photo/控制理論數學基礎-4.jpg" width="103" height="24"></p>
+      <p><img border="0" src="photo/控制理論數學基礎-5-1.jpg" width="236" height="75"></p>
+      <p>　</p>
+      <p><img border="0" src="photo/控制理論數學基礎-5-2.jpg" width="168" height="23"></p>
+      <p>　</p>
+      <p><img border="0" src="photo/控制理論數學基礎-6.jpg" width="267" height="100">
+      <p>　
+      <p>　</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

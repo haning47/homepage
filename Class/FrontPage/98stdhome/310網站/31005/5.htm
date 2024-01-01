@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="image/back5.gif" bgproperties="fixed">
+
+<p align="center" style="line-height: 150%"><img border="0" src="image/title5.gif" width="468" height="62"> 
+ <script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+
+<p align="left" style="line-height: 150%"><font face="華康流隸體" size="3" color="#003399">網頁設計幾乎是資訊課的必備課程，從國小國中到高中都學習過，但是高三所學的課程有許多以前不曾注意到的功能，比方說下拉式選單書籤和電子相簿功能等等，其中也有一些是我本來就很熟悉的功能操作如插入Java程式語言，另外還複習很多Photo 
+Impact的功能，大部分是很久沒使用而生疏的技巧，這次製作網頁可以說是獲益良多。</font> 
+</p>
+
+      <p align="left" style="line-height: 150%"><font face="華康流隸體" size="3" color="#003399">此外，這次的課程也給我一個增進新知的雞會，藉由查詢資料閱讀並整理，我看到了許多關於Windows7的評價，另外也從微軟的官網上取得一些資訊，大部分是新增的功能和一些官方宣傳的資訊，因為家裡還沒有更換新的作業軟體，所以對這款新推出的系統了解的並不多，這次的課程讓我充分了解到相關知識。</font> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</body>
+
+</html>

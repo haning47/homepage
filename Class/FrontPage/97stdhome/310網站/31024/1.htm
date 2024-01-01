@@ -1,0 +1,278 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>31024牛頓</title>
+<base target="_self">
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back1.jpg" onclick="dynOutline()">
+
+<p align="center"><a name="TOP"></a><img border="0" src="images/title1.gif" width="391" height="61"></p>
+
+<p align="center">
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script>　&nbsp; 
+</p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="29%"></td>
+    <td width="71%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%">牛頓生平
+            <ul msimagelist>
+              <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!--msimagelist--><tr>
+                  <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><a href="#早年生活">早年生活</a><!--msimagelist--></td>
+                </tr>
+                <!--msimagelist--><tr>
+                  <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><a href="#中年生活">中年生活</a><!--msimagelist--></td>
+                </tr>
+                <!--msimagelist--><tr>
+                  <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
+                  <td valign="top" width="100%"><a href="#晚年生活">晚年生活</a><!--msimagelist--></td>
+                </tr>
+              <!--msimagelist--></table>
+            </ul>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FFFF">
+      <p align="center"><a name="早年生活">早年生活</a></td>
+  </tr>
+  <tr>
+    <td width="50%">1702年的牛頓，由戈弗雷·內勒所作按照現行公曆，1643年1月4日，艾薩克·牛頓出生於英格蘭林肯郡鄉下的一個小村落埃爾斯索普村的埃爾斯索普莊園。在牛頓出生之時，英格蘭並沒有採用教宗的最新曆法，因此他的生日被記載為1642年的聖誕節。牛頓出生前三個月，他同樣名為艾薩克的父親才剛去世。由於早產的緣故，新生的牛頓十分瘦小；據傳聞，他的母親漢娜·艾斯庫（Hannah Ayscough）曾說過，牛頓剛出生時小得可以把他裝進一誇脫的馬克杯中。當牛頓3歲時，他的母親改嫁並住進了新丈夫巴納巴斯·史密斯（Barnabus Smith）牧師的家，而把牛頓托付給了他的外祖母瑪傑里·艾斯庫（Margery Ayscough）。年幼的牛頓不喜歡他的繼父，並因母親嫁給他的事而對母親持有一些敵意，牛頓甚至曾經「威脅我那姓史密斯的父母親，要把他們連同房子一齊燒掉……」<br>    
+      <br>
+      據《大數學家》（Men of Mathematics，E·T·貝爾（E.T. Bell）著）和《數學史介紹》（An introduction to the history of mathematics，H·伊夫斯（H. Eves）著）兩書記載：「牛頓在鄉村學校開始學校教育的生活，後來被送到了格蘭瑟姆的國王中學，並成為了該校最出色的學生。在國王中學時，他寄宿在當地的藥劑師威廉·克拉克（William Clarke）家中，並在19歲前往劍橋大學求學前，與藥劑師的繼女安妮·斯托勒（Anne Storer）訂婚。之後因為牛頓專註於他的研究而使得愛情冷卻，斯托勒小姐嫁給了別人。據說牛頓對這次的戀情保有一段美好的回憶，但此後便再也沒有其他的羅曼史，牛頓也終生未娶。」一般都懷疑牛頓可能是處男。<br>     
+      <br>
+      不過據和牛頓同時代的友人威廉·斯蒂克利（William Stukeley）所著的《艾薩克·牛頓爵士生平回憶錄》（Memoirs of Sir Isaac Newton's Life）一書的描述，斯蒂克利在牛頓死後曾訪問過文森特（Vincent）夫人，也就是當年牛頓的戀人斯托勒小姐。文森特夫人的名字叫做凱瑟琳，而不是安妮，安妮是她的妹妹（參見Arthur Storer），而且夫人僅表示牛頓當年寄宿時對她只不過是「懷有情愫」的程度而已。<br>     
+      <br>
+      從12歲左右到17歲，牛頓都在國王中學學習，在該校圖書館的窗檯上還可以看見他當年的簽名。他曾從學校退學，並在1659年10月回到埃爾斯索普村，因為他再度守寡的母親想讓牛頓當一名農夫。牛頓雖然順從了母親的意思，但據牛頓的同儕後來的敘述，耕作工作讓牛頓相當不快樂。所幸國王中學的校長亨利·斯托克斯（Henry Stokes）說服了牛頓的母親，牛頓又被送回了學校以完成他的學業。他在18歲時完成了中學的學業，並得到了一份完美的畢業報告。<br>     
+      <br>
+      1661年6月，他進入了劍橋大學的三一學院。在那時，該學院的教學基於亞里士多德的學說，但牛頓更喜歡閱讀一些笛卡兒等現代哲學家以及伽利略、哥白尼和克卜勒等天文學家更先進的思想。1665年，他發現了廣義二項式定理，並開始發展一套新的數學理論，也就是後來為世人所熟知的微積分學。在1665年，牛頓獲得了學位，而大學為了預防倫敦大瘟疫而關閉了。在此後兩年裡，牛頓在家中繼續研究微積分學、光學和萬有引力定律。
+      <p align="center"><a href="#TOP">TOP</a></td>
+    <td width="50%"><img border="0" src="htmphoto/牛頓實驗桌.jpg" width="448" height="288">　</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FFFF">
+      <p align="center"><a name="中年生活">中年生活</a></td>
+  </tr>
+  <tr>
+    <td width="50%">大多數現代歷史學家都相信，牛頓與萊布尼茨獨立發展出了微積分學，併為之創造了各自獨特的符號。根據牛頓周圍的人所述，牛頓要比萊布尼茨早幾年得出他的方法，但在1693年以前他幾乎沒有發表任何內容，並直至1704年他才給出了其完整的敘述。其間，萊布尼茨已在1684年發表了他的方法的完整敘述。此外，萊布尼茨的符號和「微分法」被歐洲大陸全面地採用，在大約1820年以後，英國也採用了該方法。萊布尼茨的筆記本記錄了他的思想從初期到成熟的發展過程，而在牛頓已知的記錄中只發現了他最終的結果。牛頓聲稱他一直不願公布他的微積分學，是因為他怕被人們嘲笑。牛頓與瑞士數學家尼古拉·法西奧·德丟列（Nicolas Fatio de Duillier）的聯繫十分密切，後者一開始便被牛頓的引力定律所吸引。1691年，德丟列打算編寫一個新版本的牛頓《自然哲學的數學原理》，但從未完成它。一些研究牛頓的傳記作者認為他們之間的關係可能存在愛情的成分。不過，在1694年這兩個人之間的關係冷卻了下來。在那個時候，德丟列還與萊布尼茨交換了幾封信件。<br>     
+      <br>
+      在1699年初，皇家學會（牛頓也是其中的一員）的其他成員們指控萊布尼茨剽竊了牛頓的成果，爭論在1711年全面爆發了。牛頓所在的英國皇家學會宣布，一項調查表明了牛頓才是真正的發現者，而萊布尼茨被斥為騙子。但在後來，發現該調查評論萊布尼茨的結語是由牛頓本人書寫，因此該調查遭到了質疑。這導致了激烈的牛頓與萊布尼茨的微積分學論戰，並破壞了牛頓與萊布尼茨的生活，直到後者在1716年逝世。<br>
+      <br>
+      牛頓的一項被廣泛認可的成就是廣義二項式定理，它適用於任何冪。他發現了牛頓恆等式、牛頓法，分類了立方面曲線（兩變數的三次多項式），為有限差理論作出了重大貢獻，並首次使用了分式指數和坐標幾何學得到丟番圖方程式的解。他用對數趨近了調和級數的部分和（這是歐拉求和公式的一個先驅），並首次有把握地使用冪級數和反轉（revert）冪級數。他還發現了π的一個新公式。<br>
+      <br>
+      他在1669年被授予盧卡斯數學教授席位。在那一天以前，劍橋或牛津的所有成員都是經過任命的聖公會牧師。不過，盧卡斯教授之職的條件要求其持有者不得活躍于教堂（大概是如此可讓持有者把更多時間用於科學研究上）。牛頓認為應免除他擔任神職工作的條件，這需要查理二世的許可，後者接受了牛頓的意見。這樣避免了牛頓的宗教觀點與聖公會信仰之間的衝突。
+      <p align="center"><a href="#TOP">TOP</a></td>
+    <td width="50%"><img border="0" src="htmphoto/牛頓望遠鏡.jpg" width="454" height="397">　</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#00FFFF">
+      <p align="center"><a name="晚年生活">晚年生活</a></td>
+  </tr>
+  <tr>
+    <td width="50%">艾薩克·牛頓晚年畫像1712年。繪製于Sir James Thornhill。牛頓在1690年代寫了很多處理聖經的文字解釋的宗教小冊子。Henry More 的宇宙信仰和拒絕笛卡爾二元論影響了牛頓的宗教觀念。在他發給約翰·洛克的一個從未發表的手稿中，他爭議了三位一體的存在性。晚年著作—《The Chronology of Ancient Kingdoms Amended》(1728)和《Observations Upon the Prophecies of Daniel and the Apocalypse of St. John》(1733)—在他死後發表。他還把大量時間投入了煉金術。<br>     
+      <br>
+      牛頓在1689年到1690年和1701年還是英格蘭議會的成員，但是他唯一有記錄的議案是抱怨議會廳的寒冷氣流並要求關閉窗戶。<br>
+      <br>
+      牛頓在1696年遷移到了倫敦去作皇家鑄幣廠的監管，他必須通過了當時的財政大臣 Charles Montagu 的提攜才能得到這個職位。他主持了英格蘭最大的重鑄工作，某種程度上是步了 Master Lucas 的後塵(並保住了埃德蒙·哈雷在臨時切斯特分部的代理審計員工作)。牛頓可能是在 Lucas 于1699年死後最知名的鑄幣廠監管，他一直把持這個職位到死。這種職位一般都是閒職，但牛頓卻非常認真的對待，在從他在劍橋的職務于1701年退休之後，在改革對低成色貨幣和偽幣的流通和懲罰上鍛煉了他的能力。作為鑄幣廠監管牛頓在1717年通過安妮女王法案創立了在金幣和銀幣之間的聯繫，非正式的把英鎊錢幣從銀本位轉移到了金本位；這在當時是重大的改革，相當程度的增加英格蘭的財富和穩定。由於他在鑄幣廠的工作，而不是由於他早年對科學的貢獻，他在1705年從安妮女王那裡掙得了爵士身份。<br>     
+      <br>
+      牛頓在威斯敏斯特教堂的墓穴牛頓是在1703年成為皇家學會的會長，並是法國科學院的會員。在他在皇家學會的位置上，由於過早的出版了已經用在他的研究中的 Flamsteed 的星圖，牛頓和天文學家 John Flamsteed 成為仇敵。<br>     
+      <br>
+      牛頓在1727年3月31日[儒略曆: 1727年3月20日]死於倫敦，被安葬于威斯敏斯特教堂。他的半親外甥女 Catherine Barton Conduitt     
+      在他于倫敦哲麥街的住宅中充當他在社交事務中的女主人；依據在她從天花中康復的時候他給她的信，他是她的「深愛她的舅舅」。儘管牛頓沒有孩子，並已經剝奪了給親屬的很多財產，他實際上死時沒有遺囑。<br>
+      <br>
+      在他死後，在牛頓身體內發現了大量水銀，可能是他搞煉金術所導致的。汞中毒可能解釋牛頓晚年的怪異。
+      <p align="center"><a href="#TOP">TOP</a></td>
+    <td width="50%">　<img border="0" src="htmphoto/牛頓墓穴.jpg" width="457" height="614"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

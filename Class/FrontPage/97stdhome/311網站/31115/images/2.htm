@@ -1,0 +1,214 @@
+<html>
+
+<head>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt> </FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>");
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue += ((hours > 12) ? hours - 12 : hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+</head>
+
+<body background="back2.gif" onLoad="startclock(); timerONE=window.setTimeout" >
+
+<p align="center"><img border="0" src="title2.jpg" width="465" height="54"></p>
+
+<p align="center">　</p>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+<p><font size="2" face="華康魏碑體">中名：  
+孟加拉虎<br>
+英名： Bengal Tiger<br> 
+學名： Panthera tigris tigris&nbsp;<br> 
+分類： 哺乳綱 Class Mammalia　食肉目 Order Carnivora　貓科 Family  
+Felidae&nbsp;<br>
+保育： 瀕臨絕種保育類野生動物<br> 
+形態：  
+體色呈黃或土黃色，身上有一系列狹窄的黑色條紋，腹部呈白色，頭部條紋則較密，耳背為黑色，有白斑。<br>
+分布： 亞洲的森林、雨林、草地、沼澤。<br> 
+食性： 肉食性，以各種大、小型哺乳動物為食。</font><font face="華康魏碑體" color="#6699FF"><br> 
+</font></p>
+<p><font size="2" face="華康魏碑體">中名：  
+花豹<br>
+英名： Leopard<br> 
+學名： Panthera pardus<br> 
+分類： 哺乳綱 Class Mammalia　食肉目 Order Carnivora　貓科 Family  
+Felidae&nbsp;<br>
+保育： 瀕臨絕種保育類野生動物&nbsp;&nbsp;<br> 
+形態： 頭小、耳短、尾長約70-95公分。黃和色的身體上有許多黑色空心的斑塊。<br> 
+分布：  
+範圍廣泛，包括非洲、中東、亞洲東部、西南及南部等地的森林、草原、樹叢。<br>
+食性： 肉食性，以各種大小型哺乳動物為食。</font><font face="華康魏碑體" color="#6699FF"><br> 
+</font></p>
+<p><font face="華康魏碑體" size="2">中名：  
+白手長臂猿<br>
+英名： White-handed Gibbon<br> 
+學名： Hylobates lar<br> 
+分類： 哺乳綱 Class Mammalia　靈長目 Order Primates　長臂猿科Family  
+Hylobatidae&nbsp;<br>
+保育： 瀕臨絕種保育類野生動物<br> 
+體型： 體長44-63.5cm，體重4-8cm。<br> 
+形態：  
+全身長有濃密的毛，毛色變化很多。最大特徵為臉的周圍和手、腳呈白色。<br>
+分布：  
+泰國、馬來半島、蘇門達臘北部、緬甸及雲南邊界等地的雨林中。<br>
+食性： 雜食性，以水果、植物及昆蟲為主食。<br> 
+</font></p>
+<p><font size="2" face="華康魏碑體">中名：  
+黑豹&nbsp;<br>
+英名： Leopard<br> 
+學名： Panthera pardus<br> 
+分類： 哺乳綱 Class Mammalia<br> 
+食肉目 Order Carnivora　貓科 Family Felidae　貓科 Family Felidae&nbsp;<br> 
+保育： 瀕臨絕種保育類野生動物<br> 
+形態： 頭小、耳短、尾長約70-95公分。黃和色的身體上有許多黑色空心的斑塊。<br> 
+分布：  
+中東、印度、錫蘭、馬來半島等地的森林、草原、樹叢。<br>
+食性： 肉食性，以各種大小型哺乳動物為獵物!</font><font face="華康魏碑體"><font size="2">&nbsp;&nbsp;<br> 
+</font></font></p>
+<p><font face="華康魏碑體" size="2">中名： 馬來熊<br> 
+英名： Malayan Sun Bear<br> 
+學名： Helarctos malayanus<br> 
+分類： 哺乳綱 Class Mammalia　食肉目 Order Carnivora　熊科 Family  
+Ursidae&nbsp;<br>
+保育： 瀕臨絕種保育類野生動物<br> 
+體型： 頭至尾長110-140公分。<br> 
+形態：  
+頭大，耳小，體色呈深棕色或黑色，胸前有馬蹄形的白斑。毛短具光澤，四肢向內彎，內側及腳底無毛。<br>
+分布： 緬甸、馬來半島、蘇門達臘及婆羅洲等地。<br> 
+食性： 雜食性，包括蜂蜜、白蟻、昆蟲。</font></p> 
+<p>　</p>
+<p><font face="華康魏碑體">嬰猴（學名 Galago  
+senegalensis），也叫塞內加爾嬰猴，是一種小型的夜行靈長目動物，屬於</font><a title="嬰猴科" href="http://zh.wikipedia.org/wiki/&aring;&not;°&ccedil;?&acute;&ccedil;§?"><span style="text-decoration: none"><font face="華康魏碑體" color="#6699FF">嬰猴科</font></span></a><a title="嬰猴屬" href="http://zh.wikipedia.org/wiki/&aring;&not;°&ccedil;?&acute;&aring;±&not;"><font face="華康魏碑體" color="#6699FF"><span style="text-decoration: none">嬰猴屬</span></font></a><font face="華康魏碑體">。它們有大眼睛，強壯的後肢，長長的尾巴。以昆蟲及其他小動物、水果和樹汁為食。靈長目原猴亞目嬰猴科唯一的屬。因大多數體型很小而得名。模式種體長僅  
+11.5～17 米。其他種類體長不超過 38 釐米,尾長 15～47.5 釐米,體重  
+80～1240  
+克；外貌似松鼠；眼大；耳大，為膜質、活動時直立，休息時能像扇子一樣折疊倒伏；被毛細軟而密，無光澤，灰棕至褐色，腹面略淺淡；腿比臂大，足很長，指、趾的末端有大軟墊，適於在表面光滑的物體上爬行，具扁的指、趾甲；頸部非常靈活，能向後回轉  
+180° </font></p>
+</body>
+
+</html>

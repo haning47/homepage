@@ -1,0 +1,321 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back1.gif" onclick="dynOutline()">
+
+<p align="center"><a name="回top"><img border="0" src="images/title2.gif" width="479" height="71"></a></p>
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 
+<table border="0" width="100%">
+  <tr>
+    <td width="24%"></td>
+    <td width="76%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/item3.gif" width="15" height="15" hspace="13"></td>
+          <td valign="top" width="100%"><font face="華康仿宋體W2(P)"><b>相關名詞</b></font>
+            <!--msimagelist--><table dynamicoutline border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item4.gif" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><font face="華康仿宋體W2(P)"><b><a href="#暗物質">暗物質</a></b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item4.gif" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><font face="華康仿宋體W2(P)"><b><a href="#暗能量">暗能量</a></b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item4.gif" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><font face="華康仿宋體W2(P)"><b><a href="#「宇宙微波背景輻射」照亮全宇宙">「宇宙微波背景輻射」照亮全宇宙</a></b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/item4.gif" width="15" height="15" hspace="13"></td>
+                <td valign="top" width="100%"><font face="華康仿宋體W2(P)"><b><a href="#宇宙裡的物質及星系、星體的形成">宇宙裡的物質及星系、星體的形成</a></b></font><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="1" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><font face="華康仿宋體W2(P)"><b><a name="暗物質">暗物質</a></b></font></td>
+  </tr>
+  <tr>
+    <td width="50%">　　<font face="標楷體"><b>在宇宙學中，暗物質是指那些不發射任何光及電磁輻射的物質。人們目前只能通過引力產生的效應得知宇宙中有大量暗物質的存在。<br>
+      　　暗物質存在的最早證據來源於對球狀星系旋轉速度的觀測。現代天文學通過引力透鏡、宇宙中大尺度結構形成、微波背景輻射等研究表明：<br>
+      我們目前所認知的部分大概只佔宇宙的4％，暗物質佔了宇宙的23%，還有73%是一種導致宇宙加速膨脹的暗能量。暗物質的存在可以解決大爆炸理論中的不自洽性，對結構形成也非常關鍵。暗物質很有可能是一種（或幾種）粒子物理標準模型以外的新粒子。<br>
+      </b></font>
+      <p align="right"><a href="#回top">回top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/空間現象模仿藝術.jpg" width="308" height="314">　</p>
+      <p align="right">1.<a href="#空間現象模仿藝術">前往圖片說明</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><font face="華康仿宋體W2(P)"><b><a name="暗能量">暗能量</a></b></font></td>
+  </tr>
+  <tr>
+    <td width="50%">　　<font face="標楷體"><b>在物理宇宙學中，暗能量是一種充溢空間的、增加宇宙膨脹速度的難以察覺的能量形式。暗能量假說是當今對宇宙加速膨脹的觀測結果的最流行的解釋。在宇宙標準模型中，暗能量佔據著宇宙73%的質能。</b></font>
+      <p><font face="標楷體"><b>　　暗能量現有兩種模型：宇宙學常數（即一種均勻充滿空間的常能量密度）和純量場（即一個能量密度隨時空變化的動力學場，如第五元素和模空間）。<br>
+      　　對宇宙有恆定影響的純量場常被包含在宇宙常數中。宇宙常數在物理上等價於真空能量。在空間上變化的純量場很難從宇宙常數中分離出來，因為變化太緩慢了。對宇宙膨脹的高精度測量可以使我們對膨脹速度隨時間變化有更深入的理解。</b><br>
+      </font>
+      </p>
+      <p align="right"><a href="#回top">回top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/貓眼星雲.jpg" width="378" height="382">　</p>
+      <p align="right">2.<a href="#貓眼星雲">前往圖片說明</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><font face="華康仿宋體W2(P)"><b><a name="「宇宙微波背景輻射」照亮全宇宙">「宇宙微波背景輻射」照亮全宇宙</a></b></font></td>
+  </tr>
+  <tr>
+    <td width="50%">　　<font face="標楷體"><b>讓宇宙學真正進入蓬勃發展的時代，可以說是開始於一九九二年美國太空總署發射的COBE人造衛星。它透過接收宇宙微波背景輻射，將一百四十億年前宇宙所呈現的面貌做了一個概略的拍攝，也是首次將宇宙誕生約十萬年後的原始面貌展現在世人面前，人類也因此對宇宙誕生的樣貌有了更深入的研究並了解。</b></font>
+      <p><font face="標楷體"><b>　　為什麼我們拍到的影像是宇宙誕生約十萬年後，而非宇宙一開始的樣子呢？這是由於宇宙在誕生初期的溫度相當高，游離電子充斥整個宇宙空間，使得光線受到阻礙而到處散射，無法直線前進。等到宇宙形成後約十萬年，由於能量守恆以至於宇宙的溫度隨膨脹而逐漸降低，電子便和氫離子結合而成為電中性的氫原子，這時候光線開始能夠以直線前進，也就開始了它漫長的一百四十億年的旅程而抵達現在的地球，最後被我們利用微波望遠鏡所看見。&nbsp;<br>
+      　　至於為什麼說宇宙微波背景輻射可以幫助我們探討宇宙演化過程中的許多物理現象，進而了解整個宇宙呢？我們可以想像在漆黑的電影院裡看電影，螢幕持續發出亮光向我們照來，而假設螢幕跟我們中間有一隻蒼蠅飛過，透過光線我們就能很清楚地看見這隻蒼蠅飛過。同樣的道理，宇宙微波背景輻射就是一個距離我們一百四十億光年遠的超亮螢幕，而在它行進的一百四十億年之間，途中的大小星系、黑暗物質、黑暗能量、甚至宇宙弦、黑洞等細節，都會和宇宙微波背景輻射產生交互作用而被詳細地記錄下來，所以我們只要能夠觀測研究並分析宇宙微波背景輻射，<br>
+      便能夠對整個宇宙的一切資料有更進一步的了解。</b></font></p>
+      <p><font face="標楷體"><b>　　目前全世界的科學家們正針對美國太空總署的人造衛星WMAP所拍攝到的資料進行分析和檢驗，也如火如荼地進行其它各種大大小小的觀測計畫，相信在不久的將來我們能夠對宇宙有更深入的了解。&nbsp;</b></font></p>
+      <p align="right"><a href="#回top">回top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/恆星的生命周期%20.jpg" width="407" height="509">　</p>
+      <p align="right">3.<a href="#恆星的生命周期">前往圖片說明</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CCFFFF">
+      <p align="center"><font face="華康仿宋體W2(P)"><b><a name="宇宙裡的物質及星系、星體的形成">宇宙裡的物質及星系、星體的形成</a></b></font></td>
+  </tr>
+  <tr>
+    <td width="50%">　　<font face="標楷體"><b>根據目前的觀測資料與實驗數據我們可以得知，整個宇宙中的物質，人類可以辨識的大約只占了 5％，即所謂的重子。而 25％ 屬於黑暗物質、70％ 屬於黑暗能量，這兩者都是目前人類所不了解也從未在地球上或任何實驗中所能製造出來的物質。雖然無法得知此二者確實為何，但是透過觀測數據及宇宙模型的比對，我們可以證實這些東西確實存在於宇宙空間中，而非憑空想像或是無中生有。&nbsp;<br>      
+      　　目前我們所看到會發光的星系，皆是由重子組成的。宇宙在大爆炸之後的初期，所有的物質（包括重子在內）密度會因宇宙暴脹理論或宇宙殘陷理論而產生些微的不均勻性，經長時間在重力的作用下，物質密度較高的地方其萬有引力自然也較強，故四周的物質會逐漸被吸引，因此在「大者恆大」的效應下，最後便產生了許多的星系和星球。<br>
+      　　反觀其它密度較小的區域則因無法產生足夠引力吸引物質，而且反而被吸走，因此密度越變越小而形成了現在宇宙中的廣大太空。目前已觀測到的星系約有十萬個左右，而在未來的數年中，預期將可看到共約一百萬個。</b> 
+      <br>
+      </font>
+      <p align="right"><a href="#回top">回top</a></td>
+    <td width="50%">
+      <p align="center"><img border="0" src="htmphoto/成長的瞬間.jpg" width="405" height="402"></p>
+      <p align="right">　4.<a href="#成長的瞬間">前往圖片說明</a></p>
+    </td>
+  </tr>
+</table>
+
+<p>　</p>
+<table border="1" width="100%">
+  <tr>
+    <td width="100%">
+      <p align="center"><b><font face="標楷體"><font color="#808000">1.</font><a name="空間現象模仿藝術"><font color="#808000">空間現象模仿藝術</font></a>&nbsp;</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%"><b><font face="標楷體">哈勃空間望遠鏡拍攝的這張麒麟座V838的擴展光暈圖像與著名畫家梵高的名作《星夜》非常相像。&nbsp;</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%">
+      <p align="center"><b><font face="標楷體"><font color="#808000">2.</font><a name="貓眼星雲"><font color="#808000">貓眼星雲</font></a>&nbsp;</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%"><b><font face="標楷體">這是對正在走向死亡的恆星的動態特性和最新演化的直觀記錄，&nbsp;<br>
+      貓眼星雲距離我們3000光年，是一顆正在走向死亡的恆星向外拋射出的氣體殼層造成的。這一哈勃望遠鏡拍攝到的圖像揭示出貓眼星雲是最復雜的“行星狀星雲”之一，也正是由於它的結構十分復雜，以致科學家們甚至懷疑星雲中心的恆星可能是一雙星。行星狀星雲是天文學家專用以描述這一類死亡恆星向外拋射氣體物質形成的星雲。</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%">
+      <p align="center"><b><font face="標楷體"><font color="#808000">3.</font><a name="恆星的生命周期"><font color="#808000">恆星的生命周期</font></a>&nbsp;</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%"><b><font face="標楷體">在這張張龐大的銀河星雲NGC 3603的美麗圖片中，&nbsp;<br> 
+      哈勃望遠鏡一次性抓拍了恆星生命周期中的各個不同階段</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%">
+      <p align="center"><b><font face="標楷體"><font color="#808000">.4</font><a name="成長的瞬間"><font color="#808000">成長的瞬間</font></a>&nbsp;</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%"><b><font face="標楷體">如同戴上一個太空寶石王冠一樣，&nbsp;<br>
+      錐形星雲在麒麟星座中上升了7光年，其柱狀物注定要演化成數不清的星星，甚至可能生產一些行星 。</font></b></td>  
+  </tr>
+</table>
+
+</body>
+
+</html>

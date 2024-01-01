@@ -1,0 +1,604 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁4</title>
+</head>
+
+<body background="images/back02.jpg">
+
+<p align="center"><img border="0" src="images/title2.gif" width="461" height="57"></p>
+
+<p align="center">
+
+<script language="JavaScript"><!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 民國年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
+
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+	sm = SolarMonth - 1;
+	
+	if ( sm < 0 || sm > 11 ) return 2;
+	
+	leap = GetLeap( SolarYear );
+
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+
+	Animal = AnimalIdx[ Chih ];
+
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+		
+	l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
+        ,d[today.getDay()+1],"");
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
+
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+</script> 
+
+ 　</p>
+
+<p><span class="style4"><img border="0" src="fig053.gif" width="11" height="11"><b>崩塌災害易發生環境</b></span></p>
+<p><span class="style3">1.地質構造與岩性：</span><span class="style3">不同地質的材料強度及破碎程度各異，所能提供之土石材料也不同。</span></p>
+<p><span class="style3">2.地質破碎、表土覆蓋深度淺、 土石鬆軟</span></p> 
+<p><span class="style3">3.地震與斷層的活躍度</span></p>
+<p><span class="style3">4.人為開發 <span class="style7">(解壓、坡頂荷重、改變坡度與坡型  
+) ：</span></span><span class="style3">山區道路開闢密度高、開發過度與過於集中、墾殖河川地及緊臨溪流河床地建築房舍</span></p> 
+
+<p><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
+地滑災害易發生環境</span></strong></p>
+
+<p><span class="style3">1.順向坡</span></p>
+
+<p><span class="style3">2.薄層砂岩或砂頁岩互層 、 砂泥岩互層</span></p>
+
+<p><span class="style3">3.地質-構造與岩性</span></p>
+
+<p><span class="style3">4.坡頂高度：高程 600-700m 最多 <span class="style7">(受壓固結較不完整 
+、 強度較低 、 頂部 受地震貫力亦較大)</span></span></p>
+
+<p><span class="style3">5.坡面縱剖面以直線形為多</span></p>
+
+<p><span class="style3">6.水的影響：荷重 、潤滑</span></p>
+
+<p><span class="style3">7.人為開發： 荷重 、解壓、改變坡型</span></p>
+
+<table>
+  <tr>
+    <td colSpan="4">
+      <div align="left">
+        <strong><span class="style3"><img src="fig053.gif" width="11" height="11"> 
+        土石流災害易發生環境<a name="w6"></a></span></strong>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><span class="style3">1.</span></td>
+    <td colSpan="2"><span class="style3">有效集水面積</span></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colSpan="2">
+      <div align="center">
+        <img height="94" src="a1.jpg" width="265">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        2.
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        集水區內岩體之岩性
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colSpan="2">
+      <table cellPadding="5" width="100%" border="0">
+        <tbody>
+          <tr bgColor="#d2f1fd">
+            <td width="49%">
+              <div align="center">
+                <span class="style3">溪流所在之地質環境</span>
+              </div>
+            </td>
+            <td width="31%">
+              <div align="center">
+                <span class="style3">岩性分類</span>
+              </div>
+            </td>
+            <td width="20%">
+              <div align="center">
+                <span class="style3">評分</span>
+              </div>
+            </td>
+          </tr>
+          <tr bgColor="#d2f1fd">
+            <td>
+              <div align="center">
+                <span class="style3">片岩，板岩</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">廣域變質岩</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">W=10</span>
+              </div>
+            </td>
+          </tr>
+          <tr bgColor="#d2f1fd">
+            <td>
+              <div align="center">
+                <span class="style3">古第三紀沈積岩 ( 中新世岩層 )</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">古第三紀亞變質岩</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">W=6</span>
+              </div>
+            </td>
+          </tr>
+          <tr bgColor="#d2f1fd">
+            <td>
+              <div align="center">
+                <span class="style3">新第三紀及更新世岩層 
+                台地堆積層 ( 全新世 )</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">新第三紀沈積岩</span>
+              </div>
+            </td>
+            <td>
+              <div align="center">
+                <span class="style3">W=3</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">3.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">通過集水區內之斷層長度</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td colSpan="2">
+      <p class="style3" align="center"><strong>L &gt; 1.5&nbsp;&nbsp;&nbsp;&nbsp; 
+      W=10</strong></p>
+      <p class="style3" align="center"><strong>L=&nbsp; l ~ 1.5&nbsp;&nbsp;&nbsp;&nbsp; 
+      W=6</strong></p>
+      <p class="style3" align="center"><strong>L=0 ~ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      W=3</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">4.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">溪流上游之崩塌面積</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td colSpan="2">
+      <p class="style3" align="center"><strong>A c 0.016&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;W=30</strong></p>
+      <p class="style3" align="center"><strong>&nbsp;0.016 &gt; A c 0.0055&nbsp;&nbsp;&nbsp; 
+      W=20</strong></p>
+      <p class="style3" align="center"><strong>A c &lt; 0.0055&nbsp;&nbsp;&nbsp; 
+      W=10</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        5.
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left" style="width: 685; height: 20">
+        降雨條件：降雨強度、累積雨量、發生時刻 豪雨集中 
+        、 雨量大 、 降雨時間長
+      </div>
+    </td>
+  </tr>
+</table>
+<p>　</p>
+
+<table>
+  <tr>
+    <td colSpan="4"><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
+      台灣坡地災害案例 <a name="w7"></a></span></strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        <div align="left">
+          1.
+        </div>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          賀伯颱風的坡地災害
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          ─ 
+          降雨強度、地質條件、人為不當開發、土地超限利用
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        <div align="left">
+          2.
+        </div>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          林肯大郡之坡地災害
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          ─地質屬順向坡、離擋土牆過近、排水口性能不佳等
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        <div align="left">
+          3.
+        </div>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          七二水災的坡地災害
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          ─降雨量過大導致山洪暴發、上游過度開發
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="style3" align="left">
+        <div align="left">
+          4.
+        </div>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          艾莉颱風之坡地災害
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+      </div>
+    </td>
+    <td colSpan="2">
+      <div class="style3" align="left">
+        <div align="left">
+          ─地質屬破碎頁岩、部分道路開挖引發崩積區土方大量下滑
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+<p>　</p>
+
+<table>
+  <tr>
+    <td colSpan="4"><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
+      國外坡地災害案例 <a name="w8"></a></span></strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">1.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">日本 Okushiri Harbor 山崩→地震引發土石流</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">2.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">日本 Motchi 山崩→豪雨</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">3.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">菲律賓土石流→菲律賓中南部豪雨</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">4.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">中越邊境 - 雲南金平特大土石流滑坡→連降大暴雨</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">5.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">中國北京→罕見暴風雨土石流</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div align="left">
+        <span class="style3">6.</span>
+      </div>
+    </td>
+    <td colSpan="2">
+      <div align="left">
+        <span class="style3">美國加州土石流→暴風雨</span>
+      </div>
+    </td>
+  </tr>
+</table>
+<p>　</p>
+
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt>&nbsp;</FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>"); 
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue  += ((hours > 12) ? hours - 12 : hours)
+timeValue  += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue  += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back.gif" onLoad="startclock(); timerONE=window.setTimeout" onclick="dynOutline()" >
+
+<p align="center"><font face="華康細圓體(P)"><a name="top"></a><img border="0" src="images/title2.gif" width="441" height="53"></font></p>
+
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+<table border="0" width="100%">
+  <tr>
+    <td width="32%"></td>
+    <td width="68%">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon3.GIF" width="12" height="12" hspace="15"></td>
+          <td valign="top" width="100%"><font face="華康細圓體(P)">各國動畫史</font>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#a"><font face="華康細圓體(P)">迪士尼動畫史</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#b"><font face="華康細圓體(P)">日本動畫史</font></a><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><a href="#c"><font face="華康細圓體(P)">台灣動畫史</font></a><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%">
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CC66FF">
+      <p align="center"><font face="華康細圓體(P)"><a name="a"></a>迪士尼動畫史</font></td>
+  </tr>
+  <tr>
+    <td width="70%"><font face="華康細圓體(P)">華特迪士尼的成功可說是好萊塢影史上一大佳話，迪士尼的處女作是1923年一系列由真人和動畫共同合演的愛麗絲在卡通國黑白、無聲短片，他還製作過一系列小歡樂、小紅帽等短篇卡通，華特迪士尼早期作品還是兜售才有公司願意買來播映的。<br>
+      <br>
+      在當時有聲電影的時代剛開始，迪士尼興起把卡通拍成有聲片的念頭！因此第三部製作的米奇卡通汽船威利號就被製作成有聲卡通，本片也成為影史上第一部有聲卡通影片！首映時反應空前熱烈，米老鼠讓迪士尼首次嚐到名利雙收的滋味。<br>
+      <br>
+ 後來華特迪士尼決定開拍白雪公主，本片一上映就空前成功，片中歌曲也成為人們琅琅上口的旋律。白雪公主成功開啟動畫史新頁，從此卡通不再只是卡通，而成為動畫！<br>
+      <br>
+      第二部動畫片木偶奇遇記首次拿下奧斯卡金像獎兩項音樂大獎，在美國依然獲得不錯的票房，但是卻因為第二次世界大戰爆發使得歐洲市場頓失，本片製作的高成本讓迪士尼無法獲利。迪士尼之後推出的小飛象、小鹿斑比都在美國獲得不錯的票房。<br>
+      <br>
+ 迪士尼動畫王國黃金時代首部推出的動畫片是1950年的仙履奇緣，之後迪士尼又推出愛麗絲夢遊仙境、小飛俠；更在1955年的小姐與流氓裡，首度把動畫場景由幻想王國搬到現實都會當中。迪士尼動畫幾乎拍遍了所有童話題材，無論是以王子公主為題材的睡美人，以動物角色為題材的１０１忠狗，或是改自歷史傳奇故事的石中劍，在在顯示出迪士尼動畫取材的多元性。<br>
+      <br>
+ 在80年代晚期，小美人魚成功定出未來的走向，百老匯歌舞片因此在迪士尼動畫裡獲得重生！美女與野獸更成功與流行音樂結合，從此以後的迪士尼動畫都有流行版的主題曲，並且美女與野獸也是影史上到目前唯一被提名奧斯卡最佳影片的動畫片。在1995年還與皮克斯公司一同推出一部完全用電腦製作的電影玩具總動員，之後繼續推出的蟲蟲危機、玩具總動員2都有很好的成績。<br>
+      <br>
+ 在故事取材方面，迪士尼動畫題材走向也愈來愈多元，除了改編自神話的阿拉丁、大力士外，迪士尼並嘗試取材自歷史傳奇故事，如風中奇緣、花木蘭；或自名著取材，例鐘樓怪人、泰山；甚至也嘗試原創故事，例如獅子王、變身國王等。<br>
+      <br>
+      迪士尼更成功跨入各娛樂領域，從樂園到遊輪、從電視到網站、從冰上表演到音樂劇，其他還有專賣店、互動式遊樂場、運動球隊…等，迪士尼已經成為娛樂界的龍頭。</font>
+      <p><a href="#top"><font face="華康細圓體(P)">TOP</font></a></td>
+    <td width="30%">
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/mickey%20mouse.jpg" width="221" height="169"></font></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/snow%20white.bmp" width="230" height="159"></font></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/pinocchio.bmp" width="112" height="172">&nbsp;&nbsp;    
+      <img border="0" src="htmphoto/bambi.jpg" width="110" height="171"></font></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/alice.jpg" width="115" height="163">&nbsp;&nbsp; 
+      <img border="0" src="htmphoto/the%20little%20mermaid.jpg" width="112" height="164"></font></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/a%20bug's%20life.jpg" width="104" height="138">&nbsp; 
+      <img border="0" src="htmphoto/lion%20king.jpg" width="110" height="140"></font></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#CC99FF">
+      <p align="center"><font face="華康細圓體(P)"><a name="b"></a>日本動畫史</font></td>
+  </tr>
+  <tr>
+    <td width="70%"><font face="華康細圓體(P)">日本動畫已有七十年的歷史.    
+      其可分為六個階段:&nbsp;<br>
+      <br>
+      一、戰前草創期(1917~1945)<br>
+      這段時期的前期主要是以世界名著為題材，而後期則由於日本軍國主義猖獗，因此動畫題材不離宣傳、誇耀日本軍國主義的路線。如    
+      1942    
+      年的《海之神兵》即為此類。但是這也造成了戰鬥、爆炸畫技的進步，這也是今日日本動畫最引以為傲的技術。<br>
+      <br>
+      二、戰後探索期(1945~1947)<br>
+      日本戰敗後，有些人鑑於戰爭的教訓，開始將反戰題材用在動畫上。這種題材影響深遠，直到現在還頗為流行。另外也有些人嘗試不同的動畫題材。所以這個時期的動畫題材從很有意義到很低級的題材，應有盡有。<br>
+      <br>
+      三、題材確定期（第一次動畫熱爆發）(1974~1982)<br>
+      這個時期日本動畫界經過探索期，確定了動畫和卡通的分野。卡通不在我們的討論範圍內，所以我們不予置評。《宇宙戰艦》是日本動畫史上第一部「超級劇情片」，由松本零士負責腳本及人物設計 
+      (Character Design)    
+      。該片在電視上播出後，造成「松本零士旋風」。後來並有《宇宙戰艦》，《永遠的大和號》及《宇宙戰艦完結篇》等三部電影，壽命長達十年。在該片後，松本零士另有《銀河鐵道    
+      999 》，《一千年女王》等受歡迎的作品。    
+      繼松本零士之後，由富野由悠季原作小說改編成的《機動戰士》在    
+      1979    
+      年開始上演，由於劇情結構複雜而嚴密，受到動畫迷熱烈的支持。該片後來的三部電影亦非常賣座。但自此以後，動畫熱逐漸消退，動畫界進入間歇期。<br>
+      <br>
+      四、畫技突破期（第二次動畫熱爆發）(1982~1987)<br>
+      &nbsp;該時期由於人們追求視覺享受成為風潮，因此動畫畫技力求突破。此時期之畫技突破有《超時空要塞》創新的視點快速移動效果，造成極佳的動感；    
+      《風之谷》和《天空之城》精細寫實的背景；《機動戰士 Z    
+      》和《機動戰士Z Z    
+      》的強調反光，明暗對比等，皆對後來的動畫貢獻很大。    
+      由於題材已確定，加上畫技的突破，使得佳作迭現。如    
+      1982 到 1984 年的《超時空要塞》；1984年《風之谷》；1985，1986年《機動戰士Z    
+      GUNDAN 》及《 GUNDAM Z Z 》；1986年《天空之城》及《亞利安》等多部好片。日本動畫發展至本時期結束時（1987年），劇情、內容、畫技皆已達到極高的水準。於是動畫進入了成熟期。&nbsp;<br>   
+      <br>
+      五、路線分化期（成熟期）(1987~)<br>
+      動畫進入成熟期後，便出現數部佳片。如《古靈精怪》；電影《機動戰士   
+      GUNDAM–逆襲–》及《王立宇宙軍》；和日本電視史上第一部以高中生以上為主要對象的文藝動畫連續劇《相聚一刻》等。其中《相聚一刻》曾獲得    
+      1988    
+      年日本動畫優秀作品排行榜第二名（該年排行第一是《聖鬥士星矢》）；另外還有《天空戰記》，《機動警察》等多部佳作（《天空戰記》曾獲    
+      1989 年動畫排行第一名）。<br>   
+      <br>
+      當日本動畫發展到此後，有人認為幼年觀眾群已被忽略了四，五年，也該考慮製作低年齡路線。於是自1987    
+      年後半年以來，電視上的高年齡層動畫逐漸減少，而轉向動畫電影。以致於造成目前日本電視上找不到幾部好片，而電影則幾乎部部精采的情況。</font>
+      <p><a href="#top"><font face="華康細圓體(P)">TOP</font></a></td>
+    <td width="30%">
+      <p align="center"><img border="0" src="htmphoto/天空之城.jpg" width="210" height="300"></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/風之谷.bmp" width="96" height="132"></font></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" bgcolor="#9966FF">
+      <p align="center"><font face="華康細圓體(P)"><a name="c"></a>台灣動畫史</font></td>
+  </tr>
+  <tr>
+    <td width="70%"><font face="華康細圓體(P)">一、台灣動畫大事紀<br>
+      五十年代<br>
+      1954年　桂氏兄弟攝製首部黑白動畫短片《武松打虎》。<br>
+      <br>
+      六十年代<br>
+      1966年　趙澤修自美國引進正規卡通製作技術，先後於1968與1969年完成《石頭伯的信》、《龜兔賽跑》等動畫短片。<br>
+      <br>
+      七十年代<br>
+      1970年　趙澤修成立「澤修美術製作所」培訓動畫人才，但年底卻因趙澤修移民夏威夷而宣告解散。<br>
+      <br>
+      日本卡通發展日漸蓬勃，製作公司紛紛來台招訓動畫人員，因而奠定台灣卡通的基礎。第一家與日本合作卡通製作的是「影人卡通製作中心」（簡稱「影人」），主要為電視卡通影集加工，描述運動員王貞治的故事《巨人之星》，以及《東洋魔女排球》是當時熱門的電視卡通。鄭有立成立「中華卡通」公司，致力發展台灣卡通。<br>
+      <br>
+      1972年　「中華卡通」以王樣廣告顏料調上膠水，拍製首部16釐米卡通片《新西遊記》，但因乏人問津而無法上映。<br>
+      <br>
+      1974年　「中華卡通」得到香港南海影業公司投資拍攝《封神榜》，為本土第一部寬銀幕彩色卡通長片。<br>
+      <br>
+      1974年　趙澤修弟子黃木村成立「中國青年動畫開發公司」（簡稱「中青」），作品多為社教短片與公益廣告。<br>
+      <br>
+      1977年　「中青」攝製的《未雨綢繆》獲第十四屆金馬獎最佳卡通片，黃木村得最佳卡通編導獎。<br>
+      <br>
+      1978年　「宏廣公司」成立，負責人王中元為美國視聽碩士，因其美式管理與營運手法，加上整體加工層次較高，成為八十年代全世界出口量最大的卡通製作中心。<br>
+      <br>
+      八十年代<br>
+      1980年　「宏廣」與台灣片商合作，拍攝漫畫改編的《牛伯伯》，牛哥編劇，余為政導演。<br>
+      <br>
+      1980年　「中華卡通」製作的《三國演義》票房虧損，但獲得第十七屆金馬獎最佳卡通獎。<br>
+      <br>
+      1981年　「遠東卡通」改編王澤原著漫畫攝製的《老夫子》，入圍第十八屆金馬獎最佳動畫影片獎，是台灣唯一賣座的動畫影片。<br>
+      <br>
+      1982年　「宏廣」首部商業映演的卡通電影《小叮噹大戰機器人》上映，可惜賣座不佳。<br>
+      <br>
+      1982年　台灣第一部電視連續卡通片《小平與小安》放映，為基甸救世傳播協會投資製作，共十三集。<br>
+      <br>
+      1983年　「基甸」再攝製卡通影片《四神奇》，片長九十分鐘，由日本手塚治虫公司參與企劃設計，獲第二十屆金馬獎最佳卡通片。<br>
+      <br>
+      九十年代<br>
+      1993年　國內第一部卡通角色與真人演出的合成影片《月光少年》，由余為政負責動畫部分，為國片動畫技術創舉。<br>
+      <br>
+      1994年　「遠東公司」出品的《禪說阿寬》為首部獲國片輔導金的動畫電影，並獲得第三十一屆金馬獎評審特別獎。<br>
+      <br>
+      1998年　首部以台灣民間故事為題材的本土動畫電影《魔法阿媽》攝製完成，並獲得第一屆台北電影節商業類年度最佳影片。<br>
+      <br>
+      《魔法阿媽》入圍第三十五屆金馬獎最佳動畫片，卻因故事題材過於迷信與充滿怪力亂神之由，無法得獎。<br>
+      <br>
+      <br>
+      二、台灣動畫發展過程<br>
+      <br>
+      台灣早期的動畫文獻可說是毫無可尋的，只有早期的前輩運用口述的方式流傳下來，最早約在民國四十三、四年，桂氏兄弟製作了第一部黑白動畫電影《武松打虎》，還因資金短缺無繼而終，而轉至相關行<br>
+      業後赴香港發展。<br>
+      <br>
+      後來是師大美術系趙澤修及白景瑞、李行都與趙本行，因趙本行受光啟社保送到美國好萊鎢，後引進正規卡通製作方式與動畫器材，先後再1968與1969年完成文宣短片《石頭伯的信》與《龜兔賽跑》。<br>
+      <br>
+      其後由趙澤修於1970年創立「澤修美術製作所」，培育出王寧生、李小鏡、李超倫等人，後趙澤修移民夏威夷，因而解散，其他人也相繼出國或轉行，但其在台灣動畫發展上還是有一定貢獻。<br>
+      <br>
+      </font><a href="#top"><font face="華康細圓體(P)">TOP</font></a></td>
+    <td width="30%">
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/魔法阿媽.bmp" width="203" height="290"></font></p>
+      <p align="center"><font face="華康細圓體(P)"><img border="0" src="htmphoto/老夫子.bmp" width="196" height="258"></font></td>
+  </tr>
+</table>
+</body>
+
+</html>

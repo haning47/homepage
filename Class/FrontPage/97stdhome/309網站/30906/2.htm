@@ -1,0 +1,351 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁2</title>
+<script language="JavaScript" fptype="dynamicoutline">
+<!--
+function dynOutline() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" src="outline.js">
+</script>
+<script language="JavaScript1.2" fptype="dynamicoutline" for="document" event="onreadystatechange()">
+<!--
+initOutline()
+//-->
+</script>
+</head>
+
+<body background="images/back3.jpg" onclick="dynOutline()">
+
+<p align="center"><a name="TOP"></a><img border="0" src="images/title3.gif" width="464" height="58"></p>
+
+<p align="center">
+<script language="JavaScript"><!--
+function CalConv()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+
+ LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 1999 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 2000 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 2004 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 2008 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 2012 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 2016 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 2020 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 2024 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 2028 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+
+
+ /* 西曆年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 西曆年每月之累積日數, 平年與閏年 */
+ SolarDays = [
+  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
+  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+
+ sm = SolarMonth - 1;
+ 
+ if ( sm < 0 || sm > 11 ) return 2;
+ 
+ leap = GetLeap( SolarYear );
+
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Location = LocationIdx[kc % 4];
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ Age =Age + 3;
+
+if (Age < 10)
+  Age=Age+60;
+
+ Animal = AnimalIdx[ Chih ];
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+  
+ l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
+
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
+                
+ 
+ return 0;
+ }
+
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+
+//-->
+
+CalConv();
+
+<!--
+function OpenWin( url ) { 
+ return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
+} 
+//--></script> 　</p>
+
+<table border="0" width="100%" height="47">
+  <tr>
+    <td width="22%" height="43"></td>
+    <td width="78%" height="43">
+      <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msimagelist--><tr>
+          <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD21295_.GIF" width="15" height="13" hspace="13"></td>
+          <td valign="top" width="100%"><font face="標楷體" size="4"><b>發現液晶</b></font>
+            <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>特性描述</b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>液晶分類</b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>液晶的用途</b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>生物系統的液晶</b></font><!--msimagelist--></td>
+              </tr>
+              <!--msimagelist--><tr>
+                <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>應用產品</b></font><!--msimagelist--></td>
+              </tr>
+            <!--msimagelist--></table>
+          <!--msimagelist--></td>
+        </tr>
+      <!--msimagelist--></table>
+    </td>
+  </tr>
+</table>
+<table border="2" width="100%" height="271">
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#B48DF3">
+      <p align="center">特性描述</td>
+  </tr>
+  <tr>
+    <td width="74%" height="32"><b><i><font face="華康行書體" size="3">&nbsp;&nbsp;&nbsp;  
+      </font></i></b><font size="3" face="新細明體">液晶（Liquid Crystal，簡稱LC）是相態的一種，因為具有特殊的理化與光電特性，20世紀中葉開始被廣泛應用在輕薄型的顯示技術上。人們熟悉的物質狀態（又稱相）為氣、液、固，較為生疏的是電漿和液晶。液晶相要具有特殊形狀分子組合始會產生，它們可以流動，又擁有結晶的光學性質。液晶的定義，現在以放寬而囊括了在某一溫度範圍可以是現液晶相，在較低溫度為正常結晶之物質。而液晶的組成物質是一種有機化合物，也就是以碳為中心所構成的化合物。 同時具有兩種物質的液晶，是以分子間力量組合的，它們的特殊光學性質，又對電磁場敏感，極有實用價值。</font>  
+      <p align="right"><font face="標楷體"><a href="#TOP">TOP</a></font></td>
+    <td width="26%" height="32">
+      <p align="center"><img border="0" src="photo/生物系統的液晶2.jpg" width="205" height="137"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#F1C8FF">
+      <p align="center">液晶分類</td>
+  </tr>
+  <tr>
+    <td width="74%" height="20"><b>液晶的分類</b><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 向列相（nematic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 近晶相（smectic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 膽甾相（cholesteric）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 碟型（discotic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 熱致液晶（thermotropic LC）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 重現性液晶（recentrant LC）&nbsp;<br> 
+      <font size="2" face="標楷體">1922年，法國人弗里德（G. Friedel）仔細分析當時已知的液晶，把他們分為三類：向列型（nematic）、層列型（smectic）、膽固醇型（cholesteric）。名字的來源，前兩者分別取自希臘文線狀和清潔劑（肥皂）；膽固醇型的名字有歷史意義，如以近代分類法，它們屬於手向列型。其實弗里德對液晶一詞不贊同，他認為「中間相」才是最合適的表達。1970年代才發現的碟型（discotic）液晶，是具有高對稱性原狀分子重疊組成之向列型或柱行系統。除了型態分類外，液晶因產生之條件（狀況）不同而被分為熱致液晶（thermotropic LC）和溶致液晶（lypotropic LC），分別由加熱、加入溶劑形成液晶熱相致液晶相產生兩種情形。溶致性液晶生成的例子，是肥皂水。在高濃度時，肥皂分子呈層列性，層間是水分子。濃度稍低，組合又不同。其實一種物質可以具有多種液晶相。又有人發現，把兩種液晶混合物加熱，得到等向性液體後再冷卻，可以觀察到次第為向列型、層列型液晶。這種相變化的物質，稱為重現性液晶（recentrant LC）。 液晶分子結構。穩定液晶相是分子間的凡得瓦力。因分子集結密度高，斥力異向性影響較大，但吸引力則是維持高密度，使集體達到液晶狀態之力量，聽力和吸引力相互制衡十分重要。又如分子有極性基團時，偶極相互作用成為重要吸引力。</font>  
+      <p align="right"><font face="標楷體"><a href="#TOP">TOP</a></font></td>
+    <td width="26%" height="20">
+      <p align="center"><img border="0" src="photo/向列型液晶1.jpg" width="178" height="137"></p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center"><img border="0" src="photo/向列型液晶2.jpg" width="183" height="121"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#FFFF80">
+      <p align="center">液晶的用途</td>
+  </tr>
+  <tr>
+    <td width="74%" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 液晶分子的排列，後果之一是呈現有選擇性的光散射。因排列可以受外力影響，液晶材料製造器件潛力很大。範圍於兩片玻璃板之間的手性向列型液晶，經過一定手續處理，就可形成不同的紋理。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 類固醇型液晶，因螺旋結構而對光有選擇性反射，利用白光中的圓偏光，最簡單的是根據變色原理製成的溫度計（魚缸中常看到的溫度計）。在醫療上，皮膚癌和乳癌之偵測也可在可疑部位塗上類固醇液晶，然後與正常皮膚顯色比對（因為癌細胞代謝速度比一般細胞快，所以溫度會比一般細胞高些）。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 電場與磁場對液晶有巨大的影響力，向列型液晶相的介電性行為是各類光電應用的基礎（用液晶材料製造以外加電場操作之顯示器，在1970年代以後發展很快。因為它們有小容積、微量耗電、低操作電壓、易設計多色面版等多項優點。不過因為它們不是發光型顯示器，在暗處的清晰度、視角和環境溫度限制，都不理想。無論如何，電視和電腦的屏幕以液晶材質製造，十分有利。大型屏幕在以往受制於高電壓的需求，變壓器的體積與重量不可言喻。其實，彩色投影電視系統，亦可利用手性向列型液晶去製造如偏光面版、濾片、光電調整器。 
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="26%" height="20">
+      <p align="center"><img border="0" src="images/液晶顯示器.jpg" width="219" height="196"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="19" bgcolor="#62FF62">
+      <p align="center">生物系統的液晶</td>
+  </tr>
+  <tr>
+    <td width="74%" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+      液晶在生物體的重要性，實在難以估計。液晶性類固醇、脂肪類的化合物分佈極廣，細胞膜不能沒有這些成分，而細胞分裂也有賴具有液晶性的結構。
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="26%" height="20">
+      <p align="center"><img border="0" src="photo/生物系統的液晶.jpg" width="145" height="108"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2" height="20" bgcolor="#80C5F2">
+      <p align="center">應用產品</td>
+  </tr>
+  <tr>
+    <td width="74%" height="20">液晶顯示器&nbsp;<br>
+      薄膜電晶體液晶顯示器 
+      <p align="right"><a href="#TOP">TOP</a></td>
+    <td width="26%" height="20">
+      <p align="center"><img border="0" src="photo/液晶電視.jpg" width="134" height="99"></td>
+  </tr>
+</table>
+<script language="JavaScript">
+<!-- 
+if (document.all){
+//To add more stars simply add more colours in below array!!
+colours=new Array('#0000E1','#E6EAD5','#DDFF78','#FF2828','#C675EC','#FFD350','#B9A03A')
+
+//Alter nothing below!!
+amount=colours.length;
+YgetDelay=0,XgetDelay=0,Ydelay=0,Xdelay=0,step=0.2,currStep=0,my=0,mx=0;
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<div id="iestars" style="position:absolute;top:0px;left:0px;height:50px;width:50px;font-family:Courier New;font-size:5px;color:'+colours[i]+';padding-top:20px;text-align:center">.</div>');
+document.write('</div></div>');
+ini=1;
+gstep=1;
+function iMouse(){
+my=event.y;mx=event.x;
+}
+document.onmousemove=iMouse
+function dim(){
+ini-=gstep;
+dt=setTimeout('dim()',10);
+if (ini < 2){
+clearTimeout(dt);
+glow();
+}
+}
+function glow(){
+ini+=gstep;
+gt=setTimeout('glow()',10);
+if (ini > 14){
+clearTimeout(gt);
+dim();
+}
+}
+function stars(){
+ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=iestars[i].style; 
+ layer.filter='glow(color='+colours[i]+', strength='+ini+')';
+ layer.top= Ydelay+100*Math.sin((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10); 
+ layer.left=Xdelay+180*Math.cos((5*Math.sin((currStep-15.99)/10))+i*70)*Math.sin((currStep)/10)*Math.cos((currStep+i*25)/10);
+ }
+currStep+=step;
+}
+function delay(){
+Ydelay = YgetDelay+=(my-YgetDelay)*1/20;
+Xdelay = XgetDelay+=(mx-XgetDelay)*1/20;
+stars();
+setTimeout('delay()',10);
+}
+delay();
+glow();
+}
+//-->
+</script> 
+</body>
+
+</html>

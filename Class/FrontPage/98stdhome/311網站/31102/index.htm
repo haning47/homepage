@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>31102美食</title>
+</head>
+
+<body background="images/back0.jpg">
+
+<div align="center"><center>
+
+<table border="0">
+<tr>
+<td><font color="#000000"><script language="JavaScript"><!--
+
+var username = GetCookie('username');
+if (username == null) {
+username = prompt('歡迎您來到台灣美食網～不知如何稱呼您？',"");
+if (username == null) {
+alert('不好意思嗎？那暫時稱呼您為【小豬】好了！');
+username = '小豬';
+} else {
+pathname = location.pathname;
+myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+var largeExpDate = new Date ();
+largeExpDate.setTime(largeExpDate.getTime() + (30 * 24 * 3600 * 1000));
+SetCookie('username',username,largeExpDate,myDomain);
+}
+}
+
+function getCookieVal (offset) {
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0)
+break;
+}
+
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = (argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+// --></script><script
+language="JavaScript"><!--
+
+
+document.write('<font color=red>嗨!您好:</font><font color="blue"><strong> '+username+'</strong></font><font color="blue"> </font><font color=red><b> </b></font><b><font color=#aa44bb></b></font><font color=red><b><b></font>');
+// --></script></font></td>
+</tr>
+</table>
+</center></div> 
+
+<p align="center"><map name="FPMap0">
+<area href="31102.htm" shape="circle" coords="414, 328, 281"></map><img border="0" src="31102home.jpg" width="808" height="609" usemap="#FPMap0"></p>
+
+</body>
+
+</html>

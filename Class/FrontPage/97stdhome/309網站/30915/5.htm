@@ -1,0 +1,162 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>新網頁1</title>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+var vn="Microsoft Internet Explorer";
+var some;
+if(navigator.appName!=vn)
+some=1900;
+else
+some=0;
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+this[0] = m0;
+this[1] = m1;
+this[2] = m2;
+this[3] = m3;
+this[4] = m4;
+this[5] = m5;
+this[6] = m6;
+this[7] = m7;
+this[8] = m8;
+this[9] = m9;
+this[10] = m10;
+this[11] = m11;
+}
+function calendar()
+{
+var monthNames = "JanFebMarAprMayJunJulAugSepOctNovDec";
+var today = new Date();
+var thisDay;
+var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+year = today.getYear();
+thisDay = today.getDate();
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monthDays[1] = 29;
+nDays = monthDays[today.getMonth()];
+firstDay = today;
+firstDay.setDate(1); // works fine for most systems
+testMe = firstDay.getDate();
+if (testMe == 2) firstDay.setDate(0);
+startDay = firstDay.getDay();
+document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
+document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+var now = new Date();
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
+document.writeln("</TR><TR>");
+column = 0;
+for (i=0; i<startDay; i++)
+{
+document.writeln("\n<TD><FONT style=font-size:9pt>&nbsp;</FONT></TD>");
+column++;
+}
+for (i=1; i<=nDays; i++)
+{
+if (i == thisDay)
+{
+document.writeln('</TD><td align="CENTER" bgcolor="#FF8040"><FONT style=font-size:9pt;Color:#ffffff><B>')
+}
+else
+{
+document.writeln('</TD><TD BGCOLOR="#FFFFFF" ALIGN="CENTER"><FONT style=font-size:9pt;font-family:Arial;font-weight:bold;Color:#330066>');
+}
+document.writeln(i);
+if (i == thisDay) document.writeln("</FONT></TD>")
+column++;
+if (column == 7)
+{
+document.writeln("<TR>"); 
+column = 0;
+}
+}
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock ()
+{
+if(timerRunning)
+clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime()
+{
+var now = new Date()
+var hours = now.getHours()
+var minutes = now.getMinutes()
+var seconds = now.getSeconds()
+var timeValue = ""
+if(hours>=1 && hours <4)
+{timeValue += ("凌晨")}
+if(hours>=4 && hours<6)
+{timeValue += ("清晨")}
+if(hours>=6 && hours<9)
+{timeValue += ("早上")}
+if(hours>=9 && hours<12)
+{timeValue += ("上午")}
+if(hours>=12 && hours<13)
+{timeValue += ("中午")}
+if(hours>=13 && hours<18)
+{timeValue += ("下午")}
+if(hours>=18 && hours <19)
+{timeValue += ("傍晚")}
+if(hours>=19 && hours <24)
+{timeValue += ("晚上")}
+if(hours<1)
+{timeValue += ("午夜")}
+timeValue  += ((hours > 12) ? hours - 12 : hours)
+timeValue  += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue  += ((seconds < 10) ? ":0" : ":") + seconds
+document.clock.face.value = timeValue
+timerID = setTimeout("showtime()",1000)
+timerRunning = true
+}
+function startclock ()
+{
+stopclock();
+showtime();
+}
+</script> 
+</head>
+
+<body background="images/back5.jpg" onLoad="startclock(); timerONE=window.setTimeout" >
+
+<p align="center"><img border="0" src="images/title5.gif" width="471" height="57"></p>
+
+<p align="center">　</p>
+
+<p style="line-height: 150%"><font face="標楷體" size="3">在製作網頁的過程中，我覺得讓我開拓視野最多的就是光熱轉換的槽型系統了，對我來說這是一個很新的概念，以前對於太陽能的了解只有太陽能板，或是跟「矽」有關的東西，沒想到還可以利用熱能的收集來轉化太陽的光能，並藉此發電。看過網頁的內容也不難發現有大量的圖片都取材自國家地理頻道，沒錯，這個新的概念我正是從國家地理頻道所得知的，確實多看這種節目常會有意外的收穫。針對槽型系統，除了拋物面鏡以外，另一個主角就是集熱管了，我也用電腦自己畫了張透視圖，目的就是希望大家能更迅速地了解這東西。而由於我的主要目的是希望能讓大家對太陽能有概略性的了解，因此並沒有作太多更深入的介紹。<br>
+<br>
+我們都知道，太陽能電廠的建造成本相當高，以內華達州的電廠為例，拋物面鏡、集熱管，甚至是數噸的鋁架，都是非常高成本的材料，其所需的建造資金約為兩億六千萬美元，將近一般燃煤電廠的兩倍，但若長期來看，一般電廠會排放許多有害氣體，且發電所需的燃煤也是一大成本。相較之下，太陽能電廠不只不會排放任何廢氣，就連發電所需的原料─太陽，也是不用錢的。因此，乍看之下太陽能電廠的成本好像很高，但仔細比較後便會發現其實不然。所以我覺得那些不支持甚至是反對太陽能發展的人，其實是因為他們的眼光看得不夠遠，沒有想到後來「耗材」的花費。這就好像印表機很便宜，但墨水卻很貴一樣。</font></p>
+
+<p>　</p>
+
+<p><font face="標楷體" size="4"><br>
+<br>
+</font><font face="標楷體" size="5"><u>延伸閱讀</u></font></p>
+
+<p style="line-height: 150%; margin-top: -20"><font face="標楷體" size="4"><br>
+</font><font size="3"><font face="標楷體">在影片中其實也有提到槽型系統的替代方案，這是因為其成本實在太高了，若將拋物面鏡換成平面鏡，集熱管的合成油換成普通的水，轉換效率雖然會比較差，但成本也相對下降許多，對於普及化或是大量生產確實有很大的幫助。另外一個利用太陽能皆會碰到的問題就是「儲存」，因為我們知道除了極區有永晝現象以外，地球上大部分地區的太陽都會下山，因此若不把白天的能量儲存起來，天一黑就只能去睡覺了，因為連點個燈都成問題。在光電轉換的部分，理所當然就是做成電池來儲存電能；而光熱轉換方面，科學家也努力想出辦法來儲存熱能，且要儲存至少一個晚上之久，目前的方法是使用「熔鹽」，這是一種類似一般肥料鹽的物質，可被加熱到攝氏約六百度，且為無毒、不易燃的液體，並同時保持穩定，然而若降溫至攝氏約238度，則熔鹽便會凝固，造成集熱管阻塞等問題，因此只要保持夠高的溫度，熔鹽將是不錯的儲熱方式。</font><br>
+</font></p>
+<script LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+calendar();
+//-->
+</script> 
+<p align="center">　</p>
+
+</body>
+
+</html>
