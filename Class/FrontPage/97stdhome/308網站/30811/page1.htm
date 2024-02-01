@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=big5">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -23,7 +23,7 @@ initOutline()
 
 <p align="center"><img border="0" src="image/TITLE1.gif" width="468" height="60"><a name="top5"></a></p>
 
-<p align="center">�@
+<p align="center">　
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -73,15 +73,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ����~�C�뤧��� */
+ /* 民國年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ����~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 民國年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["��", "��", "�U", "��", "��", "��", "��", "��", "��", "��", "�s", "�D" ];
-	LocationIdx = [ "�n", "�F", "�_", "��" ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -144,18 +144,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>�P����</font>","<font color=#8000FF>�P���@</font>","<font color=#8000FF>�P���G</font>","<font color=#8000FF>�P���T</font>","<font color=#8000FF>�P���|</font>","<font color=#8000FF>�P����</font>","<font color=GREEN>�P����</font>");
-             document.write("���� <font color=#3171b7>",today.getYear()-1911,"<font color=black> �~ </font>",today.getMonth()+1,"<font color=black> �� </font>",today.getDate(),"<font color=black> �� </font>"
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>�A�� " + LunarMonth + "�� " + LunarDate + "��</span>" );
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
 
-       document.write( "<span class=d><font color=RED>��</font>" + Location + " <font color=GREEN>�R</font>" + Animal + Age + "��</span><br>" );                
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
                 
  
  return 0;
  }
 
- /* �D������~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -169,11 +169,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ����� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~���� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~���� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -190,19 +190,19 @@ CalConv();
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="image/item1.gif" width="34" height="34" hspace="4"></td>
-          <td valign="top" width="100%">�Ӷ���
+          <td valign="top" width="100%">太陽能
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="41" height="41"></td>
-                <td valign="top" width="100%"><a href="#1">�Ӷ��઺���v</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#1">太陽能的歷史</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="41" height="41"></td>
-                <td valign="top" width="100%"><a href="#2">�Ӷ��઺���_</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#2">太陽能的興起</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="41" height="41"></td>
-                <td valign="top" width="100%"><a href="#3">�Ӷ���q�����B�@</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#3">太陽能電池的運作</a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -214,55 +214,55 @@ CalConv();
 <table border="0" width="100%" height="525">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFCCCC" height="24">
-      <p align="center"><b><font color="#008000" face="�з���" size="4">�@�@�@�@</font><font color="#008000" face="�з���" size="5">�@</font><a name="1"><font face="�з���" size="5">�Ӷ��઺���v&nbsp;</font><font color="#008000" face="�з���" size="4">&nbsp; 
-      </font></a><font color="#008000" face="�з���" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+      <p align="center"><b><font color="#008000" face="標楷體" size="4">　　　　</font><font color="#008000" face="標楷體" size="5">　</font><a name="1"><font face="標楷體" size="5">太陽能的歷史&nbsp;</font><font color="#008000" face="標楷體" size="4">&nbsp; 
+      </font></a><font color="#008000" face="標楷體" size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
     </td>
   </tr>
   <tr>
     <td width="100%" height="164" colspan="2">
-      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US" style="font-size:14.0pt;font-family:�з���"><span style="mso-spacerun:yes">&nbsp;   
-      &nbsp;&nbsp;</span></span><span style="color: red"><font face="�s�ө���" size="2">�Ӷ���O�~�Ө�F�a�y�̦h���෽�A�C�~�i�J�a�y��<span lang="EN-US">10<sup>21</sup></span>�a�d�A�N����@�ɨϥί෽���G�U���A�X�G�O�������ɡB�Τ����ܪ��C</font></span><font face="�s�ө���" size="2"><span style="color: black">���M���q�K�קC�A�B����]�B�u�`�ή�Ԥ��v�T�A���䤣�a�ӥ���ìV�A���G�s��A���������A�i���O�@�ɤW���״I�B�̲z�Q���෽�C</span><span lang="EN-US" style="color: navy"><o:p>
+      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US" style="font-size:14.0pt;font-family:標楷體"><span style="mso-spacerun:yes">&nbsp;   
+      &nbsp;&nbsp;</span></span><span style="color: red"><font face="新細明體" size="2">太陽能是外來到達地球最多的能源，每年進入地球約<span lang="EN-US">10<sup>21</sup></span>仟卡，將近全世界使用能源的二萬倍，幾乎是取之不盡、用之不竭的。</font></span><font face="新細明體" size="2"><span style="color: black">雖然其能量密度低，且受日夜、季節及氣候之影響，但其不帶來任何污染，分佈廣闊，供應不絕，可說是世界上最豐富、最理想的能源。</span><span lang="EN-US" style="color: navy"><o:p>
       </o:p>
       </span></font></p>
-      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span style="mso-spacerun: yes" lang="EN-US"><font face="�s�ө���" size="2">&nbsp;      
-      &nbsp;&nbsp;</font></span><font face="�s�ө���" size="2"><span style="color: black">�H�����Ӷ��઺�Q�ΡA�w�g���X�d�~�����v�A���b�褸�e��ʦh�~�A</span><span style="color: red">��þ��Ǯa����̼w�Y���Q�Υ��ƻɬ޶����Ӷ����A�N���Fù����ĥ��</span><span style="color: navy">�C</span><span style="color: black">�y��A�J�ΤH�Q�ΤӶ���N�Ů�[�����ȡA����ѥ�ù�e��������B�ѹA�a��@���ΡC��F�Q�E�@���A�w���Q�ΤӶ���N���[�����]�𰵬��ʤO���]�T���C</span><span lang="EN-US" style="color: red">1949</span><span style="color: red">�~�A�@�ɲĤ@�y�Ӷ��l�b�k��سy�����A�i�������T�d���ʫת�����</span><span style="color: black">�C<span lang="EN-US">1955</span>�~�X��H�s���Ĥ@���Ӷ���l�����N����A�@�ѥi�s�B�G�ʤK�Q������A�Ӷ��઺�U���Q�κ��������C<span lang="EN-US"><o:p>
+      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span style="mso-spacerun: yes" lang="EN-US"><font face="新細明體" size="2">&nbsp;      
+      &nbsp;&nbsp;</font></span><font face="新細明體" size="2"><span style="color: black">人類對於太陽能的利用，已經有幾千年的歷史，早在西元前兩百多年，</span><span style="color: red">希臘科學家阿基米德即曾利用光滑銅盾集中太陽光，燒毀了羅馬的艦隊</span><span style="color: navy">。</span><span style="color: black">稍後，埃及人利用太陽能將空氣加熱膨脹，把水由尼羅河打到較高處供農地灌溉之用。到了十九世紀，已有利用太陽能將水加熱成蒸氣做為動力之蒸汽機。</span><span lang="EN-US" style="color: red">1949</span><span style="color: red">年，世界第一座太陽爐在法國建造完成，可產生攝氏三千五百度的高溫</span><span style="color: black">。<span lang="EN-US">1955</span>年俄國人製成第一部太陽能吸收式冷凍機，一天可製冰二百八十五公斤，太陽能的各項利用漸漸成型。<span lang="EN-US"><o:p>
       </o:p>
       </span></span></font></p>
-      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US"><font face="�s�ө���" size="2">&nbsp;&nbsp;&nbsp;     
+      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US"><font face="新細明體" size="2">&nbsp;&nbsp;&nbsp;     
       &nbsp;&nbsp;&nbsp;      
-      </font></span><font face="�s�ө���" size="2"><span lang="EN-US">
+      </font></span><font face="新細明體" size="2"><span lang="EN-US">
       </o:p>
       </span></font></p>
-      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US" style="color: blue"><font face="�s�ө���" size="2"><o:p>
+      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span lang="EN-US" style="color: blue"><font face="新細明體" size="2"><o:p>
       &nbsp;</o:p>
       </font></span></p>
-      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span style="color: blue"><font face="�s�ө���" size="2">�����G���夺�e���۫e�g�ٳ��෽�e���|�u�{�v�[�{�������j��<st1:PersonName
-ProductID="���ظ�" w:st="on">
-      ���ظ�</st1:PersonName>     
-      �бµo��<span lang="EN-US"><o:p>     
+      <p class="MsoNormal" style="line-height: 150%; word-spacing: 0; margin-top: 2" align="left"><span style="color: blue"><font face="新細明體" size="2">附註：本文內容取自前經濟部能源委員會工程師暨現任中央大學<st1:PersonName
+ProductID="楊建裕" w:st="on">
+      楊建裕</st1:PersonName>     
+      教授發表<span lang="EN-US"><o:p>     
       </o:p>
-      </span></font></span><font face="�s�ө���" size="2"><span style="color: blue">�ۤ�������峹</span></font></p>
-      <p class="MsoNormal"><span lang="EN-US" style="font-size: 14.0pt; font-family: �з���; color: blue"><o:p>
+      </span></font></span><font face="新細明體" size="2"><span style="color: blue">自中央日報文章</span></font></p>
+      <p class="MsoNormal"><span lang="EN-US" style="font-size: 14.0pt; font-family: 標楷體; color: blue"><o:p>
       </o:p>
       </span><a href="#top5">top</a></p>
       <p align="center">
-      <p>�@</p>
+      <p>　</p>
     </td> 
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFCC99" height="22">
-      <p align="center"><a name="2"><b><font face="�з���" size="5">�Ӷ��઺���_</font></b></a></td>
+      <p align="center"><a name="2"><b><font face="標楷體" size="5">太陽能的興起</font></b></a></td>
   </tr>
   <tr>
     <td width="100%" height="152" colspan="2">
       <div class="articlebox">
         <span class="txt15">
         <div id="ctkeywordcontent">
-          <p style="line-height: 150%; margin-top: 2">&nbsp;&nbsp;&nbsp;&nbsp;<font face="�s�ө���" size="2"><span style="color: black">��</span><font color="#FF0000">�b<span lang="EN-US">1891</span>�~�A���갨�z���a�観�H�N���Ӷ���������ӷ~��</font><span style="color: black">�A�s�����~�X��C��<span lang="EN-US">1909</span>�~�A�g�L���_����}�A�s���F�M��N���~�ۦ����Φ��G�@�˦����ݺު��c�l�A�W�ХH�������\�A���ݺޤ����s�����ݪO�H�Ǽ��C<span lang="EN-US">1920</span>�~�N�A���اΦ����Ӷ���������}�l�Q�s�x�Q�ΡA</span><font color="#FF0000">���U�F��N�Ӷ���u�~����¦</font><span style="color: black">�C</span></font></p>
-          <p style="line-height: 150%; margin-top: 2">�@<font face="�s�ө���" size="2"><font color="#FF0000">�Ӷ���q����70�~�N�෽�M����A�l�եΩ󳰦a�o�q</font>�A�d�H�~��A�Ӷ����q���D�n�o�i��a�w��P�饻�A���O�H�u�f���ʹq���γ]�ƸɶK���覡�n�����s�A�ϥ��y�����ݨD�j�T�k�ɡA<span style="color: black">�ר�u�~���i��a�A�X�w�������ͥ��ݫ~�A���Ǧa��ϥδ��βv�ƦܶW�L�ʤ����E�Q,</span>�H��30%���~���������v�����X�i�A�e���ݫN�C</font></p>
-          <p style="line-height: 150%; margin-top: 2"><font face="�s�ө���" size="2">&nbsp;&nbsp;�@�t�譱�A<font color="#FF0000">�o�������P�`�����Ͷի���o�N</font>�A���෽ĳ�D��������f�ءA�@�ɦU�ꧡ�n���������O���V���A�ͯ෽�A<font color="#FF0000">�]�P�ϤӶ����q�t�Ϊ��o�i</font>�C</font></p>
-          <p style="margin-top: 2">&nbsp;&nbsp;&nbsp;&nbsp;�@</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;�@
+          <p style="line-height: 150%; margin-top: 2">&nbsp;&nbsp;&nbsp;&nbsp;<font face="新細明體" size="2"><span style="color: black">早</span><font color="#FF0000">在<span lang="EN-US">1891</span>年，美國馬理蘭地方有人將此太陽能熱水器商業化</font><span style="color: black">，製成產品出售。至<span lang="EN-US">1909</span>年，經過不斷的改良，製成了和近代產品相似的形式：一裝有金屬管的箱子，上覆以玻璃面蓋，金屬管之間連接金屬板以傳熱。<span lang="EN-US">1920</span>年代，此種形式的太陽能熱水器開始被廣泛利用，</span><font color="#FF0000">奠下了近代太陽能工業的基礎</font><span style="color: black">。</span></font></p>
+          <p style="line-height: 150%; margin-top: 2">　<font face="新細明體" size="2"><font color="#FF0000">太陽能電池自70年代能源危機後，始試用於陸地發電</font>，千禧年後，太陽光電的主要發展國家德國與日本，分別以優惠收購電價及設備補貼等方式積極推廣，使全球市場需求大幅攀升，<span style="color: black">尤其工業先進國家，幾已成為民生必需品，有些地方使用普及率甚至超過百分之九十,</span>以約30%的年平均成長率持續擴張，前景看俏。</font></p>
+          <p style="line-height: 150%; margin-top: 2"><font face="新細明體" size="2">&nbsp;&nbsp;　另方面，<font color="#FF0000">油價高漲與節能減碳趨勢持續發燒</font>，讓能源議題持續受到矚目，世界各國均積極推動環保取向的再生能源，<font color="#FF0000">也促使太陽光電系統的發展</font>。</font></p>
+          <p style="margin-top: 2">&nbsp;&nbsp;&nbsp;&nbsp;　</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;　
         </div>
         <!--content end-->
         </span>
@@ -273,117 +273,117 @@ ProductID="���ظ�" w:st="on">
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFF99" height="22">
-      <p align="center"><a name="3"><b><font face="�з���" size="5">�Ӷ���q�����B��</font></b></a></td>
+      <p align="center"><a name="3"><b><font face="標楷體" size="5">太陽能電池的運用</font></b></a></td>
   </tr>
   <tr>
-    <td width="72%" height="117">�@
-      <p class="bold" style="line-height: 150%; margin-top: 2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman"><font face="�s�ө���" size="2">�Ӷ���q���O�p��B�@���H</font></span></p>
-      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="�s�ө���" size="2"><font color="#FF0000"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�Ӷ���q�����D�n���ƬO�b����C</span></font><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�b����i�H�ɹq�A�����̪��q���������</span>  
-      <span lang="EN-US">(</span><span style="font-family:�s�ө���;mso-ascii-font-family:  
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">�Ҧp����</span><span lang="EN-US">)    
-      </span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">�����C�b�b����u�~���`�Ϊ��b���馳���M��C<font color="#FF0000">�b���骺�q�����H�ūק��ܡA���ֶq�����l���s�b��|�復�̪��q���Ȧ��ܤj���v�T�C</font>��Ǯa�i�H�b�b���餺�[�J���P�����M�ƶq�������l</span> 
-      <span lang="EN-US">(</span><span style="font-family:�s�ө���;mso-ascii-font-family:   
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">�٬��U��</span><span lang="EN-US">)</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">�A�H����b���骺�U�دS�ʡC�H�ɹq���ʽ�ӻ��A�g�U�������i�H������ءG</span><span lang="EN-US">p-</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">�����M</span><span lang="EN-US"> 
-      n-</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
-&quot;Times New Roman&quot;">�����C��</span> <span lang="EN-US">p-</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
-&quot;Times New Roman&quot;">�����M</span><span lang="EN-US"> n-</span><span style="font-family:   
-�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">�����Q�s���b�@�_�A�Φ��ҿ�</span><span lang="EN-US"> 
-      pn </span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;   
-mso-hansi-font-family:&quot;Times New Roman&quot;">�����ɡA�@�Ӥ��b���q���K�|�b�����B���͡A�q������V�O��</span><span lang="EN-US"> 
-      n-</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;   
-mso-hansi-font-family:&quot;Times New Roman&quot;">�������V</span><span lang="EN-US"> 
-      p-</span><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
-&quot;Times New Roman&quot;">�����C</span><span lang="EN-US">pn </span><span style="font-family:   
-�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">�������S�ʬO�@���b����޳N������C</span></font></p>
-      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="�s�ө���" size="2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�嫬���Ӷ���q�������c�N�p�ϩҥܡC�@�Ӫ���</span><span lang="EN-US"> 
-      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�����B�A�Q���b�W�B�U��Ӫ��ݱ�Ĳ�h�����C�W���ݱ�Ĳ�h�O��l�����A�H�e�\���u�g��</span><span lang="EN-US">    
-      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�������W�C</span><span lang="EN-US">pn    
-      </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�������������@�h���Ϯg���h�A��C���G������������u���Ϯg�C�o�N�O�Ӷ���O�������ݰ_�ӫܷt�H����]�C</span></font></p>
-      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="�s�ө���" size="2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�����Ӯg��</span><span lang="EN-US"> 
-      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�����ɡA��q�ǻ��ܪ���l���q�l�C�����q�l�]�Ӿ֦���������q�A���}��l���ܦ��ۥѹq�l�C<font color="#FF0000">���q�l���}��l�ɡA��l���q�l����m�W�X�{�@�ӡu�Ŧ�v</font>�A�٬��u�ťޡv�C�ҿתťޡA���u�O�@�ӭ�l�ʤ֤F�@�ɹq�l�A�]������ӻ��a���q�C</span><span lang="EN-US">pn    
-      </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">���������b�q���I�O�󨺦ۥѹq�l�A�⥦����</span><span lang="EN-US"> 
-      n-</span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�������@��C���b�q���]�Ϭ۾F��l���q�l���ʡA��@��ɾF���l���q�l���u�Ŧ�v�A�]���ťޫK�n���O�V</span><span lang="EN-US">    
-      p-</span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">���������@�䲾�ʡC<font color="#FF0000">�ۥѹq�l�M�ťަV�ۤϤ�V���ʡA�⥿�q�M�t�q���}�A�b</font></span><font color="#FF0000"><span lang="EN-US">   
-      pn </span></font><span style="font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;   
-mso-hansi-font-family:&quot;Times New Roman&quot;"><font color="#FF0000">��������ݲ��͹q��t�C</font>�]���A��</span><span lang="EN-US"> 
-      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�����B�q�L�W�B�U��Ӫ��ݱ�Ĳ�h�s���ܥ~�b���q���ɡA�q���K���ѤF�@�����|�A�Ϲq�l�o�H�q�L�æb</span><span lang="EN-US">    
-      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">�������t�~�@�ݻP�ťަA�����X�C<font color="#FF0000">�q�����K���͹q�y�F�C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></font></p> 
+    <td width="72%" height="117">　
+      <p class="bold" style="line-height: 150%; margin-top: 2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman"><font face="新細明體" size="2">太陽能電池是如何運作的？</font></span></p>
+      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="新細明體" size="2"><font color="#FF0000"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">太陽能電池的主要物料是半導體。</span></font><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">半導體可以導電，但它們的電阻遠比導體</span>  
+      <span lang="EN-US">(</span><span style="font-family:新細明體;mso-ascii-font-family:  
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">例如金屬</span><span lang="EN-US">)    
+      </span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">為高。在半導體工業中常用的半導體有矽和鍺。<font color="#FF0000">半導體的電阻值隨溫度改變，極少量雜質原子的存在亦會對它們的電阻值有很大的影響。</font>科學家可以在半導體內加入不同種類和數量的雜質原子</span> 
+      <span lang="EN-US">(</span><span style="font-family:新細明體;mso-ascii-font-family:   
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">稱為摻雜</span><span lang="EN-US">)</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，以控制半導體的各種特性。以導電的性質來說，經摻雜的矽可以分為兩種：</span><span lang="EN-US">p-</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">型矽和</span><span lang="EN-US"> 
+      n-</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
+&quot;Times New Roman&quot;">型矽。當</span> <span lang="EN-US">p-</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
+&quot;Times New Roman&quot;">型矽和</span><span lang="EN-US"> n-</span><span style="font-family:   
+新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">型矽被連接在一起，形成所謂</span><span lang="EN-US"> 
+      pn </span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;   
+mso-hansi-font-family:&quot;Times New Roman&quot;">接面時，一個內在的電場便會在接面處產生，電場的方向是由</span><span lang="EN-US"> 
+      n-</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;   
+mso-hansi-font-family:&quot;Times New Roman&quot;">型矽指向</span><span lang="EN-US"> 
+      p-</span><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:   
+&quot;Times New Roman&quot;">型矽。</span><span lang="EN-US">pn </span><span style="font-family:   
+新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">接面的特性是一切半導體技術的關鍵。</span></font></p>
+      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="新細明體" size="2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">典型的太陽能電池的結構就如圖所示。一個矽的</span><span lang="EN-US"> 
+      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面處，被夾在上、下兩個金屬接觸層之間。上金屬接觸層是格子狀的，以容許光線射到</span><span lang="EN-US">    
+      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面之上。</span><span lang="EN-US">pn    
+      </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面的頂部有一層防反射薄層，減低光亮的矽表面對光線的反射。這就是太陽能板的表面看起來很暗淡的原因。</span></font></p>
+      <p class="wider" style="line-height: 150%; margin-top: 2"><font face="新細明體" size="2"><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">當光照射到</span><span lang="EN-US"> 
+      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面時，能量傳遞至矽原子的電子。部份電子因而擁有足夠的能量，離開原子而變成自由電子。<font color="#FF0000">當電子離開原子時，原子內電子的位置上出現一個「空位」</font>，稱為「空穴」。所謂空穴，其實只是一個原子缺少了一粒電子，因此整體來說帶正電。</span><span lang="EN-US">pn    
+      </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面的內在電場施力於那自由電子，把它推往</span><span lang="EN-US"> 
+      n-</span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">型矽的一邊。內在電場也使相鄰原子的電子移動，續一填補鄰近原子內電子的「空位」，因此空穴便好像是向</span><span lang="EN-US">    
+      p-</span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">型矽的那一邊移動。<font color="#FF0000">自由電子和空穴向相反方向移動，把正電和負電分開，在</font></span><font color="#FF0000"><span lang="EN-US">   
+      pn </span></font><span style="font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;   
+mso-hansi-font-family:&quot;Times New Roman&quot;"><font color="#FF0000">接面的兩端產生電位差。</font>因此，當</span><span lang="EN-US"> 
+      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面處通過上、下兩個金屬接觸層連接至外在的電路時，電路便提供了一條路徑，使電子得以通過並在</span><span lang="EN-US">    
+      pn </span><span style="mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman">接面的另外一端與空穴再次結合。<font color="#FF0000">電路中便產生電流了。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></font></p> 
       <p class="MsoNormal"><span lang="EN-US">&nbsp;<o:p>
       </o:p>  
       </span></p>
       <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
       <a href="#top5">&nbsp; top&nbsp;</a>&nbsp;&nbsp;&nbsp; </td>     
     <td width="28%" height="117">
-      <p align="left"><img border="0" src="htmphoto/�o�q��z(1).jpg" width="320" height="240"></p>
+      <p align="left"><img border="0" src="htmphoto/發電原理(1).jpg" width="320" height="240"></p>
       <p align="left"><span lang="EN-US" style="font-size:9.0pt;font-family:
-&quot;Times New Roman&quot;;mso-fareast-font-family:�s�ө���;color:#333333;mso-font-kerning:
+&quot;Times New Roman&quot;;mso-fareast-font-family:新細明體;color:#333333;mso-font-kerning:
 1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:
-AR-SA">&nbsp;</span><span style="font-size:9.0pt;font-family:�s�ө���;mso-ascii-font-family:
+AR-SA">&nbsp;</span><span style="font-size:9.0pt;font-family:新細明體;mso-ascii-font-family:
 &quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family:
 &quot;Times New Roman&quot;;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;
-mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">�Ӷ���q�����򥻵��c�C</span></p>
-      <p><img border="0" src="htmphoto/�o�q��z2.jpg" width="320" height="240"></p>
-      <p><span style="font-size:9.0pt;font-family:�s�ө���;
+mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">太陽能電池的基本結構。</span></p>
+      <p><img border="0" src="htmphoto/發電原理2.jpg" width="320" height="240"></p>
+      <p><span style="font-size:9.0pt;font-family:新細明體;
 mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
 mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;mso-font-kerning:1.0pt;
-mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">�u�ϥb���骺</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">線使半導體的</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA"> pn </span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">�������͹q�l�X�ť޹諸�@�Ӥ��C�p�y�N���q�l�A�Ӥp�}�h�N����l���q�l���u�Ŧ�v�C</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-bidi-language:AR-SA">接面產生電子—空穴對的一個比喻。小球代表電子，而小洞則代表原子中電子的「空位」。</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA">(a) </span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">�b</span><span lang="EN-US" style="font-size:9.0pt;
-font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:�s�ө���;color:#333333;
+mso-bidi-language:AR-SA">在</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:新細明體;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
 mso-bidi-language:AR-SA">pn </span><span style="font-size:9.0pt;font-family: 
-�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
 mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;mso-font-kerning:1.0pt;
-mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">�����B�A���b�q����</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">接面處，內在電場由</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA">n-</span><span style="font-size:9.0pt;
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">�������V</span><span lang="EN-US" style="font-size:9.0pt;
-font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:�s�ө���;color:#333333;
+mso-bidi-language:AR-SA">型矽指向</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:新細明體;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
 mso-bidi-language:AR-SA"> p-</span><span style="font-size:9.0pt;font-family: 
-�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
 mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;mso-font-kerning:1.0pt;
-mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">�����C</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">型矽。</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA">(b) </span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">�����Ӯg�b�����ɡA�@�ɹq�l���}�F��l�A�ò��V</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-bidi-language:AR-SA">當光照射在接面時，一粒電子離開了原子，並移向</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA"> n-</span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">�������@��C���h�F�@�ɹq�l��A��l�����@�ӱa���q���u�ťޡv�C</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-bidi-language:AR-SA">型矽那一邊。失去了一粒電子後，原子成為一個帶正電的「空穴」。</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA">(c) </span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">���b�q���Ϭ۾F��l���q�l���ʡA��@��ɾF���l���q�l���u�Ŧ�v�A�]���ťޫK�n���O�V</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
-�s�ө���;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+mso-bidi-language:AR-SA">內在電場使相鄰原子的電子移動，續一填補鄰近原子內電子的「空位」，因此空穴便好像是向</span><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+新細明體;color:#333333;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
 ZH-TW;mso-bidi-language:AR-SA"> p-</span><span style="font-size:9.0pt; 
-font-family:�s�ө���;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+font-family:新細明體;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
 &quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:#333333;
 mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
-mso-bidi-language:AR-SA">���������@�䲾�ʡC </span></td>
+mso-bidi-language:AR-SA">型矽的那一邊移動。 </span></td>
   </tr>
 </table>
 
