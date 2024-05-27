@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script LANGUAGE="JavaScript" TYPE="text/javascript">
 var vn="Microsoft Internet Explorer";
 var some;
@@ -44,17 +44,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
 document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
-var dayNames = new Array("�P����","�P���@","�P���G","�P���T","�P���|","�P����","�P����");
-var monthNames = new Array("1��","2��","3��","4��","5��","6��","7��","8��","9��","10��","11��","12��");
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#330099>" , "�褸" , " " , now.getYear() + some , "�~" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "��" , " " , dayNames[now.getDay()] , "</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">�@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -81,7 +81,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>�{�b�ɶ��G</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -99,23 +99,23 @@ var minutes = now.getMinutes()
 var seconds = now.getSeconds()
 var timeValue = ""
 if(hours>=1 && hours <4)
-{timeValue += ("���")}
+{timeValue += ("凌晨")}
 if(hours>=4 && hours<6)
-{timeValue += ("�M��")}
+{timeValue += ("清晨")}
 if(hours>=6 && hours<9)
-{timeValue += ("���W")}
+{timeValue += ("早上")}
 if(hours>=9 && hours<12)
-{timeValue += ("�W��")}
+{timeValue += ("上午")}
 if(hours>=12 && hours<13)
-{timeValue += ("����")}
+{timeValue += ("中午")}
 if(hours>=13 && hours<18)
-{timeValue += ("�U��")}
+{timeValue += ("下午")}
 if(hours>=18 && hours <19)
-{timeValue += ("�ı�")}
+{timeValue += ("傍晚")}
 if(hours>=19 && hours <24)
-{timeValue += ("�ߤW")}
+{timeValue += ("晚上")}
 if(hours<1)
-{timeValue += ("�ȩ]")}
+{timeValue += ("午夜")}
 timeValue  += ((hours > 12) ? hours - 12 : hours)
 timeValue  += ((minutes < 10) ? ":0" : ":") + minutes
 timeValue  += ((seconds < 10) ? ":0" : ":") + seconds
@@ -144,49 +144,49 @@ calendar();
 </script> 
 
 
-<p align="center">�@</p>
+<p align="center">　</p>
 
 <table border="1" cellspacing="1" width="100%" id="AutoNumber1" height="219">
   <tr>
     <td width="100%" height="71">
-    <p align="center"><font face="�з���" color="#800080">
-    <span style="font-size: 15pt">�� �R�E�{�H�@�s����� ��</span></font></p>   
-    <p align="left">�@�@�p�G�zı�o�ݥ��U���B���w���Ʀܬ����ƨg�A�O��SPP�S�q�S���i��ĳ���欰���ܡA���z�i��N�j�j�a����F�C�ڲέp�A�R�E���U���������~�ּh�H�G�Q��T�Q�����~�h�A���F�����H�A�䤤��@�N�N���F�C���C�Q���g�ʺ٬��u�R�E�v���R�E���U�����ȼs���s�@�N�w��A�N�s�u�R�E�v���ܦ���@�N�R�Ϊ��s�W���A�N���۬J�s�_�S���Ū��N��A�i���R�E�w���\�a�N���U���ĤJ�L�̪��ͬ����C</p>
-    <p align="right">������l�W... </td>
+    <p align="center"><font face="標楷體" color="#800080">
+    <span style="font-size: 15pt">§ 霹靂現象　新興文化 §</span></font></p>   
+    <p align="left">　　如果您覺得看布袋戲、喜歡它甚至為它瘋狂，是件SPP又聳又不可思議的行為的話，那您可能就大大地落伍了。據統計，霹靂布袋戲的收視年齡層以二十到三十五歲居多，佔了６５％，其中Ｘ世代就佔了七成。被戲迷暱稱為「霹靂」的霹靂布袋戲不僅廣受新世代歡迎，就連「霹靂」都變成Ｘ世代愛用的新名詞，意味著既新奇又炫酷的意思，可見霹靂已成功地將布袋戲融入他們的生活中。</p>
+    <p align="right">文／朱苾舲... </td>
   </tr>
   <tr>
     <td width="100%" height="69">
-    <p align="center"><font face="�з���" style="font-size: 15pt" color="#800080">��  
-    ���g��q��H ��</font></p> 
+    <p align="center"><font face="標楷體" style="font-size: 15pt" color="#800080">§  
+    戲迷能量驚人 §</font></p> 
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-    �����R�E�g�j�T�~���ơA�R�E���q���v�a�A�@���N�L���u�q���B�����B�������x�A�Ʀܤ���¾�ΡB�Y���u�s�D�x���۰ʧ�W���Ӫg�R�E��;�Ӭ������U�����ݲ��~�A�p�G�R�E�|�Z�B���O���]�ѡ^�B�ᴩ�|�B�M�橱�B�R�E�����B�R�E���J�P�B�R�E�q���n��K�K���@���ѥ��C��O�A�@�ӱM���ݩ�u�R�E���U���v���R�E���©�j���͡A�ѥx�W���U���@�a�w������a�ĤT�N�Ҹg�窺�R�E���¡A���Ȧ��\�a���}�~���H�����A�ٴ¦V�h���Ƶo�i�C�����a�j�x�g���R�E���U�����ʤO�A���F�Ӧ۹塞�U�����@�������P�ϩR�~�A�R�Efans�����۾��@�B�o�N�R����O����R�E���ª��u�u�ʤO�ӷ��C 
+    不僅霹靂迷大幅年輕化，霹靂熱從錄影帶，一路燒過有線電視、網路、報章雜誌，甚至中華職棒、某有線新聞台都自動找上門來沾霹靂光;而相關的各式附屬產品，如：霹靂會刊、筆記本（書）、後援會、專賣店、霹靂戲偶、霹靂撲克牌、霹靂電玩軟體……等一應俱全。於是，一個專門屬於「霹靂布袋戲」的霹靂王朝於焉產生，由台灣布袋戲世家─虎尾黃家第三代所經營的霹靂王朝，不僅成功地打開年輕人市場，還朝向多元化發展。讓黃家大膽經營霹靂布袋戲的動力，除了來自對布袋戲的一片熱情與使命外，霹靂fans的熱誠擁護、發燒愛戴更是支持霹靂王朝的滾滾動力來源。 
     <br>
     <br>
-    �@�@�R�Efans���ȳ]�ߺ�����ѽͽ��R�E�A�٩I�B�ަ񬰤ߥؤ����R�E�^�����߱M�ݫᴩ�|�A�����ٯu�B�@���ѡB���p�����@�ŷ����x�W���֦��U�۪��ᴩ�|�A�s�Ϭ����C���l�]���I��ӴX�U���R�߷R�����^�a��O�\�h�H�����@�A�Ϊ̰��ܨӭӡu�H�������v�B�u�H�����R�E�@�������A�u�H�u�ð��v�����G�A�ϩ����H��ı�����u���u�{������v�O�I�٦��H�����F�ߤ��^���Q�s�@�禺�A���_���ݹy���ݧ�ĳ�K�K�C�o�ǥu�O�O�H�Ĭ��[���R�E�{�H���B�s�@���A�غذT�����L�����R�E��b�������A�{�b���Ȧb�����q�������N��F�A�Ʀ��٭n�n�W��a���@�|�t�X�A�٭n��H�a��q�v�A�ᱼ�W�����g�O���u�R�E�^���]���t�۶ǻ��v�A���N�O�Ĥ@�����U���q�v�A�u�����r�٦h�֪��t����C</p>
-    <p>�@</td>
+    　　霹靂fans不僅設立網站整天談論霹靂，還呼朋引伴為心目中的霹靂英雄成立專屬後援會，像素還真、一頁書、葉小釵等一級當紅台柱都擁有各自的後援會，連反派的青陽子也有！花個幾萬塊買心愛偶像回家更是許多人的心願，或者乾脆來個「人扮戲偶」、真人巧扮霹靂劇中戲偶，「以真亂假」的結果，彷彿讓人錯覺戲偶真的「現身江湖」呢！還有人受不了心中英雄被編劇賜死，不斷捶胸頓足兼抗議……。這些只是令人嘆為觀止霹靂現象的冰山一角，種種訊息不過說明霹靂實在有夠紅，現在不僅在網路電視紅紅就算了，甚至還要登上國家戲劇院演出，還要跟人家拍電影，花掉上億元經費的「霹靂英雄榜之聖石傳說」，那將是第一部布袋戲電影，真不知羨煞多少表演團體。</p>
+    <p>　</td>
   </tr>
   <tr>
     <td width="100%" height="307">
-    <p align="center"><font face="�з���" style="font-size: 15pt" color="#800080">��  
-    �R�E���¡B�����q�Y ��</font></p> 
+    <p align="center"><font face="標楷體" style="font-size: 15pt" color="#800080">§  
+    霹靂王朝、戲說從頭 §</font></p> 
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-    �R�E���U�����U�_������F��H���A���j�ػP����ܳo��b�ʮ�P�M�����ɪ��S���ɡA�@�Ӥ߫�ӱK�B�ǴI����N�t�d�����P�s�@���w�Ʃy�A�t�@�Ӿժ����U���̭��n���f�յ��ǡA�H�@�H�t�W�Ҧ��������ǥաA�o�O�x�����믫��O�a�V�C����ܻ��G�u�o�O���ˡ]���T���^�Ʊ�Y�K�O�����H�]��a�ǥչF��ť�����ĪG�K�K�̰����g�t�W�@�����̪��G�Q�X�Ө���C�v�q�p�N�ͪ��b���U���@�a����S�̡A�ۤp�Y����جV�a�����غإ��U�����ȳ��C�����O�������W�����w�����U���Щl�H�B�P���ѸL���W�����_�Ŧ����v�������F���˫h�O�F�ʦ���B��ʸU�Ъ��q�����U���Ф����T���C�������a���ĤT�N�ǤH�A���j�ػP����ܨèS���Ӧh����L��ܡA���M�~���ɤ]�ܷQ�A�ӷd�ֹΡA�i�O�רs���U���٬O��ܤF�L�G�H�C�M�ӡA�L�̨ä����u�ۤ��ͦ��L���ǲΥ��U���A���ۮɦ��ɵL�����x���t�X�A�۹�a�L���H�ۮɥN�ֳt������A�n���a�}�Х��U�����K�ѡA�N�o�˳гy�F�R�E���U���C<br>
+    霹靂布袋戲的崛起有兩個靈魂人物，黃強華與黃文擇這對在性格與專長互補的兄弟檔，一個心思細密、饒富文采就負責企劃與編劇統籌事宜，另一個擅長布袋戲最重要的口白絕學，以一人配上所有戲偶的旁白，這是掌中戲精神亦是家訓。黃文擇說：「這是父親（黃俊雄）希望即便是盲眼人也能靠旁白達到聽戲的效果……最高曾經配上一齣戲裡的二十幾個角色。」從小就生長在布袋戲世家約兩兄弟，自小即耳濡目染地接受種種布袋戲的薰陶。阿公是鼎鼎有名約五洲派布袋戲創始人、與李天碌齊名的國寶級老藝師黃海岱；父親則是轟動江湖、驚動萬教的電視布袋戲教父黃俊雄。身為黃家的第三代傳人，黃強華與黃文擇並沒有太多的其他選擇，雖然年輕時也很想耍帥搞樂團，可是終究布袋戲還是選擇了他二人。然而，他們並不墨守著日趨式微的傳統布袋戲，等著時有時無的野台戲演出，相對地他們隨著時代快速的轉輪，積極地開創布袋戲的春天，就這樣創造了霹靂布袋戲。<br>
     <br>
-    �@�@�p�G�{�u��_�R�E���U�������Y�A�i�l���ܤ@�E�K�|�~���T���o�檺�Ĥ@�M���v�a�]�R�E���^�}�l�A�쥻���T�����q�����U���]���g���M�T�x�A�l�y�h���ūe�������O���C�ñ����F�v�A��B�¥խ��g���u���v�����P�A���O����s�D���T�Q�������u��t�X�������Z�������T�O�v�T�]�o�Z���s�H�ۼo�Z�\�^�A�ϱo���T�����q�����U�����������U�h�A��ӴN�令�o����v�a�A�a�ۤ��~�ڸs�v�A��g�������A�٫j�j�V�o�U�h�C�������M�鵹��@�@�I�I�A���b���j�ر���ᱡ�մN�C�C���[�F�A�[�֪��`���P�����{�{�������k�A�[�W�K��{�ꪺ�@���Υ�����H����աA���ޤH�f�ءC<br>
-    �@</td>
+    　　如果認真算起霹靂布袋戲的源頭，可追溯至一九八四年黃俊雄發行的第一套錄影帶（霹靂城）開始，原本黃俊雄的電視布袋戲也曾經紅遍三台，締造多項空前的收視記錄。並捧紅了史艷文、黑白郎君等「偶」像明星，但是受到新聞局三十分鐘內只能演出五分鐘武打戲的禁令影響（這豈不叫人自廢武功），使得黃俊雄的電視布袋戲漸漸做不下去，後來就改成發行錄影帶，靠著中年族群史艷文迷的捧場，還勉強混得下去。早期雖然輸給港劇一點點，但在黃強華接手後情勢就慢慢改觀了，加快的節奏與金光閃閃的拍攝手法，加上貼近現實的劇情及平易近人的對白，漸引人矚目。<br>
+    　</td>
   </tr>
   <tr>
     <td width="100%" height="28">
-    <p align="center"><font face="�з���" style="font-size: 15pt" color="#800080">��  
-    �X�_��Ӫ��R�E���\�@���Ѫ��s�x���� �� </font></p> 
+    <p align="center"><font face="標楷體" style="font-size: 15pt" color="#800080">§  
+    出奇制勝的霹靂神功　知識的廣泛應用 § </font></p> 
     <p align="left"><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-    ���X��ɦ��@�䥬�U�����\�a���D��y��T�֥D�y���A���Y�R�E���U���C�b�~���Ƥj�v�J�I�A�����W�R���ۥ~�Ӥ��v�����~�άy��ƪ������ӡA�R�E���U���X�G���ߤ@��P���ܿŪ����g�y���ơA�u�R�E�v�G�r�w���J�s�_�A�S���Ū��N�W���C<br>
+    曾幾何時有一支布袋戲成功地活躍於流行娛樂主流中，此即霹靂布袋戲。在外國文化大肆入侵，市面上充斥著外來之影音產品及流行事物的當而，霹靂布袋戲幾乎為唯一能與之抗衡的本土流行文化，「霹靂」二字已成既新奇，又炫酷的代名詞。<br>
     <br>
-    �@�@�R�E���U�����إH�g���v�B�ϱѬ��Ӫ��g��A���L���Ѹg�٤��W�A�o�O���Ѹg�٪��̨μg�ӡA��ȱo�@���Ҫp��~�B�E�ݿѨD�X�����ꤺ�A�~������C��Ӧb�C�Q�~�N���U���h�X�L�u�q����A�R�E���U���Ʒ~���F��H���������A���~�䯪���Τ��˨�N�Ұ��i���[���s�A�̵۳o���[���s��󤭡B���Q�~�N���U�����骺�@�P�O�СA�A�t�X���ɭ迳�_���X�����v�a�~���@��P�q���A���i��o�i�������A���L���̳o�Ǩä����H�Φ����骺�R�E���~���¡A�䶡�̥D�n������O����Ѫ��s�x���ΡC<br>
+    　　霹靂布袋戲此種以土擊洋、反敗為勝的經驗，雖無知識經濟之名，卻是知識經濟的最佳寫照，實值得作為境況日窘、亟需謀求出路之國內農業的借鏡。原來在七十年代布袋戲退出無線電視後，霹靂布袋戲事業的靈魂人物黃氏昆仲，承繼其祖父及父親兩代所培養的觀眾群，憑著這些觀眾群對於五、六十年代布袋戲風潮的共同記憶，再配合當時剛興起的出租錄影帶業此一行銷通路，滋養其發展的契機，不過光憑這些並不足以形成今日的霹靂企業王朝，其間最主要的關鍵是對於知識的廣泛應用。<br>
     <br>
-    �@�@�R�E���U����@���W�A�N�I���F���Q���z���D�B���B���иq�H�`�J�L�X���覡�A��Ʀ���@���@�ɪ��h���[�c�A�äޥΪF��S�����Z�L�����A�Ч@�X�@�����ޤH�J�ӡB���}���઺�G�ơF���դW�A�z�L�K����e���|���y�J�A���쥴롡A���ꪺ�����{�ɪ����|���ҡB���|�߲z�Ϊ��|���ΡA�޵o�@��F�����@�S�ʤW�A�R���B�ΰ�����ɪůS��A��y�X�����ɪšB��סB�H�ʪ����@�i�O�F��@���H���W�A�s�c�X�@�ӭӲ`��N���ʪ��H���嫬�A�]�A�ФF�ǲΥ��Ϭ����G���k�A�a�X�\�h�����a���B�����������H���A�гy�@�ӭӵ��������F��s�@�W�A���V�M�~�Τ��u���u�~�ƥͲ��Ҧ��A���س]�M����v�סB���֤u�@�ǡB�ʵe�u�@�ǵ��A�R�����μv���޳N�μv�������k�F���P�q���W�A�t�X���v�a�]VCD�BDVD�^�X���~�B���u�q���B���ں����B�X���~�B�q�v�~�ιq���~�����o�i�A�H�ɥ��J�i�Ϊ���P�q���δC��C��Y�A�R�E���U�����F�����F�u�N�����M�b��W�ާ@�v�Ρu�ѳ�H�t���v����ӲŦX���U���w�q���S�ʥ~�A��l�������O�j�q�B�����@�������ѡB�ǲΤ�ƪ��ѡB�{�N��ު��Ѥΰӷ~�g�窾�ѡA���׬����Ѹg�٪���{�C</p>
-    <p>�@</td>
+    　　霹靂布袋戲於劇情上，將富有東方思想哲理的道、儒、釋教義以深入淺出的方式，轉化成其劇中世界的層次架構，並引用東方特有的武俠情景，創作出一部部引人入勝、欲罷不能的故事；於對白上，透過貼近當前社會的語彙，插科打諢，忠實的反應現時的社會環境、社會心理及社會情形，引發共鳴；於戲劇特性上，充分運用偶戲跨時空特色，營造出不分時空、國度、人性的戲劇張力；於劇中人物上，編構出一個個深具代表性的人物典型，也顛覆了傳統正反派約二分法，帶出許多正中帶邪、邪中有正的人物，創造一個個虛擬偶像；於製作上，走向專業及分工的工業化生產模式，投資建設專屬攝影棚、音樂工作室、動畫工作室等，充分應用影音技術及影片拍攝手法；於行銷通路上，配合錄影帶（VCD、DVD）出租業、有線電視、網際網路、出版業、電影業及電玩業等的發展，隨時打入可用的行銷通路及媒體。亦即，霹靂布袋戲除了維持了「將戲偶套在手上操作」及「由單人配音」此兩個符合布袋戲定義的特性外，其餘部分均是大量運用戲劇本身知識、傳統文化知識、現代科技知識及商業經營知識，不啻為知識經濟的體現。</p>
+    <p>　</td>
   </tr>
 </table>
 
