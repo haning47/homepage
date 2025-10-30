@@ -1,182 +1,130 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>從網址下載頁面上連結檔案（GitHub Pages 可用）</title>
-  <style>
-    body{font-family:system-ui,-apple-system,'Noto Sans TC','微軟正黑體',Arial;margin:24px;max-width:980px}
-    input,button,select{font-size:14px;padding:6px}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-    .links{margin-top:12px}
-    .link-row{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px solid #eee}
-    .filename{min-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .hint{color:#666;margin-top:8px}
-  </style>
-</head>
-<body>
-  <h1>從網址下載頁面上連結檔案</h1>
-  <p>貼入想抓取的網頁網址，程式會列出該頁面的超連結，您可以勾選要下載的項目，下載時檔名會以超連結文字為主，副檔名保留來源的副檔名。</p>
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+from google.colab import files
+import time
+import os
+import re
 
-  <div class="controls">
-    <input id="url" placeholder="輸入完整網址，例如：https://example.com/page.html" style="min-width:420px" />
-    <input id="proxy" placeholder="CORS proxy（可選）例如：https://cors-anywhere.herokuapp.com/" style="min-width:360px" />
-    <button id="fetchBtn">抓取連結</button>
-    <button id="downloadSelected" disabled>下載勾選項目</button>
-  </div>
+# -----------------
+# 1. 讓使用者輸入目標網址
+# -----------------
+print("----------------------------------------")
+print("歡迎使用檔案下載工具！")
+print("----------------------------------------")
 
-  <div class="hint">提示：若目標站點不允許跨域 (CORS)，請在上方填入您信任的 CORS proxy 或自行佈署一個小型 proxy。</div>
+# 使用 input() 讓使用者在 Colab 儲存格下方輸入網址
+base_url = input("請輸入您想要下載檔案的網頁完整 URL (網址)：")
 
-  <div id="status"></div>
-  <div id="links" class="links"></div>
+if not base_url:
+    print("錯誤：未輸入網址。程式終止。")
+    exit()
 
-  <script>
-    const $ = sel => document.querySelector(sel);
-    const urlInput = $('#url');
-    const proxyInput = $('#proxy');
-    const fetchBtn = $('#fetchBtn');
-    const linksDiv = $('#links');
-    const status = $('#status');
-    const downloadSelected = $('#downloadSelected');
+# 確保網址格式正確
+if not base_url.startswith('http'):
+    base_url = 'https://' + base_url
 
-    function sanitizeFilename(name){
-      // 移除 filesystem 不允許的字元並截短
-      return name.replace(/[\\/:*?"<>|\n\r\t]+/g, ' ').trim().slice(0,200) || 'download';
-    }
+# 定義要下載的常見檔案副檔名
+FILE_EXTENSIONS = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.zip', '.rar', '.7z']
 
-    function getExtensionFromUrl(href){
-      try{
-        const u = new URL(href, location.href);
-        const pathname = u.pathname;
-        const idx = pathname.lastIndexOf('.');
-        if(idx === -1) return '';
-        return pathname.slice(idx); // 含 "." 的副檔名
-      }catch(e){
-        // 相對路徑或其他非標準格式
-        const match = href.match(/\.([a-zA-Z0-9]{1,6})(?:[?#]|$)/);
-        return match ? ('.'+match[1]) : '';
-      }
-    }
+# 儲存 (檔名, 連結) 的字典
+download_items = {} 
 
-    async function fetchHtml(target, proxy){
-      const fetchUrl = proxy ? (proxy.replace(/\/$/,'') + '/' + target) : target;
-      const res = await fetch(fetchUrl, {mode:'cors'});
-      if(!res.ok) throw new Error('無法取得：' + res.status + ' ' + res.statusText);
-      return await res.text();
-    }
+print(f"開始掃描網頁：{base_url}")
 
-    function parseLinks(html, baseUrl){
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const anchors = Array.from(doc.querySelectorAll('a'));
-      const items = anchors.map(a => {
-        const href = a.getAttribute('href') || '';
-        const text = (a.textContent || a.getAttribute('aria-label') || '').trim();
-        return {href, text};
-      }).filter(x => x.href && x.href.trim() !== '#' && !x.href.startsWith('javascript:'));
+# -----------------
+# 2. 爬取網頁內容並解析連結和文字
+# -----------------
+try:
+    # 設置標頭模擬瀏覽器
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(base_url, headers=headers, timeout=15)
+    response.raise_for_status() # 檢查 HTTP 請求是否成功
+except requests.exceptions.RequestException as e:
+    print(f"無法取得網頁內容，請檢查網址或網路連線。錯誤：{e}")
+    exit()
 
-      // resolve relative URLs
-      return items.map(x => {
-        try{
-          const resolved = new URL(x.href, baseUrl).href;
-          return {...x, resolved};
-        }catch(e){
-          return {...x, resolved: x.href};
-        }
-      });
-    }
+soup = BeautifulSoup(response.text, 'html.parser')
 
-    function renderList(items){
-      linksDiv.innerHTML = '';
-      if(items.length === 0){ linksDiv.textContent = '未找到任何有效超連結。'; downloadSelected.disabled = true; return; }
-      const frag = document.createDocumentFragment();
-      items.forEach((it, idx) => {
-        const row = document.createElement('div'); row.className = 'link-row';
-        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.dataset.idx = idx;
-        const nameSpan = document.createElement('div'); nameSpan.className = 'filename';
-        const displayName = it.text || urlFilenameFallback(it.resolved);
-        nameSpan.textContent = displayName + '  (' + it.resolved + ')';
-        const ext = getExtensionFromUrl(it.resolved) || '';
-        const extSpan = document.createElement('div'); extSpan.textContent = ext || '（無副檔名）';
-        extSpan.style.marginLeft = '8px';
-        row.append(cb, nameSpan, extSpan);
-        frag.appendChild(row);
-      });
-      linksDiv.appendChild(frag);
-      downloadSelected.disabled = false;
-    }
+# 尋找所有超連結
+all_links = soup.find_all('a', href=True)
 
-    function urlFilenameFallback(href){
-      try{
-        const u = new URL(href);
-        const seg = u.pathname.split('/').filter(Boolean).pop();
-        return seg || u.hostname;
-      }catch(e){
-        return href.slice(0,40);
-      }
-    }
+# 定義一個函數來清理檔名，移除非法字元
+def sanitize_filename(text):
+    # 移除 Windows/Linux 不允許的字元
+    cleaned = re.sub(r'[\\/:*?"<>|]', '_', text)
+    # 移除開頭或結尾的空白
+    return cleaned.strip()
 
-    async function downloadResource(item, filename){
-      status.textContent = '下載：' + filename;
-      const proxy = proxyInput.value.trim();
-      const fetchUrl = proxy ? (proxy.replace(/\/$/,'') + '/' + item.resolved) : item.resolved;
-      const resp = await fetch(fetchUrl);
-      if(!resp.ok) throw new Error('取得檔案失敗：' + resp.status);
-      const blob = await resp.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(()=> URL.revokeObjectURL(url), 5000);
-    }
+for link in all_links:
+    href = link['href']
+    link_text = link.get_text(strip=True) # 獲取超連結的文字內容
 
-    fetchBtn.addEventListener('click', async ()=>{
-      const target = urlInput.value.trim();
-      const proxy = proxyInput.value.trim();
-      if(!target){ alert('請輸入網址'); return; }
-      status.textContent = '抓取中...';
-      linksDiv.innerHTML = '';
-      try{
-        const html = await fetchHtml(target, proxy);
-        const items = parseLinks(html, target);
-        renderList(items);
-        // store items for later download
-        window._scrapedItems = items;
-        status.textContent = '已抓到 ' + items.length + ' 個超連結。勾選後按「下載勾選項目」。';
-      }catch(err){
-        status.textContent = '錯誤：' + err.message + '\n提示：若出現跨域 (CORS) 錯誤，請填入可用的 CORS proxy（或在 server 端架設 proxy）。';
-        console.error(err);
-      }
-    });
+    # 檢查連結是否指向特定的檔案類型
+    for ext in FILE_EXTENSIONS:
+        if href.lower().endswith(ext):
+            absolute_url = urljoin(base_url, href)
+            
+            # A. 取得副檔名
+            file_extension = ext
+            
+            # B. 建立新檔名：清理後的連結文字 + 副檔名
+            base_name = sanitize_filename(link_text)
+            
+            # 如果連結文字太短或不適合，可以使用 URL 中提取的檔名作為備用
+            if not base_name or len(base_name) < 3:
+                 url_filename = absolute_url.split('/')[-1].split('?')[0]
+                 base_name = sanitize_filename(os.path.splitext(url_filename)[0])
+                 
+            new_filename = f"{base_name}{file_extension}"
 
-    downloadSelected.addEventListener('click', async ()=>{
-      const checks = Array.from(linksDiv.querySelectorAll('input[type=checkbox]'));
-      const checked = checks.filter(cb=>cb.checked).map(cb=> window._scrapedItems[parseInt(cb.dataset.idx,10)]);
-      if(!checked.length){ alert('請先勾選要下載的項目'); return; }
-      downloadSelected.disabled = true;
-      try{
-        for(const it of checked){
-          const ext = getExtensionFromUrl(it.resolved) || '';
-          const rawName = it.text || urlFilenameFallback(it.resolved);
-          const name = sanitizeFilename(rawName) + ext;
-          try{
-            await downloadResource(it, name);
-            // 小延遲避免 browsers 合併下載事件
-            await new Promise(r=>setTimeout(r, 300));
-          }catch(e){
-            console.warn('下載失敗：', it.resolved, e);
-            // 顯示但繼續下一個
-            status.textContent = '下載失敗（已跳過）: ' + it.resolved;
-          }
-        }
-        status.textContent = '全部作業結束。';
-      }finally{
-        downloadSelected.disabled = false;
-      }
-    });
+            # 確保檔名是唯一的 (如果有多個連結文字相同的檔案)
+            count = 1
+            final_filename = new_filename
+            while final_filename in download_items:
+                final_filename = f"{base_name}_{count}{file_extension}"
+                count += 1
+                
+            download_items[final_filename] = absolute_url
+            break
 
-  </script>
-</body>
-</html>
+# -----------------
+# 3. 下載檔案到 Colab 並傳輸到本地端
+# -----------------
+
+if not download_items:
+    print("在此網頁中沒有找到可供下載的常見檔案連結。")
+else:
+    total_files = len(download_items)
+    print(f"----------------------------------------")
+    print(f"總共找到 {total_files} 個檔案連結，開始下載...")
+    print(f"----------------------------------------")
+
+    for i, (filename, file_url) in enumerate(download_items.items()):
+        
+        print(f"\n[{i+1}/{total_files}] 檔案名稱：{filename}")
+        print(f"   -> 原始連結：{file_url}")
+        
+        try:
+            # A. 下載檔案到 Colab 暫存空間
+            file_response = requests.get(file_url, stream=True, timeout=30, headers=headers)
+            file_response.raise_for_status()
+
+            print(f"   -> 下載中... (大小: {len(file_response.content) / 1024:.2f} KB)")
+            with open(filename, 'wb') as f:
+                f.write(file_response.content) 
+
+            # B. 透過瀏覽器將檔案傳輸到您的本地電腦
+            print(f"   -> 傳輸到本地電腦的預設下載資料夾...")
+            files.download(filename)
+            
+            # 由於瀏覽器需要時間處理下載，延遲 2 秒確保下載指令送出
+            time.sleep(2) 
+            
+        except Exception as e:
+            print(f"   -> 下載或傳輸 {filename} 時發生錯誤: {e}")
+
+    print("\n========================================")
+    print("🎉 所有檔案下載程序已發送完成！")
+    print("請檢查您的瀏覽器下載佇列或本地電腦的預設下載資料夾。")
+    print("========================================")
