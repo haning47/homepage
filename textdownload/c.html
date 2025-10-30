@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>批次下載網頁檔案</title>
+<title>📥 批次下載網頁檔案</title>
 <style>
 body {
   font-family: "Noto Sans TC", sans-serif;
@@ -13,9 +13,20 @@ body {
   text-align: center;
 }
 input, button {
-  padding: 10px;
+  padding: 10px 16px;
   font-size: 16px;
   margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button {
+  background-color: #0a5c44;
+  color: white;
+  transition: background 0.2s;
+}
+button:hover {
+  background-color: #0c7357;
 }
 #log {
   margin-top: 20px;
@@ -28,20 +39,36 @@ input, button {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+a.download-link {
+  display: block;
+  margin: 6px 0;
+  text-decoration: none;
+  color: #0a5c44;
+}
+a.download-link:hover {
+  text-decoration: underline;
+}
 </style>
 </head>
 <body>
 <h2>📥 批次下載網頁中的檔案</h2>
-<p>輸入要抓取的網址：</p>
+<p>輸入要抓取的網址（例如：有多個檔案連結的頁面）</p>
+
 <input type="text" id="urlInput" placeholder="輸入網址..." size="50">
-<button id="fetchBtn">開始抓取</button>
+<button id="fetchBtn">抓取連結</button>
+<button id="downloadAllBtn" disabled>全部下載</button>
 
 <div id="log"></div>
 
 <script>
+let foundLinks = [];
+
 document.getElementById("fetchBtn").addEventListener("click", async () => {
   const url = document.getElementById("urlInput").value.trim();
   const log = document.getElementById("log");
+  const downloadAllBtn = document.getElementById("downloadAllBtn");
+  foundLinks = [];
+  downloadAllBtn.disabled = true;
   log.innerHTML = "";
 
   if (!url) {
@@ -52,7 +79,6 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
   log.innerHTML = "⏳ 正在抓取頁面...";
 
   try {
-    // 使用 allorigins API 代理繞過 CORS
     const api = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
     const response = await fetch(api);
     if (!response.ok) throw new Error("代理伺服器讀取失敗");
@@ -79,20 +105,40 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
       const safeName = text.replace(/[\\\/:*?"<>|]/g, "_") + ext;
       const absUrl = new URL(href, url).href;
 
+      foundLinks.push({ name: safeName, url: absUrl });
+
       const a = document.createElement("a");
       a.href = absUrl;
       a.download = safeName;
       a.textContent = `下載：${safeName}`;
-      a.style.display = "block";
+      a.className = "download-link";
       a.target = "_blank";
       log.appendChild(a);
     });
 
-    log.innerHTML = "<h3>✅ 找到以下檔案可下載：</h3>" + log.innerHTML;
+    if (foundLinks.length > 0) {
+      downloadAllBtn.disabled = false;
+      const total = foundLinks.length;
+      log.insertAdjacentHTML("afterbegin", `<h3>✅ 找到 ${total} 個可下載檔案：</h3>`);
+    }
 
   } catch (err) {
     log.innerHTML = `❌ 錯誤：${err.message}`;
   }
+});
+
+document.getElementById("downloadAllBtn").addEventListener("click", () => {
+  if (foundLinks.length === 0) return;
+  let delay = 0;
+  foundLinks.forEach((file, index) => {
+    setTimeout(() => {
+      const a = document.createElement("a");
+      a.href = file.url;
+      a.download = file.name;
+      a.click();
+    }, delay);
+    delay += 700; // 每個檔案間隔 0.7 秒，避免瀏覽器阻擋
+  });
 });
 </script>
 </body>
