@@ -32,7 +32,7 @@ input, button {
 </head>
 <body>
 <h2>📥 批次下載網頁中的檔案</h2>
-<p>輸入要抓取的網址（例如含有多個檔案超連結的頁面）：</p>
+<p>輸入要抓取的網址：</p>
 <input type="text" id="urlInput" placeholder="輸入網址..." size="50">
 <button id="fetchBtn">開始抓取</button>
 
@@ -52,9 +52,12 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
   log.innerHTML = "⏳ 正在抓取頁面...";
 
   try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("無法讀取該頁面");
-    const text = await response.text();
+    // 使用 allorigins API 代理繞過 CORS
+    const api = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+    const response = await fetch(api);
+    if (!response.ok) throw new Error("代理伺服器讀取失敗");
+    const data = await response.json();
+    const text = data.contents;
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(text, "text/html");
@@ -71,14 +74,11 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
       const text = (link.textContent || "未命名").trim();
       if (!href || href.startsWith("#")) return;
 
-      // 解析副檔名
       const parts = href.split(".");
       const ext = parts.length > 1 ? "." + parts.pop() : "";
-      // 產生合法檔名
       const safeName = text.replace(/[\\\/:*?"<>|]/g, "_") + ext;
       const absUrl = new URL(href, url).href;
 
-      // 建立下載連結
       const a = document.createElement("a");
       a.href = absUrl;
       a.download = safeName;
