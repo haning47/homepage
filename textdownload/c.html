@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📥 批次下載網頁檔案</title>
+<title>📥 批次下載松山高中網站檔案</title>
 <style>
 body {
   font-family: "Noto Sans TC", sans-serif;
@@ -51,8 +51,8 @@ a.download-link:hover {
 </style>
 </head>
 <body>
-<h2>📥 批次下載網頁中的檔案</h2>
-<p>輸入要抓取的網址（例如：有多個檔案連結的頁面）</p>
+<h2>📥 批次下載松山高中網站檔案</h2>
+<p>輸入要抓取的松山高中網頁網址（例如：<code>https://www.sssh.tp.edu.tw/</code>）</p>
 
 <input type="text" id="urlInput" placeholder="輸入網址..." size="50">
 <button id="fetchBtn">抓取連結</button>
@@ -79,6 +79,7 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
   log.innerHTML = "⏳ 正在抓取頁面...";
 
   try {
+    // 使用 allorigins 代理以繞過 CORS
     const api = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
     const response = await fetch(api);
     if (!response.ok) throw new Error("代理伺服器讀取失敗");
@@ -90,22 +91,26 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
     const links = doc.querySelectorAll("a[href]");
     log.innerHTML = "";
 
-    if (links.length === 0) {
-      log.innerHTML = "⚠️ 找不到任何超連結";
-      return;
-    }
+    const targetPrefix = "https://www.sssh.tp.edu.tw";
+    let count = 0;
 
     links.forEach(link => {
       const href = link.getAttribute("href");
       const text = (link.textContent || "未命名").trim();
       if (!href || href.startsWith("#")) return;
 
-      const parts = href.split(".");
-      const ext = parts.length > 1 ? "." + parts.pop() : "";
-      const safeName = text.replace(/[\\\/:*?"<>|]/g, "_") + ext;
+      // 解析成絕對網址
       const absUrl = new URL(href, url).href;
 
+      // ✅ 僅保留開頭是指定網域的連結
+      if (!absUrl.startsWith(targetPrefix)) return;
+
+      const parts = absUrl.split(".");
+      const ext = parts.length > 1 ? "." + parts.pop() : "";
+      const safeName = text.replace(/[\\\/:*?"<>|]/g, "_") + ext;
+
       foundLinks.push({ name: safeName, url: absUrl });
+      count++;
 
       const a = document.createElement("a");
       a.href = absUrl;
@@ -116,11 +121,13 @@ document.getElementById("fetchBtn").addEventListener("click", async () => {
       log.appendChild(a);
     });
 
-    if (foundLinks.length > 0) {
-      downloadAllBtn.disabled = false;
-      const total = foundLinks.length;
-      log.insertAdjacentHTML("afterbegin", `<h3>✅ 找到 ${total} 個可下載檔案：</h3>`);
+    if (count === 0) {
+      log.innerHTML = "⚠️ 找不到任何符合條件的連結（僅限 https://www.sssh.tp.edu.tw 開頭）";
+      return;
     }
+
+    downloadAllBtn.disabled = false;
+    log.insertAdjacentHTML("afterbegin", `<h3>✅ 找到 ${count} 個可下載檔案：</h3>`);
 
   } catch (err) {
     log.innerHTML = `❌ 錯誤：${err.message}`;
@@ -137,7 +144,7 @@ document.getElementById("downloadAllBtn").addEventListener("click", () => {
       a.download = file.name;
       a.click();
     }, delay);
-    delay += 700; // 每個檔案間隔 0.7 秒，避免瀏覽器阻擋
+    delay += 700; // 每次下載間隔 0.7 秒，避免瀏覽器阻擋
   });
 });
 </script>
