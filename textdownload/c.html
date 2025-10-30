@@ -1,171 +1,182 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>批量檔案下載連結生成器</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        label, textarea, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-        textarea {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            resize: vertical;
-            min-height: 150px;
-        }
-        button {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .download-list a {
-            display: block;
-            margin: 8px 0;
-            padding: 10px;
-            background-color: #f4f4f4;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #333;
-        }
-        .download-list a:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>從網址下載頁面上連結檔案（GitHub Pages 可用）</title>
+  <style>
+    body{font-family:system-ui,-apple-system,'Noto Sans TC','微軟正黑體',Arial;margin:24px;max-width:980px}
+    input,button,select{font-size:14px;padding:6px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .links{margin-top:12px}
+    .link-row{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px solid #eee}
+    .filename{min-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .hint{color:#666;margin-top:8px}
+  </style>
 </head>
 <body>
+  <h1>從網址下載頁面上連結檔案</h1>
+  <p>貼入想抓取的網頁網址，程式會列出該頁面的超連結，您可以勾選要下載的項目，下載時檔名會以超連結文字為主，副檔名保留來源的副檔名。</p>
 
-    <div class="container">
-        <h2>批量檔案下載連結生成器</h2>
-        <p>
-            🚨 **重要限制:** 此工具無法自動抓取外部網頁的連結。<br>
-            請將您要下載的檔案網址**手動貼入**下方的文字框中，每行一個。
-        </p>
+  <div class="controls">
+    <input id="url" placeholder="輸入完整網址，例如：https://example.com/page.html" style="min-width:420px" />
+    <input id="proxy" placeholder="CORS proxy（可選）例如：https://cors-anywhere.herokuapp.com/" style="min-width:360px" />
+    <button id="fetchBtn">抓取連結</button>
+    <button id="downloadSelected" disabled>下載勾選項目</button>
+  </div>
 
-        <label for="urlList">檔案網址列表 (每行一個):</label>
-        <textarea id="urlList" placeholder="請貼入檔案的 URL&#10;例如: https://example.com/doc1.pdf&#10;https://storage.net/image2.png"></textarea>
+  <div class="hint">提示：若目標站點不允許跨域 (CORS)，請在上方填入您信任的 CORS proxy 或自行佈署一個小型 proxy。</div>
 
-        <button onclick="generateDownloadLinks()">生成下載連結</button>
+  <div id="status"></div>
+  <div id="links" class="links"></div>
 
-        <h3>📥 下載列表 (請逐一或右鍵點擊下載)</h3>
-        <div id="downloadList" class="download-list">
-            </div>
+  <script>
+    const $ = sel => document.querySelector(sel);
+    const urlInput = $('#url');
+    const proxyInput = $('#proxy');
+    const fetchBtn = $('#fetchBtn');
+    const linksDiv = $('#links');
+    const status = $('#status');
+    const downloadSelected = $('#downloadSelected');
 
-        <p id="status" style="color: red;"></p>
-    </div>
+    function sanitizeFilename(name){
+      // 移除 filesystem 不允許的字元並截短
+      return name.replace(/[\\/:*?"<>|\n\r\t]+/g, ' ').trim().slice(0,200) || 'download';
+    }
 
-    <script>
-        /**
-         * 嘗試從 URL 中提取檔名和副檔名
-         * @param {string} url - 檔案的 URL
-         * @returns {string} 建議的檔名 (包含副檔名)
-         */
-        function suggestFileName(url) {
-            try {
-                const urlObj = new URL(url);
-                // 1. 嘗試從路徑中獲取最後一段作為檔名
-                let path = urlObj.pathname;
-                let fileName = path.substring(path.lastIndexOf('/') + 1);
+    function getExtensionFromUrl(href){
+      try{
+        const u = new URL(href, location.href);
+        const pathname = u.pathname;
+        const idx = pathname.lastIndexOf('.');
+        if(idx === -1) return '';
+        return pathname.slice(idx); // 含 "." 的副檔名
+      }catch(e){
+        // 相對路徑或其他非標準格式
+        const match = href.match(/\.([a-zA-Z0-9]{1,6})(?:[?#]|$)/);
+        return match ? ('.'+match[1]) : '';
+      }
+    }
 
-                // 2. 如果檔名包含查詢參數，移除它們
-                if (fileName.includes('?')) {
-                    fileName = fileName.substring(0, fileName.indexOf('?'));
-                }
-                
-                // 3. 如果檔名是空的 (例如 URL 以 / 結尾)，則使用預設名稱
-                if (fileName.length === 0 || fileName === '.') {
-                    return 'downloaded_file';
-                }
+    async function fetchHtml(target, proxy){
+      const fetchUrl = proxy ? (proxy.replace(/\/$/,'') + '/' + target) : target;
+      const res = await fetch(fetchUrl, {mode:'cors'});
+      if(!res.ok) throw new Error('無法取得：' + res.status + ' ' + res.statusText);
+      return await res.text();
+    }
 
-                // 4. 對於沒有明顯副檔名的 URL，嘗試在路徑結尾添加 .ext
-                if (!fileName.includes('.')) {
-                     // 假設一個常見的預設副檔名
-                     // 由於我們不知道實際檔案類型，這是最好的猜測
-                    return fileName + '.bin'; 
-                }
+    function parseLinks(html, baseUrl){
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const anchors = Array.from(doc.querySelectorAll('a'));
+      const items = anchors.map(a => {
+        const href = a.getAttribute('href') || '';
+        const text = (a.textContent || a.getAttribute('aria-label') || '').trim();
+        return {href, text};
+      }).filter(x => x.href && x.href.trim() !== '#' && !x.href.startsWith('javascript:'));
 
-                return decodeURIComponent(fileName);
-
-            } catch (e) {
-                // 如果 URL 無效
-                return 'downloaded_file';
-            }
+      // resolve relative URLs
+      return items.map(x => {
+        try{
+          const resolved = new URL(x.href, baseUrl).href;
+          return {...x, resolved};
+        }catch(e){
+          return {...x, resolved: x.href};
         }
+      });
+    }
 
+    function renderList(items){
+      linksDiv.innerHTML = '';
+      if(items.length === 0){ linksDiv.textContent = '未找到任何有效超連結。'; downloadSelected.disabled = true; return; }
+      const frag = document.createDocumentFragment();
+      items.forEach((it, idx) => {
+        const row = document.createElement('div'); row.className = 'link-row';
+        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.dataset.idx = idx;
+        const nameSpan = document.createElement('div'); nameSpan.className = 'filename';
+        const displayName = it.text || urlFilenameFallback(it.resolved);
+        nameSpan.textContent = displayName + '  (' + it.resolved + ')';
+        const ext = getExtensionFromUrl(it.resolved) || '';
+        const extSpan = document.createElement('div'); extSpan.textContent = ext || '（無副檔名）';
+        extSpan.style.marginLeft = '8px';
+        row.append(cb, nameSpan, extSpan);
+        frag.appendChild(row);
+      });
+      linksDiv.appendChild(frag);
+      downloadSelected.disabled = false;
+    }
 
-        function generateDownloadLinks() {
-            const urlListText = document.getElementById('urlList').value.trim();
-            const downloadListDiv = document.getElementById('downloadList');
-            const statusDiv = document.getElementById('status');
-            downloadListDiv.innerHTML = '';
-            statusDiv.textContent = '';
+    function urlFilenameFallback(href){
+      try{
+        const u = new URL(href);
+        const seg = u.pathname.split('/').filter(Boolean).pop();
+        return seg || u.hostname;
+      }catch(e){
+        return href.slice(0,40);
+      }
+    }
 
-            const urls = urlListText.split('\n')
-                                    .map(url => url.trim())
-                                    .filter(url => url.length > 0);
+    async function downloadResource(item, filename){
+      status.textContent = '下載：' + filename;
+      const proxy = proxyInput.value.trim();
+      const fetchUrl = proxy ? (proxy.replace(/\/$/,'') + '/' + item.resolved) : item.resolved;
+      const resp = await fetch(fetchUrl);
+      if(!resp.ok) throw new Error('取得檔案失敗：' + resp.status);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(()=> URL.revokeObjectURL(url), 5000);
+    }
 
-            if (urls.length === 0) {
-                statusDiv.textContent = '請輸入至少一個有效的檔案網址。';
-                return;
-            }
+    fetchBtn.addEventListener('click', async ()=>{
+      const target = urlInput.value.trim();
+      const proxy = proxyInput.value.trim();
+      if(!target){ alert('請輸入網址'); return; }
+      status.textContent = '抓取中...';
+      linksDiv.innerHTML = '';
+      try{
+        const html = await fetchHtml(target, proxy);
+        const items = parseLinks(html, target);
+        renderList(items);
+        // store items for later download
+        window._scrapedItems = items;
+        status.textContent = '已抓到 ' + items.length + ' 個超連結。勾選後按「下載勾選項目」。';
+      }catch(err){
+        status.textContent = '錯誤：' + err.message + '\n提示：若出現跨域 (CORS) 錯誤，請填入可用的 CORS proxy（或在 server 端架設 proxy）。';
+        console.error(err);
+      }
+    });
 
-            urls.forEach((url, index) => {
-                const suggestedName = suggestFileName(url);
-
-                const link = document.createElement('a');
-                link.href = url;
-                // 使用 download 屬性來指定檔名
-                link.download = `[${index + 1}] ${suggestedName}`;
-                
-                // 設定超連結文字為指定的檔名
-                link.textContent = `點擊下載: ${link.download}`; 
-
-                downloadListDiv.appendChild(link);
-            });
-
-            statusDiv.textContent = '下載連結已生成。請**逐一**點擊列表中的連結進行下載。';
+    downloadSelected.addEventListener('click', async ()=>{
+      const checks = Array.from(linksDiv.querySelectorAll('input[type=checkbox]'));
+      const checked = checks.filter(cb=>cb.checked).map(cb=> window._scrapedItems[parseInt(cb.dataset.idx,10)]);
+      if(!checked.length){ alert('請先勾選要下載的項目'); return; }
+      downloadSelected.disabled = true;
+      try{
+        for(const it of checked){
+          const ext = getExtensionFromUrl(it.resolved) || '';
+          const rawName = it.text || urlFilenameFallback(it.resolved);
+          const name = sanitizeFilename(rawName) + ext;
+          try{
+            await downloadResource(it, name);
+            // 小延遲避免 browsers 合併下載事件
+            await new Promise(r=>setTimeout(r, 300));
+          }catch(e){
+            console.warn('下載失敗：', it.resolved, e);
+            // 顯示但繼續下一個
+            status.textContent = '下載失敗（已跳過）: ' + it.resolved;
+          }
         }
+        status.textContent = '全部作業結束。';
+      }finally{
+        downloadSelected.disabled = false;
+      }
+    });
 
-        /*
-        // 此函數用於嘗試自動點擊所有連結，但會被瀏覽器安全機制阻擋
-        // 且會因為跨域問題導致檔名失效，故不建議使用。
-        function autoDownloadAll() {
-             const links = document.querySelectorAll('#downloadList a');
-             if (links.length === 0) {
-                 alert('請先生成下載連結！');
-                 return;
-             }
-
-             // 警告：瀏覽器會阻擋這個操作！
-             alert('警告：瀏覽器將只允許第一次下載或全部阻擋。');
-             links.forEach(link => {
-                 link.click();
-             });
-        }
-        */
-    </script>
-
+  </script>
 </body>
 </html>
