@@ -1,153 +1,76 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>批次下載（松山高中 - 限 sssh.tp.edu.tw）</title>
-<style>
-body{font-family:"Noto Sans TC",sans-serif;background:#f4f4f4;color:#333;padding:24px;text-align:center}
-input,button{padding:10px 14px;font-size:16px;margin:6px;border-radius:6px;border:0;cursor:pointer}
-button{background:#0a5c44;color:#fff}
-#log{max-width:900px;margin:18px auto;text-align:left;background:#fff;padding:18px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
-a.download-link{display:block;margin:6px 0;color:#0a5c44;text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <title>網址檔案下載工具 (下載到本機)</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        input[type="text"] { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        #message { margin-top: 15px; color: red; }
+    </style>
 </head>
 <body>
-<h2>📥 批次下載（僅 https://www.sssh.tp.edu.tw）</h2>
-<p>輸入要抓取的松山高中網頁網址（例如：https://www.sssh.tp.edu.tw/... ）</p>
-<input id="urlInput" placeholder="輸入網址..." size="60" />
-<button id="fetchBtn">抓取連結</button>
-<button id="downloadAllBtn" disabled>全部下載</button>
-<div id="log"></div>
 
-<script>
-/*
- 改良邏輯：
- 1) 會依序嘗試多個公開 CORS 代理（若其中一個成功則停止）
- 2) 仍會僅保留以 https://www.sssh.tp.edu.tw 開頭的連結
- 3) 若全部代理都失敗，會顯示可能原因與建議
- 注意：公共代理並非百分之百可靠；最穩的方法是自建 proxy（以下回應有範例）
-*/
-const proxies = [
-  (u)=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`, // 取得 raw 內容
-  (u)=>`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, // 回傳 json.contents（備援）
-  (u)=>`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}` // 備援代理
-];
+    <div class="container">
+        <h1>檔案下載工具 (下載到本機)</h1>
+        <p>請注意：此工具是將檔案下載到您<strong>本機電腦</strong>的瀏覽器下載資料夾，無法直接上傳到雲端硬碟。</p>
 
-let foundLinks = [];
+        <label for="urlInput">檔案網址：</label>
+        <input type="text" id="urlInput" placeholder="請輸入檔案的直接下載網址，例如：https://example.com/file.pdf">
 
-function log(msg, isHtml=false){
-  const el = document.getElementById('log');
-  if(isHtml) el.innerHTML = msg;
-  else el.innerText = msg;
-}
+        <label for="filenameInput">檔名（超連結文字）：</label>
+        <input type="text" id="filenameInput" placeholder="請輸入您想要的檔名，不含副檔名，例如：我的文件">
 
-async function fetchViaProxy(url){
-  // 依序嘗試 proxies；回傳 text 或 throw
-  for(const p of proxies){
-    const api = p(url);
-    try{
-      const r = await fetch(api);
-      if(!r.ok) throw new Error(`proxy ${api} 回傳 ${r.status}`);
-      // allorigins.raw 會直接回傳 text； allorigins.get 回傳 json
-      const ct = r.headers.get('content-type') || '';
-      if(ct.includes('application/json') || api.includes('/get?')) {
-        const j = await r.json();
-        // allorigins get 回傳 {contents: "..."}，thingproxy 也可能回 json
-        if(j && j.contents) return j.contents;
-        // 若 json 但沒有 contents，嘗試轉為 string
-        return JSON.stringify(j);
-      } else {
-        // 直接回 text
-        return await r.text();
-      }
-    }catch(e){
-      // 嘗試下一個 proxy（記錄但不立即拋錯）
-      console.warn('proxy failed', p(url), e.message);
-      continue;
-    }
-  }
-  throw new Error('所有公開代理皆失敗（可能被封鎖或目標需驗證 / 為非公開內容）');
-}
+        <button onclick="downloadFile()">下載檔案</button>
 
-document.getElementById('fetchBtn').addEventListener('click', async ()=>{
-  const url = document.getElementById('urlInput').value.trim();
-  const downloadAllBtn = document.getElementById('downloadAllBtn');
-  foundLinks = [];
-  downloadAllBtn.disabled = true;
-  if(!url){ log('⚠️ 請輸入網址'); return; }
-  log('⏳ 正在透過代理抓取頁面，若失敗會顯示原因（請耐心等候）...', true);
+        <div id="message"></div>
+    </div>
 
-  try{
-    // 有可能 target 為 http 而你的頁面是 https（會被瀏覽器預先阻擋）— 提醒檢查
-    if(url.startsWith('http:') && location.protocol === 'https:'){
-      log('❗ 注意：你的 GitHub Pages 為 HTTPS，但目標為 HTTP（瀏覽器可能會阻擋 mixed content）。請改用 http 於本機測試或架 proxy。', true);
-    }
+    <script>
+        function downloadFile() {
+            const fileUrl = document.getElementById('urlInput').value.trim();
+            let baseFilename = document.getElementById('filenameInput').value.trim();
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = '';
 
-    const text = await fetchViaProxy(url);
-    // 若 allorigins.get 回傳 JSON 字串，上面會轉成 JSON string — 嘗試 parse 為 html text
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/html');
-    const links = doc.querySelectorAll('a[href]');
-    const targetPrefix = 'https://www.sssh.tp.edu.tw';
-    let count = 0;
-    const logContainer = document.createElement('div');
+            if (!fileUrl) {
+                messageElement.textContent = '錯誤：請輸入檔案網址。';
+                return;
+            }
 
-    links.forEach(link=>{
-      const href = link.getAttribute('href');
-      const label = (link.textContent || '未命名').trim();
-      if(!href || href.startsWith('#')) return;
-      const absUrl = new URL(href, url).href;
-      if(!absUrl.startsWith(targetPrefix)) return;
-      // 取副檔名（從 URL path）
-      const pathname = (new URL(absUrl)).pathname;
-      const idx = pathname.lastIndexOf('.');
-      const ext = (idx>-1) ? pathname.slice(idx) : '';
-      const safeName = label.replace(/[\\\/:*?"<>|]/g,'_') + ext;
-      foundLinks.push({name: safeName, url: absUrl});
-      const a = document.createElement('a');
-      a.href = absUrl; a.download = safeName; a.target='_blank';
-      a.className = 'download-link';
-      a.textContent = `下載：${safeName} → ${absUrl}`;
-      logContainer.appendChild(a);
-      count++;
-    });
+            if (!baseFilename) {
+                baseFilename = 'downloaded_file'; // 如果沒有輸入，給一個預設檔名
+            }
 
-    if(count===0){
-      log('⚠️ 找不到符合條件的連結（僅限 https://www.sssh.tp.edu.tw 開頭）。', true);
-      return;
-    }
-    document.getElementById('log').innerHTML = `<h3>✅ 找到 ${count} 個可下載檔案：</h3>`;
-    document.getElementById('log').appendChild(logContainer);
-    downloadAllBtn.disabled = false;
+            try {
+                // 1. 取得副檔名
+                // 找到網址中最後一個點號(.)之後的部分作為副檔名
+                const urlParts = fileUrl.split('.');
+                const extension = urlParts.length > 1 ? '.' + urlParts.pop().split('?')[0].split('#')[0] : '';
 
-  }catch(err){
-    // 若 fetchViaProxy 拋錯，顯示詳細說明（含建議）
-    const msg = `❌ 錯誤：${err.message}\n\n可能原因：\n` +
-      `1) 目標網站需登入或有防爬機制（公共代理無法通過）。\n` +
-      `2) 目標或代理被封鎖或目前當機。\n` +
-      `3) 你的頁面為 HTTPS，但目標是 HTTP（mixed content 會被阻擋）。\n\n建議：\n` +
-      `• 若可，改用「自建 proxy」（Cloudflare Worker 或小型 Node 伺服器）。\n` +
-      `• 或在本機臨時以瀏覽器關閉 CORS 測試（僅開發用）。\n` +
-      `• 我可提供自建 proxy 的程式範例（Cloudflare Worker 與 Node）。`;
-    document.getElementById('log').innerText = msg;
-    console.error(err);
-  }
-});
+                // 2. 組合最終檔名
+                const finalFilename = baseFilename + extension;
 
-document.getElementById('downloadAllBtn').addEventListener('click', ()=>{
-  if(foundLinks.length===0) return;
-  let delay = 0;
-  foundLinks.forEach(f=>{
-    setTimeout(()=>{
-      const a = document.createElement('a');
-      a.href = f.url;
-      a.download = f.name;
-      a.click();
-    }, delay);
-    delay += 700;
-  });
-});
-</script>
+                // 3. 創建一個隱藏的 a 標籤來觸發下載
+                const a = document.createElement('a');
+                a.href = fileUrl;
+                a.download = finalFilename; // 設定下載的檔名
+                document.body.appendChild(a);
+                a.click(); // 模擬點擊下載
+                document.body.removeChild(a);
+
+                messageElement.textContent = `嘗試下載檔案： ${finalFilename} ... 請檢查您的下載資料夾。`;
+                messageElement.style.color = 'green';
+
+            } catch (e) {
+                messageElement.textContent = '下載失敗：請檢查網址是否正確，或檔案是否存在跨域問題。';
+                messageElement.style.color = 'red';
+                console.error(e);
+            }
+        }
+    </script>
+
 </body>
 </html>
