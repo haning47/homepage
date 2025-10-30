@@ -2,74 +2,169 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>網址檔案下載工具 (下載到本機)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>批量檔案下載連結生成器</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; }
-        input[type="text"] { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
-        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
-        #message { margin-top: 15px; color: red; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        textarea {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 150px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .download-list a {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+        }
+        .download-list a:hover {
+            background-color: #e0e0e0;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>檔案下載工具 (下載到本機)</h1>
-        <p>請注意：此工具是將檔案下載到您<strong>本機電腦</strong>的瀏覽器下載資料夾，無法直接上傳到雲端硬碟。</p>
+        <h2>批量檔案下載連結生成器</h2>
+        <p>
+            🚨 **重要限制:** 此工具無法自動抓取外部網頁的連結。<br>
+            請將您要下載的檔案網址**手動貼入**下方的文字框中，每行一個。
+        </p>
 
-        <label for="urlInput">檔案網址：</label>
-        <input type="text" id="urlInput" placeholder="請輸入檔案的直接下載網址，例如：https://example.com/file.pdf">
+        <label for="urlList">檔案網址列表 (每行一個):</label>
+        <textarea id="urlList" placeholder="請貼入檔案的 URL&#10;例如: https://example.com/doc1.pdf&#10;https://storage.net/image2.png"></textarea>
 
-        <label for="filenameInput">檔名（超連結文字）：</label>
-        <input type="text" id="filenameInput" placeholder="請輸入您想要的檔名，不含副檔名，例如：我的文件">
+        <button onclick="generateDownloadLinks()">生成下載連結</button>
 
-        <button onclick="downloadFile()">下載檔案</button>
+        <h3>📥 下載列表 (請逐一或右鍵點擊下載)</h3>
+        <div id="downloadList" class="download-list">
+            </div>
 
-        <div id="message"></div>
+        <p id="status" style="color: red;"></p>
     </div>
 
     <script>
-        function downloadFile() {
-            const fileUrl = document.getElementById('urlInput').value.trim();
-            let baseFilename = document.getElementById('filenameInput').value.trim();
-            const messageElement = document.getElementById('message');
-            messageElement.textContent = '';
+        /**
+         * 嘗試從 URL 中提取檔名和副檔名
+         * @param {string} url - 檔案的 URL
+         * @returns {string} 建議的檔名 (包含副檔名)
+         */
+        function suggestFileName(url) {
+            try {
+                const urlObj = new URL(url);
+                // 1. 嘗試從路徑中獲取最後一段作為檔名
+                let path = urlObj.pathname;
+                let fileName = path.substring(path.lastIndexOf('/') + 1);
 
-            if (!fileUrl) {
-                messageElement.textContent = '錯誤：請輸入檔案網址。';
+                // 2. 如果檔名包含查詢參數，移除它們
+                if (fileName.includes('?')) {
+                    fileName = fileName.substring(0, fileName.indexOf('?'));
+                }
+                
+                // 3. 如果檔名是空的 (例如 URL 以 / 結尾)，則使用預設名稱
+                if (fileName.length === 0 || fileName === '.') {
+                    return 'downloaded_file';
+                }
+
+                // 4. 對於沒有明顯副檔名的 URL，嘗試在路徑結尾添加 .ext
+                if (!fileName.includes('.')) {
+                     // 假設一個常見的預設副檔名
+                     // 由於我們不知道實際檔案類型，這是最好的猜測
+                    return fileName + '.bin'; 
+                }
+
+                return decodeURIComponent(fileName);
+
+            } catch (e) {
+                // 如果 URL 無效
+                return 'downloaded_file';
+            }
+        }
+
+
+        function generateDownloadLinks() {
+            const urlListText = document.getElementById('urlList').value.trim();
+            const downloadListDiv = document.getElementById('downloadList');
+            const statusDiv = document.getElementById('status');
+            downloadListDiv.innerHTML = '';
+            statusDiv.textContent = '';
+
+            const urls = urlListText.split('\n')
+                                    .map(url => url.trim())
+                                    .filter(url => url.length > 0);
+
+            if (urls.length === 0) {
+                statusDiv.textContent = '請輸入至少一個有效的檔案網址。';
                 return;
             }
 
-            if (!baseFilename) {
-                baseFilename = 'downloaded_file'; // 如果沒有輸入，給一個預設檔名
-            }
+            urls.forEach((url, index) => {
+                const suggestedName = suggestFileName(url);
 
-            try {
-                // 1. 取得副檔名
-                // 找到網址中最後一個點號(.)之後的部分作為副檔名
-                const urlParts = fileUrl.split('.');
-                const extension = urlParts.length > 1 ? '.' + urlParts.pop().split('?')[0].split('#')[0] : '';
+                const link = document.createElement('a');
+                link.href = url;
+                // 使用 download 屬性來指定檔名
+                link.download = `[${index + 1}] ${suggestedName}`;
+                
+                // 設定超連結文字為指定的檔名
+                link.textContent = `點擊下載: ${link.download}`; 
 
-                // 2. 組合最終檔名
-                const finalFilename = baseFilename + extension;
+                downloadListDiv.appendChild(link);
+            });
 
-                // 3. 創建一個隱藏的 a 標籤來觸發下載
-                const a = document.createElement('a');
-                a.href = fileUrl;
-                a.download = finalFilename; // 設定下載的檔名
-                document.body.appendChild(a);
-                a.click(); // 模擬點擊下載
-                document.body.removeChild(a);
-
-                messageElement.textContent = `嘗試下載檔案： ${finalFilename} ... 請檢查您的下載資料夾。`;
-                messageElement.style.color = 'green';
-
-            } catch (e) {
-                messageElement.textContent = '下載失敗：請檢查網址是否正確，或檔案是否存在跨域問題。';
-                messageElement.style.color = 'red';
-                console.error(e);
-            }
+            statusDiv.textContent = '下載連結已生成。請**逐一**點擊列表中的連結進行下載。';
         }
+
+        /*
+        // 此函數用於嘗試自動點擊所有連結，但會被瀏覽器安全機制阻擋
+        // 且會因為跨域問題導致檔名失效，故不建議使用。
+        function autoDownloadAll() {
+             const links = document.querySelectorAll('#downloadList a');
+             if (links.length === 0) {
+                 alert('請先生成下載連結！');
+                 return;
+             }
+
+             // 警告：瀏覽器會阻擋這個操作！
+             alert('警告：瀏覽器將只允許第一次下載或全部阻擋。');
+             links.forEach(link => {
+                 link.click();
+             });
+        }
+        */
     </script>
 
 </body>
