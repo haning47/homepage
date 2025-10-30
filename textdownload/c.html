@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>批次下載網頁檔案</title>
+<style>
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 30px;
+  text-align: center;
+}
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+}
+#log {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+<h2>📥 批次下載網頁中的檔案</h2>
+<p>輸入要抓取的網址（例如含有多個檔案超連結的頁面）：</p>
+<input type="text" id="urlInput" placeholder="輸入網址..." size="50">
+<button id="fetchBtn">開始抓取</button>
+
+<div id="log"></div>
+
+<script>
+document.getElementById("fetchBtn").addEventListener("click", async () => {
+  const url = document.getElementById("urlInput").value.trim();
+  const log = document.getElementById("log");
+  log.innerHTML = "";
+
+  if (!url) {
+    log.innerHTML = "⚠️ 請輸入網址";
+    return;
+  }
+
+  log.innerHTML = "⏳ 正在抓取頁面...";
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("無法讀取該頁面");
+    const text = await response.text();
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+    const links = doc.querySelectorAll("a[href]");
+    log.innerHTML = "";
+
+    if (links.length === 0) {
+      log.innerHTML = "⚠️ 找不到任何超連結";
+      return;
+    }
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      const text = (link.textContent || "未命名").trim();
+      if (!href || href.startsWith("#")) return;
+
+      // 解析副檔名
+      const parts = href.split(".");
+      const ext = parts.length > 1 ? "." + parts.pop() : "";
+      // 產生合法檔名
+      const safeName = text.replace(/[\\\/:*?"<>|]/g, "_") + ext;
+      const absUrl = new URL(href, url).href;
+
+      // 建立下載連結
+      const a = document.createElement("a");
+      a.href = absUrl;
+      a.download = safeName;
+      a.textContent = `下載：${safeName}`;
+      a.style.display = "block";
+      a.target = "_blank";
+      log.appendChild(a);
+    });
+
+    log.innerHTML = "<h3>✅ 找到以下檔案可下載：</h3>" + log.innerHTML;
+
+  } catch (err) {
+    log.innerHTML = `❌ 錯誤：${err.message}`;
+  }
+});
+</script>
+</body>
+</html>
