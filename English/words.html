@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>單字學習卡 SRS 版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        
+        .card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        .btn-again { background-color: #ef4444; } 
+        .btn-hard { background-color: #f59e0b; }  
+        .btn-good { background-color: #3b82f6; }  
+        .btn-easy { background-color: #10b981; }  
+
+        button:focus { outline: none; }
+
+        /* 動畫 */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-modal { animation: fadeInScale 0.2s ease-out forwards; }
+    </style>
+</head>
+<body class="min-h-screen text-slate-900">
+
+    <div id="app">
+        <!-- 匯入介面 -->
+        <div id="import-screen" class="min-h-screen flex flex-col items-center justify-center p-6">
+            <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="p-4 bg-blue-100 rounded-full text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                </div>
+                <h1 class="text-2xl font-bold text-center mb-2">匯入單字庫 (SRS 模式)</h1>
+                <p class="text-slate-500 text-center mb-8">貼上內容或選擇 CSV 即可開始複習</p>
+                
+                <div class="space-y-4">
+                    <label class="block w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-xl text-center transition-all shadow-lg shadow-blue-200">
+                        選擇 CSV 檔案
+                        <input type="file" id="file-input" accept=".csv" class="hidden">
+                    </label>
+                    <textarea id="csv-textarea" 
+                        class="w-full h-48 p-4 text-sm border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
+                        placeholder='直接貼上 CSV 內容...'></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- 學習卡介面 -->
+        <div id="study-screen" class="hidden min-h-screen flex flex-col items-center p-4 sm:p-6">
+            
+            <!-- 整合進度列 -->
+            <div class="w-full max-w-2xl mb-4 flex items-center gap-4 bg-white p-3 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex-shrink-0 flex items-center gap-2 border-r border-slate-100 pr-3">
+                    <!-- 中斷按鈕 -->
+                    <button id="reset-btn" class="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="重新更換單字庫">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </button>
+                    <!-- 說明按鈕 -->
+                    <button id="info-btn" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="使用說明">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </button>
+                    <span id="progress-percent" class="text-sm font-bold text-blue-600 min-w-[40px]">0%</span>
+                </div>
+
+                <div class="flex-1 flex flex-col gap-1">
+                    <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] uppercase font-bold tracking-tight">
+                        <span id="progress-text" class="text-slate-400 italic">Remaining: 0</span>
+                        <div class="flex gap-2">
+                            <span class="text-red-500">Again: <span id="count-again">0</span></span>
+                            <span class="text-orange-500">Hard: <span id="count-hard">0</span></span>
+                            <span class="text-blue-500">Good: <span id="count-good">0</span></span>
+                            <span class="text-green-500">Easy: <span id="count-easy">0</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片容器 -->
+            <div class="relative w-full max-w-xl h-[480px] perspective-1000">
+                <div id="card-inner" class="card-inner relative w-full h-full transform-style-3d cursor-pointer">
+                    <!-- 正面 -->
+                    <div class="absolute inset-0 w-full h-full backface-hidden bg-white rounded-3xl shadow-xl flex flex-col items-center justify-center p-12 border border-slate-200" id="card-front">
+                        <div class="flex items-center gap-6">
+                            <h2 id="word-display" class="text-5xl sm:text-7xl font-extrabold text-slate-800 tracking-tight text-center">Word</h2>
+                        </div>
+                        <p class="mt-16 text-slate-300 font-medium uppercase tracking-widest text-sm italic">Click to Flip (Space)</p>
+                    </div>
+                    <!-- 背面 -->
+                    <div class="absolute inset-0 w-full h-full backface-hidden bg-white rounded-3xl shadow-xl flex flex-col border border-slate-200 rotate-y-180 overflow-hidden" id="card-back">
+                        <div id="card-image-container" class="w-full h-40 bg-slate-100 overflow-hidden relative">
+                             <img id="card-image" src="" alt="word image" class="w-full h-full object-cover opacity-0 transition-opacity duration-300">
+                             <div id="image-loader" class="absolute inset-0 flex items-center justify-center">
+                                 <div class="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                             </div>
+                        </div>
+                        <div class="flex justify-between items-center px-6 py-2 border-b border-slate-100 bg-slate-50/80">
+                            <h3 id="back-word-title" class="text-lg font-bold text-slate-800">Word</h3>
+                            <div class="flex gap-2">
+                                <button id="speak-sentence" title="朗讀例句" class="p-2 bg-white text-indigo-600 rounded-full hover:scale-110 transition-all shadow-sm border border-slate-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg>
+                                </button>
+                                <button id="speak-word" title="朗讀單字" class="p-2 bg-white text-blue-600 rounded-full hover:scale-110 transition-all shadow-sm border border-slate-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="details-container" class="flex-1 overflow-y-auto px-6 py-3 custom-scrollbar space-y-1.5 leading-tight text-sm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SRS 控制按鈕 -->
+            <div id="srs-controls" class="invisible w-full max-w-xl grid grid-cols-4 gap-3 mt-6">
+                <button onclick="handleSRS('again')" class="btn-again text-white py-4 rounded-2xl shadow-lg hover:brightness-110 transition-all flex flex-col items-center">
+                    <span class="font-bold text-lg">Again</span>
+                </button>
+                <button onclick="handleSRS('hard')" class="btn-hard text-white py-4 rounded-2xl shadow-lg hover:brightness-110 transition-all flex flex-col items-center">
+                    <span class="font-bold text-lg">Hard</span>
+                </button>
+                <button onclick="handleSRS('good')" class="btn-good text-white py-4 rounded-2xl shadow-lg hover:brightness-110 transition-all flex flex-col items-center">
+                    <span class="font-bold text-lg">Good</span>
+                </button>
+                <button onclick="handleSRS('easy')" class="btn-easy text-white py-4 rounded-2xl shadow-lg hover:brightness-110 transition-all flex flex-col items-center">
+                    <span class="font-bold text-lg">Easy</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 記憶恢復彈窗 (Restore Progress) -->
+        <div id="restore-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+            <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 text-center animate-modal">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">恢復進度？</h2>
+                <p class="text-slate-500 mb-8">偵測到上次未完成的學習紀錄，是否從上次中斷的地方繼續？</p>
+                <div class="space-y-3">
+                    <button id="confirm-restore" class="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all">恢復進度</button>
+                    <button id="cancel-restore" class="w-full py-4 bg-slate-100 text-slate-600 font-bold rounded-2xl hover:bg-slate-200 transition-all">重新開始</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中斷確認彈窗 (Reset Confirm) -->
+        <div id="reset-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+            <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 text-center animate-modal">
+                <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">更換單字庫？</h2>
+                <p class="text-slate-500 mb-8">目前的學習進度將會被刪除並回到匯入頁面。</p>
+                <div class="space-y-3">
+                    <button id="confirm-reset" class="w-full py-4 bg-red-600 text-white font-bold rounded-2xl hover:bg-red-700 transition-all">確認更換</button>
+                    <button id="cancel-reset" class="w-full py-4 bg-slate-100 text-slate-600 font-bold rounded-2xl hover:bg-slate-200 transition-all">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 說明彈窗 (Info) -->
+        <div id="info-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
+            <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden animate-modal">
+                <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                    <h2 class="text-xl font-bold flex items-center gap-2">
+                        <span class="text-blue-600">ℹ️</span> 使用說明
+                    </h2>
+                    <button id="close-modal" class="text-slate-400 hover:text-slate-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">快捷鍵功能</h3>
+                        <div class="grid grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">Space</kbd> 翻面</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">1</kbd> Again</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">2</kbd> Hard</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">3</kbd> Good</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">4</kbd> Easy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結束畫面 -->
+        <div id="finish-screen" class="hidden min-h-screen flex flex-col items-center justify-center p-6 text-center">
+            <div class="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 max-w-md w-full">
+                <div class="text-6xl mb-6">🎉</div>
+                <h2 class="text-3xl font-black text-slate-800 mb-2">全部完成！</h2>
+                <div class="grid grid-cols-2 gap-4 mb-8 mt-6">
+                    <div class="bg-red-50 p-3 rounded-xl"><div class="text-red-500 font-bold text-xl" id="final-again">0</div><div class="text-red-400 text-xs font-bold uppercase">Again</div></div>
+                    <div class="bg-orange-50 p-3 rounded-xl"><div class="text-orange-500 font-bold text-xl" id="final-hard">0</div><div class="text-orange-400 text-xs font-bold uppercase">Hard</div></div>
+                    <div class="bg-blue-50 p-3 rounded-xl"><div class="text-blue-500 font-bold text-xl" id="final-good">0</div><div class="text-blue-400 text-xs font-bold uppercase">Good</div></div>
+                    <div class="bg-green-50 p-3 rounded-xl"><div class="text-green-500 font-bold text-xl" id="final-easy">0</div><div class="text-green-400 text-xs font-bold uppercase">Easy</div></div>
+                </div>
+                <button onclick="clearStorageAndReload()" class="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-100">回到首頁</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let masterList = [];
+        let queue = [];
+        let totalCount = 0;
+        let isFlipped = false;
+        let stats = { again: 0, hard: 0, good: 0, easy: 0 };
+        const imageCache = new Map();
+        const synth = window.speechSynthesis;
+        const STORAGE_KEY = 'flashcard_srs_state';
+
+        // --- 核心邏輯 ---
+
+        function saveState() {
+            const state = {
+                queue,
+                stats,
+                totalCount,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return null;
+            try {
+                return JSON.parse(saved);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function clearStorageAndReload() {
+            localStorage.removeItem(STORAGE_KEY);
+            location.reload();
+        }
+
+        function speak(text) {
+            if (!text || synth.speaking) synth.cancel();
+            const englishOnly = text.replace(/[\u4e00-\u9fa5]/g, '').replace(/\(.*\)|（.*）|【.*】/g, '').trim();
+            if (englishOnly && /[a-zA-Z]/.test(englishOnly)) {
+                const utter = new SpeechSynthesisUtterance(englishOnly);
+                utter.lang = 'en-US';
+                utter.rate = 0.85;
+                synth.speak(utter);
+            }
+        }
+
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        async function preloadImages() {
+            const nextThree = queue.slice(0, 4); 
+            nextThree.forEach(card => {
+                if (!imageCache.has(card.word)) {
+                    const img = new Image();
+                    const imageUrl = `https://loremflickr.com/600/400/${encodeURIComponent(card.word)}`;
+                    img.src = imageUrl;
+                    img.onload = () => imageCache.set(card.word, imageUrl);
+                }
+            });
+        }
+
+        function parseCSVLines(text) {
+            if (text.includes("單字學習：")) {
+                const sections = text.split(/單字學習：/).filter(s => s.trim() !== "");
+                return sections.map(section => {
+                    const firstComma = section.indexOf(',');
+                    if (firstComma !== -1) {
+                        let word = section.substring(0, firstComma).replace(/^"|"$/g, '').trim();
+                        let details = section.substring(firstComma + 1).trim();
+                        if (details.startsWith('"') && details.endsWith('"')) details = details.substring(1, details.length - 1);
+                        details = details.replace(/""/g, '"');
+                        return { word, details };
+                    }
+                    return null;
+                }).filter(c => c !== null);
+            }
+
+            const allCards = [];
+            let inQuotes = false, currentField = "", fields = [];
+            const chars = text.split('');
+            for (let i = 0; i < chars.length; i++) {
+                const char = chars[i];
+                if (char === '"') {
+                    if (inQuotes && chars[i+1] === '"') { currentField += '"'; i++; }
+                    else { inQuotes = !inQuotes; }
+                } else if (char === ',' && !inQuotes) {
+                    fields.push(currentField); currentField = "";
+                } else if ((char === '\n' || char === '\r') && !inQuotes) {
+                    if (char === '\r' && chars[i+1] === '\n') i++; 
+                    fields.push(currentField);
+                    if (fields.length >= 2 && fields[0].trim()) {
+                        allCards.push({ word: fields[0].trim(), details: fields.slice(1).join(',').trim() });
+                    }
+                    fields = []; currentField = "";
+                } else { currentField += char; }
+            }
+            if (fields.length >= 2 || (currentField && fields.length >= 1)) {
+                fields.push(currentField);
+                allCards.push({ word: fields[0].trim(), details: fields.slice(1).join(',').trim() });
+            }
+            return allCards;
+        }
+
+        function findBestSentence(details) {
+            const lines = details.split('\n').map(l => l.trim()).filter(l => l);
+            for (let i = 0; i < lines.length - 1; i++) {
+                if (/[a-zA-Z]/.test(lines[i]) && lines[i].includes(' ') && lines[i+1].startsWith('(')) return lines[i];
+            }
+            const exIdx = lines.findIndex(l => l.includes('【例句】'));
+            return exIdx !== -1 && lines[exIdx + 1] ? lines[exIdx + 1] : null;
+        }
+
+        function renderCurrentCard() {
+            if (queue.length === 0) {
+                document.getElementById('final-again').innerText = stats.again;
+                document.getElementById('final-hard').innerText = stats.hard;
+                document.getElementById('final-good').innerText = stats.good;
+                document.getElementById('final-easy').innerText = stats.easy;
+                studyScreen.classList.add('hidden');
+                finishScreen.classList.remove('hidden');
+                localStorage.removeItem(STORAGE_KEY);
+                return;
+            }
+
+            saveState(); 
+
+            const current = queue[0];
+            wordDisplay.innerText = current.word;
+            backWordTitle.innerText = current.word;
+            cardImage.classList.add('opacity-0');
+            imageLoader.classList.remove('hidden');
+            
+            const showImg = (url) => {
+                cardImage.src = url;
+                cardImage.onload = () => { cardImage.classList.remove('opacity-0'); imageLoader.classList.add('hidden'); };
+                cardImage.onerror = () => imageLoader.classList.add('hidden');
+            };
+
+            if (imageCache.has(current.word)) showImg(imageCache.get(current.word));
+            else showImg(`https://loremflickr.com/600/400/${encodeURIComponent(current.word)}`);
+
+            preloadImages();
+
+            detailsContainer.innerHTML = '';
+            current.details.split('\n').forEach(line => {
+                let trimmed = line.trim();
+                
+                // 檢查是否為「無」或是只有「無」字在標籤內的情況
+                // 例如：【詞性變化】無 -> 過濾掉
+                // 如果整行內容只有「無」，也過濾掉
+                const contentOnly = trimmed.replace(/【.*?】/g, '').trim();
+                if (!trimmed || contentOnly === '無' || contentOnly === '') return;
+
+                // 移除標籤用於顯示
+                let displayLine = trimmed.replace(/【(詞性變化|搭配詞|例句)】/g, '').trim();
+                if (!displayLine) return;
+
+                const row = document.createElement('div');
+                row.className = `group flex items-start justify-between gap-4 py-0.5 px-3 rounded-lg hover:bg-slate-50 transition-all`;
+                const hasEng = /[a-zA-Z]/.test(displayLine);
+                row.innerHTML = `<span class="flex-1 ${hasEng ? 'text-slate-700 font-medium' : 'text-slate-500 italic'}">${displayLine}</span>`;
+                
+                if (hasEng) {
+                    const btn = document.createElement('button');
+                    btn.className = "mt-0.5 opacity-0 group-hover:opacity-100 text-slate-300 hover:text-indigo-600 transition-all";
+                    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+                    btn.onclick = (e) => { e.stopPropagation(); speak(displayLine); };
+                    row.appendChild(btn);
+                }
+                detailsContainer.appendChild(row);
+            });
+
+            const remaining = queue.length;
+            const progress = ((totalCount - remaining) / totalCount) * 100;
+            progressText.innerText = `Remaining: ${remaining}`;
+            progressPercent.innerText = `${Math.round(progress)}%`;
+            progressBar.style.width = `${progress}%`;
+            
+            document.getElementById('count-again').innerText = stats.again;
+            document.getElementById('count-hard').innerText = stats.hard;
+            document.getElementById('count-good').innerText = stats.good;
+            document.getElementById('count-easy').innerText = stats.easy;
+
+            if (!isFlipped) speak(current.word);
+        }
+
+        function handleSRS(type) {
+            const current = queue.shift();
+            stats[type]++;
+            if (type === 'again') queue.splice(2, 0, current);
+            else if (type === 'hard') queue.splice(Math.floor(queue.length / 2), 0, current);
+            else if (type === 'good') queue.push(current);
+
+            isFlipped = false;
+            cardInner.classList.remove('rotate-y-180');
+            srsControls.classList.add('invisible');
+            setTimeout(renderCurrentCard, 400);
+        }
+
+        // --- 事件與初始化 ---
+        const importScreen = document.getElementById('import-screen');
+        const studyScreen = document.getElementById('study-screen');
+        const finishScreen = document.getElementById('finish-screen');
+        const fileInput = document.getElementById('file-input');
+        const csvTextarea = document.getElementById('csv-textarea');
+        const cardInner = document.getElementById('card-inner');
+        const srsControls = document.getElementById('srs-controls');
+        const cardImage = document.getElementById('card-image');
+        const imageLoader = document.getElementById('image-loader');
+        const wordDisplay = document.getElementById('word-display');
+        const backWordTitle = document.getElementById('back-word-title');
+        const detailsContainer = document.getElementById('details-container');
+        const progressText = document.getElementById('progress-text');
+        const progressPercent = document.getElementById('progress-percent');
+        const progressBar = document.getElementById('progress-bar');
+        
+        const infoBtn = document.getElementById('info-btn');
+        const infoModal = document.getElementById('info-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        const restoreModal = document.getElementById('restore-modal');
+        const confirmRestore = document.getElementById('confirm-restore');
+        const cancelRestore = document.getElementById('cancel-restore');
+
+        const resetBtn = document.getElementById('reset-btn');
+        const resetModal = document.getElementById('reset-modal');
+        const confirmReset = document.getElementById('confirm-reset');
+        const cancelReset = document.getElementById('cancel-reset');
+
+        window.onload = () => {
+            const saved = loadState();
+            if (saved && saved.queue.length > 0) {
+                restoreModal.classList.remove('hidden');
+                confirmRestore.onclick = () => {
+                    queue = saved.queue;
+                    stats = saved.stats;
+                    totalCount = saved.totalCount;
+                    restoreModal.classList.add('hidden');
+                    startSession();
+                };
+                cancelRestore.onclick = () => {
+                    localStorage.removeItem(STORAGE_KEY);
+                    restoreModal.classList.add('hidden');
+                };
+            }
+        };
+
+        resetBtn.onclick = () => resetModal.classList.remove('hidden');
+        cancelReset.onclick = () => resetModal.classList.add('hidden');
+        confirmReset.onclick = () => clearStorageAndReload();
+
+        infoBtn.onclick = () => infoModal.classList.remove('hidden');
+        closeModal.onclick = () => infoModal.classList.add('hidden');
+
+        csvTextarea.oninput = (e) => {
+            if (e.target.value.includes('\n')) {
+                clearTimeout(window.itimer);
+                window.itimer = setTimeout(() => processCSV(e.target.value), 1000);
+            }
+        };
+
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => processCSV(ev.target.result);
+            reader.readAsText(file);
+        };
+
+        function processCSV(text) {
+            const cards = parseCSVLines(text);
+            if (cards.length > 0) {
+                queue = shuffle([...cards]);
+                totalCount = queue.length;
+                startSession();
+            }
+        }
+
+        function startSession() {
+            importScreen.classList.add('hidden');
+            studyScreen.classList.remove('hidden');
+            renderCurrentCard();
+        }
+
+        cardInner.onclick = () => {
+            if (isFlipped) return;
+            isFlipped = true;
+            cardInner.classList.add('rotate-y-180');
+            srsControls.classList.remove('invisible');
+            const current = queue[0];
+            const sentence = findBestSentence(current.details);
+            setTimeout(() => speak(sentence || current.word), 450);
+        };
+
+        document.getElementById('speak-word').onclick = (e) => { e.stopPropagation(); speak(queue[0].word); };
+        document.getElementById('speak-sentence').onclick = (e) => { 
+            e.stopPropagation(); 
+            const sent = findBestSentence(queue[0].details);
+            speak(sent || queue[0].word); 
+        };
+
+        window.onkeydown = (e) => {
+            if (studyScreen.classList.contains('hidden') || !infoModal.classList.contains('hidden') || !resetModal.classList.contains('hidden')) return;
+            if (e.key === ' ' || e.key === 'Enter') {
+                if (!isFlipped) cardInner.onclick();
+                e.preventDefault();
+            }
+            if (isFlipped) {
+                if (e.key === '1') handleSRS('again');
+                if (e.key === '2') handleSRS('hard');
+                if (e.key === '3') handleSRS('good');
+                if (e.key === '4') handleSRS('easy');
+            }
+        };
+    </script>
+</body>
+</html>
