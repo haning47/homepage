@@ -147,6 +147,7 @@
             </div>
         </div>
 
+        <!-- 恢復進度 Modal -->
         <div id="restore-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
             <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 text-center animate-modal">
                 <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -161,6 +162,7 @@
             </div>
         </div>
 
+        <!-- 重置 Modal -->
         <div id="reset-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
             <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-8 text-center animate-modal">
                 <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -175,6 +177,7 @@
             </div>
         </div>
 
+        <!-- 說明 Modal -->
         <div id="info-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
             <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden animate-modal">
                 <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
@@ -192,16 +195,18 @@
                             <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">Space</kbd> 翻面</div>
                             <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">↑↓</kbd> 選擇句子</div>
                             <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">Enter</kbd> 朗讀 / 確定</div>
-                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">1</kbd> Again</div>
-                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">2</kbd> Hard</div>
-                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">3</kbd> Good</div>
-                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">4</kbd> Easy</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">0</kbd> 切換例句朗讀</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">1</kbd> Again 間隔2</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">2</kbd> Hard 中間</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">3</kbd> Good 最後</div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-xl"><kbd class="px-2 py-1 bg-white border rounded shadow-sm font-bold">4</kbd> Easy 移除</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- 結束畫面 -->
         <div id="finish-screen" class="hidden min-h-screen flex flex-col items-center justify-center p-6 text-center">
             <div class="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 max-w-md w-full">
                 <div class="text-6xl mb-6">🎉</div>
@@ -228,6 +233,7 @@
         const STORAGE_KEY = 'flashcard_srs_state';
 
         let currentDetailIndex = -1;
+        let currentSentenceToggleIndex = 0; 
 
         function saveState() {
             const state = { queue, stats, totalCount, timestamp: Date.now() };
@@ -247,7 +253,16 @@
 
         function speak(text) {
             if (!text || synth.speaking) synth.cancel();
-            const englishOnly = text.replace(/[\u4e00-\u9fa5]/g, '').replace(/\(.*\)|（.*）|【.*】/g, '').trim();
+
+            // 處理邏輯：如果文字中包含 /，則只取 / 之前的部分
+            let cleanText = text;
+            if (cleanText.includes('/')) {
+                cleanText = cleanText.split('/')[0].trim();
+            }
+
+            // 過濾中文字、括號內容與標籤
+            const englishOnly = cleanText.replace(/[\u4e00-\u9fa5]/g, '').replace(/\(.*\)|（.*）|【.*】/g, '').trim();
+            
             if (englishOnly && /[a-zA-Z]/.test(englishOnly)) {
                 const utter = new SpeechSynthesisUtterance(englishOnly);
                 utter.lang = 'en-US';
@@ -317,13 +332,24 @@
             return allCards;
         }
 
-        function findBestSentence(details) {
+        function getAllSentences(details) {
             const lines = details.split('\n').map(l => l.trim()).filter(l => l);
-            for (let i = 0; i < lines.length - 1; i++) {
-                if (/[a-zA-Z]/.test(lines[i]) && lines[i].includes(' ') && lines[i+1].startsWith('(')) return lines[i];
+            const sentences = [];
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const nextLine = lines[i+1];
+                if (/[a-zA-Z]/.test(line) && line.includes(' ') && nextLine && (nextLine.startsWith('(') || nextLine.startsWith('（'))) {
+                    sentences.push(line);
+                } else if (line.includes('【例句】') && lines[i+1]) {
+                    sentences.push(lines[i+1]);
+                }
             }
-            const exIdx = lines.findIndex(l => l.includes('【例句】'));
-            return exIdx !== -1 && lines[exIdx + 1] ? lines[exIdx + 1] : null;
+            return [...new Set(sentences)];
+        }
+
+        function findBestSentence(details) {
+            const sents = getAllSentences(details);
+            return sents.length > 0 ? sents[0] : null;
         }
 
         function renderCurrentCard() {
@@ -340,6 +366,7 @@
 
             saveState(); 
             currentDetailIndex = -1;
+            currentSentenceToggleIndex = 0; 
             const current = queue[0];
             wordDisplay.innerText = current.word;
             backWordTitle.innerText = current.word;
@@ -517,10 +544,8 @@
         };
 
         window.onkeydown = (e) => {
-            // 如果彈窗開啟，則不執行快捷鍵
             if (!infoModal.classList.contains('hidden') || !resetModal.classList.contains('hidden')) return;
 
-            // 結束畫面的 Enter 鍵處理
             if (!finishScreen.classList.contains('hidden')) {
                 if (e.key === 'Enter') {
                     clearStorageAndReload();
@@ -546,6 +571,17 @@
                     if (currentDetailIndex !== -1 && rows[currentDetailIndex]) {
                         e.preventDefault();
                         speak(rows[currentDetailIndex].innerText);
+                    }
+                }
+                else if (e.key === '0') {
+                    e.preventDefault();
+                    const allSents = getAllSentences(queue[0].details);
+                    if (allSents.length > 0) {
+                        const targetSent = allSents[currentSentenceToggleIndex % allSents.length];
+                        speak(targetSent);
+                        currentSentenceToggleIndex++;
+                    } else {
+                        speak(queue[0].word);
                     }
                 }
                 else if (e.key === '1') handleSRS('again');
