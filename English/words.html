@@ -77,7 +77,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                     </button>
                     <button id="info-btn" class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="使用說明">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                     </button>
                     <span id="progress-percent" class="text-sm font-bold text-blue-600 min-w-[40px]">0%</span>
                 </div>
@@ -325,7 +325,6 @@
             return allCards;
         }
 
-        // 新增排除條件清單
         const INVALID_EXPLANATION_KEYWORDS = ["無明顯詞性變化", "無", "無變化", "不適用", "(無)"];
 
         function getAllSentences(details) {
@@ -334,11 +333,6 @@
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i];
                 const nextLine = lines[i+1];
-                
-                // 檢查是否為例句：
-                // 1. 包含英文字與空格
-                // 2. 下一行是以括號開頭（翻譯）
-                // 3. 排除特定關鍵字（如：無明顯詞性變化）
                 if (/[a-zA-Z]/.test(line) && line.includes(' ') && nextLine && (nextLine.startsWith('(') || nextLine.startsWith('（'))) {
                     const isInvalid = INVALID_EXPLANATION_KEYWORDS.some(kw => nextLine.includes(kw));
                     if (!isInvalid) {
@@ -495,7 +489,7 @@
         };
 
         resetBtn.onclick = () => resetModal.classList.remove('hidden');
-        cancelReset.onclick = () => resetModal.classList.remove('hidden');
+        cancelReset.onclick = () => resetModal.classList.add('hidden'); // 此處修正為添加 hidden
         confirmReset.onclick = () => clearStorageAndReload();
         infoBtn.onclick = () => infoModal.classList.remove('hidden');
         closeModal.onclick = () => infoModal.classList.add('hidden');
