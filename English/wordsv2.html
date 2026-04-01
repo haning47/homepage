@@ -225,13 +225,7 @@
 
         function filterText(text) {
             if (!text) return "";
-            // 先過濾括號內容 (包含括號內的詞性如 (v./n.))
-            let clean = text.replace(/\s*\(.*?\)/g, "");
-            // 如果單字中包含 /，則只取前面的部分
-            if (clean.includes('/')) {
-                clean = clean.split('/')[0];
-            }
-            // 只保留英文字母與空格，並去除前後空白
+            let clean = text.replace(/\([a-z]+\.\)/gi, "");
             return clean.replace(/[^a-zA-Z\s]/g, "").trim();
         }
 
