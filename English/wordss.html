@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>單字學習卡 SRS 版</title>
+    <title>單字學習卡SRS版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
@@ -35,8 +35,8 @@
                 <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 </div>
-                <h1 class="text-3xl font-extrabold text-slate-800 mb-2">匯入單字庫 (SRS 模式)</h1>
-                <p class="text-slate-400 font-medium mb-10">選擇 CSV 即可開始複習</p>
+                <h1 class="text-3xl font-extrabold text-slate-800 mb-2">匯入單字庫</h1>
+                <p class="text-slate-400 font-medium mb-10">SRS 模式</p>
                 <label class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl text-center shadow-lg transition-all mb-4 block text-lg">
                     選擇 CSV 檔案
                     <input type="file" id="file-input" accept=".csv" class="hidden">
@@ -225,7 +225,13 @@
 
         function filterText(text) {
             if (!text) return "";
-            let clean = text.replace(/\([a-z]+\.\)/gi, "");
+            // 先過濾括號內容 (包含括號內的詞性如 (v./n.))
+            let clean = text.replace(/\s*\(.*?\)/g, "");
+            // 如果單字中包含 /，則只取前面的部分
+            if (clean.includes('/')) {
+                clean = clean.split('/')[0];
+            }
+            // 只保留英文字母與空格，並去除前後空白
             return clean.replace(/[^a-zA-Z\s]/g, "").trim();
         }
 
