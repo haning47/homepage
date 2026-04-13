@@ -39,7 +39,7 @@
                 <p class="text-slate-400 font-medium mb-10">SRS 模式</p>
                 <label class="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl text-center shadow-lg transition-all mb-4 block text-lg">
                     選擇 CSV 檔案
-                    <input type="file" id="file-input" accept=".csv,.txt,text/csv,text/plain" class="hidden">
+                    <input type="file" id="file-input" accept=".csv" class="hidden">
                 </label>
             </div>
         </div>
@@ -350,15 +350,8 @@
         // 事件綁定
         document.getElementById('file-input').onchange = (e) => {
             const reader = new FileReader();
-            reader.onload = (ev) => {
-                // 去除 BOM（手機瀏覽器下載的 CSV 常帶有 UTF-8 BOM）
-                let text = ev.target.result.replace(/^\uFEFF/, '');
-                queue = parseCSV(text).sort(() => Math.random() - 0.5);
-                totalCount = queue.length;
-                startStudy();
-            };
-            // 明確指定 UTF-8 編碼，避免手機上亂碼
-            reader.readAsText(e.target.files[0], 'UTF-8');
+            reader.onload = (ev) => { queue = parseCSV(ev.target.result).sort(() => Math.random() - 0.5); totalCount = queue.length; startStudy(); };
+            reader.readAsText(e.target.files[0]);
         };
 
         document.getElementById('card-inner').onclick = () => {
