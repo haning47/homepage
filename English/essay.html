@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 3 AI 英語互動學習系統 v4</title>
+    <style>
+        :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
+        body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 20px; max-width: 900px; margin: auto; background-color: #f0f2f5; color: #333; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .api-panel { background: #fff3e0; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #ffe0b2; }
+        .settings-panel { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px; border: 1px solid #dee2e6; }
+        .setting-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+        input, select { padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; }
+        input[type="text"] { flex-grow: 1; }
+        input[type="password"] { width: 320px; }
+        .loading { display: none; color: #e65100; font-weight: bold; margin: 10px 0; text-align: center; border: 2px dashed #ff9800; padding: 10px; border-radius: 8px; }
+        
+        /* 單字樣式 */
+        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; }
+        .vocab:hover { background-color: #fff9c4; border-radius: 4px; }
+
+        /* 1. 游標停在文章單字上時，出現 (詞性) 中文說明 */
+        #english-story .vocab::after { 
+            content: attr(data-info); 
+            position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); 
+            background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; 
+            font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+        }
+        #english-story .vocab::before { 
+            content: ""; 
+            position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); 
+            border-width: 6px; border-style: solid; border-color: var(--tooltip-bg) transparent transparent transparent; 
+            visibility: hidden; opacity: 0; z-index: 100; 
+        }
+        #english-story .vocab:hover::after, 
+        #english-story .vocab:hover::before { 
+            visibility: visible; 
+            opacity: 1; 
+        }
+
+        /* 內容顯示區 */
+        .story-box { margin-top: 20px; padding: 20px; border: 1px solid #eee; border-radius: 10px; }
+        .translation-section { margin-top: 30px; padding: 20px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); color: #555; }
+        
+        /* 2. 單字表表格樣式：去除黑塊提示 */
+        table { width: 100%; border-collapse: collapse; margin-top: 25px; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        th { background: #f1f3f4; color: var(--primary-color); }
+        
+        button { padding: 10px 22px; cursor: pointer; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: bold; transition: 0.2s; }
+        button:hover { background: #1967d2; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        .read-btn { background: var(--secondary-color); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="margin-top:0; color:#1a73e8;">🧠 Gemini 3 Flash AI 英語學習系統</h2>
+
+    <div class="api-panel">
+        <label>🔑 第一步：輸入 API Key:</label>
+        <input type="password" id="api-key" placeholder="在此貼上您從 AI Studio 取得的 Key">
+    </div>
+    
+    <div class="settings-panel">
+        <div class="setting-row">
+            <label>單字難度:</label>
+            <select id="level-select">
+                <option value="Level 1">Level 1 (基礎)</option>
+                <option value="Level 2">Level 2 (初級)</option>
+                <option value="Level 3">Level 3 (中級)</option>
+                <option value="Level 4" selected>Level 4 (中高級)</option>
+                <option value="Level 5">Level 5 (高級)</option>
+                <option value="Level 6">Level 6 (學術/進階)</option>
+            </select>
+        </div>
+        <div class="setting-row">
+            <label>故事主題:</label>
+            <input type="text" id="topic-input" placeholder="輸入任何主題，例如：台北101、珍珠奶茶、自動駕駛...">
+            <button id="gen-btn" onclick="generateStory()">✨ 第二步：生成 AI 文章</button>
+        </div>
+        <div id="loader" class="loading">⚡ Gemini 3 正在運用最強神經網絡撰寫中...</div>
+    </div>
+
+    <div id="content-area" style="display: none;">
+        <div class="story-box">
+            <button class="read-btn" onclick="readFullStory()">🔊 朗讀全文故事</button>
+            <h3 id="story-title" style="color: #4285f4;"></h3>
+            <div id="english-story" style="font-size: 18px; line-height: 2;"></div>
+            
+            <div class="translation-section">
+                <h4 style="margin-top:0;">中文對照翻譯</h4>
+                <div id="chinese-translation"></div>
+            </div>
+
+            <h4>📚 核心單字參考 (點擊單字可發音)</h4>
+            <table id="vocab-table">
+                <thead><tr><th>單字</th><th>詞性</th><th>中文解釋</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function generateStory() {
+        const apiKey = document.getElementById('api-key').value.trim();
+        const level = document.getElementById('level-select').value;
+        let topic = document.getElementById('topic-input').value || "Taiwan daily life";
+        const btn = document.getElementById('gen-btn');
+        const loader = document.getElementById('loader');
+
+        if (!apiKey) { alert("請先貼上 API Key！"); return; }
+
+        btn.disabled = true;
+        loader.style.display = "block";
+        document.getElementById('content-area').style.display = "none";
+
+        // 使用您截圖中的正確模型 ID
+        const MODEL_NAME = "gemini-3-flash-preview"; 
+
+        // 提示詞：強制要求 Tooltip 內容為 (詞性) 中文
+        const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
+        Wrap exactly 8 keywords in this tag: <span class="vocab" onclick="speak('word')" data-info="(詞性) 中文解釋">word</span>. 
+        Important: The 'data-info' attribute MUST contain ONLY the part of speech and Chinese meaning. Example: (n.) 氣氛. 
+        Return ONLY a PURE JSON object: 
+        {"title": "...", "english_story": "...", "chinese_translation": "...", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
+
+        try {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
+            
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: { responseMimeType: "application/json" }
+                })
+            });
+
+            const data = await response.json();
+            if (data.error) throw new Error(data.error.message);
+
+            let rawText = data.candidates[0].content.parts[0].text;
+            // 處理 AI 可能回傳的 Markdown 語法
+            const cleanText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
+            const result = JSON.parse(cleanText);
+
+            document.getElementById('story-title').innerText = result.title;
+            document.getElementById('english-story').innerHTML = result.english_story;
+            document.getElementById('chinese-translation').innerText = result.chinese_translation;
+            
+            const tbody = document.querySelector("#vocab-table tbody");
+            // 注意：單字表的 td 類名依然是 vocab（為了點擊發音與高亮），但因為它不在 #english-story 內，所以不會顯示黑塊 Tooltip
+            tbody.innerHTML = result.vocab_list.map(v => `
+                <tr>
+                    <td class="vocab" onclick="speak('${v.w}')">${v.w}</td>
+                    <td>${v.p}</td>
+                    <td>${v.c}</td>
+                </tr>`).join('');
+
+            document.getElementById('content-area').style.display = "block";
+        } catch (error) {
+            console.error("API Error:", error);
+            alert("生成失敗！原因：" + error.message);
+        } finally {
+            btn.disabled = false;
+            loader.style.display = "none";
+        }
+    }
+
+    function speak(text) {
+        window.speechSynthesis.cancel();
+        const msg = new SpeechSynthesisUtterance(text);
+        msg.lang = 'en-US';
+        msg.rate = 0.9;
+        window.speechSynthesis.speak(msg);
+    }
+
+    function readFullStory() {
+        speak(document.getElementById('english-story').innerText);
+    }
+</script>
+
+</body>
+</html>
