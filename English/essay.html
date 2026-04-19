@@ -140,7 +140,12 @@
         document.getElementById('content-area').style.display = "none";
         stopSpeech();
 
-        const MODEL_NAME = "gemini-3-flash-preview"; 
+        // 模型優先順序：quota 超了自動換下一個
+        const MODELS = [
+            { name: "gemini-3-flash-preview",   label: "Gemini 3 Flash" },
+            { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" }
+        ];
+
         const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
         Wrap exactly 8 keywords in this tag: <span class="vocab" onclick="speakSingleWord(this.innerText)" data-info="(詞性) 中文解釋">word</span>. 
         Important: The 'data-info' attribute MUST contain ONLY the part of speech and Chinese meaning. Example: (n.) 氣氛. 
@@ -148,17 +153,36 @@
         {"title": "...", "english_story": "...", "chinese_translation": "...", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
 
         try {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
-            const response = await fetch(apiUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ 
-                    contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: { responseMimeType: "application/json" }
-                })
-            });
-            const data = await response.json();
-            if (data.error) throw new Error(data.error.message);
+            let data = null;
+            let usedModel = "";
+
+            for (const model of MODELS) {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model.name}:generateContent?key=${apiKey}`;
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ 
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { responseMimeType: "application/json" }
+                    })
+                });
+                const json = await response.json();
+
+                // 如果是 quota 超過，換下一個模型
+                if (json.error && json.error.message && json.error.message.includes("quota")) {
+                    console.warn(`${model.label} quota 超過，改用下一個模型...`);
+                    loader.innerText = `⚡ ${model.label} quota 已用完，切換備用模型中...`;
+                    continue;
+                }
+
+                if (json.error) throw new Error(json.error.message);
+                data = json;
+                usedModel = model.label;
+                break;
+            }
+
+            if (!data) throw new Error("所有模型今日 quota 均已用完，請明天再試！");
+            loader.innerText = `⚡ 使用 ${usedModel} 生成中...`;
 
             let rawText = data.candidates[0].content.parts[0].text;
             const cleanText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
