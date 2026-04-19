@@ -140,10 +140,12 @@
         document.getElementById('content-area').style.display = "none";
         stopSpeech();
 
-        // 模型優先順序：quota 超了自動換下一個
+        // 模型優先順序：進不去或用完就自動換下一個
         const MODELS = [
-            { name: "gemini-3-flash-preview",   label: "Gemini 3 Flash" },
-            { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" }
+            { name: "gemini-3-flash-preview",        label: "Gemini 3 Flash" },
+            { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" },
+            { name: "gemini-2.5-flash",                    label: "Gemini 2.5 Flash" },
+            { name: "gemini-2.5-flash-lite", label: "Gemini 2.5 Flash Lite" }
         ];
 
         const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
@@ -152,11 +154,18 @@
         Return ONLY a PURE JSON object: 
         {"title": "...", "english_story": "...", "chinese_translation": "...", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
 
+        // 判斷是否需要換模型的錯誤
+        function shouldFallback(msg) {
+            return msg.includes("quota") || msg.includes("high demand") || 
+                   msg.includes("overloaded") || msg.includes("429") || msg.includes("503");
+        }
+
         try {
             let data = null;
             let usedModel = "";
 
             for (const model of MODELS) {
+                loader.innerText = `⚡ 嘗試使用 ${model.label} 生成中...`;
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model.name}:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: "POST",
@@ -168,20 +177,21 @@
                 });
                 const json = await response.json();
 
-                // 如果是 quota 超過，換下一個模型
-                if (json.error && json.error.message && json.error.message.includes("quota")) {
-                    console.warn(`${model.label} quota 超過，改用下一個模型...`);
-                    loader.innerText = `⚡ ${model.label} quota 已用完，切換備用模型中...`;
-                    continue;
+                if (!json.error) {
+                    data = json;
+                    usedModel = model.label;
+                    break;
                 }
 
-                if (json.error) throw new Error(json.error.message);
-                data = json;
-                usedModel = model.label;
-                break;
+                const msg = json.error.message || "";
+                if (shouldFallback(msg)) {
+                    loader.innerText = `⚡ ${model.label} 無法使用，切換下一個模型...`;
+                } else {
+                    throw new Error(msg);
+                }
             }
 
-            if (!data) throw new Error("所有模型今日 quota 均已用完，請明天再試！");
+            if (!data) throw new Error("所有模型目前均無法使用，請稍後再試！");
             loader.innerText = `⚡ 使用 ${usedModel} 生成中...`;
 
             let rawText = data.candidates[0].content.parts[0].text;
