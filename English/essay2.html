@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 3 AI 英語互動學習系統 v16</title>
+    <style>
+        :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
+        body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 10px; max-width: 900px; margin: auto; background-color: #f0f2f5; color: #333; }
+        .container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .api-panel { background: #fff3e0; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #ffe0b2; }
+        .settings-panel { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px; border: 1px solid #dee2e6; }
+        .setting-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+        input, select { padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; } /* 手機字體稍大防止縮放 */
+        input[type="text"] { flex: 1; min-width: 200px; }
+        input[type="password"] { width: 100%; max-width: 320px; }
+        
+        .speed-control { display: flex; align-items: center; gap: 10px; background: #e8f0fe; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a73e8; }
+        .loading { display: none; color: #e65100; font-weight: bold; margin: 10px 0; text-align: center; border: 2px dashed #ff9800; padding: 10px; border-radius: 8px; }
+        
+        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; z-index: 5; }
+        .vocab:hover { background-color: #fff9c4 !important; border-radius: 4px; }
+        .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
+        .sentence:hover { background-color: #e3f2fd; }
+
+        #english-story .vocab::after { 
+            content: attr(data-info); 
+            position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); 
+            background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; 
+            font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+        }
+        #english-story .vocab::before { 
+            content: ""; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); 
+            border-width: 6px; border-style: solid; border-color: var(--tooltip-bg) transparent transparent transparent; 
+            visibility: hidden; opacity: 0; z-index: 100; 
+        }
+        #english-story .vocab:hover::after, #english-story .vocab:hover::before { visibility: visible; opacity: 1; }
+
+        .story-box { margin-top: 20px; border: 1px solid #eee; border-radius: 10px; padding: 15px; }
+        .translation-section { margin-top: 25px; padding: 15px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); color: #555; }
+        
+        .table-wrapper { width: 100%; overflow-x: auto; margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; min-width: 400px; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        th { background: #f1f3f4; color: var(--primary-color); }
+        
+        button { padding: 12px 20px; cursor: pointer; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: bold; transition: 0.2s; display: flex; align-items: center; gap: 5px; font-size: 15px; }
+        button:hover { opacity: 0.9; }
+        .stop-btn { background: #d32f2f; }
+        .read-btn { background: var(--secondary-color); }
+        .save-btn { background: #673ab7; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .setting-row { flex-direction: column; align-items: flex-start; }
+            .speed-control { width: 100%; justify-content: space-between; }
+            button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="setup-ui">
+        <h2 style="margin-top:0; color:#1a73e8;">🧠 Gemini 3 Flash AI 英語學習系統</h2>
+
+        <div class="api-panel">
+            <label>🔑 輸入 API Key:</label><br>
+            <input type="password" id="api-key" placeholder="在此貼上您的 API Key">
+        </div>
+        
+        <div class="settings-panel">
+            <div class="setting-row">
+                <label>選擇級別:</label>
+                <select id="level-select">
+                    <option value="Level 1 (基礎)">Level 1 (基礎)</option>
+                    <option value="Level 2 (初級)">Level 2 (初級)</option>
+                    <option value="Level 3 (中級)">Level 3 (中級)</option>
+                    <option value="Level 4 (中高級)" selected>Level 4 (中高級)</option>
+                    <option value="Level 5 (高級)">Level 5 (高級)</option>
+                    <option value="Level 6 (學術/進階)">Level 6 (學術/進階)</option>
+                </select>
+                
+                <div class="speed-control">
+                    <label>🔊 語速:</label>
+                    <input type="range" id="speed-slider" min="0.5" max="1.0" step="0.05" value="0.9">
+                    <span id="speed-label">0.9x</span>
+                </div>
+            </div>
+            <div class="setting-row">
+                <label>故事主題:</label>
+                <input type="text" id="topic-input" placeholder="例如：台北101、珍珠奶茶、AI 未來...">
+                <button id="gen-btn" onclick="generateStory()">✨ 生成 AI 文章</button>
+            </div>
+            <div id="loader" class="loading">⚡ Gemini 3 正在撰寫中...</div>
+        </div>
+    </div>
+
+    <div id="content-area" style="display: none;">
+        <div class="story-box">
+            <div class="setting-row">
+                <button class="read-btn" onclick="startFullStory()">▶️ 朗讀全文</button>
+                <button class="stop-btn" onclick="stopSpeech()">⏹️ 停止</button>
+                <button class="save-btn" onclick="saveAsHTML()">💾 儲存為 HTML</button>
+            </div>
+            <h3 id="story-title" style="color: #4285f4;"></h3>
+            <div id="english-story" style="font-size: 19px; line-height: 2.2;"></div>
+            
+            <div class="translation-section">
+                <h4 style="margin-top:0;">中文對照翻譯</h4>
+                <div id="chinese-translation"></div>
+            </div>
+
+            <h4>📚 重點單字解析</h4>
+            <div class="table-wrapper">
+                <table id="vocab-table">
+                    <thead><tr><th>單字</th><th>詞性</th><th>解釋</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let fullText = "";
+    let isReading = false;
+    let synth = window.speechSynthesis;
+
+    const speedSlider = document.getElementById('speed-slider');
+    const speedLabel = document.getElementById('speed-label');
+    
+    speedSlider.addEventListener('input', () => {
+        speedLabel.innerText = speedSlider.value + "x";
+        if (isReading) startFullStory();
+    });
+
+    async function generateStory() {
+        const apiKey = document.getElementById('api-key').value.trim();
+        const level = document.getElementById('level-select').value;
+        let topic = document.getElementById('topic-input').value || "Taiwan's Culture";
+        const btn = document.getElementById('gen-btn');
+        const loader = document.getElementById('loader');
+
+        if (!apiKey) { alert("請先貼上 API Key！"); return; }
+        btn.disabled = true; loader.style.display = "block";
+        document.getElementById('content-area').style.display = "none";
+        stopSpeech();
+
+        const MODELS = [
+            { name: "gemini-3-flash-preview",        label: "Gemini 3 Flash" },
+            { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" },
+            { name: "gemini-2.5-flash",              label: "Gemini 2.5 Flash" },
+            { name: "gemini-2.5-flash-lite",         label: "Gemini 2.5 Flash Lite" }
+        ];
+
+        function shouldFallback(msg) {
+            return msg.includes("quota") || msg.includes("high demand") || 
+                   msg.includes("overloaded") || msg.includes("429") || msg.includes("503");
+        }
+
+        const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
+        Formatting:
+        1. Wrap EVERY sentence in: <span class="sentence" onclick="speakSentence(this)">...</span>
+        2. Pick exactly 8 keywords and wrap in: <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(詞性) 中文解釋">word</span>
+        3. 'data-info' must be (POS) Chinese meaning ONLY.
+        Return ONLY JSON: {"title": "..", "english_story": "..", "chinese_translation": "..", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
+
+        try {
+            let data = null;
+            for (const model of MODELS) {
+                loader.innerText = `⚡ 嘗試使用 ${model.label} 生成中...`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model.name}:generateContent?key=${apiKey}`;
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json" }})
+                });
+                const json = await response.json();
+                if (!json.error) { data = json; break; }
+                if (!shouldFallback(json.error.message)) throw new Error(json.error.message);
+            }
+            if (!data) throw new Error("所有模型目前均無法使用，請稍後再試！");
+
+            let result = JSON.parse(data.candidates[0].content.parts[0].text.replace(/```json/g, '').replace(/```/g, '').trim());
+            document.getElementById('story-title').innerText = result.title;
+            document.getElementById('english-story').innerHTML = result.english_story;
+            document.getElementById('chinese-translation').innerText = result.chinese_translation;
+            fullText = document.getElementById('english-story').innerText;
+
+            const tbody = document.querySelector("#vocab-table tbody");
+            tbody.innerHTML = result.vocab_list.map(v => `
+                <tr><td class="vocab" onclick="speakSingleWord('${v.w}', event)">${v.w}</td><td>${v.p}</td><td>${v.c}</td></tr>
+            `).join('');
+
+            document.getElementById('content-area').style.display = "block";
+        } catch (e) { alert("生成失敗！原因：" + e.message); }
+        finally { btn.disabled = false; loader.style.display = "none"; }
+    }
+
+    function startFullStory() {
+        if (!fullText) return;
+        synth.cancel();
+        isReading = true;
+        const msg = new SpeechSynthesisUtterance(fullText);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        msg.onend = () => { isReading = false; };
+        synth.speak(msg);
+    }
+
+    function speakSentence(element) {
+        synth.cancel();
+        isReading = false;
+        const msg = new SpeechSynthesisUtterance(element.innerText);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+
+    function speakSingleWord(word, e) {
+        if (e) e.stopPropagation(); 
+        synth.cancel();
+        isReading = false;
+        const msg = new SpeechSynthesisUtterance(word);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+
+    function stopSpeech() {
+        isReading = false;
+        synth.cancel();
+    }
+
+    function saveAsHTML() {
+        const title = document.getElementById('story-title').innerText;
+        const englishStory = document.getElementById('english-story').innerHTML;
+        const translation = document.getElementById('chinese-translation').innerText;
+        const vocabTableBody = document.querySelector("#vocab-table tbody").innerHTML;
+        const currentSpeed = speedSlider.value;
+        const levelText = document.getElementById('level-select').value;
+        const levelNum = levelText.match(/\d+/) ? levelText.match(/\d+/)[0] : "0";
+
+        const htmlContent = `<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title} (${levelText})</title>
+    <style>
+        :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
+        body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 10px; max-width: 800px; margin: auto; background-color: #f0f2f5; }
+        .container { background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .level-badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+        .speed-control { display: flex; align-items: center; gap: 10px; background: #e8f0fe; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a73e8; margin-bottom: 15px; width: fit-content; }
+        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; }
+        .vocab:hover { background-color: #fff9c4 !important; border-radius: 4px; }
+        .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
+        .sentence:hover { background-color: #e3f2fd; }
+        #english-story .vocab::after { content: attr(data-info); position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        #english-story .vocab:hover::after { visibility: visible; opacity: 1; }
+        .translation-section { margin-top: 30px; padding: 15px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); color: #555; }
+        .table-wrapper { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 400px; margin-top: 20px; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        th { background: #f1f3f4; color: var(--primary-color); }
+        button { padding: 12px 22px; cursor: pointer; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: bold; display: flex; align-items: center; gap: 5px; margin-bottom: 10px; font-size: 16px; }
+        .stop-btn { background: #d32f2f; }
+        @media (max-width: 600px) { button { width: 100%; justify-content: center; } .speed-control { width: 100%; justify-content: space-between; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="level-badge">${levelText}</div>
+    <div class="speed-control">
+        <label>🔊 語速:</label>
+        <input type="range" id="speed-slider" min="0.5" max="1.0" step="0.05" value="${currentSpeed}">
+        <span id="speed-label">${currentSpeed}x</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        <button onclick="startFullStory()">▶️ 朗讀全文</button>
+        <button class="stop-btn" onclick="window.speechSynthesis.cancel()">⏹️ 停止</button>
+    </div>
+    <h2 style="color: #4285f4; margin-top:15px; font-size: 22px;">${title}</h2>
+    <div id="english-story" style="font-size: 20px; line-height: 2.2;">${englishStory}</div>
+    <div class="translation-section">
+        <h4 style="margin-top:0;">中文對照翻譯</h4>
+        <div>${translation}</div>
+    </div>
+    <h4>📚 重點單字解析</h4>
+    <div class="table-wrapper">
+        <table>
+            <thead><tr><th>單字</th><th>詞性</th><th>解釋</th></tr></thead>
+            <tbody>${vocabTableBody}</tbody>
+        </table>
+    </div>
+</div>
+<script>
+    let synth = window.speechSynthesis;
+    const speedSlider = document.getElementById('speed-slider');
+    const speedLabel = document.getElementById('speed-label');
+    speedSlider.addEventListener('input', () => { speedLabel.innerText = speedSlider.value + "x"; });
+    function startFullStory() {
+        synth.cancel();
+        const msg = new SpeechSynthesisUtterance(document.getElementById('english-story').innerText);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+    function speakSentence(el) {
+        synth.cancel();
+        const msg = new SpeechSynthesisUtterance(el.innerText);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+    function speakSingleWord(word, e) {
+        if(e) e.stopPropagation();
+        synth.cancel();
+        const msg = new SpeechSynthesisUtterance(word);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+<\/script>
+</body>
+</html>`;
+
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${levelNum}_${title.replace(/\s+/g, '_')}.html`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+</script>
+
+</body>
+</html>
