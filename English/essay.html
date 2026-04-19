@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini 3 AI 英語互動學習系統</title>
+    <title>Gemini 3 AI 英語互動學習系統 v10</title>
     <style>
         :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
         body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 20px; max-width: 900px; margin: auto; background-color: #f0f2f5; color: #333; }
@@ -19,10 +19,15 @@
         
         .loading { display: none; color: #e65100; font-weight: bold; margin: 10px 0; text-align: center; border: 2px dashed #ff9800; padding: 10px; border-radius: 8px; }
         
-        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; }
-        .vocab:hover { background-color: #fff9c4; border-radius: 4px; }
+        /* 單字樣式 */
+        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; z-index: 5; }
+        .vocab:hover { background-color: #fff9c4 !important; border-radius: 4px; }
 
-        /* 文章區域單字的 Tooltip：顯示 (詞性) 中文解釋 */
+        /* 句子樣式 */
+        .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
+        .sentence:hover { background-color: #e3f2fd; }
+
+        /* 文章區域單字的 Tooltip */
         #english-story .vocab::after { 
             content: attr(data-info); 
             position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); 
@@ -74,14 +79,12 @@
             
             <div class="speed-control">
                 <label>🔊 語速:</label>
-                <!-- 語速初始值 0.9 -->
                 <input type="range" id="speed-slider" min="0.5" max="1.0" step="0.05" value="0.9">
                 <span id="speed-label">0.9x</span>
             </div>
         </div>
         <div class="setting-row">
             <label>故事主題:</label>
-            <!-- 加入範例文字 Placeholder -->
             <input type="text" id="topic-input" placeholder="例如：台北101、珍珠奶茶、AI 未來、自動駕駛...">
             <button id="gen-btn" onclick="generateStory()">✨ 生成 AI 文章</button>
         </div>
@@ -95,7 +98,7 @@
                 <button class="stop-btn" onclick="stopSpeech()">⏹️ 停止</button>
             </div>
             <h3 id="story-title" style="color: #4285f4;"></h3>
-            <div id="english-story" style="font-size: 18px; line-height: 2;"></div>
+            <div id="english-story" style="font-size: 19px; line-height: 2.2; letter-spacing: 0.5px;"></div>
             
             <div class="translation-section">
                 <h4 style="margin-top:0;">中文對照翻譯</h4>
@@ -119,13 +122,9 @@
     const speedSlider = document.getElementById('speed-slider');
     const speedLabel = document.getElementById('speed-label');
     
-    // 滑動拉桿即時響應
     speedSlider.addEventListener('input', () => {
         speedLabel.innerText = speedSlider.value + "x";
-        // 若正在朗讀中調整拉桿，則重新播放（以此達成語速變更）
-        if (isReading) {
-            startFullStory();
-        }
+        if (isReading) startFullStory();
     });
 
     async function generateStory() {
@@ -144,15 +143,9 @@
         const MODELS = [
             { name: "gemini-3-flash-preview",        label: "Gemini 3 Flash" },
             { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" },
-            { name: "gemini-2.5-flash",                    label: "Gemini 2.5 Flash" },
-            { name: "gemini-2.5-flash-lite", label: "Gemini 2.5 Flash Lite" }
+            { name: "gemini-2.5-flash",              label: "Gemini 2.5 Flash" },
+            { name: "gemini-2.5-flash-lite",         label: "Gemini 2.5 Flash Lite" }
         ];
-
-        const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
-        Wrap exactly 8 keywords in this tag: <span class="vocab" onclick="speakSingleWord(this.innerText)" data-info="(詞性) 中文解釋">word</span>. 
-        Important: The 'data-info' attribute MUST contain ONLY the part of speech and Chinese meaning. Example: (n.) 氣氛. 
-        Return ONLY a PURE JSON object: 
-        {"title": "...", "english_story": "...", "chinese_translation": "...", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
 
         // 判斷是否需要換模型的錯誤
         function shouldFallback(msg) {
@@ -160,9 +153,19 @@
                    msg.includes("overloaded") || msg.includes("429") || msg.includes("503");
         }
 
+        // 強化 Prompt：要求同時封裝句子與單字
+        const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
+        
+        Strict Formatting Rules:
+        1. Wrap EVERY sentence in the English story in this tag: <span class="sentence" onclick="speakSentence(this)">...</span>
+        2. Within those sentences, pick 8 key words and wrap them in: <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(詞性) 中文解釋">word</span>
+        3. 'data-info' must be ONLY (POS) Chinese. Example: (n.) 氣氛.
+        
+        Return ONLY a PURE JSON object: 
+        {"title": "...", "english_story": "...", "chinese_translation": "...", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
+
         try {
             let data = null;
-            let usedModel = "";
 
             for (const model of MODELS) {
                 loader.innerText = `⚡ 嘗試使用 ${model.label} 生成中...`;
@@ -177,11 +180,7 @@
                 });
                 const json = await response.json();
 
-                if (!json.error) {
-                    data = json;
-                    usedModel = model.label;
-                    break;
-                }
+                if (!json.error) { data = json; break; }
 
                 const msg = json.error.message || "";
                 if (shouldFallback(msg)) {
@@ -192,7 +191,7 @@
             }
 
             if (!data) throw new Error("所有模型目前均無法使用，請稍後再試！");
-            loader.innerText = `⚡ 使用 ${usedModel} 生成中...`;
+            if (data.error) throw new Error(data.error.message);
 
             let rawText = data.candidates[0].content.parts[0].text;
             const cleanText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
@@ -205,7 +204,7 @@
 
             const tbody = document.querySelector("#vocab-table tbody");
             tbody.innerHTML = result.vocab_list.map(v => `
-                <tr><td class="vocab" onclick="speakSingleWord('${v.w}')">${v.w}</td><td>${v.p}</td><td>${v.c}</td></tr>
+                <tr><td class="vocab" onclick="speakSingleWord('${v.w}', event)">${v.w}</td><td>${v.p}</td><td>${v.c}</td></tr>
             `).join('');
 
             document.getElementById('content-area').style.display = "block";
@@ -213,7 +212,7 @@
         finally { btn.disabled = false; loader.style.display = "none"; }
     }
 
-    // 朗讀全文故事
+    // 朗讀全文
     function startFullStory() {
         if (!fullText) return;
         synth.cancel();
@@ -225,8 +224,21 @@
         synth.speak(msg);
     }
 
-    // 朗讀單個單字
-    function speakSingleWord(word) {
+    // 朗讀單句
+    function speakSentence(element) {
+        synth.cancel();
+        isReading = false;
+        // 取得該 span 的純文字（不含單字標籤的屬性文字）
+        const text = element.innerText;
+        const msg = new SpeechSynthesisUtterance(text);
+        msg.lang = 'en-US';
+        msg.rate = parseFloat(speedSlider.value);
+        synth.speak(msg);
+    }
+
+    // 朗讀單字 (加入 e.stopPropagation 防止觸發句子朗讀)
+    function speakSingleWord(word, e) {
+        if (e) e.stopPropagation(); 
         synth.cancel();
         isReading = false;
         const msg = new SpeechSynthesisUtterance(word);
@@ -235,7 +247,6 @@
         synth.speak(msg);
     }
 
-    // 停止朗讀按鈕
     function stopSpeech() {
         isReading = false;
         synth.cancel();
