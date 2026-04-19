@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini 3 AI 英語互動學習系統 v14</title>
+    <title>Gemini 3 AI 英語互動學習系統 v15</title>
     <style>
         :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
         body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 20px; max-width: 900px; margin: auto; background-color: #f0f2f5; color: #333; }
@@ -97,7 +97,7 @@
                 <button class="save-btn" onclick="saveAsHTML()">💾 儲存為 HTML</button>
             </div>
             <h3 id="story-title" style="color: #4285f4;"></h3>
-            <div id="english-story" style="font-size: 19px; line-height: 2.2;"></div>
+            <div id="english-story" style="font-size: 19px; line-height: 2.2; letter-spacing: 0.5px;"></div>
             
             <div class="translation-section">
                 <h4 style="margin-top:0;">中文對照翻譯</h4>
@@ -129,7 +129,7 @@
     async function generateStory() {
         const apiKey = document.getElementById('api-key').value.trim();
         const level = document.getElementById('level-select').value;
-        let topic = document.getElementById('topic-input').value || "Taiwan's Culture";
+        let topic = document.getElementById('topic-input').value || "Taiwanese Culture";
         const btn = document.getElementById('gen-btn');
         const loader = document.getElementById('loader');
 
@@ -171,7 +171,6 @@
                 if (!json.error) { data = json; break; }
                 if (!shouldFallback(json.error.message)) throw new Error(json.error.message);
             }
-
             if (!data) throw new Error("所有模型目前均無法使用，請稍後再試！");
 
             let result = JSON.parse(data.candidates[0].content.parts[0].text.replace(/```json/g, '').replace(/```/g, '').trim());
@@ -225,30 +224,33 @@
         synth.cancel();
     }
 
-    // 儲存功能修正：直接注入變數內容，不使用轉義字串
     function saveAsHTML() {
         const title = document.getElementById('story-title').innerText;
         const englishStory = document.getElementById('english-story').innerHTML;
         const translation = document.getElementById('chinese-translation').innerText;
         const vocabTableBody = document.querySelector("#vocab-table tbody").innerHTML;
         const currentSpeed = speedSlider.value;
+        const levelText = document.getElementById('level-select').value;
+        const levelNum = levelText.match(/\d+/) ? levelText.match(/\d+/)[0] : "0";
 
         const htmlContent = `<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>${title} - AI 英語學習</title>
+    <title>${title} (${levelText})</title>
     <style>
         :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
         body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 20px; max-width: 800px; margin: auto; background-color: #f0f2f5; }
         .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .level-badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
         .speed-control { display: flex; align-items: center; gap: 10px; background: #e8f0fe; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a73e8; margin-bottom: 15px; width: fit-content; }
         .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; padding: 0 2px; }
         .vocab:hover { background-color: #fff9c4 !important; border-radius: 4px; }
         .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
         .sentence:hover { background-color: #e3f2fd; }
-        #english-story .vocab::after { content: attr(data-info); position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; }
-        #english-story .vocab:hover::after { visibility: visible; opacity: 1; }
+        #english-story .vocab::after { content: attr(data-info); position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        #english-story .vocab::before { content: ""; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: var(--tooltip-bg) transparent transparent transparent; visibility: hidden; opacity: 0; z-index: 100; }
+        #english-story .vocab:hover::after, #english-story .vocab:hover::before { visibility: visible; opacity: 1; }
         .translation-section { margin-top: 30px; padding: 20px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); color: #555; }
         table { width: 100%; border-collapse: collapse; margin-top: 25px; }
         th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
@@ -259,6 +261,7 @@
 </head>
 <body>
 <div class="container">
+    <div class="level-badge">${levelText}</div>
     <div class="speed-control">
         <label>🔊 語速:</label>
         <input type="range" id="speed-slider" min="0.5" max="1.0" step="0.05" value="${currentSpeed}">
@@ -268,7 +271,7 @@
         <button onclick="startFullStory()">▶️ 朗讀全文</button>
         <button class="stop-btn" onclick="window.speechSynthesis.cancel()">⏹️ 停止</button>
     </div>
-    <h2 style="color: #4285f4;">${title}</h2>
+    <h2 style="color: #4285f4; margin-top:15px;">${title}</h2>
     <div id="english-story" style="font-size: 19px; line-height: 2.2;">${englishStory}</div>
     <div class="translation-section">
         <h4 style="margin-top:0;">中文對照翻譯</h4>
@@ -284,9 +287,7 @@
     let synth = window.speechSynthesis;
     const speedSlider = document.getElementById('speed-slider');
     const speedLabel = document.getElementById('speed-label');
-    speedSlider.addEventListener('input', () => { 
-        speedLabel.innerText = speedSlider.value + "x"; 
-    });
+    speedSlider.addEventListener('input', () => { speedLabel.innerText = speedSlider.value + "x"; });
     function startFullStory() {
         synth.cancel();
         const msg = new SpeechSynthesisUtterance(document.getElementById('english-story').innerText);
@@ -317,7 +318,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `English_Story_${title.replace(/\s+/g, '_')}.html`;
+        a.download = `${levelNum}_${title.replace(/\s+/g, '_')}.html`;
         a.click();
         URL.revokeObjectURL(url);
     }
