@@ -148,6 +148,7 @@
         document.getElementById('content-area').style.display = "none";
         stopSpeech();
 
+        // 絕對不准動的模型清單
         const MODELS = [
             { name: "gemini-3-flash-preview",        label: "Gemini 3 Flash" },
             { name: "gemini-3.1-flash-lite-preview", label: "Gemini 3.1 Flash Lite" },
@@ -160,12 +161,13 @@
                    msg.includes("overloaded") || msg.includes("429") || msg.includes("503");
         }
 
+        // 修改 Prompt 指令：強制使用縮寫詞性格式如 (n.)
         const prompt = `Act as an English teacher. Create a 100-word story about "${topic}" using vocabulary at "${level}" difficulty. 
         Formatting:
         1. Wrap EVERY sentence in: <span class="sentence" onclick="speakSentence(this)">...</span>
         2. Pick exactly 8 keywords and wrap in: <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(詞性) 中文解釋">word</span>
-        3. 'data-info' must be (POS) Chinese meaning ONLY.
-        Return ONLY JSON: {"title": "..", "english_story": "..", "chinese_translation": "..", "vocab_list": [{"w":"..","p":"..","c":".."}]}`;
+        3. Important: The 'data-info' and 'vocab_list' part of speech must use English abbreviations like (n.), (v.), (adj.), (adv.). Example: (n.) 影像.
+        Return ONLY JSON: {"title": "..", "english_story": "..", "chinese_translation": "..", "vocab_list": [{"w":"..","p":"(n.)","c":".."}]}`;
 
         try {
             let data = null;
@@ -251,7 +253,7 @@
     <title>${title} (${levelText})</title>
     <style>
         :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
-        body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 10px; max-width: 800px; margin: auto; background-color: #f0f2f5; }
+        body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; line-height: 1.8; padding: 20px; max-width: 800px; margin: auto; background-color: #f0f2f5; }
         .container { background: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         .level-badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
         .speed-control { display: flex; align-items: center; gap: 10px; background: #e8f0fe; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a73e8; margin-bottom: 15px; width: fit-content; }
@@ -260,7 +262,8 @@
         .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
         .sentence:hover { background-color: #e3f2fd; }
         #english-story .vocab::after { content: attr(data-info); position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        #english-story .vocab:hover::after { visibility: visible; opacity: 1; }
+        #english-story .vocab::before { content: ""; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: var(--tooltip-bg) transparent transparent transparent; visibility: hidden; opacity: 0; z-index: 100; }
+        #english-story .vocab:hover::after, #english-story .vocab:hover::before { visibility: visible; opacity: 1; }
         .translation-section { margin-top: 30px; padding: 15px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); color: #555; }
         .table-wrapper { width: 100%; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 400px; margin-top: 20px; }
