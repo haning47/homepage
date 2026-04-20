@@ -1,18 +1,15 @@
-從大考中之高中英文參考詞彙表中「第三級」的單字(詞彙第17-26頁)中，從字首是「a」或「b」中挑選50個生活常用單字，根據以下範本，製作50張英單字學習卡，只製作單字卡，不要加入其他問題
+從大考中之高中英文參考詞彙表中「第三級」的單字(詞彙第21 22頁)中，
+從字首是「k」和「l」中的所有單字，根據以下範本，製作單字學習卡，
+只製作單字卡，不要加入其他問題，不要遺漏單字。
+學習卡正面為單字。背面為此單字的解釋，接下來幾行是「詞性變化」，若無明顯的詞性變化則不用寫詞性變化，再接下來2行是「搭配詞」，最後是2個例句。
 學習卡製作範本：
 正面：ability
 背面：
 ability(n.)能力、才幹
-
-【詞性變化】
 able(adj.)有能力的
 enable(v.)使能夠
-
-【搭配詞】
 academic ability 學術能力
 have the ability to do something 有能力做某事
-
-【例句】
 She has the ability to speak four different languages.
 (她具備說四種不同語言的能力)
 His musical ability was evident from a very young age.
