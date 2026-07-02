@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -56,17 +56,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
 document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
-var dayNames = new Array("�P����","�P���@","�P���G","�P���T","�P���|","�P����","�P����");
-var monthNames = new Array("1��","2��","3��","4��","5��","6��","7��","8��","9��","10��","11��","12��");
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#330099>" , "�褸" , " " , now.getYear() + some , "�~" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "��" , " " , dayNames[now.getDay()] , "</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">�@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -93,7 +93,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>�{�b�ɶ��G</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -111,23 +111,23 @@ var minutes = now.getMinutes()
 var seconds = now.getSeconds()
 var timeValue = ""
 if(hours>=1 && hours <4)
-{timeValue += ("���")}
+{timeValue += ("凌晨")}
 if(hours>=4 && hours<6)
-{timeValue += ("�M��")}
+{timeValue += ("清晨")}
 if(hours>=6 && hours<9)
-{timeValue += ("���W")}
+{timeValue += ("早上")}
 if(hours>=9 && hours<12)
-{timeValue += ("�W��")}
+{timeValue += ("上午")}
 if(hours>=12 && hours<13)
-{timeValue += ("����")}
+{timeValue += ("中午")}
 if(hours>=13 && hours<18)
-{timeValue += ("�U��")}
+{timeValue += ("下午")}
 if(hours>=18 && hours <19)
-{timeValue += ("�ı�")}
+{timeValue += ("傍晚")}
 if(hours>=19 && hours <24)
-{timeValue += ("�ߤW")}
+{timeValue += ("晚上")}
 if(hours<1)
-{timeValue += ("�ȩ]")}
+{timeValue += ("午夜")}
 timeValue += ((hours > 12) ? hours - 12 : hours)
 timeValue += ((minutes < 10) ? ":0" : ":") + minutes
 timeValue += ((seconds < 10) ? ":0" : ":") + seconds
@@ -159,12 +159,12 @@ calendar();
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="image/icon1.GIF" width="12" height="12" hspace="15"></td>
-          <td valign="top" width="100%"><font color="#FFFFFF" size="4" face="�رd�G����">����ɪŮȦ�</font>
+          <td valign="top" width="100%"><font color="#FFFFFF" size="4" face="華康瘦金體">關於時空旅行</font>
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <li><a href="#�󬰮ɪŮȦ�"><font color="#FFFF00">�󬰮ɪŮȦ�</font></a></li>
-            <li><a href="#�ɪŮȦ檺����"><font color="#FFFF00">�ɪŮȦ檺����</font></a></li>
-            <li><a href="#�ɪŮȦ檺��k"><font color="#FFFF00">�ɪŮȦ檺��k</font></a></li>
-            <li><a href="#�ɥ���"><font color="#FFFF00">�ɥ���</font></a></li>
+            <li><a href="#何為時空旅行"><font color="#FFFF00">何為時空旅行</font></a></li>
+            <li><a href="#時空旅行的概念"><font color="#FFFF00">時空旅行的概念</font></a></li>
+            <li><a href="#時空旅行的方法"><font color="#FFFF00">時空旅行的方法</font></a></li>
+            <li><a href="#時光機"><font color="#FFFF00">時光機</font></a></li>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
         </tr>
@@ -175,61 +175,61 @@ calendar();
 <table border="0" width="100%" height="865">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFF00" height="22">
-      <p align="center"><font color="#FF0000"><a name="�󬰮ɪŮȦ�"></a>�󬰮ɪŮȦ�</font></td>
+      <p align="center"><font color="#FF0000"><a name="何為時空旅行"></a>何為時空旅行</font></td>
   </tr>
   <tr>
-    <td width="23%" height="39">�@
-      <p><img border="0" src="htmphoto/�ά}1.jpg" width="315" height="202"></p>
+    <td width="23%" height="39">　
+      <p><img border="0" src="htmphoto/蟲洞1.jpg" width="315" height="202"></p>
       <p><font color="#FFFFFF"><a href="#top">back</a></font></td>
-    <td width="77%" height="39"><font color="#FFFFFF">�ҿ׮ɪŮȦ�A�U�W��q�N�O�H�D�j�媫�z���B�ʧ@�W���t�Ȧ�A�H���K����b�������ɶ�����V��ӬP�t�A�ǥѳq�L���O�ᦱ���ά}�Ө�F�񥭭���V���󻷪��P�@�Ŷ�<br>
-      �ӥt�~�@�ؤ�k�h�O�q�v&lt;���Z�F&gt;���@�����H�����ఱ���A�b�ت��a�A�ѹq�����s�Ұʾ����o�H�~�򬡰�</font></td>
+    <td width="77%" height="39"><font color="#FFFFFF">所謂時空旅行，顧名思義就是以非古典物理的運動作超光速旅行，人類便能夠在有限的時間內穿越整個星系，藉由通過重力扭曲的蟲洞而到達比平面穿越的更遠的同一空間<br>
+      而另外一種方法則是電影&lt;阿凡達&gt;的一種讓人類機能停止後，在目的地再由電腦重新啟動機能後得以繼續活動</font></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" align="left" bgcolor="#0000FF" height="22">
-      <p align="center"><font color="#FFFFFF"><a name="�ɪŮȦ檺����"></a></font><font color="#FFCCFF">�ɪŮȦ檺����</font></td>
+      <p align="center"><font color="#FFFFFF"><a name="時空旅行的概念"></a></font><font color="#FFCCFF">時空旅行的概念</font></td>
   </tr>
   <tr>
-    <td width="23%" align="left" height="100">�@
-      <p><img border="0" src="htmphoto/�¬}.jpg" width="316" height="252"></p>
+    <td width="23%" align="left" height="100">　
+      <p><img border="0" src="htmphoto/黑洞.jpg" width="316" height="252"></p>
       <p align="left"><font color="#FFFFFF"><a href="#top">back</a></font></td>
     <td width="77%" align="center" height="100">
-      <p align="left"><font color="#FFFFFF">�R�]���Z���ҩ��L�H��������t�O�i�檺�A���û�����F����t�A�]���F����t�ɡA�����q�|�ܵL���j</font><p align="left"><font color="#FFFFFF">���F�H�������F���t���~</font><font color="#FFFFFF">�A�t�@�ط����h�O�N�H���ɤl�ơA�bA�a�ɤl�Ƥ��ѫ�A�̷ӹq�l�q�l�۱۪��ʽ�A���h���˳��������z�������A�bB�a�̷ӹq�l�ϦV�P���۱ۦӭ��չ���A�Y&lt;�Ŷ��ಾ��&gt;</font><p align="left"><font color="#FFFFFF" size="3">�t�@�ؤ�k�K�O�q�L�٬�&lt;�ά}&gt;���ɪŧᦱ�Ŷ�</font><font color="#FFFFFF">�A�b�u�ɶ����F�췥�����Z��</font></td>
+      <p align="left"><font color="#FFFFFF">愛因斯坦曾證明過人類接近光速是可行的，但永遠不能達到光速，因為達到光速時，物體質量會變無限大</font><p align="left"><font color="#FFFFFF">除了人類實體到達光速之外</font><font color="#FFFFFF">，另一種概念則是將人類粒子化，在A地粒子化分解後，依照電子量子自旋的性質，除去海森堡測不准原理的限制後，在B地依照電子反向感應自旋而重組實體，即&lt;空間轉移門&gt;</font><p align="left"><font color="#FFFFFF" size="3">另一種方法便是通過稱為&lt;蟲洞&gt;的時空扭曲空間</font><font color="#FFFFFF">，在短時間內達到極遠的距離</font></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" align="left" bgcolor="#00FF00" height="22">
-      <p align="center"><font color="#FF0000"><a name="�ɪŮȦ檺��k"></a></font><font color="#0000FF">�ɪŮȦ檺��k</font></td>
+      <p align="center"><font color="#FF0000"><a name="時空旅行的方法"></a></font><font color="#0000FF">時空旅行的方法</font></td>
   </tr>
   <tr>
-    <td width="23%" align="left" height="100"><img border="0" src="htmphoto/�¬}1.jpg" width="287" height="377">
+    <td width="23%" align="left" height="100"><img border="0" src="htmphoto/黑洞1.jpg" width="287" height="377">
       <p><font color="#FFFFFF"><a href="#top">back</a></font></td>
     <td width="77%" align="center" height="100">
-      <p align="left"><font color="#FFFFFF">�b��ۥ@�ɤ�</font><font color="#FFFFFF">�A�s�b�\�h�ɪŮȦ檺��k�A�Ҧp�ɪŽu�����ɪŤ����A�K�O�H����q�гy�H���ά}�Ӧ^��L�h�A�S�Ϊ̬P�ک_�誺���t�����A����гy����@�����t�H�W���W���t</font><p align="left"><font color="#FFFFFF">�b�{��@�ɤ�</font><font color="#FFFFFF">�A�ثe�٨S���u������V�ɪšA�����L����A���g���L�ۦW��&lt;�O������&gt;�A���ä��i�H�A���]���O�u���A����ɪŮȦ�u�����i��<br>
-      </font><font color="#FF0000">&lt;�O������&gt;</font><font color="#FFFFFF"><br>
-      �O������O�b1943�~�Ѭ�����x�i�檺����A���禨�\�a�N�@���X�vĥ�Υ�������J�t�@�Ŷ��C�b����L�{���A����H���Ұʯ߽ĩM�D�߽ľ��A�ϲ�ĥ�P��Φ��F�@�ӥ��j���ϳ��C�H������Q�@�κ��Ţ�n�ۡA��ĥ�M����]�}�l�q�H�̪����u�������C����פ�ɡAĥ��w�Q���e��F479�����H�~���պ֧J(Norfolk)�X�Y�C����A�@�ǲ�����W���d�����窺�����A���צb�a�̡A�b��W�A�b�s�a���ζ����̡A���|��M�a�����S���{�A�����[����Y���w�C�O�����筫�{�F�ʼ}�F�T�����_������A�O�H���T�p�Q��A�ʼ}�F�γ\�O�a�y�q���P�ڪ��ɪŪ�</font></td>
+      <p align="left"><font color="#FFFFFF">在科幻世界中</font><font color="#FFFFFF">，存在許多時空旅行的方法，例如時空線索的時空之窗，便是以高能量創造人為蟲洞而回到過去，又或者星際奇航的曲速引擎，能夠創造高於一倍光速以上的超光速</font><p align="left"><font color="#FFFFFF">在現實世界中</font><font color="#FFFFFF">，目前還沒有真正的穿越時空，但有過實驗，曾經有過著名的&lt;費城實驗&gt;，但並不可信，假設它是真的，那麼時空旅行真的有可能<br>
+      </font><font color="#FF0000">&lt;費城實驗&gt;</font><font color="#FFFFFF"><br>
+      費城實驗是在1943年由美國海軍進行的實驗，實驗成功地將一艘驅逐艦及全體船員投入另一空間。在實驗過程中，實驗人員啟動脈衝和非脈衝器，使船艦周圍形成了一個巨大的磁場。隨後整條船被一團綠光籠罩著，船艦和船員也開始從人們的視線中消失。實驗終止時，艦船已被移送到了479公里以外的諾福克(Norfolk)碼頭。此後，一些船員身上仍留有實驗的反應，不論在家裡，在街上，在酒吧間或飯店裡，都會突然地消失又重現，讓旁觀者驚訝不已。費城實驗重現了百慕達三角的奇異綠光，令人不禁聯想到，百慕達或許是地球通往星際的時空門</font></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" align="left" bgcolor="#FF0000" height="22">
-      <p align="center"><font color="#0000FF"><a name="�ɥ���"></a>�ɥ���</font></td>
+      <p align="center"><font color="#0000FF"><a name="時光機"></a>時光機</font></td>
   </tr>
   <tr>
-    <td width="23%" align="left" height="506"><img border="0" src="htmphoto/���@�u.gif" width="311" height="310"><br>
-      <font color="#FFFFFF">���@�u</font>
-      <p align="left">�@</p>
+    <td width="23%" align="left" height="506"><img border="0" src="htmphoto/光錐線.gif" width="311" height="310"><br>
+      <font color="#FFFFFF">光錐線</font>
+      <p align="left">　</p>
       <p align="left"><font color="#FFFFFF"><a href="#top">back</a></font></td>
     <td width="77%" align="center" height="506">
-      <p align="left"><font color="#FFFFFF">�H��CTechnion�j�Ǫ���s�ŧG�}�o�X�ɥ���(time machine)���z�׼ҫ��A�i��b�������N�������Ӫ��H�̦^��L�h�C&nbsp;<br> 
+      <p align="left"><font color="#FFFFFF">以色列Technion大學的研究宣佈開發出時光機(time machine)的理論模型，可能在遙遠的將來讓未來的人們回到過去。&nbsp;<br> 
       <br>
-      Technion�j�Ǫ��z�t�б�Amos Ori���ܡA�n�^��L�h������ɪ�(spacetime)���c�i��۹������B�z�F�o�O�R�]���Z���s�q�۹�שҬ�s�����w�w�Ӳz�׻{���ɪŬO�����B�֦�²�浲�c�A�ӥB�i�H�z�L���P���t�m�i���s���C&nbsp;<br> 
+      Technion大學物理系教授Amos Ori表示，要回到過去必須對時空(spacetime)結構進行相對應的處理；這是愛因斯坦的廣義相對論所研究的領域──該理論認為時空是平的、擁有簡單結構，而且可以透過不同的配置進行彎曲。&nbsp;<br> 
       <br>
-      �ɥ��Ȧ楲�ݭn���ɪťH�@�ثܯS�����Φ��Ӳ��ͥ��j���s���C&nbsp;<br>
+      時光旅行必需要讓時空以一種很特殊的形式來產生巨大的彎曲。&nbsp;<br>
       <br>
-      ��V�ɪŦ^��q�e��ڤW�N�O�����ɶ����u(time-like curves)���X�A�o�˴N��^��L�h���Y�ӳ����C�b���Z���ɪŤ��A�O���i��Ϯɶ����u���X�Ӧ^��L�h���F�]�����F�����ɶ����u���͡A�����n���ɪťH�Y�اΦ��s���C&nbsp;<br> 
+      穿越時空回到從前實際上就是使類時間曲線(time-like curves)閉合，這樣就能回到過去的某個場景。在平坦的時空中，是不可能使時間曲線閉合而回到過去的；因此為了使類時間曲線產生，必須要讓時空以某種形式彎曲。&nbsp;<br> 
       <br>
-      �n�s�y�ɥ����A�����n���@�ب�ƭt�K��(negative density)������A���L�]���ثe�o�ت��褣�s�b�A�]�L�k�T�w�۵M�w�߬O�_�����o������j�q�s�b�A�ҥH�]���i��s�y�ɥ������C&nbsp;<br> 
+      要製造時光機，必須要有一種具備負密度(negative density)的物質，不過因為目前這種物質不存在，也無法確定自然定律是否能讓這類物質大量存在，所以也不可能製造時光機器。&nbsp;<br> 
       <br>
-      �ɥ��������N�O�ɪšA�p�G�ڭ̤��ѯ���s�y�ɥ����A�ɪŤ������u�N����Ϯɶ��u�ۦ泬�X�A�ҥH�������Ӫ��H�^��{�b�C���L�{�b�ڭ̫o��M����^��L�h�A�]���ڭ̪������èS���гy�o�˪�����C&nbsp;<br>
+      時光機本身就是時空，如果我們今天能夠製造時光機，時空中的曲線就能夠使時間線自行閉合，所以能讓未來的人回到現在。不過現在我們卻顯然不能回到過去，因為我們的祖先並沒有創造這樣的機制。&nbsp;<br>
       <br>
-      Ori�O�@�ɤW�ּƬ�s���@ĳ�D����Ǯa�A�L�j�վ��޲z�פW�O�i�檺�A���ƹ�W�ڭ̨èS��������N����U���ޤO���쪺���</font>�CTechnion�j�Ǫ��ҫ����O���n���@�B�A���L�����\�h���D�ݭn�J�A�C</td>
+      Ori是世界上少數研究此一議題的科學家，他強調儘管理論上是可行的，但事實上我們並沒有能夠任意控制萬有引力場域的科技</font>。Technion大學的模型雖是重要的一步，不過仍有許多問題需要克服。</td>
   </tr>
 </table>
 <p align="center"><font color="#FFFFFF">.</font></p>

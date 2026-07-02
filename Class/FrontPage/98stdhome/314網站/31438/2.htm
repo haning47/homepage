@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -80,7 +80,7 @@ glow();
 
 <p align="center"><a name="top"></a><img border="0" src="images/titel2.gif" width="460" height="64"></p>
 
-<p align="center">�@<script language="JavaScript"><!--
+<p align="center">　<script language="JavaScript"><!--
 function CalConv()
  {
 	FIRSTYEAR = 1998;
@@ -129,15 +129,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ����~�C�뤧��� */
+ /* 民國年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ����~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 民國年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["��", "��", "�U", "��", "��", "��", "��", "��", "��", "��", "�s", "�D" ];
-	LocationIdx = [ "�n", "�F", "�_", "��" ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -200,18 +200,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>�P����</font>","<font color=#8000FF>�P���@</font>","<font color=#8000FF>�P���G</font>","<font color=#8000FF>�P���T</font>","<font color=#8000FF>�P���|</font>","<font color=#8000FF>�P����</font>","<font color=GREEN>�P����</font>");
-             document.write("���� <font color=#3171b7>",today.getYear()-1911,"<font color=black> �~ </font>",today.getMonth()+1,"<font color=black> �� </font>",today.getDate(),"<font color=black> �� </font>"
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>�A�� " + LunarMonth + "�� " + LunarDate + "��</span>" );
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
 
-       document.write( "<span class=d><font color=RED>��</font>" + Location + " <font color=GREEN>�R</font>" + Animal + Age + "��</span><br>" );                
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
                 
  
  return 0;
  }
 
- /* �D������~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -225,11 +225,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ����� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~���� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~���� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -245,15 +245,15 @@ CalConv();
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon1.gif" width="12" height="12" hspace="15"></td>
-          <td valign="top" width="100%">�䭷������
+          <td valign="top" width="100%">颱風的效應
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#a">�í����</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#a">藤原效應</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon2.gif" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#b">�@�����</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#b">共伴效應</a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -265,26 +265,26 @@ CalConv();
 <table border="0" width="100%">
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCFFCC">
-      <p align="center"><a name="a"></a>�í����</td>
+      <p align="center"><a name="a"></a>藤原效應</td>
   </tr>
   <tr>
-    <td width="86%">�@�B��ӻ䭷�a��ɡA���̱N¶�۬۳s���b�u�������ۤ��@�Ϯ�����V����A���त�ߪ���m�A�Ѩ�ӻ䭷���۹��q�λ䭷���y���j�רӨM�w�C����ɳq�`���p���@�Ө��o�֨ǡA���j���@�Ө��o�C�ǡA���ɥ�i��X�Ӭ��@�A�饻��H�Ǯa�í���ͳ̦���s�������䭷����{�H�A�G�٦��{�H���í�����C
-      <p>�G�B�í����(Fujiwhara effects)�O������Ѽ��a��ۤ��۾a��ɹ復�̨�̥������ʤ�<br>       
-      �ۤ��v�T�A�ӥX�{�o�v�T����]�O�]�����̬O��ӱ۴��A�ӥL�̩ҥX�{����X��y����������誺�޾ɮ�y�C�T�B�@��ӻ��A����Ѽ��a��ۤ��ۤ��Z���b1000 ��1200 �����B�θg��10 �ץH���ɡA�í�����K�|�o�͡]����ڤW�٭n���G��Ѽ��a��۪��j�p�ν�q�өw�^�A���b�ӧO���p�U��i���o�͡C�]������a��۰l�����^</p>       
-      <p>�@</p>
+    <td width="86%">一、兩個颱風靠近時，它們將繞著相連的軸線成環狀相互作反時鐘方向旋轉，旋轉中心的位置，由兩個颱風的相對質量及颱風環流之強度來決定。旋轉時通常較小的一個走得快些，較大的一個走得慢些，有時亦可能合而為一，日本氣象學家藤原先生最早研究此種雙颱風旋轉現象，故稱此現象為藤原效應。
+      <p>二、藤原效應(Fujiwhara effects)是指當兩股熱帶氣旋互相靠近時對它們兩者本身移動之<br>       
+      相互影響，而出現這影響的原因是因為它們是兩個旋渦，而他們所出現的輻合氣流直接成為對方的引導氣流。三、一般來說，當兩股熱帶氣旋之相互距離在1000 至1200 公里、或經度10 度以內時，藤原效應便會發生（但實際上還要視乎兩股熱帶氣旋的大小及質量而定），但在個別情況下亦可不發生。（香港熱帶氣旋追擊站）</p>       
+      <p>　</p>
       <p><a href="#top">top</a></td>
-    <td width="38%"><img border="0" src="htmphoto/�í����.jpg"></td>
+    <td width="38%"><img border="0" src="htmphoto/藤原效應.jpg"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCCCFF">
-      <p align="center"><a name="b"></a>�@�����</td>
+      <p align="center"><a name="b"></a>共伴效應</td>
   </tr>
   <tr>
-    <td width="86%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �j�a�j�����M���A�b�V�u�ɭԡA�Ȭw�j���_�誺��B�Q�Ȧa�ϡA�|�Φ������N��ΡA�@�ӭӪ��N��η|�V�n�貾�ʡA�����Ө�űa�a�Ϥ]�N�O�O�W����ɡA�N�|�Φ��j�l���F�_�u���A�q�`���O�W�a�ӤS�äS�N���Ѯ𫬺A�C�ӻ䭷�b�o�Ӯɸ`�h�b���|�X�{�b�O�W�A���L�p�P�j�a�Ҽ��x���A�����|���ҥ~�����ΥX�{�A��쪺�䭷�b��V�u�`�Iŧ�O�W�A�ڭ̤@��٬��A�Ϊ̫U�y�٤����y��Ѫ�z�C
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �䭷�q�`�O�S��S�����C�������c�A���赲�c���ɬۦP�A�������@�Ӧ@�P���S��G�������a�j�q������C���ӦۨȬw�����������N��ΩM�Ӧۤӥ��v���䭷������Ĳ�ɡA�N�|�Φ��@�D�W���A�ì��Ӧa�a�ӷ����רK���B�q�A��ĪG�O�Ȧ���@�{�H�X�{�ɩҤ���񪺡C��H�ǧY�٤����@��{�H�C</p>
-      <p>�@</p>
+    <td width="86%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 大家大概都清楚，在冬季時候，亞洲大陸北方的西伯利亞地區，會形成高壓冷氣團，一個個的冷氣團會向南方移動，當它來到溫帶地區也就是臺灣附近時，就會形成強勁的東北季風，通常為臺灣帶來又溼又冷的天氣型態。而颱風在這個時節多半不會出現在臺灣，不過如同大家所熟悉的，偶爾會有例外的情形出現，遲到的颱風在秋冬季節侵襲臺灣，我們一般稱秋颱，或者俗語稱之為『秋老虎』。
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 颱風通常是又濕又熱的低氣壓結構，雙方結構不盡相同，但都有一個共同的特色：全都挾帶大量的水氣。當來自亞洲內陸的高壓冷氣團和來自太平洋的颱風彼此接觸時，就會形成一道鋒面，並為該地帶來極為豐沛的雨量，其效果是僅有單一現象出現時所不能比的。氣象學即稱之為共伴現象。</p>
+      <p>　</p>
       <p><a href="#top">top</a></td>
-    <td width="38%"><img border="0" src="htmphoto/�@�����.jpg"></td>
+    <td width="38%"><img border="0" src="htmphoto/共伴效應.jpg"></td>
   </tr>
 </table>
 

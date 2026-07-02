@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -23,7 +23,7 @@ initOutline()
 
 <p align="center"><img border="0" src="images/title2.gif" width="470" height="58"></p>
 
-<p align="center">�@<script language="JavaScript"><!--
+<p align="center">　<script language="JavaScript"><!--
 function CalConv()
  {
 	FIRSTYEAR = 1998;
@@ -72,15 +72,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ����~�C�뤧��� */
+ /* 民國年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ����~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 民國年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["��", "��", "�U", "��", "��", "��", "��", "��", "��", "��", "�s", "�D" ];
-	LocationIdx = [ "�n", "�F", "�_", "��" ];
+	AnimalIdx = ["馬", "羊", "猴", "雞", "狗", "豬", "鼠", "牛", "虎", "兔", "龍", "蛇" ];
+	LocationIdx = [ "南", "東", "北", "西" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -143,18 +143,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>�P����</font>","<font color=#8000FF>�P���@</font>","<font color=#8000FF>�P���G</font>","<font color=#8000FF>�P���T</font>","<font color=#8000FF>�P���|</font>","<font color=#8000FF>�P����</font>","<font color=GREEN>�P����</font>");
-             document.write("���� <font color=#3171b7>",today.getYear()-1911,"<font color=black> �~ </font>",today.getMonth()+1,"<font color=black> �� </font>",today.getDate(),"<font color=black> �� </font>"
+       var d=new initArray("<font color=RED>星期日</font>","<font color=#8000FF>星期一</font>","<font color=#8000FF>星期二</font>","<font color=#8000FF>星期三</font>","<font color=#8000FF>星期四</font>","<font color=#8000FF>星期五</font>","<font color=GREEN>星期六</font>");
+             document.write("民國 <font color=#3171b7>",today.getYear()-1911,"<font color=black> 年 </font>",today.getMonth()+1,"<font color=black> 月 </font>",today.getDate(),"<font color=black> 日 </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>�A�� " + LunarMonth + "�� " + LunarDate + "��</span>" );
+	  document.write( "</font><span class=d>農曆 " + LunarMonth + "月 " + LunarDate + "日</span>" );
 
-       document.write( "<span class=d><font color=RED>��</font>" + Location + " <font color=GREEN>�R</font>" + Animal + Age + "��</span><br>" );                
+       document.write( "<span class=d><font color=RED>煞</font>" + Location + " <font color=GREEN>沖</font>" + Animal + Age + "歲</span><br>" );                
                 
  
  return 0;
  }
 
- /* �D������~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -168,11 +168,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ����� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~���� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~���� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -186,11 +186,11 @@ CalConv();
     <td width="27%"></td>
     <td width="73%">
       <ul dynamicoutline initcollapsed msimagelist imagesrc="images/icon1.gif">
-        <li>�Y�N��������a
+        <li>即將消失的國家
           <ul msimagelist imagesrc="images/icon2.gif">
-            <li><a href="#a">��_�ͺA���N��</a></li>
-            <li><a href="#b">��a���ﵦ</a></li>
-            <li><a href="#c">�C�ӤH�వ��</a></li>
+            <li><a href="#a">喚起生態的意識</a></li>
+            <li><a href="#b">國家的對策</a></li>
+            <li><a href="#c">每個人能做的</a></li>
           </ul>
         </li>
       </ul>
@@ -201,43 +201,43 @@ CalConv();
 <table border="0" width="100%">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFFCC">
-      <p align="center"><a name="a"></a>��_�ͺA���N��</td>
+      <p align="center"><a name="a"></a>喚起生態的意識</td>
   </tr>
   <tr>
-    <td width="63%">�@<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �ɺt�������j�ں~���ɪ��������i���@���諸�u�ۡj�b��R�v�i�j���w��A�Ӥ��O���@�ӤH�H�L�L�񪺼��ۡB�`��ҵo�ʪ��͸ܡA�H�ΰ��w�������M�ߡA�j�x�W�}������y�x�ƪ��g��M�~�ѡA�ÿE�y�C�ӤH�Ĩ���ʪ���p�c�ơC�o�ӤH�N�O����e�����`�Φ㺸�����A�L�b2000�~�`�Τj��ѿ蠟��A���s�վ�ۧڪ��ͬ���V�A���ߥ��N�����y�x�ƪ����D�I�X�ɶ��P��O�A�Ʊ����H�L�ӤH���V�O�A���@�H�u���F�ѥ��y�x�ƪ��Y���ʡA�åB���U�@�H�@�Ϧa�y�A������V�ۧڷ�������V�C�i���@���諸�u�ۡj�@���O���F�㺸�����b���@�ɦU�a�����y�x�ƨ��j�t���A�L�b�o�ǥH�ۿO�����U���t�����A�P�ɮi�{�X������q�H�λ{�u�Y�ª��@���A�H���P�۵M�H�ι�ƨD�O���A�סB�ܺɩү�V�@��Ѧʩm�����a�y�����{�@�������y�ʪ���檬�p���A�ӧڭ̳o�ǦѦʩm�b�Ʊ��|���c�ƨ�L�k���Ϫ��a�B�A�������ֱĨ���ʪ���E�T�o�͡C<br> 
-      <p><a href="#top">�^����</a></td>
+    <td width="63%">　<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 導演戴維斯古根漢執導的紀錄片【不願面對的真相】在日舞影展大受歡迎，該片記錄一個人以他無比的熱誠、深具啟發性的談話，以及堅定不移的決心，大膽戳破關於全球暖化的迷思和誤解，並激勵每個人採取行動阻止情況惡化。這個人就是美國前任副總統艾爾高爾，他在2000年總統大選敗選之後，重新調整自我的生活方向，全心全意為全球暖化的問題付出時間與精力，希望能夠以他個人的努力，讓世人真正了解全球暖化的嚴重性，並且幫助世人拯救地球，阻止它走向自我毀滅的方向。【不願面對的真相】一片記錄了艾爾高爾在全世界各地的全球暖化巡迴演講，他在這些以幻燈片輔助的演講中，同時展現出風趣幽默以及認真嚴肅的一面，以輕鬆自然以及實事求是的態度、竭盡所能向一般老百姓說明地球正面臨一場“全球性的緊急狀況”，而我們這些老百姓在事情尚未惡化到無法挽救的地步，必須儘快採取行動阻止浩劫發生。<br> 
+      <p><a href="#top">回頂端</a></td>
     <td width="37%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-      <img border="0" src="htmphoto/�a�y�x��2.jpg" width="199" height="258"></td>
+      <img border="0" src="htmphoto/地球暖化2.jpg" width="199" height="258"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFFCC">
-      <p align="center"><a name="b"></a>��a���ﵦ</td>
+      <p align="center"><a name="b"></a>國家的對策</td>
   </tr>
   <tr>
-    <td width="63%">�@<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="�s�ө���">����M���A�����a�ҤH���ۡ��۱ϡ��A�q�׫ؤH�u�q�촣�ɩ~�����O�N�ѡA���O���Ϧۤv�i�R���a��C�����a���`�οp�u�q�w�P�ǧƼw�ٷǳ�"�ʦa�E��"�A�o�N����30�h�U�����N�ҤH�i��|�w�~�O�B�C<br>  
-      </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="�s�ө���">�q�L����۪o�A��ΤӶ���M���൥�M��෽�A�����N�ұN���A�O�ūǮ��骺��Ʃ��C�b���Ӫ�10�~���A�����a�ҷ|�����@�ɤW���ӹ�{�Ҥ��M����a�C</font>  
-      <p>�@</p>
-      <p><a href="#top">�^����</a></td>
-    <td width="37%">&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="htmphoto/�����a��3.jpg" width="277" height="187"></td>  
+    <td width="63%">　<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="新細明體">面對危機，馬爾地夫人忙著“自救”，從修建人工島到提升居民環保意識，全力輓救自己可愛的家園。馬爾地夫總統穆罕默德·納希德還準備"購地遷國"，這意味著30多萬馬爾代夫人可能會定居別處。<br>  
+      </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="新細明體">通過摒棄石油，改用太陽能和風能等清潔能源，馬爾代夫將不再是溫室氣體的凈排放國。在未來的10年內，馬爾地夫會成為世界上首個實現碳中和的國家。</font>  
+      <p>　</p>
+      <p><a href="#top">回頂端</a></td>
+    <td width="37%">&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="htmphoto/馬爾地夫3.jpg" width="277" height="187"></td>  
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFFCC">
-      <p align="center"><a name="c"></a>�C�ӤH�వ��</td>
+      <p align="center"><a name="c"></a>每個人能做的</td>
   </tr>
   <tr>
-    <td width="100%" colspan="2">�@<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="�s�ө���"> ����H���L�׮��Ӧ۵M�귽�P�Ʃ�ūǮ���A���e�m�ê��O�Ϯ`�a�y�s������]���C�ū׫���W�ɡB���B�q��֡B�䭷�Iŧ���{�H�A�����Ҧ��H��ߥ��ӥͬ����ұN��q�}���A�]�����������`���ұ��I�������ʡC<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �b�����譱�A�i�۳��H�������B���\�ɾi���Y�h�֡B�I�h�֪��n�ߺD�F�窺�譱�A�i�T���¦�^���H�ο��ʤѵM�ֺ��s����A�F�����譱�A�O�o�n�H�����O�B���n�귽�^�������B�`���Τ��B�h�}���ֶ}�N��B���귽�^���A�Q�ΡF�檺�譱�A�i�h�Q�Τ��@�B��u��ΨB�檺�覡�A�q��`�ͬ������p�p���ܹ�{��ҡA�׻E�j�a���t�X�P�V�O�A�~�����ڭ̩~�����a�y���šA�~��ͥͤ����B����o�i�C  
+    <td width="100%" colspan="2">　<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="新細明體"> 面對人類過度消耗自然資源與排放溫室氣體，不容置疑的是戕害地球存續的關鍵因素。溫度持續上升、降雨量減少、颱風侵襲等現象，都讓所有人擔心未來生活環境將日益艱難，也突顯全民落實節能減碳措施的迫切性。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在食的方面，可自備隨身水壺、用餐時養成吃多少、點多少的好習慣；衣的方面，可響應舊衣回收以及選購天然纖維製的衣服；住的方面，記得要隨水關燈、做好資源回收分類、節約用水、多開窗少開冷氣、水資源回收再利用；行的方面，可多利用公共運輸工具及步行的方式，從日常生活中的小小改變實現減碳，匯聚大家的配合與努力，才能讓我們居住的地球降溫，繼續生生不息、永續發展。  
       </font>
-      <p>�@</p>
-      <p><a href="#top">�^����</a></p>
+      <p>　</p>
+      <p><a href="#top">回頂端</a></p>
       &nbsp;&nbsp;&nbsp; </td>
   </tr>
 </table>
 
-<p align="center">�@</p>
+<p align="center">　</p>
 
 </body>
 

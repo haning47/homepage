@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -23,7 +23,7 @@ initOutline()
 
 <p align="center"><a name="top"></a><img border="0" src="images/title2.gif" width="469" height="63"></p>
 
-<p align="center">�@<script language="JavaScript"><!--
+<p align="center">　<script language="JavaScript"><!--
 function CalConv()
  {
  FIRSTYEAR = 1998;
@@ -72,16 +72,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ���~�C�뤧��� */
+ /* 西曆年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ���~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 西曆年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["�� ", "�� ", "�U ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�s ", "�D " ];
- LocationIdx = [ "�n", "�F", "�_", "��" ];
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -145,16 +145,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>�i���� �褸 " + SolarYear + "�~" + SolarMonth + "��" + SolarDate + "�� -- " );
-       document.write( "�A�� " + LunarMonth + "�� " + LunarDate + "�� -- " );
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
 
-       document.write( "��" + Location + " -- �R" + Animal + Age + " ���j</font>" );                
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
                 
  
  return 0;
  }
 
- /* �D�����~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -168,11 +168,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ���� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~��� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~��� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -192,19 +192,19 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon3.GIF" width="12" height="12" hspace="15"></td>
-          <td valign="top" width="100%">�`������l
+          <td valign="top" width="100%">常見的原子
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="15" height="15" hspace="13"></td>
-                <td valign="top" width="100%"><a href="#��">��</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#氧">氧</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="15" height="15" hspace="13"></td>
-                <td valign="top" width="100%"><a href="#b">�B</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#b">氫</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/icon4.GIF" width="15" height="15" hspace="13"></td>
-                <td valign="top" width="100%"><a href="#��">��</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#碳">碳</a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -216,35 +216,35 @@ function OpenWin( url ) {
 <table border="1" width="100%">
   <tr>
     <td width="100%" bgcolor="#FFCC99">
-      <p align="center"><a name="��"></a>��</td>
+      <p align="center"><a name="氧"></a>氧</td>
   </tr>
   <tr>
-    <td width="100%">��]��Ķ�@?�^�O�@�ؤƾǤ����A���l�ǼƬ�8�A�۹��l��q��16.00�C�ѲŸ��uO�v���ܡC�b�����P�������A��O��ڤ������@���A���]�O�@�Ӱ������ʪ���2�P���D���ݤ����A�ܮe���P�X�G�Ҧ��䥦�����Φ��ƦX���]�D�n����ƪ��^�C�b�зǪ��p�U�A��Ӯ��l���X�Φ����A�O�@�صL��L��L��������l����A�ƾǦ���O2�C�p�G����q�p��A��b�t�z�����t�q�Ȧ���B�M��A�b�a�ߤ��A��h�O�t�q���״I�������C�񤣶Ȧ��F����q��88%�A�]���F�Ů���n��20.9%�C<br>
+    <td width="100%">氧（舊譯作?）是一種化學元素，其原子序數為8，相對原子質量為16.00。由符號「O」表示。在元素周期表中，氧是氧族元素的一員，它也是一個高反應性的第2周期非金屬元素，很容易與幾乎所有其它元素形成化合物（主要為氧化物）。在標準狀況下，兩個氧原子結合形成氧氣，是一種無色無嗅無味的雙原子氣體，化學式為O2。如果按質量計算，氧在宇宙中的含量僅次於氫和氦，在地殼中，氧則是含量最豐富的元素。氧不僅佔了水質量的88%，也佔了空氣體積的20.9%。<br>
       <br>
-      �c�������骺�Ҧ��D�n�ƦX�����t����A�]�A�J�ս�B�Ҥ��ƦX���M�תաC�c���ʪ��ߡB�����ΰ��f���D�n�L���ƦX���]�t����C����Ħ�BĦ���M�Ӫ��g�L���X�@�ΩҲ��ͪ����ƾǦ���O2�A�X�G�Ҧ������ͪ����ӭM�I�l�@�γ��ݭn�Ψ���C��󹽮�ʥͪ��ӻ��A���O���r���C�o���ͪ����g�O�����a�y�W���D�n�ͪ��A����2.5���~�eO2�}�l�b�j��h���v���n�֡C[1]�񤸯����t�@�ӦP��������O���C�b�����ާΦ������h����j���ӦۤӶ������~�u��g�C���O����a�������h�O�@�ئìV�A�o�ǯ��D�n�s�b����ƾǷ������C<br>
+      構成有機體的所有主要化合物都含有氧，包括蛋白質、碳水化合物和脂肪。構成動物殼、牙齒及骨骼的主要無機化合物也含有氧。由藍藻、藻類和植物經過光合作用所產生的氧氣化學式為O2，幾乎所有複雜生物的細胞呼吸作用都需要用到氧氣。對於厭氧性生物來說，氧氣是有毒的。這類生物曾經是早期地球上的主要生物，直到2.5億年前O2開始在大氣層中逐漸積累。[1]氧元素的另一個同素異形體是臭氧。在高海拔形成的臭氧層能夠隔離來自太陽的紫外線輻射。但是接近地表的臭氧則是一種污染，這些臭氧主要存在於光化學煙霧中。<br>
       <br>
-      ���O�Ѭ���ҡP���Q���S���M�d���P�·G�P�ٰǿW�ߵo�{���C���M�d�������Ҧ��o�{�@�~�A���ѩ����ҭ����o���פ�A�ҥH�ܦh�H���M�{���O����ҭ����o�{���C��𪺭^��W�O�uOxygen�v�A�ѩԥ˿��w�W�P1777�~�A�ԥ˲m�Q�ή��Ҷi�檺����b�U�N�M�G�k���譱���ѤF���ɬy�檺�U�����C�b�u�~�W�A���O�q�L���H�G�A�Ů�s�ƪ��A�P�ɨϥΤ��l�z���h�G��ƺҩM���C�]�i�H�q�L�q�Ѥ�����L�覡�s�Ʈ��C��𪺹B�Υ]�A���K���M��B��ƩM��´�~���s�y�H�Χ@�����b���i���P�i�������k�A�]�ΨӦb�����B�縥�B�ӪŲ�M����������ͩR�C
-      <p><a href="#top">�^����</a></td>
+      氧氣是由約瑟夫·普利斯特里和卡爾·威廉·舍勒獨立發現的。雖然卡爾比約瑟夫早發現一年，但由於約瑟夫首先發表論文，所以很多人仍然認為是約瑟夫首先發現的。氧氣的英文名是「Oxygen」，由拉瓦錫定名與1777年，拉瓦烯利用氧氣所進行的試驗在燃燒和腐蝕的方面打敗了當時流行的燃素說。在工業上，氧氣是通過分餾液態空氣製備的，同時使用分子篩除去二氧化碳和氮氣。也可以通過電解水等其他方式製備氧氣。氧氣的運用包括鋼鐵的冶鍊、塑料和紡織品的製造以及作為火箭推進劑與進行氧氣療法，也用來在飛機、潛艇、太空船和潛水中維持生命。
+      <p><a href="#top">回頂端</a></td>
   </tr>
   <tr>
     <td width="100%" bgcolor="#99FF99">
-      <p align="center"><a name="b"></a>�B</td>
+      <p align="center"><a name="b"></a>氫</td>
   </tr>
   <tr>
-    <td width="100%">�B�O�@�ؤƾǤ����A�ƾǲŸ���H�A��l�ǼƬO1�A�b�����P���������Ĥ@��C������l�O�Ҧ���l���̤p���C�B�q�`�����κA�O�B��C���O�L��L���L��A�����U�N�M�����z��������l������A�B��O�̻�������C���O�t�z���t�q�̰��������C�B��l�s�b������l�ΩҦ������ƦX���M���ͪ����C�ɼ���O�S�O�j�A���ƦX�����C�b0���שM�зǤj�����U�A�C�ɲB��0.089�J���X�X�Ȭ۷���ۦP��n�Ů��q��14.5�����@�C<br>
+    <td width="100%">氫是一種化學元素，化學符號為H，原子序數是1，在元素周期表中位於第一位。它的原子是所有原子中最小的。氫通常的單質形態是氫氣。它是無色無味無臭，極易燃燒和極易爆炸的雙原子的氣體，氫氣是最輕的氣體。它是宇宙中含量最高的元素。氫原子存在於水分子及所有有機化合物和活生物中。導熱能力特別強，跟氧化合成水。在0攝氏度和標準大氣壓下，每升氫氣0.089克重——僅相當於相同體積空氣質量的14.5分之一。<br>
       <br>
-      �b�`�ŤU�A�B��������A���i�ζʤƾ����ơC�b���ŤU�B�D�`����C���}�����餸���~�A�X�G�Ҧ�����������P�B�ͦ��ƦX���C
-      <p><a href="#top">�^����</a></td>
+      在常溫下，氫較不活潑，但可用催化劑活化。在高溫下氫非常活潑。除稀有氣體元素外，幾乎所有的元素都能與氫生成化合物。
+      <p><a href="#top">回頂端</a></td>
   </tr>
   <tr>
     <td width="100%" bgcolor="#0066CC">
-      <p align="center"><a name="��"></a>��</td>
+      <p align="center"><a name="碳"></a>碳</td>
   </tr>
   <tr>
-    <td width="100%">�ҬO�@�ثD���ݤ����A��󤸯��P�������ĤG�P��IVA�ڡC�����ƾǲŸ��OC�A������l�ǼƬO6�A�q�l�c����[He]2s22p2�C�ҬO�@�ثܱ`���������A���H�h�اΦ��s�x�s�b��j��M�a�ߤ����C�ҳ��ܦ��N�Q�H�{�ѩM�Q�ΡA�Ҫ��@�t�C�ƦX���X�X��������O�ͩR���ڥ��C<br>
+    <td width="100%">碳是一種非金屬元素，位於元素周期表的第二周期IVA族。它的化學符號是C，它的原子序數是6，電子構型為[He]2s22p2。碳是一種很常見的元素，它以多種形式廣泛存在於大氣和地殼之中。碳單質很早就被人認識和利用，碳的一系列化合物——有機物更是生命的根本。<br>
       <br>
-      �ԤB�y��Carbonium�A�N���u�ѡA�쬴�v�C�~�r�u�ҡv�r�Ѥ쬴���u���v�r�[���T��D���ݤ������ۦr�Ǻc���A�q���r���C
-      <p><a href="#top">�^����</a></td>
+      拉丁語為Carbonium，意為「煤，木炭」。漢字「碳」字由木炭的「炭」字加表固體非金屬元素的石字旁構成，從炭字音。
+      <p><a href="#top">回頂端</a></td>
   </tr>
 </table>
 

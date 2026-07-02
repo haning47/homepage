@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�������</title>
+<title>延伸資料</title>
 <script LANGUAGE="JavaScript" TYPE="text/javascript">
 
 var vn="Microsoft Internet Explorer";
@@ -45,17 +45,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
 document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
-var dayNames = new Array("�P����","�P���@","�P���G","�P���T","�P���|","�P����","�P����");
-var monthNames = new Array("1��","2��","3��","4��","5��","6��","7��","8��","9��","10��","11��","12��");
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#330099>" , "�褸" , " " , now.getYear() + some , "�~" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "��" , " " , dayNames[now.getDay()] , "</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">�@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -82,7 +82,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>�{�b�ɶ��G</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -100,23 +100,23 @@ var minutes = now.getMinutes()
 var seconds = now.getSeconds()
 var timeValue = ""
 if(hours>=1 && hours <4)
-{timeValue += ("���")}
+{timeValue += ("凌晨")}
 if(hours>=4 && hours<6)
-{timeValue += ("�M��")}
+{timeValue += ("清晨")}
 if(hours>=6 && hours<9)
-{timeValue += ("���W")}
+{timeValue += ("早上")}
 if(hours>=9 && hours<12)
-{timeValue += ("�W��")}
+{timeValue += ("上午")}
 if(hours>=12 && hours<13)
-{timeValue += ("����")}
+{timeValue += ("中午")}
 if(hours>=13 && hours<18)
-{timeValue += ("�U��")}
+{timeValue += ("下午")}
 if(hours>=18 && hours <19)
-{timeValue += ("�ı�")}
+{timeValue += ("傍晚")}
 if(hours>=19 && hours <24)
-{timeValue += ("�ߤW")}
+{timeValue += ("晚上")}
 if(hours<1)
-{timeValue += ("�ȩ]")}
+{timeValue += ("午夜")}
 timeValue += ((hours > 12) ? hours - 12 : hours)
 timeValue += ((minutes < 10) ? ":0" : ":") + minutes
 timeValue += ((seconds < 10) ? ":0" : ":") + seconds
@@ -143,7 +143,7 @@ showtime();
 <table border="0" width="100%">
   <tr>
     <td width="200%">
-      <p align="center"><font face="�з���" size="4">�ɨƳ���<br>
+      <p align="center"><font face="標楷體" size="4">時事報導<br>
       </font></p>
     </td>
  
@@ -151,49 +151,49 @@ showtime();
 
 <table border="0" width="100%">
   <tr>
-    <td width="200%" colspan="2" align="center"><font face="�з���">�R���f�r��]�� �����Ǯa�}��</font></td>  
+    <td width="200%" colspan="2" align="center"><font face="標楷體">愛滋病毒基因組 美國科學家破解</font></td>  
   </tr>
   <tr>
-    <td width="138%"><font SIZE="2"><font face="�з���">�]�k�s���ھ�6��q�^   
-      �ھڤ��Ѥ��G���@����s�A�����Ǯa�w�g�}�ѤH���R���f�r�]HIV�^��]�ժ��������c�C</font>
-      <p><font face="�з���">��s�H�����ܡA�o����}���|���U��Ǯa�Q�X�s�ﵦ�A�z�L��o�s���ܯf�r�Ī��A�����f�r�C</font></p>
-      <p><font face="�з���">��s�D�n�t�d�H�B�_�dù�ܯǤj�Ǳа�s���ա]University   
-      of North Carolina at Chapel Hill�^�б«§J���]Kevin Weeks�^���G�u�ڭ̶}�l�A�ѳo�Ӱ�]�ըϥΦ�اޭǡA���U�f�r�k�L�H���J�D�������C�v</font></p>  
-      <p><font face="�з���">HIV�p�P�y�P�f�r�MC���x���f�r�A���]����æb��Ѯֿ}�ֻ�RNA���A�ӫD���Ѳ��ֿ}�ֻ�DNA���C����DNA�b�Ҧ�����������M�Y�ǯf�r�����i����C</font></p>
-      <p><font face="�з���">�o�ص��c�y���}�����ק󰪡A�]��RNA����DNA�ARNA�i�H��ۤv�P�_�ӡA�ܦ����������3D���c�C</font></p>
-      <p><font face="�з���">���e����s���\�һs�XHIV��]�ժ��p���c�CHIV��]�եѨ�Ѳզ��A�C�ѧt���N��1�U�Ӯ֥̻ġA�֥̻ĬO�c��DNA�MRNA�ն����򥻤��l�C</font></p>
-      <p><font face="�з���">�§J���P�P���ϥΤ@�طs�޳N�s�@�X�v���A���M�ѪR�קC�A���i�[�\���j�d��C</font></p>
-      <p><font face="�з���">�o����s�Z�n�b�^��u�۵M�v�]Nature�^���Z�W�A�i�����U��Ǯa�o�{RNA��]�ըM�wHIV�f�r�ͩR�g�����覡�C�]Ķ�̡G���������ѲM�^</font>
+    <td width="138%"><font SIZE="2"><font face="標楷體">（法新社巴黎6日電）   
+      根據今天公佈的一項研究，美國科學家已經破解人類愛滋病毒（HIV）基因組的全部結構。</font>
+      <p><font face="標楷體">研究人員表示，這項突破應會有助科學家想出新對策，透過研發新型抗病毒藥物，打擊病毒。</font></p>
+      <p><font face="標楷體">研究主要負責人、北卡羅萊納大學教堂山分校（University   
+      of North Carolina at Chapel Hill）教授威克斯（Kevin Weeks）說：「我們開始瞭解這個基因組使用何種技倆，幫助病毒逃過人類宿主的偵測。」</font></p>  
+      <p><font face="標楷體">HIV如同流感病毒和C型肝炎病毒，把基因資料藏在單股核糖核酸RNA內，而非雙股脫氧核糖核酸DNA內。雙股DNA在所有的活有機體和某些病毒內都可見到。</font></p>
+      <p><font face="標楷體">這種結構造成破解難度更高，因為RNA不像DNA，RNA可以把自己摺起來，變成錯綜複雜的3D結構。</font></p>
+      <p><font face="標楷體">先前的研究成功模製出HIV基因組的小結構。HIV基因組由兩股組成，每股含有將近1萬個核甘酸，核甘酸是構成DNA和RNA組塊的基本分子。</font></p>
+      <p><font face="標楷體">威克斯與同僚使用一種新技術製作出影像，雖然解析度低，但可涵蓋較大範圍。</font></p>
+      <p><font face="標楷體">這項研究刊登在英國「自然」（Nature）期刊上，可望幫助科學家發現RNA基因組決定HIV病毒生命週期的方式。（譯者：中央社蔣天清）</font>
       <p></font></td>
     <td width="62%">
-      <p align="center"><font face="�з���"><img border="0" src="htmphoto/Hiv%20Photo.jpg" width="244" height="298"></font></td>
+      <p align="center"><font face="標楷體"><img border="0" src="htmphoto/Hiv%20Photo.jpg" width="244" height="298"></font></td>
   </tr>
   <tr>
     <td width="200%" colspan="2">
-      <p align="center"><p align="center"><font face="�з���" size="3">�H���F�ӭM  
-      ������R���f�r</font></td>
+      <p align="center"><p align="center"><font face="標楷體" size="3">人類幹細胞  
+      能殺死愛滋病毒</font></td>
   </tr>
   <tr>
-    <td width="200%" colspan="2"><font SIZE="2"><font face="�з���">�[�{�j�Ǭ����F���ա]UCLA�^��s�H�������ҩ��A�H����G�F�ӭM�㦳�����R���f�f�r��O�A����L�C�ʯf�r�e�f�]���@�w�����ġC</font>
-      <p><font face="�з���">�o�������b���Ѫ��u���@��ǹϮ��]���Z�v�]PLoSONE�^����s��ܡA�H���F�ӭM�i�H�]�p���۵�����]�̭]�C</font></p>
-      <p><font face="�з���">��s�p�ջ�ɤH�N�ܡ]ScottG.Kitchen�^���ܡA��s�H�����\�ҩ��i�H�Q�ΤH�����K�̨t�ΡA�S�O�OT�ӭM�����A�]�p���M���Ψӹ�ܷR���f�r�]HIV�^���ӭM�C</font></p>
-      <p><font face="�з���">�L���ܡA�o����s�]���w��l�`��_�A�άO�|�ް_�C�ʯe�f���ʳ��K�̲ӭM�f�r�A�Ʀܤ��P�����~�F�A�]�p�����P�ӭM�������i��ʡA���U�}�n��¦�C</font></p>
-      <p><font face="�з���">��s�H���Q�γQ�٬��u����T�ӭM�v��CD8�r��T�O�ڲӭM�A���Ѩñ����R���f�r�A�H�ξD��HIV�P�V���ӭM�C���ѩ�H��ä��s�b������T�ӭM�A�]����s�H���z�L��]�u�{�P��G�F�ӭM�ƻs�o��T�ӭM�A�åH���\�b�ѹ����W����A���o���G�C�@�P�@�̬d�J�]JeromeA.Zack�^���X�A�p�դU�@�B���ؼЦb�i��H�����A���X�j�o�����窺�B�νd��A�q�ثe����ܷR���f�~�A�Ʊ��ΨӪv���C�ʯf�r�ʯe�f</font></font></td>
+    <td width="200%" colspan="2"><font SIZE="2"><font face="標楷體">加州大學洛杉磯分校（UCLA）研究人員首次證明，人類血液幹細胞具有殺死愛滋病病毒能力，對於其他慢性病毒疾病也有一定的成效。</font>
+      <p><font face="標楷體">這份公布在今天的「公共科學圖書館期刊」（PLoSONE）的研究顯示，人類幹細胞可以設計成相等的基因疫苗。</font></p>
+      <p><font face="標楷體">研究小組領導人吉欽（ScottG.Kitchen）表示，研究人員成功證明可以利用人類的免疫系統，特別是T細胞反應，設計成專門用來對抗愛滋病毒（HIV）的細胞。</font></p>
+      <p><font face="標楷體">他表示，這項研究也為針對損害恢復，或是會引起慢性疾病的缺陷免疫細胞病毒，甚至不同類型腫瘤，設計成不同細胞類型的可能性，奠下良好基礎。</font></p>
+      <p><font face="標楷體">研究人員利用被稱為「殺手T細胞」的CD8毒性T淋巴細胞，辨識並殺死愛滋病毒，以及遭到HIV感染的細胞。但由於人體並不存在足夠的T細胞，因此研究人員透過基因工程與血液幹細胞複製這些T細胞，並以成功在老鼠身上實驗，取得成果。共同作者查克（JeromeA.Zack）指出，小組下一步的目標在進行人體實驗，並擴大這項實驗的運用範圍，從目前的對抗愛滋病外，希望能用來治療慢性病毒性疾病</font></font></td>
   </tr>
   <tr>
-    <td width="200%" colspan="2">�@
-      <p align="center"><font face="�з���" size="3">�R���̭]�j��} 
-      �ĪG�F3��</font></td>
+    <td width="200%" colspan="2">　
+      <p align="center"><font face="標楷體" size="3">愛滋疫苗大突破 
+      效果達3成</font></td>
   </tr>
   <tr>
-    <td width="200%" colspan="2"><font SIZE="2"><font face="�з���">����ɳ� 
-      2009-09-25 �i���奿����X���ɡj</font>
-      <p><font face="�з���">�@�R���f�̭]��o��o��}�i�i�I����x��P����åͩx���ܥ|��b�Ҩ��ť��A��s�H���ӮɤC�~�A�b����i����y�̤j�W�ҡB�@���@�U���d�W���@�̰ѻP���R���̭]�H���{�ɸ��礧��A�ҹ�i���C�u�H���K�̯ʥF�f�r�v�]�֢ע�A�Y�R���f�r�^�P�V���v�F�T�@�D�G�H�C�o�O�Ĥ@�����Ҿ���ܡA�R���f�̭]���w���\�ġC</font></p>
-      <p><font face="�з���">�@�o���{�ɸ���Y�Ѭ���x���٧U�B���ꤽ�@�åͳ��t�d����A�ӱ��ج̭]���O�N����¬̭]�V�X�Ӧ��A�@�جO�Ѫk���ɿյ��ļt�]Sanofi-Pasteur�^��o���u�Ϣڢ�Ϣѡv�A�t�@�جO�Ѭ����FVaxGen���q��o���u�ϢעҢ��Ϣ�v�C�ĥά̭]�զX�Y�۲���u���o�w�W�j�v�]prime-boost�^�����C�Ĥ@�ج̭]�ҰʧK�̨t�Χ����f�r�A�ĤG�ج̭]�h�[�j�K�̤����C</font></p>
-      <p><font face="�з���">�@�G�����T�~�_�A��s�H���b����R���f�P�V�v�̰����٥��A�D��@�U���d�W�~�֤���Q�K�ܤʷ����k�k���@�̡A�o�ǤH�R���˴����e���ʤ����C��s�H���N�L�̥�������աA�@�ձ��ج̭]�]����ա^�A�t�@�իh�I���w�����]��Ӳա^�C�T�~����A����զ����Q�@�H�P�V�R���f�r�A��Ӳիh���C�Q�|�H�P�V�C</font></p>
-      <p><font face="�з���">�@�������A�Ӭ̭]�i���\���C�R���f�r�P�V���v�T�@�D�G�H�C��s�H���ﵲ�G�j�P�N�~�A�{�����Ļ��W�X�w���A�ê������M���̮ĪG�٤����n�A�����O�@�����j��}�A�ҩ���o��w�����Ī��R���̭]�O�i�檺�C</font></p>
-      <p><font face="�з���">�@�^����Ǵ��Z�m��ްw�n�]Lancet�^�`�s�軮�y�դh���G�u�o�����G�O�H���ġA�����{�ɸ���H�ƳW�ҤӤp�A�t���ʤ]�i��P���v�����A�����@�o�{���O�R���f�̭]��o��Q�~�ӲĤ@�Ӧn�����C�ڭ̥����ԷV�p�ߡA���]�n����Ʊ�A���@�o�{���n�ߨ�i�歫�Ƹ���M��s�լd�C�v</font></p>
-      <p><font face="�з���">�@���ꤽ�ó����ܡA�o������Y�w�����`�����R���f�r��A�����B�D�w�Ψ�L�a�誺�R���f�r�O�_���ġA�����i�@�B��s�C�ڲέp�A�ثe���y�����T�d�T�ʸU�H�P�V�R���f�C</font></font></td>
+    <td width="200%" colspan="2"><font SIZE="2"><font face="標楷體">中國時報 
+      2009-09-25 【黃文正／綜合報導】</font>
+      <p><font face="標楷體">　愛滋病疫苗研發獲得突破進展！美國軍方與泰國衛生官員廿四日在曼谷宣布，研究人員耗時七年，在泰國進行全球最大規模、共有一萬六千名志願者參與的愛滋疫苗人體臨床試驗之後，證實可降低「人類免疫缺乏病毒」（ＨＩＶ，即愛滋病毒）感染機率達三一．二％。這是第一次有證據顯示，愛滋病疫苗有預防功效。</font></p>
+      <p><font face="標楷體">　這項臨床試驗係由美國軍方贊助、泰國公共衛生部負責執行，而接種疫苗其實是將兩種舊疫苗混合而成，一種是由法國賽諾菲藥廠（Sanofi-Pasteur）研發的「ＡＬＶＡＣ」，另一種是由洛杉磯VaxGen公司研發的「ＡＩＤＳＶＡＸ」。採用疫苗組合係著眼於「先發─增強」（prime-boost）策略。第一種疫苗啟動免疫系統攻擊病毒，第二種疫苗則加強免疫反應。</font></p>
+      <p><font face="標楷體">　二○○三年起，研究人員在泰國愛滋病感染率最高的省份，挑選一萬六千名年齡介於十八至卅歲的男女志願者，這些人愛滋檢測都呈陰性反應。研究人員將他們平分成兩組，一組接種疫苗（實驗組），另一組則施打安慰劑（對照組）。三年之後，實驗組有五十一人感染愛滋病毒，對照組則有七十四人感染。</font></p>
+      <p><font face="標楷體">　換言之，該疫苗可成功降低愛滋病毒感染機率三一．二％。研究人員對結果大感意外，認為成效遠超出預期，並表示雖然防疫效果還不夠好，但仍是一項重大突破，證明研發更安全有效的愛滋疫苗是可行的。</font></p>
+      <p><font face="標楷體">　英國醫學期刊《刺胳針》（Lancet）總編輯赫頓博士說：「這項結果令人振奮，儘管臨床試驗人數規模太小，差異性也可能與機率有關，但此一發現仍是愛滋病疫苗研發近十年來第一個好消息。我們必須謹慎小心，但也要抱持希望，此一發現須要立刻進行重複試驗和研究調查。」</font></p>
+      <p><font face="標楷體">　泰國公衛部表示，這次試驗係針對泰國常見的愛滋病毒株，對美國、非洲或其他地方的愛滋病毒是否有效，仍須進一步研究。據統計，目前全球約有三千三百萬人感染愛滋病。</font></font></td>
   </tr>
 </table>
 <script LANGUAGE="JavaScript" TYPE="text/javascript">
