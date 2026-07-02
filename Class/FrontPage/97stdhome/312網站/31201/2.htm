@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶4</title>
+<title>æ–°ç¶²é 4</title>
 </head>
 
 <body background="images/back02.jpg">
@@ -62,15 +62,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¥Á°ê¦~¨C¤ë¤§¤é¼Æ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¥Á°ê¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["°¨", "¦Ï", "µU", "Âû", "ª¯", "½Þ", "¹«", "¤û", "ªê", "¨ß", "Às", "³D" ];
-	LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+	AnimalIdx = ["é¦¬", "ç¾Š", "çŒ´", "é›ž", "ç‹—", "è±¬", "é¼ ", "ç‰›", "è™Ž", "å…”", "é¾", "è›‡" ];
+	LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -133,18 +133,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>¬P´Á¤é</font>","<font color=#8000FF>¬P´Á¤@</font>","<font color=#8000FF>¬P´Á¤G</font>","<font color=#8000FF>¬P´Á¤T</font>","<font color=#8000FF>¬P´Á¥|</font>","<font color=#8000FF>¬P´Á¤­</font>","<font color=GREEN>¬P´Á¤»</font>");
-             document.write("¥Á°ê <font color=#3171b7>",today.getYear()-1911,"<font color=black> ¦~ </font>",today.getMonth()+1,"<font color=black> ¤ë </font>",today.getDate(),"<font color=black> ¤é </font>"
+       var d=new initArray("<font color=RED>æ˜ŸæœŸæ—¥</font>","<font color=#8000FF>æ˜ŸæœŸä¸€</font>","<font color=#8000FF>æ˜ŸæœŸäºŒ</font>","<font color=#8000FF>æ˜ŸæœŸä¸‰</font>","<font color=#8000FF>æ˜ŸæœŸå››</font>","<font color=#8000FF>æ˜ŸæœŸäº”</font>","<font color=GREEN>æ˜ŸæœŸå…­</font>");
+             document.write("æ°‘åœ‹ <font color=#3171b7>",today.getYear()-1911,"<font color=black> å¹´ </font>",today.getMonth()+1,"<font color=black> æœˆ </font>",today.getDate(),"<font color=black> æ—¥ </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é</span>" );
+	  document.write( "</font><span class=d>è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥</span>" );
 
-       document.write( "<span class=d><font color=RED>·Ù</font>" + Location + " <font color=GREEN>¨R</font>" + Animal + Age + "·³</span><br>" );                
+       document.write( "<span class=d><font color=RED>ç…ž</font>" + Location + " <font color=GREEN>æ²–</font>" + Animal + Age + "æ­²</span><br>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¥Á°ê¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤æ°‘åœ‹å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -158,11 +158,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¥Á°ê 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°æ°‘åœ‹ 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -171,46 +171,46 @@ CalConv();
 
 </script> 
 
- ¡@</p>
+ ã€€</p>
 
-<p><span class="style4"><img border="0" src="fig053.gif" width="11" height="11"><b>±Y¶ò¨a®`©öµo¥ÍÀô¹Ò</b></span></p>
-<p><span class="style3">1.¦a½èºc³y»P©¥©Ê¡G</span><span class="style3">¤£¦P¦a½èªº§÷®Æ±j«×¤Î¯}¸Hµ{«×¦U²§¡A©Ò¯à´£¨Ñ¤§¤g¥Û§÷®Æ¤]¤£¦P¡C</span></p>
-<p><span class="style3">2.¦a½è¯}¸H¡Bªí¤gÂÐ»\²`«×²L¡B ¤g¥ÛÃP³n</span></p> 
-<p><span class="style3">3.¦a¾_»PÂ_¼hªº¬¡ÅD«×</span></p>
-<p><span class="style3">4.¤H¬°¶}µo <span class="style7">(¸ÑÀ£¡B©Y³»²ü­«¡B§ïÅÜ©Y«×»P©Y«¬  
-) ¡G</span></span><span class="style3">¤s°Ï¹D¸ô¶}ÅP±K«×°ª¡B¶}µo¹L«×»P¹L©ó¶°¤¤¡B¾Á´Þªe¤t¦a¤ÎºòÁ{·Ë¬yªe§É¦a«Ø¿v©ÐªÙ</span></p> 
+<p><span class="style4"><img border="0" src="fig053.gif" width="11" height="11"><b>å´©å¡Œç½å®³æ˜“ç™¼ç”Ÿç’°å¢ƒ</b></span></p>
+<p><span class="style3">1.åœ°è³ªæ§‹é€ èˆ‡å²©æ€§ï¼š</span><span class="style3">ä¸åŒåœ°è³ªçš„ææ–™å¼·åº¦åŠç ´ç¢Žç¨‹åº¦å„ç•°ï¼Œæ‰€èƒ½æä¾›ä¹‹åœŸçŸ³ææ–™ä¹Ÿä¸åŒã€‚</span></p>
+<p><span class="style3">2.åœ°è³ªç ´ç¢Žã€è¡¨åœŸè¦†è“‹æ·±åº¦æ·ºã€ åœŸçŸ³é¬†è»Ÿ</span></p> 
+<p><span class="style3">3.åœ°éœ‡èˆ‡æ–·å±¤çš„æ´»èºåº¦</span></p>
+<p><span class="style3">4.äººç‚ºé–‹ç™¼ <span class="style7">(è§£å£“ã€å¡é ‚è·é‡ã€æ”¹è®Šå¡åº¦èˆ‡å¡åž‹  
+) ï¼š</span></span><span class="style3">å±±å€é“è·¯é–‹é—¢å¯†åº¦é«˜ã€é–‹ç™¼éŽåº¦èˆ‡éŽæ–¼é›†ä¸­ã€å¢¾æ®–æ²³å·åœ°åŠç·Šè‡¨æºªæµæ²³åºŠåœ°å»ºç¯‰æˆ¿èˆ</span></p> 
 
 <p><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
-¦a·Æ¨a®`©öµo¥ÍÀô¹Ò</span></strong></p>
+åœ°æ»‘ç½å®³æ˜“ç™¼ç”Ÿç’°å¢ƒ</span></strong></p>
 
-<p><span class="style3">1.¶¶¦V©Y</span></p>
+<p><span class="style3">1.é †å‘å¡</span></p>
 
-<p><span class="style3">2.Á¡¼h¬â©¥©Î¬â­¶©¥¤¬¼h ¡B ¬âªd©¥¤¬¼h</span></p>
+<p><span class="style3">2.è–„å±¤ç ‚å²©æˆ–ç ‚é å²©äº’å±¤ ã€ ç ‚æ³¥å²©äº’å±¤</span></p>
 
-<p><span class="style3">3.¦a½è-ºc³y»P©¥©Ê</span></p>
+<p><span class="style3">3.åœ°è³ª-æ§‹é€ èˆ‡å²©æ€§</span></p>
 
-<p><span class="style3">4.©Y³»°ª«×¡G°ªµ{ 600-700m ³Ì¦h <span class="style7">(¨üÀ£©Tµ²¸û¤£§¹¾ã 
-¡B ±j«×¸û§C ¡B ³»³¡ ¨ü¦a¾_³e¤O¥ç¸û¤j)</span></span></p>
+<p><span class="style3">4.å¡é ‚é«˜åº¦ï¼šé«˜ç¨‹ 600-700m æœ€å¤š <span class="style7">(å—å£“å›ºçµè¼ƒä¸å®Œæ•´ 
+ã€ å¼·åº¦è¼ƒä½Ž ã€ é ‚éƒ¨ å—åœ°éœ‡è²«åŠ›äº¦è¼ƒå¤§)</span></span></p>
 
-<p><span class="style3">5.©Y­±Áa­å­±¥Hª½½u§Î¬°¦h</span></p>
+<p><span class="style3">5.å¡é¢ç¸±å‰–é¢ä»¥ç›´ç·šå½¢ç‚ºå¤š</span></p>
 
-<p><span class="style3">6.¤ôªº¼vÅT¡G²ü­« ¡B¼í·Æ</span></p>
+<p><span class="style3">6.æ°´çš„å½±éŸ¿ï¼šè·é‡ ã€æ½¤æ»‘</span></p>
 
-<p><span class="style3">7.¤H¬°¶}µo¡G ²ü­« ¡B¸ÑÀ£¡B§ïÅÜ©Y«¬</span></p>
+<p><span class="style3">7.äººç‚ºé–‹ç™¼ï¼š è·é‡ ã€è§£å£“ã€æ”¹è®Šå¡åž‹</span></p>
 
 <table>
   <tr>
     <td colSpan="4">
       <div align="left">
         <strong><span class="style3"><img src="fig053.gif" width="11" height="11"> 
-        ¤g¥Û¬y¨a®`©öµo¥ÍÀô¹Ò<a name="w6"></a></span></strong>
+        åœŸçŸ³æµç½å®³æ˜“ç™¼ç”Ÿç’°å¢ƒ<a name="w6"></a></span></strong>
       </div>
     </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td><span class="style3">1.</span></td>
-    <td colSpan="2"><span class="style3">¦³®Ä¶°¤ô­±¿n</span></td>
+    <td colSpan="2"><span class="style3">æœ‰æ•ˆé›†æ°´é¢ç©</span></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -230,7 +230,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div class="style3" align="left">
-        ¶°¤ô°Ï¤º©¥Åé¤§©¥©Ê
+        é›†æ°´å€å…§å²©é«”ä¹‹å²©æ€§
       </div>
     </td>
   </tr>
@@ -243,29 +243,29 @@ CalConv();
           <tr bgColor="#d2f1fd">
             <td width="49%">
               <div align="center">
-                <span class="style3">·Ë¬y©Ò¦b¤§¦a½èÀô¹Ò</span>
+                <span class="style3">æºªæµæ‰€åœ¨ä¹‹åœ°è³ªç’°å¢ƒ</span>
               </div>
             </td>
             <td width="31%">
               <div align="center">
-                <span class="style3">©¥©Ê¤ÀÃþ</span>
+                <span class="style3">å²©æ€§åˆ†é¡ž</span>
               </div>
             </td>
             <td width="20%">
               <div align="center">
-                <span class="style3">µû¤À</span>
+                <span class="style3">è©•åˆ†</span>
               </div>
             </td>
           </tr>
           <tr bgColor="#d2f1fd">
             <td>
               <div align="center">
-                <span class="style3">¤ù©¥¡AªO©¥</span>
+                <span class="style3">ç‰‡å²©ï¼Œæ¿å²©</span>
               </div>
             </td>
             <td>
               <div align="center">
-                <span class="style3">¼s°ìÅÜ½è©¥</span>
+                <span class="style3">å»£åŸŸè®Šè³ªå²©</span>
               </div>
             </td>
             <td>
@@ -277,12 +277,12 @@ CalConv();
           <tr bgColor="#d2f1fd">
             <td>
               <div align="center">
-                <span class="style3">¥j²Ä¤T¬ö¨H¿n©¥ ( ¤¤·s¥@©¥¼h )</span>
+                <span class="style3">å¤ç¬¬ä¸‰ç´€æ²ˆç©å²© ( ä¸­æ–°ä¸–å²©å±¤ )</span>
               </div>
             </td>
             <td>
               <div align="center">
-                <span class="style3">¥j²Ä¤T¬ö¨ÈÅÜ½è©¥</span>
+                <span class="style3">å¤ç¬¬ä¸‰ç´€äºžè®Šè³ªå²©</span>
               </div>
             </td>
             <td>
@@ -294,13 +294,13 @@ CalConv();
           <tr bgColor="#d2f1fd">
             <td>
               <div align="center">
-                <span class="style3">·s²Ä¤T¬ö¤Î§ó·s¥@©¥¼h 
-                ¥x¦a°ï¿n¼h ( ¥þ·s¥@ )</span>
+                <span class="style3">æ–°ç¬¬ä¸‰ç´€åŠæ›´æ–°ä¸–å²©å±¤ 
+                å°åœ°å †ç©å±¤ ( å…¨æ–°ä¸– )</span>
               </div>
             </td>
             <td>
               <div align="center">
-                <span class="style3">·s²Ä¤T¬ö¨H¿n©¥</span>
+                <span class="style3">æ–°ç¬¬ä¸‰ç´€æ²ˆç©å²©</span>
               </div>
             </td>
             <td>
@@ -322,7 +322,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">³q¹L¶°¤ô°Ï¤º¤§Â_¼hªø«×</span>
+        <span class="style3">é€šéŽé›†æ°´å€å…§ä¹‹æ–·å±¤é•·åº¦</span>
       </div>
     </td>
   </tr>
@@ -347,7 +347,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">·Ë¬y¤W´å¤§±Y¶ò­±¿n</span>
+        <span class="style3">æºªæµä¸Šæ¸¸ä¹‹å´©å¡Œé¢ç©</span>
       </div>
     </td>
   </tr>
@@ -372,18 +372,18 @@ CalConv();
     </td>
     <td colSpan="2">
       <div class="style3" align="left" style="width: 685; height: 20">
-        ­°«B±ø¥ó¡G­°«B±j«×¡B²Ö¿n«B¶q¡Bµo¥Í®É¨è »¨«B¶°¤¤ 
-        ¡B «B¶q¤j ¡B ­°«B®É¶¡ªø
+        é™é›¨æ¢ä»¶ï¼šé™é›¨å¼·åº¦ã€ç´¯ç©é›¨é‡ã€ç™¼ç”Ÿæ™‚åˆ» è±ªé›¨é›†ä¸­ 
+        ã€ é›¨é‡å¤§ ã€ é™é›¨æ™‚é–“é•·
       </div>
     </td>
   </tr>
 </table>
-<p>¡@</p>
+<p>ã€€</p>
 
 <table>
   <tr>
     <td colSpan="4"><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
-      ¥xÆW©Y¦a¨a®`®×¨Ò <a name="w7"></a></span></strong></td>
+      å°ç£å¡åœ°ç½å®³æ¡ˆä¾‹ <a name="w7"></a></span></strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -397,7 +397,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¶P§B»ä­·ªº©Y¦a¨a®`
+          è³€ä¼¯é¢±é¢¨çš„å¡åœ°ç½å®³
         </div>
       </div>
     </td>
@@ -411,8 +411,8 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¢w 
-          ­°«B±j«×¡B¦a½è±ø¥ó¡B¤H¬°¤£·í¶}µo¡B¤g¦a¶W­­§Q¥Î
+          â”€ 
+          é™é›¨å¼·åº¦ã€åœ°è³ªæ¢ä»¶ã€äººç‚ºä¸ç•¶é–‹ç™¼ã€åœŸåœ°è¶…é™åˆ©ç”¨
         </div>
       </div>
     </td>
@@ -429,7 +429,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ªLªÖ¤j°p¤§©Y¦a¨a®`
+          æž—è‚¯å¤§éƒ¡ä¹‹å¡åœ°ç½å®³
         </div>
       </div>
     </td>
@@ -443,7 +443,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¢w¦a½èÄÝ¶¶¦V©Y¡BÂ÷¾×¤gÀð¹Lªñ¡B±Æ¤ô¤f©Ê¯à¤£¨Îµ¥
+          â”€åœ°è³ªå±¬é †å‘å¡ã€é›¢æ“‹åœŸç‰†éŽè¿‘ã€æŽ’æ°´å£æ€§èƒ½ä¸ä½³ç­‰
         </div>
       </div>
     </td>
@@ -460,7 +460,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¤C¤G¤ô¨aªº©Y¦a¨a®`
+          ä¸ƒäºŒæ°´ç½çš„å¡åœ°ç½å®³
         </div>
       </div>
     </td>
@@ -474,7 +474,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¢w­°«B¶q¹L¤j¾É­P¤s¬x¼Éµo¡B¤W´å¹L«×¶}µo
+          â”€é™é›¨é‡éŽå¤§å°Žè‡´å±±æ´ªæš´ç™¼ã€ä¸Šæ¸¸éŽåº¦é–‹ç™¼
         </div>
       </div>
     </td>
@@ -491,7 +491,7 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¦ã²ú»ä­·¤§©Y¦a¨a®`
+          è‰¾èŽ‰é¢±é¢¨ä¹‹å¡åœ°ç½å®³
         </div>
       </div>
     </td>
@@ -505,18 +505,18 @@ CalConv();
     <td colSpan="2">
       <div class="style3" align="left">
         <div align="left">
-          ¢w¦a½èÄÝ¯}¸H­¶©¥¡B³¡¤À¹D¸ô¶}«õ¤Þµo±Y¿n°Ï¤g¤è¤j¶q¤U·Æ
+          â”€åœ°è³ªå±¬ç ´ç¢Žé å²©ã€éƒ¨åˆ†é“è·¯é–‹æŒ–å¼•ç™¼å´©ç©å€åœŸæ–¹å¤§é‡ä¸‹æ»‘
         </div>
       </div>
     </td>
   </tr>
 </table>
-<p>¡@</p>
+<p>ã€€</p>
 
 <table>
   <tr>
     <td colSpan="4"><strong><span class="style4"><img src="fig053.gif" width="11" height="11"> 
-      °ê¥~©Y¦a¨a®`®×¨Ò <a name="w8"></a></span></strong></td>
+      åœ‹å¤–å¡åœ°ç½å®³æ¡ˆä¾‹ <a name="w8"></a></span></strong></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -527,7 +527,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">¤é¥» Okushiri Harbor ¤s±Y¡÷¦a¾_¤Þµo¤g¥Û¬y</span>
+        <span class="style3">æ—¥æœ¬ Okushiri Harbor å±±å´©â†’åœ°éœ‡å¼•ç™¼åœŸçŸ³æµ</span>
       </div>
     </td>
   </tr>
@@ -540,7 +540,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">¤é¥» Motchi ¤s±Y¡÷»¨«B</span>
+        <span class="style3">æ—¥æœ¬ Motchi å±±å´©â†’è±ªé›¨</span>
       </div>
     </td>
   </tr>
@@ -553,7 +553,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">µá«ß»«¤g¥Û¬y¡÷µá«ß»«¤¤«n³¡»¨«B</span>
+        <span class="style3">è²å¾‹è³“åœŸçŸ³æµâ†’è²å¾‹è³“ä¸­å—éƒ¨è±ªé›¨</span>
       </div>
     </td>
   </tr>
@@ -566,7 +566,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">¤¤¶VÃä¹Ò - ¶³«nª÷¥­¯S¤j¤g¥Û¬y·Æ©Y¡÷³s­°¤j¼É«B</span>
+        <span class="style3">ä¸­è¶Šé‚Šå¢ƒ - é›²å—é‡‘å¹³ç‰¹å¤§åœŸçŸ³æµæ»‘å¡â†’é€£é™å¤§æš´é›¨</span>
       </div>
     </td>
   </tr>
@@ -579,7 +579,7 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">¤¤°ê¥_¨Ê¡÷¨u¨£¼É­·«B¤g¥Û¬y</span>
+        <span class="style3">ä¸­åœ‹åŒ—äº¬â†’ç½•è¦‹æš´é¢¨é›¨åœŸçŸ³æµ</span>
       </div>
     </td>
   </tr>
@@ -592,12 +592,12 @@ CalConv();
     </td>
     <td colSpan="2">
       <div align="left">
-        <span class="style3">¬ü°ê¥[¦{¤g¥Û¬y¡÷¼É­·«B</span>
+        <span class="style3">ç¾Žåœ‹åŠ å·žåœŸçŸ³æµâ†’æš´é¢¨é›¨</span>
       </div>
     </td>
   </tr>
 </table>
-<p>¡@</p>
+<p>ã€€</p>
 
 </body>
 

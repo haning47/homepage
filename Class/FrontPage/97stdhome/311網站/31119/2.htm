@@ -1,17 +1,17 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 </head>
 
 <body background="images/back2.jpg" bgcolor="#00FFFF">
 
 <p align="center"><img border="0" src="images/title2.gif" width="465" height="54"></p>
 
-<p align="center">¡@ 
+<p align="center">ã€€ 
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -61,15 +61,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¥Á°ê¦~¨C¤ë¤§¤é¼Æ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¥Á°ê¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["°¨", "¦Ï", "µU", "Âû", "ª¯", "½Þ", "¹«", "¤û", "ªê", "¨ß", "Às", "³D" ];
-	LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+	AnimalIdx = ["é¦¬", "ç¾Š", "çŒ´", "é›ž", "ç‹—", "è±¬", "é¼ ", "ç‰›", "è™Ž", "å…”", "é¾", "è›‡" ];
+	LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -132,18 +132,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>¬P´Á¤é</font>","<font color=#8000FF>¬P´Á¤@</font>","<font color=#8000FF>¬P´Á¤G</font>","<font color=#8000FF>¬P´Á¤T</font>","<font color=#8000FF>¬P´Á¥|</font>","<font color=#8000FF>¬P´Á¤­</font>","<font color=GREEN>¬P´Á¤»</font>");
-             document.write("¥Á°ê <font color=#3171b7>",today.getYear()-1911,"<font color=black> ¦~ </font>",today.getMonth()+1,"<font color=black> ¤ë </font>",today.getDate(),"<font color=black> ¤é </font>"
+       var d=new initArray("<font color=RED>æ˜ŸæœŸæ—¥</font>","<font color=#8000FF>æ˜ŸæœŸä¸€</font>","<font color=#8000FF>æ˜ŸæœŸäºŒ</font>","<font color=#8000FF>æ˜ŸæœŸä¸‰</font>","<font color=#8000FF>æ˜ŸæœŸå››</font>","<font color=#8000FF>æ˜ŸæœŸäº”</font>","<font color=GREEN>æ˜ŸæœŸå…­</font>");
+             document.write("æ°‘åœ‹ <font color=#3171b7>",today.getYear()-1911,"<font color=black> å¹´ </font>",today.getMonth()+1,"<font color=black> æœˆ </font>",today.getDate(),"<font color=black> æ—¥ </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é</span>" );
+	  document.write( "</font><span class=d>è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥</span>" );
 
-       document.write( "<span class=d><font color=RED>·Ù</font>" + Location + " <font color=GREEN>¨R</font>" + Animal + Age + "·³</span><br>" );                
+       document.write( "<span class=d><font color=RED>ç…ž</font>" + Location + " <font color=GREEN>æ²–</font>" + Animal + Age + "æ­²</span><br>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¥Á°ê¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤æ°‘åœ‹å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -157,11 +157,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¥Á°ê 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°æ°‘åœ‹ 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -173,46 +173,46 @@ CalConv();
 <table border="1" width="100%" height="162">
   <tr>
     <td width="100%" height="26" colspan="2" bgcolor="#00FFFF">
-      <p align="center">±o¼ú¬ö¿ý</td>
+      <p align="center">å¾—çŽç´€éŒ„</td>
   </tr>
   <tr>
-    <td width="63%" height="20">2001¦~ -- ²Ä¤G¤Q¤@©¡¨È¬w´Î²yÀA¼ÐÁÉÀò±o³Ì¨Î¤TÂS¤â¼ú¡C&nbsp;<br>
-   2004¦~ -- ¥þ°ê¦¨´Î¥Ò²Õ¬K©uÁpÁÉ¥´À»¼ú²Ä¤@¦W¡C&nbsp;<br>
-   2004¦~ -- Â¾´Î¤Q¤­¦~¤E¤ë¥÷¥´À»MVP¡C&nbsp;<br>
-   2006¦~ -- 7¤ë21¤é¡A¦b·s²ø²y³õÁ|¿ì¤¤µØÂ¾´Î¬õ¥Õ©ú¬P¹ï§ÜÁÉ¤§¥þÂS¥´¤jÁÉ¡A¦b¨MÁÉ·í¤¤¹Ü±o¨È­x¡C&nbsp;<br>
-   2006¦~ -- Â¾´Î¤Q¤C¦~´åÀ»¤â³Ì¨Î¤Q¤H¼ú¡C&nbsp;<br>
-   2007¦~ -- Â¾´Î¤Q¤K¦~´åÀ»¤â³Ì¨Î¤Q¤H¼ú»Pª÷¤â®M¼úÂù®Æ±o¥D¡C&nbsp;<br>
-   2008¦~ -- Â¾´Î¤Q¤E¦~´åÀ»¤â³Ì¨Î¤Q¤H¼ú¡C&nbsp;</td>
-    <td width="37%" height="20"><img border="0" src="htmphoto/À»´x.jpg" width="323" height="194"></td>
+    <td width="63%" height="20">2001å¹´ -- ç¬¬äºŒåä¸€å±†äºžæ´²æ£’çƒéŒ¦æ¨™è³½ç²å¾—æœ€ä½³ä¸‰å£˜æ‰‹çŽã€‚&nbsp;<br>
+   2004å¹´ -- å…¨åœ‹æˆæ£’ç”²çµ„æ˜¥å­£è¯è³½æ‰“æ“ŠçŽç¬¬ä¸€åã€‚&nbsp;<br>
+   2004å¹´ -- è·æ£’åäº”å¹´ä¹æœˆä»½æ‰“æ“ŠMVPã€‚&nbsp;<br>
+   2006å¹´ -- 7æœˆ21æ—¥ï¼Œåœ¨æ–°èŽŠçƒå ´èˆ‰è¾¦ä¸­è¯è·æ£’ç´…ç™½æ˜Žæ˜Ÿå°æŠ—è³½ä¹‹å…¨å£˜æ‰“å¤§è³½ï¼Œåœ¨æ±ºè³½ç•¶ä¸­å¥ªå¾—äºžè»ã€‚&nbsp;<br>
+   2006å¹´ -- è·æ£’åä¸ƒå¹´æ¸¸æ“Šæ‰‹æœ€ä½³åäººçŽã€‚&nbsp;<br>
+   2007å¹´ -- è·æ£’åå…«å¹´æ¸¸æ“Šæ‰‹æœ€ä½³åäººçŽèˆ‡é‡‘æ‰‹å¥—çŽé›™æ–™å¾—ä¸»ã€‚&nbsp;<br>
+   2008å¹´ -- è·æ£’åä¹å¹´æ¸¸æ“Šæ‰‹æœ€ä½³åäººçŽã€‚&nbsp;</td>
+    <td width="37%" height="20"><img border="0" src="htmphoto/æ“ŠæŽŒ.jpg" width="323" height="194"></td>
   </tr>
   <tr>
     <td width="100%" height="20" colspan="2" bgcolor="#99FF99">
-      <p align="center">²y§Þªí²{</td>
+      <p align="center">çƒæŠ€è¡¨ç¾</td>
   </tr>
   <tr>
-    <td width="63%" height="20">2004¦~ -- 6¤ë3¤é©ó¼á²M´ò²y³õ¹ï¾Ô¿³¹A¤û¶¤¡AÂ¾´Îªìµn³õ§Y¾á¥ô¥|´Î¤¤¤ß¥´ªÌ¡C&nbsp;<br>
-   2004¦~ -- 6¤ë8¤é©ó¹Å¸q¥«²y³õ¹ï¾Ô¤¤«HÄH¶¤ÅÞ×âR.MÀ»¥X¶§¬K¥þÂS¥´¡A¬°¥Í²P­ºÅF¡C&nbsp;<br>
-   2004¦~ -- Â¾´Î¤Q¤­¦~½l³y·s¤H³sÄò23³õ¦w¥´¡]07¤ë23¤é¦Ü10¤ë01¤é¡^¡A¥´¯}¾G©¯¥Í©Ò«O«ùªºÂÂ¬ö¿ý¡C&nbsp;<br>
-   2006¦~ -- 3¤ë31¤é©ó·s¦Ë²y³õ¹ï¾Ô¤¤«HÄH¶¤¬h¸Î®iÀ»¥X¥Í²P²Ä¤@¤äº¡³e¥þÂS¥´¡C&nbsp;<br>
-   2006¦~ -- §ù«¢¨È¹B¥H¦A¨£¦w¥´¬°¤¤µØ¶¤¥H¤K¤ñ¤C°fÂà¤é¥»¶¤Àò³Ó¡A®³¤U¨È¹B¥v¤W²Ä¤@­±´Î²yª÷µP¡C&nbsp;<br>
-   2007¦~ -- 11¤ë12¤é¦b²Ä¤T¤Q¤C©¡¥@¬É¬×´Î²yÀA¼ÐÁÉ¤¤¡A¦A¥H¦A¨£¦w¥´µ²§ô¤ñÁÉ¡A¤¤µØ¶¤¥H¤@¤ñ¹s®ð¨«¸q¤j§Q¶¤¡C&nbsp;<br>
-   2008¦~ -- 9¤ë8¤é¹F¦¨¦Û·s¤H²y©u¡A³sÄò5¦~³£¦³10µo¥H¤W¥þÂS¥´¬ö¿ý¡A¬°¤¤Â¾²Ä¤@¤H¡C</td> 
-    <td width="37%" height="20"><img border="0" src="htmphoto/¤¤µØ¶¤´§´Î.jpg" width="321" height="463"></td>
+    <td width="63%" height="20">2004å¹´ -- 6æœˆ3æ—¥æ–¼æ¾„æ¸…æ¹–çƒå ´å°æˆ°èˆˆè¾²ç‰›éšŠï¼Œè·æ£’åˆç™»å ´å³æ“”ä»»å››æ£’ä¸­å¿ƒæ‰“è€…ã€‚&nbsp;<br>
+   2004å¹´ -- 6æœˆ8æ—¥æ–¼å˜‰ç¾©å¸‚çƒå ´å°æˆ°ä¸­ä¿¡é¯¨éšŠé‚é€¤R.Mæ“Šå‡ºé™½æ˜¥å…¨å£˜æ‰“ï¼Œç‚ºç”Ÿæ¶¯é¦–è½Ÿã€‚&nbsp;<br>
+   2004å¹´ -- è·æ£’åäº”å¹´ç· é€ æ–°äººé€£çºŒ23å ´å®‰æ‰“ï¼ˆ07æœˆ23æ—¥è‡³10æœˆ01æ—¥ï¼‰ï¼Œæ‰“ç ´é„­å¹¸ç”Ÿæ‰€ä¿æŒçš„èˆŠç´€éŒ„ã€‚&nbsp;<br>
+   2006å¹´ -- 3æœˆ31æ—¥æ–¼æ–°ç«¹çƒå ´å°æˆ°ä¸­ä¿¡é¯¨éšŠæŸ³è£•å±•æ“Šå‡ºç”Ÿæ¶¯ç¬¬ä¸€æ”¯æ»¿è²«å…¨å£˜æ‰“ã€‚&nbsp;<br>
+   2006å¹´ -- æœå“ˆäºžé‹ä»¥å†è¦‹å®‰æ‰“ç‚ºä¸­è¯éšŠä»¥å…«æ¯”ä¸ƒé€†è½‰æ—¥æœ¬éšŠç²å‹ï¼Œæ‹¿ä¸‹äºžé‹å²ä¸Šç¬¬ä¸€é¢æ£’çƒé‡‘ç‰Œã€‚&nbsp;<br>
+   2007å¹´ -- 11æœˆ12æ—¥åœ¨ç¬¬ä¸‰åä¸ƒå±†ä¸–ç•Œç›ƒæ£’çƒéŒ¦æ¨™è³½ä¸­ï¼Œå†ä»¥å†è¦‹å®‰æ‰“çµæŸæ¯”è³½ï¼Œä¸­è¯éšŠä»¥ä¸€æ¯”é›¶æ°£èµ°ç¾©å¤§åˆ©éšŠã€‚&nbsp;<br>
+   2008å¹´ -- 9æœˆ8æ—¥é”æˆè‡ªæ–°äººçƒå­£ï¼Œé€£çºŒ5å¹´éƒ½æœ‰10ç™¼ä»¥ä¸Šå…¨å£˜æ‰“ç´€éŒ„ï¼Œç‚ºä¸­è·ç¬¬ä¸€äººã€‚</td> 
+    <td width="37%" height="20"><img border="0" src="htmphoto/ä¸­è¯éšŠæ®æ£’.jpg" width="321" height="463"></td>
   </tr>
   <tr>
     <td width="100%" height="20" colspan="2" bgcolor="#66CCFF">
-      <p align="center">¨ä¥L</td>
+      <p align="center">å…¶ä»–</td>
   </tr>
   <tr>
-    <td width="63%" height="20">2004¦~ -- ©u«á¶i¦æ²M°£¥k¤â°©¨ë¤â³N¡A¥Ñ©ó¶Ë¤f³N«á·P¬V¡A¥ý«á¤S¶i¦æ¨â¦¸²M°£¤â³N¡C&nbsp;<br>
-   2005¦~ -- »P¶¤¤Í¥Û§Ó°¶©çÄá¹LLa Newµn¤s¾c¼s§i¡C&nbsp;<br>
-   2005¦~ -- 12¤ë10¤é»P°ª¶¯¬ÛÅÊ5¦~ªº¤k¤Íµ²±B¡AÁÙ»¡¡u¦Ñ±C«Ü·|·ÓÅU¡AÅý§Ú¥i¥H±M¤ß¦b²y³õ¤W¥´©é¡C¡v&nbsp;<br>
-   2006¦~ -- ÀH¤¤µØ¶¤«e©¹¿D¬w²¾°V´Á¶¡¡A¾x¥X©]¶¡¹H³W¥~¥X­·ªi¡C&nbsp;<br>
-   2007¦~ -- 9¤ë4¤é¦b¥x¤¤²y³õ¹ï¾Ô¿³¹A¤û¶¤¡A¤»§½¤U¬°¤F±µ³¯§Ó°¶¤@°O¤¤¶¡¤è¦V±jÅ§ºu¦a²y¡A­¸¼³±µ²y®É³y¦¨¥ªªÓ¤Î­I³¡ÄY­«©Ô¶Ë¡A¹j¤é¶i¤J¶Ë§L¦W³æ¤U¤G­x¥ð¾i¡C&nbsp;<br>
-   2007¦~ -- 10¤ë15¤éµn¤WÁú°ê¡mSports 2.0¡nÂø»x²Ä¤C¤Q¤T´Á«Ê­±¡C&nbsp;<br>
-   2008¦~ -- ¾á¥ôLa newºµ¶¤¶¤ªø¡A¨Ã»PLa Newºµ¶¤Ã±¤U3¦~1116¸U·s¥x¹ôªº½Æ¼Æ¦~¦X¬ù¡C&nbsp;<br>
-   2008¦~ -- 04¤ë04¤éµo¥Íºµ¶¤§ðÀ»µô§P¨Æ¥ó¡A¾DÁp·ùÃg³B¸TÁÉ15³õ¡B»@´Ú18¸U¤¸¡A¬°¤¤Â¾¥v¤W³ÌÄY­«³B»@¡C&nbsp;<br>
-   2008¦~ -- »P¦n¤Í¥Û§Ó°¶¤W¹L¹qµø¸`¥Ø¡u¦Ê¸U¤jºq¬P¡v¬D¾Ôºq°Û¼úª÷¡C</td> 
+    <td width="63%" height="20">2004å¹´ -- å­£å¾Œé€²è¡Œæ¸…é™¤å³æ‰‹éª¨åˆºæ‰‹è¡“ï¼Œç”±æ–¼å‚·å£è¡“å¾Œæ„ŸæŸ“ï¼Œå…ˆå¾Œåˆé€²è¡Œå…©æ¬¡æ¸…é™¤æ‰‹è¡“ã€‚&nbsp;<br>
+   2005å¹´ -- èˆ‡éšŠå‹çŸ³å¿—å‰æ‹æ”éŽLa Newç™»å±±éž‹å»£å‘Šã€‚&nbsp;<br>
+   2005å¹´ -- 12æœˆ10æ—¥èˆ‡é«˜é›„ç›¸æˆ€5å¹´çš„å¥³å‹çµå©šï¼Œé‚„èªªã€Œè€å©†å¾ˆæœƒç…§é¡§ï¼Œè®“æˆ‘å¯ä»¥å°ˆå¿ƒåœ¨çƒå ´ä¸Šæ‰“æ‹šã€‚ã€&nbsp;<br>
+   2006å¹´ -- éš¨ä¸­è¯éšŠå‰å¾€æ¾³æ´²ç§»è¨“æœŸé–“ï¼Œé¬§å‡ºå¤œé–“é•è¦å¤–å‡ºé¢¨æ³¢ã€‚&nbsp;<br>
+   2007å¹´ -- 9æœˆ4æ—¥åœ¨å°ä¸­çƒå ´å°æˆ°èˆˆè¾²ç‰›éšŠï¼Œå…­å±€ä¸‹ç‚ºäº†æŽ¥é™³å¿—å‰ä¸€è¨˜ä¸­é–“æ–¹å‘å¼·è¥²æ»¾åœ°çƒï¼Œé£›æ’²æŽ¥çƒæ™‚é€ æˆå·¦è‚©åŠèƒŒéƒ¨åš´é‡æ‹‰å‚·ï¼Œéš”æ—¥é€²å…¥å‚·å…µåå–®ä¸‹äºŒè»ä¼‘é¤Šã€‚&nbsp;<br>
+   2007å¹´ -- 10æœˆ15æ—¥ç™»ä¸ŠéŸ“åœ‹ã€ŠSports 2.0ã€‹é›œèªŒç¬¬ä¸ƒåä¸‰æœŸå°é¢ã€‚&nbsp;<br>
+   2008å¹´ -- æ“”ä»»La newç†ŠéšŠéšŠé•·ï¼Œä¸¦èˆ‡La Newç†ŠéšŠç°½ä¸‹3å¹´1116è¬æ–°å°å¹£çš„è¤‡æ•¸å¹´åˆç´„ã€‚&nbsp;<br>
+   2008å¹´ -- 04æœˆ04æ—¥ç™¼ç”Ÿç†ŠéšŠæ”»æ“Šè£åˆ¤äº‹ä»¶ï¼Œé­è¯ç›Ÿæ‡²è™•ç¦è³½15å ´ã€ç½°æ¬¾18è¬å…ƒï¼Œç‚ºä¸­è·å²ä¸Šæœ€åš´é‡è™•ç½°ã€‚&nbsp;<br>
+   2008å¹´ -- èˆ‡å¥½å‹çŸ³å¿—å‰ä¸ŠéŽé›»è¦–ç¯€ç›®ã€Œç™¾è¬å¤§æ­Œæ˜Ÿã€æŒ‘æˆ°æ­Œå”±çŽé‡‘ã€‚</td> 
     <td width="37%" height="20"><img border="0" src="htmphoto/1277635121.jpg" width="320" height="480"></td>
   </tr>
 </table>

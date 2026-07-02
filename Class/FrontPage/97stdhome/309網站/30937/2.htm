@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -21,9 +21,9 @@ initOutline()
 
 <body background="image/back1.jpg" onclick="dynOutline()">
 
-<p align="center"><font face="¼Ð·¢Åé"><img border="0" src="image/title2.gif" width="469" height="61"></font></p>
+<p align="center"><font face="æ¨™æ¥·é«”"><img border="0" src="image/title2.gif" width="469" height="61"></font></p>
 
-<p align="center"><font face="¼Ð·¢Åé">&nbsp;  
+<p align="center"><font face="æ¨™æ¥·é«”">&nbsp;  
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -73,16 +73,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Þ ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é›ž ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™Ž ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -146,16 +146,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…ž" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -169,11 +169,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -196,23 +196,23 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="image/BD14720_.GIF" width="12" height="12" hspace="15"></td>
-          <td valign="top" width="100%"><font color="#FFFFFF" face="¼Ð·¢Åé">OLED ¦³¾÷µo¥ú¤G·¥Åé</font>      
+          <td valign="top" width="100%"><font color="#FFFFFF" face="æ¨™æ¥·é«”">OLED æœ‰æ©Ÿç™¼å…‰äºŒæ¥µé«”</font>      
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/BD10266_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#¤¶²Ð"><font face="¼Ð·¢Åé">¤¶²Ð</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#ä»‹ç´¹"><font face="æ¨™æ¥·é«”">ä»‹ç´¹</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/BD10266_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#µ²ºc"><font face="¼Ð·¢Åé">µ²ºc</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#çµæ§‹"><font face="æ¨™æ¥·é«”">çµæ§‹</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/BD10266_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#¯S¦â"><font face="¼Ð·¢Åé">¯S¦â</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#ç‰¹è‰²"><font face="æ¨™æ¥·é«”">ç‰¹è‰²</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="image/BD10266_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#À³¥Î"><font face="¼Ð·¢Åé">À³¥Î</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#æ‡‰ç”¨"><font face="æ¨™æ¥·é«”">æ‡‰ç”¨</font></a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -224,57 +224,57 @@ function OpenWin( url ) {
 <table border="1" width="100%" height="1142">
   <tr>
     <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="1">
-      <p align="center"><a name="¤¶²Ð"><font face="¼Ð·¢Åé">¤¶²Ð</font></a></td>
+      <p align="center"><a name="ä»‹ç´¹"><font face="æ¨™æ¥·é«”">ä»‹ç´¹</font></a></td>
   </tr>
   <tr>
     <td width="63%" align="center" height="138">
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé">OLED¨ã¦³¦Ûµo¥ú©Ê¡B¼sµø¨¤¡B °ª¹ï¤ñ¡B§C¯Ó¹q¡B°ª¤ÏÀ³³t²v¡B¥þ±m¤Æ¡B»sµ{Â²³æµ¥ÀuÂI¡AOLEDÅã¥Ü¾¹ªººØÃþ¥i¤À³æ¦â¡B¦h±m¤Î¥þ±mµ¥ºØÃþ¡C</font></p>      
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé">¦Ó¨ä¤¤¥H¥þ±m»s§@§Þ³N³Ì¬°§xÃø¡AOLEDÅã¥Ü¾¹¨ÌÅX°Ê¤è¦¡ªº¤£¦P¤S¥i¤À¬°³Q°Ê¦¡¡]Passive Matrix¡APMOLED¡^»P¥D°Ê¦¡¡]active matrix¡AAMOLED¡^¡C</font></p>       
-      <p align="right"><a href="#Top"><font color="#FFFFFF" face="¼Ð·¢Åé">Top</font></a></p>
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”">OLEDå…·æœ‰è‡ªç™¼å…‰æ€§ã€å»£è¦–è§’ã€ é«˜å°æ¯”ã€ä½Žè€—é›»ã€é«˜åæ‡‰é€ŸçŽ‡ã€å…¨å½©åŒ–ã€è£½ç¨‹ç°¡å–®ç­‰å„ªé»žï¼ŒOLEDé¡¯ç¤ºå™¨çš„ç¨®é¡žå¯åˆ†å–®è‰²ã€å¤šå½©åŠå…¨å½©ç­‰ç¨®é¡žã€‚</font></p>      
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”">è€Œå…¶ä¸­ä»¥å…¨å½©è£½ä½œæŠ€è¡“æœ€ç‚ºå›°é›£ï¼ŒOLEDé¡¯ç¤ºå™¨ä¾é©…å‹•æ–¹å¼çš„ä¸åŒåˆå¯åˆ†ç‚ºè¢«å‹•å¼ï¼ˆPassive Matrixï¼ŒPMOLEDï¼‰èˆ‡ä¸»å‹•å¼ï¼ˆactive matrixï¼ŒAMOLEDï¼‰ã€‚</font></p>       
+      <p align="right"><a href="#Top"><font color="#FFFFFF" face="æ¨™æ¥·é«”">Top</font></a></p>
     </td>
-    <td width="37%" align="center" height="138"><font face="¼Ð·¢Åé"><img border="0" src="htmphoto/µo¥úOLED.jpg" width="285" height="271"></font></td>
+    <td width="37%" align="center" height="138"><font face="æ¨™æ¥·é«”"><img border="0" src="htmphoto/ç™¼å…‰OLED.jpg" width="285" height="271"></font></td>
   </tr>
   <tr>
-    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="µ²ºc"><font color="#000000" face="¼Ð·¢Åé">µ²ºc</font></a></td>
+    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="çµæ§‹"><font color="#000000" face="æ¨™æ¥·é«”">çµæ§‹</font></a></td>
   </tr>
   <tr>
     <td width="63%" align="center" height="314">
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé">OLEDªº°ò¥»µ²ºc¬O¥Ñ¤@Á¡¦Ó³z©ú¨ã¥b¾ÉÅé¯S©Ê¤§ä¡¿ü®ñ¤Æª«¡]ITO¡^¡A»P¹q¤O¤§¥¿·¥¬Û³s¡A¦A¥[¤W¥t¤@­Óª÷ÄÝ³±·¥¡A¥]¦¨¦p¤T©úªvªºµ²ºc¡C¾ã­Óµ²ºc¼h¤¤¥]¬A¤F¡G¹q¬}¶Ç¿é¼h¡]HTL¡^¡Bµo¥ú¼h¡]EL¡^»P¹q¤l¶Ç¿é¼h¡]ETL¡^¡C·í¹q¤O¨ÑÀ³¦Ü¾A·í¹qÀ£®É¡A¥¿·¥¹q¬}»P³±·¥¹q²ü´N·|¦bµo¥ú¼h¤¤µ²¦X¡A²£¥Í¥ú«G¡A¨Ì¨ä°t¤è¤£¦P²£¥Í¬õ¡Bºñ©MÂÅ RGB ¤T­ì¦â¡Aºc¦¨°ò¥»¦â±m¡C</font>       
-      <p align="left"><font color="#FFFFFF"><font face="¼Ð·¢Åé">OLEDªº¯S©Ê¬O¦Û¤vµo¥ú¡A¤£¹³ TFT LCD »Ý­n­I¥ú¡A¦]¦¹¥iµø«×©M«G«×§¡°ª¡A¨ä¦¸¬O¹qÀ£»Ý¨D§C¥B¬Ù¹q®Ä²v°ª¡A¥[¤W¤ÏÀ³§Ö¡B­«¶q»´¡B«p«×Á¡¡Aºc³yÂ²³æ¡A¦¨¥»§Cµ¥¡A³Qµø¬° 21¥@¬ö³Ì¨ã«e³~ªº²£«~¤§¤@¡C</font></font><font face="¼Ð·¢Åé"><br>     
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”">OLEDçš„åŸºæœ¬çµæ§‹æ˜¯ç”±ä¸€è–„è€Œé€æ˜Žå…·åŠå°Žé«”ç‰¹æ€§ä¹‹éŠ¦éŒ«æ°§åŒ–ç‰©ï¼ˆITOï¼‰ï¼Œèˆ‡é›»åŠ›ä¹‹æ­£æ¥µç›¸é€£ï¼Œå†åŠ ä¸Šå¦ä¸€å€‹é‡‘å±¬é™°æ¥µï¼ŒåŒ…æˆå¦‚ä¸‰æ˜Žæ²»çš„çµæ§‹ã€‚æ•´å€‹çµæ§‹å±¤ä¸­åŒ…æ‹¬äº†ï¼šé›»æ´žå‚³è¼¸å±¤ï¼ˆHTLï¼‰ã€ç™¼å…‰å±¤ï¼ˆELï¼‰èˆ‡é›»å­å‚³è¼¸å±¤ï¼ˆETLï¼‰ã€‚ç•¶é›»åŠ›ä¾›æ‡‰è‡³é©ç•¶é›»å£“æ™‚ï¼Œæ­£æ¥µé›»æ´žèˆ‡é™°æ¥µé›»è·å°±æœƒåœ¨ç™¼å…‰å±¤ä¸­çµåˆï¼Œç”¢ç”Ÿå…‰äº®ï¼Œä¾å…¶é…æ–¹ä¸åŒç”¢ç”Ÿç´…ã€ç¶ å’Œè— RGB ä¸‰åŽŸè‰²ï¼Œæ§‹æˆåŸºæœ¬è‰²å½©ã€‚</font>       
+      <p align="left"><font color="#FFFFFF"><font face="æ¨™æ¥·é«”">OLEDçš„ç‰¹æ€§æ˜¯è‡ªå·±ç™¼å…‰ï¼Œä¸åƒ TFT LCD éœ€è¦èƒŒå…‰ï¼Œå› æ­¤å¯è¦–åº¦å’Œäº®åº¦å‡é«˜ï¼Œå…¶æ¬¡æ˜¯é›»å£“éœ€æ±‚ä½Žä¸”çœé›»æ•ˆçŽ‡é«˜ï¼ŒåŠ ä¸Šåæ‡‰å¿«ã€é‡é‡è¼•ã€åŽšåº¦è–„ï¼Œæ§‹é€ ç°¡å–®ï¼Œæˆæœ¬ä½Žç­‰ï¼Œè¢«è¦–ç‚º 21ä¸–ç´€æœ€å…·å‰é€”çš„ç”¢å“ä¹‹ä¸€ã€‚</font></font><font face="æ¨™æ¥·é«”"><br>     
       </font>    
-      <p align="right"><a href="#Top"><font color="#FFFFFF"><font face="¼Ð·¢Åé">Top</font></font></a><font color="#FFFFFF"><br>
+      <p align="right"><a href="#Top"><font color="#FFFFFF"><font face="æ¨™æ¥·é«”">Top</font></font></a><font color="#FFFFFF"><br>
       </font>
       </p>
     </td>
-    <td width="37%" align="center" height="314"><font face="¼Ð·¢Åé"><img border="0" src="htmphoto/OLED©M¶Ç²Î¹qµø.jpg" width="317" height="274"></font></td>
+    <td width="37%" align="center" height="314"><font face="æ¨™æ¥·é«”"><img border="0" src="htmphoto/OLEDå’Œå‚³çµ±é›»è¦–.jpg" width="317" height="274"></font></td>
   </tr>
   <tr>
-    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="¯S¦â"><font face="¼Ð·¢Åé">¯S¦â</font></a></td>
+    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="ç‰¹è‰²"><font face="æ¨™æ¥·é«”">ç‰¹è‰²</font></a></td>
   </tr>
   <tr>
     <td width="63%" align="center" height="305">
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé">OLEDªº¯S¦â¦b©ó¨ä®Ö¤ß¥i¥H°µ±o«ÜÁ¡¡A«p«×&#29234;¥Ø«e²G´¹ªº1/3¡A¥[¤W OLED&#29234;¥þ©TºA²Õ¥ó¡A§Ü¾_©Ê¦n¡A¯à¾AÀ³´c¦HÀô¹Ò¡COLED ¥D­n¬O¦ÛÅéµo¥úªºÅý¨ä´X¥G¨S¦³µø¨¤°ÝÃD¡A»PLCD§Þ³N ¬Û¤ñ¡A§Y¨Ï¦b¤jªº¨¤«×Æ[¬Ý¡AÅã¥Üµe­±¨ÌµM²M´·¥i¨£¡COLEDªº¤¸¥ó¬°¦Ûµo¥ú¥B¬O¨Ì¾a¹qÀ£¨Ó½Õ¾ã¡A¤ÏÀ³³t«×­n¤ñ²G´¹¤¸¥ó¨Ó±o§Ö³\¦h¡A¤ñ¸û¾A¦X·í§@°ªµe½è¹qµø¨Ï¥Î¡A2007¦~©³SONY±À¥Xªº11¦TOLED TV ¤ÏÀ³³t«×´N¤ñLCD§Ö¤F1000­¿¡C</font>        
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé"><br>
-      OLED ªº¥t¤@¶µ¯S©Ê¬O¹ï§C·Åªº¾AÀ³¯à¤O¡AÂÂ¦³ªº²G´¹§Þ³N¦b¹s¤U75«×®É¡A§Y·|¯}µõ¬G»Ù¡AOLED ¥u­n¹q¸ô¥¼¨ü·l¤´¯à¥¿±`Åã¥Ü¡C¦¹¥~¡AOLED ªº®Ä²v°ª¡A¯Ó¯à¸û²G´¹²¤§CÁÙ¥i¥H¦b¤£¦P§÷½èªº°òªO¤W»s³y¡A¬Æ¦Ü¯à¦¨»s§@¦¨¥iÅs¦±ªºÅã¥Ü¾¹¡AÀ³¥Î½d³ò¤éº¥¼W¼s¡C&nbsp;</font>        
-      <p align="right"><a href="#Top"><font color="#FFFFFF" face="¼Ð·¢Åé">Top</font></a></p>
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”">OLEDçš„ç‰¹è‰²åœ¨æ–¼å…¶æ ¸å¿ƒå¯ä»¥åšå¾—å¾ˆè–„ï¼ŒåŽšåº¦&#29234;ç›®å‰æ¶²æ™¶çš„1/3ï¼ŒåŠ ä¸Š OLED&#29234;å…¨å›ºæ…‹çµ„ä»¶ï¼ŒæŠ—éœ‡æ€§å¥½ï¼Œèƒ½é©æ‡‰æƒ¡åŠ£ç’°å¢ƒã€‚OLED ä¸»è¦æ˜¯è‡ªé«”ç™¼å…‰çš„è®“å…¶å¹¾ä¹Žæ²’æœ‰è¦–è§’å•é¡Œï¼Œèˆ‡LCDæŠ€è¡“ ç›¸æ¯”ï¼Œå³ä½¿åœ¨å¤§çš„è§’åº¦è§€çœ‹ï¼Œé¡¯ç¤ºç•«é¢ä¾ç„¶æ¸…æ™°å¯è¦‹ã€‚OLEDçš„å…ƒä»¶ç‚ºè‡ªç™¼å…‰ä¸”æ˜¯ä¾é é›»å£“ä¾†èª¿æ•´ï¼Œåæ‡‰é€Ÿåº¦è¦æ¯”æ¶²æ™¶å…ƒä»¶ä¾†å¾—å¿«è¨±å¤šï¼Œæ¯”è¼ƒé©åˆç•¶ä½œé«˜ç•«è³ªé›»è¦–ä½¿ç”¨ï¼Œ2007å¹´åº•SONYæŽ¨å‡ºçš„11å‹OLED TV åæ‡‰é€Ÿåº¦å°±æ¯”LCDå¿«äº†1000å€ã€‚</font>        
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”"><br>
+      OLED çš„å¦ä¸€é …ç‰¹æ€§æ˜¯å°ä½Žæº«çš„é©æ‡‰èƒ½åŠ›ï¼ŒèˆŠæœ‰çš„æ¶²æ™¶æŠ€è¡“åœ¨é›¶ä¸‹75åº¦æ™‚ï¼Œå³æœƒç ´è£‚æ•…éšœï¼ŒOLED åªè¦é›»è·¯æœªå—æä»èƒ½æ­£å¸¸é¡¯ç¤ºã€‚æ­¤å¤–ï¼ŒOLED çš„æ•ˆçŽ‡é«˜ï¼Œè€—èƒ½è¼ƒæ¶²æ™¶ç•¥ä½Žé‚„å¯ä»¥åœ¨ä¸åŒæè³ªçš„åŸºæ¿ä¸Šè£½é€ ï¼Œç”šè‡³èƒ½æˆè£½ä½œæˆå¯å½Žæ›²çš„é¡¯ç¤ºå™¨ï¼Œæ‡‰ç”¨ç¯„åœæ—¥æ¼¸å¢žå»£ã€‚&nbsp;</font>        
+      <p align="right"><a href="#Top"><font color="#FFFFFF" face="æ¨™æ¥·é«”">Top</font></a></p>
     </td>
-    <td width="37%" align="center" height="305"><font face="¼Ð·¢Åé"><img border="0" src="htmphoto/Â²©öÅs¦±OLED.jpg" width="285" height="286"></font></td>
+    <td width="37%" align="center" height="305"><font face="æ¨™æ¥·é«”"><img border="0" src="htmphoto/ç°¡æ˜“å½Žæ›²OLED.jpg" width="285" height="286"></font></td>
   </tr>
   <tr>
-    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="À³¥Î"><font face="¼Ð·¢Åé">À³¥Î</font></a></td>
+    <td width="100%" colspan="2" bgcolor="#00FFFF" align="center" height="20"><a name="æ‡‰ç”¨"><font face="æ¨™æ¥·é«”">æ‡‰ç”¨</font></a></td>
   </tr>
 </table>
 
 <table border="1" width="100%" height="273">
   <tr>
     <td width="63%" height="267">
-      <p align="left"><font color="#FFFFFF" face="¼Ð·¢Åé">OLED§Þ³Nªº¥D­nÀuÂI¬O¥D°Êµo¥ú¡C²{¦b¡Aµo¬õ¡Bºñ¡BÂÅ¥úªºOLED³£¥i¥H±o¨ì¡C¦b¹L¥hªº´X¦~¤¤¡A¬ã¨sªÌ­Ì¤@ª½­P¤O©ó¶}µoOLED¦b±q­I¥ú·½¡B§C®e¶qÅã¥Ü¾¹¨ì°ª®e¶qÅã¥Ü¾¹»â°ìªºÀ³¥Î¡C¤U­±¡A±N¹ïOLEDªº¼ç¦bÀ³¥Î¶i¦æ°Q½×¡A¨Ã±N¨ä»P¨ä¥¦Åã¥Ü§Þ³N¶i¦æ¹ï¤ñ¡C<br>
-      1999¦~­º«×°Ó·~¤Æ¡A§Þ³N¤´µM«D±`·s¡C²{¦b¥Î¦b¤@¨Ç¶Â¥Õ¡þÂ²³æ¦â±mªº¨T¨®¦¬­µ¾÷¡B¦æ°Ê¹q¸Ü¡B´x¤W«¬¹q°Ê¹C¼Ö¾¹µ¥¡C³£ÄÝ©ó°ª¶¥¾÷ºØ¡C<br>
-      ¥Ø«e±q¨ÆOLEDªº°Ó·~¶}µo¥þ¥@¬É¬ù 100¦h®a¼t°Ó¡A OLED ¥Ø«eªº§Þ³Nµo®i¤è¦V¤À¦¨¨â¤jÃþ¡A¤é¡BÁú©M»OÆW¶É¦V Kodak ªº§C¤À¤lOLED§Þ³N¡A¼Ú¬w¼t°Ó«h¥H PLED¬°¥D¡C¨â¤j¶°¹Î¤¤°£¤F KODAK Áp·ù¤§¥~¡A¥t¤@­Ó¥H°ª¤À¤l»E¦Xª«¬°¥Dªº­¸§Q®ú¤½¥q²{¦b¤]Áp¦X¤F EPSON¡BDuPont¡BªFªÛµ¥¤½¥q¥þ¤O¶}µo¦Û¤vªº²£«~¡C2007¦~²Ä¤G©u¥þ²yOLED¥«³õªº²£­È¤w¹F¨ì1»õ2340¸U¬ü¤¸¡C</font>   
-      <p align="right"><a href="#Top"><font color="#FFFFFF" face="¼Ð·¢Åé">Top</font></a></p>
-      <p><font face="¼Ð·¢Åé">¡@</font></td>
+      <p align="left"><font color="#FFFFFF" face="æ¨™æ¥·é«”">OLEDæŠ€è¡“çš„ä¸»è¦å„ªé»žæ˜¯ä¸»å‹•ç™¼å…‰ã€‚ç¾åœ¨ï¼Œç™¼ç´…ã€ç¶ ã€è—å…‰çš„OLEDéƒ½å¯ä»¥å¾—åˆ°ã€‚åœ¨éŽåŽ»çš„å¹¾å¹´ä¸­ï¼Œç ”ç©¶è€…å€‘ä¸€ç›´è‡´åŠ›æ–¼é–‹ç™¼OLEDåœ¨å¾žèƒŒå…‰æºã€ä½Žå®¹é‡é¡¯ç¤ºå™¨åˆ°é«˜å®¹é‡é¡¯ç¤ºå™¨é ˜åŸŸçš„æ‡‰ç”¨ã€‚ä¸‹é¢ï¼Œå°‡å°OLEDçš„æ½›åœ¨æ‡‰ç”¨é€²è¡Œè¨Žè«–ï¼Œä¸¦å°‡å…¶èˆ‡å…¶å®ƒé¡¯ç¤ºæŠ€è¡“é€²è¡Œå°æ¯”ã€‚<br>
+      1999å¹´é¦–åº¦å•†æ¥­åŒ–ï¼ŒæŠ€è¡“ä»ç„¶éžå¸¸æ–°ã€‚ç¾åœ¨ç”¨åœ¨ä¸€äº›é»‘ç™½ï¼ç°¡å–®è‰²å½©çš„æ±½è»Šæ”¶éŸ³æ©Ÿã€è¡Œå‹•é›»è©±ã€æŽŒä¸Šåž‹é›»å‹•éŠæ¨‚å™¨ç­‰ã€‚éƒ½å±¬æ–¼é«˜éšŽæ©Ÿç¨®ã€‚<br>
+      ç›®å‰å¾žäº‹OLEDçš„å•†æ¥­é–‹ç™¼å…¨ä¸–ç•Œç´„ 100å¤šå®¶å» å•†ï¼Œ OLED ç›®å‰çš„æŠ€è¡“ç™¼å±•æ–¹å‘åˆ†æˆå…©å¤§é¡žï¼Œæ—¥ã€éŸ“å’Œè‡ºç£å‚¾å‘ Kodak çš„ä½Žåˆ†å­OLEDæŠ€è¡“ï¼Œæ­æ´²å» å•†å‰‡ä»¥ PLEDç‚ºä¸»ã€‚å…©å¤§é›†åœ˜ä¸­é™¤äº† KODAK è¯ç›Ÿä¹‹å¤–ï¼Œå¦ä¸€å€‹ä»¥é«˜åˆ†å­èšåˆç‰©ç‚ºä¸»çš„é£›åˆ©æµ¦å…¬å¸ç¾åœ¨ä¹Ÿè¯åˆäº† EPSONã€DuPontã€æ±èŠç­‰å…¬å¸å…¨åŠ›é–‹ç™¼è‡ªå·±çš„ç”¢å“ã€‚2007å¹´ç¬¬äºŒå­£å…¨çƒOLEDå¸‚å ´çš„ç”¢å€¼å·²é”åˆ°1å„„2340è¬ç¾Žå…ƒã€‚</font>   
+      <p align="right"><a href="#Top"><font color="#FFFFFF" face="æ¨™æ¥·é«”">Top</font></a></p>
+      <p><font face="æ¨™æ¥·é«”">ã€€</font></td>
     <td width="37%" height="267">
-      <p align="center"><font face="¼Ð·¢Åé"><img border="0" src="htmphoto/¥iÅs¦±OLED.jpg" width="280" height="203"></font></p>
+      <p align="center"><font face="æ¨™æ¥·é«”"><img border="0" src="htmphoto/å¯å½Žæ›²OLED.jpg" width="280" height="203"></font></p>
     </td>
   </tr>
 </table>

@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <style type="text/css">
 <!--
 a:hover {
@@ -32,7 +32,7 @@ initOutline()
 
 <p align="center"><img border="0" src="images/title-2.gif" width="487" height="73"><a name="Top"></a></p>
 
-<p align="center">¡@
+<p align="center">ã€€
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -82,16 +82,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Þ ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é›ž ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™Ž ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -155,16 +155,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…ž" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -178,11 +178,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -202,15 +202,15 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="20" height="20" hspace="11"></td>
-          <td valign="top" width="100%"><font face="µØ±d¬yÁõÅé(P)" color="#FF0000">¤g¤ì¤uµ{¹ê¨Ò</font>
+          <td valign="top" width="100%"><font face="è¯åº·æµéš¸é«”(P)" color="#FF0000">åœŸæœ¨å·¥ç¨‹å¯¦ä¾‹</font>
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="95" height="20"></td>
-                <td valign="top" width="100%"><a href="#­^°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)">¥Ûªù¤ô®w</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)">çŸ³é–€æ°´åº«</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="95" height="20"></td>
-                <td valign="top" width="100%"><a href="#¬ü°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)">»B»A¤ô®w</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#ç¾Žåœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)">ç¿¡ç¿ æ°´åº«</font></a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -222,97 +222,97 @@ function OpenWin( url ) {
 <table border="1" width="102%">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFCCCC">
-      <p align="center"><a name="­^°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé" color="#008000">¥Ûªù¤ô®w</font></a></td>
+      <p align="center"><a name="è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”" color="#008000">çŸ³é–€æ°´åº«</font></a></td>
   </tr>
   <tr>
-    <td width="51%">¡@
-      <p><font face="µØ±d¬yÁõÅé">ºÞ²z¾÷Ãö:¥xÆW¬Ù¥Ûªù¤ô®wºÞ²z§½&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">­pµe¼Ðªº:Äéµ@¡Bµo¹q¡Bµ¹¤ô¡B¨¾¬x&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">­pµe·§­z:¿³«Ø¥Ûªù¤ô®w¹ï¥_³¡¦a°Ï¹A·~¤§§ï¶i,¤u·~¤§µo®i,¤H¥Á¥Í¬¡¤ô·Ç 
-      ¤§´£°ª,´N·~¾÷·|¤§¼W¥[,¥H¤Î¨¾¤î¤ô§ò¨a®`,¥H§Q¸gÀÙ§Ö³t¦¨ªø.&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">¦ì ¸m:®ç¶é¿¤ ªe ¨t:¥D¬y ²H¤ôªe 
-      ¤ä¬y ¤jº~·Ë&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">¤ô ®w:¶°¤ô­±¿n763.4¥­¤è¤½¨½&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; 
-      ¥¿±`»W¤ô¦ì¼Ð°ª245¤½¤Ø¡A³Ì°ª¬x¤ô¦ì¼Ð°ª&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      249.5 ¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">º¡¤ô¦ì­±¿n 
-      800 ¤½³¼&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">Á`»W¤ô¶q309,120,000¥ß¤è¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">­pµe¦³®Ä»W¤ô¶q235,669,000¥ß¤è¤½¤Ø</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">­pµe¦~¹B¥Î¤ô¶q815,205,600¥ß¤è¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">Åò :Åò «¬ ¤g¥ÛÅò&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">Åò³»¼Ð°ª 
-      252.1¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">³Ì¤jÅò¨­°ª«×133.1¤½¤Ø 
-      Åò³»ªø«× 360¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">Åò³»¼e«× 
-      11.2¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; </font><font face="µØ±d¬yÁõÅé">ÅòÅé¿n7,060,000¥ß¤è¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">­pµe®Ä¯q:³o¬O¤@­Ó¦h¥Ø¼Ð¤ô§Q¤uµ{,¨ã¦³Äé&nbsp;&nbsp; 
-      µ@¡Bµo¹q¡B¤½¦@µ¹¤ô¡B¨¾¬x¡BÆ[ ¥úµ¥®Ä¯q.&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">Äé µ@:³W¹º­±¿n54,540ha²{¦³­±¿n37,400ha½_ 
-      ¨¦260,000ton.</font></p>
-      <p><font face="µØ±d¬yÁõÅé">¦Û ¨Ó ¤ô:³W¹º1.1 CMD ­pµe¨Ñ¤ô¶q34,689,600 
-      ²{¦³7.0 ²{¦³¦~¨Ñ¤ô¶q220,752,000¥ß¤è¤½¤Ø&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">µo ¹q:¸Ë¾÷®e¶q:90,000KW&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">­pµe¦~µo¹q¶q210,000,000«×&nbsp;</font></p>
-      <p><font face="µØ±d¬yÁõÅé">¨¾ ¬x:­°§C¬x®p700cms 
-      ©Î½Õ¸`¬x¤ô¶q64,000,000¥ß¤è¤½¤Ø</font></p>
-      <p align="right"><a href="#Top"><font face="µØ±d¬yÁõÅé(P)">Top</font></a></td>
+    <td width="51%">ã€€
+      <p><font face="è¯åº·æµéš¸é«”">ç®¡ç†æ©Ÿé—œ:å°ç£çœçŸ³é–€æ°´åº«ç®¡ç†å±€&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ¨™çš„:çŒæº‰ã€ç™¼é›»ã€çµ¦æ°´ã€é˜²æ´ª&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ¦‚è¿°:èˆˆå»ºçŸ³é–€æ°´åº«å°åŒ—éƒ¨åœ°å€è¾²æ¥­ä¹‹æ”¹é€²,å·¥æ¥­ä¹‹ç™¼å±•,äººæ°‘ç”Ÿæ´»æ°´æº– 
+      ä¹‹æé«˜,å°±æ¥­æ©Ÿæœƒä¹‹å¢žåŠ ,ä»¥åŠé˜²æ­¢æ°´æ—±ç½å®³,ä»¥åˆ©ç¶“æ¿Ÿå¿«é€Ÿæˆé•·.&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">ä½ ç½®:æ¡ƒåœ’ç¸£ æ²³ ç³»:ä¸»æµ æ·¡æ°´æ²³ 
+      æ”¯æµ å¤§æ¼¢æºª&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">æ°´ åº«:é›†æ°´é¢ç©763.4å¹³æ–¹å…¬é‡Œ&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; 
+      æ­£å¸¸è“„æ°´ä½æ¨™é«˜245å…¬å°ºï¼Œæœ€é«˜æ´ªæ°´ä½æ¨™é«˜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      249.5 å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">æ»¿æ°´ä½é¢ç© 
+      800 å…¬é ƒ&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">ç¸½è“„æ°´é‡309,120,000ç«‹æ–¹å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æœ‰æ•ˆè“„æ°´é‡235,669,000ç«‹æ–¹å…¬å°º</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">è¨ˆç•«å¹´é‹ç”¨æ°´é‡815,205,600ç«‹æ–¹å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">å£© :å£© åž‹ åœŸçŸ³å£©&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">å£©é ‚æ¨™é«˜ 
+      252.1å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">æœ€å¤§å£©èº«é«˜åº¦133.1å…¬å°º 
+      å£©é ‚é•·åº¦ 360å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">å£©é ‚å¯¬åº¦ 
+      11.2å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; </font><font face="è¯åº·æµéš¸é«”">å£©é«”ç©7,060,000ç«‹æ–¹å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ•ˆç›Š:é€™æ˜¯ä¸€å€‹å¤šç›®æ¨™æ°´åˆ©å·¥ç¨‹,å…·æœ‰çŒ&nbsp;&nbsp; 
+      æº‰ã€ç™¼é›»ã€å…¬å…±çµ¦æ°´ã€é˜²æ´ªã€è§€ å…‰ç­‰æ•ˆç›Š.&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">çŒ æº‰:è¦åŠƒé¢ç©54,540haç¾æœ‰é¢ç©37,400haç¨» 
+      è°·260,000ton.</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">è‡ª ä¾† æ°´:è¦åŠƒ1.1 CMD è¨ˆç•«ä¾›æ°´é‡34,689,600 
+      ç¾æœ‰7.0 ç¾æœ‰å¹´ä¾›æ°´é‡220,752,000ç«‹æ–¹å…¬å°º&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">ç™¼ é›»:è£æ©Ÿå®¹é‡:90,000KW&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«å¹´ç™¼é›»é‡210,000,000åº¦&nbsp;</font></p>
+      <p><font face="è¯åº·æµéš¸é«”">é˜² æ´ª:é™ä½Žæ´ªå³°700cms 
+      æˆ–èª¿ç¯€æ´ªæ°´é‡64,000,000ç«‹æ–¹å…¬å°º</font></p>
+      <p align="right"><a href="#Top"><font face="è¯åº·æµéš¸é«”(P)">Top</font></a></td>
     <td width="50%">
-      <p align="center"><img border="0" src="photo/¤ô®w-4.jpg" width="397" height="276">¡@</p>
+      <p align="center"><img border="0" src="photo/æ°´åº«-4.jpg" width="397" height="276">ã€€</p>
     </td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCFFCC">
-      <p align="center"><a name="¬ü°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)" color="#008000">»B»A¤ô®w</font></a></td>
+      <p align="center"><a name="ç¾Žåœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)" color="#008000">ç¿¡ç¿ æ°´åº«</font></a></td>
   </tr>
   <tr>
-    <td width="51%">¡@
-      <p><font face="µØ±d¬yÁõÅé">ºÞ²z¾÷Ãö:¥xÆW»B»A¤ô®wºÞ²z§½&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">­pµe¼Ðªº:¥H¨ÑÀ³¤j¥x¥_¦a°Ï¦Û¨Ó¤ô¬°¥Ø¼Ð,¥iº¡¨¬¥Á°ê119¦~¦Û¨Ó¤ô¨ÑÀ³©Ò»Ý¤ô·½¤§­n 
-      ¨Dªþ³]¤C¸UÊ_µo¹q¼t.&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">­pµe·§­z:»B»A¤ô®w¬°¥x¥_°Ï¦Û¨Ó¤ô²Ä¥|´Á«Ø³] 
-      ­pµe¤¤¤§¤ô·½¤uµ{,¨Ñ¤ô°Ï°ì¥]¬A¥x¥_ 
-      ¥«¤Î¥x¥_¿¤¤T­«¡B·s©±¡B¥Ã©M¡B¤¤©M¡B²H¤ô¡B¤TªÛ¦a°Ï.¤ô®wÅò§}¦ì©ó·s©± 
-      ·Ë¤ä¬y¥_¶Õ·Ë¤U¬y,¶Z¥x¥_¥«¬ù30¤½¨½.¥»­pµe¸g¥x¥_¥«¬F©²³ø©^¦æ¬F°|©ó¥Á 
-      °ê68¦~1¤ë®Ö­ã¹ê¬I.&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">¦ì ¸m:¥x¥_¿¤·s©±¥« ªe ¨t:¥D¬y 
-      ·s©±·Ë ¤ä¬y ¥_¶Õ·Ë&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">¤ô ®w:¶°¤ô­±¿n 303 
-      ¥­¤è¤½¨½&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; 
-      ¥¿±`»W¤ô¦ì¼Ð°ª170¤½¤Ø¡A³Ì°ª¬x¤ô¦ì¼Ð°ª&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      171 ¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; º¡¤ô¦ì­±¿n1024¤½³¼&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; Á`»W¤ô¶q406,000,000¥ß¤è¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; 
-      ­pµe¦³®Ä»W¤ô¶q327,000,000¥ß¤è¤½¤Ø</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp;&nbsp; 
-      ­pµe¦~¹B¥Î¤ô¶q1,196,000,000 ¥ß¤è¤½¤Ø&nbsp;&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">Åò :Åò «¬ Âù¦VÅs¦± 
-      ÅÜ«p«×²V¾®¤g«ýÅò&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; Åò³»¼Ð°ª 172.5 
-      ¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; ³Ì¤jÅò¨­°ª«× 
-      122.5 ¤½¤Ø&nbsp;</font></p> 
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="µØ±d¬yÁõÅé">Åò³»ªø«× 
-      510 ¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; Åò³»¼e«× 7 
-      ¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">&nbsp;&nbsp;&nbsp; ÅòÅéÅé¿n 710,000 
-      ¥ß¤è¤½¤Ø&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">­pµe®Ä¯q:¥x¥_¥«¦Û¨Ó¤ô¨t²Î¥D­n¨ú¤ô¤f«C¼æ³B¤§¥i¾a¥X¤ô¶q¬°¨C¬í40¥ß¤è¤½¤Ø 
-      (¬Û·í©ó¨C¤é3,456,000¥ß¤è¤½¤Ø)¦~¥­§¡µo¹q¶q¶W¹L222,700,000«×,¨Ã¼W¥[ 
-      ¤U´åªe¹D¬\§ò´Á¤§¬y¶q.&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">¦Û ¨Ó ¤ô:24.19CMD(78¦~)&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">­pµe¦~¨Ñ¤ô¶q763,000,000M3(»P«n¶Õ·Ë¦X¨Ö¹B¥Î)&nbsp;</font></p> 
-      <p><font face="µØ±d¬yÁõÅé">µo ¹q:¸Ë¾÷®e¶q:70,000kw 
-      ­pµe¦~µo¹q¶q222,700,000KWH</font></p> 
-      <p align="right"><a href="#Top"><font face="µØ±d¬yÁõÅé(P)">Top</font></a></td>
+    <td width="51%">ã€€
+      <p><font face="è¯åº·æµéš¸é«”">ç®¡ç†æ©Ÿé—œ:å°ç£ç¿¡ç¿ æ°´åº«ç®¡ç†å±€&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ¨™çš„:ä»¥ä¾›æ‡‰å¤§å°åŒ—åœ°å€è‡ªä¾†æ°´ç‚ºç›®æ¨™,å¯æ»¿è¶³æ°‘åœ‹119å¹´è‡ªä¾†æ°´ä¾›æ‡‰æ‰€éœ€æ°´æºä¹‹è¦ 
+      æ±‚é™„è¨­ä¸ƒè¬ä½¤ç™¼é›»å» .&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ¦‚è¿°:ç¿¡ç¿ æ°´åº«ç‚ºå°åŒ—å€è‡ªä¾†æ°´ç¬¬å››æœŸå»ºè¨­ 
+      è¨ˆç•«ä¸­ä¹‹æ°´æºå·¥ç¨‹,ä¾›æ°´å€åŸŸåŒ…æ‹¬å°åŒ— 
+      å¸‚åŠå°åŒ—ç¸£ä¸‰é‡ã€æ–°åº—ã€æ°¸å’Œã€ä¸­å’Œã€æ·¡æ°´ã€ä¸‰èŠåœ°å€.æ°´åº«å£©å€ä½æ–¼æ–°åº— 
+      æºªæ”¯æµåŒ—å‹¢æºªä¸‹æµ,è·å°åŒ—å¸‚ç´„30å…¬é‡Œ.æœ¬è¨ˆç•«ç¶“å°åŒ—å¸‚æ”¿åºœå ±å¥‰è¡Œæ”¿é™¢æ–¼æ°‘ 
+      åœ‹68å¹´1æœˆæ ¸å‡†å¯¦æ–½.&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">ä½ ç½®:å°åŒ—ç¸£æ–°åº—å¸‚ æ²³ ç³»:ä¸»æµ 
+      æ–°åº—æºª æ”¯æµ åŒ—å‹¢æºª&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">æ°´ åº«:é›†æ°´é¢ç© 303 
+      å¹³æ–¹å…¬é‡Œ&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; 
+      æ­£å¸¸è“„æ°´ä½æ¨™é«˜170å…¬å°ºï¼Œæœ€é«˜æ´ªæ°´ä½æ¨™é«˜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      171 å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; æ»¿æ°´ä½é¢ç©1024å…¬é ƒ&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; ç¸½è“„æ°´é‡406,000,000ç«‹æ–¹å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; 
+      è¨ˆç•«æœ‰æ•ˆè“„æ°´é‡327,000,000ç«‹æ–¹å…¬å°º</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp;&nbsp; 
+      è¨ˆç•«å¹´é‹ç”¨æ°´é‡1,196,000,000 ç«‹æ–¹å…¬å°º&nbsp;&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">å£© :å£© åž‹ é›™å‘å½Žæ›² 
+      è®ŠåŽšåº¦æ··å‡åœŸæ‹±å£©&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; å£©é ‚æ¨™é«˜ 172.5 
+      å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; æœ€å¤§å£©èº«é«˜åº¦ 
+      122.5 å…¬å°º&nbsp;</font></p> 
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font face="è¯åº·æµéš¸é«”">å£©é ‚é•·åº¦ 
+      510 å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; å£©é ‚å¯¬åº¦ 7 
+      å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">&nbsp;&nbsp;&nbsp; å£©é«”é«”ç© 710,000 
+      ç«‹æ–¹å…¬å°º&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«æ•ˆç›Š:å°åŒ—å¸‚è‡ªä¾†æ°´ç³»çµ±ä¸»è¦å–æ°´å£é’æ½­è™•ä¹‹å¯é å‡ºæ°´é‡ç‚ºæ¯ç§’40ç«‹æ–¹å…¬å°º 
+      (ç›¸ç•¶æ–¼æ¯æ—¥3,456,000ç«‹æ–¹å…¬å°º)å¹´å¹³å‡ç™¼é›»é‡è¶…éŽ222,700,000åº¦,ä¸¦å¢žåŠ  
+      ä¸‹æ¸¸æ²³é“æž¯æ—±æœŸä¹‹æµé‡.&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">è‡ª ä¾† æ°´:24.19CMD(78å¹´)&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">è¨ˆç•«å¹´ä¾›æ°´é‡763,000,000M3(èˆ‡å—å‹¢æºªåˆä½µé‹ç”¨)&nbsp;</font></p> 
+      <p><font face="è¯åº·æµéš¸é«”">ç™¼ é›»:è£æ©Ÿå®¹é‡:70,000kw 
+      è¨ˆç•«å¹´ç™¼é›»é‡222,700,000KWH</font></p> 
+      <p align="right"><a href="#Top"><font face="è¯åº·æµéš¸é«”(P)">Top</font></a></td>
     <td width="50%">
-      <p align="center"><img border="0" src="photo/¤ô®w-5.jpg" width="409" height="601"></p>
+      <p align="center"><img border="0" src="photo/æ°´åº«-5.jpg" width="409" height="601"></p>
     </td>
   </tr>
 </table>

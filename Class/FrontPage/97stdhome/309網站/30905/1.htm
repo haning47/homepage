@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -23,7 +23,7 @@ initOutline()
 
 <p align="center"><a name="TOP"></a><img border="0" src="image/title1.gif" width="633" height="101"></p>
 
-<p align="center">¡@<script language="JavaScript"><!--
+<p align="center">ã€€<script language="JavaScript"><!--
 function CalConv()
  {
  FIRSTYEAR = 1998;
@@ -72,16 +72,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Þ ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é›ž ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™Ž ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -145,16 +145,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…ž" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -168,11 +168,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -192,16 +192,16 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="image/item3.gif" width="15" height="15" hspace="13"></td>
-          <td valign="top" width="100%">°ªªÅ°{¹q
+          <td valign="top" width="100%">é«˜ç©ºé–ƒé›»
             <ul msimagelist>
               <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
-                  <td valign="top" width="100%"><a href="#Â²¤¶">  Â²¤¶</a><!--msimagelist--></td>
+                  <td valign="top" width="100%"><a href="#ç°¡ä»‹">  ç°¡ä»‹</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
-                  <td valign="top" width="100%"><a href="#¦¨¦]">¤ÀÃþ</a><!--msimagelist--></td>
+                  <td valign="top" width="100%"><a href="#æˆå› ">åˆ†é¡ž</a><!--msimagelist--></td>
                 </tr>
               <!--msimagelist--></table>
             </ul>
@@ -214,34 +214,34 @@ function OpenWin( url ) {
 <table border="3" width="100%" height="98">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFF99" height="15">
-      <p align="center"><a name="Â²¤¶">  Â²¤¶</a></td>
+      <p align="center"><a name="ç°¡ä»‹">  ç°¡ä»‹</a></td>
   </tr>
   <tr>
     <td width="108%" height="20">
-      <p>ªñ¤@­Ó¥@¬ö¥H¨Ó¡A¦³³\³\¦h¦h¨Ó¦Û©ó­¸¦æ­û¡B¦a­±Æ[¹îªÌªº³ø§i¡A¬Ò»¡©ú¦³©_©Çªº¡B¦p°{¹q¯ëªº°{¥ú¦Û¶³ºÝ¦V¤W®g¥X¡C¥Ñ©ó¦¹¤@²{¶Hµo¥Í©ó°ªªÅ¥B«ùÄòªº®É¶¡·¥µu(¬ù´X¤Q­Ó·L¬í)¡AÃø¥H¨ú±oª½±µªºÃÒ¾Ú¡A¥H¦Ü¬ì¾Ç¬ÉµLªk§@¨t²Î¤Æªº¤ÀªR¡Cª½¨ì1989¦~(R. D. Franz, R. J. Nemzek and J. R. Winckler, 1990)²×©ó¥H§C¥ú«×ªºÄá¼v¾÷©çÄá¨ì³oºØ°ªªÅ¤j®ð©ñ¹qªº²{¶H¡C¦b1990¦~ªì¡A¤ÓªÅ±ô¤WªºÄá¼v¾÷¤]©ç¨ì20¦h´T¬ÛÃöªº¼v¹³¡C±q¦¹¤§«áÂÇ¥ÑÄá¼v¾÷ªºÀ°§U¡A±q¤£¦PªºÆ[´ú·½¦p¤ÓªÅ±ô¡B°ªªÅ­¸¾÷¤Î¦a­±Æ[´ú¯¸µ¥µ¥©çÄá¨ì¦¨¤d¤W¸Uªº¬õ¦âºëÆFªº¼v¹³¡CÂÇ¥Ñ³o¨ÇÆ[´ú¨ìªº²{¶H¡A§Ú­Ì¤F¸Ñ¨ì³oºØ°{¹q¯ëªº©ñ¹q®ÄÀ³¤£¤î§½­­¦b¸û§Cªº¤j®ð¼h¡A¬Æ¦Ü¦b°ª©ó¹p¶³¤W¤è90¤½¨½³Bªº°ªªÅ¤¤¥ç¥i¯àµo¥Í¡C</p> 
-      <p>¡@</p>
+      <p>è¿‘ä¸€å€‹ä¸–ç´€ä»¥ä¾†ï¼Œæœ‰è¨±è¨±å¤šå¤šä¾†è‡ªæ–¼é£›è¡Œå“¡ã€åœ°é¢è§€å¯Ÿè€…çš„å ±å‘Šï¼Œçš†èªªæ˜Žæœ‰å¥‡æ€ªçš„ã€å¦‚é–ƒé›»èˆ¬çš„é–ƒå…‰è‡ªé›²ç«¯å‘ä¸Šå°„å‡ºã€‚ç”±æ–¼æ­¤ä¸€ç¾è±¡ç™¼ç”Ÿæ–¼é«˜ç©ºä¸”æŒçºŒçš„æ™‚é–“æ¥µçŸ­(ç´„å¹¾åå€‹å¾®ç§’)ï¼Œé›£ä»¥å–å¾—ç›´æŽ¥çš„è­‰æ“šï¼Œä»¥è‡³ç§‘å­¸ç•Œç„¡æ³•ä½œç³»çµ±åŒ–çš„åˆ†æžã€‚ç›´åˆ°1989å¹´(R. D. Franz, R. J. Nemzek and J. R. Winckler, 1990)çµ‚æ–¼ä»¥ä½Žå…‰åº¦çš„æ”å½±æ©Ÿæ‹æ”åˆ°é€™ç¨®é«˜ç©ºå¤§æ°£æ”¾é›»çš„ç¾è±¡ã€‚åœ¨1990å¹´åˆï¼Œå¤ªç©ºæ¢­ä¸Šçš„æ”å½±æ©Ÿä¹Ÿæ‹åˆ°20å¤šå¹…ç›¸é—œçš„å½±åƒã€‚å¾žæ­¤ä¹‹å¾Œè—‰ç”±æ”å½±æ©Ÿçš„å¹«åŠ©ï¼Œå¾žä¸åŒçš„è§€æ¸¬æºå¦‚å¤ªç©ºæ¢­ã€é«˜ç©ºé£›æ©ŸåŠåœ°é¢è§€æ¸¬ç«™ç­‰ç­‰æ‹æ”åˆ°æˆåƒä¸Šè¬çš„ç´…è‰²ç²¾éˆçš„å½±åƒã€‚è—‰ç”±é€™äº›è§€æ¸¬åˆ°çš„ç¾è±¡ï¼Œæˆ‘å€‘äº†è§£åˆ°é€™ç¨®é–ƒé›»èˆ¬çš„æ”¾é›»æ•ˆæ‡‰ä¸æ­¢å±€é™åœ¨è¼ƒä½Žçš„å¤§æ°£å±¤ï¼Œç”šè‡³åœ¨é«˜æ–¼é›·é›²ä¸Šæ–¹90å…¬é‡Œè™•çš„é«˜ç©ºä¸­äº¦å¯èƒ½ç™¼ç”Ÿã€‚</p> 
+      <p>ã€€</p>
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="43%" height="20"><img border="0" src="htpphoto/¥¨¤j¼Q¬y1¦¨¤j¹Î¶¤¦b2002¦~7¤ë22¤é.jpg" width="329" height="222"></td>
+    <td width="43%" height="20"><img border="0" src="htpphoto/å·¨å¤§å™´æµ1æˆå¤§åœ˜éšŠåœ¨2002å¹´7æœˆ22æ—¥.jpg" width="329" height="222"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFFF00" height="20">
-      <p align="center"><a name="¦¨¦]">¤ÀÃþ</a></td>
+      <p align="center"><a name="æˆå› ">åˆ†é¡ž</a></td>
   </tr>
   <tr>
-    <td width="108%" height="19">¤À¬°<br>
-      ¡@¡@1.¬õ¦âºëÆFRed Sprites  
+    <td width="108%" height="19">åˆ†ç‚º<br>
+      ã€€ã€€1.ç´…è‰²ç²¾éˆRed Sprites  
       <p><br>
-      ¡@¡@2.ºëÆF·w½LHalo</p>
-      <p>¡@<br>
-      ¡@¡@3.ÂÅ¦â¼Q¬yBlue Jet</p>  
+      ã€€ã€€2.ç²¾éˆæšˆç›¤Halo</p>
+      <p>ã€€<br>
+      ã€€ã€€3.è—è‰²å™´æµBlue Jet</p>  
       <p><br>
-      ¡@¡@4.¥¨¤j¼Q¬yGigantic Jet</p>  
+      ã€€ã€€4.å·¨å¤§å™´æµGigantic Jet</p>  
       <p><br>
-      ¡@¡@5.²^®ðºëÆFElves</p>
-      <p>¡@</p>
-      <p>¡@</p>
+      ã€€ã€€5.æ·˜æ°£ç²¾éˆElves</p>
+      <p>ã€€</p>
+      <p>ã€€</p>
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="43%" height="19"><img border="0" src="htpphoto/°ªªÅµu¼Èµo¥ú²{¶H¤ÀÃþ¹Ï.jpg" width="334" height="219"></td>
+    <td width="43%" height="19"><img border="0" src="htpphoto/é«˜ç©ºçŸ­æš«ç™¼å…‰ç¾è±¡åˆ†é¡žåœ–.jpg" width="334" height="219"></td>
   </tr>
 </table>
 <script language="JavaScript">

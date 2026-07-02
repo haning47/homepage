@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>31024���y</title>
+<title>31024牛頓</title>
 <base target="_self">
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
@@ -74,16 +74,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ���~�C�뤧��� */
+ /* 西曆年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ���~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 西曆年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["�� ", "�� ", "�U ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�s ", "�D " ];
- LocationIdx = [ "�n", "�F", "�_", "��" ];
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -147,16 +147,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>�i���� �褸 " + SolarYear + "�~" + SolarMonth + "��" + SolarDate + "�� -- " );
-       document.write( "�A�� " + LunarMonth + "�� " + LunarDate + "�� -- " );
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
 
-       document.write( "��" + Location + " -- �R" + Animal + Age + " ���j</font>" );                
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
                 
  
  return 0;
  }
 
- /* �D�����~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -170,11 +170,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ���� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~��� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~��� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -185,7 +185,7 @@ CalConv();
 function OpenWin( url ) { 
  return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
 } 
-//--></script>�@&nbsp; 
+//--></script>　&nbsp; 
 </p>
 
 <table border="0" width="100%">
@@ -195,20 +195,20 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="15" height="15" hspace="13"></td>
-          <td valign="top" width="100%">���y�ͥ�
+          <td valign="top" width="100%">牛頓生平
             <ul msimagelist>
               <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
-                  <td valign="top" width="100%"><a href="#���~�ͬ�">���~�ͬ�</a><!--msimagelist--></td>
+                  <td valign="top" width="100%"><a href="#早年生活">早年生活</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
-                  <td valign="top" width="100%"><a href="#���~�ͬ�">���~�ͬ�</a><!--msimagelist--></td>
+                  <td valign="top" width="100%"><a href="#中年生活">中年生活</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="12" height="12" hspace="15"></td>
-                  <td valign="top" width="100%"><a href="#�ߦ~�ͬ�">�ߦ~�ͬ�</a><!--msimagelist--></td>
+                  <td valign="top" width="100%"><a href="#晚年生活">晚年生活</a><!--msimagelist--></td>
                 </tr>
               <!--msimagelist--></table>
             </ul>
@@ -221,55 +221,55 @@ function OpenWin( url ) {
 <table border="1" width="100%">
   <tr>
     <td width="100%" colspan="2" bgcolor="#00FFFF">
-      <p align="center"><a name="���~�ͬ�">���~�ͬ�</a></td>
+      <p align="center"><a name="早年生活">早年生活</a></td>
   </tr>
   <tr>
-    <td width="50%">1702�~�����y�A�Ѥॱ�p�P���ǩҧ@���Ӳ{�椽��A1643�~1��4��A���ħJ�P���y�X�ͩ�^�����L�ְp�m�U���@�Ӥp�����J�������������J������������C�b���y�X�ͤ��ɡA�^�����èS���ĥαЩv���̷s��k�A�]���L���ͤ�Q�O����1642�~���t�ϸ`�C���y�X�ͫe�T�Ӥ�A�L�P�˦W�����ħJ�����ˤ~��h�@�C�ѩ󦭲����t�G�A�s�ͪ����y�Q���G�p�F�ڶǻD�A�L�����˺~�R�P�㴵�w�]Hannah Ayscough�^�����L�A���y��X�ͮɤp�o�i�H��L�˶i�@�ز檺���J�M���C�����y3���ɡA�L�����˧���æ��i�F�s�V�ҤگǤڴ��P�v�K���]Barnabus Smith�^���v���a�A�ӧ���y���I���F�L���~�������Ǩ��P�㴵�w�]Margery Ayscough�^�C�~�������y�����w�L���~���A�æ]���˶����L���Ʀӹ���˫����@�ǼķN�A���y�Ʀܴ��g�u�¯٧ڨ��m�v�K���������ˡA�n��L�̳s�P�Фl�@���N���K�K�v<br>    
+    <td width="50%">1702年的牛頓，由戈弗雷·內勒所作按照現行公曆，1643年1月4日，艾薩克·牛頓出生於英格蘭林肯郡鄉下的一個小村落埃爾斯索普村的埃爾斯索普莊園。在牛頓出生之時，英格蘭並沒有採用教宗的最新曆法，因此他的生日被記載為1642年的聖誕節。牛頓出生前三個月，他同樣名為艾薩克的父親才剛去世。由於早產的緣故，新生的牛頓十分瘦小；據傳聞，他的母親漢娜·艾斯庫（Hannah Ayscough）曾說過，牛頓剛出生時小得可以把他裝進一誇脫的馬克杯中。當牛頓3歲時，他的母親改嫁並住進了新丈夫巴納巴斯·史密斯（Barnabus Smith）牧師的家，而把牛頓托付給了他的外祖母瑪傑里·艾斯庫（Margery Ayscough）。年幼的牛頓不喜歡他的繼父，並因母親嫁給他的事而對母親持有一些敵意，牛頓甚至曾經「威脅我那姓史密斯的父母親，要把他們連同房子一齊燒掉……」<br>    
       <br>
-      �ڡm�j�ƾǮa�n�]Men of Mathematics�AE�PT�P�����]E.T. Bell�^�ۡ^�M�m�ƾǥv���Сn�]An introduction to the history of mathematics�AH�P��Ҵ��]H. Eves�^�ۡ^��ѰO���G�u���y�b�m���Ǯն}�l�ǮձШ|���ͬ��A��ӳQ�e��F������i��������ǡA�æ����F�Ӯճ̥X�⪺�ǥ͡C�b������ǮɡA�L�H�J�b���a���ľ��v�·G�P�J�ԧJ�]William Clarke�^�a���A�æb19���e���C���j�ǨD�ǫe�A�P�ľ��v���~�k�w�g�P�����ǡ]Anne Storer�^�q�B�C����]�����y�M����L����s�Өϱo�R���N�o�A�����Ǥp�j�����F�O�H�C�ڻ����y��o�����ʱ��O���@�q���n���^�СA������K�A�]�S����L��ù�ҥv�A���y�]�ץͥ����C�v�@�볣�h�ä��y�i��O�B�k�C<br>     
+      據《大數學家》（Men of Mathematics，E·T·貝爾（E.T. Bell）著）和《數學史介紹》（An introduction to the history of mathematics，H·伊夫斯（H. Eves）著）兩書記載：「牛頓在鄉村學校開始學校教育的生活，後來被送到了格蘭瑟姆的國王中學，並成為了該校最出色的學生。在國王中學時，他寄宿在當地的藥劑師威廉·克拉克（William Clarke）家中，並在19歲前往劍橋大學求學前，與藥劑師的繼女安妮·斯托勒（Anne Storer）訂婚。之後因為牛頓專註於他的研究而使得愛情冷卻，斯托勒小姐嫁給了別人。據說牛頓對這次的戀情保有一段美好的回憶，但此後便再也沒有其他的羅曼史，牛頓也終生未娶。」一般都懷疑牛頓可能是處男。<br>     
       <br>
-      ���L�کM���y�P�ɥN���ͤH�·G�P�����J�Q�]William Stukeley�^�ҵ۪��m���ħJ�P���y��h�ͥ��^�п��n�]Memoirs of Sir Isaac Newton's Life�^�@�Ѫ��y�z�A�����J�Q�b���y���ᴿ�X�ݹL��˯S�]Vincent�^�ҤH�A�]�N�O���~���y���ʤH�����Ǥp�j�C��˯S�ҤH���W�r�s���ͷ�Y�A�Ӥ��O�w�g�A�w�g�O�o���f�f�]�Ѩ�Arthur Storer�^�A�ӥB�ҤH�Ȫ��ܤ��y���~�H�J�ɹ�o�u���L�O�u�h�����h�v���{�צӤw�C<br>     
+      不過據和牛頓同時代的友人威廉·斯蒂克利（William Stukeley）所著的《艾薩克·牛頓爵士生平回憶錄》（Memoirs of Sir Isaac Newton's Life）一書的描述，斯蒂克利在牛頓死後曾訪問過文森特（Vincent）夫人，也就是當年牛頓的戀人斯托勒小姐。文森特夫人的名字叫做凱瑟琳，而不是安妮，安妮是她的妹妹（參見Arthur Storer），而且夫人僅表示牛頓當年寄宿時對她只不過是「懷有情愫」的程度而已。<br>     
       <br>
-      �q12�����k��17���A���y���b������ǾǲߡA�b�ӮչϮ��]�����i�W�٥i�H�ݨ��L���~��ñ�W�C�L���q�Ǯհh�ǡA�æb1659�~10��^��J�����������A�]���L�A�צu�誺���˷Q�����y���@�W�A�ҡC���y���M���q�F���˪��N��A���ڤ��y���P����Ӫ��ԭz�A�ѧ@�u�@�����y�۷����ּ֡C�ҩ�������Ǫ��ժ���Q�P�����J���]Henry Stokes�^���A�F���y�����ˡA���y�S�Q�e�^�F�ǮեH�����L���Ƿ~�C�L�b18���ɧ����F���Ǫ��Ƿ~�A�ño��F�@�����������~���i�C<br>     
+      從12歲左右到17歲，牛頓都在國王中學學習，在該校圖書館的窗檯上還可以看見他當年的簽名。他曾從學校退學，並在1659年10月回到埃爾斯索普村，因為他再度守寡的母親想讓牛頓當一名農夫。牛頓雖然順從了母親的意思，但據牛頓的同儕後來的敘述，耕作工作讓牛頓相當不快樂。所幸國王中學的校長亨利·斯托克斯（Henry Stokes）說服了牛頓的母親，牛頓又被送回了學校以完成他的學業。他在18歲時完成了中學的學業，並得到了一份完美的畢業報告。<br>     
       <br>
-      1661�~6��A�L�i�J�F�C���j�Ǫ��T�@�ǰ|�C�b���ɡA�Ӿǰ|���оǰ��Ȩ��h�h�w���ǻ��A�����y����w�\Ū�@�ǲåd�൥�{�N���Ǯa�H�Φ��Q���B���ե��M�J�R�ǵ��Ѥ�Ǯa����i����Q�C1665�~�A�L�o�{�F�s�q�G�����w�z�A�ö}�l�o�i�@�M�s���ƾǲz�סA�]�N�O��Ӭ��@�H�Ҽ������L�n���ǡC�b1665�~�A���y��o�F�Ǧ�A�Ӥj�Ǭ��F�w���۴��j�E�̦������F�C�b�����~�̡A���y�b�a���~���s�L�n���ǡB���ǩM�U���ޤO�w�ߡC
+      1661年6月，他進入了劍橋大學的三一學院。在那時，該學院的教學基於亞里士多德的學說，但牛頓更喜歡閱讀一些笛卡兒等現代哲學家以及伽利略、哥白尼和克卜勒等天文學家更先進的思想。1665年，他發現了廣義二項式定理，並開始發展一套新的數學理論，也就是後來為世人所熟知的微積分學。在1665年，牛頓獲得了學位，而大學為了預防倫敦大瘟疫而關閉了。在此後兩年裡，牛頓在家中繼續研究微積分學、光學和萬有引力定律。
       <p align="center"><a href="#TOP">TOP</a></td>
-    <td width="50%"><img border="0" src="htmphoto/���y�����.jpg" width="448" height="288">�@</td>
+    <td width="50%"><img border="0" src="htmphoto/牛頓實驗桌.jpg" width="448" height="288">　</td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#00FFFF">
-      <p align="center"><a name="���~�ͬ�">���~�ͬ�</a></td>
+      <p align="center"><a name="中年生活">中年生活</a></td>
   </tr>
   <tr>
-    <td width="50%">�j�h�Ʋ{�N���v�Ǯa���۫H�A���y�P�ܥ������W�ߵo�i�X�F�L�n���ǡA�֬����гy�F�U�ۿW�S���Ÿ��C�ھڤ��y�P�򪺤H�ҭz�A���y�n��ܥ��������X�~�o�X�L����k�A���b1693�~�H�e�L�X�G�S���o�����󤺮e�A�ê���1704�~�L�~���X�F�䧹�㪺�ԭz�C�䶡�A�ܥ������w�b1684�~�o���F�L����k������ԭz�C���~�A�ܥ��������Ÿ��M�u�L���k�v�Q�ڬw�j�������a�ĥΡA�b�j��1820�~�H��A�^��]�ĥΤF�Ӥ�k�C�ܥ����������O���O���F�L����Q�q����즨�����o�i�L�{�A�Ӧb���y�w�����O�����u�o�{�F�L�̲ת����G�C���y�n�٥L�@�����@�����L���L�n���ǡA�O�]���L�ȳQ�H�̼J���C���y�P��h�ƾǮa���j�ԡP�k����P�w��C�]Nicolas Fatio de Duillier�^���pô�Q���K���A��̤@�}�l�K�Q���y���ޤO�w�ߩҧl�ޡC1691�~�A�w��C����s�g�@�ӷs���������y�m�۵M���Ǫ��ƾǭ�z�n�A���q���������C�@�Ǭ�s���y���ǰO�@�̻{���L�̤��������Y�i��s�b�R���������C���L�A�b1694�~�o��ӤH���������Y�N�o�F�U�ӡC�b���ӮɭԡA�w��C�ٻP�ܥ������洫�F�X�ʫH��C<br>     
+    <td width="50%">大多數現代歷史學家都相信，牛頓與萊布尼茨獨立發展出了微積分學，併為之創造了各自獨特的符號。根據牛頓周圍的人所述，牛頓要比萊布尼茨早幾年得出他的方法，但在1693年以前他幾乎沒有發表任何內容，並直至1704年他才給出了其完整的敘述。其間，萊布尼茨已在1684年發表了他的方法的完整敘述。此外，萊布尼茨的符號和「微分法」被歐洲大陸全面地採用，在大約1820年以後，英國也採用了該方法。萊布尼茨的筆記本記錄了他的思想從初期到成熟的發展過程，而在牛頓已知的記錄中只發現了他最終的結果。牛頓聲稱他一直不願公布他的微積分學，是因為他怕被人們嘲笑。牛頓與瑞士數學家尼古拉·法西奧·德丟列（Nicolas Fatio de Duillier）的聯繫十分密切，後者一開始便被牛頓的引力定律所吸引。1691年，德丟列打算編寫一個新版本的牛頓《自然哲學的數學原理》，但從未完成它。一些研究牛頓的傳記作者認為他們之間的關係可能存在愛情的成分。不過，在1694年這兩個人之間的關係冷卻了下來。在那個時候，德丟列還與萊布尼茨交換了幾封信件。<br>     
       <br>
-      �b1699�~��A�Ӯa�Ƿ|�]���y�]�O�䤤���@���^����L�����̫����ܥ��������ѤF���y�����G�A���צb1711�~�����z�o�F�C���y�Ҧb���^��Ӯa�Ƿ|�ť��A�@���լd�����F���y�~�O�u�����o�{�̡A�ӵܥ������Q�����F�l�C���b��ӡA�o�{�ӽլd���׵ܥ����������y�O�Ѥ��y���H�Ѽg�A�]���ӽլd�D��F��áC�o�ɭP�F�E�P�����y�P�ܥ��������L�n���ǽ׾ԡA�ï}�a�F���y�P�ܥ��������ͬ��A�����̦b1716�~�u�@�C<br>
+      在1699年初，皇家學會（牛頓也是其中的一員）的其他成員們指控萊布尼茨剽竊了牛頓的成果，爭論在1711年全面爆發了。牛頓所在的英國皇家學會宣布，一項調查表明了牛頓才是真正的發現者，而萊布尼茨被斥為騙子。但在後來，發現該調查評論萊布尼茨的結語是由牛頓本人書寫，因此該調查遭到了質疑。這導致了激烈的牛頓與萊布尼茨的微積分學論戰，並破壞了牛頓與萊布尼茨的生活，直到後者在1716年逝世。<br>
       <br>
-      ���y���@���Q�s�x�{�i�����N�O�s�q�G�����w�z�A���A�Ω���󾭡C�L�o�{�F���y�������B���y�k�A�����F�ߤ譱���u�]���ܼƪ��T���h�����^�A�������t�z�ק@�X�F���j�^�m�A�í����ϥΤF�������ƩM���дX��Ǳo���f�Ϥ�{�����ѡC�L�ι���ͪ�F�թM�żƪ������M�]�o�O�کԨD�M�������@�ӥ��X�^�A�í������ⴤ�a�ϥξ��żƩM����]revert�^���żơC�L�ٵo�{�F�k���@�ӷs�����C<br>
+      牛頓的一項被廣泛認可的成就是廣義二項式定理，它適用於任何冪。他發現了牛頓恆等式、牛頓法，分類了立方面曲線（兩變數的三次多項式），為有限差理論作出了重大貢獻，並首次使用了分式指數和坐標幾何學得到丟番圖方程式的解。他用對數趨近了調和級數的部分和（這是歐拉求和公式的一個先驅），並首次有把握地使用冪級數和反轉（revert）冪級數。他還發現了π的一個新公式。<br>
       <br>
-      �L�b1669�~�Q�¤��c�d���ƾǱб®u��C�b���@�ѥH�e�A�C���Τ��z���Ҧ��������O�g�L���R���t���|���v�C���L�A�c�d���б¤�¾������n�D������̤��o���D�_�а�]�j���O�p���i�������̧��h�ɶ��Ω��Ǭ�s�W�^�C���y�{�����K���L�����¾�u�@������A�o�ݭn�d�z�G�@���\�i�A��̱����F���y���N���C�o���קK�F���y���v���[�I�P�t���|�H���������Ĭ�C
+      他在1669年被授予盧卡斯數學教授席位。在那一天以前，劍橋或牛津的所有成員都是經過任命的聖公會牧師。不過，盧卡斯教授之職的條件要求其持有者不得活躍于教堂（大概是如此可讓持有者把更多時間用於科學研究上）。牛頓認為應免除他擔任神職工作的條件，這需要查理二世的許可，後者接受了牛頓的意見。這樣避免了牛頓的宗教觀點與聖公會信仰之間的衝突。
       <p align="center"><a href="#TOP">TOP</a></td>
-    <td width="50%"><img border="0" src="htmphoto/���y�滷��.jpg" width="454" height="397">�@</td>
+    <td width="50%"><img border="0" src="htmphoto/牛頓望遠鏡.jpg" width="454" height="397">　</td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#00FFFF">
-      <p align="center"><a name="�ߦ~�ͬ�">�ߦ~�ͬ�</a></td>
+      <p align="center"><a name="晚年生活">晚年生活</a></td>
   </tr>
   <tr>
-    <td width="50%">���ħJ�P���y�ߦ~�e��1712�~�Cø�s�_Sir James Thornhill�C���y�b1690�~�N�g�F�ܦh�B�z�t�g����r�������v�Фp�U�l�CHenry More ���t�z�H���M�ڵ��åd���G���׼v�T�F���y���v���[���C�b�L�o�������P���J���@�ӱq���o������Z���A�L��ĳ�F�T��@�骺�s�b�ʡC�ߦ~�ۧ@�X�mThe Chronology of Ancient Kingdoms Amended�n(1728)�M�mObservations Upon the Prophecies of Daniel and the Apocalypse of St. John�n(1733)�X�b�L����o���C�L�٧�j�q�ɶ���J�F�Ҫ��N�C<br>     
+    <td width="50%">艾薩克·牛頓晚年畫像1712年。繪製于Sir James Thornhill。牛頓在1690年代寫了很多處理聖經的文字解釋的宗教小冊子。Henry More 的宇宙信仰和拒絕笛卡爾二元論影響了牛頓的宗教觀念。在他發給約翰·洛克的一個從未發表的手稿中，他爭議了三位一體的存在性。晚年著作—《The Chronology of Ancient Kingdoms Amended》(1728)和《Observations Upon the Prophecies of Daniel and the Apocalypse of St. John》(1733)—在他死後發表。他還把大量時間投入了煉金術。<br>     
       <br>
-      ���y�b1689�~��1690�~�M1701�~�٬O�^����ĳ�|�������A���O�L�ߤ@���O����ĳ�׬O���ĳ�|�U���H�N��y�ín�D��������C<br>
+      牛頓在1689年到1690年和1701年還是英格蘭議會的成員，但是他唯一有記錄的議案是抱怨議會廳的寒冷氣流並要求關閉窗戶。<br>
       <br>
-      ���y�b1696�~�E����F�۴��h�@�Ӯaű���t���ʺޡA�L�����q�L�F���ɪ��]�F�j�� Charles Montagu ������~��o��o��¾��C�L�D���F�^�����̤j����ű�u�@�A�Y�ص{�פW�O�B�F Master Lucas �����(�ëO���F�J�w�X�P���p�b�{�ɤ����S�������N�z�f�p���u�@)�C���y�i��O�b Lucas �_1699�~����̪��W��ű���t�ʺޡA�L�@������o��¾��즺�C�o��¾��@�볣�O��¾�A�����y�o�D�`�{�u����ݡA�b�q�L�b�C����¾�Ȥ_1701�~�h�𤧫�A�b�ﭲ��C����f���M�������y�q�M�g�@�W��ҤF�L����O�C�@��ű���t�ʺޤ��y�b1717�~�q�L�w�g�k���k�׳ХߤF�b�����M�ȹ��������pô�A�D��������^������q�ȥ����ಾ��F������F�o�b���ɬO���j���ﭲ�A�۷��{�ת��W�[�^�������]�I�Mí�w�C�ѩ�L�bű���t���u�@�A�Ӥ��O�ѩ�L���~���Ǫ��^�m�A�L�b1705�~�q�w�g�k�����̱ño�F��h�����C<br>     
+      牛頓在1696年遷移到了倫敦去作皇家鑄幣廠的監管，他必須通過了當時的財政大臣 Charles Montagu 的提攜才能得到這個職位。他主持了英格蘭最大的重鑄工作，某種程度上是步了 Master Lucas 的後塵(並保住了埃德蒙·哈雷在臨時切斯特分部的代理審計員工作)。牛頓可能是在 Lucas 于1699年死後最知名的鑄幣廠監管，他一直把持這個職位到死。這種職位一般都是閒職，但牛頓卻非常認真的對待，在從他在劍橋的職務于1701年退休之後，在改革對低成色貨幣和偽幣的流通和懲罰上鍛煉了他的能力。作為鑄幣廠監管牛頓在1717年通過安妮女王法案創立了在金幣和銀幣之間的聯繫，非正式的把英鎊錢幣從銀本位轉移到了金本位；這在當時是重大的改革，相當程度的增加英格蘭的財富和穩定。由於他在鑄幣廠的工作，而不是由於他早年對科學的貢獻，他在1705年從安妮女王那裡掙得了爵士身份。<br>     
       <br>
-      ���y�b�´��Ӵ��S�а󪺹ӥޤ��y�O�b1703�~�����Ӯa�Ƿ|���|���A�ìO�k���ǰ|���|���C�b�L�b�Ӯa�Ƿ|����m�W�A�ѩ�L�����X���F�w�g�Φb�L����s���� Flamsteed ���P�ϡA���y�M�Ѥ�Ǯa John Flamsteed �������ġC<br>     
+      牛頓在威斯敏斯特教堂的墓穴牛頓是在1703年成為皇家學會的會長，並是法國科學院的會員。在他在皇家學會的位置上，由於過早的出版了已經用在他的研究中的 Flamsteed 的星圖，牛頓和天文學家 John Flamsteed 成為仇敵。<br>     
       <br>
-      ���y�b1727�~3��31��[������: 1727�~3��20��]����۴��A�Q�w���_�´��Ӵ��S�а�C�L���b�˥~�c�k Catherine Barton Conduitt     
-      �b�L�_�۴������󪺦��v���R���L�b����ưȤ����k�D�H�F�̾ڦb�o�q�Ѫᤤ�d�_���ɭԥL���o���H�A�L�O�o���u�`�R�o�������v�C���ޤ��y�S���Ĥl�A�äw�g��ܤF�����ݪ��ܦh�]���A�L��ڤW���ɨS������C<br>
+      牛頓在1727年3月31日[儒略曆: 1727年3月20日]死於倫敦，被安葬于威斯敏斯特教堂。他的半親外甥女 Catherine Barton Conduitt     
+      在他于倫敦哲麥街的住宅中充當他在社交事務中的女主人；依據在她從天花中康復的時候他給她的信，他是她的「深愛她的舅舅」。儘管牛頓沒有孩子，並已經剝奪了給親屬的很多財產，他實際上死時沒有遺囑。<br>
       <br>
-      �b�L����A�b���y���餺�o�{�F�j�q���ȡA�i��O�L�d�Ҫ��N�ҾɭP���C�E���r�i��������y�ߦ~���ǲ��C
+      在他死後，在牛頓身體內發現了大量水銀，可能是他搞煉金術所導致的。汞中毒可能解釋牛頓晚年的怪異。
       <p align="center"><a href="#TOP">TOP</a></td>
-    <td width="50%">�@<img border="0" src="htmphoto/���y�ӥ�.jpg" width="457" height="614"></td>
+    <td width="50%">　<img border="0" src="htmphoto/牛頓墓穴.jpg" width="457" height="614"></td>
   </tr>
 </table>
 

@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -23,7 +23,7 @@ initOutline()
 
 <p align="center"><a name="TOP"></a><img border="0" src="image/title2.gif" width="633" height="101"></p>
 
-<p align="center">¡@<script language="JavaScript"><!--
+<p align="center">ã€€<script language="JavaScript"><!--
 function CalConv()
  {
  FIRSTYEAR = 1998;
@@ -72,16 +72,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Þ ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é›ž ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™Ž ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -145,16 +145,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…ž" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -168,11 +168,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -192,33 +192,33 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="image/item1.gif" width="12" height="12" hspace="15"></td>
-          <td valign="top" width="100%">°ªªÅ°{¹q¤ÀÃþ
+          <td valign="top" width="100%">é«˜ç©ºé–ƒé›»åˆ†é¡ž
             <ul msimagelist>
               <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
                   <td valign="top" width="100%"><br>
-                  <a href="#¬õ¦âºëÆF">  ¬õ¦âºëÆF</a><!--msimagelist--></td>
+                  <a href="#ç´…è‰²ç²¾éˆ">  ç´…è‰²ç²¾éˆ</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
                   <td valign="top" width="100%"><br>
-                  <a href="#ºëÆF·w½L">  ºëÆF·w½L</a><!--msimagelist--></td>
+                  <a href="#ç²¾éˆæšˆç›¤">  ç²¾éˆæšˆç›¤</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
                   <td valign="top" width="100%"><br>
-                  <a href="#ÂÅ¦â¼Q¬y">  ÂÅ¦â¼Q¬y</a><!--msimagelist--></td>
+                  <a href="#è—è‰²å™´æµ">  è—è‰²å™´æµ</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
                   <td valign="top" width="100%"><br>
-                  <a href="#¥¨¤j¼Q¬y">  ¥¨¤j¼Q¬y</a><!--msimagelist--></td>
+                  <a href="#å·¨å¤§å™´æµ">  å·¨å¤§å™´æµ</a><!--msimagelist--></td>
                 </tr>
                 <!--msimagelist--><tr>
                   <!--msimagelist--><td valign="baseline" width="42"><img src="image/item2.gif" width="12" height="12" hspace="15"></td>
                   <td valign="top" width="100%"><br>
-                  <a href="#²^®ðºëÆF">  ²^®ðºëÆF</a><!--msimagelist--></td>
+                  <a href="#æ·˜æ°£ç²¾éˆ">  æ·˜æ°£ç²¾éˆ</a><!--msimagelist--></td>
                 </tr>
               <!--msimagelist--></table>
             </ul>
@@ -231,62 +231,62 @@ function OpenWin( url ) {
 <table border="3" width="100%" height="1240">
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCFFCC" height="19">
-      <p align="center"><a name="¬õ¦âºëÆF">¬õ¦âºëÆF</a></td>
+      <p align="center"><a name="ç´…è‰²ç²¾éˆ">ç´…è‰²ç²¾éˆ</a></td>
   </tr>
   <tr>
     <td width="68%" height="293">
-      <p>¡@</p>
-      <p>"¬õ¦âºëÆF"¬O¤@ºØ¶³¹ï¦a­±¥¿·¥©ñ¹q¡A¦b°ª©ó¶³¼h³»ªº°ªªÅ¤¤¤Þ°_ªº¥¨¤j¬õ¦â°{¥ú¡A¨äµo¥Íªº¹Lµ{¬O³o¼Ëªº¡G¤@¯ë°{¹q¬O±q±aµÛ­t¹q²üªº¶³¼h©³³¡¤U¸¨¦Ü¦aªí)¡A ¦³®É±j¤Oªº¹pÀ»¬ðµM¨Ï±o¶³¼h³»ºÝ¿n»W¤j¶qªº¥¿¹q²ü¡A¦]¦¹±j¤jªº¹q³õ¦b¹qÂ÷¼h©M¶³¼h³»²£¥Í)¡C¦]¦¹¡A¥i¯à¤Þµo¥Ñ¶³¼h³»ºÝ(±a¥¿¹q²ü)¦Ü¦a­±ªº¥¿·¥©ñ¹q¡A¨Ã§l¤ÞµÛ¹q¤l¦V¤W²¾°Ê¡C¦b²¾°Êªº¹Lµ{¤¤¡A·|©M®ðÅé¤À¤l¸I¼²¡A¦pªG²£¥Íªº¹q³õ°÷±j¦Ó¥B©P³òªºªÅ®ð°÷µ}Á¡¡A¹q¤l¥i¥H¹F¨ì©Ò¿×ªº¡u¿Eµoª¬ºA¡v¡A³o¨Ç¨ü¿Eª¬ºAªº®ðÅé¤À¤lÂÇ¥Ñ©ñ®g¥X¥ú¤lªº¤è¦¡(µo¥ú)¨Ó¡A±Æ¥X­è§l¨üªº¯à¶q¡A²z½×¤W¡A³oºØ²{¶Hµo¥Í©ó50¦Ü90¤½¨½ªº°ªªÅ¤¤¡A¦]¬°°ªªÅªºªÅ®ð±K«×§C¡AªÅ®ð¤À¤lµ}¤Ö¡A¦b·¥°ªªÅ©Òµo²£ªº©ñ¹q²{¶H¡A¨äÃC¦â¨Ã¤£¹³¦b¦a­±¤W±`¨£ªº°{¹q¤@¯ë¡A¦Ó¬O¦pºëÆF¸õÅD¯ëªº¬õ¦â¥ú¨~¡C</p>  
-      <p>¡@</p>
+      <p>ã€€</p>
+      <p>"ç´…è‰²ç²¾éˆ"æ˜¯ä¸€ç¨®é›²å°åœ°é¢æ­£æ¥µæ”¾é›»ï¼Œåœ¨é«˜æ–¼é›²å±¤é ‚çš„é«˜ç©ºä¸­å¼•èµ·çš„å·¨å¤§ç´…è‰²é–ƒå…‰ï¼Œå…¶ç™¼ç”Ÿçš„éŽç¨‹æ˜¯é€™æ¨£çš„ï¼šä¸€èˆ¬é–ƒé›»æ˜¯å¾žå¸¶è‘—è² é›»è·çš„é›²å±¤åº•éƒ¨ä¸‹è½è‡³åœ°è¡¨)ï¼Œ æœ‰æ™‚å¼·åŠ›çš„é›·æ“Šçªç„¶ä½¿å¾—é›²å±¤é ‚ç«¯ç©è“„å¤§é‡çš„æ­£é›»è·ï¼Œå› æ­¤å¼·å¤§çš„é›»å ´åœ¨é›»é›¢å±¤å’Œé›²å±¤é ‚ç”¢ç”Ÿ)ã€‚å› æ­¤ï¼Œå¯èƒ½å¼•ç™¼ç”±é›²å±¤é ‚ç«¯(å¸¶æ­£é›»è·)è‡³åœ°é¢çš„æ­£æ¥µæ”¾é›»ï¼Œä¸¦å¸å¼•è‘—é›»å­å‘ä¸Šç§»å‹•ã€‚åœ¨ç§»å‹•çš„éŽç¨‹ä¸­ï¼Œæœƒå’Œæ°£é«”åˆ†å­ç¢°æ’žï¼Œå¦‚æžœç”¢ç”Ÿçš„é›»å ´å¤ å¼·è€Œä¸”å‘¨åœçš„ç©ºæ°£å¤ ç¨€è–„ï¼Œé›»å­å¯ä»¥é”åˆ°æ‰€è¬‚çš„ã€Œæ¿€ç™¼ç‹€æ…‹ã€ï¼Œé€™äº›å—æ¿€ç‹€æ…‹çš„æ°£é«”åˆ†å­è—‰ç”±æ”¾å°„å‡ºå…‰å­çš„æ–¹å¼(ç™¼å…‰)ä¾†ï¼ŒæŽ’å‡ºå‰›å¸å—çš„èƒ½é‡ï¼Œç†è«–ä¸Šï¼Œé€™ç¨®ç¾è±¡ç™¼ç”Ÿæ–¼50è‡³90å…¬é‡Œçš„é«˜ç©ºä¸­ï¼Œå› ç‚ºé«˜ç©ºçš„ç©ºæ°£å¯†åº¦ä½Žï¼Œç©ºæ°£åˆ†å­ç¨€å°‘ï¼Œåœ¨æ¥µé«˜ç©ºæ‰€ç™¼ç”¢çš„æ”¾é›»ç¾è±¡ï¼Œå…¶é¡è‰²ä¸¦ä¸åƒåœ¨åœ°é¢ä¸Šå¸¸è¦‹çš„é–ƒé›»ä¸€èˆ¬ï¼Œè€Œæ˜¯å¦‚ç²¾éˆè·³èºèˆ¬çš„ç´…è‰²å…‰èŠ’ã€‚</p>  
+      <p>ã€€</p>
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="32%" height="293"><img border="0" src="htpphoto/2006¦~6¤ë10¤éUT³æ¤@ÅÚ½³ª¬¬õ¦âºëÆFµo¥Í©ó¤Ó¥­¬v.jpg" width="277" height="143"></td>
+    <td width="32%" height="293"><img border="0" src="htpphoto/2006å¹´6æœˆ10æ—¥UTå–®ä¸€è˜¿è””ç‹€ç´…è‰²ç²¾éˆç™¼ç”Ÿæ–¼å¤ªå¹³æ´‹.jpg" width="277" height="143"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCFF99" height="20">
-      <p align="center"><a name="ºëÆF·w½L">ºëÆF·w½L</a></td>
+      <p align="center"><a name="ç²¾éˆæšˆç›¤">ç²¾éˆæšˆç›¤</a></td>
   </tr>
   <tr>
-    <td width="68%" height="176">¡@
-      <p>ºëÆF·w½L¬°«ó½Lª¬ªº¥ú·w¡A¨äª½®|¤p©ó100¤½¨½¡Aµo¥Í°ª«×¦b70¨ì85¤½¨½¶¡¡A±`»P¬õ¦âºëÆF¤@¦P¥X²{¡C</p>
+    <td width="68%" height="176">ã€€
+      <p>ç²¾éˆæšˆç›¤ç‚ºæ‰ç›¤ç‹€çš„å…‰æšˆï¼Œå…¶ç›´å¾‘å°æ–¼100å…¬é‡Œï¼Œç™¼ç”Ÿé«˜åº¦åœ¨70åˆ°85å…¬é‡Œé–“ï¼Œå¸¸èˆ‡ç´…è‰²ç²¾éˆä¸€åŒå‡ºç¾ã€‚</p>
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="32%" height="176"><img border="0" src="htpphoto/2004¦~6¤ë18¤éUT¬õ¦âºëÆF¤ÎºëÆF·w½L.jpg" width="279" height="189"></td>
+    <td width="32%" height="176"><img border="0" src="htpphoto/2004å¹´6æœˆ18æ—¥UTç´…è‰²ç²¾éˆåŠç²¾éˆæšˆç›¤.jpg" width="279" height="189"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#CCFF66">
-      <p align="center"><a name="ÂÅ¦â¼Q¬y">  ÂÅ¦â¼Q¬y</a></td>
+      <p align="center"><a name="è—è‰²å™´æµ">  è—è‰²å™´æµ</a></td>
   </tr>
   <tr>
     <td width="68%" height="176">
-      <p>¡@</p>
-      <p>¡yÂÅ¦â¼Q¬y¡z(Blue Jet) ¬O¤@ºØ§½­­¦b§C©ó40¤½¨½¤j®ð¼h¤¤ªº¤@ºØ²{¶H¡A¨Ã¥B¸ûÃøÆ[´ú¡A¼Q¬y·|©ñ¥X²`ÂÅ¦âªº¥ú¨~¡A³oºØ¥ú½uµLªk»´©öªº¬ï¹L«p­«ªº¤j®ð¼h©³³¡¡A¦]¦¹­nÆ[´ú³oºØ²{¶H¥²¶·­n¦ì©ó©³³¡¤j®ð¼h¤§¤W¡A1994¦~Sentman ©M Wescott²Ä¤@¦¸°O¿ý¨ì¡yÂÅ¦â¼Q¬y¡z³oºØ©Ç²§ªº²{¶H¡A¥L­Ì¬OÂÇ¥Ñ ­¸¾÷¦b°ªªÅ¤¤­¸¶V±j¯Pªº­·¼É¤§¤W¡A¥Ñ°ªÆF±Ó«×ªº·Ó¹³¾÷©Ò©ç±o)¡C¥Ñ³o¨Ç·Ó¤ù¥i¥H±oª¾³oºØ¥ú¥H¬í³t120¤½¨½¦Û¶³¼h³»ºÝ¦V¤W¼Q¥X¡A¥Ø«e¬ã¨s¾ÇªÌ­Ì¥¿­P¤O ©ó§ä¥X¥i§¹¾ãªº¸ÑÄÀ¨ä¦¨¦]ªº²z½×¡C</p>  
+      <p>ã€€</p>
+      <p>ã€Žè—è‰²å™´æµã€(Blue Jet) æ˜¯ä¸€ç¨®å±€é™åœ¨ä½Žæ–¼40å…¬é‡Œå¤§æ°£å±¤ä¸­çš„ä¸€ç¨®ç¾è±¡ï¼Œä¸¦ä¸”è¼ƒé›£è§€æ¸¬ï¼Œå™´æµæœƒæ”¾å‡ºæ·±è—è‰²çš„å…‰èŠ’ï¼Œé€™ç¨®å…‰ç·šç„¡æ³•è¼•æ˜“çš„ç©¿éŽåŽšé‡çš„å¤§æ°£å±¤åº•éƒ¨ï¼Œå› æ­¤è¦è§€æ¸¬é€™ç¨®ç¾è±¡å¿…é ˆè¦ä½æ–¼åº•éƒ¨å¤§æ°£å±¤ä¹‹ä¸Šï¼Œ1994å¹´Sentman å’Œ Wescottç¬¬ä¸€æ¬¡è¨˜éŒ„åˆ°ã€Žè—è‰²å™´æµã€é€™ç¨®æ€ªç•°çš„ç¾è±¡ï¼Œä»–å€‘æ˜¯è—‰ç”± é£›æ©Ÿåœ¨é«˜ç©ºä¸­é£›è¶Šå¼·çƒˆçš„é¢¨æš´ä¹‹ä¸Šï¼Œç”±é«˜éˆæ•åº¦çš„ç…§åƒæ©Ÿæ‰€æ‹å¾—)ã€‚ç”±é€™äº›ç…§ç‰‡å¯ä»¥å¾—çŸ¥é€™ç¨®å…‰ä»¥ç§’é€Ÿ120å…¬é‡Œè‡ªé›²å±¤é ‚ç«¯å‘ä¸Šå™´å‡ºï¼Œç›®å‰ç ”ç©¶å­¸è€…å€‘æ­£è‡´åŠ› æ–¼æ‰¾å‡ºå¯å®Œæ•´çš„è§£é‡‹å…¶æˆå› çš„ç†è«–ã€‚</p>  
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="32%" height="176">
-      <p align="center"><img border="0" src="htpphoto/2006¦~7¤ë7¤é%20UTÂÅ¦â¼Q¬y©ó³ÀªL¤s¤Ñ¤å¥x.jpg" width="224" height="228"></td>
+      <p align="center"><img border="0" src="htpphoto/2006å¹´7æœˆ7æ—¥%20UTè—è‰²å™´æµæ–¼é¹¿æž—å±±å¤©æ–‡å°.jpg" width="224" height="228"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#99FF99">
-      <p align="center"><a name="¥¨¤j¼Q¬y">  ¥¨¤j¼Q¬y</a></td>
+      <p align="center"><a name="å·¨å¤§å™´æµ">  å·¨å¤§å™´æµ</a></td>
   </tr>
   <tr>
-    <td width="68%" height="176">¡@
-      <p>¥¨¤j¼Q¬yÁpµ²¶³³»©M¦ì¦b¤E¤Q¤½¨½³Bªº¹qÂ÷¼h¡A¨Ãµo¥X«Ü§CÀWªº¹qªi°T¸¹¡AÅã¥Ü¥¦¬O¹p«B¶³©M¹qÂ÷¼h¤§¶¡ªº°{¹q¡A¤]¬O¤@¯ë±`¨£ªº¹p«B¶³»P¦a­±¤§¶¡°{¹qªº¤Ï¨Ò¡C¦¹¥~¡A¤@¯ëªº¶³¹ï¦a°{¹q¬¡°Ê¡A¥D­nªº®ÄÀ³¤§¤@¬Oºû«ù¹qÂ÷¼h©M¦a­±¤§¶¡ªº¼Æ¤Q¸U¥ñ¯S¹qÀ£¡C<br>
-    ¦Ó¦¹¤@°ªªÅ¥¨¤j¹qÀ£·|¦b»·³B´¸¤Ñ°Ï°ì¥HÂX´²¹q¬yªº§Î¦¡¦V¤U¶Ç°e¹q²ü¡A§¹¦¨¤j°ì¹q¸ôªº°j¸ô¡C<br>
-    ¦ý³o¨Ç¥¨¤j¼Q¬yªº§@¥Î«ê¦n¬Û¤Ï¡A¥¦­Ì·|¦bµo¥Íªº¦aÂIÅý¤j°ì¹q¸ô²£¥Íµu¸ô¡A<br>
-     ­°§C¹qÂ÷¼h©M¦a­±¤§¶¡¹qÀ£®t¡C¦]¦¹¡AÃÒ¹ê¤F¥¨¤j¼Q¬y©M¬õ¦âºëÆF³£¬O¤j°ì¹q¸ôªº·sÀôµ²¡A<br>
-     ¹ï¦a²yÀô¹Ò¦³¬Û·íªº¼vÅT¡C</p>
-      <p>¡@</p>
-      <p>¡@</p>
+    <td width="68%" height="176">ã€€
+      <p>å·¨å¤§å™´æµè¯çµé›²é ‚å’Œä½åœ¨ä¹åå…¬é‡Œè™•çš„é›»é›¢å±¤ï¼Œä¸¦ç™¼å‡ºå¾ˆä½Žé »çš„é›»æ³¢è¨Šè™Ÿï¼Œé¡¯ç¤ºå®ƒæ˜¯é›·é›¨é›²å’Œé›»é›¢å±¤ä¹‹é–“çš„é–ƒé›»ï¼Œä¹Ÿæ˜¯ä¸€èˆ¬å¸¸è¦‹çš„é›·é›¨é›²èˆ‡åœ°é¢ä¹‹é–“é–ƒé›»çš„åä¾‹ã€‚æ­¤å¤–ï¼Œä¸€èˆ¬çš„é›²å°åœ°é–ƒé›»æ´»å‹•ï¼Œä¸»è¦çš„æ•ˆæ‡‰ä¹‹ä¸€æ˜¯ç¶­æŒé›»é›¢å±¤å’Œåœ°é¢ä¹‹é–“çš„æ•¸åè¬ä¼ç‰¹é›»å£“ã€‚<br>
+    è€Œæ­¤ä¸€é«˜ç©ºå·¨å¤§é›»å£“æœƒåœ¨é è™•æ™´å¤©å€åŸŸä»¥æ“´æ•£é›»æµçš„å½¢å¼å‘ä¸‹å‚³é€é›»è·ï¼Œå®Œæˆå¤§åŸŸé›»è·¯çš„è¿´è·¯ã€‚<br>
+    ä½†é€™äº›å·¨å¤§å™´æµçš„ä½œç”¨æ°å¥½ç›¸åï¼Œå®ƒå€‘æœƒåœ¨ç™¼ç”Ÿçš„åœ°é»žè®“å¤§åŸŸé›»è·¯ç”¢ç”ŸçŸ­è·¯ï¼Œ<br>
+     é™ä½Žé›»é›¢å±¤å’Œåœ°é¢ä¹‹é–“é›»å£“å·®ã€‚å› æ­¤ï¼Œè­‰å¯¦äº†å·¨å¤§å™´æµå’Œç´…è‰²ç²¾éˆéƒ½æ˜¯å¤§åŸŸé›»è·¯çš„æ–°ç’°çµï¼Œ<br>
+     å°åœ°çƒç’°å¢ƒæœ‰ç›¸ç•¶çš„å½±éŸ¿ã€‚</p>
+      <p>ã€€</p>
+      <p>ã€€</p>
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="32%" height="176"><img border="0" src="htpphoto/¥¨¤j¼Q¬y2¦¨¤j¹Î¶¤¦b2002¦~7¤ë22¤é.jpg" width="279" height="188"></td>
+    <td width="32%" height="176"><img border="0" src="htpphoto/å·¨å¤§å™´æµ2æˆå¤§åœ˜éšŠåœ¨2002å¹´7æœˆ22æ—¥.jpg" width="279" height="188"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#66FF99">
-      <p align="center"><a name="²^®ðºëÆF">  ²^®ðºëÆF</a></td>
+      <p align="center"><a name="æ·˜æ°£ç²¾éˆ">  æ·˜æ°£ç²¾éˆ</a></td>
   </tr>
   <tr>
-    <td width="68%" height="260"> ELVES ´N¦p¦P¬õ¦âºëÆF¤@¼Ë¬O¤@ºØ¥Ñ¹q³õ±j«×²§±`ªº°{¹q©Ò¤Þ°_¡Aµo¥Í¦b°ªªÅªº²{¶H¡A¥¦§e²{¥X¤@ºØ¤õ¬õ¦â¡B«ó¥­ªº§Îª¬¡C¥Ñ±j¯P°{¹q©Ò©ñ¥Xªº¹qºÏ¯ß½Ä (electromagnatic pulse)·|²£¥ÍELVS¡C¥»½è¤W¡A³oºØ±j¯Pªº¹qªi¬O¥H°{¹q¬°¤¤¤ß¡A ¥H¥ú³t¶Ç»¼ªº¹qªi¡C·í³o­Ó¹qºÏ¯ß½Äªº¦V¤W¶Ç»¼ªº³¡¤À(¶ê´ß³¡¤À)¹F¨ì¤j®ð ¤¤ªºÁ{¬É°ª«×(¬ù¬°75¦Ü100¤½¨½)®É¡A¥»¨­©Ò±aªº¹q³õ¦³®Ä²v¹ï¹q¤l¥[³t¡A³o¨Ç¥[³t«áªº ¹q¤l·|¼²À»ªÅ®ð¤À¤l¨Ã±N¨ä´£ª@¦Ü¥i¥Hµo¥úªº¿Eµoª¬ºA¡C³oºØ¾÷¨î²£¥Í¤F¥H²y´ß©MÁ{¬É¼h ¤§¥æÂI¬°¶b¤ß¡A¦V¥~ÂX±iªº¥úÀô¡C³o­Ó¥æ·|°ÏÂX±iªº«Ü§Ö¡A¦]¦¹¡AÂX±iªº¥úÀôªí²{¥X ¦p«ó¥­½L¤lªº§Îª¬¡C   
+    <td width="68%" height="260"> ELVES å°±å¦‚åŒç´…è‰²ç²¾éˆä¸€æ¨£æ˜¯ä¸€ç¨®ç”±é›»å ´å¼·åº¦ç•°å¸¸çš„é–ƒé›»æ‰€å¼•èµ·ï¼Œç™¼ç”Ÿåœ¨é«˜ç©ºçš„ç¾è±¡ï¼Œå®ƒå‘ˆç¾å‡ºä¸€ç¨®ç«ç´…è‰²ã€æ‰å¹³çš„å½¢ç‹€ã€‚ç”±å¼·çƒˆé–ƒé›»æ‰€æ”¾å‡ºçš„é›»ç£è„ˆè¡ (electromagnatic pulse)æœƒç”¢ç”ŸELVSã€‚æœ¬è³ªä¸Šï¼Œé€™ç¨®å¼·çƒˆçš„é›»æ³¢æ˜¯ä»¥é–ƒé›»ç‚ºä¸­å¿ƒï¼Œ ä»¥å…‰é€Ÿå‚³éžçš„é›»æ³¢ã€‚ç•¶é€™å€‹é›»ç£è„ˆè¡çš„å‘ä¸Šå‚³éžçš„éƒ¨åˆ†(åœ“æ®¼éƒ¨åˆ†)é”åˆ°å¤§æ°£ ä¸­çš„è‡¨ç•Œé«˜åº¦(ç´„ç‚º75è‡³100å…¬é‡Œ)æ™‚ï¼Œæœ¬èº«æ‰€å¸¶çš„é›»å ´æœ‰æ•ˆçŽ‡å°é›»å­åŠ é€Ÿï¼Œé€™äº›åŠ é€Ÿå¾Œçš„ é›»å­æœƒæ’žæ“Šç©ºæ°£åˆ†å­ä¸¦å°‡å…¶ææ˜‡è‡³å¯ä»¥ç™¼å…‰çš„æ¿€ç™¼ç‹€æ…‹ã€‚é€™ç¨®æ©Ÿåˆ¶ç”¢ç”Ÿäº†ä»¥çƒæ®¼å’Œè‡¨ç•Œå±¤ ä¹‹äº¤é»žç‚ºè»¸å¿ƒï¼Œå‘å¤–æ“´å¼µçš„å…‰ç’°ã€‚é€™å€‹äº¤æœƒå€æ“´å¼µçš„å¾ˆå¿«ï¼Œå› æ­¤ï¼Œæ“´å¼µçš„å…‰ç’°è¡¨ç¾å‡º å¦‚æ‰å¹³ç›¤å­çš„å½¢ç‹€ã€‚   
       <p align="right"><a href="#TOP">TOP</a></td>
-    <td width="32%" height="260"><img border="0" src="htpphoto/²^®ðºëÆF1%20¦¨¤jª«²z¨t%20¬õ¦âºëÆF¬ã¨s¹Î¶¤©ó«n®ü¤WªÅ.jpg" width="283" height="186"></td>
+    <td width="32%" height="260"><img border="0" src="htpphoto/æ·˜æ°£ç²¾éˆ1%20æˆå¤§ç‰©ç†ç³»%20ç´…è‰²ç²¾éˆç ”ç©¶åœ˜éšŠæ–¼å—æµ·ä¸Šç©º.jpg" width="283" height="186"></td>
   </tr>
 </table>
 <script language="JavaScript">

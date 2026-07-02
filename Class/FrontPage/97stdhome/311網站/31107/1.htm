@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>31107±±¨î</title>
+<title>31107æŽ§åˆ¶</title>
 <base target="_self">
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
@@ -73,15 +73,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¥Á°ê¦~¨C¤ë¤§¤é¼Æ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¥Á°ê¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["°¨", "¦Ï", "µU", "Âû", "ª¯", "½Þ", "¹«", "¤û", "ªê", "¨ß", "Às", "³D" ];
-	LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+	AnimalIdx = ["é¦¬", "ç¾Š", "çŒ´", "é›ž", "ç‹—", "è±¬", "é¼ ", "ç‰›", "è™Ž", "å…”", "é¾", "è›‡" ];
+	LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -144,18 +144,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>¬P´Á¤é</font>","<font color=#8000FF>¬P´Á¤@</font>","<font color=#8000FF>¬P´Á¤G</font>","<font color=#8000FF>¬P´Á¤T</font>","<font color=#8000FF>¬P´Á¥|</font>","<font color=#8000FF>¬P´Á¤­</font>","<font color=GREEN>¬P´Á¤»</font>");
-             document.write("¥Á°ê <font color=#3171b7>",today.getYear()-1911,"<font color=black> ¦~ </font>",today.getMonth()+1,"<font color=black> ¤ë </font>",today.getDate(),"<font color=black> ¤é </font>"
+       var d=new initArray("<font color=RED>æ˜ŸæœŸæ—¥</font>","<font color=#8000FF>æ˜ŸæœŸä¸€</font>","<font color=#8000FF>æ˜ŸæœŸäºŒ</font>","<font color=#8000FF>æ˜ŸæœŸä¸‰</font>","<font color=#8000FF>æ˜ŸæœŸå››</font>","<font color=#8000FF>æ˜ŸæœŸäº”</font>","<font color=GREEN>æ˜ŸæœŸå…­</font>");
+             document.write("æ°‘åœ‹ <font color=#3171b7>",today.getYear()-1911,"<font color=black> å¹´ </font>",today.getMonth()+1,"<font color=black> æœˆ </font>",today.getDate(),"<font color=black> æ—¥ </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é</span>" );
+	  document.write( "</font><span class=d>è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥</span>" );
 
-       document.write( "<span class=d><font color=RED>·Ù</font>" + Location + " <font color=GREEN>¨R</font>" + Animal + Age + "·³</span><br>" );                
+       document.write( "<span class=d><font color=RED>ç…ž</font>" + Location + " <font color=GREEN>æ²–</font>" + Animal + Age + "æ­²</span><br>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¥Á°ê¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤æ°‘åœ‹å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -169,11 +169,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¥Á°ê 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°æ°‘åœ‹ 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -190,15 +190,15 @@ CalConv();
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="item3.GIF" width="15" height="15" hspace="13"></td>
-          <td valign="top" width="100%"><a name="¾ú¥v">¾ú¥v</a>
+          <td valign="top" width="100%"><a name="æ­·å²">æ­·å²</a>
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="item4.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#¤º®e"><font color="#008000">¤º®e</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#å…§å®¹"><font color="#008000">å…§å®¹</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="item4.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><a href="#®É¶¡¦Cªí"><font color="#008000">®É¶¡¦Cªí</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#æ™‚é–“åˆ—è¡¨"><font color="#008000">æ™‚é–“åˆ—è¡¨</font></a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -209,240 +209,240 @@ CalConv();
 </table>
 <table border="1" width="100%" height="1075">
   <tr>
-    <td width="82%" height="13"><font color="#800080"><a name="¤º®e">¤º®e</a></font></td>
+    <td width="82%" height="13"><font color="#800080"><a name="å…§å®¹">å…§å®¹</a></font></td>
     <td width="18%" height="13"></td>
   </tr>
   <tr>
     <td width="82%" height="830"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> 
-      ¦Û°Ê±±¨î¦³µÛ¤@¬q¤Þ¤H¤J³Óªº¾ú¥v¡C  
+      è‡ªå‹•æŽ§åˆ¶æœ‰è‘—ä¸€æ®µå¼•äººå…¥å‹çš„æ­·å²ã€‚  
       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-      ³Ìªìªº±±¨î¾¹¦b¤½¤¸«e300¦~ªº¥j§ÆÃ¾´N³Qµo©ú¤F¥X¨Ó¡C¨Ó¦Û®J¤Îªº¥j§ÆÃ¾¤uµ{®v¬ì®õ¦è¤ñ¶ø´µªº¤ôÁé´N¬O³q¹L¯B¤l±±¨îªº¡C<br>
+      æœ€åˆçš„æŽ§åˆ¶å™¨åœ¨å…¬å…ƒå‰300å¹´çš„å¤å¸Œè‡˜å°±è¢«ç™¼æ˜Žäº†å‡ºä¾†ã€‚ä¾†è‡ªåŸƒåŠçš„å¤å¸Œè‡˜å·¥ç¨‹å¸«ç§‘æ³°è¥¿æ¯”å¥§æ–¯çš„æ°´é¾å°±æ˜¯é€šéŽæµ®å­æŽ§åˆ¶çš„ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@¤ñÃÙ¯÷¦b¤½¤¸«e250¦~µo©ú¤Fªo¿O¡A³q¹L¯B¤l¨Ó±±¨îªoÄÑªº°ª«×¡C<br>
+      <p>ã€€ã€€æ¯”è´ŠèŒ²åœ¨å…¬å…ƒå‰250å¹´ç™¼æ˜Žäº†æ²¹ç‡ˆï¼Œé€šéŽæµ®å­ä¾†æŽ§åˆ¶æ²¹éºµçš„é«˜åº¦ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@²Ä¤@­Ó±a¦³¤ÏõXªº±±¨î¨t²Î¨Ó¦Û©ó¤ô­±°ª«×±±¨î¡C<br>
+      <p>ã€€ã€€ç¬¬ä¸€å€‹å¸¶æœ‰åé¥‹çš„æŽ§åˆ¶ç³»çµ±ä¾†è‡ªæ–¼æ°´é¢é«˜åº¦æŽ§åˆ¶ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@²Ä¤@­Ó±a¦³¤ÏõXªº·Å«×±±¨î¾¹¬O²üÄõ¤H¼w¹p¨©º¸µo©úªº¡C¨Ó¦Ûªk°êªº©¬¼ï¦b1681¦~²Ä¤@­Óµo©ú¤F»]¨TÁçÄlªºÀ£¤O½Õ¸`¸Ë¸m¡C<br>
+      <p>ã€€ã€€ç¬¬ä¸€å€‹å¸¶æœ‰åé¥‹çš„æº«åº¦æŽ§åˆ¶å™¨æ˜¯è·è˜­äººå¾·é›·è²çˆ¾ç™¼æ˜Žçš„ã€‚ä¾†è‡ªæ³•åœ‹çš„å¸•æ½˜åœ¨1681å¹´ç¬¬ä¸€å€‹ç™¼æ˜Žäº†è’¸æ±½é‹çˆçš„å£“åŠ›èª¿ç¯€è£ç½®ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@²Ä¤@­Ó¦b¤u·~»â°ì¨Ï¥Îªº±a¦³¤ÏõXªº½Õ¸`¸Ë¸m·íÄÝ¥Ë¯Sµo©úªºÂ÷¤ß¤O±±¨î¾¹¡A³o¬O¥L¦b1769¦~¬°¯Ã¥dªùªº»]¨T¾÷¶q¨­©w°µªº¡C»P¦¹¦P®É¡A«XÃ¹´µ¤Hªiº¸¯ª¿Õ¤Òµo©ú¤F±a¦³¤ÏõXªº¤ô­±°ª«×±±¨î¾¹¡A¤]ÄÝ¥@¬É­º³Ð¡C¤ô­±°ª«×ªº«H®§¶Ç»¼¨ì¯B¤l¤W¡AµM«á¦A¤Ï§@¥Î©ó»]¨T»Öªù¤W¡C<br>
+      <p>ã€€ã€€ç¬¬ä¸€å€‹åœ¨å·¥æ¥­é ˜åŸŸä½¿ç”¨çš„å¸¶æœ‰åé¥‹çš„èª¿ç¯€è£ç½®ç•¶å±¬ç“¦ç‰¹ç™¼æ˜Žçš„é›¢å¿ƒåŠ›æŽ§åˆ¶å™¨ï¼Œé€™æ˜¯ä»–åœ¨1769å¹´ç‚ºç´å¡é–€çš„è’¸æ±½æ©Ÿé‡èº«å®šåšçš„ã€‚èˆ‡æ­¤åŒæ™‚ï¼Œä¿„ç¾…æ–¯äººæ³¢çˆ¾ç¥–è«¾å¤«ç™¼æ˜Žäº†å¸¶æœ‰åé¥‹çš„æ°´é¢é«˜åº¦æŽ§åˆ¶å™¨ï¼Œä¹Ÿå±¬ä¸–ç•Œé¦–å‰µã€‚æ°´é¢é«˜åº¦çš„ä¿¡æ¯å‚³éžåˆ°æµ®å­ä¸Šï¼Œç„¶å¾Œå†åä½œç”¨æ–¼è’¸æ±½é–¥é–€ä¸Šã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@±q1868¦~°_¡A¦Û°Ê±±¨î³Q³\¦h·sªºµo©ú±À°ÊµÛ¤£Â_«e¶i¡C¦ý¬O¡A¤H­Ì¦pªG·Q­n´£°ª±±¨îªººë·Ç©Ê¡A´N¥²Å½¾v®i¥X¦Û°Ê±±¨î»â°ì¤@®M§¹¾ãªº²z½×¡C³o¤è­±³Ì¦­ªº¼Æ¾Ç²z½×¬O¥Ñ³Á§J´µ­³´£¥Xªº¡A¥L¬°Â÷¤ß¤O±±¨î¾¹¥Î·L¤À¤èµ{ºc³y¤F¤@­Ó¼Ò«¬¡C<br>
+      <p>ã€€ã€€å¾ž1868å¹´èµ·ï¼Œè‡ªå‹•æŽ§åˆ¶è¢«è¨±å¤šæ–°çš„ç™¼æ˜ŽæŽ¨å‹•è‘—ä¸æ–·å‰é€²ã€‚ä½†æ˜¯ï¼Œäººå€‘å¦‚æžœæƒ³è¦æé«˜æŽ§åˆ¶çš„ç²¾æº–æ€§ï¼Œå°±å¿…é¬šé«®å±•å‡ºè‡ªå‹•æŽ§åˆ¶é ˜åŸŸä¸€å¥—å®Œæ•´çš„ç†è«–ã€‚é€™æ–¹é¢æœ€æ—©çš„æ•¸å­¸ç†è«–æ˜¯ç”±éº¥å…‹æ–¯éŸ‹æå‡ºçš„ï¼Œä»–ç‚ºé›¢å¿ƒåŠ›æŽ§åˆ¶å™¨ç”¨å¾®åˆ†æ–¹ç¨‹æ§‹é€ äº†ä¸€å€‹æ¨¡åž‹ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@ª½¨ì¤G¾Ô¡A¦Û°Ê±±¨î¨t²Îªº²z½×©M¹ê½î¦b¬ü°ê¡A¦è¼Ú©M¦b«X°ê¡AªF¼ÚªuµÛ¤£¦Pªº¤è¦Vµo®i¡C¦b¦è¤è¡A¨t²Î¤@¯ë³£¦bÀW°ì´y­z¡A°ÝÃD³£¥Î§B¼w¡A¥§«¶´µ¯S©M¥¬µÜ§Jªº¤èªk¸Ñ¨M¡A¦Ó«eÄ¬Ápªº¼Æ¾Ç®a©M¤uµ{®v­Ì¤@¯ë¦b®É°ì¥Î·L¤À¤èµ{¸Ñ¨M°ÝÃD¡C<br>
+      <p>ã€€ã€€ç›´åˆ°äºŒæˆ°ï¼Œè‡ªå‹•æŽ§åˆ¶ç³»çµ±çš„ç†è«–å’Œå¯¦è¸åœ¨ç¾Žåœ‹ï¼Œè¥¿æ­å’Œåœ¨ä¿„åœ‹ï¼Œæ±æ­æ²¿è‘—ä¸åŒçš„æ–¹å‘ç™¼å±•ã€‚åœ¨è¥¿æ–¹ï¼Œç³»çµ±ä¸€èˆ¬éƒ½åœ¨é »åŸŸæè¿°ï¼Œå•é¡Œéƒ½ç”¨ä¼¯å¾·ï¼Œå°¼å¥Žæ–¯ç‰¹å’Œå¸ƒèŠå…‹çš„æ–¹æ³•è§£æ±ºï¼Œè€Œå‰è˜‡è¯çš„æ•¸å­¸å®¶å’Œå·¥ç¨‹å¸«å€‘ä¸€èˆ¬åœ¨æ™‚åŸŸç”¨å¾®åˆ†æ–¹ç¨‹è§£æ±ºå•é¡Œã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@¦Û°Ê±±¨î§Þ³Nªº­«¤j¬ð¯}µo¥Í¦b¤G¾Ô®É´Á¡A¦]¬°»s³yªZ¾¹¸Ë³Æ¡A¥²¶·³B²z½ÆÂøªº¨t²Î¡C¹p¹F¡AµL¤H¾r¾p©M¦Û°ÊºË·Ç¨t²Î¥u¬O´X­Ó±a¦³¤ÏõX¨t²Îªº¨Ò¤l¡C¹ï·sªº±±¨î¨t²Îªº»Ý¨D¾É­P¤F·sªº¼Æ¾Ç¤èªkªº§ïµ½¡A±q¦Ó±±¨î§Þ³N¦³¤F¦Û¤vªº¤@®M·Ç«h¡C<br>
+      <p>ã€€ã€€è‡ªå‹•æŽ§åˆ¶æŠ€è¡“çš„é‡å¤§çªç ´ç™¼ç”Ÿåœ¨äºŒæˆ°æ™‚æœŸï¼Œå› ç‚ºè£½é€ æ­¦å™¨è£å‚™ï¼Œå¿…é ˆè™•ç†è¤‡é›œçš„ç³»çµ±ã€‚é›·é”ï¼Œç„¡äººé§•é§›å’Œè‡ªå‹•çž„æº–ç³»çµ±åªæ˜¯å¹¾å€‹å¸¶æœ‰åé¥‹ç³»çµ±çš„ä¾‹å­ã€‚å°æ–°çš„æŽ§åˆ¶ç³»çµ±çš„éœ€æ±‚å°Žè‡´äº†æ–°çš„æ•¸å­¸æ–¹æ³•çš„æ”¹å–„ï¼Œå¾žè€ŒæŽ§åˆ¶æŠ€è¡“æœ‰äº†è‡ªå·±çš„ä¸€å¥—æº–å‰‡ã€‚<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-      <p>¡@¡@1980¦~¥N¡A¥Ñ©ó¹q¤l§Þ³Nªº¥X²{¡A±±¨î§Þ³N¦³¤F·sªº°Ê¦]¡C¤uµ{®v­Ì¥i¥H§ó§Ö§ó¦n¦a¶i¦æ­pºâ¡A°ª«×½ÆÂø©Mºë·Çªº±±¨î¨t²Î¦¨¬°¥i¯à¡C</p>
-      <p>¡@</p>
-      <p><a href="#¾ú¥v">top</a></p>
+      <p>ã€€ã€€1980å¹´ä»£ï¼Œç”±æ–¼é›»å­æŠ€è¡“çš„å‡ºç¾ï¼ŒæŽ§åˆ¶æŠ€è¡“æœ‰äº†æ–°çš„å‹•å› ã€‚å·¥ç¨‹å¸«å€‘å¯ä»¥æ›´å¿«æ›´å¥½åœ°é€²è¡Œè¨ˆç®—ï¼Œé«˜åº¦è¤‡é›œå’Œç²¾æº–çš„æŽ§åˆ¶ç³»çµ±æˆç‚ºå¯èƒ½ã€‚</p>
+      <p>ã€€</p>
+      <p><a href="#æ­·å²">top</a></p>
     </td>
-    <td width="18%" height="830">¡@</td>
+    <td width="18%" height="830">ã€€</td>
   </tr>
   <tr>
-    <td width="82%" height="16"><font color="#800080"><a name="®É¶¡¦Cªí">®É¶¡¦Cªí</a></font></td>
+    <td width="82%" height="16"><font color="#800080"><a name="æ™‚é–“åˆ—è¡¨">æ™‚é–“åˆ—è¡¨</a></font></td>
     <td width="18%" height="16"></td>
   </tr>
   <tr>
     <td width="82%" height="88"><span lang="EN-US" style="font-family:CMR12">1784  
       </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">Â÷</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¤ß</span><span style="mso-ascii-font-family:CWTEX-M19;mso-hansi-font-family:CWTEX-M19">Áè</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½Õ³t</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾¹</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é›¢</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¿ƒ</span><span style="mso-ascii-font-family:CWTEX-M19;mso-hansi-font-family:CWTEX-M19">éŒ˜</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">èª¿é€Ÿ</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å™¨</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span>
       <p><span lang="EN-US" style="font-family:CMR12">1788 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">»]</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">®ð¾÷</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">è’¸</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ°£æ©Ÿ</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1848 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½Õ³t</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾¹</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">èª¿é€Ÿ</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å™¨</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1860 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M10;mso-hansi-font-family:CWTEX-M10">³½</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">¹p</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¨t</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">²Î</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M10;mso-hansi-font-family:CWTEX-M10">é­š</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é›·</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç³»</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">çµ±</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1900 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¹q</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">À£</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½Õ¸`</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾¹</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é›»</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">å£“</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">èª¿ç¯€</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å™¨</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1910 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤j</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¯¥</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">¥õ­Á</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¨¤</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾¹</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å¤§</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç ²</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">ä»°ä¿¯</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è§’</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å™¨</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1920 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">­¸</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¾÷</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">Ã­</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">©w¾¹</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é£›</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ©Ÿ</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç©©</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å®šå™¨</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1930 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¿U¿N</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span lang="EN-US" style="font-family:CMR12">;  
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç‡ƒç‡’</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span lang="EN-US" style="font-family:CMR12">;  
       </span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¥Û</span><span style="mso-ascii-font-family:
-CWTEX-M6;mso-hansi-font-family:CWTEX-M6">ªo</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¼t</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çŸ³</span><span style="mso-ascii-font-family:
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">æ²¹</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å» </span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1940 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê¾É</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">¯è</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¨t</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">²Î</span><span lang="EN-US" style="font-family:CMR12">;  
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•å°Ž</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">èˆª</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç³»</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">çµ±</span><span lang="EN-US" style="font-family:CMR12">;  
       </span><span style="mso-ascii-font-family:
-CWTEX-M6;mso-hansi-font-family:CWTEX-M6">ªZ</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾¹</span><span style="mso-ascii-font-family:
-CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:
-CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¨t</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">²Î</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">æ­¦</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å™¨</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:
+CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç³»</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">çµ±</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
       </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:
-CMSY10;mso-fareast-language:JA">¡÷</span><span lang="JA" style="font-family:CMSY10;
+CMSY10;mso-fareast-language:JA">â†’</span><span lang="JA" style="font-family:CMSY10;
 mso-fareast-language:JA"> </span><span style="mso-ascii-font-family:CWTEX-M1;
-mso-hansi-font-family:CWTEX-M1">¼Æ</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¦ì</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">­pºâ</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¾÷²z</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">«Ø</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¥ß</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
+mso-hansi-font-family:CWTEX-M1">æ•¸</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä½</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è¨ˆç®—</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ©Ÿç†</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å»º</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç«‹</span><span lang="EN-US" style="font-family:CWTEX-M2"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1950</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">¦^</span><span style="mso-ascii-font-family:CWTEX-M21;mso-hansi-font-family:CWTEX-M21">õX</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">«Ø</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¥ß</span><span lang="EN-US"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">å›ž</span><span style="mso-ascii-font-family:CWTEX-M21;mso-hansi-font-family:CWTEX-M21">é¥‹</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å»º</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç«‹</span><span lang="EN-US"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1960 </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language: 
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
       </span><span lang="EN-US" style="font-family:CMR12">NC + </span><span style="mso-ascii-font-family:
-CWTEX-M9;mso-hansi-font-family:CWTEX-M9">­¸</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¾÷</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¡B</span><span style="mso-ascii-font-family:
-CWTEX-M9;mso-hansi-font-family:CWTEX-M9">­¸</span><span style="mso-ascii-font-family:
-CWTEX-M5;mso-hansi-font-family:CWTEX-M5">¼u</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¡B</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªF</span><span style="mso-ascii-font-family:
-CWTEX-M4;mso-hansi-font-family:CWTEX-M4">§É</span><span lang="EN-US" style="font-family:CWTEX-M4"><o:p>
+CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é£›</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ©Ÿ</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ã€</span><span style="mso-ascii-font-family:
+CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é£›</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">å½ˆ</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ã€</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ±</span><span style="mso-ascii-font-family:
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">åºŠ</span><span lang="EN-US" style="font-family:CWTEX-M4"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
       </span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:
-CMSY10;mso-fareast-language:JA">¡÷</span><span lang="JA" style="font-family:CMSY10;
+CMSY10;mso-fareast-language:JA">â†’</span><span lang="JA" style="font-family:CMSY10;
 mso-fareast-language:JA"> </span><span style="mso-ascii-font-family:CWTEX-M3;
-mso-hansi-font-family:CWTEX-M3">¦ô</span><span style="mso-ascii-font-family:
-CWTEX-M6;mso-hansi-font-family:CWTEX-M6">´ú</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¡B</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">³Ì</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤j­ì</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+mso-hansi-font-family:CWTEX-M3">ä¼°</span><span style="mso-ascii-font-family:
+CWTEX-M6;mso-hansi-font-family:CWTEX-M6">æ¸¬</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ã€</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æœ€</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å¤§åŽŸ</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1970</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
-      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">³Ì</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">¨Î</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î¡B</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">³Ì</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">¾A</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æœ€</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">ä½³</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶ã€</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æœ€</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é©</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p>
       </o:p>
       </span></p>
       <p><span lang="EN-US" style="font-family:CMR12">1980</span><span lang="JA" style="mso-ascii-font-family:CMSY10;mso-hansi-font-family:CMSY10;mso-fareast-language:
-JA">¦~¡÷</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
+JA">å¹´â†’</span><span lang="JA" style="font-family:CMSY10;mso-fareast-language:JA"> 
       </span><span lang="EN-US" style="font-family:CMMI12">H</span><span style="font-size:7.5pt;
-mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">¡Û</span><span style="font-size:7.5pt;font-family:CMSY8"> 
+mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">âˆž</span><span style="font-size:7.5pt;font-family:CMSY8"> 
       </span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">- 
       </span><span lang="EN-US" style="font-family:CMR12">control</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¡B</span><span lang="EN-US" style="font-family:CMR12">adaptive<o:p>
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ã€</span><span lang="EN-US" style="font-family:CMR12">adaptive<o:p>
       </o:p> 
       </span></p>
       <p><span lang="EN-US" style="font-family:CMMI12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
       H</span><span style="font-size:7.5pt;mso-ascii-font-family:CMSY8;mso-hansi-font-family:
-CMSY8">¡Û</span><span style="font-size:7.5pt;font-family:CMSY8"> </span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">- 
+CMSY8">âˆž</span><span style="font-size:7.5pt;font-family:CMSY8"> </span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA">- 
       </span><span lang="EN-US" style="font-family:CMR12">control<o:p>
       </o:p>
       </span></p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">©Ò</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥H</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¥Ñ</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥H¤W</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">§Ú</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">­Ì¥i¥H</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">µo²{</span><span lang="EN-US" style="font-family:CMR12">,  
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ‰€</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»¥</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç”±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»¥ä¸Š</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æˆ‘</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å€‘å¯ä»¥</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç™¼ç¾</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">³oªù</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾Ç°Ý</span><span style="mso-ascii-font-family:
-CWTEX-M4;mso-hansi-font-family:CWTEX-M4">¥¦</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¬O¥Ñ</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê¤Æ</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Ó</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">±À</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¶i¦Ü¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span lang="EN-US" style="font-family:CMR12">,  
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é€™é–€</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å­¸å•</span><span style="mso-ascii-font-family:
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">å®ƒ</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ˜¯ç”±</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•åŒ–</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è€Œ</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æŽ¨</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é€²è‡³è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥B</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¥Ñ</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">Â²</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">³æ</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªº</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î¦A</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">µo®i¦¨</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">½Æ</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">Âø</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªº</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Û</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">°Ê</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¨t</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">²Î</span><span lang="EN-US" style="font-family:CMR12">,  
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¸”</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç”±</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç°¡</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å–®</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš„</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶å†</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç™¼å±•æˆ</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">è¤‡</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">é›œ</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš„</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡ª</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å‹•</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç³»</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">çµ±</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">³Ì</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æœ€</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
       </o:p>
-      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">«á</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¦A</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">§Î¦¨</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¤@</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">®M</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¾Œ</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å†</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å½¢æˆ</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ä¸€</span><span style="mso-ascii-font-family:CWTEX-M4;mso-hansi-font-family:CWTEX-M4">å¥—</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¤@</span><span style="mso-ascii-font-family:
-CWTEX-M8;mso-hansi-font-family:CWTEX-M8">¯ë</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨Ó</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">»¡</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¦b</span><span lang="EN-US" style="font-family:CMR12">1930</span><span style="mso-ascii-font-family:CWTEX-M1;
-mso-hansi-font-family:CWTEX-M1">¦~</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Ü</span><span lang="EN-US" style="font-family:CMR12">1960</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¦~</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span lang="EN-US" style="font-family:CMR12">,  
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ä¸€</span><span style="mso-ascii-font-family:
+CWTEX-M8;mso-hansi-font-family:CWTEX-M8">èˆ¬</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¾†</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">èªª</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åœ¨</span><span lang="EN-US" style="font-family:CMR12">1930</span><span style="mso-ascii-font-family:CWTEX-M1;
+mso-hansi-font-family:CWTEX-M1">å¹´</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è‡³</span><span lang="EN-US" style="font-family:CMR12">1960</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¹´</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M4;mso-hansi-font-family:CWTEX-M4">¥¦</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¬OÄÝ©ó</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¤@</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">­Ó</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¸gÅç</span><span style="mso-ascii-font-family:
-CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªº®É</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span lang="EN-US" style="font-family:CMR12">,<o:p>
+CWTEX-M4;mso-hansi-font-family:CWTEX-M4">å®ƒ</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ˜¯å±¬æ–¼</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ä¸€</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å€‹</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç¶“é©—</span><span style="mso-ascii-font-family:
+CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš„æ™‚</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span lang="EN-US" style="font-family:CMR12">,<o:p>
       </o:p> 
       </span></p>
       <p><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-      ¥B¦b</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">¹Á</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¸Õ</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">¿ù</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">»~</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤¤</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¨D</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¶i</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¨Bªº¦~</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span lang="EN-US" style="font-family:CMR12">;  
+      ä¸”åœ¨</span><span style="mso-ascii-font-family:CWTEX-M3;mso-hansi-font-family:CWTEX-M3">å˜—</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è©¦</span><span style="mso-ascii-font-family:CWTEX-M9;mso-hansi-font-family:CWTEX-M9">éŒ¯</span><span style="mso-ascii-font-family:CWTEX-M8;mso-hansi-font-family:CWTEX-M8">èª¤</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¸­</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ±‚</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é€²</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ­¥çš„å¹´</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span lang="EN-US" style="font-family:CMR12">;  
       </span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¦Ó</span><span lang="EN-US" style="font-family:CMR12">1960  
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è€Œ</span><span lang="EN-US" style="font-family:CMR12">1960  
       </span><span style="mso-ascii-font-family:CWTEX-M2;
-mso-hansi-font-family:CWTEX-M2">¦Ü</span><span lang="EN-US" style="font-family:
+mso-hansi-font-family:CWTEX-M2">è‡³</span><span lang="EN-US" style="font-family:
 CWTEX-M2"><o:p>
       </o:p>
-      </span><span lang="EN-US" style="font-family:CMR12">1980</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¦~</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¬OÄÝ©ó²{</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªº®É</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span lang="EN-US" style="font-family:CMR12">,  
+      </span><span lang="EN-US" style="font-family:CMR12">1980</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¹´</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ˜¯å±¬æ–¼ç¾</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš„æ™‚</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">³o</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">­Ó</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¦~</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ªº©Ò¦³</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">¨t</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">²Î</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¬Ò¬O«Ø</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¥ß</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¦b</span><span lang="EN-US" style="font-family:CMMI12">H</span><span lang="EN-US" style="font-size:7.5pt;font-family:CMR8">2</span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA"> 
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é€™</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å€‹</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¹´</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš„æ‰€æœ‰</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M7;mso-hansi-font-family:CWTEX-M7">ç³»</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">çµ±</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">çš†æ˜¯å»º</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç«‹</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åœ¨</span><span lang="EN-US" style="font-family:CMMI12">H</span><span lang="EN-US" style="font-size:7.5pt;font-family:CMR8">2</span><span lang="EN-US" style="font-family:CMSY10;mso-fareast-language:JA"> 
       - </span><span lang="EN-US" style="font-family:CMR12">control </span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span lang="EN-US" style="font-family:CWTEX-M1"><o:p>
       </o:p>
-      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤W¡C</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">±q</span><span lang="EN-US" style="font-family:CMR12">1980  
+      </span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¸Šã€‚</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¾ž</span><span lang="EN-US" style="font-family:CMR12">1980  
       </span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¦~</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤§</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">«á</span><span lang="EN-US" style="font-family:CMR12">,  
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¹´</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¹‹</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å¾Œ</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:CWTEX-M5;
-mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">³oªù</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¾Ç°Ý´N§¹¥þ</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">«Ø</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">¥ß</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¦b</span><span lang="EN-US" style="font-family:CMMI12">H</span><span style="font-size:7.5pt;
-mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">¡Û</span><span style="font-family: CMSY10; mso-fareast-language: JA" lang="EN-US"> 
+mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">é€™é–€</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å­¸å•å°±å®Œå…¨</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">å»º</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç«‹</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åœ¨</span><span lang="EN-US" style="font-family:CMMI12">H</span><span style="font-size:7.5pt;
+mso-ascii-font-family:CMSY8;mso-hansi-font-family:CMSY8">âˆž</span><span style="font-family: CMSY10; mso-fareast-language: JA" lang="EN-US"> 
       - </span><span lang="EN-US" style="font-family:CMR12">control </span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span style="mso-ascii-font-family:
-CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:
-CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤W¤F</span><span lang="EN-US" style="font-family:CMR12">,  
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span style="mso-ascii-font-family:
+CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:
+CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¸Šäº†</span><span lang="EN-US" style="font-family:CMR12">,  
       </span><span style="mso-ascii-font-family:CWTEX-M2;
-mso-hansi-font-family:CWTEX-M2">¦Ó³o</span><span style="mso-ascii-font-family:
-CWTEX-M1;mso-hansi-font-family:CWTEX-M1">®É´Á§Ú</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">­Ì</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ºÙ</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¤§</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">¬°«á²{</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¥N</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">±±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¨î</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">²z</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">½×</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">®É´Á</span><span lang="EN-US" style="font-family:CMR12">(Post  
-      mod-ern control)</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">¡C</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p> 
+mso-hansi-font-family:CWTEX-M2">è€Œé€™</span><span style="mso-ascii-font-family:
+CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ™‚æœŸæˆ‘</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">å€‘</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">ç¨±</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä¹‹</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç‚ºå¾Œç¾</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ä»£</span><span style="mso-ascii-font-family:CWTEX-M5;mso-hansi-font-family:CWTEX-M5">æŽ§</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">åˆ¶</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">ç†</span><span style="mso-ascii-font-family:CWTEX-M2;mso-hansi-font-family:CWTEX-M2">è«–</span><span style="mso-ascii-font-family:CWTEX-M1;mso-hansi-font-family:CWTEX-M1">æ™‚æœŸ</span><span lang="EN-US" style="font-family:CMR12">(Post  
+      mod-ern control)</span><span style="mso-ascii-font-family:CWTEX-M0;mso-hansi-font-family:CWTEX-M0">ã€‚</span><span lang="EN-US" style="font-family:CWTEX-M0"><o:p> 
       </o:p>
       </span></p>
-      <p>¡@</p>
-      <p><a href="#¾ú¥v">top</a></p>
+      <p>ã€€</p>
+      <p><a href="#æ­·å²">top</a></p>
     </td>
     <td width="18%" height="88"></td>
   </tr>

@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -28,7 +28,7 @@ was design by Eric Chen!!!-->
 
 <p align="center"><a name="TOP"></a><img border="0" src="images/title1.gif" width="562" height="74"></p>
 
-<p align="center">�@
+<p align="center">　
 
 <script language="JavaScript"><!--
 function CalConv()
@@ -79,16 +79,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ���~�C�뤧��� */
+ /* 西曆年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ���~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 西曆年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["�� ", "�� ", "�U ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�s ", "�D " ];
- LocationIdx = [ "�n", "�F", "�_", "��" ];
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -152,16 +152,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>�i���� �褸 " + SolarYear + "�~" + SolarMonth + "��" + SolarDate + "�� -- " );
-       document.write( "�A�� " + LunarMonth + "�� " + LunarDate + "�� -- " );
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
 
-       document.write( "��" + Location + " -- �R" + Animal + Age + " ���j</font>" );                
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
                 
  
  return 0;
  }
 
- /* �D�����~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -175,11 +175,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ���� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~��� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~��� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -200,73 +200,73 @@ function OpenWin( url ) {
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="12" height="12" hspace="15"></td>
           <td valign="top" width="100%">
-            <p align="left">���֤���
+            <p align="left">光纖介紹
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14791_.GIF" width="15" height="15" hspace="13"></td>
                 <td valign="top" width="100%">
-                  <p align="left"><a href="#���ֳq�T�����v">���ֳq�T�����v</a><!--msimagelist--></td>
+                  <p align="left"><a href="#光纖通訊的歷史">光纖通訊的歷史</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14791_.GIF" width="15" height="15" hspace="13"></td>
                 <td valign="top" width="100%">
-                  <p align="left"><a href="#���ֳq�T����z">���ֳq�T����z</a><!--msimagelist--></td>
+                  <p align="left"><a href="#光纖通訊的原理">光纖通訊的原理</a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14791_.GIF" width="15" height="15" hspace="13"></td>
-                <td valign="top" width="100%"><p align="left"><a href="#���ֳq�T�޳N�o�i�Ͷ�">���ֳq�T�޳N�o�i�Ͷ�</a><!--msimagelist--></td>
+                <td valign="top" width="100%"><p align="left"><a href="#光纖通訊技術發展趨勢">光纖通訊技術發展趨勢</a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
         </tr>
       <!--msimagelist--></table>
-      <p align="left">�@</td>
+      <p align="left">　</td>
   </tr>
 </table>
 <table border="1" width="100%" height="302">
   <tr>
     <td width="100%" colspan="2" bgcolor="#00FFFF" height="20">
-      <p align="center"><a name="���ֳq�T�����v">���ֳq�T�����v</a></td>
+      <p align="center"><a name="光纖通訊的歷史">光纖通訊的歷史</a></td>
   </tr>
   <tr>
     <td width="76%" height="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-      <font size="2">�ۥj�H�ӡA�H�������Z���q�T���ݨD�N�����y��C�H�ۮɶ����e�i�A�q�l����q���A�A��1940�~�Ĥ@���P�b�q�l�]coaxial cable�^�����A�СA�o�ǳq�T�t�Ϊ������׻P��ӫפ]���_���i�B�C���O�o�ǳq�T�覡�U���䷥���A�ϥιq��T���ǻ���T���M�ֳt�A���O�ǿ�Z���|�]���q��T���e���I��ӻݭn�j�q�����~���]repeater�^�F�L�i�]microwave�^�q�T���M�i�H�ϥΪŮ𰵤���A�i�O�]�|������i�W�v�]carrier frequency�^������C��F�G�Q�@�������A�H�̤~�F�ѨϥΥ��Ӷǻ���T�A��a�ӫܦh�L�h�ҨS������ۦn�B�C<br>  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �@�M�ӡA���ɨèS���P�թʰ����o�����]coherent light source�^�A�]�S���A�X�@���ǻ����T��������A�]�ҥH���q�T�@���u�O�����C����1960�~�N�A�p�g�]laser�^���o���~�ѨM�F�Ĥ@�����D�C1970�~�N�d�礽�q�]Corning Glass Works�^�o�i�X���~��C�I����֫h�O�ѨM�F�ĤG�����D�A���ɰT���b���֤��ǻ����I��q�Ĥ@���C����ֳq�T�������C�Ҵ��X���C�����I��20�����]20dB/km�^���d�A�ҩ��F���֧@���q�H���誺�i��ʡC�P���P�ɨϥί~���S�]GaAs�^�@�����ƪ��b����p�g�]semiconductor laser�^�]�Q�o���X�ӡA�åB���ǵ���n�p���u�զӤj�q�B�Ω���ֳq�T�t�Τ��C1976�~�A�Ĥ@���t�v��44.7Mbit/s�����ֳq�H�t�Φb����ȯS���j���a�U�޹D���ϥ͡C<br>  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �@�g�L�F���~����o���A�Ĥ@�ӰӥΪ����ֳq�T�t�Φb1980�~�ݥ��C�o�ӤH���v�W�Ĥ@�ӥ��ֳq�T�t�ΨϥΪi��800�`�̡]nanometer�^���~���S�p�g�@�������A�ǿ骺�t�v�]data rate�^�F��45Mb/s�]bits per second�^�A�C10�����ݭn�@�Ӥ��~���W�j�T���C<br>  
-      &nbsp;&nbsp;&nbsp; �@�@�ĤG�N���ӥΥ��ֳq�T�t�Τ]�b1980�~�N����N�o�i�X�ӡA�ϥΪi��1300�`�̪��C�~���S䡡]InGaAsP�^�p�g�C���������ֳq�T�t�����M����ⴲ�]dispersion�^�����D�Ӽv�T�F�T���~��A���O1981�~��ҥ��֡]single-mode fiber�^���o���J�A�F�o�Ӱ��D�C��F1987�~�ɡA�@�ӰӥΥ��ֳq�T�t�Ϊ��ǿ�t�v�w�g���F1.7Gb/s�A��Ĥ@�ӥ��ֳq�T�t�Ϊ��t�v�֤F�N��|�Q�����СC�P�ɶǿ骺�\�v�P�T���I����D�]����ۧﵽ�A���j50�����~�ݭn�@�Ӥ��~���W�j�T���C1980�~�N���AEDFA���ϥ͡A���٥��q�H���v�W���@�Ӹ̵{�O�����ƥ�A���ϥ��ֳq�H�i�����i������~�A�Ϫ��Z�����t�ǿ馨���i��A�ëP�ϤFDWDM���ϥ͡C<br>  
-      &nbsp;&nbsp;&nbsp;&nbsp; �@�@�ĤT�N�����ֳq�T�t�Χ�Ϊi��1550�`�̪��p�g�������A�ӥB�T�����I��w�g�C�ܨC����0.2�����]0.2dB/km�^�C���e�ϥ��C�~���S䡹p�g�����ֳq�T�t�α`�`�D�J��ߪi�����]pulse spreading�^���D�A�Ӭ�Ǯa�h�]�p�X�ⴲ�E�����֡]dispersion-shifted fiber�^�ӸѨM�o�ǰ��D�A�o�إ��֦b�ǻ�1550�`�̪����i�ɡA�ⴲ�X�G���s�A�]��i�N�p�g�������Э���b��@�a�ҡ]longitudinal mode�^�C�o�ǧ޳N�W����}�ϱo�ĤT�N���ֳq�T�t�Ϊ��ǿ�t�v�F��2.5Gb/s�A�ӥB���~�������j�i�F��100�������C<br>  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �@�@�ĥ|�N���ֳq�T�t�Τ޶i�F����j���]optical amplifier�^�A�i�@�B��֤��~�����ݨD�C�t�~�A�i�����i�h�u�]wavelength-division multiplexing, WDM�^�޳N�h�j�T�W�[�ǿ�t�v�C�o�ⶵ�޳N���o�i�����ֳq�T�t�Ϊ��e�q�H�C���Ӥ�W�[�@�����覡�j�T�D�i�A��F2001�~�ɤw�g��F10Tb/s����H�t�v�A�����O80�~�N���ֳq�T�t�Ϊ�200�����h�C��~�ӡA�ǿ�t�v�w�g�i�@�B�W�[��14Tb/s�A�C�j160�����~�ݭn�@�Ӥ��~���C<br>  
-      �@�@�@�Ĥ��N���ֳq�T�t�εo�i�����ߦb���X�i�i�����i�h�u�����i���ާ@�d��C�ǲΪ��i���d��A�]�N�O�@��U�٪��uC band�v���O1530�`�̦�1570�`�̤����A�s�@�a���L�����֡]dry fiber�^�C�l�Ӫ��i�q�h������1300�`�̦�1650�`�̶��C�t�~�@�ӵo�i�����޳N�O�޶i���T�l�]optical soliton�^�������A�Q�Υ��֪��D�u�ʮ����A���ߪi�����ܦⴲ�Ӻ����쥻���i�ΡC<br>  
-      &nbsp;&nbsp;&nbsp;&nbsp; 1990�~��2000�~���A���ֳq�T���~������ں����w�j���v�T�Ӥj�T�����C���~�@�Ƿs�����������ΡA�p�H����T�]video on demand�^�ϱo���ں����W�e�������ƦܶW�L�����w�ߡ]Moore's Law�^�ҹw���n��q���������q����W�[���t�v�C�Ӧۺ��ں����w�j�}����2006�~����A���ֳq�T���~�z�L���~��֧��j�W�ҡA�H�Ωe�~�Ͳ����覡���C�����ө���ͩR�C</font>  
+      <font size="2">自古以來，人類對於長距離通訊的需求就不曾稍減。隨著時間的前進，從烽火到電報，再到1940年第一條同軸電纜（coaxial cable）正式服役，這些通訊系統的複雜度與精細度也不斷的進步。但是這些通訊方式各有其極限，使用電氣訊號傳遞資訊雖然快速，但是傳輸距離會因為電氣訊號容易衰減而需要大量的中繼器（repeater）；微波（microwave）通訊雖然可以使用空氣做介質，可是也會受到載波頻率（carrier frequency）的限制。到了二十世紀中葉，人們才了解使用光來傳遞資訊，能帶來很多過去所沒有的顯著好處。<br>  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　然而，當時並沒有同調性高的發光源（coherent light source），也沒有適合作為傳遞光訊號的介質，也所以光通訊一直只是概念。直到1960年代，雷射（laser）的發明才解決了第一項難題。1970年代康寧公司（Corning Glass Works）發展出高品質低衰減的光纖則是解決了第二項問題，此時訊號在光纖中傳遞的衰減量第一次低於光纖通訊之父高錕所提出的每公里衰減20分貝（20dB/km）關卡，證明了光纖作為通信介質的可能性。與此同時使用砷化鎵（GaAs）作為材料的半導體雷射（semiconductor laser）也被發明出來，並且憑藉著體積小的優勢而大量運用於光纖通訊系統中。1976年，第一條速率為44.7Mbit/s的光纖通信系統在美國亞特蘭大的地下管道中誕生。<br>  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　經過了五年的研發期，第一個商用的光纖通訊系統在1980年問市。這個人類史上第一個光纖通訊系統使用波長800奈米（nanometer）的砷化鎵雷射作為光源，傳輸的速率（data rate）達到45Mb/s（bits per second），每10公里需要一個中繼器增強訊號。<br>  
+      &nbsp;&nbsp;&nbsp; 　　第二代的商用光纖通訊系統也在1980年代初期就發展出來，使用波長1300奈米的磷砷化鎵銦（InGaAsP）雷射。早期的光纖通訊系統雖然受到色散（dispersion）的問題而影響了訊號品質，但是1981年單模光纖（single-mode fiber）的發明克服了這個問題。到了1987年時，一個商用光纖通訊系統的傳輸速率已經高達1.7Gb/s，比第一個光纖通訊系統的速率快了將近四十倍之譜。同時傳輸的功率與訊號衰減的問題也有顯著改善，間隔50公里才需要一個中繼器增強訊號。1980年代末，EDFA的誕生，堪稱光通信歷史上的一個裡程碑似的事件，它使光纖通信可直接進行光中繼，使長距離高速傳輸成為可能，並促使了DWDM的誕生。<br>  
+      &nbsp;&nbsp;&nbsp;&nbsp; 　　第三代的光纖通訊系統改用波長1550奈米的雷射做光源，而且訊號的衰減已經低至每公里0.2分貝（0.2dB/km）。之前使用磷砷化鎵銦雷射的光纖通訊系統常常遭遇到脈波延散（pulse spreading）問題，而科學家則設計出色散遷移光纖（dispersion-shifted fiber）來解決這些問題，這種光纖在傳遞1550奈米的光波時，色散幾乎為零，因其可將雷射光的光譜限制在單一縱模（longitudinal mode）。這些技術上的突破使得第三代光纖通訊系統的傳輸速率達到2.5Gb/s，而且中繼器的間隔可達到100公里遠。<br>  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 　　第四代光纖通訊系統引進了光放大器（optical amplifier），進一步減少中繼器的需求。另外，波長分波多工（wavelength-division multiplexing, WDM）技術則大幅增加傳輸速率。這兩項技術的發展讓光纖通訊系統的容量以每六個月增加一倍的方式大幅躍進，到了2001年時已經到達10Tb/s的驚人速率，足足是80年代光纖通訊系統的200倍之多。近年來，傳輸速率已經進一步增加到14Tb/s，每隔160公里才需要一個中繼器。<br>  
+      　　　第五代光纖通訊系統發展的重心在於擴展波長分波多工器的波長操作範圍。傳統的波長範圍，也就是一般俗稱的「C band」約是1530奈米至1570奈米之間，新一帶的無水光纖（dry fiber）低損耗的波段則延伸到1300奈米至1650奈米間。另外一個發展中的技術是引進光固子（optical soliton）的概念，利用光纖的非線性效應，讓脈波能夠抵抗色散而維持原本的波形。<br>  
+      &nbsp;&nbsp;&nbsp;&nbsp; 1990年至2000年間，光纖通訊產業受到網際網路泡沫的影響而大幅成長。此外一些新興的網路應用，如隨選視訊（video on demand）使得網際網路頻寬的成長甚至超過摩爾定律（Moore's Law）所預期積體電路晶片中電晶體增加的速率。而自網際網路泡沫破滅至2006年為止，光纖通訊產業透過企業整併壯大規模，以及委外生產的方式降低成本來延續生命。</font>  
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="24%" height="13">
-      <p align="center"><img border="0" src="htmphoto/���ֳq�T�����v.jpg" width="216" height="162"></td>
+      <p align="center"><img border="0" src="htmphoto/光纖通訊的歷史.jpg" width="216" height="162"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="17" bgcolor="#00FFFF">
-      <p align="center"><a name="���ֳq�T����z">���ֳq�T����z</a></td>
+      <p align="center"><a name="光纖通訊的原理">光纖通訊的原理</a></td>
   </tr>
   <tr>
     <td width="76%" height="98">
       <p align="left">
-      <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ���ڭ̥εL�u�q�ǰe��T�ɡA�������Ʀ��@�t�C���q�T���A�ѵo�g���ഫ�����u�L�u�q�T���]Radio Signal�^�v�A�ӱ���������o�ǰT����A�A�N���ഫ���q�T���A����A�ѽX�ഫ���ڭ̻ݭn����T�C�P�z�A���]�i�H�ǵ۰{�{�����A�p�T���{���O���}�����Ӳ��ͤ@�t�C���ϧΡA�ڭ̺٤����u���T���v�C����q����j���ǿ��T��O�A�]�N�O�����i�H�_������u���߽ġA�]���b�ۦP���ɶ��إi�Φ��󰪱K�ץB��T�״I���ϧΡC�b�o�سt�v�U�A�ǵۦX�ֹϧγ椸�����@�ӭӪ��u��n�]Stack�^�v�A�N�i�b�P�@���ֺ����A�P�ɶǰe�ܦh���P����T�C�N�p�P�T���q��y�D�i�J���t�����@�ˡA���|����䥦�T���C�o�]�N�O����u���֡v��P�ɮe�ǫܦh��T�b�䤤�ǿ骺��]�C</font><p align="right">
+      <font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 當我們用無線電傳送資訊時，必須先化成一系列的電訊號，由發射站轉換成為「無線電訊號（Radio Signal）」，而接收站接到這些訊號後，再將其轉換成電訊號，之後再解碼轉換成我們需要的資訊。同理，光也可以藉著閃爍光源，如訊號閃光燈的開或關而產生一系列的圖形，我們稱之為「光訊號」。光比電有更大的傳輸資訊能力，也就是說光可以斷成為更短的脈衝，因此在相同的時間裏可形成更高密度且資訊豐富的圖形。在這種速率下，藉著合併圖形單元成為一個個的「堆積（Stack）」，就可在同一條纖維中，同時傳送很多不同的資訊。就如同汽車從交流道進入高速公路一樣，不會撞到其它汽車。這也就是為何「光纖」能同時容納很多資訊在其中傳輸的原因。</font><p align="right">
       <font size="2"><a href="#TOP">T</a></font><a href="#TOP">OP</a></td>
     <td width="24%" height="98">
-      <p align="center"><img border="0" src="htmphoto/���ֳq�T����z.jpg" width="187" height="255"></td>
+      <p align="center"><img border="0" src="htmphoto/光纖通訊的原理.jpg" width="187" height="255"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#00FFFF">
-      <p align="center"><a name="���ֳq�T�޳N�o�i�Ͷ�">���ֳq�T�޳N�o�i�Ͷ�</a></td>
+      <p align="center"><a name="光纖通訊技術發展趨勢">光纖通訊技術發展趨勢</a></td>
   </tr>
   <tr>
-    <td width="76%" height="98">�@&nbsp; <font size="2">�q�H�������o�i�A�ѹ���h���ǿ�޳N�Ӭݥi�H�������T�Ӷ��q�G�Ĥ@���q�D�Q�λɾɽu�ηL�i�����ǿ骺����A�Ҧp�A�Ӻ����νìP����F�ĤG���q���֨��N�F�o�ǻɾɽu�ηL�i����A�i��T���ǿ骺���ȡA���O�T����j�B�洫�B���(Add-drop)���B�z���ݱN���T���ഫ���q�T������~��i��A�Ҧp�b�q�H�������s�x�a�ΥH�s�������F�u��SDH/SONET�K�O�F��F�ĤT���q�A�i�����q�h�u(Wavelength Division 
-      Multiplex;WDM)�޳N�Q�}�o�X�ӡA�b�J�����֤W�P�ɶǰe���u���P���h�Ӫi���T���A�ӥB�Ҧ����T���ǿ�γB�z���H���i�Φ��B�z�A�����j��״����F�������e�q�A�]���C�F���ֳq�T�����������C�H�ۧ޳N���o�i�AWDM�޳N���[���ɡA�õo�i�X�i�����j�p��1nm��DWDM�޳N�A��}�F���ֳq�T�޳N�~�V�A�ӫP�������Χֳt�o�i�����n�޳N������j���B�i�չp�g���B�i���ഫ�Υ��汵���C<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �b���Τ譱�A�۱q�@�E�C���~�N�ۭ^�t���ֵo�i���\�A�]��㦳�e�W�a�B�C�ǿ�l�ӡB�������z�Z���S�ʡA�[�W���q����޳N��q�����γq�T�޳N���k�o�i�A���ֳq�T�t�Ϊ����εo�i�󬰧ֳt�A�ǿ�t�v�U�֡B�Z���U���B�e�q�U�j�B���λP�A�Ȼ��U�s�C<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ���ֳq�T�t�Ϊ��o�i����ۭ��b���~���t���ַF�u�ǿ�A�l�D�ǿ�t�v�����ɤζǰe�Z�����W���A�H�K�঳�����Φ��������~���ַF�u�A�H���ѧ�n���q�T�A�ȫ~��C���۬��ѨM���Ϥ�q�W�[�����~�u���ݨD�H�����ܰȮe�q�A�ƶq����n�e�j���������~�u���]�v���H���֨Ө��N�C�H�۰ӷ~�ݨD���W�[�A���֨����(FTTC)�B���֨�j��(FTTB) �Υ��֨�줽��(FTTO)�A�Ʀܥ��֨�a(FTTH)���ݨD�o�i�]���B�ӥ͡A�H���Ѥj�e�q�B�e�W���q�T�A�ȡC�Ӧ��H�ۺ��ں����θ�T��ު����k�o�i�A�H�̹�󰪳t�ƾڡB���T�B�h�C�骺�q�T�A�ȻݨD���������A�]�����ֳq�T���o�i�w�������M���ͶաC<br>
+    <td width="76%" height="98">　&nbsp; <font size="2">電信網路的發展，由實體層的傳輸技術來看可以劃分為三個階段：第一階段乃利用銅導線或微波做為傳輸的介質，例如乙太網路或衛星鏈路；第二階段光纖取代了這些銅導線或微波鏈路，進行訊號傳輸的任務，但是訊號放大、交換、塞取(Add-drop)等處理仍需將光訊號轉換為電訊號之後才能進行，例如在電信網路中廣泛地用以連接局間幹線的SDH/SONET便是；到了第三階段，波長分段多工(Wavelength Division 
+      Multiplex;WDM)技術被開發出來，在既有光纖上同時傳送長短不同的多個波長訊號，而且所有的訊號傳輸及處理均以光波形式處理，不但大輻度提高了網路的容量，也降低了光纖通訊網路的成本。隨著技術的發展，WDM技術亦更加提升，並發展出波長間隔小於1nm的DWDM技術，突破了光纖通訊技術瓶頸，而促成其應用快速發展的重要技術有光放大器、可調雷射源、波長轉換及光交接等。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在應用方面，自從一九七○年代石英系光纖發展成功，因其具有寬頻帶、低傳輸損耗、不易受干擾等特性，加上光電元件技術日益成熟及通訊技術蓬勃發展，光纖通訊系統的應用發展更為快速，傳輸速率愈快、距離愈遠、容量愈大、應用與服務領域愈廣。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 光纖通訊系統的發展初期著重在長途高速光纖幹線傳輸，追求傳輸速率的提升及傳送距離的增長，以便能有效應用有限的長途光纖幹線，以提供更好的通訊服務品質。接著為解決市區日益增加的中繼線路需求以提高話務容量，數量及體積龐大的局間中繼線路也逐漸以光纖來取代。隨著商業需求的增加，光纖到路邊(FTTC)、光纖到大樓(FTTB) 及光纖到辦公室(FTTO)，甚至光纖到家(FTTH)的需求發展也應運而生，以提供大容量且寬頻的通訊服務。而伴隨著網際網路及資訊科技的蓬勃發展，人們對於高速數據、視訊、多媒體的通訊服務需求極為迫切，因此光纖通訊的發展已成為必然的趨勢。<br>
       </font>
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="24%" height="98">
-      <p align="center"><img border="0" src="htmphoto/�o�i�Ͷ�.jpg" width="217" height="296"></td>
+      <p align="center"><img border="0" src="htmphoto/發展趨勢.jpg" width="217" height="296"></td>
   </tr>
 </table>
 

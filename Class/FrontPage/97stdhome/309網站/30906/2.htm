@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����2</title>
+<title>新網頁2</title>
 <script language="JavaScript" fptype="dynamicoutline">
 <!--
 function dynOutline() {}
@@ -73,16 +73,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ���~�C�뤧��� */
+ /* 西曆年每月之日數 */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ���~�C�뤧�ֿn���, ���~�P�|�~ */
+ /* 西曆年每月之累積日數, 平年與閏年 */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["�� ", "�� ", "�U ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�� ", "�s ", "�D " ];
- LocationIdx = [ "�n", "�F", "�_", "��" ];
+ AnimalIdx = ["馬 ", "羊 ", "猴 ", "雞 ", "狗 ", "豬 ", "鼠 ", "牛 ", "虎 ", "兔 ", "龍 ", "蛇 " ];
+ LocationIdx = [ "南", "東", "北", "西" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -146,16 +146,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>�i���� �褸 " + SolarYear + "�~" + SolarMonth + "��" + SolarDate + "�� -- " );
-       document.write( "�A�� " + LunarMonth + "�� " + LunarDate + "�� -- " );
+ document.write( "<font size=2 color='ff00ff'>【今天 西元 " + SolarYear + "年" + SolarMonth + "月" + SolarDate + "日 -- " );
+       document.write( "農曆 " + LunarMonth + "月 " + LunarDate + "日 -- " );
 
-       document.write( "��" + Location + " -- �R" + Animal + Age + " ���j</font>" );                
+       document.write( "煞" + Location + " -- 沖" + Animal + Age + " 歲】</font>" );                
                 
  
  return 0;
  }
 
- /* �D�����~�O�_���|�~, ��^ 0 �����~, 1 ���|�~ */
+ /* 求此西曆年是否為閏年, 返回 0 為平年, 1 為閏年 */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -169,11 +169,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ���� 1 �� 1 ���A�䥿���@���ֿn��� */
- this.Intercalation = i;    /* �|����. 0==���~�S���|�� */
- this.BaseWeekday = w;      /* ���~��� 1 �� 1 �鬰�P���X�A�� 1 */
- this.BaseKanChih = k;      /* ���~��� 1 �� 1 �餧�z��Ǹ��� 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ���A��~�C�뤧�j�p, 0==�p��(29��), 1==�j��(30��) */
+ this.BaseDays = d;         /* 到西曆 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年西曆 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年西曆 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
 }
 
 //-->
@@ -184,7 +184,7 @@ CalConv();
 function OpenWin( url ) { 
  return window.open( url, 'coop', 'width=320,height=350,toolbar=0,location=0,directories=0,status=0,menuBar=0,scrollBars=0,resizable=1' ); 
 } 
-//--></script> �@</p>
+//--></script> 　</p>
 
 <table border="0" width="100%" height="47">
   <tr>
@@ -193,27 +193,27 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD21295_.GIF" width="15" height="13" hspace="13"></td>
-          <td valign="top" width="100%"><font face="�з���" size="4"><b>�o�{�G��</b></font>
+          <td valign="top" width="100%"><font face="標楷體" size="4"><b>發現液晶</b></font>
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><font face="�رd�����"><b>�S�ʴy�z</b></font><!--msimagelist--></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>特性描述</b></font><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><font face="�رd�����"><b>�G������</b></font><!--msimagelist--></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>液晶分類</b></font><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><font face="�رd�����"><b>�G�����γ~</b></font><!--msimagelist--></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>液晶的用途</b></font><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><font face="�رd�����"><b>�ͪ��t�Ϊ��G��</b></font><!--msimagelist--></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>生物系統的液晶</b></font><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/BD14581_1.GIF" width="12" height="12" hspace="15"></td>
-                <td valign="top" width="100%"><font face="�رd�����"><b>���β��~</b></font><!--msimagelist--></td>
+                <td valign="top" width="100%"><font face="華康行書體"><b>應用產品</b></font><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -225,68 +225,68 @@ function OpenWin( url ) {
 <table border="2" width="100%" height="271">
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#B48DF3">
-      <p align="center">�S�ʴy�z</td>
+      <p align="center">特性描述</td>
   </tr>
   <tr>
-    <td width="74%" height="32"><b><i><font face="�رd�����" size="3">&nbsp;&nbsp;&nbsp;  
-      </font></i></b><font size="3" face="�s�ө���">�G���]Liquid Crystal�A²��LC�^�O�ۺA���@�ءA�]���㦳�S�����z�ƻP���q�S�ʡA20�@�������}�l�Q�s�x���Φb����������ܧ޳N�W�C�H�̼��x�����説�A�]�S�٬ۡ^����B�G�B�T�A�����Ͳ����O�q�ߩM�G���C�G���ۭn�㦳�S���Ϊ����l�զX�l�|���͡A���̥i�H�y�ʡA�S�֦����������ǩʽ�C�G�����w�q�A�{�b�H��e���n�A�F�b�Y�@�ū׽d��i�H�O�{�G���ۡA�b���C�ū׬����`����������C�ӲG�����զ�����O�@�ئ����ƦX���A�]�N�O�H�Ҭ����ߩҺc�����ƦX���C �P�ɨ㦳��ت��誺�G���A�O�H���l���O�q�զX���A���̪��S�����ǩʽ�A�S��q�ϳ��ӷP�A������λ��ȡC</font>  
-      <p align="right"><font face="�з���"><a href="#TOP">TOP</a></font></td>
+    <td width="74%" height="32"><b><i><font face="華康行書體" size="3">&nbsp;&nbsp;&nbsp;  
+      </font></i></b><font size="3" face="新細明體">液晶（Liquid Crystal，簡稱LC）是相態的一種，因為具有特殊的理化與光電特性，20世紀中葉開始被廣泛應用在輕薄型的顯示技術上。人們熟悉的物質狀態（又稱相）為氣、液、固，較為生疏的是電漿和液晶。液晶相要具有特殊形狀分子組合始會產生，它們可以流動，又擁有結晶的光學性質。液晶的定義，現在以放寬而囊括了在某一溫度範圍可以是現液晶相，在較低溫度為正常結晶之物質。而液晶的組成物質是一種有機化合物，也就是以碳為中心所構成的化合物。 同時具有兩種物質的液晶，是以分子間力量組合的，它們的特殊光學性質，又對電磁場敏感，極有實用價值。</font>  
+      <p align="right"><font face="標楷體"><a href="#TOP">TOP</a></font></td>
     <td width="26%" height="32">
-      <p align="center"><img border="0" src="photo/�ͪ��t�Ϊ��G��2.jpg" width="205" height="137"></td>
+      <p align="center"><img border="0" src="photo/生物系統的液晶2.jpg" width="205" height="137"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#F1C8FF">
-      <p align="center">�G������</td>
+      <p align="center">液晶分類</td>
   </tr>
   <tr>
-    <td width="74%" height="20"><b>�G��������</b><br>
-      &nbsp;&nbsp;&nbsp;&nbsp; �V�C�ۡ]nematic�^&nbsp;<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp; �񴹬ۡ]smectic�^&nbsp;<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp; �x�r�ۡ]cholesteric�^&nbsp;<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp; �Ы��]discotic�^&nbsp;<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp; ���P�G���]thermotropic LC�^&nbsp;<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp; ���{�ʲG���]recentrant LC�^&nbsp;<br> 
-      <font size="2" face="�з���">1922�~�A�k��H�����w�]G. Friedel�^�J�Ӥ��R���ɤw�����G���A��L�̤����T���G�V�C���]nematic�^�B�h�C���]smectic�^�B�x�T�J���]cholesteric�^�C�W�r���ӷ��A�e��̤��O���ۧ�þ��u���M�M�侯�]�Ψm�^�F�x�T�J�����W�r�����v�N�q�A�p�H��N�����k�A�����ݩ��V�C���C��ꥱ���w��G���@�����٦P�A�L�{���u�����ۡv�~�O�̦X�A�����F�C1970�~�N�~�o�{���Ы��]discotic�^�G���A�O�㦳����٩ʭ쪬���l���|�զ����V�C���άW��t�ΡC���F���A�����~�A�G���]���ͤ�����]���p�^���P�ӳQ�������P�G���]thermotropic LC�^�M���P�G���]lypotropic LC�^�A���O�ѥ[���B�[�J�����Φ��G�����ۭP�G���۲��ͨ�ر��ΡC���P�ʲG���ͦ����Ҥl�A�O�Ψm���C�b���@�׮ɡA�Ψm���l�e�h�C�ʡA�h���O�����l�C�@�׵y�C�A�զX�S���P�C���@�ت���i�H�㦳�h�زG���ۡC�S���H�o�{�A���زG���V�X���[���A�o�쵥�V�ʲG���A�N�o�A�i�H�[��즸�Ĭ��V�C���B�h�C���G���C�o�ج��ܤƪ�����A�٬����{�ʲG���]recentrant LC�^�C �G�����l���c�Cí�w�G���۬O���l�����Z�o�ˤO�C�]���l�����K�װ��A���O���V�ʼv�T���j�A���l�ޤO�h�O�������K�סA�϶���F��G�����A���O�q�Ať�O�M�l�ޤO�ۤ���ŤQ�����n�C�S�p���l�����ʰ�ήɡA�����ۤ��@�Φ������n�l�ޤO�C</font>  
-      <p align="right"><font face="�з���"><a href="#TOP">TOP</a></font></td>
+    <td width="74%" height="20"><b>液晶的分類</b><br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 向列相（nematic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 近晶相（smectic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 膽甾相（cholesteric）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 碟型（discotic）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 熱致液晶（thermotropic LC）&nbsp;<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp; 重現性液晶（recentrant LC）&nbsp;<br> 
+      <font size="2" face="標楷體">1922年，法國人弗里德（G. Friedel）仔細分析當時已知的液晶，把他們分為三類：向列型（nematic）、層列型（smectic）、膽固醇型（cholesteric）。名字的來源，前兩者分別取自希臘文線狀和清潔劑（肥皂）；膽固醇型的名字有歷史意義，如以近代分類法，它們屬於手向列型。其實弗里德對液晶一詞不贊同，他認為「中間相」才是最合適的表達。1970年代才發現的碟型（discotic）液晶，是具有高對稱性原狀分子重疊組成之向列型或柱行系統。除了型態分類外，液晶因產生之條件（狀況）不同而被分為熱致液晶（thermotropic LC）和溶致液晶（lypotropic LC），分別由加熱、加入溶劑形成液晶熱相致液晶相產生兩種情形。溶致性液晶生成的例子，是肥皂水。在高濃度時，肥皂分子呈層列性，層間是水分子。濃度稍低，組合又不同。其實一種物質可以具有多種液晶相。又有人發現，把兩種液晶混合物加熱，得到等向性液體後再冷卻，可以觀察到次第為向列型、層列型液晶。這種相變化的物質，稱為重現性液晶（recentrant LC）。 液晶分子結構。穩定液晶相是分子間的凡得瓦力。因分子集結密度高，斥力異向性影響較大，但吸引力則是維持高密度，使集體達到液晶狀態之力量，聽力和吸引力相互制衡十分重要。又如分子有極性基團時，偶極相互作用成為重要吸引力。</font>  
+      <p align="right"><font face="標楷體"><a href="#TOP">TOP</a></font></td>
     <td width="26%" height="20">
-      <p align="center"><img border="0" src="photo/�V�C���G��1.jpg" width="178" height="137"></p>
-      <p align="center">�@</p>
-      <p align="center">�@</p>
-      <p align="center"><img border="0" src="photo/�V�C���G��2.jpg" width="183" height="121"></td>
+      <p align="center"><img border="0" src="photo/向列型液晶1.jpg" width="178" height="137"></p>
+      <p align="center">　</p>
+      <p align="center">　</p>
+      <p align="center"><img border="0" src="photo/向列型液晶2.jpg" width="183" height="121"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#FFFF80">
-      <p align="center">�G�����γ~</td>
+      <p align="center">液晶的用途</td>
   </tr>
   <tr>
-    <td width="74%" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �G�����l���ƦC�A��G���@�O�e�{����ܩʪ������g�C�]�ƦC�i�H���~�O�v�T�A�G�����ƻs�y�����O�ܤj�C�d����������O��������ʦV�C���G���A�g�L�@�w����B�z�A�N�i�Φ����P�����z�C<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ���T�J���G���A�]���۵��c�ӹ������ܩʤϮg�A�Q�Υե������갾���A��²�檺�O�ھ��ܦ��z�s�����ū׭p�]�������`�ݨ쪺�ū׭p�^�C�b�����W�A�ֽ����M�����������]�i�b�i�ó����W���T�J�G���A�M��P���`�ֽ������]�]�����ӭM�N�³t�פ�@��ӭM�֡A�ҥH�ū׷|��@��ӭM���ǡ^�C<br> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; �q���P�ϳ���G�������j���v�T�O�A�V�C���G���۪����q�ʦ欰�O�U�����q���Ϊ���¦�]�βG�����ƻs�y�H�~�[�q���ާ@����ܾ��A�b1970�~�N�H��o�i�ܧ֡C�]�����̦��p�e�n�B�L�q�ӹq�B�C�ާ@�q���B���]�p�h�⭱�����h���u�I�C���L�]�����̤��O�o������ܾ��A�b�t�B���M���סB�����M���ҷū׭���A�����z�Q�C�L�צp��A�q���M�q�����̹��H�G������s�y�A�Q�����Q�C�j���̹��b�H������󰪹q�����ݨD�A����������n�P���q���i����C���A�m���v�q���t�ΡA��i�Q�Τ�ʦV�C���G���h�s�y�p���������B�o���B���q�վ㾹�C 
+    <td width="74%" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 液晶分子的排列，後果之一是呈現有選擇性的光散射。因排列可以受外力影響，液晶材料製造器件潛力很大。範圍於兩片玻璃板之間的手性向列型液晶，經過一定手續處理，就可形成不同的紋理。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 類固醇型液晶，因螺旋結構而對光有選擇性反射，利用白光中的圓偏光，最簡單的是根據變色原理製成的溫度計（魚缸中常看到的溫度計）。在醫療上，皮膚癌和乳癌之偵測也可在可疑部位塗上類固醇液晶，然後與正常皮膚顯色比對（因為癌細胞代謝速度比一般細胞快，所以溫度會比一般細胞高些）。<br> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 電場與磁場對液晶有巨大的影響力，向列型液晶相的介電性行為是各類光電應用的基礎（用液晶材料製造以外加電場操作之顯示器，在1970年代以後發展很快。因為它們有小容積、微量耗電、低操作電壓、易設計多色面版等多項優點。不過因為它們不是發光型顯示器，在暗處的清晰度、視角和環境溫度限制，都不理想。無論如何，電視和電腦的屏幕以液晶材質製造，十分有利。大型屏幕在以往受制於高電壓的需求，變壓器的體積與重量不可言喻。其實，彩色投影電視系統，亦可利用手性向列型液晶去製造如偏光面版、濾片、光電調整器。 
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="26%" height="20">
-      <p align="center"><img border="0" src="images/�G����ܾ�.jpg" width="219" height="196"></td>
+      <p align="center"><img border="0" src="images/液晶顯示器.jpg" width="219" height="196"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="19" bgcolor="#62FF62">
-      <p align="center">�ͪ��t�Ϊ��G��</td>
+      <p align="center">生物系統的液晶</td>
   </tr>
   <tr>
     <td width="74%" height="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-      �G���b�ͪ��骺���n�ʡA��b���H���p�C�G�������T�J�B�ת������ƦX�����G���s�A�ӭM������S���o�Ǧ����A�ӲӭM�����]����㦳�G���ʪ����c�C
+      液晶在生物體的重要性，實在難以估計。液晶性類固醇、脂肪類的化合物分佈極廣，細胞膜不能沒有這些成分，而細胞分裂也有賴具有液晶性的結構。
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="26%" height="20">
-      <p align="center"><img border="0" src="photo/�ͪ��t�Ϊ��G��.jpg" width="145" height="108"></td>
+      <p align="center"><img border="0" src="photo/生物系統的液晶.jpg" width="145" height="108"></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" height="20" bgcolor="#80C5F2">
-      <p align="center">���β��~</td>
+      <p align="center">應用產品</td>
   </tr>
   <tr>
-    <td width="74%" height="20">�G����ܾ�&nbsp;<br>
-      �����q����G����ܾ� 
+    <td width="74%" height="20">液晶顯示器&nbsp;<br>
+      薄膜電晶體液晶顯示器 
       <p align="right"><a href="#TOP">TOP</a></td>
     <td width="26%" height="20">
-      <p align="center"><img border="0" src="photo/�G���q��.jpg" width="134" height="99"></td>
+      <p align="center"><img border="0" src="photo/液晶電視.jpg" width="134" height="99"></td>
   </tr>
 </table>
 <script language="JavaScript">

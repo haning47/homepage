@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 6.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <title>31231</title>
@@ -54,17 +54,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
 document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
-var dayNames = new Array("¬P´Á¤é","¬P´Á¤@","¬P´Á¤G","¬P´Á¤T","¬P´Á¥|","¬P´Á¤­","¬P´Á¤»");
-var monthNames = new Array("1¤ë","2¤ë","3¤ë","4¤ë","5¤ë","6¤ë","7¤ë","8¤ë","9¤ë","10¤ë","11¤ë","12¤ë");
+var dayNames = new Array("æ˜ŸæœŸæ—¥","æ˜ŸæœŸä¸€","æ˜ŸæœŸäºŒ","æ˜ŸæœŸä¸‰","æ˜ŸæœŸå››","æ˜ŸæœŸäº”","æ˜ŸæœŸå…­");
+var monthNames = new Array("1æœˆ","2æœˆ","3æœˆ","4æœˆ","5æœˆ","6æœˆ","7æœˆ","8æœˆ","9æœˆ","10æœˆ","11æœˆ","12æœˆ");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#330099>" , "¦è¤¸" , " " , now.getYear() + some , "¦~" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "¤é" , " " , dayNames[now.getDay()] , "</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¤é</FONT></TH>');
-document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">¤@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¤G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¤T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¥|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¤­</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">¤»</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#330099>" , "è¥¿å…ƒ" , " " , now.getYear() + some , "å¹´" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "æ—¥" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">æ—¥</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">ä¸€</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">äºŒ</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">ä¸‰</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">å››</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">äº”</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">å…­</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -91,7 +91,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>²{¦b®É¶¡¡G  </FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>ç¾åœ¨æ™‚é–“ï¼š  </FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -109,23 +109,23 @@ var minutes = now.getMinutes()
 var seconds = now.getSeconds()
 var timeValue = ""
 if(hours>=1 && hours <4)
-{timeValue += ("­â±á")}
+{timeValue += ("å‡Œæ™¨")}
 if(hours>=4 && hours<6)
-{timeValue += ("²M±á")}
+{timeValue += ("æ¸…æ™¨")}
 if(hours>=6 && hours<9)
-{timeValue += ("¦­¤W")}
+{timeValue += ("æ—©ä¸Š")}
 if(hours>=9 && hours<12)
-{timeValue += ("¤W¤È")}
+{timeValue += ("ä¸Šåˆ")}
 if(hours>=12 && hours<13)
-{timeValue += ("¤¤¤È")}
+{timeValue += ("ä¸­åˆ")}
 if(hours>=13 && hours<18)
-{timeValue += ("¤U¤È")}
+{timeValue += ("ä¸‹åˆ")}
 if(hours>=18 && hours <19)
-{timeValue += ("³Ä±ß")}
+{timeValue += ("å‚æ™š")}
 if(hours>=19 && hours <24)
-{timeValue += ("±ß¤W")}
+{timeValue += ("æ™šä¸Š")}
 if(hours<1)
-{timeValue += ("¤È©]")}
+{timeValue += ("åˆå¤œ")}
 timeValue  += ((hours > 12) ? hours - 12 : hours)
 timeValue  += ((minutes < 10) ? ":0" : ":") + minutes
 timeValue  += ((seconds < 10) ? ":0" : ":") + seconds
@@ -290,7 +290,7 @@ animateLogo();
 <img border="0" src="image/btn5.gif" width="140" height="31"></a></p>
 <p>&nbsp;&nbsp; <a href="index.htm" target="_top">
 <img border="0" src="image/btn6.gif" width="140" height="30"></a></p>
-<p>¡@</p>
+<p>ã€€</p>
 <table border="1" width="10%" id="table1" height="170">
 	<tr>
 		<td><script LANGUAGE="JavaScript" TYPE="text/javascript">
@@ -298,7 +298,7 @@ animateLogo();
 calendar();
 //-->
 </script> 
-¡@</td>
+ã€€</td>
 	</tr>
 </table>
 </body>

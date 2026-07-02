@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <style type="text/css">
 <!--
 a:hover {
@@ -32,7 +32,7 @@ initOutline()
 
 <p align="center"><img border="0" src="images/title-1.gif" width="487" height="73"><a name="Top"></a></p>
 
-<p align="center">¡@
+<p align="center">ã€€
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -82,16 +82,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Ş ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é› ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™ ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -155,16 +155,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªğ¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å› 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -178,11 +178,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -202,19 +202,19 @@ function OpenWin( url ) {
       <!--msimagelist--><table dynamicoutline initcollapsed border="0" cellpadding="0" cellspacing="0" width="100%">
         <!--msimagelist--><tr>
           <!--msimagelist--><td valign="baseline" width="42"><img src="images/item1.gif" width="20" height="20" hspace="11"></td>
-          <td valign="top" width="100%"><font face="µØ±d¬yÁõÅé(P)" color="#FF0000">¤g¤ì¤uµ{·§½×</font>
+          <td valign="top" width="100%"><font face="è¯åº·æµéš¸é«”(P)" color="#FF0000">åœŸæœ¨å·¥ç¨‹æ¦‚è«–</font>
             <!--msimagelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="95" height="20"></td>
-                <td valign="top" width="100%"><a href="#­^°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)">­^°êªº©w¸q</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)">è‹±åœ‹çš„å®šç¾©</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="95" height="20"></td>
-                <td valign="top" width="100%"><a href="#¬ü°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)">¬ü°êªº©w¸q</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#ç¾åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)">ç¾åœ‹çš„å®šç¾©</font></a><!--msimagelist--></td>
               </tr>
               <!--msimagelist--><tr>
                 <!--msimagelist--><td valign="baseline" width="42"><img src="images/item2.gif" width="95" height="20"></td>
-                <td valign="top" width="100%"><a href="#ÀË°Q"><font face="µØ±d¬yÁõÅé(P)">ÀË°Q</font></a><!--msimagelist--></td>
+                <td valign="top" width="100%"><a href="#æª¢è¨"><font face="è¯åº·æµéš¸é«”(P)">æª¢è¨</font></a><!--msimagelist--></td>
               </tr>
             <!--msimagelist--></table>
           <!--msimagelist--></td>
@@ -226,53 +226,53 @@ function OpenWin( url ) {
 <table border="1" width="100%">
   <tr>
     <td width="100%" colspan="2" bgcolor="#FFCCCC">
-      <p align="center"><a name="­^°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé" color="#008000">­^°ê¤g¤ì¤u®vµ{¾Ç·|ªº©w¸q</font></a></td>
+      <p align="center"><a name="è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”" color="#008000">è‹±åœ‹åœŸæœ¨å·¥å¸«ç¨‹å­¸æœƒçš„å®šç¾©</font></a></td>
   </tr>
   <tr>
-    <td width="50%">¡@
-      <p><font face="µØ±d¬Û¼³Åé">1828¦~¡A­^°ê¤g¤ì¤uµ{®v¾Ç·| (The Institution of Civil Engineers¡A¥H¤UÂ²ºÙICE) ±NThomas Tredgold (1788 ~ 1829) ¹ï¡u¤g¤ì¤uµ{¡v(Civil Engineering) ªº©w¸q¯Ç¤J·|³¹ (Charter) ¤§¤¤ (Pannell,J.P.M.,1964)¡J<br>
+    <td width="50%">ã€€
+      <p><font face="è¯åº·ç›¸æ’²é«”">1828å¹´ï¼Œè‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒ (The Institution of Civil Engineersï¼Œä»¥ä¸‹ç°¡ç¨±ICE) å°‡Thomas Tredgold (1788 ~ 1829) å°ã€ŒåœŸæœ¨å·¥ç¨‹ã€(Civil Engineering) çš„å®šç¾©ç´å…¥æœƒç«  (Charter) ä¹‹ä¸­ (Pannell,J.P.M.,1964)ï¸°<br>
       <br>
   &amp;ldquo;The art of directing the Great Sources of Power in Nature for the use and convenience of man ...&amp;rdquo;<br>
       <br>
-      §Ú¸ÕÄ¶¤§¦p¤U¡J<br>
-  ¡u¾É¤Ş¤j¦ÛµMªºÃe¤j¯à·½¬°¤HÃş©Ò¥Î¦Ó±aµ¹¤HÃşºÖ¬çªºÃÀ³N...¡v<br>
+      æˆ‘è©¦è­¯ä¹‹å¦‚ä¸‹ï¸°<br>
+  ã€Œå°å¼•å¤§è‡ªç„¶çš„é¾å¤§èƒ½æºç‚ºäººé¡æ‰€ç”¨è€Œå¸¶çµ¦äººé¡ç¦ç¥‰çš„è—è¡“...ã€<br>
       <br>
-  ¤W­zICE ªº©w¸q¡AÁöµM¬O­^°ê¤g¤ì¤uµ{®v¾Ç·|¹ï¤g¤ì¤uµ{ªº©w¸q¡A¦ı¦]·í®É (1828) ¤uµ{¤À¤u¤£²Ó¡A¥BICE ªº©w¸q¤]ÁÙ¾A¥Î¤_¤@¯ë¡u¤uµ{¡v(Engineering)¡A¦Ó³Q¤@¯ë¤uµ{¬É¥[¥H¤Ş¥Î 
-      (Mayne &amp; Margolis,1982)¡C</font></p>
-      <p align="right"><a href="#Top"><font face="µØ±d¬yÁõÅé(P)">Top</font></a></td>
-    <td width="50%"><img border="0" src="photo/¹ê¦a³X¬d-1.jpg" width="424" height="271">¡@</td>
+  ä¸Šè¿°ICE çš„å®šç¾©ï¼Œé›–ç„¶æ˜¯è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒå°åœŸæœ¨å·¥ç¨‹çš„å®šç¾©ï¼Œä½†å› ç•¶æ™‚ (1828) å·¥ç¨‹åˆ†å·¥ä¸ç´°ï¼Œä¸”ICE çš„å®šç¾©ä¹Ÿé‚„é©ç”¨äºä¸€èˆ¬ã€Œå·¥ç¨‹ã€(Engineering)ï¼Œè€Œè¢«ä¸€èˆ¬å·¥ç¨‹ç•ŒåŠ ä»¥å¼•ç”¨ 
+      (Mayne &amp; Margolis,1982)ã€‚</font></p>
+      <p align="right"><a href="#Top"><font face="è¯åº·æµéš¸é«”(P)">Top</font></a></td>
+    <td width="50%"><img border="0" src="photo/å¯¦åœ°è¨ªæŸ¥-1.jpg" width="424" height="271">ã€€</td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#CCFFCC">
-      <p align="center"><a name="¬ü°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q"><font face="µØ±d¬yÁõÅé(P)" color="#008000">¬ü°ê¤g¤ì¤uµ{®v¾Ç·|ªº©w¸q</font></a></td>
+      <p align="center"><a name="ç¾åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©"><font face="è¯åº·æµéš¸é«”(P)" color="#008000">ç¾åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒçš„å®šç¾©</font></a></td>
   </tr>
   <tr>
-    <td width="50%">¡@
-      <p><font face="µØ±d¬Û¼³Åé(P)">1852¦~¡A¬ü°ê¤g¤ì¤uµ{®v¾Ç·|(American Society of Civil Engineers¡A¥H¤UÂ²ºÙASCE) ·|³¹¹ï¤g¤ì¤uµ{©Ò¤Uªº©w¸q¬°¡J<br> 
+    <td width="50%">ã€€
+      <p><font face="è¯åº·ç›¸æ’²é«”(P)">1852å¹´ï¼Œç¾åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒ(American Society of Civil Engineersï¼Œä»¥ä¸‹ç°¡ç¨±ASCE) æœƒç« å°åœŸæœ¨å·¥ç¨‹æ‰€ä¸‹çš„å®šç¾©ç‚ºï¸°<br> 
       <br>
   &amp;ldquo;The art of the practical application of scientific and empirical knowledge to the design, production or accomplishment of various parts of construction projects, machines and material of use or value to man.&amp;rdquo; 
       (Mayne &amp; Margolis, 1982)<br> 
       <br>
-      §Ú¸ÕÄ¶ASCE (1852) ªº©w¸q¦p¤U¡J<br> 
-  ¡u¹ê»ÚÀ³¥Î¬ì¾Ç»P¸gÅçª¾ÃÑ¤_³]­p¡A¥Í²£©Î§¹¦¨Àç«Ø­pµe¤§¤¤ªº¦U³¡¤À¡A¾÷±ñ¡A»P§÷®Æ¡A¦Ó±aµ¹¤HÃş¥Î³~©Î»ù­ÈªºÃÀ³N¡C¡v<br>
+      æˆ‘è©¦è­¯ASCE (1852) çš„å®šç¾©å¦‚ä¸‹ï¸°<br> 
+  ã€Œå¯¦éš›æ‡‰ç”¨ç§‘å­¸èˆ‡ç¶“é©—çŸ¥è­˜äºè¨­è¨ˆï¼Œç”Ÿç”¢æˆ–å®Œæˆç‡Ÿå»ºè¨ˆç•«ä¹‹ä¸­çš„å„éƒ¨åˆ†ï¼Œæ©Ÿæ¢°ï¼Œèˆ‡ææ–™ï¼Œè€Œå¸¶çµ¦äººé¡ç”¨é€”æˆ–åƒ¹å€¼çš„è—è¡“ã€‚ã€<br>
       <br>
-  ¤£½×ICE ©ÎASCE ªº©w¸q¡A³£»¡¤g¤ì¤uµ{¬O¤@ºØÃÀ³N¡C</font></p> 
-      <p align="right"><a href="#Top"><font face="µØ±d¬yÁõÅé(P)">Top</font></a></td>
-    <td width="50%"><font face="µØ±d¬yÁõÅé(P)"><img border="0" src="photo/¹ê¦a³X¬d-2.jpg" width="424" height="285"></font></td>
+  ä¸è«–ICE æˆ–ASCE çš„å®šç¾©ï¼Œéƒ½èªªåœŸæœ¨å·¥ç¨‹æ˜¯ä¸€ç¨®è—è¡“ã€‚</font></p> 
+      <p align="right"><a href="#Top"><font face="è¯åº·æµéš¸é«”(P)">Top</font></a></td>
+    <td width="50%"><font face="è¯åº·æµéš¸é«”(P)"><img border="0" src="photo/å¯¦åœ°è¨ªæŸ¥-2.jpg" width="424" height="285"></font></td>
   </tr>
   <tr>
     <td width="100%" colspan="2" bgcolor="#9999FF">
-      <p align="center"><a name="ÀË°Q"><font face="µØ±d¬yÁõÅé(P)" color="#008000">­^°ê¤g¤ì¤uµ{®v¾Ç·|¹ï1828¦~©w¸qªºÀË°Q</font></a></td>
+      <p align="center"><a name="æª¢è¨"><font face="è¯åº·æµéš¸é«”(P)" color="#008000">è‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒå°1828å¹´å®šç¾©çš„æª¢è¨</font></a></td>
   </tr>
   <tr>
-    <td width="50%">¡@
-      <p><font face="µØ±d¬Û¼³Åé(P)"> 1978 ¦~¡A­^°ê¤g¤ì¤uµ{®v¾Ç·| (ICE) ¬°¼y¯¬¨ä«Ø·|150 ¶g¦~¡A¯S§O¦b¦è±Ó¦x (Westminster Abbey)¥l¶}¤j·|¡A»P©v±Ğ»â³S¡B¨ä¥L¤uµ{»â°ìªº»â³S¡B±Ğ¨|¬É»â³S¡Bµ¥µ¥¡AÁ|¦æ¹ï½Í¡J¹ï &amp;ldquo;the Great Sources of Power&amp;rdquo;¡B&amp;ldquo;for the use and convenience of man&amp;rdquo; ¥H¤Î&amp;ldquo;man&amp;rdquo; ªº·N¸q¡A¥[¥HÀË°Q¡C¦è±Ó¦x¦í«ùCarpenter ³Õ¤h±j½Õ¡u´L­«¦ÛµM¡v¡C¨ä¥L¤Ş¨¥¤H¦hªÖ©w¤uµ{¹ï¤HÃşºÖ¬çªº°^Äm¡A¦ı¤]´Á¬ß¦b¾Ç¬É¤Î¤uµ{¬É¤§¤¤¯à°÷­««Ø150 ¦~«e­İÅU¡u¬ì¾Ç¡v¤Î¡uÃÀ³N¡v³o¨âºØ¤å¤Æ<br> 
-  ªº¥ÍºAÀô¹Ò¡C¬Y¤Ş¨¥¤H¥Bª½¨¥¦bICE ©w¸q¤¤ªº &amp;ldquo;the use and convenience of man&amp;rdquo; À³§ï¬°¡J&amp;ldquo;the protection of all life on this planet and the peaceful survival of the human race&amp;rdquo;<br>
+    <td width="50%">ã€€
+      <p><font face="è¯åº·ç›¸æ’²é«”(P)"> 1978 å¹´ï¼Œè‹±åœ‹åœŸæœ¨å·¥ç¨‹å¸«å­¸æœƒ (ICE) ç‚ºæ…¶ç¥å…¶å»ºæœƒ150 é€±å¹´ï¼Œç‰¹åˆ¥åœ¨è¥¿æ•å¯º (Westminster Abbey)å¬é–‹å¤§æœƒï¼Œèˆ‡å®—æ•™é ˜è¢–ã€å…¶ä»–å·¥ç¨‹é ˜åŸŸçš„é ˜è¢–ã€æ•™è‚²ç•Œé ˜è¢–ã€ç­‰ç­‰ï¼Œèˆ‰è¡Œå°è«‡ï¸°å° &amp;ldquo;the Great Sources of Power&amp;rdquo;ã€&amp;ldquo;for the use and convenience of man&amp;rdquo; ä»¥åŠ&amp;ldquo;man&amp;rdquo; çš„æ„ç¾©ï¼ŒåŠ ä»¥æª¢è¨ã€‚è¥¿æ•å¯ºä½æŒCarpenter åšå£«å¼·èª¿ã€Œå°Šé‡è‡ªç„¶ã€ã€‚å…¶ä»–å¼•è¨€äººå¤šè‚¯å®šå·¥ç¨‹å°äººé¡ç¦ç¥‰çš„è²¢ç»ï¼Œä½†ä¹ŸæœŸç›¼åœ¨å­¸ç•ŒåŠå·¥ç¨‹ç•Œä¹‹ä¸­èƒ½å¤ é‡å»º150 å¹´å‰å…¼é¡§ã€Œç§‘å­¸ã€åŠã€Œè—è¡“ã€é€™å…©ç¨®æ–‡åŒ–<br> 
+  çš„ç”Ÿæ…‹ç’°å¢ƒã€‚æŸå¼•è¨€äººä¸”ç›´è¨€åœ¨ICE å®šç¾©ä¸­çš„ &amp;ldquo;the use and convenience of man&amp;rdquo; æ‡‰æ”¹ç‚ºï¸°&amp;ldquo;the protection of all life on this planet and the peaceful survival of the human race&amp;rdquo;<br>
       <br>
-  µ§ªÌ¸ÕÄ¶¤§¦p¤U¡J<br>
-      ¡u«OÅ@¦a²y¤Wªº²³¥Í»P¤HÃş©M¥­¥B¥ÃÄò¥Í¦s¤U¥h¡C¡v</font></p>
-      <p align="right"><a href="#Top"><font face="µØ±d¬yÁõÅé(P)">Top</font></a></td>
-    <td width="50%"><img border="0" src="photo/¤ô®w-3.jpg" width="406" height="310">¡@</td>
+  ç­†è€…è©¦è­¯ä¹‹å¦‚ä¸‹ï¸°<br>
+      ã€Œä¿è­·åœ°çƒä¸Šçš„çœ¾ç”Ÿèˆ‡äººé¡å’Œå¹³ä¸”æ°¸çºŒç”Ÿå­˜ä¸‹å»ã€‚ã€</font></p>
+      <p align="right"><a href="#Top"><font face="è¯åº·æµéš¸é«”(P)">Top</font></a></td>
+    <td width="50%"><img border="0" src="photo/æ°´åº«-3.jpg" width="406" height="310">ã€€</td>
   </tr>
 </table>
 

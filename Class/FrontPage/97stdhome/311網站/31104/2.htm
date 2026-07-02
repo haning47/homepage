@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>�s����1</title>
+<title>新網頁1</title>
 
 <script LANGUAGE="JavaScript" TYPE="text/javascript">
 var vn="Microsoft Internet Explorer";
@@ -45,17 +45,17 @@ if (testMe == 2) firstDay.setDate(0);
 startDay = firstDay.getDay();
 document.write('<table border="0" cellspacing="0" cellpadding="2" align="CENTER" bgcolor="#0080FF"><TR><TD><table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="Silver">');
 document.write('<TR><th colspan="7" bgcolor="#C8E3FF">');
-var dayNames = new Array("�P����","�P���@","�P���G","�P���T","�P���|","�P����","�P����");
-var monthNames = new Array("1��","2��","3��","4��","5��","6��","7��","8��","9��","10��","11��","12��");
+var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+var monthNames = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
 var now = new Date();
-document.write("<font style=font-size:9pt;Color:#330099>" , "�褸" , " " , now.getYear() + some , "�~" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "��" , " " , dayNames[now.getDay()] , "</FONT>");
-document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">�@</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�G</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�T</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">�|</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
-document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">��</FONT></TH>');
+document.write("<font style=font-size:9pt;Color:#330099>" , "西元" , " " , now.getYear() + some , "年" , " " , monthNames[now.getMonth()] , " " , now.getDate() , "日" , " " , dayNames[now.getDay()] , "</FONT>");
+document.writeln('</TH></TR><TR><TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">日</FONT></TH>');
+document.writeln('<th bgcolor="#0080FF"><font style="font-size:9pt;Color:White">一</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">二</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">三</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">四</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">五</FONT></TH>');
+document.writeln('<TH BGCOLOR="#0080FF"><font style="font-size:9pt;Color:White">六</FONT></TH>');
 document.writeln("</TR><TR>");
 column = 0;
 for (i=0; i<startDay; i++)
@@ -82,7 +82,7 @@ document.writeln("<TR>");
 column = 0;
 }
 }
-document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>�{�b�ɶ��G</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
+document.writeln('<TR><td colspan="7" align="CENTER" valign="TOP" bgcolor="#0080FF"><form name="clock" onSubmit="0"><FONT style=font-size:9pt;Color:#ffffff>現在時間：</FONT><INPUT TYPE="Text" NAME="face" ALIGN="TOP"></TD></TR></TABLE></TD></TR></TABLE></FORM>');
 }
 var timerID = null;
 var timerRunning = false;
@@ -100,23 +100,23 @@ var minutes = now.getMinutes()
 var seconds = now.getSeconds()
 var timeValue = ""
 if(hours>=1 && hours <4)
-{timeValue += ("���")}
+{timeValue += ("凌晨")}
 if(hours>=4 && hours<6)
-{timeValue += ("�M��")}
+{timeValue += ("清晨")}
 if(hours>=6 && hours<9)
-{timeValue += ("���W")}
+{timeValue += ("早上")}
 if(hours>=9 && hours<12)
-{timeValue += ("�W��")}
+{timeValue += ("上午")}
 if(hours>=12 && hours<13)
-{timeValue += ("����")}
+{timeValue += ("中午")}
 if(hours>=13 && hours<18)
-{timeValue += ("�U��")}
+{timeValue += ("下午")}
 if(hours>=18 && hours <19)
-{timeValue += ("�ı�")}
+{timeValue += ("傍晚")}
 if(hours>=19 && hours <24)
-{timeValue += ("�ߤW")}
+{timeValue += ("晚上")}
 if(hours<1)
-{timeValue += ("�ȩ]")}
+{timeValue += ("午夜")}
 timeValue += ((hours > 12) ? hours - 12 : hours)
 timeValue += ((minutes < 10) ? ":0" : ":") + minutes
 timeValue += ((seconds < 10) ? ":0" : ":") + seconds
@@ -148,118 +148,118 @@ calendar();
 
 <table border="1" width="100%" height="3464">
   <tr>
-    <td width="50%" height="30"><font face="�رd�y����(P)" color="#FFCC00" size="5"><img border="0" src="images/item1.gif" width="22" height="21">�@�a����</font></td>
-    <td width="50%" height="30"><font face="�رd�y����(P)" color="#FFCC00" size="5">�Ϥ�����</font></td>
+    <td width="50%" height="30"><font face="華康流隸體(P)" color="#FFCC00" size="5"><img border="0" src="images/item1.gif" width="22" height="21">作家介紹</font></td>
+    <td width="50%" height="30"><font face="華康流隸體(P)" color="#FFCC00" size="5">圖片介紹</font></td>
   </tr>
   <tr>
-    <td width="50%" height="650"><font face="�رd�y����(P)" color="#FFCC00" size="5"><img border="0" src="images/item2.gif" width="29" height="28"></font><font face="�رd�y����(P)" color="#FF0066" size="4">�����Ф�      
-      �w�}�P�U��</font>
-      <p><font face="�رd�y����(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
-      �ժ�ø�e�B�L��B��v�������ƦX�ϥ�,���_�Q�δC���ӽƻs�C��,�L�j�x���եY���L��B��֩Τ�ƩݦL�B����޳N�B�Ӥ���v���U�ؽƻs�ުk�C      
-      �L��s�C�������`�A����]�p���@�Ӥ��J�I�óv����Ƭ��P�h���C��]�p���������X�C<br>
+    <td width="50%" height="650"><font face="華康流隸體(P)" color="#FFCC00" size="5"><img border="0" src="images/item2.gif" width="29" height="28"></font><font face="華康流隸體(P)" color="#FF0066" size="4">普普教父      
+      安迪·沃荷</font>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      擅長繪畫、印刷、攝影之間的複合使用,不斷利用媒材來複製媒材,他大膽嘗試凸版印刷、橡皮或木料拓印、金箔技術、照片投影等各種複製技法。      
+      他對新媒介的關注，為其設計找到一個切入點並逐漸轉化為與多元媒體設計的完美結合。<br>
       <br>
-      �@�@�w�}�P�U���W�V�F�ë��P���j���ɭ��F���}�F��u���~�P��q�Ͳ��B�F�F���N�M�������N�Bø�e�P��v�B�e���P�������ɭ��C      
-      �L�R���F�i���N�j�ζH�����Ũ�סA�����F�W�w���N���M��ɭ��A���q�F���K�ճ��M�U���ڤH������N�C<br>
+      　　安迪·沃荷超越了永恆與偉大的界限；打破了手工藝品與批量生產、達達藝術和極少藝術、繪畫與攝影、畫布與膠捲的界限。      
+      他摧毀了【藝術】形象的等級制度，取消了規定藝術的專橫界限，溝通了陽春白雪和下里巴人兩種藝術。<br>
       <br>
-      �w�}�P�U���O�ۧڻs�y�B�c�l�����~�C�L���Ǽ��O��ۧگS�x�A�]�t�F�L�Ҧ����ʩM�ͩR�����F�@������������M��Ϫ��欰����X��A�L���ۮɥN�������B����B���ߡB���ߩM�۷Q�F�L�гy�F�@�Ӽs�x�P���@�ɡB����ʥ@�ɡB�����ƥ@�ɡB�D�ǲθg��@�ɡB�Ϻ�^�϶Q�ڪ��@�ɡC<br>
+      安迪·沃荷是自我製造、繁衍的產品。他的傳播是其自我特徵，包含了他所有活動和生命本身；作為複雜的興趣和荒誕的行為的綜合體，他實踐著時代的熱情、慾望、野心、野心和幻想；他創造了一個廣泛感知世界、實驗性世界、平民化世界、非傳統經驗世界、反精英反貴族的世界。<br>
       <br>
-      �w�}�P�U�����̤j���ȬO�Τ@�ͪ������F��ǲΪ����N���ȩM���|���Ǫ��ϳ]�M���h�A�ε�۪����H�ԳӥL�����@���B�ݻŵL�����B�S���H�ʪ��u��@�ɡC<br>
+      安迪·沃荷的最大價值是用一生的實踐完成了對傳統的藝術價值和社會秩序的反設和不屑，用虛幻的表象戰勝他不情願的、殘酷無情的、沒有人性的真實世界。<br>
       <br>
-      �@</font><font face="�رd�y����(P)" color="#FF0066">�@== �w�}�P�U��=�����P�q��      
-      ==</font><font face="�رd�y����(P)" color="#000066"><br>
+      　</font><font face="華康流隸體(P)" color="#FF0066">　== 安迪·沃荷=普普同義詞      
+      ==</font><font face="華康流隸體(P)" color="#000066"><br>
       <br>
-      �w�}�P�U���G[�ڻ{���C�ӤH�����ӬO�@�������A�C�ӤH�����өM�t�@�ӤH�@�Ҥ@�ˡC      
+      安迪·沃荷：[我認為每個人都應該是一部機器，每個人都應該和另一個人一模一樣。      
       ]<br>
       </font>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></td>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></td>
     <td width="50%" height="650">
-      <p align="center"><img border="0" src="htmphoto/andy%20warhol.jpg" width="332" height="500">�@</p>
+      <p align="center"><img border="0" src="htmphoto/andy%20warhol.jpg" width="332" height="500">　</p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="426"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" face="�رd�y����(P)" size="4">��~�����</font>
-      <p><font face="�رd�y����(P)" color="#000066">1.     
-      ������~�ߦn�H��@��m�A�åΫD�����ʤޥλy�A�p�u���\���Ÿ��v�Ϋ��o���C<br>
+    <td width="50%" height="426"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" face="華康流隸體(P)" size="4">塗鴉風格戰</font>
+      <p><font face="華康流隸體(P)" color="#000066">1.     
+      早期塗鴉喜好以單一色彩，並用非雙關性引用語，如「煙縷的符號」及哈囉等。<br>
       2.     
-      ���ۡA�N��r�Φ��b�ڤ��ܦ����a�A�������b�H���Y���W�H�ܲ��Y�C<br>
+      接著，將文字形式箭矢化變成王冠，讓它戴在人物頭頂上以示莊嚴。<br>
       3.     
-      ��ӡA�Hģ���B���ءB��X���ؼСA�}�l�H���m�׼Q���A�a�K�Τj��D�W�j�g�ۤv����W�åH����ζ¦�N����A�ƦܤS�H�^���B�ׯ��B�P�ΡB��v�ѽL�ζ��I��˵��˹��A�Ʊ�N�W�r����X�ӡC<br>
-      4. 70�~�N�����A�H���ܦۧڪ��H�x�Φ��X�{�A���e�j�h���d�q�v�����^���H���A�o�ǤH���j�h�H�Q���������եX�{�C<br>    
+      後來，以耀眼、醒目、突出為目標，開始以高彩度噴漆再地鐵或大街道上大寫自己的魂名並以對比色或黑色將其圈圍，甚至又以鑲條、斜紋、星形、西洋棋盤或圓點花樣等裝飾，希望將名字突顯出來。<br>
+      4. 70年代中期，以改變自我的象徵形式出現，內容大多為卡通影片的英雄人物，這些人物大多以被攻擊的姿勢出現。<br>    
       5.     
-      ��~�I���U�ӷU�����A�Q���]���˸m����}�Өϥ\��o���췥�P�A�U�N���Ӷ��B�P�P�B�l�u�����ӹL�A�����e�B�۵e���B��H�Ÿ����A�զX�í��ͥX�t�@�Ӧ��쪺�e���C</font><br>
+      塗鴉背景愈來愈複雜，噴漆因為裝置的改良而使功能發揮到極致，燃燒的太陽、星星、子彈劃風而過，風景畫、自畫像、抽象符號等，組合並重生出另一個有趣的畫面。</font><br>
       </p>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="426">
       <p align="center"><img border="0" src="htmphoto/art.jpg" width="349" height="426"></p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="749"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" size="4" face="�رd�y����(P)">�ʹ����L</font>
-      <p><font color="#FF0066" face="�رd�y����(P)" size="3">�]Keith     
-      Haring�A1958�~5��4����1990�~2��16��^</font></p>
-      <p><font face="�رd�y����(P)" color="#000066">�O1980�~�N�A������Yø�e���N�a�M���|�B�ʪ̡C�L�X�ͦb&#23486;�i�k��&#20122;�{�p�B�]Reading,     
-      PA�^�A�åB�b���񪺮w�����]Kutztown�^���j�A�O�a���|�ӫĤl�������S�]�O�ߤ@���k�Ĥl�C</font></p>
-      <p><font face="�رd�y����(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-      �ʹ�����ì���ı���N�ǰ|�N�ǡA�@�~�a���@�p���������N����A�L�̦������@�~�O�b1980�~�Ч@���A���ɥL�b�ì��a�K���������A�M��¦⪺�����ݶK�B�A�ϥΥզ⯻����~�A�h���ʽ����u�A���B�Ťߪ���H�H�B�ʪ����ϮסA�L���@�~�g�`�S�p�Y�ؽ����᯾�A�U�عϮץR���F��Ӻc�ϡA�����S���z���A�]�S���ٲz�A���㦳�\�h�H�x�ʪ��P���A�p�p�s�����A���w�۪��p�H���C�ܧ֪��A�ʹ����L���@�~�N�b�ì����N�ɶǶ}�W�n�A1983�~������ۤ�ȹq���x�ĳX�L�b�a�K����~�A�H�γQ�e�ɪ��{�����p�A�ϱo�L�@�i���a����A�H��b���_���i���P�Ч@�U�A�H���n�e�a�����i�J�F�ժ��]�A�@�~����������A�ھڬ���s�D�g�Z�����ɡA�b1984�~�A�ʹ����L���@�i�e�u���s�����㪺���v�i�ۻ��������U���A�������~�A�L�٨��ܶi��\�h�ժ��]�����ø�e�Ч@�C1985�~�A�k���߷��N���N�]�β�����߬��N�]���L�|��F�M�D�i�C     
-      1986�~�A�L�b�ì���Ĭ���϶}�F�@�a�c��ۤv�@�~�����f���C�N�s���uPop     
-      Shop�v�C</font></p>
-      <p><font face="�رd�y����(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;     
-      1988�~�A�L�o�{�ۤv���w�R���f�A1989�~�A�ʹ����L����|���ߡA�D�n�ئa�b��P�i�ൣ�֧Q�W���C1990�~�A�L�H31�����~������R���f�A�L���e�@�b20�@���ܦ��F���ت���ı�y�����@�C</font></p>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    <td width="50%" height="749"><img border="0" src="images/item2.gif" width="29" height="28"><font color="#FF0066" size="4" face="華康流隸體(P)">凱斯哈林</font>
+      <p><font color="#FF0066" face="華康流隸體(P)" size="3">（Keith     
+      Haring，1958年5月4號－1990年2月16日）</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">是1980年代，美國街頭繪畫藝術家和社會運動者。他出生在&#23486;夕法尼&#20122;州雷丁（Reading,     
+      PA），並且在附近的庫茲鎮（Kutztown）長大，是家中四個孩子中的長兄也是唯一的男孩子。</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+      凱斯曾於紐約視覺藝術學院就學，作品帶有濃厚的普普藝術風格，他最早期的作品是在1980年創作的，當時他在紐約地鐵的車站中，尋找黑色的海報待貼處，使用白色粉筆塗鴉，多為粗輪廓線，單色、空心的抽象人、動物等圖案，他的作品經常猶如某種複雜花紋，各種圖案充滿了整個構圖，往往沒有透視，也沒有肌理，但具有許多象徵性的感情，如吠叫的狗，跪趴著的小人等。很快的，凱斯哈林的作品就在紐約藝術界傳開名聲，1983年美國哥倫比亞電視台採訪他在地鐵站塗鴉，以及被逮補的現場狀況，使得他一夕間家喻戶曉，隨後在不斷的展覽與創作下，以塗鴨畫家之姿進入了博物館，作品價錢水漲船高，根據美國新聞週刊的報導，在1984年，凱斯哈林的一張畫「戴鱷魚面具的狗」可喊價到美金兩萬元，除此之外，他還受邀進行許多博物館的行動繪畫創作。1985年，法國國立當代美術館及荷蘭國立美術館為他舉辦了專題展。     
+      1986年，他在紐約市蘇活區開了一家販賣自己作品的雜貨店。就叫做「Pop     
+      Shop」。</font></p>
+      <p><font face="華康流隸體(P)" color="#000066">&nbsp;&nbsp;&nbsp;&nbsp;     
+      1988年，他發現自己罹患愛滋病，1989年，凱斯哈林基金會成立，主要目地在於促進兒童福利規劃。1990年，他以31歲的年紀死於愛滋病，他的畫作在20世紀變成了醒目的視覺語言之一。</font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="749">
-      <p align="center"><img border="0" src="htmphoto/�ڴ��_��.jpg" width="293" height="400"></p>
-      <p align="center"><img border="0" src="htmphoto/�^����W��~.jpg" width="399" height="309"></p>
+      <p align="center"><img border="0" src="htmphoto/巴斯奇亞.jpg" width="293" height="400"></p>
+      <p align="center"><img border="0" src="htmphoto/英國牆上塗鴉.jpg" width="399" height="309"></p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="400"><img border="0" src="images/item2.gif" width="29" height="28"><font face="�رd�y����(P)" size="4" color="#FF0066">��~�̻P��~���N�a���t��</font>
-      <p><font face="�رd�y����(P)" color="#000066">1. ��~�̨S���ǲΪ��]���A�i�H�ۥѳЧ@�A�����ǹF�䱡���F���L�ǮհV�m����~���N�a�h�H���Ǫ��A�רӽթM���|�{�p�C</font></p>    
-      <p><font face="�رd�y����(P)" color="#000066"><br>
-      2. ��~�̥H�@�صL�S���O����ñ�W�覡�A�X�{�s�y��X�s��������F��~���N�a�h�H�@�إh���ӤH�ƪ�����ĤJ�s�����A��@�~����p�s�i�άF�v�Ũ��A�H�зǪ��L��r��ñ�W�C</font></p>    
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    <td width="50%" height="400"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)" size="4" color="#FF0066">塗鴉者與塗鴉藝術家的差異</font>
+      <p><font face="華康流隸體(P)" color="#000066">1. 塗鴉者沒有傳統的包袱，可以自由創作，直接傳達其情緒；受過學校訓練的塗鴉藝術家則以美學的態度來調和社會現況。</font></p>    
+      <p><font face="華康流隸體(P)" color="#000066"><br>
+      2. 塗鴉者以一種無特殊記號的簽名方式，出現製造突出群眾的風格；塗鴉藝術家則以一種去除個人化的風格融入群眾中，其作品風格如廣告或政治宣言，以標準的印刷字體簽名。</font></p>    
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="400">
-      <p align="center"><img border="0" src="htmphoto/���W2.jpg" width="300" height="400"></p>
+      <p align="center"><img border="0" src="htmphoto/門上2.jpg" width="300" height="400"></p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="380"><img border="0" src="images/item2.gif" width="29" height="28"><font face="�رd�y����(P)"><font color="#FF0066" size="4" face="�رd�y����(P)">��~���N</font><br>
-      �@�@<font color="#000066">��~�]Graffito�^�N�j�Q�大�N�O�u�üg�v�A�Ӷ�~�]Graffiti�^�]�ƼƧκA�^�h���b����W�ö�g�X���Ϲ��εe�C</font></font>
-      <p><font color="#000066" face="�رd�y����(P)">�򥻤W�AGraffiti�O�@�ت��Ѽg���欰�A��r���۷��h�ơA�ζH���Ÿ��ιϧΡB�лx���]�O�`�������e�A���h�b���ζH�O�H�����Ѽg���覡�A��n�a�����N�ϡA����N�h�ӽo�yø�C</font></p>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    <td width="50%" height="380"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)"><font color="#FF0066" size="4" face="華康流隸體(P)">塗鴉之意</font><br>
+      　　<font color="#000066">塗鴉（Graffito）意大利文之意是「亂寫」，而塗鴉（Graffiti）（複數形態）則指在牆壁上亂塗寫出的圖像或畫。</font></font>
+      <p><font color="#000066" face="華康流隸體(P)">基本上，Graffiti是一種近於書寫的行為，文字佔相當多數，形象的符號或圖形、標誌等也是常見的內容，但多半的形象是以類似書寫的方式，扼要地表明意圖，不刻意去細緻描繪。</font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="380">
-      <p align="center"><img border="0" src="htmphoto/��W.jpg" width="296" height="380"></p>
+      <p align="center"><img border="0" src="htmphoto/樹上.jpg" width="296" height="380"></p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="761"><img border="0" src="images/item2.gif" width="29" height="28"><font size="4" color="#FF0066" face="�رd�y����(P)">��~���N���Φ��P�o�i�G</font><font color="#000066" face="�رd�y����(P)"><br>
-      �@�@ 1970�~�N����A�����˼Q���H�B�i�ʱo��A�q�a�U�K���������c���x�W�B���D���𭱡A�@����Z�Ҹ̪������A��B�i���U���U�˦�m�A�A����~�C��������~�Ч@�H��r���D�A���Ƕ�~�e���Ч@�̺٦ۤv���u�g��v�]writer�^�ӫD�u�e�a�v�]painter�^�A�ӥB�q�`�O�ΦW���A�L�̬y��ε�D���X�����W�A��pTAKI    
-      183�BJULIO 204�BFRANK 207�A�e�a�L���N���Q���@�p�C</font>   
-      <p><font color="#000066" face="�رd�y����(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
-      �j��������~�Ч@�̬J���O�M�~���N�a�]���O���N�t���ǥ͡A�ӬO�Ӧ۩󥬮ԧJ���B���|�J�L�P���L�Ϫ����Y�֦~�C</font></p>
-      <p><font color="#000066" face="�رd�y����(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
-      ��~���欰�����O�@�ع���v�ª��ϫq�A�Ӷ�~�������O�@�ت��F���Φ��A�ǥѳo�˪��欰�A�γ\�q���N�����רӻ��G�欰���N�A�ܧ֦a�ް_���|�B�F�v�ɡB�C��H�ΥD�y���ª��`�N�A��O��~��r�v����֡A���ܦ��j����o���d�q�Ϲ��C�ǰ|�����N�a�]��i�A��O�M�~��~�H�}�l�X�{�A�������p��������]�ɯɥX�{�F�A�����~ø�e�}�l�i�n���Y�A�ѤH�u�Y��v�B�u���áv�B�u�R��v�B�u���v�C�@�ɦU��K���_�F�@�Ѷ�~����C</font></p>
-      <p align="center"><font color="#000066" face="�رd�y����(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
-      ��~���N���R�B�A��P�ɴ��U�_���n�u�֤Q�������C�@�}�l�H���ǳo�سЧ@���A�ϧ����B���F�����B�o�������B���D���|�A���G�o�Q��Ӹꥻ��t���s�A�ѭ�����Ϥ�Ʀ������N���D�y�C<br>
+    <td width="50%" height="761"><img border="0" src="images/item2.gif" width="29" height="28"><font size="4" color="#FF0066" face="華康流隸體(P)">塗鴉藝術的形成與發展：</font><font color="#000066" face="華康流隸體(P)"><br>
+      　　 1970年代初期，當罐裝噴漆隨處可購得後，從地下鐵的火車車箱到月台上、到街道的牆面，一直到廁所裡的壁面，到處可見各式各樣色彩鮮艷的塗鴉。早期的塗鴉創作以文字為主，那些塗鴉畫的創作者稱自己為「寫手」（writer）而非「畫家」（painter），而且通常是匿名的，他們流行用街道號碼取假名，比如TAKI    
+      183、JULIO 204、FRANK 207，畫地盤的意味十分濃厚。</font>   
+      <p><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      大部分的塗鴉創作者既不是專業藝術家也不是藝術系的學生，而是來自於布朗克斯、布魯克林與哈林區的街頭少年。</font></p>
+      <p><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      塗鴉的行為本身是一種對於權威的反叛，而塗鴉的本身是一種表達的形式，藉由這樣的行為，或許從藝術的角度來說：行為藝術，很快地引起社會、政治界、媒體以及主流藝壇的注意，於是塗鴉文字逐漸減少，轉變成大型精緻的卡通圖像。學院派藝術家也跟進，於是專業塗鴉人開始出現，類似像聯盟的團體也紛紛出現了，之後塗鴉繪畫開始進駐藝廊，供人「欣賞」、「收藏」、「買賣」、「投資」。世界各國便興起了一股塗鴉熱潮。</font></p>
+      <p align="center"><font color="#000066" face="華康流隸體(P)">&nbsp;&nbsp;&nbsp;&nbsp;    
+      塗鴉藝術的命運，跟同時期崛起的搖滾樂十分類似。一開始人們藉這種創作型態反抗體制、表達不滿、發洩情緒、控訴社會，結果卻被整個資本體系收編，由原先的反文化成為藝術的主流。<br>
       </font></p>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="761">
-      <p align="center"><img border="0" src="htmphoto/���W.jpg" width="384" height="373"></p>
-      <p align="center"><img border="0" src="htmphoto/����W.jpg" width="278" height="368"></p>
+      <p align="center"><img border="0" src="htmphoto/門上.jpg" width="384" height="373"></p>
+      <p align="center"><img border="0" src="htmphoto/牆壁上.jpg" width="278" height="368"></p>
     </td>
   </tr>
   <tr>
-    <td width="50%" height="20"><img border="0" src="images/item2.gif" width="29" height="28"><font face="�رd�y����(P)" color="#FF0066" size="4">�����[�P���|�Ǫ����Q�G</font><font face="�رd�y����(P)" color="#000066"><br>
-      �@�@�ͨ��~�A���q�`�����H�ⷥ�ƪ��ݪk�F�j�h�ƪ��H���N�������@�د}�a�B�÷l�B�ƨg�B�I�ǡB���~�F�����@�ǤH�h�{����~�O�@�دu�������ǩʲ����A�O�Q����̩ΨS���o���v�̭ӤH�ʪ����աA�Ҧp�A�d�N�]John Cage�^�N�{���ڭ����Ӭñ��C�@�Ӷ�~�O���F1974�~�@�a�հ�o���ǡ]Norman Mailer�^�b�o�X�����u��~���H���v�o���Ѥ��A���~���{�H�ݰ��O��o�c���u�Ӥ�����رکʤϫq�A�ñN�������a���������|�ۥѪ��L������ܡF�����pĬ��o�[���ߧJ�]Suzi Gablik�^�h�{�����ǵ��Y�֦~�Q���D�s�A�����N�����ҵo���C</font>    
-      <p>�@</p>
-      <p align="center"><font face="�رd�y����(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
+    <td width="50%" height="20"><img border="0" src="images/item2.gif" width="29" height="28"><font face="華康流隸體(P)" color="#FF0066" size="4">美學觀與社會學的探討：</font><font face="華康流隸體(P)" color="#000066"><br>
+      　　談到塗鴉，它通常給予人兩極化的看法；大多數的人都將它視為一種破壞、污損、瘋狂、侵犯、恐嚇；但有一些人則認為塗鴉是一種真正的美學性產物，是被壓制者或沒有發言權者個人性的表白，例如，卡吉（John Cage）就認為我們應該珍惜每一個塗鴉記號；1974年作家諾曼o梅勒（Norman Mailer）在她出版的「塗鴉的信仰」這本書中，把塗鴉的現象看做是對罪惡的工商文明之種族性反叛，並將它浪漫地解釋為社會自由的無秩序顯示；藝評如蘇勒o加布立克（Suzi Gablik）則認為那些街頭少年被渴求新鮮的藝術市場所發掘。</font>    
+      <p>　</p>
+      <p align="center"><font face="華康流隸體(P)" color="#0000FF" size="4"><b><a href="#001"><img border="0" src="images/item1.gif" width="22" height="21">Top</a></b></font></p>
     </td>
     <td width="50%" height="20">
-      <p align="center"><img border="0" src="htmphoto/��.jpg" width="300" height="400"></p>
+      <p align="center"><img border="0" src="htmphoto/鬼.jpg" width="300" height="400"></p>
     </td>
   </tr>
 </table>

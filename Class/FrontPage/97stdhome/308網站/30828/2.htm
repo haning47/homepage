@@ -1,10 +1,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 <style>
 <!--
 #main {}
@@ -37,7 +37,7 @@ color: #C4663B;
 
 <p align="center"><img border="0" src="image/title2.gif" width="455" height="53"></p>
 
-<p align="center">¡@
+<p align="center">ã€€
 <script language="JavaScript"><!--
 function CalConv()
  {
@@ -87,16 +87,16 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¦è¾ä¦~¨C¤ë¤§¤é¼Æ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¦è¾ä¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* è¥¿æ›†å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
 
- AnimalIdx = ["°¨ ", "¦Ï ", "µU ", "Âû ", "ª¯ ", "½Ş ", "¹« ", "¤û ", "ªê ", "¨ß ", "Às ", "³D " ];
- LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+ AnimalIdx = ["é¦¬ ", "ç¾Š ", "çŒ´ ", "é› ", "ç‹— ", "è±¬ ", "é¼  ", "ç‰› ", "è™ ", "å…” ", "é¾ ", "è›‡ " ];
+ LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
  if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -160,16 +160,16 @@ if (Age < 10)
 
  if ( LunarMonth > 12 ) LunarMonth -= 12;
 
- document.write( "<font size=2 color='ff00ff'>¡i¤µ¤Ñ ¦è¤¸ " + SolarYear + "¦~" + SolarMonth + "¤ë" + SolarDate + "¤é -- " );
-       document.write( "¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é -- " );
+ document.write( "<font size=2 color='ff00ff'>ã€ä»Šå¤© è¥¿å…ƒ " + SolarYear + "å¹´" + SolarMonth + "æœˆ" + SolarDate + "æ—¥ -- " );
+       document.write( "è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥ -- " );
 
-       document.write( "·Ù" + Location + " -- ¨R" + Animal + Age + " ·³¡j</font>" );                
+       document.write( "ç…" + Location + " -- æ²–" + Animal + Age + " æ­²ã€‘</font>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¦è¾ä¦~¬O§_¬°¶|¦~, ªğ¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤è¥¿æ›†å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å› 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -183,11 +183,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¦è¾ä 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¦è¾ä 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°è¥¿æ›† 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´è¥¿æ›† 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -207,8 +207,8 @@ function OpenWin( url ) {
 		<tr>
 			<td valign="top" height="1669">
 			<a style="color: #C4663B; font-weight: bold; text-decoration: none" href="http://taiwanarchitecture.blogspot.com/2007/09/shih-chien-university.html">
-            <font face="¼Ğ·¢Åé">
-			¹ê½î³]­p±Ğ¾Ç¤j¼Ó</font></a> </td>
+            <font face="æ¨™æ¥·é«”">
+			å¯¦è¸è¨­è¨ˆæ•™å­¸å¤§æ¨“</font></a> </td>
 			<td valign="top" height="1669">
 			<img border="0" src="shih-chien[1].JPG" width="419" height="524"><img border="0" src="shih-chien_(1)[1].JPG" width="403" height="523"><p>
 			<img border="0" src="shih-chien_(3)[1].JPG" width="412" height="527"><img border="0" src="shih-chien_(4)[1].JPG" width="406" height="529"></p>
@@ -218,8 +218,8 @@ function OpenWin( url ) {
 		<tr>
 			<td valign="top" height="1116">
 			<a style="color: #C4663B; font-weight: bold; text-decoration: none" href="http://taiwanarchitecture.blogspot.com/2007/09/shihsanhang-museum-of-archaeology.html">
-            <font face="¼Ğ·¢Åé">
-			¤Q¤T¦æ³Õª«À]</font></a> </td>
+            <font face="æ¨™æ¥·é«”">
+			åä¸‰è¡Œåšç‰©é¤¨</font></a> </td>
 			<td valign="top" height="1116">
 			<img border="0" src="archaelogy[1].JPG" width="401" height="523"><img border="0" src="archaelogy_(1)[1].JPG" width="403" height="523"><p>
 			<img border="0" src="archaelogy_(2)[1].JPG" width="402" height="530"><img border="0" src="archaelogy_(3)[1].JPG" width="408" height="530"></p>
@@ -228,8 +228,8 @@ function OpenWin( url ) {
 		<tr>
 			<td valign="top" height="1467">
 			<a style="color: #C4663B; font-weight: bold; text-decoration: none" href="http://taiwanarchitecture.blogspot.com/2007/09/yingge-ceramics-museum.html">
-            <font face="¼Ğ·¢Åé">
-			Åaºq³³²¡³Õª«À]</font></a></td>
+            <font face="æ¨™æ¥·é«”">
+			é¶¯æ­Œé™¶ç“·åšç‰©é¤¨</font></a></td>
 			<td valign="top" height="1467">
 			<img border="0" src="yingge-01[1].JPG" width="408" height="305"><img border="0" src="yingge-02[1].JPG" width="404" height="305"><p>
 			<img border="0" src="DSCN7253[1].JPG" width="408" height="544"><img border="0" src="yingge-06[1].JPG" width="413" height="547"></p>
@@ -238,8 +238,8 @@ function OpenWin( url ) {
 		<tr>
 			<td valign="top" height="667">
 			<a style="color: #C4663B; font-weight: bold; text-decoration: none" href="http://taiwanarchitecture.blogspot.com/2007/07/beitou-library.html">
-            <font face="¼Ğ·¢Åé">
-			¥_§ë¹Ï®ÑÀ]</font></a></td>
+            <font face="æ¨™æ¥·é«”">
+			åŒ—æŠ•åœ–æ›¸é¤¨</font></a></td>
 			<td valign="top" height="667">
 			<img border="0" src="photo/a[1].JPG" width="400" height="300"><img border="0" src="a_(1)[1].JPG" width="400" height="300"><p>
 			<img border="0" src="photo/a_(2)[1].JPG" width="400" height="300"><img border="0" src="b_(1)[1].JPG" width="399" height="300"></td>
@@ -247,8 +247,8 @@ function OpenWin( url ) {
 		<tr>
 			<td valign="top" width="90" height="1123">
 			<a style="color: #C4663B; font-weight: bold; text-decoration: none" href="http://taiwanarchitecture.blogspot.com/2007/07/memorial-taipei-228-228.html">
-            <font face="¼Ğ·¢Åé">
-			¥x¥_228¬ö©À¸O</font></a></td>
+            <font face="æ¨™æ¥·é«”">
+			å°åŒ—228ç´€å¿µç¢‘</font></a></td>
 			<td valign="top" height="1123" width="800">
 			<img border="0" src="DSCN6983[1].JPG" width="399" height="534"><img border="0" src="DSCN6985[1].JPG" width="399" height="534"><p>
 			<img border="0" src="DSCN6987[1].JPG" width="398" height="526"><img border="0" src="DSCN6989[1].JPG" width="399" height="526"></td>

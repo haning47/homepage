@@ -1,16 +1,16 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>·sºô­¶1</title>
+<title>æ–°ç¶²é 1</title>
 </head>
 
 <body background="image/back1.2.3.5.JPG">
 
 <p align="center"><img border="0" src="image/title2.gif" width="434" height="99"></p>
-<p align="center">¡@<script language="JavaScript"><!--
+<p align="center">ã€€<script language="JavaScript"><!--
 function CalConv()
  {
 	FIRSTYEAR = 1998;
@@ -59,15 +59,15 @@ function CalConv()
   new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
 
 
- /* ¥Á°ê¦~¨C¤ë¤§¤é¼Æ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹æ—¥æ•¸ */
  SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
- /* ¥Á°ê¦~¨C¤ë¤§²Ö¿n¤é¼Æ, ¥­¦~»P¶|¦~ */
+ /* æ°‘åœ‹å¹´æ¯æœˆä¹‹ç´¯ç©æ—¥æ•¸, å¹³å¹´èˆ‡é–å¹´ */
  SolarDays = [
   0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,
   0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
-	AnimalIdx = ["°¨", "¦Ï", "µU", "Âû", "ª¯", "½Þ", "¹«", "¤û", "ªê", "¨ß", "Às", "³D" ];
-	LocationIdx = [ "«n", "ªF", "¥_", "¦è" ];
+	AnimalIdx = ["é¦¬", "ç¾Š", "çŒ´", "é›ž", "ç‹—", "è±¬", "é¼ ", "ç‰›", "è™Ž", "å…”", "é¾", "è›‡" ];
+	LocationIdx = [ "å—", "æ±", "åŒ—", "è¥¿" ];
 
 	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
 
@@ -130,18 +130,18 @@ function CalConv()
                          this.length=initArray.arguments.length
                          for(var i=0;i<this.length;i++)
                          this[i+1]=initArray.arguments[i]  }
-       var d=new initArray("<font color=RED>¬P´Á¤é</font>","<font color=#8000FF>¬P´Á¤@</font>","<font color=#8000FF>¬P´Á¤G</font>","<font color=#8000FF>¬P´Á¤T</font>","<font color=#8000FF>¬P´Á¥|</font>","<font color=#8000FF>¬P´Á¤­</font>","<font color=GREEN>¬P´Á¤»</font>");
-             document.write("¥Á°ê <font color=#3171b7>",today.getYear()-1911,"<font color=black> ¦~ </font>",today.getMonth()+1,"<font color=black> ¤ë </font>",today.getDate(),"<font color=black> ¤é </font>"
+       var d=new initArray("<font color=RED>æ˜ŸæœŸæ—¥</font>","<font color=#8000FF>æ˜ŸæœŸä¸€</font>","<font color=#8000FF>æ˜ŸæœŸäºŒ</font>","<font color=#8000FF>æ˜ŸæœŸä¸‰</font>","<font color=#8000FF>æ˜ŸæœŸå››</font>","<font color=#8000FF>æ˜ŸæœŸäº”</font>","<font color=GREEN>æ˜ŸæœŸå…­</font>");
+             document.write("æ°‘åœ‹ <font color=#3171b7>",today.getYear()-1911,"<font color=black> å¹´ </font>",today.getMonth()+1,"<font color=black> æœˆ </font>",today.getDate(),"<font color=black> æ—¥ </font>"
         ,d[today.getDay()+1],"");
-	  document.write( "</font><span class=d>¹A¾ä " + LunarMonth + "¤ë " + LunarDate + "¤é</span>" );
+	  document.write( "</font><span class=d>è¾²æ›† " + LunarMonth + "æœˆ " + LunarDate + "æ—¥</span>" );
 
-       document.write( "<span class=d><font color=RED>·Ù</font>" + Location + " <font color=GREEN>¨R</font>" + Animal + Age + "·³</span><br>" );                
+       document.write( "<span class=d><font color=RED>ç…ž</font>" + Location + " <font color=GREEN>æ²–</font>" + Animal + Age + "æ­²</span><br>" );                
                 
  
  return 0;
  }
 
- /* ¨D¦¹¥Á°ê¦~¬O§_¬°¶|¦~, ªð¦^ 0 ¬°¥­¦~, 1 ¬°¶|¦~ */
+ /* æ±‚æ­¤æ°‘åœ‹å¹´æ˜¯å¦ç‚ºé–å¹´, è¿”å›ž 0 ç‚ºå¹³å¹´, 1 ç‚ºé–å¹´ */
 function GetLeap( year )
  {
    if ( year % 400 == 0 )
@@ -155,11 +155,11 @@ function GetLeap( year )
  }
 
 function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
- this.BaseDays = d;         /* ¨ì¥Á°ê 1 ¤ë 1 ¤é¨ì¹A¾ä¥¿¤ëªì¤@ªº²Ö¿n¤é¼Æ */
- this.Intercalation = i;    /* ¶|¤ë¤ë¥÷. 0==¦¹¦~¨S¦³¶|¤ë */
- this.BaseWeekday = w;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¬°¬P´Á´X¦A´î 1 */
- this.BaseKanChih = k;      /* ¦¹¦~¥Á°ê 1 ¤ë 1 ¤é¤§¤z¤ä§Ç¸¹´î 1 */
- this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* ¦¹¹A¾ä¦~¨C¤ë¤§¤j¤p, 0==¤p¤ë(29¤é), 1==¤j¤ë(30¤é) */
+ this.BaseDays = d;         /* åˆ°æ°‘åœ‹ 1 æœˆ 1 æ—¥åˆ°è¾²æ›†æ­£æœˆåˆä¸€çš„ç´¯ç©æ—¥æ•¸ */
+ this.Intercalation = i;    /* é–æœˆæœˆä»½. 0==æ­¤å¹´æ²’æœ‰é–æœˆ */
+ this.BaseWeekday = w;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ç‚ºæ˜ŸæœŸå¹¾å†æ¸› 1 */
+ this.BaseKanChih = k;      /* æ­¤å¹´æ°‘åœ‹ 1 æœˆ 1 æ—¥ä¹‹å¹²æ”¯åºè™Ÿæ¸› 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* æ­¤è¾²æ›†å¹´æ¯æœˆä¹‹å¤§å°, 0==å°æœˆ(29æ—¥), 1==å¤§æœˆ(30æ—¥) */
 }
 
 //-->
@@ -169,122 +169,122 @@ CalConv();
 </script>   
 </p>
 
-<p align="center"><font color="#0000ff" size="6"><strong><font color="#cc3399">®v¤j©]¥«</font></strong></font> 
+<p align="center"><font color="#0000ff" size="6"><strong><font color="#cc3399">å¸«å¤§å¤œå¸‚</font></strong></font> 
 </p>
 
-<p align="center"><strong><font color="#993300" size="5">©]¥«¾ú¥vµo®i</font></strong></p>
+<p align="center"><strong><font color="#993300" size="5">å¤œå¸‚æ­·å²ç™¼å±•</font></strong></p>
 <font color="#993300" size="5">
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
-¦b¹L¥h¡A®v¤j©]¥«ªº½d³òÂX¤Î¾ã±ø®v¤j¸ô©M®v¤j¸ô¤Î©M¥­ªF¸ô¥æ¤e¤f¡A¦b¶À¤j¬w¥«ªø®É´Áªº</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>®É­Ô¡AÅu³c¬Û·í¦h¡A¤H¼é¤Q¤À¼öµ¸¡A¬O­Ó«D±`¼ö¾xªº©]¥«¡AµM¦Ó²{¤µ¥u³Ñ¤UÀs¬uµó¤@±aÁÙ¦³¨Ç</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>³\½æ¦çªA»P¤p¹¢«~ªºÅu³c¡A¨ä¾lªº¦hÂà«¬¬°©±­±«¬¦¡¡C</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
-ÁöµMºÙ¬°®v¤j©]¥«¡A¦ý°Ó®a´¶¹M»{¬°¤£¬O©]¥«¡A¥Ñ©ó®ø¶O±Ú¸s¤j³£©T©w¡]®v¤j¾Ç¥Í¡Bªþªñ¾Ç</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>®Õªº¾Ç¥Í¡Bªþªñ©~¥Á¡B¤W¯Z±Ú¥H¤Î¥~°ê¤Hµ¥µ¥¡^¡A¤£¹³¨ä¥LªºÆ[¥ú©]¥«¸û¦³¤H¤fªº¬y°Ê¡A¥[¤W</strong></font></span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>ªF¦èÂ×´I¦h¤¸¡A¥B¨ã¦³²§°êªº­·±¡¡A¦]¦¹¤ñ¸û¹³¬O­Ó¦Y³Üª±¼Öªº¤pÄ_¤s¡C</strong></font></span></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">&nbsp;&nbsp;&nbsp; 
-ªñ´X¦~ªº®v¤j©]¥«¬Æ¦Ü¦³­Ó¡u®v¤j©@°Øµó¡vªººÙ¸¹¡A·í¦~©]¥«ÁÙ¬O¤@¤ùºa´ºªºªº®É­Ô¡A¥Ñ©ó</span></font></strong></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">Åu³c¾D¨ìÄY®æªº¨ú½l¡A©ó¬OÅu³c±q¨º®É°_³vº¥´î¤Ö¡A¬Æ¦Ü®øÁn°Î¸ñ¡A©Ò¥HÅý©@°Ø©±¦b³o¨Ç¤p«Ñ</span></font></strong></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">¤l¦³¤F¥Í¦sªÅ¶¡¡A©µÄò¾ã­Ó¥x¥_¦a°Ï³oºØ¥H¤H¤å®ð®§¬°¯S¦âªº©@°Ø©±¡A¥þ²±®É´ÁÅ¥»¡¹F¨ì¤@¦Ê</span></font></strong></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">¦h®a¤§ÃÐ¡A¨ä¥LÃþ«¬ªº°Ó®a¤]º¥º¥¥X²{¡A±N®v¤j¸ô±a¤J¥t¤@­ÓÁcºaªº®É´Á¡A¥]¬AªA¹¢©±¡Bºë«~</span></font></strong></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">©±¡B½Æ¦X¦¡À\¶¼µ¥µ¥¡A¨ì¤F¤µ¤Ñ¥Ñ¼öµ¸ªº¤H¼é¡A¤pÅu³c¤S­«·s´_µd¡A¥[¤W«á°_¤§¨qªº¦U¦¡©±®a</span></font></strong></p>
-<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: ">¡A¨âªÌ²Õ¦X¤w¸g§Î¦¨¤£¦P¥H©¹ªº°Ó°é«¬ºA¤F¡C</span></font></strong></p>
-<p><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp;&nbsp; 
-¦]¦¹¡A®v¤j©]¥«¤§©Ò¥H·|µo®i¦¨¤µ¤Ñªº«¬ºA¡A¦³«Ü¤j¤@­Ó³¡¤À¬O¦]¬°ÀHµÛ©@°ØÀ]¤å¤Æªºµo®i</strong></font></span></p>
-<p><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>¦Ó¿³°_ªººë«~©±¡BªA¹¢©±¥H¤Î¦UºØ¯S®í°Ó«~Ãþ«¬ªº©±®a¡AÁÙ¦³­ì¥»¦Ñ¦r¸¹ªºº±¨ý¡BÄÑ­¹µ¥µ¥¡A</strong></font></span></p>
-<p><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>¥[¤Wªþªñªº¦a²zÀô¹Ò»P¥æ³q±ø¥ó¡A¨Ï±o®v¤j©]¥«¨ã¦³¨ä¯S®íÀu¶Õ¡C¦n¦Y¡B¦nª±¡B«K©y¤S¤è«K¡A</strong></font></span></p>
-<p><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font color="#000000" size="3"><strong>³o¤]¬O¬°¤°»òªþªñ¾Ç¥Í»P©~¥Áªº©¾¸Û«×·|³o»ò°ªªº­ì¦]¤F¡C</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
+åœ¨éŽåŽ»ï¼Œå¸«å¤§å¤œå¸‚çš„ç¯„åœæ“´åŠæ•´æ¢å¸«å¤§è·¯å’Œå¸«å¤§è·¯åŠå’Œå¹³æ±è·¯äº¤å‰å£ï¼Œåœ¨é»ƒå¤§æ´²å¸‚é•·æ™‚æœŸçš„</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>æ™‚å€™ï¼Œæ”¤è²©ç›¸ç•¶å¤šï¼Œäººæ½®ååˆ†ç†±çµ¡ï¼Œæ˜¯å€‹éžå¸¸ç†±é¬§çš„å¤œå¸‚ï¼Œç„¶è€Œç¾ä»Šåªå‰©ä¸‹é¾æ³‰è¡—ä¸€å¸¶é‚„æœ‰äº›</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>è¨±è³£è¡£æœèˆ‡å°é£¾å“çš„æ”¤è²©ï¼Œå…¶é¤˜çš„å¤šè½‰åž‹ç‚ºåº—é¢åž‹å¼ã€‚</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp; 
+é›–ç„¶ç¨±ç‚ºå¸«å¤§å¤œå¸‚ï¼Œä½†å•†å®¶æ™®éèªç‚ºä¸æ˜¯å¤œå¸‚ï¼Œç”±æ–¼æ¶ˆè²»æ—ç¾¤å¤§éƒ½å›ºå®šï¼ˆå¸«å¤§å­¸ç”Ÿã€é™„è¿‘å­¸</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>æ ¡çš„å­¸ç”Ÿã€é™„è¿‘å±…æ°‘ã€ä¸Šç­æ—ä»¥åŠå¤–åœ‹äººç­‰ç­‰ï¼‰ï¼Œä¸åƒå…¶ä»–çš„è§€å…‰å¤œå¸‚è¼ƒæœ‰äººå£çš„æµå‹•ï¼ŒåŠ ä¸Š</strong></font></span></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>æ±è¥¿è±å¯Œå¤šå…ƒï¼Œä¸”å…·æœ‰ç•°åœ‹çš„é¢¨æƒ…ï¼Œå› æ­¤æ¯”è¼ƒåƒæ˜¯å€‹åƒå–çŽ©æ¨‚çš„å°å¯¶å±±ã€‚</strong></font></span></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">&nbsp;&nbsp;&nbsp; 
+è¿‘å¹¾å¹´çš„å¸«å¤§å¤œå¸‚ç”šè‡³æœ‰å€‹ã€Œå¸«å¤§å’–å•¡è¡—ã€çš„ç¨±è™Ÿï¼Œç•¶å¹´å¤œå¸‚é‚„æ˜¯ä¸€ç‰‡æ¦®æ™¯çš„çš„æ™‚å€™ï¼Œç”±æ–¼</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">æ”¤è²©é­åˆ°åš´æ ¼çš„å–ç· ï¼Œæ–¼æ˜¯æ”¤è²©å¾žé‚£æ™‚èµ·é€æ¼¸æ¸›å°‘ï¼Œç”šè‡³æ¶ˆè²åŒ¿è·¡ï¼Œæ‰€ä»¥è®“å’–å•¡åº—åœ¨é€™äº›å°å··</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">å­æœ‰äº†ç”Ÿå­˜ç©ºé–“ï¼Œå»¶çºŒæ•´å€‹å°åŒ—åœ°å€é€™ç¨®ä»¥äººæ–‡æ°£æ¯ç‚ºç‰¹è‰²çš„å’–å•¡åº—ï¼Œå…¨ç››æ™‚æœŸè½èªªé”åˆ°ä¸€ç™¾</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">å¤šå®¶ä¹‹è­œï¼Œå…¶ä»–é¡žåž‹çš„å•†å®¶ä¹Ÿæ¼¸æ¼¸å‡ºç¾ï¼Œå°‡å¸«å¤§è·¯å¸¶å…¥å¦ä¸€å€‹ç¹æ¦®çš„æ™‚æœŸï¼ŒåŒ…æ‹¬æœé£¾åº—ã€ç²¾å“</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">åº—ã€è¤‡åˆå¼é¤é£²ç­‰ç­‰ï¼Œåˆ°äº†ä»Šå¤©ç”±ç†±çµ¡çš„äººæ½®ï¼Œå°æ”¤è²©åˆé‡æ–°å¾©ç”¦ï¼ŒåŠ ä¸Šå¾Œèµ·ä¹‹ç§€çš„å„å¼åº—å®¶</span></font></strong></p>
+<p><strong><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: ">ï¼Œå…©è€…çµ„åˆå·²ç¶“å½¢æˆä¸åŒä»¥å¾€çš„å•†åœˆåž‹æ…‹äº†ã€‚</span></font></strong></p>
+<p><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>&nbsp;&nbsp;&nbsp; 
+å› æ­¤ï¼Œå¸«å¤§å¤œå¸‚ä¹‹æ‰€ä»¥æœƒç™¼å±•æˆä»Šå¤©çš„åž‹æ…‹ï¼Œæœ‰å¾ˆå¤§ä¸€å€‹éƒ¨åˆ†æ˜¯å› ç‚ºéš¨è‘—å’–å•¡é¤¨æ–‡åŒ–çš„ç™¼å±•</strong></font></span></p>
+<p><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>è€Œèˆˆèµ·çš„ç²¾å“åº—ã€æœé£¾åº—ä»¥åŠå„ç¨®ç‰¹æ®Šå•†å“é¡žåž‹çš„åº—å®¶ï¼Œé‚„æœ‰åŽŸæœ¬è€å­—è™Ÿçš„æ»·å‘³ã€éºµé£Ÿç­‰ç­‰ï¼Œ</strong></font></span></p>
+<p><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>åŠ ä¸Šé™„è¿‘çš„åœ°ç†ç’°å¢ƒèˆ‡äº¤é€šæ¢ä»¶ï¼Œä½¿å¾—å¸«å¤§å¤œå¸‚å…·æœ‰å…¶ç‰¹æ®Šå„ªå‹¢ã€‚å¥½åƒã€å¥½çŽ©ã€ä¾¿å®œåˆæ–¹ä¾¿ï¼Œ</strong></font></span></p>
+<p><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font color="#000000" size="3"><strong>é€™ä¹Ÿæ˜¯ç‚ºä»€éº¼é™„è¿‘å­¸ç”Ÿèˆ‡å±…æ°‘çš„å¿ èª åº¦æœƒé€™éº¼é«˜çš„åŽŸå› äº†ã€‚</strong></font></span></p>
 </font>
-<p align="center"><font color="#cc3399" size="6"><b>¤½À]©]¥«</b></font></p>
+<p align="center"><font color="#cc3399" size="6"><b>å…¬é¤¨å¤œå¸‚</b></font></p>
 <font color="#993300" size="5">
-<p align="center"><strong>©]¥«¾ú¥vµo®i</strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
-¤½À]¦ì©óÃ¹´µºÖ¸ô¥|¬q¤@±a¡A¦¹¦a¦]²M°®¶©®É´Á¦³¤j§å¬u¦{©²¦w·Ë²¾¥Á¹Î¤J¾Á¡A¾Á­º¤D©ó¦¹</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¿v¤½À]¥H¼x¦¬¦ú¤á¯²âB¡A¬G¦W¤½À]¡C¤½À]¬O¥x¥_¥««n°Ï³Ì¤jªº©]¥«¡AµM¦Ó¥¦»P¨ä¥Lªº©]¥«³Ì¤j</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">ªº¤£¦PÂI¦b©ó¡A¤½À]¤£¶È¥H¤p¦Y¬°¥D¡AÁÙ¥]¬A³\¦hªºªA¹¢©±¡B¤pÃÀ«~©±¡BÀ\ÆU¡B©@°ØÆU¡B¯ùÀ]</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¡B®Ñ©±</span><span lang="EN-US" style="FONT-FAMILY: Arial">¡K</span><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">µ¥µ¥¡A¥t¥~ÁÙ¦³¤@®a¬°¤H©Òª¾ªº¡uªF«n¨ÈÀ¸°|¡v¡A¥i»¡§Î¦¨¤F¤@­Ó¤p«¬°Ó·~°Ï¡C</span><span lang="EN-US" style="FONT-FAMILY: Arial"><br>
+<p align="center"><strong>å¤œå¸‚æ­·å²ç™¼å±•</strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
+å…¬é¤¨ä½æ–¼ç¾…æ–¯ç¦è·¯å››æ®µä¸€å¸¶ï¼Œæ­¤åœ°å› æ¸…ä¹¾éš†æ™‚æœŸæœ‰å¤§æ‰¹æ³‰å·žåºœå®‰æºªç§»æ°‘åœ˜å…¥å¢¾ï¼Œå¢¾é¦–ä¹ƒæ–¼æ­¤</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">ç¯‰å…¬é¤¨ä»¥å¾µæ”¶ä½ƒæˆ¶ç§Ÿæ¦–ï¼Œæ•…åå…¬é¤¨ã€‚å…¬é¤¨æ˜¯å°åŒ—å¸‚å—å€æœ€å¤§çš„å¤œå¸‚ï¼Œç„¶è€Œå®ƒèˆ‡å…¶ä»–çš„å¤œå¸‚æœ€å¤§</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">çš„ä¸åŒé»žåœ¨æ–¼ï¼Œå…¬é¤¨ä¸åƒ…ä»¥å°åƒç‚ºä¸»ï¼Œé‚„åŒ…æ‹¬è¨±å¤šçš„æœé£¾åº—ã€å°è—å“åº—ã€é¤å»³ã€å’–å•¡å»³ã€èŒ¶é¤¨</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">ã€æ›¸åº—</span><span lang="EN-US" style="FONT-FAMILY: Arial">â€¦</span><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">ç­‰ç­‰ï¼Œå¦å¤–é‚„æœ‰ä¸€å®¶ç‚ºäººæ‰€çŸ¥çš„ã€Œæ±å—äºžæˆ²é™¢ã€ï¼Œå¯èªªå½¢æˆäº†ä¸€å€‹å°åž‹å•†æ¥­å€ã€‚</span><span lang="EN-US" style="FONT-FAMILY: Arial"><br>
 </span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
-¦b¤½À]¦a°ÏªºÃ¹´µºÖ¸ô¤Î¥Å¦{¸ô¤W¡A¨â°¼ªº©±®a¤j¦h¬OªA¹¢©±¡B®Ñ©±¡B°Û¤ù¦æ¤ÎÃÀ«~©±¡A¦]</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¾Fªñ¥xÆW¤j¾Ç¤Î¥xÆW¬ì§Þ¤j¾Ç¡A¥B¬O³q©¹´º¬ü¡B¤ì¬]¤Î¤¤¥Ã©Mµ¥¦a°Ïªº¤½¨®Âà­¼¯¸¤Î±¶¹B¯¸¡A</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¨Ó©¹¦¹¦aªº¤H¸s¤]´N¬Û¹ï¼W¦h¡C¥Ñ©ó¨Ó©¹¦¹¦a¤j³£¬°¾Ç¥Í¡A·í¦aªº®ø¶OÃB¤]ºÉ¶q²Å¦X¾Ç¥Íªº¯à</span></strong></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¤O¡C</span><span lang="EN-US" style="FONT-FAMILY: Arial">&nbsp;</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">&nbsp;&nbsp;&nbsp; 
+åœ¨å…¬é¤¨åœ°å€çš„ç¾…æ–¯ç¦è·¯åŠæ±€å·žè·¯ä¸Šï¼Œå…©å´çš„åº—å®¶å¤§å¤šæ˜¯æœé£¾åº—ã€æ›¸åº—ã€å”±ç‰‡è¡ŒåŠè—å“åº—ï¼Œå› </span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">é„°è¿‘å°ç£å¤§å­¸åŠå°ç£ç§‘æŠ€å¤§å­¸ï¼Œä¸”æ˜¯é€šå¾€æ™¯ç¾Žã€æœ¨æŸµåŠä¸­æ°¸å’Œç­‰åœ°å€çš„å…¬è»Šè½‰ä¹˜ç«™åŠæ·é‹ç«™ï¼Œ</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">ä¾†å¾€æ­¤åœ°çš„äººç¾¤ä¹Ÿå°±ç›¸å°å¢žå¤šã€‚ç”±æ–¼ä¾†å¾€æ­¤åœ°å¤§éƒ½ç‚ºå­¸ç”Ÿï¼Œç•¶åœ°çš„æ¶ˆè²»é¡ä¹Ÿç›¡é‡ç¬¦åˆå­¸ç”Ÿçš„èƒ½</span></strong></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">åŠ›ã€‚</span><span lang="EN-US" style="FONT-FAMILY: Arial">&nbsp;</span></strong></font></p>
 <span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3">
 <p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><br>
 </font></span></font><span lang="EN-US" style="FONT-FAMILY: Arial"><span style="font-family: Arial" lang="EN-US"><font color="#000000" size="3">&nbsp;&nbsp;&nbsp;&nbsp; 
-</font></span><font color="#000000" size="3"><strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¥Å¦{¸ô¤T¬q</span>237<span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">¸¹¡A¥H¨ä¤J¤f§Y¤Æ¡B²n¤f³z¤ß²Dªº©ÛµP</span></strong><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>¨§ªá¥X¦W¡F¤@®a¦ì©ó¥Å¦{¸ô¤T¬q¤£ª¾</strong></span></font>
+</font></span><font color="#000000" size="3"><strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">æ±€å·žè·¯ä¸‰æ®µ</span>237<span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial">è™Ÿï¼Œä»¥å…¶å…¥å£å³åŒ–ã€çˆ½å£é€å¿ƒæ¶¼çš„æ‹›ç‰Œ</span></strong><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>è±†èŠ±å‡ºåï¼›ä¸€å®¶ä½æ–¼æ±€å·žè·¯ä¸‰æ®µä¸çŸ¥</strong></span></font>
 </span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>¦Wªº¡u¨®½ü»æ¡v¤p©±¡A±`±`¬Ý¨ì¤j±ÆªøÀs±Æ¶¤¤H¼é¡A¦bµ¥«Ý¨º¨Ç¬õ¨§¤Î¥¤ªo¤f¨ýªº¨®½ü»æ¡F¡u</strong></span></font>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>åçš„ã€Œè»Šè¼ªé¤…ã€å°åº—ï¼Œå¸¸å¸¸çœ‹åˆ°å¤§æŽ’é•·é¾æŽ’éšŠäººæ½®ï¼Œåœ¨ç­‰å¾…é‚£äº›ç´…è±†åŠå¥¶æ²¹å£å‘³çš„è»Šè¼ªé¤…ï¼›ã€Œ</strong></span></font>
 </span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>»ñ«°¿NÃ¾¡v¦ì©ó¥x¤j·s¥Í«n¸ô°¼ªù±×¹ï­±¡A¦UºØ«È¶º¦p©ÛµP¶º¡B¤TÄ_¶º¡B¤e¿NÂû¡BªoÂû¶º¡B±Æ</strong></span></font>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>é³³åŸŽç‡’è‡˜ã€ä½æ–¼å°å¤§æ–°ç”Ÿå—è·¯å´é–€æ–œå°é¢ï¼Œå„ç¨®å®¢é£¯å¦‚æ‹›ç‰Œé£¯ã€ä¸‰å¯¶é£¯ã€å‰ç‡’é›žã€æ²¹é›žé£¯ã€æŽ’</strong></span></font>
 </span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>°©¶º¡A³£¦³¨ä¿W¯S¨ý¹D¡C¦¹¥~¡A¥Å¦{¸ô¥ç¦³¡uªF«n¨Èµó¡vªº¬ü¦W¡A¥D­n¬O³o±øµó¤Îªþªñ«Ñ¤l»E</strong></span></font>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>éª¨é£¯ï¼Œéƒ½æœ‰å…¶ç¨ç‰¹å‘³é“ã€‚æ­¤å¤–ï¼Œæ±€å·žè·¯äº¦æœ‰ã€Œæ±å—äºžè¡—ã€çš„ç¾Žåï¼Œä¸»è¦æ˜¯é€™æ¢è¡—åŠé™„è¿‘å··å­èš</strong></span></font>
 </span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>¶°³\¦hªF«n¨È­·¨ýÀ\ÆU¡A¦p®õ°ê¡B°¨¨Ó¦è¨È¡B¦L¥§¡B½q¨lµ¥¡A¦p¡u°Ò¼w°Ç¡vªº½q¨lµæ¡B¡u·¦®q</strong></span></font>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>é›†è¨±å¤šæ±å—äºžé¢¨å‘³é¤å»³ï¼Œå¦‚æ³°åœ‹ã€é¦¬ä¾†è¥¿äºžã€å°å°¼ã€ç·¬ç”¸ç­‰ï¼Œå¦‚ã€Œæ›¼å¾·å‹’ã€çš„ç·¬ç”¸èœã€ã€Œæ¤°å³¶</strong></span></font>
 </span></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>¡vªº¦L¥§µæ¡B¡u®õ°ê¤pÀ]¡vªº¨¯»¶¤f¨ý¡A¥O¤H¦^¨ýµL½a¡C</strong></span></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><font color="#cc3399" size="6"><b>¤hªL©]¥«</b></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><strong><font color="#993300" size="5">©]¥«¾ú¥vµo®i</font></strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">¤hªL©]¥«¬O¥x¥_©]¥«¤¤³Ì¨ã³W¼Òªº¤@­Ó¡A¨C·í¤C¡B¤KÂIÄÁ®É¡A¤åªL¸ô¡B¤jªF¸ô¡B¤j</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">«n¸ô¡B¤p¦èµóªº¥|©P´N³°³°ÄòÄò´é¤J¤j¶q¤H¼é¡AÅý³o¥|±ø¸ô³QÀ½±o¤ô¬ª¤£³q¡A¤o¨B</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">Ãø¦æ¡A¥|©P¥Rº¡¤F¦¹°_©¼¸¨ªº¥s½æÁn¡A³o´N¬O¤hªL©]¥«ªº³Ì¨Î¼g·Ó¡C</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
-²M¥½¡A¦¹¦aºòÁ{°ò¶©ªeªº¤j«n¸ô¸ô¤f¬O¤@´ç²îÀY¡C°£¤F¤hªL¡BªÀ¤l©Ò²£ªº¹A²£</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">«~¡A¬Æ¦Ü»·¦Û¶§ª÷¤½¸ô¬D¨Ó½æªº·sÂA³½³f¡A³£¥H³o­Ó¦aÂI¬°¥æ©ö¤¤¤ß¥~¡A¹B¦Ü»S×U</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">¡B¤j½_ÑLªº³fª«¥ç¦b¦¹¸Ë¸ü¡A¤[¦Ó¤[¤§¡A¤j«n¸ô©PÃä«K§Î¦¨¥«¶°¡AÅu³cªL¥ß¡C³o¨Ç</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">¤p³c¥Õ¤Ñ½æµæ¡A±ß¤W¦¬Åu«á­Ý½æ¤p¦Y©ÎÂø³fÁÈ¿ú¡A©ó¬O¶V¨Ó¶V¦hªº¤p³c¸ò¶i¡A©]¥«</font></span></b></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">½d³ò«K¶VÂX¶V¤j¡A²×©ó§Î¦¨¤µ¤éªº§½­±¡C</font></span></b><font size="4"><b style="mso-bidi-font-weight: normal"><span lang="EN-US" style="FONT-SIZE: 14pt; COLOR: black">&nbsp;</span></b></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
-²{¦bªº¤hªL©]¥«¦@¥i¤À¬°¤G¤j³¡¤À¡A¤@¬O·Oë£®c¹ï­±ªº¥«³õ¤p¦Y¡A¥t¤@´N¬O¥H¶§</font></span></b></font></strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">©úÀ¸°|¬°¤¤¤ß¡A¥]¬A¦w¥­µó¡B¤jªF¸ô¡B¤åªL¸ô³ò¦¨ªº©·§Î¡A¦ý¨â³B¥Ñ©ó³W¼ÒÂX¤j¡A</font></span></b></font></strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">¤w¸g¦X¦Ó¬°¤@¡C¦Ó¦¹³Bªº¤p¦Y«h¥H¤j»æ¥]¤p»æ¡B¼sªFµ°¡B¤Ñ°üÃ¹¡BÅKªO¿N¡B³H¥JÄÑ</font></span></b></font></strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">½uµ¥³Ì¬°µÛ¦W¡C¥Ñ©ó¤hªL©]¥«ªº®ø¶O¹ï¶H¦h¥H¾Ç¥Í¬°¥D¡A¥]¬AÁ{ªñ¾Ç®Õ¦pªF§d¤j¾Ç</font></span></b></font></strong></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4">¡B»Ê¶Ç¤j¾Ç¡B¤å¤Æ¤j¾Ç¡B²H¦¿¤j¾Ç¡B²H¤ô¤u°Ó¡B¥_¤h°Óµ¥®Õ¡A¾Ç¥Í²³¦h¡A¦]¦¹</font></span></b></font></strong><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4"><strong>®ø¶O</strong></font></span></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: ·s²Ó©úÅé; mso-ascii-font-family: "><font size="4"><strong>ÃBÁÍ¦V¸gÀÙ¹ê´f¡C</strong></font></span></font></p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">¡@</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><span lang="EN-US" style="FONT-FAMILY: Arial"><font color="#000000" size="3"><span style="FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: Arial; mso-bidi-font-family: Arial; mso-hansi-font-family: Arial"><strong>ã€çš„å°å°¼èœã€ã€Œæ³°åœ‹å°é¤¨ã€çš„è¾›è¾£å£å‘³ï¼Œä»¤äººå›žå‘³ç„¡çª®ã€‚</strong></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><font color="#cc3399" size="6"><b>å£«æž—å¤œå¸‚</b></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center"><strong><font color="#993300" size="5">å¤œå¸‚æ­·å²ç™¼å±•</font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="center">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">å£«æž—å¤œå¸‚æ˜¯å°åŒ—å¤œå¸‚ä¸­æœ€å…·è¦æ¨¡çš„ä¸€å€‹ï¼Œæ¯ç•¶ä¸ƒã€å…«é»žé˜æ™‚ï¼Œæ–‡æž—è·¯ã€å¤§æ±è·¯ã€å¤§</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">å—è·¯ã€å°è¥¿è¡—çš„å››å‘¨å°±é™¸é™¸çºŒçºŒæ¹§å…¥å¤§é‡äººæ½®ï¼Œè®“é€™å››æ¢è·¯è¢«æ“ å¾—æ°´æ´©ä¸é€šï¼Œå¯¸æ­¥</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">é›£è¡Œï¼Œå››å‘¨å……æ»¿äº†æ­¤èµ·å½¼è½çš„å«è³£è²ï¼Œé€™å°±æ˜¯å£«æž—å¤œå¸‚çš„æœ€ä½³å¯«ç…§ã€‚</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
+æ¸…æœ«ï¼Œæ­¤åœ°ç·Šè‡¨åŸºéš†æ²³çš„å¤§å—è·¯è·¯å£æ˜¯ä¸€æ¸¡èˆ¹é ­ã€‚é™¤äº†å£«æž—ã€ç¤¾å­æ‰€ç”¢çš„è¾²ç”¢</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">å“ï¼Œç”šè‡³é è‡ªé™½é‡‘å…¬è·¯æŒ‘ä¾†è³£çš„æ–°é®®é­šè²¨ï¼Œéƒ½ä»¥é€™å€‹åœ°é»žç‚ºäº¤æ˜“ä¸­å¿ƒå¤–ï¼Œé‹è‡³è‰‹èˆº</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">ã€å¤§ç¨»åŸ•çš„è²¨ç‰©äº¦åœ¨æ­¤è£è¼‰ï¼Œä¹…è€Œä¹…ä¹‹ï¼Œå¤§å—è·¯å‘¨é‚Šä¾¿å½¢æˆå¸‚é›†ï¼Œæ”¤è²©æž—ç«‹ã€‚é€™äº›</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">å°è²©ç™½å¤©è³£èœï¼Œæ™šä¸Šæ”¶æ”¤å¾Œå…¼è³£å°åƒæˆ–é›œè²¨è³ºéŒ¢ï¼Œæ–¼æ˜¯è¶Šä¾†è¶Šå¤šçš„å°è²©è·Ÿé€²ï¼Œå¤œå¸‚</font></span></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">ç¯„åœä¾¿è¶Šæ“´è¶Šå¤§ï¼Œçµ‚æ–¼å½¢æˆä»Šæ—¥çš„å±€é¢ã€‚</font></span></b><font size="4"><b style="mso-bidi-font-weight: normal"><span lang="EN-US" style="FONT-SIZE: 14pt; COLOR: black">&nbsp;</span></b></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">&nbsp;&nbsp;&nbsp; 
+ç¾åœ¨çš„å£«æž—å¤œå¸‚å…±å¯åˆ†ç‚ºäºŒå¤§éƒ¨åˆ†ï¼Œä¸€æ˜¯æ…ˆè«´å®®å°é¢çš„å¸‚å ´å°åƒï¼Œå¦ä¸€å°±æ˜¯ä»¥é™½</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">æ˜Žæˆ²é™¢ç‚ºä¸­å¿ƒï¼ŒåŒ…æ‹¬å®‰å¹³è¡—ã€å¤§æ±è·¯ã€æ–‡æž—è·¯åœæˆçš„å¼§å½¢ï¼Œä½†å…©è™•ç”±æ–¼è¦æ¨¡æ“´å¤§ï¼Œ</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">å·²ç¶“åˆè€Œç‚ºä¸€ã€‚è€Œæ­¤è™•çš„å°åƒå‰‡ä»¥å¤§é¤…åŒ…å°é¤…ã€å»£æ±ç²¥ã€å¤©å©¦ç¾…ã€éµæ¿ç‡’ã€èšµä»”éºµ</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">ç·šç­‰æœ€ç‚ºè‘—åã€‚ç”±æ–¼å£«æž—å¤œå¸‚çš„æ¶ˆè²»å°è±¡å¤šä»¥å­¸ç”Ÿç‚ºä¸»ï¼ŒåŒ…æ‹¬è‡¨è¿‘å­¸æ ¡å¦‚æ±å³å¤§å­¸</font></span></b></font></strong></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><strong><font color="#993300" size="5"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4">ã€éŠ˜å‚³å¤§å­¸ã€æ–‡åŒ–å¤§å­¸ã€æ·¡æ±Ÿå¤§å­¸ã€æ·¡æ°´å·¥å•†ã€åŒ—å£«å•†ç­‰æ ¡ï¼Œå­¸ç”Ÿçœ¾å¤šï¼Œå› æ­¤</font></span></b></font></strong><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4"><strong>æ¶ˆè²»</strong></font></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><font color="#993300" size="5"><span style="FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: æ–°ç´°æ˜Žé«”; mso-ascii-font-family: "><font size="4"><strong>é¡è¶¨å‘ç¶“æ¿Ÿå¯¦æƒ ã€‚</strong></font></span></font></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt">ã€€</p>
 </span>
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b><font color="#993300"><strong><span style="font-family: Arial; color: black" lang="EN-US">°Ñ¦Ò¸ê®Æ 
-¥x¥_©]¥«°l°l°l http://blog.xuite.net/zhonggodc/nightmarket/4448100</span></strong></font></b></p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt"><b><font color="#993300"><strong><span style="font-family: Arial; color: black" lang="EN-US">åƒè€ƒè³‡æ–™ 
+å°åŒ—å¤œå¸‚è¿½è¿½è¿½ http://blog.xuite.net/zhonggodc/nightmarket/4448100</span></strong></font></b></p>
 <span lang="EN-US" style="FONT-FAMILY: Arial">
-<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="left">¡@</p>
+<p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt" align="left">ã€€</p>
 </span><font color="#993300" size="5">
-<p align="center">¡@</p>
+<p align="center">ã€€</p>
 </font>
 
-<p align="center">¡@ 
+<p align="center">ã€€ 
 </p>
 
 </body>
