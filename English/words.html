@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>單字學習卡SRS版</title>
+    <meta name="description" content="單字學習卡SRS版" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
@@ -278,6 +279,99 @@
             return examples;
         }
 
+        const wordImageCache = {};
+
+        function generateWordIllustration(word) {
+            const safeWord = (word || 'Word').replace(/[<>&"]/g, '');
+            const initial = safeWord.charAt(0).toUpperCase();
+            let hash = 0;
+            for (let i = 0; i < safeWord.length; i++) hash = (hash << 5) - hash + safeWord.charCodeAt(i);
+            const hue1 = Math.abs(hash) % 360;
+            const hue2 = (hue1 + 45) % 360;
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
+              <defs>
+                <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="hsl(${hue1}, 70%, 42%)" />
+                  <stop offset="100%" stop-color="hsl(${hue2}, 75%, 26%)" />
+                </linearGradient>
+              </defs>
+              <rect width="600" height="200" fill="url(#g)" />
+              <circle cx="60" cy="20" r="120" fill="white" opacity="0.06" />
+              <circle cx="550" cy="180" r="140" fill="white" opacity="0.08" />
+              <g transform="translate(40, 45)">
+                <rect width="110" height="110" rx="26" fill="white" fill-opacity="0.18" stroke="white" stroke-width="1.5" stroke-opacity="0.3" />
+                <text x="55" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="900" fill="#ffffff" text-anchor="middle">${initial}</text>
+              </g>
+              <text x="175" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="#ffffff">${safeWord}</text>
+              <text x="177" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#ffffff" opacity="0.8" letter-spacing="1">VOCABULARY CARD</text>
+            </svg>`;
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        }
+
+        function loadMatchingWordImage(word, details, callback) {
+            const cleanWord = filterText(word).toLowerCase().trim();
+            if (!cleanWord) {
+                callback(generateWordIllustration(word));
+                return;
+            }
+
+            // 1. 如果 CSV 中已有直接提供的圖片網址，直接採用
+            const urlMatch = (details || '').match(/https?:\/\/[^\s"',)]+\.(?:jpg|jpeg|png|webp|gif)/i);
+            if (urlMatch) {
+                callback(urlMatch[0]);
+                return;
+            }
+
+            // 2. 檢查快取
+            if (wordImageCache[cleanWord]) {
+                callback(wordImageCache[cleanWord]);
+                return;
+            }
+
+            // 3. 透過 Wikipedia API 查詢與該單字完全對應的真實照片 (CORS-friendly, 免 Key)
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 2000);
+
+            fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanWord)}`, {
+                signal: controller.signal
+            })
+            .then(res => res.ok ? res.json() : Promise.reject())
+            .then(data => {
+                clearTimeout(timeout);
+                if (data.thumbnail && data.thumbnail.source) {
+                    wordImageCache[cleanWord] = data.thumbnail.source;
+                    callback(data.thumbnail.source);
+                } else {
+                    throw new Error('No summary thumbnail');
+                }
+            })
+            .catch(() => {
+                clearTimeout(timeout);
+                // 4. 若維基條目無縮圖，嘗試搜尋維基共享資源 (Wikimedia Commons)
+                const commonsUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanWord)}&gsrlimit=1&prop=pageimages&pithumbsize=600&origin=*&format=json`;
+                fetch(commonsUrl)
+                .then(r => r.ok ? r.json() : Promise.reject())
+                .then(cData => {
+                    const pages = cData?.query?.pages;
+                    if (pages) {
+                        const first = Object.values(pages)[0];
+                        if (first && first.thumbnail && first.thumbnail.source) {
+                            wordImageCache[cleanWord] = first.thumbnail.source;
+                            callback(first.thumbnail.source);
+                            return;
+                        }
+                    }
+                    throw new Error('No commons image');
+                })
+                .catch(() => {
+                    // 5. 若無照片（如抽象動詞/連接詞），以該單字生成客製化視覺卡片（非隨機圖）
+                    const illustration = generateWordIllustration(word);
+                    wordImageCache[cleanWord] = illustration;
+                    callback(illustration);
+                });
+            });
+        }
+
         function startStudy() {
             document.getElementById('import-screen').classList.add('hidden');
             document.getElementById('study-screen').classList.remove('hidden');
@@ -305,10 +399,47 @@
                 container.appendChild(div);
             });
 
-            const img = document.getElementById('card-image'); const loader = document.getElementById('image-loader');
-            img.classList.add('opacity-0'); loader.style.display = 'flex';
-            img.src = `https://loremflickr.com/600/200/${encodeURIComponent(current.word)}`;
-            img.onload = () => { img.classList.remove('opacity-0'); loader.style.display = 'none'; };
+            // 圖片快取與專屬單字配圖演算法
+            const img = document.getElementById('card-image');
+            const loader = document.getElementById('image-loader');
+            img.classList.add('opacity-0');
+            loader.style.display = 'flex';
+
+            const activeWord = current.word;
+            img.dataset.activeWord = activeWord;
+
+            let imageDone = false;
+            const finishImage = () => {
+                if (imageDone) return;
+                imageDone = true;
+                if (img.dataset.activeWord === activeWord) {
+                    img.classList.remove('opacity-0');
+                    loader.style.display = 'none';
+                }
+            };
+
+            const imageTimeout = setTimeout(() => {
+                if (!imageDone && img.dataset.activeWord === activeWord) {
+                    img.src = generateWordIllustration(activeWord);
+                    finishImage();
+                }
+            }, 2500);
+
+            const displayFoundImage = (src) => {
+                if (img.dataset.activeWord !== activeWord) return;
+                img.onload = () => {
+                    clearTimeout(imageTimeout);
+                    finishImage();
+                };
+                img.onerror = () => {
+                    clearTimeout(imageTimeout);
+                    img.src = generateWordIllustration(activeWord);
+                    finishImage();
+                };
+                img.src = src;
+            };
+
+            loadMatchingWordImage(current.word, current.details, displayFoundImage);
 
             const progress = ((totalCount - queue.length) / totalCount) * 100;
             document.getElementById('progress-bar').style.width = `${progress}%`;
