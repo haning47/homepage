@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Visit to Taipei 101</title>
+    <style>
+        :root { --primary-color: #1a73e8; --secondary-color: #34a853; --vocab-color: #d32f2f; --tooltip-bg: #333; }
+        body { font-family: "Segoe UI", sans-serif; line-height: 1.8; padding: 20px; max-width: 800px; margin: auto; background-color: #f0f2f5; }
+        .container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .level-badge { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 4px 12px; border-radius: 6px; font-weight: bold; margin-bottom: 10px; }
+        .speed-control { display: flex; align-items: center; gap: 10px; background: #e8f0fe; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a73e8; margin-bottom: 15px; width: fit-content; }
+        .vocab { color: var(--vocab-color); font-weight: bold; cursor: pointer; text-decoration: underline; position: relative; }
+        .vocab:hover { background-color: #fff9c4 !important; border-radius: 4px; }
+        .sentence { transition: background 0.2s; border-radius: 4px; padding: 2px 0; cursor: pointer; }
+        .sentence:hover { background-color: #e3f2fd; }
+        #english-story .vocab::after { content: attr(data-info); position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100; }
+        #english-story .vocab:hover::after { visibility: visible; opacity: 1; }
+        .translation-section { margin-top: 30px; padding: 15px; background: #f8f9fa; border-left: 5px solid var(--secondary-color); }
+        .table-wrapper { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 400px; margin-top: 20px; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        th { background: #f1f3f4; }
+        button { padding: 12px 22px; cursor: pointer; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: bold; margin-bottom: 10px; font-size: 16px; }
+        .stop-btn { background: #d32f2f; }
+        @media (max-width: 600px) { button { width: 100%; justify-content: center; } .speed-control { width: 100%; justify-content: space-between; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="level-badge">Level 3 (中級)</div>
+    <div class="speed-control"><label>🔊 語速:</label><input type="range" id="speed-slider" min="0.5" max="1.0" step="0.05" value="0.9"><span id="speed-label">0.9x</span></div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px;"><button onclick="startFullStory()">▶️ 朗讀全文</button><button class="stop-btn" onclick="window.speechSynthesis.cancel()">⏹️ 停止</button></div>
+    <h2 style="color: #4285f4; margin-top:15px;">A Visit to Taipei 101</h2>
+    <div id="english-story" style="font-size: 20px; line-height: 2.2;"><span class="sentence" onclick="speakSentence(this)">Visiting Taipei 101 is truly <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(adj.) 令人愉快的">enjoyable</span> for everyone.</span> <span class="sentence" onclick="speakSentence(this)">This <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(adj.) 有吸引力的">attractive</span> building stands tall in the middle of the city.</span> <span class="sentence" onclick="speakSentence(this)">Even on a <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(adj.) 潮濕的">humid</span> afternoon, many tourists gather to <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(v.) 欣賞">admire</span> its unique design.</span> <span class="sentence" onclick="speakSentence(this)">The tower has a <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(adj.) 相當大的">considerable</span> height that reaches high into the clouds.</span> <span class="sentence" onclick="speakSentence(this)">Visitors love to <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(v.) 探索">explore</span> the large shopping mall located inside.</span> <span class="sentence" onclick="speakSentence(this)">It continues to <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(v.) 吸引">attract</span> people from all over the world every year.</span> <span class="sentence" onclick="speakSentence(this)">The staff there always show a polite <span class="vocab" onclick="speakSingleWord(this.innerText, event)" data-info="(n.) 態度">attitude</span> toward every guest.</span> <span class="sentence" onclick="speakSentence(this)">It is a landmark that represents the beauty of Taiwan.</span></div>
+    <div class="translation-section"><h4 style="margin:0;">中文對照翻譯</h4><div>參觀台北101對每個人來說確實是令人愉快的。這座有吸引力的建築在城市中心屹立不搖。即使在一個潮濕的下午，許多遊客也會聚集在一起欣賞其獨特的設計。這座塔有相當大的高度，直達雲端。遊客喜歡探索內部的型購物中心。它每年繼續吸引著來自世界各地的人們。那裡的員工對每位客人都表現出禮貌的態度。它是代表台灣之美的一個地標。</div></div>
+    <h4>📚 重點單字解析</h4>
+    <div class="table-wrapper"><table><thead><tr><th>單字</th><th>詞性</th><th>解釋</th></tr></thead><tbody><tr><td class="vocab" onclick="speakSingleWord('enjoyable', event)">enjoyable</td><td>(adj.)</td><td>令人愉快的</td></tr><tr><td class="vocab" onclick="speakSingleWord('attractive', event)">attractive</td><td>(adj.)</td><td>有吸引力的</td></tr><tr><td class="vocab" onclick="speakSingleWord('humid', event)">humid</td><td>(adj.)</td><td>潮濕的</td></tr><tr><td class="vocab" onclick="speakSingleWord('admire', event)">admire</td><td>(v.)</td><td>欣賞</td></tr><tr><td class="vocab" onclick="speakSingleWord('considerable', event)">considerable</td><td>(adj.)</td><td>相當大的</td></tr><tr><td class="vocab" onclick="speakSingleWord('explore', event)">explore</td><td>(v.)</td><td>探索</td></tr><tr><td class="vocab" onclick="speakSingleWord('attract', event)">attract</td><td>(v.)</td><td>吸引</td></tr><tr><td class="vocab" onclick="speakSingleWord('attitude', event)">attitude</td><td>(n.)</td><td>態度</td></tr></tbody></table></div>
+</div>
+<script>
+    let synth = window.speechSynthesis;
+    const speedSlider = document.getElementById("speed-slider");
+    const speedLabel = document.getElementById("speed-label");
+    speedSlider.addEventListener("input", () => { speedLabel.innerText = speedSlider.value + "x"; });
+    function startFullStory() { synth.cancel(); const msg = new SpeechSynthesisUtterance(document.getElementById('english-story').innerText); msg.lang = 'en-US'; msg.rate = parseFloat(speedSlider.value); synth.speak(msg); }
+    function speakSentence(el) { synth.cancel(); const msg = new SpeechSynthesisUtterance(el.innerText); msg.lang = 'en-US'; msg.rate = parseFloat(speedSlider.value); synth.speak(msg); }
+    function speakSingleWord(word, e) { if(e) e.stopPropagation(); synth.cancel(); const msg = new SpeechSynthesisUtterance(word); msg.lang = 'en-US'; msg.rate = parseFloat(speedSlider.value); synth.speak(msg); }
+</script>
+</body>
+</html>
